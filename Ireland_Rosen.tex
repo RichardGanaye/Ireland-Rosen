@@ -582,6 +582,397 @@ The set of divisors of $a,b$ is the same that the set of divisors of $a+b,a\vee 
 $$(a+b ) \wedge( a \vee b) = a \wedge b.$$
 \end{proof}
 
+\paragraph{Ex. 1.21}
+
+{\it Prove that $\ord_p(a+b) \geq \min(\ord_p \,a,\ord_p\, b )$ with equality holding if $\ord_p\, a \neq \ord_p\, b$.
+}
+
+\begin{proof}
+As $a\wedge b \mid a + b, \ord_p(a\wedge b) \leq \ord_p(a+b)$, so $\min(\ord_p(a),\ord_p(b)) \leq \ord_p(a+b)$.
+
+Suppose $\ord_p(a) \neq \ord_p(b)$,The problem being symmetric in $a,b$, we may suppose $\alpha = \ord_p(a) < \beta = \ord_p(b)$.
+So there exist $q,r \in \Z$ such that
+\begin{align*}
+a &= p^\alpha q, \ p \nmid q\\
+b &= p^\beta r, \ p\nmid r \qquad \alpha < \beta
+\end{align*}
+Then $a+b = p^\alpha(q+ p^{\beta-\alpha} r)$, where $p\nmid q + p^{\beta-\alpha}r $ (as $p \mid p^{\beta - \alpha}$ and $ p \nmid q$).
+
+So $\ord_p(a+b) = \alpha = \min(\ord_p(a), \ord_p(b))$.
+\end{proof}
+
+\paragraph{Ex. 1.22}
+
+{\it Almost all the previous exercises remain valid if instead of the ring $\Z$ we consider the ring $k[x]$. Indeed, in most we can consider any Euclidean domain. Convince yourself of this fact. For simplicity we shall continue to work in $\Z$.
+}
+
+\begin{proof}
+We can adapt all the preceding proofs to the Euclidean domain $k[x]$. The only difference is that the units in $\Z$ are $\pm1$, and the units in $k[x]$ are the elements of $k^*$.
+\end{proof}
+
+\paragraph{Ex. 1.23}
+
+{\it Suppose that $a^2 + b^2 = c^2$ with $a, b, c \in \Z$ For example, $3^2 + 4^2 = 5^2$ and $5^2 +
+12^2 = 13^2$ . Assume that $(a, b) = (b, c) = (c, a) = 1$. Prove that there exist integers $u$
+and $v$ such that $c - b = 2u^2$ and $c + b = 2v^2$ and $(u, v) = 1$ (there is no loss in
+generality in assuming that $b$ and $c$ are odd and that $a$ is even). Consequently $a = 2uv$,
+$b = v^2 - u^2$, and $c = v^2 + u^2$ . Conversely show that if $u$ and $v$ are given, then the
+three numbers $a$, $b$, and $c$ given by these formulas satisfy $a^2 + b^2 = c^2$.
+
+}
+
+\begin{proof}Suppose $x^2+y^2 = z^2,\ x,y,z \in \Z$. Let $d = x\wedge y \wedge z$. If $d = 0$, then $x=y=z=0$. If $d \neq 0$, and $a = x/d, b=y/d,c=z/d$, then $a^2+b^2 = c^2$, with $a\wedge b \wedge c = 1$. If a prime $p$ is such that $p \mid a, p\mid b$, then $p \mid c^2$, so $p \mid c$ (as $p$ is a prime). Then $p \mid a\wedge b \wedge c =1$ : this is impossible, so $a\wedge b = 1$, and similarly $a\wedge c = 1, b \wedge c = 1$.
+
+If $a,b$ are odd, then $a^2 \equiv b^2 \equiv 1 \pmod 4$, so $c^2 \equiv 2 \pmod 4$. As the squares modulo 4 are $0,1$, this is impossible. As $a\wedge b = 1$, $a,b$ are not both even, so $a,b$ are not of the same parity. Without loss of generality, we may exchange $a,b$ so that $a$ is even, $b$ is odd, and then $c$ is odd.
+
+$a^2 =c^2 - b^2 = (c-b)(c+b)$, so $$\left(\frac{a}{2}\right)^2 = \left(\frac{c-b}{2}\right) \left(\frac{c+b}{2}\right).$$
+where $a/2,(c-b)/2,(c+b)/2$ are integers.
+
+If $d \mid (c-b)/2$ and $d \mid (c+b)/2$, then $d \mid c = (c+b)/2+ (c-b)/2$, and $d \mid b = (c-b)/2 - (c-b)/2$, so $d \mid a\wedge b = 1$. This proves 
+$$\left(\frac{c+b}{2}\right) \wedge \left(\frac{c-b}{2}\right) = 1.$$
+Using Ex. 1.16, we see that $(c+b)/2$ and $(c-b)/2$ are squares : there exist $u,v$ such that
+$$c-b = 2u^2, c+b = 2 v^2,\qquad u\wedge v = 1.$$
+$(a/2)^2 = u^2v^2$, and we can choose the signs of $u,v$ such that $a = 2 uv$. Then $b = v^2 - u^2, c = v^2+u^2$.
+There exists $\lambda \in \Z$ ($\lambda = d$) such that $x = 2 \lambda uv, y = \lambda (v^2 - u^2), z = \lambda (v^2 +u^2)$.
+
+Conversely, if $\lambda, u, v$ are any integers, $(2\lambda uv)^2 + (\lambda(v^2-u^2)^2 = \lambda^2 (4 u^2v^2 + v^4 + u^4 -2 u^2v^2) = \lambda^2 ( v^4 + u^4 +2 u^2v^2) = (\lambda (u^2+v^2))^2$.
+
+Conclusion : if $x,y,z \in \Z$,
+$$
+x^2+y^2 = z^2 \iff \exists \lambda \in \Z, \exists (u,v) \in \Z^2, u\wedge v = 1,$$
+$$
+\left\{
+\begin{array}{ccc}
+ x  & =   &2 \lambda uv  \\
+  y & = &\lambda(v^2 - u^2)     \\
+  z&  = & \lambda (v^2+u^2)  
+\end{array}
+\right.
+\quad \mathrm{or}\quad \left\{
+\begin{array}{ccc}
+ x  & =   &\lambda(v^2 - u^2)  \\
+  y & = &   2 \lambda uv  \\
+  z&  = & \lambda (v^2+u^2)  
+\end{array}
+\right.
+$$
+\end{proof}
+
+\paragraph{Ex. 1.24}
+
+{\it Prove the identities
+
+(a) $x^n - y^n = (x-y) (x^{n-1}+x^{n-2} y + \cdots +y^{n-1})$
+
+(b) For $n$ odd, $x^n + y^n = (x+y) (x^{n-1}- x^{n-2} y + \cdots +y^{n-1})$
+}
+
+\begin{proof}
+Let $R$ any commutative ring, and $x,y \in R$.
+
+a) Let $$S = \sum_{i=0}^n x^{n-1-i} y^i.$$ Then
+\begin{align*}
+xS &= \sum_{i=0}^n x^{n-i} y^i = x^n + \sum_{i=0}^{n-1} x^{n-i} y^i\\
+yS &= \sum_{i=0}^{n-1} x^{n-1-i} y^{i+1} = \sum_{j=1}^{n} x^{n-j} y^j \qquad(j = i+1)\\
+&=y^n + \sum_{i=1}^{n-1} x^{n-i} y^i.
+\end{align*}
+So $xS - y S = x^n-y^n$,
+$$x^n - y^n = (x-y) \sum_{i=0}^n x^{n-1-i} y^i = (x-y)(x^{n-1}+x^{n-2} y + \cdots +x^{n-1-i}y^i+ \cdots + y^{n-1}).$$
+
+b)If we substitute $-y$ by $y$, we obtain
+$$x^n - (-1)^n y^n = (x+ y) \sum_{i=0}^n(-1)^i x^{n-1-i} y^i .$$
+
+If $n$ is odd,
+$$x^n  + y^n = (x+ y) \sum_{i=0}^n(-1)^i x^{n-1-i} y^i  = (x+y)(x^{n-1}-x^{n-2} y + \cdots +(-1)^i x^{n-1-i}y^i+ \cdots + y^{n-1}).$$
+\end{proof}
+
+\paragraph{Ex. 1.25}
+
+{\it If $a^n - 1$ is a prime, show that $a = 2$ and that $n$ is a
+prime. Primes of the form $2^p - 1$ are called Mersenne primes. For
+example, $2^3 - 1 = 7$ and $2^5 - 1 = 31$. It is not known if there are
+infinitely many Mersenne primes.
+}
+
+\begin{proof}
+Suppose $n>1, a\geq 0$, and $a^n - 1$ is a prime. As $0^n -1 = -1,1^n-1 = 0$ are not primes, $a \geq 2$.
+
+As $(a^n-1) = (a-1) (a^{n-1} + \cdots + a^{i} + \cdots  + 1)$, $a-1$ is a factor of the prime $a^n-1$, so $a-1 = 1$ or $a-1 = a^n-1$.
+
+As $a\geq 2$, and $n >1$, $a = a^n$ is impossible, so $a=2$.
+
+If $n\geq 2$ wasn't  prime, then $n = uv, 1 < u <n, 1 < v <n$, and
+$$2^n-1 = 2^{uv} - 1 = (2^u -1) (2^{u(v-1)}+ \cdots+2^{ui}+ \cdots+ 1).$$
+
+with $1 = 2^1 - 1<2^u -1 < 2^n-1$. $2^n - 1$ has a non trivial factor : this is impossible, so $n$ is a prime.
+
+Conclusion : if $a^n - 1\ (a \geq 0, n > 1)$ is a prime, then $a = 2$ and $n$ is a prime.
+\end{proof}
+
+\paragraph{Ex. 1.26}
+
+{\it If $a^n + 1$ is a prime, show that $a$ is even and that $n$ is a power
+of 2. Primes of the form $2^{2^t} + 1$ are called Fermat primes. For
+example, $2^{2^1} + 1 = 5$ and $2^{2^2} + 1 = 17$.  It is not known if
+there are infinitely many Fermat primes.
+}
+
+\begin{proof}
+If $a = 1, a^n + 1$ is a prime. Suppose $a >1$. If $a$ was odd, $a^n+1>2$ is even, so is not a prime. Consequently, if $a^n+1$ is prime, $a>1$, then $a$ is even.
+
+Write $n = 2^t u$, where $u$ is odd.
+
+If $u>1$, then, from Ex. 24(b), we obtain
+$$a^n+1 = a^{2^tu}+1 = (a^{2^t} + 1)\sum_{i=0}^{u-1} (-1)^ia^{i2^t}.$$
+So $1<a^{2^t} + 1 < a^n+1$, and $a^{2^t} + 1$ is a non trivial factor of $a^n+1$, in contradiction with the hypothesis. 
+
+Conclusion : if $a^n+1$ is a prime, $a$ os even and $n$ is a power of $2$.
+\end{proof}
+
+\paragraph{Ex. 1.27} 
+
+{\it For all odd $n$ show that $8\mid n^2 - 1$. If $3\nmid n$,
+show that $6\mid n^2 - 1$.
+}
+
+\begin{proof}
+As $n$ is odd, write $n=2k+1, n \in \Z$. Then
+$$n^2 - 1 = (2k+1)^2-1 = 4k^2+4k = 4k(k+1).$$
+As $k$ or $k+1$ is even, $8 \mid n^2 - 1$.
+
+$(n-1)n(n+1) = n (n^2-1)$, product of three consecutive numbers, is a multiple of 3.
+
+As $3 \nmid n$, and 3 is a prime, $3 \wedge n = 1$, so $3 \mid n^2-1$.
+$$3 \nmid n \Rightarrow 3 \mid n^2 -1.$$
+(This is also a consequence of Fermat' Little Theorem.)
+
+As $n$ is odd, $n^2-1$ is even.
+$3 \mid n^2-1, 2 \mid n^2-1$ and $2 \wedge 3 = 1$, so $6 \mid n^2-1$.
+\end{proof}
+
+\paragraph{Ex. 1.28}
+
+{\it For all $n$ show that $30 \mid  n^5 - n$ and that $42\mid n^7 - n$.
+}
+
+\begin{proof}
+If we want to avoid Fermat's Little Theorem (Prop. 3.3.2. Corollary 2 P. 33), note that
+\begin{align*}
+(n-2)(n-2n(n+1)(n+2) &= n(n2-1)(n^2-4)\\
+&= n(n^2-1)(n^2-4)\\
+&=n^5-5n^2+4n\\
+&=n^5 - n +5 (-n^2+n)
+\end{align*}
+As the product of 5 consecutive numbers is divisible by 5,
+$$5 \mid n^5 - n.$$
+Moreover,
+\begin{align*}
+&2 \mid (n-1)(n+1) = n^2 -  1  \mid n^4 - 1 \mid n^5 -n\\
+&3 \mid (n-1)n(n+1) = n(n^2 - 1) \mid n(n^4-1) = n^5 - n
+\end{align*}
+As $2,3,5$ are distinct primes $2\times 3 \times 5 = 30 \mid n^5-n$.
+
+Similarly,
+\begin{align*}
+(n-3)(n-2)(n-1)n(n+1)(n+2)(n+3) &= n(n^2-1)(n^2-4)(n^2-9)\\
+&=n(n^4-5n^2+4)(n^2-9)\\
+&=n^7-14n^5+49n^3-36n\\
+&=n^7-n + 7(-2n^5+7n^3-5n)
+\end{align*}
+As the product of 7 consecutive numbers is divisible by 7,
+$$7 \mid n^7 -n.$$
+Moreover
+\begin{align*}
+&2 \mid (n-1)(n+1) = n^2 -  1 \mid n^6 - 1 \mid n^7 -n\\
+&3 \mid (n-1)n(n+1) = n(n^2 - 1) \mid n(n^6-1) = n^7 - n
+\end{align*}
+As $2,3,7$ are distinct primes $2\times 3 \times 7 = 42 \mid n^7-n$.
+\end{proof}
+
+\paragraph{Ex. 1.29}
+
+{\it  Suppose that $a, b, c, d \in \Z$ and that $(a, b) = (c, d) =
+1$. 
+
+If $(a/b) + (c/d) =$ an integer, show that $b = \pm d$.
+}
+
+\begin{proof}
+If $\frac{a}{b}+ \frac{c}{d} = n \in \Z\quad (a\wedge b = c\wedge d = 1)$, then $ad+bc = nbd$, so $d \mid bc, d\wedge c=1$, which implies $d\mid b$. Similarly $b \mid d$. Then $d =\pm b$.
+\end{proof}
+
+\paragraph{Ex. 1.30}
+
+{\it
+Prove that  $H_n = \frac{1}{2} + \frac{1}{3} + \ldots + \frac{1}{n}$
+is not an integer.
+}
+
+\begin{proof}
+Let $s$ such that $2^{s} \leq n < 2^{s+1}$ ($s = \left \lfloor \frac{\ln n}{\ln 2} \right \rfloor \geq 1$).
+
+$$H_n = \frac{1}{2} + \cdots + \frac{1}{n} = \frac{\sum_{i=1}^n a_i}{n!}, \qquad \mathrm{where}\ a_i = \frac{n!}{i} \in \Z.$$
+Let $k = \ord_2(n!)$.
+We will show that $\ord_s(a_i)$ is minimal for $i_0 = 2^s$, where $\ord_2(a_{i_0}) = k - s$, and that this minimum is reached only for this index $i_0$.
+
+Indeed, each $i$ such that $2 \leq i \leq n$ can be written with the form $i = 2^tq, 2 \nmid q$. Then $i = 2^t q \leq n < 2^{s+1}$, so $2^t < 2^{s+1}, t < s+1, t \leq s$, which proves
+$$\ord_2(a_i) = k - t \geq k - s = \ord_2(a_{i_0}).$$
+Moreover, if $\ord_2(a_i) = \ord_2(a_{i_0})$, then $k - t = k - s$, so $s = t$.
+
+$i = 2^s q, 2 \nmid q$. If $q>1$, then $i\geq 2^{s+1}>n$ : it's impossible. So $q=1$ and $i = 2^s = i_0$.
+
+Using Ex 1.21, we see that
+$$\ord_2\left(\sum_{i=2}^n a_i \right)= \ord_2(a_{i_0}) = k - s > k = \ord_2(n!).$$
+So $$H_n = \frac{2^{k-s} Q}{2^k R} = \frac{Q}{2^s R},$$ where $Q,R$ are odd integers. $H_n$ is a quotient of an odd integer by an even integer : $H_n$ is never an integer.
+\end{proof}
+
+\paragraph{Ex. 1.31}
+
+{\it Show that $2$ is divisible by $(1+i)^2$ in $\Z[i]$.
+}
+
+\begin{proof}
+$(1+i)^2 = 1 +2i - 1 = 2i$, so $2 = -i(1+i)^2$ is divisible by $(1+i)^2$.
+(As $i$ is an unit, $2$ and $(1+i)^2$ are associated.)
+\end{proof}
+
+\paragraph{Ex. 1.32}
+
+{\it
+For $\alpha = a + bi \in \Z[i]$ we defined $\lambda(\alpha) =
+a^2 + b^2$. From the properties of $\lambda$ deduce the identity $(a^2+ b^2)(c^2 + d^2) = (ac - bd)^2 + (ad + bc)^2$.
+}
+
+\begin{proof}
+For all complex numbers $\alpha,\beta$, $\vert \alpha \beta\vert = \vert \alpha\vert \vert \beta\vert$, so
+$$\lambda (\alpha \beta) = \lambda(\alpha) \lambda(\beta).$$
+If $\alpha = a+bi \in \Z[i), \beta = c + d i \in \Z[i]$, then $\alpha \beta = (ac - bd) + (ad +bc)i$, so
+$$(a^2+ b^2)(c^2 + d^2) = (ac - bd)^2 + (ad + bc)^2.$$
+\end{proof}
+
+\paragraph{Ex. 1.33}
+
+{\it Show that $\alpha \in \Z[i]$ is a unit iff  $\lambda(\alpha) = 1$. Deduce that 1, -1, i, and - i are the only units in $\Z[i]$.
+}
+
+\begin{proof}
+Let $\alpha = a+bi \in \Z[i]$.
+
+$\bullet$ If $\lambda(\alpha) = 1$, then $\alpha \overline{\alpha} = 1$, where $\overline{\alpha} = a-bi \in \Z[i]$, so $\alpha$ is an unit.
+
+$\bullet$  Reciprocally, if $\alpha$ is an unit, there exists $\beta \in \Z[i]$ such that $\alpha \beta = 1$, then $\lambda( \alpha) \lambda(\beta) = 1$, where $\lambda(\alpha), \lambda(\beta)$ are positive integers, so $\lambda(\alpha) = 1$.
+
+So $\alpha = a + ib$ is an unit of $\Z[i]$ if and only if $a^2+b^2 = 1$. Then $\vert a \vert^2\leq 1$, $a \in \{ 0,1,-1\}$. If $a = 0,n b = \pm 1$, and if $a = \pm 1, b = 0$, so the only units of $\Z[i]$ are $1,i,-1,-i$.
+\end{proof}
+{\it Show that 3 is divisible by $(1 - \omega)^2$ in $\Z[\omega]$.
+}
+
+\begin{proof}
+As $\omega^3 = 1, \overline{\omega} = \omega^2$, and $1+\omega + \omega^2 = 0$,
+
+$\vert (1-\omega) \vert^2 = (1-\omega)(1-\omega)^2 = 1 +\omega^3 - \omega -\omega^2 = 3$, so
+$$3 = (1-\omega)(1-\omega)^2.$$
+Consequently, 
+$$3 = (1+\omega) (1-\omega^2) = -\omega^2(1-\omega)^2.$$
+3  is divisible by $(1 - \omega)^2$ in $\Z[\omega]$ (as $-\omega^2$ is an unit, $3$ and  $(1-\omega)^2$ are associated. $3$ is not irreducible in $\Z[\omega]$).
+\end{proof}
+
+\paragraph{Ex. 1.35}
+
+{\it For $\alpha = a + b\omega \in \Z[\omega]$ we defined
+$\lambda(\alpha) = a^2 - ab + b^2$. Show that $\alpha$ is a unit iff
+$\lambda(\alpha) = 1$. Deduce that $1, -1, \omega, -\omega, \omega^2 ,
+and -\omega^2$ are the only units in $\Z[\omega]$.
+}
+
+\begin{proof}
+If $\alpha = a + b\omega \in \Z[\omega]$, using $1+\omega+ \omega^2=0$ and $\overline{\omega} = \omega^2$, we obtain
+\begin{align*}
+\alpha \overline{\alpha} &=(a+b \omega)(a+b \omega^2)\\
+&= a^2 + b^2 +ab(\omega + \omega^2)\\
+&= a^2+b^2-ab\\
+&=\lambda(\alpha)
+\end{align*}
+
+$\bullet$ If $\lambda(\alpha) = 1$, then $\alpha \overline{\alpha} = 1$, where $\overline{\alpha} = a+b\omega^2 = (a-b) -b\omega\in \Z[\omega]$, so $\alpha$ is an unit.
+
+$\bullet$  Reciprocally, if $\alpha$ is an unit, there exists $\beta \in \Z[\omega]$ such that $\alpha \beta = 1$, then $\lambda( \alpha) \lambda(\beta) = 1$, where $\lambda(\alpha), \lambda(\beta)$ are positive integers, so $\lambda(\alpha) = 1$.
+
+\begin{align*}
+\lambda(\alpha) = 1 &\iff a^2 -ab +b^2 = 1\\
+&\iff (2a-b)^2+3b^2 = 4\\
+\end{align*}
+$3b^2 \leq 4$, so $b=0$ or $b=\pm1$.
+
+ If $b=0$, then $a = \pm 1$. 
+
+If $b = \pm 1$, then $(2a-1)^2 = 1, 2a-1 = \pm 1$ : $a=0$ or $a=-1$. So
+$$\lambda(\alpha) = 1 \iff \alpha \in \{1, \omega, \omega^2=-1-\omega,-1,-\omega,-\omega^2 = 1+\omega\}.$$
+
+The  set of units of $\Z[\omega]$ is the group of the roots of $x^6-1$.
+\end{proof}
+
+\paragraph{Ex. 1.36}
+
+{\it Define $\Z[\sqrt{-2}]$ as the set of all complex numbers of the form $a+b\sqrt{-2}$, where $a,b\in \Z$. Show that $\Z[\sqrt{-2}]$ is a ring. Define $\lambda(\alpha) = a^2+2b^2$ for $\alpha = a+b\sqrt{-2}$. Use $\lambda$ to show that $\Z[\sqrt{-2}]$ is a Euclidean domain.
+}
+
+\begin{proof}
+Note $\sqrt{-2} = i \sqrt{2}$, and $A = \Z[\sqrt{-2}]$.
+
+Let $\alpha = a + b \sqrt{-2}), \beta =  c + d\sqrt{-2} \in A$ :
+
+$\bullet$ $1 = 1 + 0 \sqrt{-2} \in A$.
+
+$\bullet$ $\alpha - \beta = (a + b \sqrt{-2})- (c + d\sqrt{-2}) = (a-c) + (b-d) \sqrt{-2} \in A$.
+
+$\bullet$  $\alpha \beta= (a + b \sqrt{-2}) (c + d\sqrt{-2}) = (ac -2 bd) + (ad+bc) \sqrt{-2} \in A.$
+
+So $A$ is a subring of $(\mathbb{C},+,\times)$ : $\Z[\sqrt{-2]}$ is a ring.
+
+Let $z = a + ib\sqrt{-2}$ any complex number. Let $a_0, b_0 \in \Z$ such that $\vert a-a_0 \vert \leq 1/2, \vert b-b_0 \vert \leq 1/2$ (it suffice to take for $a_0$ the nearest integer of $a$ : $a_0 =\left \lfloor a + \frac{1}{2}\right \rfloor$). Let $z_0 = a_0 + i b_0 \sqrt{-2}$.
+
+Let $\lambda(z) = z \overline{z} = a^2 + 2 b^2$. Then 
+$$\lambda(z-z_0) = (a-a_0)^2 + 2(b-b_0)^2 < \frac{1}{4} + 2 . \frac{1}{4} = \frac{3}{4}<1.$$
+
+Conclusion : for any $z \in \mathbb{C}$, there exists $z_0 \in A$ such that $\lambda(z-z_0) < 1$.
+
+Let $(z_1,z_2) \in A \times A, z_2 \ne 0$. We apply the preeceeding result to the complex $z_1/z_2$ : there exists $q \in A$ such that $\left \vert \frac{z_1}{z_2} - q \right \vert \leq 1$. Let $r = z_1 - qz_2$. Then $z_1 = qz_2 +r, \lambda(r) < \lambda(z_2)$.
+
+So $\Z[\sqrt{-2}]$ is a Euclidean domain.
+\end{proof}
+
+\paragraph{Ex. 1.37}
+
+{\it Show that the only units in $\Z[\sqrt{-2}]$ are $1$ and $-1$.
+}
+
+\begin{proof}
+As in Ex. 35, we prove that $\alpha = a + b\sqrt{-2}$ is an unit if and only if $\lambda(\alpha) = 1$, i.e. $a^2+2b^2 = 1$. As $2b^2 \leq 1, b = 0$, and $a^2 = 1$. So the only units are $1$ and $-1$.
+\end{proof}
+
+\paragraph{Ex. 1.38}
+
+{\it Suppose that $\pi \in \Z[i]$ and that $\lambda(\pi) = p$ is a prime in $\Z$. Show that $\pi$ is a prime in $\Z[i]$. Show that the corresponding result holds in $\Z[\omega]$ and $\Z[\sqrt{-2}]$.
+}
+
+\begin{proof} If $\pi = \alpha \beta$, where $\alpha, \beta \in \Z[i]$, then $p = \lambda(\pi) = \lambda(\alpha) \lambda(\beta)$. As $p$ is a prime in $\Z$, and $\lambda(\alpha) \geq 0,,\lambda(\beta) \geq 0$, $\lambda(\alpha) = 1$ or $\lambda(\beta)=1$, so (Ex.1.33) $\alpha$ or $\beta$ is an unit. Consequently, $\pi$ is irreducible in $\Z[i]$. As $\Z[i]$ is a PID,  $\pi$ is a prime in $\Z[i]$ (Prop. 1.3.2 Corollary 2).
+
+As $\Z[\omega]$ and $\Z[\sqrt{-2}]$ are Euclidean domains, the same result is true in these principal ideals domains.
+\end{proof}
+
+\paragraph{Ex. 1.39}
+
+{\it Show that in any integral domain a prime element is irreducible.
+}
+
+\begin{proof}
+Let $R$ an integral domain, and $\pi$ a prime in $R$.
+
+If $\pi = \alpha \beta, \ \alpha, \beta \in R$, a fortiori $\pi$ divides $\alpha \beta$. As $\pi$ is a prime, $\pi$ divides $\alpha$ or $\beta$, say $\alpha$, so there exists $\xi \in R$ such that $\alpha = \xi \pi$, so $\pi = \xi \pi \beta, \pi(1 - \xi \beta)= 0$. As $A$ is an integral domain, and $\pi \neq 0$ by definition,  $1 = \xi \beta$, so $\beta$ is an unit. If  $\pi = \alpha \beta$, $\alpha$ or $\beta$ is an unit, so $\pi$ is irreducible.
+\end{proof}
+
+
 \section{Chapter 2}
 
 
