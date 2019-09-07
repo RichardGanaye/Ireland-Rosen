@@ -8,6 +8,7 @@
 \usepackage{amsfonts}
 \usepackage{amsthm}
 \usepackage{amssymb}
+\usepackage{yfonts}
 %\input{8bitdefs}
 
 % marges
@@ -51,7 +52,7 @@
 {\it Let $a$ and $b$ be nonzero integers. We can find nonzero integers $q$ and $r$ such that $a = qb + r$ where $0 \leq r < b$. Prove that $(a, b) = (b, r)$.}
 
 \begin{proof}
-Notation : if $a,b$ are integers in  $\mathbb{Z}$, $a \wedge b$ is the non negative greatest common divisor of  $a,b$, the generator in  $\mathbb{N} = \{0,1,2,\cdots\} $ of the ideal $(a,b) = a\mathbb{Z}+ b \mathbb{Z}$.
+Notation : if $a,b$ are integers in  $\mathbb{Z}$, $a \wedge b$ is the non negative greatest common divisor of  $a,b$, the generator in  $\mathbb{N} = \{0,1,2,\ldots\} $ of the ideal $(a,b) = a\mathbb{Z}+ b \mathbb{Z}$.
 
 
 Let $d \in \mathbb{Z}$.
@@ -167,10 +168,10 @@ def gcd(a,b):
     return a
 \end{verbatim}
 \end{proof}
+
 \paragraph {  Ex 1.4} 
 
-{\it Let $d = (a, b)$. Show how one can use the Euclidean algorithm to find
-numbers $m$ and $n$ such that $am + bn = d$.(Hint: In Exercise 2 we have that $d = r_{k+1}$. Express $r_{k+1}$ in terms of $r_k$ and $r_{k+1}$, then in terms of $r_{k-1}$ and $r_{k-2}$, etc.).
+{\it Let $d = (a, b)$. Show how one can use the Euclidean algorithm to find numbers $m$ and $n$ such that $am + bn = d$.(Hint: In Exercise 2 we have that $d = r_{k+1}$. Express $r_{k+1}$ in terms of $r_k$ and $r_{k+1}$, then in terms of $r_{k-1}$ and $r_{k-2}$, etc.).
 }
 \begin{proof}
 With a slight modification of the notations of exercise 2, we note the Euclid's algorithm under the form
@@ -186,8 +187,8 @@ $r_1 = b = 0.a + 1 .b$. Define $m_1 = 0, n_1 = 1$. We obtain $r_1 = a m_1 +b n_1
 
 $\bullet$ Suppose for $0\leq i<k$ the induction hypothesis $P(i)$ et $P(i+1)$ :
 \begin{align*}
-r_i &= am_i +b n_i ,\quad &m_i,n_i \in \mathbb{Z}\\
-r_{i+1} &= am_{i+1} + b n_{i+1},\quad  &m_{i+1},n_{i+1} \in \mathbb{Z}\\
+r_i &= am_i +b n_i ,\quad &m_i,n_i \in \mathbb{Z},\\
+r_{i+1} &= am_{i+1} + b n_{i+1},\quad  &m_{i+1},n_{i+1} \in \mathbb{Z}.
 \end{align*}
 Then  $r_{i+2} = r_i - r_{i+1} q_{i+1} = a(m_i - q_{i+1} m_{i+1}) + b (n_i - q_{i+1} n_{i+1})$.
 
@@ -197,6 +198,7 @@ $\bullet$ The conclusion is that  $P(i)$ is true for all $i, 0 \leq i \leq k+1$,
 $$a\wedge b = d = am+b n,$$
 where $m = m_{k+1}, n = n_{k+1} \in \Z$.
 \end{proof}
+
 \paragraph {  Ex 1.5} 
 {\it Find $m$ and $n$ for the pairs $a$ and $b$ given in Ex 1.3}
 \begin{proof}
@@ -257,9 +259,9 @@ def bezout(a,b):
     return (u0,v0,r0)
 \end{verbatim}
 \end{proof}
+
 \paragraph {  Ex 1.6} 
-{\it Let $a, b, c \in \Z$. Show that the equation $ax + by = c$
-has solutions in integers iff $(a, b) |c$.
+{\it Let $a, b, c \in \Z$. Show that the equation $ax + by = c$ has solutions in integers iff $(a, b) |c$.
  }
  \begin{proof}
  Let $d = a \wedge b$. 
@@ -274,6 +276,7 @@ has solutions in integers iff $(a, b) |c$.
  
  $$\exists (x,y) \in \Z \times \Z, \ ax + by = c \iff a\wedge b \mid c.$$
 \end{proof}
+
 \paragraph {  Ex 1.7} 
 {\it Let $d = (a, b)$ and $a = da'$ and $b = db'$. Show that $(a', b') = 1$.}
 
@@ -287,9 +290,7 @@ conclusion : if $d = a \wedge b \neq 0$, and $a = da', b = db'$, then $a'\wedge 
 \end{proof}
 \paragraph{Ex. 1.8}
 
-{\it Let $x_0$ and $y_0$ be a solution to $ax + by = c$. Show that all
-solutions have the form $x = x_0 + t(b/d)$, $y = y_0 - t(a/d)$, where $d =
-(a, b)$ and $t \in \Z$.
+{\it Let $x_0$ and $y_0$ be a solution to $ax + by = c$. Show that all solutions have the form $x = x_0 + t(b/d)$, $y = y_0 - t(a/d)$, where $d = (a, b)$ and $t \in \Z$.
 }
 
 \begin{proof}
@@ -322,8 +323,7 @@ $$ax+by = c \iff \exists t \in \Z,\ x = x_0 + t(b/d), y = y_0 - t (a/d).$$
 
 \paragraph{Ex. 1.9}
 
-{\it Suppose that $u, v \in \Z$ and that $(u, v) = 1$. If $u \mid n$
-and $v\mid n$, show that $uv \mid n$. Show that this is false if $(u, v) \ne 1$.
+{\it Suppose that $u, v \in \Z$ and that $(u, v) = 1$. If $u \mid n$ and $v\mid n$, show that $uv \mid n$. Show that this is false if $(u, v) \ne 1$.
 }
 
 \begin{proof}
@@ -337,7 +337,7 @@ If the case $u \wedge v \neq 1$, we give the counterexample $6 \mid 18,9 \mid 18
 {\it Suppose that $(u, v) = 1$. Show that $(u+v, u-v)$ is either 1 or 2.
 }
 
-\begin{proof} Let $d = u + v \wedge u- v$. Then $d\mid u+v,d \mid (u-v$, so $d \mid 2u = (u+v)+(u-v)$ and $d \mid 2v = (u+v) - (u-v)$. So $d \mid (2u) \wedge (2v) = 2(u\wedge v) = 2$. As $d\geq 0$, $d =1$ or $d = 2$.
+\begin{proof} Let $d = (u + v) \wedge (u- v)$. Then $d\mid u+v,d \mid u-v$, so $d \mid 2u = (u+v)+(u-v)$ and $d \mid 2v = (u+v) - (u-v)$. So $d \mid (2u) \wedge (2v) = 2(u\wedge v) = 2$. As $d\geq 0$, $d =1$ or $d = 2$.
 \end{proof}
 
 \paragraph{Ex. 1.11}
@@ -354,9 +354,7 @@ Conclusion : $a \wedge (a+k) \mid k.$
 
 {\it
 
-Suppose that we take several copies of a regular polygon and try to fit them evenly
-about a common vertex. Prove that the only possibilities are six equilateral triangles,
-four squares, and three hexagons.
+Suppose that we take several copies of a regular polygon and try to fit them evenly about a common vertex. Prove that the only possibilities are six equilateral triangles, four squares, and three hexagons.
 }
 
 \begin{proof}
@@ -383,32 +381,32 @@ corresponding with the usual lattices composed of equilateral triangles, squares
 
 \paragraph{Ex. 1.13}
 
-{\it Let $n_1,n_2,\cdots,n_s\in \Z$. Define the greatest common divisor $d$ of $n_1,n_2,\cdots,n_s$ and prove that there exist integers $m_1,m_2,\cdots,m_s$ such that $n_1m_1+n_2m_2+\cdots+n_sm_s = d.$
+{\it Let $n_1,n_2,\ldots,n_s\in \Z$. Define the greatest common divisor $d$ of $n_1,n_2,\ldots,n_s$ and prove that there exist integers $m_1,m_2,\ldots,m_s$ such that $n_1m_1+n_2m_2 \cdots+n_sm_s = d.$
 }
 
 \begin{proof}
-Let $n_1,n_2,\cdots,n_s\in \Z$. The ideal of $\Z$, $(n_1,\cdots,n_s) = n_1\Z+\cdots+n_s\Z$ is principal, so there exists an unique $d\in \Z, d\geq 0$ such that
+Let $n_1,n_2,\ldots,n_s\in \Z$. The ideal of $\Z$, $(n_1,\ldots,n_s) = n_1\Z+\cdots+n_s\Z$ is principal, so there exists an unique $d\in \Z, d\geq 0$ such that
 $$n_1\Z+\cdots+n_s\Z = d\, \Z\quad (d\geq 0).$$
 We define
 \begin{align}
-d = \mathrm{gcd}(n_1,\cdots,n_s)  \iff n_1\Z+\cdots+n_s\Z = d\, \Z \ \mathrm{and}\ d\geq 0.
+d = \mathrm{gcd}(n_1,\ldots,n_s)  \iff n_1\Z+\cdots+n_s\Z = d\, \Z \ \mathrm{and}\ d\geq 0.
 \end{align}
 The characterization of the gcd is
 
-$$d = \mathrm{gcd}(n_1,\cdots,n_s)  \iff$$
+$$d = \mathrm{gcd}(n_1,\ldots,n_s)  \iff$$
 \begin{align}
 (i) &\ d \geq 0\\
-(ii)&\ d\mid n_1,\cdots, d \mid n_s\\
-(iii)&\  \forall \delta \in \Z,\ (\delta \mid n_1,\cdots,\delta \mid n_s) \Rightarrow \delta \mid d
+(ii)&\ d\mid n_1,\ldots, d \mid n_s\\
+(iii)&\  \forall \delta \in \Z,\ (\delta \mid n_1,\ldots,\delta \mid n_s) \Rightarrow \delta \mid d
 \end{align}
 
-$(\Rightarrow)$ Indeed, if we suppose (1), then $d\geq 0$, and $n_1 = n_1.1 + n_2.0 + \cdots+n_s.0 \in n_1\Z+\cdots+n_s\Z = d\, \Z$, so $d\mid n_1$. Similarly $d\mid n_i, 1\leq i \leq s$ so (i)(ii) are true. if $\delta \mid n_i, 1 \leq i \leq s$, as $d = n_1m_1+\cdots+n_sm_s, m_1,\cdots,m_s \in \Z$, then $\delta \mid d$.
+$(\Rightarrow)$ Indeed, if we suppose (1), then $d\geq 0$, and $n_1 = n_1.1 + n_2.0 + \cdots+n_s.0 \in n_1\Z+\cdots+n_s\Z = d\, \Z$, so $d\mid n_1$. Similarly $d\mid n_i, 1\leq i \leq s$ so (i)(ii) are true. if $\delta \mid n_i, 1 \leq i \leq s$, as $d = n_1m_1+\cdots+n_sm_s, m_1,\ldots,m_s \in \Z$, then $\delta \mid d$.
 
-$(\Leftarrow)$Suppose that $d$ verify (i)(ii)(iii). From (ii), we see that $n_i \Z \subset d \Z, i= 1,\cdots,s$, so $n_1\Z+\cdots+n_s \Z \subset d\Z$.
+$(\Leftarrow)$ Suppose that $d$ verify (i)(ii)(iii). From (ii), we see that $n_i \Z \subset d \Z, i= 1,\ldots,s$, so $n_1\Z+\cdots+n_s \Z \subset d\Z$.
 
-As $\Z$ is a principal ring, there exists $\delta\geq 0$ such that $n_1\Z+\cdots+n_s\Z = \delta\, \Z$. $n_i \in n_1\Z+\cdots+n_s\Z$ so $n_i \in \delta \Z, \ i=1,\cdots,s$ : $\delta \mid n_1,\cdots, \delta \mid n_s$. From (iii), we deduce $\delta \mid d$. As $\delta \Z \subset d\Z$, $d \mid \delta$, with $d\geq 0, \delta \geq 0$. Consequently, $d = \delta$ and  $n_1\Z+\cdots+n_s\Z =d\, \Z, d\geq 0$, so $d =\mathrm{gcd}(n_1,\cdots,n_s) $.
+As $\Z$ is a principal ring, there exists $\delta\geq 0$ such that $n_1\Z+\cdots+n_s\Z = \delta\, \Z$. $n_i \in n_1\Z+\cdots+n_s\Z$ so $n_i \in \delta \Z, \ i=1,\ldots,s$ : $\delta \mid n_1,\ldots, \delta \mid n_s$. From (iii), we deduce $\delta \mid d$. As $\delta \Z \subset d\Z$, $d \mid \delta$, with $d\geq 0, \delta \geq 0$. Consequently, $d = \delta$ and  $n_1\Z+\cdots+n_s\Z =d\, \Z, d\geq 0$, so $d =\mathrm{gcd}(n_1,\ldots,n_s) $.
 
-At last, as $n_1\Z+\cdots+n_s\Z = d\, \Z$, there exist integers  $m_1,m_2,\cdots,m_s$ such that $n_1m_1+n_2m_2+\cdots+n_sm_s = d$.
+At last, as $n_1\Z+\cdots+n_s\Z = d\, \Z$, there exist integers  $m_1,m_2,\ldots,m_s$ such that $n_1m_1+n_2m_2+\cdots+n_sm_s = d$.
 \end{proof}
 
 \paragraph{Ex. 1.14} 
@@ -417,32 +415,32 @@ At last, as $n_1\Z+\cdots+n_s\Z = d\, \Z$, there exist integers  $m_1,m_2,\cdots
 }
 
 \begin{proof}
-Let $a_1,a_2,\cdots, a_r \in \Z$.
+Let $a_1,a_2,\ldots, a_r \in \Z$.
 
-Note $\mathrm{gcd}(a_1,a_2,\cdots,a_r) = a_1\wedge a_2\wedge \cdots \wedge a_r$. The following result generalizes Ex. 6 :
+Note $\mathrm{gcd}(a_1,a_2,\ldots,a_r) = a_1\wedge a_2\wedge \cdots \wedge a_r$. The following result generalizes Ex. 6 :
 
-$$\exists (x_1,x_2,\cdots,x_r)\in \Z^r, \  a_1x_1+a_2x_2+\cdots + a_rx_r = c\iff a_1\wedge a_2\wedge \cdots \wedge a_r \mid c.$$
+$$\exists (x_1,x_2,\ldots,x_r)\in \Z^r, \  a_1x_1+a_2x_2+\cdots + a_rx_r = c\iff a_1\wedge a_2\wedge \cdots \wedge a_r \mid c.$$
 Let $d = a_1\wedge a_2\wedge \cdots \wedge a_r$.
 
-$\bullet$ If $a_1x_1+a_2x_2+\cdots + a_rx_r = c$, as $d\mid a_1,\cdots,d\mid a_r$, $d \mid a_1x_1+a_2x_2+\cdots + a_rx_r = c$.
+$\bullet$ If $a_1x_1+a_2x_2+\cdots + a_rx_r = c$, as $d\mid a_1,\ldots,d\mid a_r$, $d \mid a_1x_1+a_2x_2+\cdots + a_rx_r = c$.
 
 $\bullet$ Reciprocaly, if $d \mid c$, then $c = d c', c' \in \Z$.
 
-As $d\Z = a_1\Z+a_2\Z+\cdots+a_r\Z$, so $d = a_1 m_1+a_2m_2+\cdots+a_rm_r,\ m_1,m_2,\cdots,m_r \in \Z$.
-$c = dc' = a_1(m_1c')+\cdots a_r(m_rc') = a_1x_1+\cdots + a_r x_r$, where $x_i = m_ic',i=1,2,\cdots,r$.
+As $d\Z = a_1\Z+a_2\Z+\cdots+a_r\Z$, so $d = a_1 m_1+a_2m_2+\cdots+a_rm_r,\ m_1,m_2,\ldots,m_r \in \Z$.
+$c = dc' = a_1(m_1c')+\cdots a_r(m_rc') = a_1x_1+\cdots + a_r x_r$, where $x_i = m_ic',i=1,2,\ldots,r$.
 \end{proof}
+
 \paragraph{Ex. 1.15}
 
-{\it Prove that $a \in \Z$ is the square of another integer iff
-$\mathrm{ord}_p(a)$ is even for all primes $p$.  Give a generalization.
+{\it Prove that $a \in \Z$ is the square of another integer iff $\mathrm{ord}_p(a)$ is even for all primes $p$.  Give a generalization.
 }
 
 \begin{proof}
- Suppose $a = b^2, b\in \Z$. Then $\mathrm{ord}_p(a) = 2 \mathrm{ord}_p(b)$ is even for all primes $p$.
+ Suppose $a = b^2, b\in \Z$. Then $\mathrm{ord}_p(a) = 2\, \mathrm{ord}_p(b)$ is even for all primes $p$.
 
- Reciprocally, suppose that $\mathrm{ord}_p(a)$ is even for all primes $p$. We must also suppose $a\geq 0$. Let $a =  \prod\limits_p p^{a(p})$ the decomposition of $a$ in primes. As $a(p)$ is even, $a(p) = 2 b(p)$ for an integer $b(p)$ function of the prime $p$. Let $b =  \prod\limits_p p^{b(p)}$. Then $a = b^2$.
+ Reciprocally, suppose that $\mathrm{ord}_p(a)$ is even for all primes $p$. We must also suppose $a> 0$. Let $a =  \prod\limits_p p^{a(p})$ the decomposition of $a$ in primes. As $a(p)$ is even, $a(p) = 2 b(p)$ for an integer $b(p)$ function of the prime $p$. Let $b =  \prod\limits_p p^{b(p)}$. Then $a = b^2$.
  
- With a similar demonstration, we obtain the following generalization for each integer $a \in \Z, a\geq 0$ :
+ With a similar demonstration, we obtain the following generalization for each integer $a \in \Z, a > 0$ :
  
  $a = b^n$ for an integer $b \in \Z$ iff $n \mid \mathrm{ord}_p(a)$ for all primes $p$.
 \end{proof}
@@ -453,7 +451,7 @@ $\mathrm{ord}_p(a)$ is even for all primes $p$.  Give a generalization.
 }
 
 \begin{proof}
-Here $u,v \in \N$, where $\N = \{0,1,2,\cdots\}$.
+Here $u,v \in \N$, where $\N = \{0,1,2,\ldots\}$.
 
 For all primes $p$ such that $p \mid u$, $\mathrm{ord}_p(u) + \mathrm{ord}_p(v) = 2\  \mathrm{ord}_p(a)$.
 As $u\wedge v = 1$ and $p\mid u$, $p \nmid v$, so $\mathrm{ord}_p(v) =0$. Consequently, $\mathrm{ord}_p(u) $ is even for all prime $p$ such that $p \mid u$. From Exercise 1.15, we can conclude that $u$ is a square. Similarly, $v$ is a square.
@@ -461,8 +459,7 @@ As $u\wedge v = 1$ and $p\mid u$, $p \nmid v$, so $\mathrm{ord}_p(v) =0$. Conseq
 
 \paragraph{Ex. 1.17}
 
-{\it Prove that the square root of 2 is irrational, i.e., that there is no rational number
-$r = a/b$ such that $r^2 = 2$.
+{\it Prove that the square root of 2 is irrational, i.e., that there is no rational number $r = a/b$ such that $r^2 = 2$.
 }
 
 \begin{proof}
@@ -496,9 +493,7 @@ Conclusion : if $m \geq 0$ is not the $n$-th power of an integer, $\sqrt[n]{m}$ 
 
 \paragraph{Ex. 1.19}
 
-{\it Define the least common multiple of two integers $a$ and $b$ to be an integer $m$ such that
-$a \mid m$, $b \mid m$, and $m$ divides every common multiple of $a$ and $b$. Show that such an $m$
-exists. It is determined up to sign. We shall denote it by $[a, b]$.
+{\it Define the least common multiple of two integers $a$ and $b$ to be an integer $m$ such that $a \mid m$, $b \mid m$, and $m$ divides every common multiple of $a$ and $b$. Show that such an $m$ exists. It is determined up to sign. We shall denote it by $[a, b]$.
 }
 
 \begin{proof}
@@ -519,7 +514,7 @@ exists. It is determined up to sign. We shall denote it by $[a, b]$.
   
   $(\Leftarrow)$ Suppose that $m$ verifies  (i),(ii),(iii). Let $m'$ such that $a\Z \cap b \Z = m' \,\Z, m'\geq 0$. We show that $m=m'$.
   
-  As $m' \in a \Z \cap b \Z, a \mid m', b \mid m'$, so from (iii) $m \mid m'$. From (ii), we see that $m \in a \Z \cap b\Z = m' \Z$, so $m' \mid m, m\geq 0, m' \geq 0$. The conclusion is $m=m'$ and $a\Z \cap b \Z = m \Z, m\geq 0$, so $m = a \wedge b$.
+  As $m' \in a \Z \cap b \Z, a \mid m', b \mid m'$, so from (iii) $m \mid m'$. From (ii), we see that $m \in a \Z \cap b\Z = m' \Z$, so $m' \mid m, m\geq 0, m' \geq 0$. The conclusion is $m=m'$ and $a\Z \cap b \Z = m \Z, m\geq 0$, so $m = a \vee b$.
 \end{proof}
 
 \paragraph{Ex. 1.20}
@@ -553,12 +548,12 @@ $$a \wedge b = \prod\limits_p p^{\min(a(p),b(p))}.$$
 As $\max(a,b) + \min(a,b) = a +b$, we obtain
 $$(a \vee b)(a \wedge b) = \vert ab \vert.$$
 
-second proof (without decompositions in primes) :
+Second proof (without decompositions in primes) :
 
 
 Let $d = a \wedge b$. If $d = 0$, then $a=b= 0$ and $(a\vee b) (a \wedge b) = ab$.
 
-Suppose now that $d \neq 0$. There exists integers $a',b'$ such that $$a = da',b = d b', a' \wedge b' = 1.$$
+Suppose now that $d \neq 0$. There exist integers $a',b'$ such that $$a = da',b = d b', a' \wedge b' = 1.$$
 
 Let $m = da'b'$ : 
 $a = da' \mid m$ and $b = db' \mid m$. If $\mu$ is a common multiple of $a$ and $b$, then $d \mid \mu$, and $a' \mid \mu/d, b' \mid \mu/d$. As $a'\wedge b' = 1$, $a'b' \mid \mu/d$ (see Ex.1.9). so $m = da'b' \mid \mu$.
@@ -583,8 +578,8 @@ $\vert m \vert$ verifies the characterization of lcm (Ex. 1.19), so $a\vee b = \
  \end{align*}
  As $a'^2\wedge b'^2 = 1$, $\delta \mid d(a'^2 \wedge b'^2) =d$, so $\delta \mid a, \delta \mid b$.
 
-the set of divisors of $a,b$ is the same that the set of divisors of $a+b,a\vee b$, so
-$$(a+b , a \vee b) = a \wedge b.$$
+The set of divisors of $a,b$ is the same that the set of divisors of $a+b,a\vee b$, so
+$$(a+b ) \wedge( a \vee b) = a \wedge b.$$
 \end{proof}
 
 \section{Chapter 2}
@@ -593,12 +588,11 @@ $$(a+b , a \vee b) = a \wedge b.$$
 \paragraph { Ex 2.1} 
 
 
-{\it Show that $k[x]$, with $k$ a finite field, has infinitely many
-irreducible polynomials.
+{\it Show that $k[x]$, with $k$ a finite field, has infinitely many irreducible polynomials.
 }
 
 \begin{proof}
-Suppose that the set $S$ of irreducible polynomials is finite : $S = \{P_1,P_2,\cdots,P_n\}$. 
+Suppose that the set $S$ of irreducible polynomials is finite : $S = \{P_1,P_2,\ldots,P_n\}$. 
 
 Let $Q = P_1P_2\cdots P_n + 1$. As $S$ contains the polynomials $x-a,a \in k$, $\deg(Q) \geq  q=\vert k \vert >1$. Thus $Q$ is divisible by an irreducible polynomial. As $S$ contains all the irreducible polynomials, there exists $i, 1\leq i \leq n$, such that $P_i \mid Q = P_1P_2\cdots P_n + 1$, so $P_i \mid 1$, and $P_i$ is an unit, in contradiction with the irreducibility of $P_i$.
 
@@ -607,7 +601,7 @@ Conclusion : $k[x]$ has  infinitely many irreducible polynomials. As each polyno
 
 \paragraph{Ex. 2.2.}
 
-{\it Let $p_1,p_2,\cdots,p_t \in \Z$ be primes and consider the set of all rational numbers $r = a/b,\ a,b\in \Z$, such that $\ord_{p_i} a\geq \ord_{p_i}b$ for $i=1,2,\cdots,t$. Show that this set is a ring and that up to taking associates $p_1,p_2,\cdots,p_t$ are the only primes.
+{\it Let $p_1,p_2,\ldots,p_t \in \Z$ be primes and consider the set of all rational numbers $r = a/b,\ a,b\in \Z$, such that $\ord_{p_i} a\geq \ord_{p_i}b$ for $i=1,2,\ldots,t$. Show that this set is a ring and that up to taking associates $p_1,p_2,\ldots,p_t$ are the only primes.
 }
 
 \begin{proof}
@@ -620,26 +614,26 @@ $\bullet$ if $r,r' \in R$, $r = p/q, r' = p'/q'$, with $q \wedge p_1p_2\cdots p_
 
 Thus $R$ is a subring of $\Q$.
 
-If $r=a/b \in R$ is an unit of $R$, then $b/a \in R$, so $\ord_{p_i}a = \ord_{p_i}(b), \ i= 1,\cdots,t$. After simplification, $r = p/q$, with $p \wedge p_1\cdots p_t=1, q \wedge p_1\cdots p_t = 1$, and such rationals are all units.
+If $r=a/b \in R$ is an unit of $R$, then $b/a \in R$, so $\ord_{p_i}a = \ord_{p_i}(b), \ i= 1,\ldots,t$. After simplification, $r = p/q$, with $p \wedge p_1\cdots p_t=1, q \wedge p_1\cdots p_t = 1$, and such rationals are all units.
 
-$p_i, 1\leq i \leq t$ is a prime : if $p_i \mid rs$ in $R$, where $r=a/b,s = c/d \in R$, then there exists $u = e/f \in R$ such that $rs = p_i u$, with $b,d,e$ relatively prime with $p_1,\cdots,p_t$. Then $ac f= p_i bde$. As $p_i\wedge f=1$, $p_i$ divides $a$ or $c$ in $\Z$, so $p_i$ divides $r$ or $s$ in $R$.
+$p_i, 1\leq i \leq t$, is a prime : if $p_i \mid rs$ in $R$, where $r=a/b,s = c/d \in R$, then there exists $u = e/f \in R$ such that $rs = p_i u$, with $b,d,e$ relatively prime with $p_1,\ldots,p_t$. Then $ac f= p_i bde$. As $p_i\wedge f=1$, $p_i$ divides $a$ or $c$ in $\Z$, so $p_i$ divides $r$ or $s$ in $R$.
 
-If $r = a/b \in R$, with $b\wedge p_1\cdots p_r=1$, $a  = p_1^{k_1}\cdots p_t^{k_t} v, v \in \Z, k_i\geq 0, i=1,\cdots,t$. So $r = u p_1^{k_1}\cdots p_t^{k_t} $, where $u = v/b$ is an unit.
+If $r = a/b \in R$, with $b\wedge p_1\cdots p_r=1$, $a  = p_1^{k_1}\cdots p_t^{k_t} v, v \in \Z, k_i\geq 0, i=1,\ldots,t$. So $r = u p_1^{k_1}\cdots p_t^{k_t} $, where $u = v/b$ is an unit.
 
-Let $\pi$ be any prime in $R$. As any element in $R$, $\pi = u p_1^{k_1}\cdots p_t^{k_t}, k_i\geq 0, u = a/b$ an unit. $u^{-1} \pi = p_1^{k_1}\cdots p_t^{k_t}$, so $\pi \mid p_1^{k_1}\cdots p_t^{k_t}$ (in $R$). As $\pi$ is a prime in $R$, $\pi \mid p_i$ for an index $i=1,\cdots,t$. Moreover $p_i \mid p$, so $p_i$ and $\pi$ are associate.
+Let $\pi$ be any prime in $R$. As any element in $R$, $\pi = u p_1^{k_1}\cdots p_t^{k_t}, k_i\geq 0, u = a/b$ an unit. $u^{-1} \pi = p_1^{k_1}\cdots p_t^{k_t}$, so $\pi \mid p_1^{k_1}\cdots p_t^{k_t}$ (in $R$). As $\pi$ is a prime in $R$, $\pi \mid p_i$ for an index $i=1,\ldots,t$. Moreover $p_i \mid p$, so $p_i$ and $\pi$ are associate.
 
-Conclusion: the primes in $R$ are the associates of $p_1,\cdots,p_t$.
+Conclusion: the primes in $R$ are the associates of $p_1,\ldots,p_t$.
 \end{proof}
 
 \paragraph{Ex. 2.3}
 
 {\it Use the formula for $\phi(n)$ to give a proof that there are infinitely many primes.
 
-[Hint: If $p_1,p_2,\cdots,p_t$ were all the primes, then $\phi(n) = 1$, where $n=p_1p_1\cdots p_t$.]
+[Hint: If $p_1,p_2,\ldots,p_t$ were all the primes, then $\phi(n) = 1$, where $n=p_1p_1\cdots p_t$.]
 }
 
 \begin{proof}
-Let $\{p_1,\cdots,p_t\}$ the finite set of primes,with $p_1<p_2\cdots<p_t$, and $n=p_1\cdots p_t$. By dŽfinition, $\phi(n)$ is the number of integers $k, 1\leq k \leq n$, such that $k\wedge n =1$. From the existence of decomposition in primes, if $k\geq 1$,  $k = p_1^{k_1}\cdots p_t^{k_t}$, where $k_i\geq 0, i=1,\cdots t$. So $k\wedge n = 1$ if and only if $k=1$. Thus $\phi(n)=1$ The formula for $\phi(n)$ gives
+Let $\{p_1,\cdots,p_t\}$ the finite set of primes,with $p_1<p_2<\cdots<p_t$, and $n=p_1\cdots p_t$. By dŽfinition, $\phi(n)$ is the number of integers $k, 1\leq k \leq n$, such that $k\wedge n =1$. From the existence of decomposition in primes, if $k\geq 1$,  $k = p_1^{k_1}\cdots p_t^{k_t}$, where $k_i\geq 0, i=1,\ldots, t$. So $k\wedge n = 1$ if and only if $k=1$. Thus $\phi(n)=1$ The formula for $\phi(n)$ gives
 $\phi(n) = (p_1-1)\cdots(p_t-1)=1$. As $p_i\geq 2$, this equation implies that  $p_1 = p_2 = \cdots = p_t=2$, so $t=1$, and the only prime number is 2. But 3 is also a prime number : this is a contradiction. 
 
 Conclusion : there are infinitely many prime numbers.
@@ -647,8 +641,7 @@ Conclusion : there are infinitely many prime numbers.
 
 \paragraph{Ex. 2.4}
 
-{\it If $a$ is a nonzero integer, then for $n > m$ show that $(a^{2^n} + 1, a^{2^m} + 1) = 1$ or $2$
-depending on whether $a$ is odd or even.
+{\it If $a$ is a nonzero integer, then for $n > m$ show that $(a^{2^n} + 1, a^{2^m} + 1) = 1$ or $2$ depending on whether $a$ is odd or even.
 }
 
 \begin{proof}
@@ -679,9 +672,7 @@ The application $\varphi : \N \to \N, n \mapsto p_n$ is injective (one to one), 
 
 \paragraph{Ex. 2.6}
 
-{\it For a rational number $r$ let $\lfloor r \rfloor$ be the largest integer less than
-or equal to $r$, e.g., $\left \lfloor \frac{1}{2}\right \rfloor = 0$, $\lfloor 2\rfloor = 2$, and $\left \lfloor 3+\frac{1}{3} \right \rfloor=
-3$. Prove $\ord_p\,  n! =\left  \lfloor \frac{n}{p} \right \rfloor+\left  \lfloor \frac{n}{p^2} \right \rfloor+\left  \lfloor \frac{n}{p^3} \right \rfloor \cdots$.
+{\it For a rational number $r$ let $\lfloor r \rfloor$ be the largest integer less than or equal to $r$, e.g., $\left \lfloor \frac{1}{2}\right \rfloor = 0$, $\lfloor 2\rfloor = 2$, and $\left \lfloor 3+\frac{1}{3} \right \rfloor=3$. Prove $\ord_p\,  n! =\left  \lfloor \frac{n}{p} \right \rfloor+\left  \lfloor \frac{n}{p^2} \right \rfloor+\left  \lfloor \frac{n}{p^3} \right \rfloor \cdots$.
 }
 
 \begin{proof}
@@ -702,8 +693,7 @@ Note that $\left \lfloor \frac{n}{p^{k}}\right \rfloor = 0$ if $p^k >n$, so this
 
 \paragraph{Ex. 2.7}
 
-{\it Deduce from Ex. 2.6 that $\ord_p n! \leq n/(p - 1)$ and that
-$\sqrt[n]{n!} \leq \prod_{p \leq n} p^{1/(p-1)}$.
+{\it Deduce from Ex. 2.6 that $\ord_p n! \leq n/(p - 1)$ and that $\sqrt[n]{n!} \leq \prod_{p \leq n} p^{1/(p-1)}$.
 }
 
 (The original statement $\prod_{p \mid n} p^{1/(p-1)}$ was modified.)
@@ -742,7 +732,7 @@ Yet  $\lim\limits_{n\to \infty} \sqrt[n]{n!}  = + \infty$. Indeed
 \end{align*}
 As $\ln$ is an increasing fonction, 
 \begin{align*}
-\int_{i-1}^i \ln t\, \D t &\leq \ln i, \ i=2,3,\cdots,n
+\int_{i-1}^i \ln t\, \D t &\leq \ln i, \ i=2,3,\ldots,n
 \end{align*}
 So
 \begin{align*}
@@ -759,13 +749,11 @@ So there exists $n$ such that $\sqrt[n]{n!} \geq C$ : this is a contradiction. $
 
 \paragraph{Ex. 2.9}
 
-{\it A function on the integers is said to be multiplicative if $f(ab) =
-f(a)f(b)$. whenever $(a, b) = 1$. Show that a multiplicative function
-is completely determined by its value on prime powers.
+{\it A function on the integers is said to be multiplicative if $f(ab) =f(a)f(b)$. whenever $(a, b) = 1$. Show that a multiplicative function is completely determined by its value on prime powers.
 }
 
 \begin{proof}
-Let the decomposition of $n$ in prime factors be $n =p_1^{k_1}\cdots p_t^{k_t}, p_1< \cdots<p_t$. As $p_i^{k_i} \wedge p_j^{k_j}=1$ for $i\ne j,\ i,j = 1,\cdots,t$,
+Let the decomposition of $n$ in prime factors be $n =p_1^{k_1}\cdots p_t^{k_t}, p_1< \cdots<p_t$. As $p_i^{k_i} \wedge p_j^{k_j}=1$ for $i\ne j,\ i,j = 1,\ldots,t$,
 $$f(n) =f(p_1^{k_1}\cdots p_t^{k_t})=f(p_1^{k_1})\cdots f(p_t^{k_t})$$
 (by induction on the number of prime factors.)
 
@@ -774,8 +762,7 @@ So $f(n)$ is completely determined by its value on prime powers.
 
 \paragraph{Ex. 2.10}
 
-{\it If $f(n)$ is a multiplicative function, show that the function $g(n) =
-\sum_{d \mid n} f(d)$ is also multiplicative.
+{\it If $f(n)$ is a multiplicative function, show that the function $g(n) = \sum_{d \mid n} f(d)$ is also multiplicative.
 }
 
 \begin{proof}
@@ -797,20 +784,19 @@ $g$ is a multiplicative function.
 
 \paragraph{Ex. 2.11}
 
-{\it Show that $\phi(n) = n \sum_{d\mid n}\mu(d)/d$ by first proving that
-$\mu(d)/d$ is multiplicative and then using Ex. 2.9 and 2.10.
+{\it Show that $\phi(n) = n \sum_{d\mid n}\mu(d)/d$ by first proving that $\mu(d)/d$ is multiplicative and then using Ex. 2.9 and 2.10.
 }
 
 \begin{proof}
 Let's verify that $\mu$ is a multiplicative function.
 
-If $n\wedge m = 1$, then $ n = p_1^{a_1}\cdots p_l^{a_l}, m= q_1^{b_1}\cdots q_r^{b_r}$, where $p_1,\cdots,p_l, q_1,\cdots q_r$ are distinct primes. Then the decomposition in prime factors of $nm$ is  $nm = p_1^{a_1}\cdots p_l^{a_l} q_1^{b_1}\cdots q_r^{b_r}$. If one of the $a_i$ or one of the $b_j$ is greater than 1, then $\mu(nm) = 0 = \mu(n)\mu(m)$. Otherwise, $n = p_1\cdots p_l, m = q_1\cdots q_r, nm = p_1\cdots p_l q_1\cdots q_r$, and $\mu(nm) = (-1)^{l+r} = (-1)^l(-1)^r = \mu(n)\mu(m)$. So
+If $n\wedge m = 1$, then $ n = p_1^{a_1}\cdots p_l^{a_l}, m= q_1^{b_1}\cdots q_r^{b_r}$, where $p_1,\ldots,p_l, q_1,\ldots q_r$ are distinct primes. Then the decomposition in prime factors of $nm$ is  $nm = p_1^{a_1}\cdots p_l^{a_l} q_1^{b_1}\cdots q_r^{b_r}$. If one of the $a_i$ or one of the $b_j$ is greater than 1, then $\mu(nm) = 0 = \mu(n)\mu(m)$. Otherwise, $n = p_1\cdots p_l, m = q_1\cdots q_r, nm = p_1\cdots p_l q_1\cdots q_r$, and $\mu(nm) = (-1)^{l+r} = (-1)^l(-1)^r = \mu(n)\mu(m)$. So
 $$\frac{\mu(nm)}{nm} = \frac{\mu(n)}{n} \frac{\mu(m)}{m}.$$
 that is, $n \mapsto \frac{\mu(n)}{n}$ is a multiplicative function.
 
 From Ex.2.10, $n \mapsto \sum_{d\mid n} \frac{\mu(d)}{d}$ is also a multiplicative function, and so is $\psi$, where $\psi$ is defined by
 $$\psi(n) = n \sum_{d\mid n} \frac{\mu(d)}{d}.$$
-To verify the equality $\phi = \psi$, it is suffisant from Ex. 2.9 to verify $\phi(p^k) = \psi(p^k)$ for all prime powers $p^k, k\geq 1$ ($\phi(1) = \psi(1) = 1$).
+To verify the equality $\phi = \psi$, it is sufficient from Ex. 2.9 to verify $\phi(p^k) = \psi(p^k)$ for all prime powers $p^k, k\geq 1$ ($\phi(1) = \psi(1) = 1$).
 \begin{align*}
 \psi(p^k) &= p^k \sum_{d\mid p^k } \frac{\mu (p^k)}{p^k}\\
 &=p^k \left(\frac{\mu(1)}{1}+\frac{\mu(p)}{p}\right)
@@ -824,8 +810,7 @@ $$\phi(n) =  n \sum_{d\mid n} \frac{\mu(d)}{d}.$$
 
 \paragraph{Ex. 2.12}
 
-{\it Find formulas for $\sum_{d\mid n} \mu(d)\phi(d)$, $\sum_{d \mid n}
-\mu(d)^2\phi(d)^2$, and $\sum_{d\mid n} \mu(d)/\phi(d)$.
+{\it Find formulas for $\sum_{d\mid n} \mu(d)\phi(d)$, $\sum_{d \mid n} \mu(d)^2\phi(d)^2$, and $\sum_{d\mid n} \mu(d)/\phi(d)$.
 }
 
 \begin{proof}
@@ -851,8 +836,7 @@ H(p^k) &=  \sum_{i=0}^k \mu(p^i)/\phi(p^i)\\
 
 \paragraph{Ex. 2.13}
 
-{\it Let $\sigma_k(n) = \sum_{d\mid n} d^k$ . Show that $\sigma_k(n)$ is
-multiplicative and find a formula for it.
+{\it Let $\sigma_k(n) = \sum_{d\mid n} d^k$ . Show that $\sigma_k(n)$ is multiplicative and find a formula for it.
 }
 
 \begin{proof}
@@ -894,7 +878,7 @@ Suppose that $n\wedge m = 1$. If $d\mid n, d'\mid m$, so $\delta = dd' \mid nm$,
 &=\sum_{d\mid n} f(d)g\left(\frac{n}{d}\right)\sum_{d'\mid m} f(d') g\left(\frac{m}{d'}\right)\\
 &=(f\circ g)(n)(f\circ g)(m)
 \end{align*}
-Applying this result with $g = \mu$, we obtain that $h(n) = \sum_{d \mid n} \mu(n/d)f(d)$ is multiplicative, if $f$ is multiplicative.
+Applying this result with $g = \mu$, we obtain that $n\mapsto h(n) = \sum_{d \mid n} \mu(n/d)f(d)$ is multiplicative, if $f$ is multiplicative.
 \end{proof}
 
 \paragraph{Ex. 2.15}
@@ -925,7 +909,7 @@ $$ n= \mathrm{Id}(n) =  \sum_{d\mid n} \mu(n/d) \sigma(d).$$
 \begin{proof}
 $\bullet$ If $n=a^2$ is a square, where $a = p_1^{k_1}\cdots p_t^{k_t}$, then $\nu(n) = (2k_1+1)\cdots(2k_t+1)$ is odd.
 
-$\bullet$ Reciprocally, if $n = q_1^{l_1}\cdots q_r^{l_r}$ is odd, then $(l_1 +1)\cdots(l_r+1)$ is odd. So each $l_i+1$ is odd, and then $l_i$ is even, for $i=1,2,\cdots,r$ : $n$ is a square.
+$\bullet$ Reciprocally, if $n = q_1^{l_1}\cdots q_r^{l_r}$ is odd, then $(l_1 +1)\cdots(l_r+1)$ is odd. So each $l_i+1$ is odd, and then $l_i$ is even, for $i=1,2,\ldots,r$ : $n$ is a square.
 \end{proof}
 
 \paragraph{Ex. 2.17}
@@ -942,7 +926,7 @@ So if $n = a^2$, or $n = 2a^2 ,a \in \Z$, $\sigma(n)$ is odd.
 
 $\bullet$ Reciprocally, suppose that $\sigma(n)$ is odd, where $n = p_1^{k_1} p_2^{k_2}\cdots p_t^{k_t}$, with $p_1=2 < p_2 < \cdots < p_t$. 
 Then $$\sigma(n) = (2^{k_1+1} - 1) \frac{p_2^{k_2+1} - 1}{p_2-1} \cdots  \frac{p_t^{k_t+1} - 1}{p_t-1}$$
-is odd. Then each $\frac{p_i^{k_i+1} - 1}{p_i-1} = 1+p_i + \cdots+p_i^{k_i}\ (i=2,\cdots,t)$ is odd. As each $p_i^j, j=0,\cdots,k_i$ is odd, the number of terms $k_i+1$ is odd, so $k_i$ is even ($i = 2,\cdots,t$). Thus $n$ is a square, or twice a square.
+is odd. Then each $\frac{p_i^{k_i+1} - 1}{p_i-1} = 1+p_i + \cdots+p_i^{k_i}\ (i=2,\cdots,t)$ is odd. As each $p_i^j, j=0,\ldots,k_i$ is odd, the number of terms $k_i+1$ is odd, so $k_i$ is even ($i = 2,\ldots,t$). Thus $n$ is a square, or twice a square.
 \end{proof}
 
 \paragraph{Ex. 2.18}
@@ -1018,8 +1002,7 @@ $$\prod_{d \mid n} d = n^{\frac{\nu(n)}{2}}.$$
 
 \paragraph{Ex. 2.21}
 
-{\it Define $\land(n) = \log p$ if $n$ is a power of $p$ and zero
-otherwise. Prove that $\sum_{d \mid n} \mu(n/d)\log d = \land (n)$. [Hint: First calculate $\sum_{d \mid n} \land(d)$ and then apply the Mšbius inversion formula.]
+{\it Define $\land(n) = \log p$ if $n$ is a power of $p$ and zero otherwise. Prove that $\sum_{d \mid n} \mu(n/d)\log d = \land (n)$. [Hint: First calculate $\sum_{d \mid n} \land(d)$ and then apply the Mšbius inversion formula.]
 }
 
 \begin{proof}
@@ -1031,9 +1014,9 @@ $$
 \end{array}
 \right.
 $$
-Let $n = p_1^{\alpha_1}\cdots p_t^{\alpha_t}$ the decomposition of $n$ in prime factors. As $\land(d) = 0$ for all divisors of $n$, except $d = p_j^i, i>0, j=1,\cdots t$,
+Let $n = p_1^{\alpha_1}\cdots p_t^{\alpha_t}$ the decomposition of $n$ in prime factors. As $\land(d) = 0$ for all divisors of $n$, except for $d = p_j^i, i>0, j=1,\ldots t$,
 \begin{align*}
-\sum_{d \mid n} \land(d)&= \sum_{i=1}^{\alpha_1} \land(p_1^{i}) + \cdots+ \sum_{i=1}^{\alpha_t} \land(p_t^{i}) 
+\sum_{d \mid n} \land(d)&= \sum_{i=1}^{\alpha_1} \land(p_1^{i}) + \cdots+ \sum_{i=1}^{\alpha_t} \land(p_t^{i})\\ 
 &= \alpha_1 \log p_1+\cdots + \alpha_t \log p_t\\
 &= \log n
 \end{align*}
@@ -1043,14 +1026,13 @@ $$\land(n) = \sum_{d \mid n} \mu\left (\frac{n}{d}\right ) \log d.$$
 
 \paragraph{Ex. 2.22}
 
-{\it Show that the sum of all the integers $t$ such that $1 \leq t \leq n$ and $(t,
-n) = 1$ is $\frac{1}{2} n \phi(n)$.
+{\it Show that the sum of all the integers $t$ such that $1 \leq t \leq n$ and $(t, n) = 1$ is $\frac{1}{2} n \phi(n)$.
 }
 
 \begin{proof}
 Suppose $n >1$ (the formula is false if $n=1$).
 
-Let $S = \sum\limits_{1\leq t \leq  n-1, \ t\wedge n =1} t$.
+Let $S = \sum\limits_{1\leq t \leq  n, \ t\wedge n =1} t = \sum\limits_{1\leq t \leq  n-1, \ t\wedge n =1} t$.
 
 Using the symmetry  $t \mapsto n-t$, as $t\wedge n = 1 \iff (n-t) \wedge n = 1$, we obtain
 \begin{align*}
@@ -1064,14 +1046,12 @@ Using the symmetry  $t \mapsto n-t$, as $t\wedge n = 1 \iff (n-t) \wedge n = 1$,
 \end{align*} 
 
 Conclusion : 
-$$\forall n \in \N^*, \ \sum_{1\leq t \leq  n-1, \ t\wedge n =1} t = \frac{1}{2} n \phi(n).$$
+$$\forall n \in \N^*, \ \sum_{1\leq t \leq  n, \ t\wedge n =1} t = \frac{1}{2} n \phi(n).$$
 \end{proof}
 
 \paragraph{Ex. 2.23}
 
-{\it Let $f(x) \in \Z[x]$ and let $\psi(n)$ be the number of $f(j), j = 1,2, \ldots, n$,
-such that $(f(j), n) = 1$. Show that $\psi(n)$ is multiplicative and that
-$\psi(p^t) = p^{t-1} \psi(p)$. Conclude that $\psi(n) = n \prod_{p|n} \psi(p)/p$.
+{\it Let $f(x) \in \Z[x]$ and let $\psi(n)$ be the number of $f(j), j = 1,2, \ldots, n$, such that $(f(j), n) = 1$. Show that $\psi(n)$ is multiplicative and that $\psi(p^t) = p^{t-1} \psi(p)$. Conclude that $\psi(n) = n \prod_{p|n} \psi(p)/p$.
 }
 
 \begin{proof}
@@ -1106,7 +1086,7 @@ $$
 
 $\bullet$ $\varphi$ is well defined : $[j]_{nm} = [k]_{nm} \Rightarrow j\equiv k \pmod {nm} \Rightarrow (j\equiv k \pmod {n}, j\equiv k \pmod {m}) \Rightarrow ([j]_n,[j]_m) =( [k]_n,[k]_m)$.
 
-$\bullet$ $\varphi$ is injective : if $\varphi([j]_{nm}) = \varphi([k]_{nm})$, then $[j]_n = [k]_n, [j]_m=[k]n$, so $n\mid j-k, m\mid j-k$. As $n\wedge m = 1, nm \mid j-k$ so $[j]_{nm} = [k]_{nm}$.
+$\bullet$ $\varphi$ is injective : if $\varphi([j]_{nm}) = \varphi([k]_{nm})$, then $[j]_n = [k]_n, [j]_m=[k]_m$, so $n\mid j-k, m\mid j-k$. As $n\wedge m = 1, nm \mid j-k$ so $[j]_{nm} = [k]_{nm}$.
 
 $\bullet$ $\varphi$ is surjective : if $ (a,b) \in B_n\times B_m$, there exist $ j,k \in \Z, 1\leq j \leq n, 1 \leq j \leq m$, such that $a = [j]_n, b = [k]_n$. From the Chinese Remainder Theorem, there exists $i \in \Z, 1\leq i \leq n$, such that $i \equiv j \pmod n, i \equiv k \pmod m$. Then $\varphi([i]_{nm}) = ([i]_n,[i]_m) = ( [j]_n, [k]_m) = (a,b)$.
 
@@ -1129,7 +1109,7 @@ If $n = \prod_{p \mid n}  p^{t(p)}$, then
 {\it Supply the details to the proof of Theorem 3.
 }
 
-As Adam Michalik, I suppose that there is a misprint : we must prove Theorem 4 :
+As Adam Michalik, I suppose that there is a misprint, we must prove Theorem 4 :
 
 {\it Let $k$ a finite field with $q$ elements.
 
@@ -1165,7 +1145,7 @@ As any finite subset of ${\cal P}$ is included in some ${\cal P}_n$, $\sum\limit
 
 $\bullet$ $\sum q^{-\deg p(x)}$ diverges :
 
-Let ${\cal P}_n = \{p_1,p_2,\cdots,p_{l(n)}\}$ the set of all monic irreducible polynomials such that $\deg p_i \leq n$. Let
+Let ${\cal P}_n = \{p_1,p_2,\ldots,p_{l(n)}\}$ the set of all monic irreducible polynomials such that $\deg p_i \leq n$. Let
 $$\lambda(n) = \prod_{i = 1}^{l(n)} \frac{1}{1-\frac{1}{q^{\deg(p_i)}}}.$$
 For simplicity, we write $l = l(n)$ for a fixed $n \in \N$. Then
 \begin{align*}
@@ -1198,9 +1178,7 @@ Conclusion :  $\sum\limits_{p \in {\cal M}} q^{-\deg p(x)}$ diverges.
 
 \paragraph{Ex. 2.25}
 
-{\it Consider the function $\zeta(s) = \sum_{n=1}^\infty 1/n^s$. $\zeta$
-is called the Riemann zeta function. It converges for $s > 1$. Prove the
-formal identity (Euler's identity) $$\zeta(s) = \prod_p (1-1/p^s)^{-1}.$$
+{\it Consider the function $\zeta(s) = \sum_{n=1}^\infty 1/n^s$. $\zeta$ is called the Riemann zeta function. It converges for $s > 1$. Prove the formal identity (Euler's identity) $$\zeta(s) = \prod_p (1-1/p^s)^{-1}.$$
 }
 
 \begin{proof}
@@ -1224,7 +1202,7 @@ $$ \sum_{i=0}^\infty f(p^i)  \sum_{k=0}^\infty f(q^k) = \sum_{(i,j) \in \N^2} f(
 \begin{align*}
 P(x) & = \prod_{p\leq x }\sum_{k=0}^\infty f(p^k)\\
 &= \sum_{i_1=0}^\infty f(p_1^{i_1})\cdots  \sum_{i_t=0}^\infty f(p_t^{i_t})\\
-&= \sum_{(i_1,\cdots,i_k)\in \N^k} f(p_1^{i_1} \cdots p_t^{i_t})\\
+&= \sum_{(i_1,\ldots,i_k)\in \N^k} f(p_1^{i_1} \cdots p_t^{i_t})\\
 &=\sum_{n\in \Delta} f(n),
 \end{align*}
 where $\Delta$ is the set of integers $n \in \N^*$ whose prime factors are not greater than $x$. Let $\overline{\Delta} = \N^* \setminus \Delta$ : this is the set of numbers $n \in \N^*$ such that at least a prime factor is greater than $x$. So
@@ -1299,7 +1277,7 @@ $$\sum_{n\leq N} \frac{1}{n} \leq \sum_{a \in S, a\leq N}\  \sum_{1\leq b \leq \
 So $$\sum_{a \in S, a\leq N} \frac{1}{a}  \geq \frac{6}{\pi^2} \sum_{n\leq N} \frac{1}{n}.$$
 As $\sum_{n=1}^\infty \frac{1}{n}$ diverges, $\lim\limits_{N \to \infty} \sum\limits_{a \in S, a\leq N} \frac{1}{a} = +\infty$, so the family $\left(\frac{1}{a}\right)_{a\in S}$ of the inverse of square free integers is not summable.
 
-Let $S_N = \prod_{p<N}(1+1/p)$ , and $p_1,p_2,\cdots p_l\ (l = l(N))$ all prime integers less than $N$. Then
+Let $S_N = \prod_{p<N}(1+1/p)$ , and $p_1,p_2,\ldots, p_l\ (l = l(N))$ all prime integers less than $N$. Then
 \begin{align*}
 S_N &= \left(1+\frac{1}{p_1}\right) \cdots \left(1+\frac{1}{p_l}\right)\\
 &=\sum_{(\varepsilon_1,\cdots,\varepsilon_l) \in \{0,1\}^l } \frac{1}{p_1^{\varepsilon_1} \cdots p_l^{\varepsilon_l}}
@@ -1308,9 +1286,9 @@ We prove this last formula  by induction. This is true for $l=1$ : $\sum_{\varep
 
 If it is true for the integer $l$, then 
 \begin{align*}
-\left(1+\frac{1}{p_1}\right) \cdots \left(1+\frac{1}{p_l}\right)\left(1+\frac{1}{p_{l+1}}\right) &= \sum_{(\varepsilon_1,\cdots,\varepsilon_l) \in \{0,1\}^l } \frac{1}{p_1^{\varepsilon_1} \cdots p_l^{\varepsilon_l}} \left(1+\frac{1}{p_{l+1}}\right)\\
-&=\sum_{(\varepsilon_1,\cdots,\varepsilon_l) \in \{0,1\}^l } \frac{1}{p_1^{\varepsilon_1} \cdots p_l^{\varepsilon_l}} + \sum_{(\varepsilon_1,\cdots,\varepsilon_l) \in \{0,1\}^l } \frac{1}{p_1^{\varepsilon_1} \cdots p_l^{\varepsilon_l}p_{l+1}}\\
-&=\sum_{(\varepsilon_1,\cdots,\varepsilon_l,\varepsilon_{l+1}) \in \{0,1\}^{l+1} } \frac{1}{p_1^{\varepsilon_1} \cdots p_l^{\varepsilon_l}p_{l+1}^{\varepsilon_{l+1}}} 
+\left(1+\frac{1}{p_1}\right) \cdots \left(1+\frac{1}{p_l}\right)\left(1+\frac{1}{p_{l+1}}\right) &= \sum_{(\varepsilon_1,\ldots,\varepsilon_l) \in \{0,1\}^l } \frac{1}{p_1^{\varepsilon_1} \cdots p_l^{\varepsilon_l}} \left(1+\frac{1}{p_{l+1}}\right)\\
+&=\sum_{(\varepsilon_1,\ldots,\varepsilon_l) \in \{0,1\}^l } \frac{1}{p_1^{\varepsilon_1} \cdots p_l^{\varepsilon_l}} + \sum_{(\varepsilon_1,\ldots,\varepsilon_l) \in \{0,1\}^l } \frac{1}{p_1^{\varepsilon_1} \cdots p_l^{\varepsilon_l}p_{l+1}}\\
+&=\sum_{(\varepsilon_1,\ldots,\varepsilon_l,\varepsilon_{l+1}) \in \{0,1\}^{l+1} } \frac{1}{p_1^{\varepsilon_1} \cdots p_l^{\varepsilon_l}p_{l+1}^{\varepsilon_{l+1}}} 
 \end{align*}
 So it is true for all $l$. 
 
@@ -1324,5 +1302,692 @@ $\lim\limits_{N\to \infty} \log S_N = +\infty$ and $\lim\limits_{N\to \infty} l(
 $$\lim_{N\to \infty} \sum_{p<N} \frac{1}{p} = +\infty.$$
 \end{proof}
 
+
+\section{Chapter 3}
+
+{\it \paragraph{Ex. 3.1}
+Show that there are infinitely many primes congruent to $-1$ modulo $6$.
+}
+
+\begin{proof}
+Let $n$ any integer such that $n\geq 3$, and $N = n! -1 =   2 \times 3 \times\cdots\times n - 1 >1$. 
+
+Then $N \equiv -1 \pmod 6$. As $N+2,N+3,N+4$ are composite, every prime factor of $N$ is congruent to $1$ or $-1$ modulo $6$.  If every prime factor of $N$ was congruent to 1, then $N \equiv 1 \pmod 6$ : this is a contradiction because $-1 \not \equiv 1 \pmod 6$.  So there exists a prime factor $p$ of $N$ such that $p\equiv -1 \pmod 6$.
+
+If $p\leq n$, then $p \mid n!$, and $p \mid N = n!-1$, so $p \mid 1$. As $p$ is prime, this is a contradiction, so $p>n$. 
+
+Conclusion :
+
+ for any integer $n$, there exists a prime $p >n$ such that $p \equiv -1 \pmod 6$ : there are infinitely many primes congruent to $-1$ modulo $6$.
+\end{proof}
+
+\paragraph{Ex. 3.2}
+
+{\it Construct addition and multiplication tables for $\Z/5\Z, \Z/8\Z$, and $\Z/10\Z$.
+}
+
+\begin{proof}
+More a latex exercise than a mathematical one.
+
+\medskip
+
+$\Z/5\Z$ :
+
+\medskip
+
+$
+\begin{array}{c|ccccc}
++ & 0 & 1 & 2 & 3 & 4\\ \hline
+0 & 0 & 1 & 2 & 3 & 4\\
+1 & 1 & 2 & 3 & 4 & 0\\
+2 & 2 & 3 & 4 & 0 & 1\\
+3 & 3 & 4 & 0 & 1 & 2\\
+4 & 4 & 0 & 1 & 2 & 3\\
+\end{array}
+$
+\qquad
+$
+\begin{array}{c|ccccc}
+\times & 0 & 1 & 2 & 3 & 4\\ \hline
+0 & 0 & 0 & 0 & 0 & 0\\
+1 & 0 & 1 & 2 & 3 & 4\\
+2 & 0 & 2 & 4 & 1 & 3\\
+3 & 0 & 3 & 1 & 4 & 2\\
+4 & 0 & 4 & 3 & 2 & 1\\
+\end{array}
+$
+
+\bigskip
+
+$\Z/8\Z$:
+
+\medskip
+
+$
+\begin{array}{c|cccccccc}
++ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\ \hline
+0 & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\
+1 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 0\\
+2 & 2 & 3 & 4 & 5 & 6 & 7 & 0 & 1\\
+3 & 3 & 4 & 5 & 6 & 7 & 0 & 1 & 2\\
+4 & 4 & 5 & 6 & 7 & 0 & 1 & 2 & 3\\
+5 & 5 & 6 & 7 & 0 & 1 & 2 & 3 & 4\\
+6 & 6 & 7 & 0 & 1 & 2 & 3 & 4 & 5\\
+7 & 7 & 0 & 1 & 2 & 3 & 4 & 5 & 6\\
+\end{array}
+$
+\qquad
+$
+\begin{array}{c|cccccccc}
+\times & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\ \hline
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+1 & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\
+2 & 0 & 2 & 4 & 6 & 0 & 2 & 4 & 6\\
+3 & 0 & 3 & 6 & 1 & 4 & 7 & 2 & 5\\
+4 & 0 & 4 & 0 & 4 & 0 & 4 & 0 & 4\\
+5 & 0 & 5 & 2 & 7 & 4 & 1 & 6 & 3\\
+6 & 0 & 6 & 4 & 2 & 0 & 6 & 4 & 2\\
+7 & 0 & 7 & 6 & 5 & 4 & 3 & 2 & 1\\
+\end{array}
+$
+\bigskip
+
+$\Z/10\Z$ : 
+
+\medskip
+
+$
+\begin{array}{c|cccccccccc}
++ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\ \hline
+0 & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\
+1 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 0\\
+2 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 0 & 1\\
+3 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 0 & 1 & 2\\
+4 & 4 & 5 & 6 & 7 & 8 & 9 & 0 & 1 & 2 & 3\\
+5 & 5 & 6 & 7 & 8 & 9 & 0 & 1 & 2 & 3 & 4\\
+6 & 6 & 7 & 8 & 9 & 0 & 1 & 2 & 3 & 4 & 5\\
+7 & 7 & 8 & 9 & 0 & 1 & 2 & 3 & 4 & 5 & 6\\
+8 & 8 & 9 & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\
+9 & 9 & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
+\end{array}
+$
+\qquad
+$
+\begin{array}{c|cccccccccc}
+\times & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\ \hline
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+1 & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\
+2 & 0 & 2 & 4 & 6 & 8 & 0 & 2 & 4 & 6 & 8\\
+3 & 0 & 3 & 6 & 9 & 2 & 5 & 8 & 1 & 4 & 7\\
+4 & 0 & 4 & 8 & 2 & 6 & 0 & 4 & 8 & 2 & 6\\
+5 & 0 & 5 & 0 & 5 & 0 & 5 & 0 & 5 & 0 & 5\\
+6 & 0 & 6 & 2 & 8 & 4 & 0 & 6 & 2 & 8 & 4\\
+7 & 0 & 7 & 4 & 1 & 8 & 5 & 2 & 9 & 6 & 3\\
+8 & 0 & 8 & 6 & 4 & 2 & 0 & 8 & 6 & 4 & 2\\
+9 & 0 & 9 & 8 & 7 & 6 & 5 & 4 & 3 & 2 & 1\\
+\end{array}
+$
+
+\bigskip
+
+Python code to generate the latex code to create such an array :
+\begin{verbatim}
+n= 10
+
+print('$')
+ligne = '\\begin{array}{c|'+ n*'c'+'}'
+print(ligne)
+ligne='\\times'
+for j in range(n):
+    ligne += ' & ' + str(j)
+ligne += '\\'
+ligne += '\\'
+ligne += ' \\hline'
+print(ligne)
+for i in range(n):
+    ligne = str(i)
+    for j in range(n):
+        ligne +=' & '+ str((i * j) % n)
+    ligne += '\\'
+    ligne += '\\'
+    print(ligne)
+print('\\end{array}')
+print('$')
+\end{verbatim}
+\end{proof}
+
+{\it \paragraph{Ex. 3.3}
+Let $abc$ be the decimal representation for an integer between $1$ and $1000$. Show that $abc$ is divisible by $3$ iff $a + b + c$ is divisible by $3$. Show that the same result is true if we replace $3$ by $9$. Show that $abc$ is divisible by $11$ iff $a - b + c$ is divisible by $11$.  Generalize to any number written in decimal notation.
+}
+
+\begin{proof}
+Let $n = \overline{abc}$ the decimal representation of $n$. 
+
+As $10 \equiv 1 \pmod 3$, $10^3 \equiv 10^2 \equiv 10 \equiv 1 \pmod 3$, so
+\begin{align*}
+3 \mid n &\iff 10^3 a + 10^2 b + c \equiv 0 \pmod 3\\ 
+&\iff a+b+c \equiv 0 \pmod 3
+& 3 \mid a+b+ c
+\end{align*}
+As $10 \equiv 1 \pmod 9$ the same demonstration is true for the result
+$$9 \mid n \iff 9 \mid a+b+c.$$
+Similarly, $10 \equiv -1 \pmod {11}$, and $10^2 \equiv 1, 10^3 \equiv -1$, so
+\begin{align*}
+11 \mid n &\iff 10^3 a + 10^2 b + c \equiv 0 \pmod 11\\ 
+&\iff a-b+c \equiv 0 \pmod 3
+\end{align*}
+More generally, let $n = \overline{a_la_{l-1}\cdots a_0}$ is the decimal representation of $n$. 
+
+$10^n \equiv 1 \pmod 9$, so
+\begin{align*}
+9 \mid n &\iff \sum_{k=0}^l a_k 10^k \equiv 0 \pmod 9\\
+&\iff \sum_{k=0}^l a_k \equiv 0 \pmod 9\\
+&\iff 9 \mid a_0+a_1+\cdots +a_n
+\end{align*}
+\end{proof}
+
+\paragraph{Ex. 3.4}
+
+{\it Show that the equation $3x^2 + 2 = y^2$ has no solution in integers.
+}
+
+\begin{proof}
+If $3x^2+2 = y^2$, then  $\overline{y}^2 = \overline{2}$ in $\Z/3\Z$.
+
+
+As $\{-1,0,1\}$ is a complete set of residues modulo $3$, the squares in $\Z/3\Z$ are $\overline{0} = \overline{0}^2$ and  $\overline{1} = \overline{1}^2 = (\overline{-1})^2$, so $\overline{2}$ is not a square in $\Z/3\Z$ : $\overline{y}^2 = \overline{2}$ is impossible in $\Z/3\Z$.
+
+Thus $3x^2+2 = y^2$ has no solution in integers.
+\end{proof}
+
+ \paragraph{Ex. 3.5}
+
+{\it Show that the equation $7x^2 + 2 = y^3$ has no solution in integers.
+}
+
+\begin{proof}
+If $7x^2 + 2 = y^3,\ x,y \in \Z$, then $y^3 \equiv 2 \pmod 7$ (so $y \not \equiv 0 \pmod 7$)
+
+From Fermat's Little Theorem, $y^6 \equiv 1 \pmod 7$, so $2^2 \equiv y^6 \equiv 1 \pmod 7$, which implies $7 \mid 2^2-1 = 3$ : this is a contradiction. Thus the equation $7x^2 + 2 = y^3$ has no solution in integers.
+\end{proof}
+
+\paragraph{Ex. 3.6}
+
+{\it Let an integer $n > 0$ be given. A set of integers $a_1, \ldots, a_{\phi(n)}$ is called a reduced residue system modulo $n$ if they are pairwise incongruent modulo $n$ and $(a_i, n) = 1$ for all $i$. If $(a, n) = 1$, prove that $aa_1 , aa_2, \ldots, aa_{\phi(n)}$ is again a reduced residue system modulo $n$.
+}
+
+\begin{proof}
+Let  $a_1, \ldots, a_{\phi(n)}$ a reduced residue system modulo $n$.
+
+$\bullet$ As $a\wedge n = 1$ and $a_i \wedge n=1, \ i=1,2,\ldots,\phi(n)$, then $aa_i \wedge n=1$.
+
+$\bullet$ As $a\wedge n = 1$, there exists $a' \in \Z$ such that $aa'\equiv 1 \pmod n$. then
+$$a a_i \equiv a a_j \Rightarrow a'aa_i \equiv a'au_j \pmod n \Rightarrow a_i \equiv a_j \pmod n.$$
+So $i\neq j \Rightarrow a_i \not \equiv a_j \Rightarrow a a_i \not \equiv a a_j$ :
+
+$aa_1, \ldots, aa_{\phi(n)}$ a reduced residue system modulo $n$.
+
+\medskip
+
+Note that $\{a_1,a_2,\ldots, a_{\phi(n)}\}$ is a reduced residue system modulo $n$  if and only if $\{\overline{a_1},\overline{a_2},\ldots,\overline{a_{\phi(n)}}\} = U(\Z/n\Z)$.
+\end{proof}
+
+\paragraph{Ex. 3.7}
+
+{\it Use Ex. 2.6 to give another proof of Euler's theorem, $a^{\phi(n)} \equiv 1 \pmod n$ for $(a, n) = 1$.
+}
+
+\begin{proof}
+The proof is more clear if we stay in $\Z/n\Z$.
+
+Let $P = \prod\limits_{x \in U(\Z/n\Z)} x$
+
+(if $\{a_1,\ldots,a_{\phi(n)}\}$ is a reduced residue system modulo $n$, then $\overline{P} = \prod\limits_{i=1}^{\phi(n)} a_{i}$.)
+
+Let $a \in \Z$ such that $a \wedge n = 1$, then $b = \overline{a} \in U(\Z/n\Z)$, and
+$$
+\psi \ 
+\left\{
+\begin{array}{ccc}
+ U(\Z/n\Z) &  \to  &   U(\Z/n\Z)  \\
+  x &\mapsto   &bx   
+\end{array}
+\right.
+$$
+
+$\bullet$ $\psi(x) = \psi(x') \Rightarrow bx = bx' \Rightarrow b^{-1} b x = b^{-1} a x' \Rightarrow x = x'$ so $\psi$ is injective.
+
+$\bullet$ Let $y \in U(\Z/n\Z)$. If $x = b^{-1}y$, then $\psi(x) = b b^{-1} y = y$, so $\psi$ is surjective.
+
+$\psi$ is a bijection, so
+
+$$\prod_{x \in U(\Z/n\Z) } bx = \prod_{x \in U(\Z/n\Z) } x,$$
+that is
+$$b^{\phi(n)} \prod_{x \in U(\Z/n\Z) } x = \prod_{x \in U(\Z/n\Z) } x.$$
+As $\prod\limits_{x \in U(\Z/n\Z) } x$ is invertible, 
+$$b^{\phi(n)} = 1.$$
+That is $\overline{a}^{\phi(n)} = 1$ : for all $a\in \Z$, if $a\wedge n = 1$, then $a^{\phi(n)} \equiv 1 \pmod n$. 
+\end{proof}
+
+\paragraph{Ex. 3.8}
+
+{\it Let $p$ be an odd prime. If $k \in \{1, 2, \ldots, p - 1\}$, show that there is a unique $b_k$ in this set such that $kb_k \equiv 1 \pmod p$. Show that $k \ne b_k$ unless $k = 1$ or $k = p - 1$.
+}
+
+\begin{proof}
+$\bullet$ existence. 
+
+As $p$ is prime and $1\leq k \leq p-1$, $k \wedge p= 1$, so there exist $\lambda_k,\mu_k\in \Z $ such that $\lambda_k p + \mu_k k = 1$.
+Let $b_k \in \{0,1,\ldots,p-1\}$ such that $b_k \equiv \mu_k \pmod p$. Then  $k b_k \equiv 1$, and $b_k \not \equiv 0 \pmod p$, so $1\leq b_k \leq p-1$.
+
+$\bullet$ unicity. If $kb_k \equiv kb'_k \pmod p$, where $b_k,b'_k \in \{1,2,\ldots,p-1\}$, then $p \mid k(b'_k-b_k)$, and $p \wedge k = 1$, so $p \mid b'_k-b_k$. $b'_k \equiv b_k$, and $b_k,b'_k \in \{1,2,\ldots,p-1\}$, so $b_k = b'_k$.
+
+If $p$ is a prime number, and $k \in \{1, 2, \ldots, p - 1\}$, there is a unique $b_k$ in $\{1,2,\ldots,p-1\}$ such that $kb_k \equiv 1 \pmod p$.
+
+\medskip
+
+If $k = b_k$, then $k^2 \equiv 1 \pmod p$, so $p \mid (k-1)(k+1)$, and $p$ is a prime, thus $p \mid k-1$ or $p \mid k+1$, that is $k \equiv \pm 1 \pmod p$. 
+As $1 \leq k \leq p-1$, $k = 1$ or $k = p-1$ (and $1^2 \equiv (p-1)^2 \equiv 1 \pmod p$).
+\end{proof}
+
+\paragraph{Ex. 3.9}
+
+{\it Use Ex. 3.8 to prove that $(p - 1)! \equiv -1 \pmod p$. (misprint corrected)
+}
+
+\begin{proof}
+Each element $k$ in the product $p!$ can be associated with its inverse $b_k$ modulo k, except $1$ and $p-1$, which are their own inverse, so
+$$p! \equiv 1\times (p-1) \equiv -1 \pmod p.$$
+\end{proof}
+
+\paragraph{Ex. 3.10}
+
+{\it If $n$ is not a prime, show that $(n - 1)! \equiv 0 \pmod n$, except when $n = 4$.
+}
+
+\begin{proof}
+
+Suppose that $n >1$ is not a prime. Then $n = uv$, where $2 \leq u \leq v \leq n-1$.
+
+$\bullet$ If $u \neq v$, then $n = uv \mid (n-1)! = 1\times 2 \times\cdots \times u \times\cdots \times v \times \cdots \times (n-1)$ (even if $u\wedge v \neq 1$ !).
+
+$\bullet$ If $u=v$, $n = u^2$ is a square.
+
+If $u$ is not prime, $u =st,\ 2\leq s \leq t \leq u-1 \leq n-1$, and $n = u' v'$, where $u' =s,v' =st^2$ verify  $2 \leq u' < v' \leq n-1$. As in the first case, $n = u'v' \mid (n-1)!$.  
+
+If $u = p$ is a prime, then $n =p^2$.
+
+In the case $p = 2$, $n = 4$ and $n=4  \nmid (n-1)! = 6$. In the other case $p >2$, and $(n-1)! = (p^2 - 1)!$ contains the factors $p < 2p < p^2$, so $p^2 \mid (p^2-1)!, n \mid (n-1)!$.
+
+Conclusion : if $n$ is not a prime, $(n - 1)! \equiv 0 \pmod n$, except when $n=4$.
+
+\end{proof}
+
+\paragraph{Ex. 3.11}
+
+{\it Let $a_1, \ldots, a_{\phi(n)}$ be a reduced residue system modulo $n$ and let $N$ be the number of solutions to $x^2 \equiv 1 \pmod n$. Prove that $a_1 \cdots a_{\phi(n)} \equiv (-1)^{N/2} \pmod n$.
+}
+
+\begin{proof}
+If $n=2$, then $N=1$ and the result is false. So we suppose $n>2$.
+
+Let $H$ the subset of $\Z/n\Z$ of all $x \in \Z/n\Z$ such that $x^2=1$ :
+$$H = \{x \in \Z/n\Z\ \vert \ x^2 = 1\}$$
+(here $1 = \overline{1}$).
+
+$H \subset U(\Z/n\Z)$, and $x \in H, y \in H \Rightarrow x^2 = y^2=1 \Rightarrow (xy^{-1})^2 = 1 \Rightarrow xy^{-1} \in H$, so $H$ is a subgroup of $(U(\Z/n\Z),\times)$, and $N = \mathrm{Card}\, H$.
+
+Each $x \in U(\Z/n\Z)$ such that $x \not \in H$ can be paired with its inverse $x^{-1}$, and $xx^{-1} = 1$, so
+$$P := \prod_{x \in U(\Z/n\Z)} x = \prod_{x\in H} \, x.$$
+If $x \in H, -x \in H$.
+
+$\bullet$ If $n$ is odd, each $x = \overline{a}\in H (a\in \Z, 1\leq a \leq n-1)$ satisfy $-x \neq x$ : otherwise $2 a \equiv 0 \pmod n, 2a = k n, k \in \Z$ . As $0<2a = kn  < 2n$, then $k=1$, and $n = 2a$ is even, which is in contradiction with the hypothesis.
+
+So we each $x \in H$ can be paired with $-x$ in the product $P$, and $x(-x) = -1$, so
+$$P = \prod_{x\in H} \, x = (-1)^{N/2}.$$
+
+$\bullet$ If $n$ is even, if $x = \overline{a}\in H\ (a\in \Z, 1\leq a \leq n-1)$ satisfy $x = -x$, then $0 < a = k \frac{n}{2} < n$, so $a = \frac{n}{2}$, and $x = \overline{ \left(\frac{n}{2}\right)}$ is the only element in $Z/nZ$ such that $x = -x$. $\overline{2}x = \overline{0}$, and $x \in H$, so $\overline{2} x^2 = \overline{0}, \overline{2} = \overline{0}$ : since $n>2$, this is impossible, so $x \neq -x$ for all $x \in H$, and $\prod_{x\in H} \, x = (-1)^{N/2}$.
+
+Conclusion : if $n>2$, $$\prod_{x \in U(\Z/n\Z)} x = (-1)^{N/2}.$$
+
+If $a_1, \ldots, a_{\phi(n)}$ is a reduced residue system modulo $n$, then $\overline{ a_1 \cdots a_{\phi(n)}}  = P = \prod_{x \in U(\Z/n\Z)} x = (-1)^{N/2}$, so 
+$$a_1 \cdots a_{\phi(n)} \equiv (-1)^{N/2}.$$
+\end{proof}
+
+\paragraph{Ex. 3.12}
+
+{\it Let ${p \choose k} = \frac{p!}{k!(p-k)!}$ be a binomial coefficient, and suppose $p$ is prime. If $1 \leq k \leq p-1$, show that $p$ divides ${p \choose k}$. Deduce $(a+b)^p \equiv a^p + b^p \pmod p$.
+}
+
+\begin{proof}
+$p \mid p! = k!(p-k)! {p \choose k}$.
+
+If $1\leq k \leq p-1$, then for each $i, 1\leq i \leq k$, $1\leq i < p$, so $i\wedge p=1$. Thus $ \left(\prod_{i=1}^k i \right) \wedge p = 1, k!\wedge p = 1$. Similarly, $p-k<p$, so $\left( \prod_{i=1}^{p-k} i \right)\wedge p = 1, (p-k)!\wedge p = 1$. Thus $p \wedge k!(p-k)! = 1$, and $p \mid p! = k!(p-k)! {p \choose k}$, so $p \mid {p \choose k}$.
+
+Finally, from binomial formula
+\begin{align*}
+(a+b)^p &= a^p + \sum_{k=1}^{p-1} {p \choose k} a^k b^{n-k} + b^p\\
+&\equiv a^p + b^p \pmod p
+\end{align*}
+\end{proof}
+
+\paragraph{Ex. 3.13}
+
+{\it Use Ex. 3.12 to give another proof of Fermat's theorem, $a^{p-1} \equiv 1 \pmod p$ if $p$ does not divide $a$.
+}
+
+\begin{proof}
+If we make the induction hypothesis 
+$${\cal P}(k) \iff \forall (a_1,a_2,\ldots,a_k) \in \Z^k,\  (a_1+a_2+\cdots+a_k)^p \equiv a_1^p+a_2^p+\cdots+a_k^p$$
+(which is true for $k=1,k=2$)
+then, from induction hypothesis and the case $k=2$ already proved in Ex 3.12,
+\begin{align*}
+(a_1+a_2+\cdots+a_k+a_{k+1})^p &= ((a_1+a_2+\cdots+a_k) +a_{k+1})^p\\
+&\equiv (a_1+a_2+\cdots+a_k)^p + a_{k+1}^p \pmod p\\
+&\equiv a_1^p+a_2^p+\cdots+a_k^p+ a_{k+1}^p \pmod p\\
+\end{align*}
+so ${\cal P}(k) \Rightarrow {\cal P}(k+1)$ :
+
+$$\forall k \in \N^*, \forall (a_1,a_2,\ldots,a_k) \in \Z^k,\  (a_1+a_2+\cdots+a_k)^p \equiv a_1^p+a_2^p+\cdots+a_k^p.$$
+If we apply this result to the particular case $a_1=a_2=\cdots = a_k = 1$, we obtain
+$$\forall k \in \N^*,\ k^p \equiv k \pmod p.$$
+and $(-k)^p \equiv - k^p \equiv -k \pmod p$ (even if $p=2$), and $0^p =0$, so
+$$\forall k \in \Z,\ k^p \equiv k \pmod p.$$
+If $p \nmid a, a \in \Z$, then $p\wedge a = 1$, and $p \mid a^p-a = a(a^{p-1} - 1)$, so $p \mid a^{p-1} - 1, a^{p-1} \equiv 1 \pmod p$ : this is another proof of Fermat's theorem.
+\end{proof}
+
+\paragraph{Ex. 3.14}
+
+{\it Let $p$ and $q$ be distinct odd primes such that $p - 1$ divides $q -1$. If $(n, pq) = 1$, show that $n^{q - 1} \equiv 1 \pmod {pq}$.
+}
+
+\begin{proof}
+As $n \wedge pq = 1, n\wedge p=1, n \wedge q = 1$, so from Fermat's Little Theorem
+$$n^{q-1} \equiv 1 \pmod q,\qquad n^{p-1} \equiv 1 \pmod p.$$
+$p-1 \mid q-1$, so there exists $k \in \Z$ such that $q-1 = k(p-1)$.
+Thus
+$$n^{q-1} = (n^{p-1})^k \equiv 1 \pmod p.$$
+$p \mid n^{q-1} - 1, q \mid n^{q-1} - 1$, and $p\wedge q = 1$, so $pq \mid n^{q-1} - 1$ :
+$$n^{q-1} \equiv 1 \pmod{pq}.$$
+\end{proof}
+
+\paragraph{Ex. 3.15}
+
+{\it For any prime $p$ show that the numerator of $1+ \frac{1}{2} + \frac{1}{3} + \ldots + \frac{1}{p-1}$ is divisible by $p$.
+}
+
+\begin{proof}
+As the result is false for $p=2$, we must suppose $p>2$, so $p$ is odd.
+
+$1+ \frac{1}{2} + \frac{1}{3} + \ldots + \frac{1}{p-1} = \frac{N}{D}$, where
+$$ N = (p-1)! + \frac{(p-1)!}{2}+ \cdots+\frac{(p-1)!}{p-1}, \qquad D= (p-1)!.$$
+From Wilson's theorem, $(p-1)! \equiv -1 \pmod p$, so in the field $\Z/p\Z$,
+$$ \overline{N} = (-\overline{1})(\overline{1}^{-1} + \overline{2}^{-1}+\cdots+\overline{p-1}^{-1}).$$
+As the application $\varphi : (\Z/p\Z)^* \to (\Z/p\Z)^*, x \mapsto x^{-1}$ is bijective (it's an involution), 
+$$\overline{1} + \overline{2}^{-1}+\cdots+\overline{p-1}^{-1} = \overline{1} + \overline{2}+\cdots+\overline{p-1} = \overline{p} \times \overline{\left(  \frac{p-1}{2}\right)} = \overline{0}.$$
+So $p \mid N $, and $p \wedge (p-1)! = 1$, that is $p\wedge D = 1$. Thus $p$ divides the numerator of the reduced fraction of $N/D$.
+\end{proof}
+
+\paragraph{Ex. 3.16}
+
+{\it Use the proof of the Chinese Remainder Theorem to solve the system $x \equiv 1 \pmod 7$, $x \equiv 4 \pmod 9$, $x \equiv 3 \pmod 5$.
+}
+
+\begin{proof} Let $m_1 = 7,m_2=9,m_3 = 5, m = m_1m_2m_3 = 315, n_1 = m/m_1= m_2m_3=45, n_2 = m_1m_3 = 35, n_3= m_1m_2 = 63$.
+
+If $r_1 = 13, s_1 = -2$, then $r_1m_1+s_1n_1 = 13 m_1 -2m_2m_3 = 13\times 7 -2 \times 45 = 1$,
+
+so $e_1 = s_1n_1 = -2\times 45 = -90$ verifies $$e_1 = -90,\qquad e_1\equiv 1 \pmod 7, e_1 \equiv 0 \pmod 9, e_1 \equiv 0 \pmod 5.$$
+
+If $r_2 = 4,s_2 = -1$, then $r_2m_2+s_2n_2 = 4\times9 - 1\times 35 = 1$,
+
+so $ e_2 = s_2n_2 = -35$ verifies $$e_2 = -35, \qquad e_2 \equiv 0 \pmod 7, e_2 \equiv 1 \pmod 9, e_2 \equiv 0 \pmod 5.$$
+
+If $r_3 = -25,s_3 = 2$, then $r_3m_3 +s_3n_3 = -25\times 5 + 2\times 63 = 1$,
+
+so  $ e_3 = s_3 n _3 = 2\times 63 = 126$ verifies $$e_3 = 126, \qquad e_3\equiv 0\pmod 7, e_3 \equiv 0 \pmod 9, e_3 \equiv 1 \pmod 5.$$
+
+Let $x_0 = e_1 + 4 e_2 + 3 e_3 = 148 $ : then 
+$$x_0 = 148,\qquad x_0 \equiv 1 \pmod 7, x_0 \equiv 4 \pmod 9, x_0 \equiv 3 \pmod 5.$$
+If $x\in \Z$ is any solution of the system, then $7 \mid x-x_0, 9 \mid x-x_0, 5 \mid x-x_0$, with $7\wedge 9 = 7 \wedge 5 = 9 \wedge 5 = 1$, so $m = 315 \mid x - x_0$ : 
+$$x = 148 + k\, 315, k \in \Z,$$
+and all these integers are solutions of the system.
+\end{proof}
+
+\paragraph{Ex. 3.17}
+
+{\it Let $f(x) \in \Z[x]$ and $n = p_1^{a_1} \cdots p_t^{a_t}$. Show that $f(x) \equiv 0 \pmod n$ has a solution iff $f(x) \equiv 0 \pmod {p_i^{a_i}}$ has a solution for $i = 1, \ldots, t$.
+}
+
+\begin{proof}
+If $x$ is such that $f(x) \equiv 0 \pmod n$, as $p_i^{\alpha_i} \mid n$, $f(x) \equiv 0 \pmod{p_i^{a_i}}$.
+
+Reciprocally, let $x_1,x_2,\ldots,x_t$ such that
+\begin{align*}
+f(x_1)&\equiv 0 \pmod{p_1^{a_1}}\\
+&\cdots\\
+f(x_t)&\equiv 0 \pmod{p_t^{a_t}}
+\end{align*}
+As $p_i^{a_i} \wedge p_j^{a_j}=1$ if $i\ne j$, the Chinese Remainder Theorem gives an integer $x$ such that $x\equiv x_i \pmod {p_i^{a_i}},\ i=1,2,\ldots,t$. As $f(x)\in \Z[x]$, $f(x) \equiv f(x_i) \equiv 0 \pmod {p_i^{a_i}}$. So $p_i^{a_i} \mid f(x),\ i=1,2,\ldots,t$, where $p_i^{a_i} \wedge p_j^{a_j}=1$ if $i\ne j$, then $n = p_1^{a_1} \cdots p_t^{a_t} \mid f(x)$ : $x$ is a somution of $f(x) \equiv 0 \pmod n$.
+
+Conclusion : $f(x) \equiv 0 \pmod n$ has a solution iff $f(x) \equiv 0 \pmod {p_i^{a_i}}$ has a solution for $i = 1, \ldots, t$.
+\end{proof}
+
+\paragraph{Ex. 3.18}
+
+{\it For $f \in \Z[x]$, let $N$ be the number of solutions to $f(x) \equiv 0 \pmod n$ and $N_i$ be the number of solutions to $f(x) \equiv 0 \pmod {p_i^{a_i}}$. Prove that $N = N_1N_2\cdots N_t$.
+}
+
+\begin{proof}
+Note $[x]_n$ the class of $x$ modulo $n$. Let $S$ the set of solutions in $\Z/n\Z$ of $f(\overline{x}) = 0$, and $S_i$ the set of solutions in $\Z/p^{a_i}\Z$ of $f(\overline{x}) = 0$.
+
+(We designate with the same letter the polynomial $f$ in $\Z[x]$ or its reduction in $\Z/n\Z[x]$.)
+
+Let
+$$\varphi :
+\left\{
+\begin{array}{ccc}
+  S&  \to  & S_1\times S_2\times \cdots\times S_t  \\
+  {[}x{]}_n& \mapsto   & ({[}x{]}_{p_1^{a_1}}, {[}x{]}_{p_2^{a_2}},\ldots, {[}x{]}_{p_t^{a_t}})    
+\end{array}
+\right.
+$$
+
+$\bullet$ $\varphi$ is well defined : if $x \equiv x' \pmod n$, then $x \equiv x' \pmod {p_i^{a_i}},\ i=1,2,\cdots,t$, so $({[}x{]}_{p_1^{a_1}}, {[}x{]}_{p_2^{a_2}},\ldots, {[}x{]}_{p_t^{a_t}}) =({[}x'{]}_{p_1^{a_1}}, {[}x'{]}_{p_2^{a_2}},\ldots, {[}x'{]}_{p_t^{a_t}})$.  Moreover, we proved in Ex 3.17 that $[x]_n \in S \Rightarrow [x]_{p_i^{a_i}} \in S_i$.
+
+$\bullet$ $\varphi$ is injective : if $({[}x{]}_{p_1^{a_1}}, {[}x{]}_{p_2^{a_2}},\ldots, {[}x{]}_{p_t^{a_t}}) =({[}x'{]}_{p_1^{a_1}}, {[}x'{]}_{p_2^{a_2}},\ldots, {[}x'{]}_{p_t^{a_t}})$, then $p_i^{a_i} \mid x'-x,\ i=1,2,\ldots,t$, so $n \mid x'-x$ and $[x]_n = [x']_n$.
+
+$\bullet$ $\varphi$ is surjective : if $y=({[}x_1{]}_{p_1^{a_1}}, {[}x_2{]}_{p_2^{a_2}},\ldots, {[}x_t{]}_{p_t^{a_t}})$ is any element of $S_1\times S_2\times \cdots\times S_t$, there exists from Chinese remainder theorem $x \in \Z$ such that $x\equiv x_i \pmod {p_i^{a_i}}$. Then $\varphi([x]_n) = y$ (see Ex. 3.17).
+
+In conclusion, a $\varphi$ is bijective,  $N = \vert S \vert = \vert S_1\times S_2\times \cdots\times S_t \vert= N_1N_2\cdots N_t$.
+\end{proof}
+
+\paragraph{Ex. 3.19}
+
+{\it If $p$ is an odd prime, show that $1$ and $-1$ are the only solutions of $x^2 \equiv 1 \pmod {p^a}$.
+}
+
+\begin{proof}
+$$x^2-1\pmod{p^a} \iff p^a \mid (x-1)(x+1).$$
+Let $d = (x-1)\wedge(x+1)$ : $d = 1$ or $d=2$.
+
+$\bullet$ If $d=1$, then $x$ is even (if not, $x-1$ and $x+1$ are even, and $2\mid d$).
+As $p^a \mid (x-1)(x+1)$ and $(x-1) \wedge (x+1) = 1$, then $p^a \mid  x-1$, or $p^a \mid x +1$, that is $$x\equiv \pm 1 \pmod {p^a}.$$
+
+$\bullet$ If $d=2$, then $x$ is odd, and
+$$p^a \mid 4 \frac{x-1}{2}\frac{x+1}{2}.$$
+As $p$ is an odd prime, $p\wedge 4 = 1$, so $p \mid  \frac{x-1}{2}\frac{x+1}{2}$, where  $\frac{x-1}{2}\wedge \frac{x+1}{2} = 1$, hence $p^a \mid  \frac{x-1}{2} \mid x-1$ or $p^a \mid  \frac{x+1}{2} \mid x+1$ : $$x\equiv \pm 1 \pmod {p^a}.$$
+
+$\{-\overline{1},\overline{1}\}$ is the set of roots of $x^2-\overline{1}$ in $\Z/p^a\Z$.
+\end{proof}
+
+\paragraph{Ex. 3.20}
+
+{\it Show that $x^2 \equiv 1 \pmod {2^b}$ has one solution if $b = 1$, two solutions if $b = 2$, and four solutions if $b \geq 3$.
+}
+
+\begin{proof} Consider the equation $x^2 \equiv 1\pmod{2^b}$.
+
+$\bullet$ If $b=1$, $x^2 \equiv 1\pmod{2} \iff 2 \mid (x-1)(x+1) \iff x\equiv 1 \pmod 2$ : one solution.
+
+$\bullet$ If $b=2$, as $0^2 \equiv 2^2 \equiv 0 \pmod 4$, $x^2 \equiv 1\pmod{4} \iff x\equiv \pm 1 \pmod 4$ : two solutions.
+
+$\bullet$ Suppose $b\geq 3$. The equation has 4 solutions $1,-1,1+2^{b-1}, -1+2^{b-1}$.
+
+Indeed, $(\pm1)^2 \equiv 1 \pmod {2^b}$, and
+$$(1+2^{b-1})^2 = 1 + 2.2^{b-1} + 2^{2b-2} = 1+2^b(1+2^{b-2}) \equiv 1 \pmod{2^b},$$ and similarly $(-1+2^{b-1})^2 \equiv 1 \pmod{2^b}$.
+
+These solutions are incongruent modulo $2^b$ : 
+
+$1 \not \equiv -1 \pmod {2^b}$ and $1+2^{b-1}\not \equiv -1+2^{b-1}$ (if not, $2^b \mid 2$, so $b\leq 1$).
+
+$1 + 2^{b-1} \equiv -1 \pmod {2^b} \iff 2^b \mid 2 +2^{b-1} = 2(1 + 2^{b-2})$ : so  $2 \mid 2^{b-1} \mid (1+ 2^{b-2})$, this is impossible because $1+ 2^{b-2}$ is odd ($b\geq 3$). With the same argument, $-1 + 2^{b-1} \not \equiv 1 \pmod{2^b}$. $1 + 2^{b-1} \equiv 1  \pmod{2^b}$ implies $2^{b} \mid 2^{b-1}$, so $2\mid 1$ : this is a contradiction, so $1 + 2^{b-1} \not \equiv 1  \pmod{2^b}$, and also $-1 + 2^{b-1} \not \equiv -1  \pmod{2^b}$. There exist at least 4 solutions.
+
+We show that these are the only solutions : 
+$$ \forall x \in \Z,\ x^2 \equiv 1 \pmod{2^b} \Rightarrow x \equiv \pm 1 \pmod{2^{b-1}}.$$
+Indeed, if $x^2 \equiv 1 \pmod{2^b} $, $2^b \mid (x-1)(x+1)$, where $d =(x-1) \wedge (x+1) = 2$. 
+
+As in Ex.3.19, if $d=1$, then $2^b \mid x-1$ or $2^b \mid x+1$, a fortiori $x \equiv \pm 1 \pmod{2^{b-1}}$.
+
+If $d=2$, then $x$ is odd, and $2^b \mid 4\frac{x-1}{2}\frac{x+1}{2}$,  so $2^{b-2} \mid \frac{x-1}{2}\frac{x+1}{2}$, with $\frac{x-1}{2} \wedge \frac{x+1}{2}=1$, so $2^{b-2} \mid \frac{x-1}{2}$ or $2^{b-2} \mid \frac{x+1}{2}$, that is $2^{b-1} \mid x-1$ or $2^{b-1} \mid x+1$ : $x \equiv \pm 1 \pmod{2^{b-1}}$.
+
+(Alternatively, we can prove this implication by induction.)
+
+Hence every solution of $x^2 \equiv 1\pmod{2^b}, b\geq 3$ is such that $x = \pm1+k2^{b-1}, k \in \Z$ : there exit only four such value in the interval $[0,2^b[$, namely $1,-1+2^b-1,1+2^{b-1},-1+2^b$.
+
+Conclusion : if $b\geq 3$, the roots of $x^2-1$ in $\Z/2^b\Z$ are $ \overline{1}, -\overline{1}, \overline{1} + \overline{2}^{b-1},-\overline{1} + \overline{2}^{b-1}$.
+\end{proof}
+
+\paragraph{Ex. 3.21}
+
+{\it \
+Use Ex. 18-20 to find the number of solutions to $x^2 \equiv 1 \pmod n$.
+}
+
+\begin{proof}
+Let $n = 2^{a_0}p_1^{a_1}\cdots p_k^{a_k}$ the decomposition in prime factors of $n>1$ ($p_0=2<p_1<\cdots<p_k, a_0\geq 0, a_i>0, 1\leq i \leq k$). Let $N$ the number of solutions of $x^2 \equiv 1 \pmod n$, and $N_i$ the number of solutions of $x^2 \equiv 1 \pmod {p^i}, i = 0,1,\ldots k$. From Ex.3.18, we know that $N = N_0N_1\cdots N_k$, where (Ex. 3.19), $N_i = 2, i=1,2,\ldots,k$, and (Ex.3.20), $N_0=1$ if $a_0=1$ (or $a_0 = 0$), $N_0 = 2$ if $a_0 = 2$, $N_0=4$ if $a_0\geq 3$.
+
+Conclusion : the number of solutions of $x^2 \equiv 1 \pmod n$,  where $n = 2^{a_0}p_1^{a_1}\cdots p_k^{a_k}$, is
+\begin{align*}
+N &= 2^k\quad \mathrm{if}\ a_0=0\ \mathrm{or}\ a_0 = 1\\
+N &= 2^{k+1} \quad \mathrm{if}\ a_0=2\\
+N &= 2^{k+2} \quad \mathrm{if}\ a_0\geq 3
+\end{align*}
+\end{proof}
+
+\paragraph{Ex. 3.22}
+
+{\it Formulate and prove the Chinese Remainder Theorem in a principal ideal domain.
+}
+
+{\bf Proposition}. Let $R$ a principal ideal domain, and $m_1,\ldots,m_t \in R$. Suppose that $(m_i,m_j) = 1$ for $i\neq j$ (that is $(m_i) + (m_j) = (1), m_iR +n_i R = R$). Let $b_1,\ldots,b_t \in R$ and consider the system of congruences:
+$$x \equiv b_1 \pmod {m_1}, x \equiv b_2 \pmod {m_2},\ldots, x \equiv b_t \pmod {m_t}.$$
+This system has solutions and any two solutions differ by a multiple of $m_1m_2\cdots m_t$.
+\begin{proof} 
+Let $m = m_1m_2\cdots m_t$, and $n_i =m/m_i,\ i=1,2,\ldots,t$. 
+
+As $(m_1,m_i)=(1)$, we can find $u_i,v_i \in R$ such that $m_1u_i+m_iv_i= 1, \ i=2,\ldots,t$.
+
+So $1 = \prod\limits_{i=2}^t(m_1u_i+m_iv_i ) = m_1 u +(m_2\cdots m_t)v$ for some elements $u,v \in R$, thus $(m_1,n_1) = (m_1,m_2m_3\cdots m_t) = (1)$, and similarly $(m_i,n_i)=1$. So there are $r_i,s_i \in R$ such that $r_im_i+s_in_i = 1$. Let $e_i = s_in_i$. Then $e_i \equiv 1 \pmod{m_i}$ and $e_i \equiv 0 \pmod{m_j}$ for $j\neq i$.
+
+Set $x_0 =\sum_{i=1}^t b_ie_i$. Then we have $x_0 \equiv b_i e_i \equiv b_i \pmod{m_i}$ and so $x_0$ is a solution.
+
+Suppose that $x_1$ is another solution. Then $x_1 -x_0 \equiv 0 \pmod{m_i}$ for $i=1,2,\ldots,t$, in other words $m_1,m_2,\ldots,m_t$ divide $x_1-x_0$, with $(m_i,m_j)=1$ : from lemma 2 generalized to principal rings, $m$ divides $x_1-x_0$.
+\end{proof}
+
+\bigskip
+
+This result can be generalized to any commutative ring, not necessarily a PID (see S.LANG, Algebra):
+
+{\bf Proposition}. Let $A$ a commutative ring. Let ${\textfrak a}_1,\ldots, {\textfrak a}_n$ be ideals of $A$ such that ${\textfrak a}_i+{\textfrak a}_j = A$ for all $i\neq j$. Given elements $x_1,\ldots,x_n \in A$, there exists $x\in A$ such that $x\equiv x_i \pmod {{\textfrak a}_i}$ for all $i$.
+
+\paragraph{Ex. 3.23}
+
+{\it Extend the notion of congruence to the ring $\Z[i]$ and prove that $a + bi$ is always congruent to $0$ or $1$ modulo $1 + i$.
+}
+
+\begin{proof}
+If $a,b,c$ are in $\Z[i]$ we say that $a\equiv b \pmod c$ if there exists $q \in \Z[i]$ such that $a-b = qc$.
+
+As $i\equiv -1 \pmod{1+i}, a+bi \equiv a-b \pmod {1+i}$.
+
+$(1-i)(1+i) = 2$, so $2\equiv 0 \pmod{1+i}$.
+
+If $a-b$ is even, $a-b =2k,k\in \Z \subset \Z[i]$, so $a-b \equiv 0 \pmod{1+i}$.
+
+If $a-b$ is odd, $a-b = 2k+1, k \in \Z$, so $a-b \equiv 1 \pmod {1+i}$.
+
+Conclusion : for all $z \in \Z[i]$, $z\equiv0,1 \pmod{1+i}$.
+\end{proof}
+
+\paragraph{Ex. 3.24}
+
+{\it Extend the notion of congruence to the ring $\Z[\omega]$ and prove that $a + b\omega$ is always congruent to $-1$, $0$ or $1$ modulo $1 - \omega$.
+}
+
+\begin{proof}
+Same definition of congrence in $\Z[\omega]$ as in Ex. 3.23.
+
+$\omega \equiv 1 \pmod{1-\omega}$, so $a+b\omega \equiv a+b \pmod{-\omega}$.
+
+$0 = 1-\omega^3 = (1- \omega)(1+\omega+\omega^2)$, with $1-\omega \neq 0$, so  $1+\omega+\omega^2 = 0$. Hence $3 \equiv 0 \pmod{1-\omega}$.
+
+$a+b \equiv 0,1,-1 \pmod 3$, so $a+b \equiv 0,1,-1 \pmod {1-\omega}$
+
+For all $z \in \Z[\omega],\  z \equiv 0,1,-1 \pmod{1-\omega}$.
+\end{proof}
+
+\paragraph{Ex. 3.25} 
+
+{\it Let $\lambda = 1 -\omega \in \Z[\omega]$. If $\alpha \in \Z[\omega]$ and $\alpha \equiv 1 \pmod \lambda$, prove that $\alpha^3 \equiv 1 \pmod 9$.
+}
+
+\begin{proof} 
+$\alpha \equiv 1 \pmod \lambda$, so $\alpha = 1 + \beta \lambda, \beta \in \Z[\omega]$.
+
+$\overline{\lambda} = 1 - \omega^2 = (1-\omega)(1+\omega) = -\omega^2(1-\omega) = -\omega^2 \lambda$ (so $\overline{\lambda}$ and $\lambda$ are associate).
+\begin{align*}
+\alpha^3-1&=(\alpha-1)(\alpha-\omega)(\alpha-\omega^2)\\
+&=(\alpha-1)(\alpha-1+\lambda)(\alpha-1+\overline{\lambda})\\
+&=(\alpha-1)(\alpha-1+\lambda)(\alpha-1-\omega^2\lambda)\\
+&=\beta \lambda (\beta\lambda + \lambda) (\beta \lambda - \omega^2\lambda)\\
+&=\lambda^3 \beta (\beta+1)(\beta-\omega^2)\\
+\end{align*}
+
+Moreover, 
+\begin{align*}
+\beta(\beta+1)(\beta-\omega^2) &\equiv \beta(\beta+1)(\beta-1) \pmod \lambda\\
+&\equiv 0 \pmod \lambda
+\end{align*}
+since $\beta \equiv 0,1,-1 \pmod \lambda$ (see Ex. 3.24).
+
+So $\lambda^4 \mid \alpha^3 - 1$.
+
+As $\lambda \overline{\lambda} = (1-\omega)(1-\omega^2) = 1 - \omega - \omega^2+ \omega^3 = 3$, then $\lambda \overline{\lambda} = -\omega^2 \lambda^2 = 3$, so $\lambda^2$ and $3$ are associate : $\lambda^2 = -\omega \lambda^2$. So $9 =(-\omega^2 \lambda^2)^2 =  \omega \lambda^4$, so $9 \mid \omega^2 9 = \lambda^4 \mid \alpha^3-1$.
+
+For all $\alpha \in \Z[\omega]$, 
+$$\alpha \equiv 1 \pmod \lambda \Rightarrow \alpha^3 \equiv 1 \pmod 9.$$
+\end{proof}
+
+\paragraph{Ex. 3.26}
+
+{\it Use Ex. 25 to show that $\xi, \eta, \zeta$ are not zero and $\xi^3 + \eta^3 + \zeta^3 = 0$, then $\lambda$ divides at least one of the elements $\xi, \eta, \zeta$.
+}
+
+\begin{proof}
+Let $\xi, \eta, \zeta \in \Z[\omega] \setminus \{0\}$ such that $\xi^3 + \eta^3 + \zeta^3 = 0$.
+
+With a reductio ad absurdum, suppose that $\lambda \nmid \xi, \lambda \nmid \eta, \lambda \nmid \zeta$.
+
+From Ex. 3.24, 
+$$\xi \equiv \pm 1 \pmod \lambda, \eta \equiv \pm 1 \pmod \lambda,\zeta \equiv \pm 1 \pmod \lambda,$$
+and from Ex.3.25,
+$$\xi^3 \equiv \pm 1 \pmod 9, \eta^3 \equiv \pm 1 \pmod 9,\zeta^3 \equiv \pm 1 \pmod 9,$$
+As $\pm1\pm1\pm1 \not \equiv 0 \pmod 9$, this is a contradiction.
+
+Conclusion : if $\xi, \eta, \zeta$ are not zero and $\xi^3 + \eta^3 + \zeta^3 = 0$, then $\lambda$ divides at least one of the elements $\xi, \eta, \zeta$.
+
+(consequence : if $x^3+y^3+z^3 = 0,\ x,y,z \in \Z$, then $3\mid xyz$ : this is the first case of Fermat's theorem for the exposant 3.)
+\end{proof}
 
 \end{document}
