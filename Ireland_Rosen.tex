@@ -679,7 +679,7 @@ yS &= \sum_{i=0}^{n-1} x^{n-1-i} y^{i+1} = \sum_{j=1}^{n} x^{n-j} y^j \qquad(j =
 So $xS - y S = x^n-y^n$,
 $$x^n - y^n = (x-y) \sum_{i=0}^n x^{n-1-i} y^i = (x-y)(x^{n-1}+x^{n-2} y + \cdots +x^{n-1-i}y^i+ \cdots + y^{n-1}).$$
 
-b)If we substitute $-y$ by $y$, we obtain
+b) If we substitute $-y$ by $y$, we obtain
 $$x^n - (-1)^n y^n = (x+ y) \sum_{i=0}^n(-1)^i x^{n-1-i} y^i .$$
 
 If $n$ is odd,
@@ -718,7 +718,7 @@ there are infinitely many Fermat primes.
 }
 
 \begin{proof}
-If $a = 1, a^n + 1$ is a prime. Suppose $a >1$. If $a$ was odd, $a^n+1>2$ is even, so is not a prime. Consequently, if $a^n+1$ is prime, $a>1$, then $a$ is even.
+If $a = 1, a^n + 1$ is a prime. Suppose $a >1$, and $n>1$. If $a$ was odd, $a^n+1>2$ is even, so is not a prime. Consequently, if $a^n+1$ is prime, $a>1$, then $a$ is even.
 
 Write $n = 2^t u$, where $u$ is odd.
 
@@ -726,7 +726,7 @@ If $u>1$, then, from Ex. 24(b), we obtain
 $$a^n+1 = a^{2^tu}+1 = (a^{2^t} + 1)\sum_{i=0}^{u-1} (-1)^ia^{i2^t}.$$
 So $1<a^{2^t} + 1 < a^n+1$, and $a^{2^t} + 1$ is a non trivial factor of $a^n+1$, in contradiction with the hypothesis. 
 
-Conclusion : if $a^n+1$ is a prime, $a$ os even and $n$ is a power of $2$.
+Conclusion : if $a^n+1$ is a prime ($a>1,n>1$), $a$ is even and $n$ is a power of $2$.
 \end{proof}
 
 \paragraph{Ex. 1.27} 
@@ -758,8 +758,7 @@ $3 \mid n^2-1, 2 \mid n^2-1$ and $2 \wedge 3 = 1$, so $6 \mid n^2-1$.
 \begin{proof}
 If we want to avoid Fermat's Little Theorem (Prop. 3.3.2. Corollary 2 P. 33), note that
 \begin{align*}
-(n-2)(n-2n(n+1)(n+2) &= n(n2-1)(n^2-4)\\
-&= n(n^2-1)(n^2-4)\\
+(n-2)(n-2)n(n+1)(n+2) &= n(n^2-1)(n^2-4)\\
 &=n^5-5n^2+4n\\
 &=n^5 - n +5 (-n^2+n)
 \end{align*}
@@ -770,7 +769,7 @@ Moreover,
 &2 \mid (n-1)(n+1) = n^2 -  1  \mid n^4 - 1 \mid n^5 -n\\
 &3 \mid (n-1)n(n+1) = n(n^2 - 1) \mid n(n^4-1) = n^5 - n
 \end{align*}
-As $2,3,5$ are distinct primes $2\times 3 \times 5 = 30 \mid n^5-n$.
+As $2,3,5$ are distinct primes, $2\times 3 \times 5 = 30 \mid n^5-n$.
 
 Similarly,
 \begin{align*}
@@ -811,7 +810,7 @@ is not an integer.
 \begin{proof}
 Let $s$ such that $2^{s} \leq n < 2^{s+1}$ ($s = \left \lfloor \frac{\ln n}{\ln 2} \right \rfloor \geq 1$).
 
-$$H_n = \frac{1}{2} + \cdots + \frac{1}{n} = \frac{\sum_{i=1}^n a_i}{n!}, \qquad \mathrm{where}\ a_i = \frac{n!}{i} \in \Z.$$
+$$H_n = \frac{1}{2} + \cdots + \frac{1}{n} = \frac{\sum_{i=2}^n a_i}{n!}, \qquad \mathrm{where}\ a_i = \frac{n!}{i} \in \Z.$$
 Let $k = \ord_2(n!)$.
 We will show that $\ord_s(a_i)$ is minimal for $i_0 = 2^s$, where $\ord_2(a_{i_0}) = k - s$, and that this minimum is reached only for this index $i_0$.
 
@@ -822,7 +821,7 @@ Moreover, if $\ord_2(a_i) = \ord_2(a_{i_0})$, then $k - t = k - s$, so $s = t$.
 $i = 2^s q, 2 \nmid q$. If $q>1$, then $i\geq 2^{s+1}>n$ : it's impossible. So $q=1$ and $i = 2^s = i_0$.
 
 Using Ex 1.21, we see that
-$$\ord_2\left(\sum_{i=2}^n a_i \right)= \ord_2(a_{i_0}) = k - s > k = \ord_2(n!).$$
+$$\ord_2\left(\sum_{i=2}^n a_i \right)= \ord_2(a_{i_0}) = k - s < k = \ord_2(n!).$$
 So $$H_n = \frac{2^{k-s} Q}{2^k R} = \frac{Q}{2^s R},$$ where $Q,R$ are odd integers. $H_n$ is a quotient of an odd integer by an even integer : $H_n$ is never an integer.
 \end{proof}
 
@@ -833,7 +832,7 @@ So $$H_n = \frac{2^{k-s} Q}{2^k R} = \frac{Q}{2^s R},$$ where $Q,R$ are odd inte
 
 \begin{proof}
 $(1+i)^2 = 1 +2i - 1 = 2i$, so $2 = -i(1+i)^2$ is divisible by $(1+i)^2$.
-(As $i$ is an unit, $2$ and $(1+i)^2$ are associated.)
+(As $i$ is an unit, $2$ and $(1+i)^2$ are associate.)
 \end{proof}
 
 \paragraph{Ex. 1.32}
@@ -860,20 +859,22 @@ Let $\alpha = a+bi \in \Z[i]$.
 
 $\bullet$ If $\lambda(\alpha) = 1$, then $\alpha \overline{\alpha} = 1$, where $\overline{\alpha} = a-bi \in \Z[i]$, so $\alpha$ is an unit.
 
-$\bullet$  Reciprocally, if $\alpha$ is an unit, there exists $\beta \in \Z[i]$ such that $\alpha \beta = 1$, then $\lambda( \alpha) \lambda(\beta) = 1$, where $\lambda(\alpha), \lambda(\beta)$ are positive integers, so $\lambda(\alpha) = 1$.
+$\bullet$  Reciprocally, if $\alpha$ is an unit, there exists $\beta \in \Z[i]$ such that $\alpha \beta = 1$, then $\lambda( \alpha) \lambda(\beta) = 1$, where $\lambda(\alpha), \lambda(\beta)$ are positive integers, hence $\lambda(\alpha) = 1$.
 
-So $\alpha = a + ib$ is an unit of $\Z[i]$ if and only if $a^2+b^2 = 1$. Then $\vert a \vert^2\leq 1$, $a \in \{ 0,1,-1\}$. If $a = 0,n b = \pm 1$, and if $a = \pm 1, b = 0$, so the only units of $\Z[i]$ are $1,i,-1,-i$.
+So $\alpha = a + ib$ is an unit of $\Z[i]$ if and only if $a^2+b^2 = 1$. In this case, $\vert a \vert^2\leq 1$, $a \in \{ 0,1,-1\}$. If $a = 0, b = \pm 1$, and if $a = \pm 1, b = 0$, so the only units of $\Z[i]$ are $1,i,-1,-i$.
 \end{proof}
+
+\paragraph{Ex. 1.34}
 {\it Show that 3 is divisible by $(1 - \omega)^2$ in $\Z[\omega]$.
 }
 
 \begin{proof}
 As $\omega^3 = 1, \overline{\omega} = \omega^2$, and $1+\omega + \omega^2 = 0$,
 
-$\vert (1-\omega) \vert^2 = (1-\omega)(1-\omega)^2 = 1 +\omega^3 - \omega -\omega^2 = 3$, so
-$$3 = (1-\omega)(1-\omega)^2.$$
+$\vert 1-\omega \vert^2 = (1-\omega)(1-\omega^2) = 1 +\omega^3 - \omega -\omega^2 = 3$, so
+$$3 = (1-\omega)(1-\omega^2).$$
 Consequently, 
-$$3 = (1+\omega) (1-\omega^2) = -\omega^2(1-\omega)^2.$$
+$$3 = (1-\omega) (1-\omega^2) =(1+\omega)(1-\omega)^2=  -\omega^2(1-\omega)^2.$$
 3  is divisible by $(1 - \omega)^2$ in $\Z[\omega]$ (as $-\omega^2$ is an unit, $3$ and  $(1-\omega)^2$ are associated. $3$ is not irreducible in $\Z[\omega]$).
 \end{proof}
 
@@ -904,10 +905,14 @@ $\bullet$  Reciprocally, if $\alpha$ is an unit, there exists $\beta \in \Z[\ome
 \end{align*}
 $3b^2 \leq 4$, so $b=0$ or $b=\pm1$.
 
- If $b=0$, then $a = \pm 1$. 
+ If $b=0$, then $a = \pm 1$, $\alpha = 1$ or $\alpha = -1$
 
-If $b = \pm 1$, then $(2a-1)^2 = 1, 2a-1 = \pm 1$ : $a=0$ or $a=-1$. So
-$$\lambda(\alpha) = 1 \iff \alpha \in \{1, \omega, \omega^2=-1-\omega,-1,-\omega,-\omega^2 = 1+\omega\}.$$
+If $b = 1$, then $(2a-1)^2 = 1, 2a-1 = \pm 1$ : $a=0$ or $a=1$, $\alpha = \omega$ or $\alpha = 1+\omega = -\omega^2$.
+
+If $b=-1$, then $(2a+1)^2 = 1, 2a+1 = \pm 1$ : $a = 0$ or $a=-1$, $\alpha= -\omega$ or $\alpha = -1-\omega = \omega^2$.
+
+So
+$$\lambda(\alpha) = 1 \iff \alpha \in \{1, \omega, \omega^2,-1,-\omega,-\omega^2\}.$$
 
 The  set of units of $\Z[\omega]$ is the group of the roots of $x^6-1$.
 \end{proof}
@@ -920,7 +925,7 @@ The  set of units of $\Z[\omega]$ is the group of the roots of $x^6-1$.
 \begin{proof}
 Note $\sqrt{-2} = i \sqrt{2}$, and $A = \Z[\sqrt{-2}]$.
 
-Let $\alpha = a + b \sqrt{-2}), \beta =  c + d\sqrt{-2} \in A$ :
+Let $\alpha = a + b \sqrt{-2}, \beta =  c + d\sqrt{-2} \in A$ :
 
 $\bullet$ $1 = 1 + 0 \sqrt{-2} \in A$.
 
@@ -932,8 +937,8 @@ So $A$ is a subring of $(\mathbb{C},+,\times)$ : $\Z[\sqrt{-2]}$ is a ring.
 
 Let $z = a + ib\sqrt{-2}$ any complex number. Let $a_0, b_0 \in \Z$ such that $\vert a-a_0 \vert \leq 1/2, \vert b-b_0 \vert \leq 1/2$ (it suffice to take for $a_0$ the nearest integer of $a$ : $a_0 =\left \lfloor a + \frac{1}{2}\right \rfloor$). Let $z_0 = a_0 + i b_0 \sqrt{-2}$.
 
-Let $\lambda(z) = z \overline{z} = a^2 + 2 b^2$. Then 
-$$\lambda(z-z_0) = (a-a_0)^2 + 2(b-b_0)^2 < \frac{1}{4} + 2 . \frac{1}{4} = \frac{3}{4}<1.$$
+As $\lambda(z) = z \overline{z} = a^2 + 2 b^2$, then 
+$$\lambda(z-z_0) = (a-a_0)^2 + 2(b-b_0)^2 \leq \frac{1}{4} + 2 \times \frac{1}{4} = \frac{3}{4}<1.$$
 
 Conclusion : for any $z \in \mathbb{C}$, there exists $z_0 \in A$ such that $\lambda(z-z_0) < 1$.
 
