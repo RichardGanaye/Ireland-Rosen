@@ -916,13 +916,13 @@ $\legendre{-1}{p} = (-1)^{(p-1)/2}$.
 {\it  Show that the number of solutions to $x^2 \equiv a \pmod p$ is equal to $1 + (a/p)$.
 }
 
-\begin{proof} Let $N$ the number of solutions of $x^2\equiv a \pmod p$.
+\begin{proof} Let $N$ the number of solutions of $x^2\equiv a \pmod p$, where $p$ is a prime number.
 
 $\bullet$ If $\legendre{a}{p} = 0$, then $p\mid a$, $a\equiv 0 \pmod p$, so the unique solution of $x^2 \equiv a = 0$ is $x\equiv 0 \pmod p$, so $N = 1 = 1 + \legendre{a}{p}$.
 
 $\bullet$ If $\legendre{a}{p} = -1$, then $N = 0 = 1 + \legendre{a}{p}$.
 
-$\bullet$ If $\legendre{a}{p} = 1$, then $x^2\equiv a \pmod p$ has a solution $x_0$, and $x^2 \equiv a \pmod p\iff x^2 \equiv x_0^2 \pmod p\equiv p \mid (x-x_0)(x+x_0) \equiv x\equiv \pm x_0 \pmod p$, so $N = 2 = 1 + \legendre{a}{p}$.
+$\bullet$ If $\legendre{a}{p} = 1$, then $x^2\equiv a \pmod p$ has a solution $x_0$, and $x^2 \equiv a \pmod p \iff x^2 \equiv x_0^2 \pmod p\iff p \mid (x-x_0)(x+x_0) \iff x\equiv \pm x_0 \pmod p$, so $N = 2 = 1 + \legendre{a}{p}$.
 \end{proof}
 
 \end{document}
