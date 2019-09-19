@@ -867,6 +867,7 @@ Conclusion : under the hypothesis $x^n \equiv a \pmod {2^{2l+1}}$, where $l = \m
 
 \bigskip
 
+
 { \Large \bf Chapter 5}
 
 \paragraph{Ex. 5.1}
@@ -916,13 +917,343 @@ $\legendre{-1}{p} = (-1)^{(p-1)/2}$.
 {\it  Show that the number of solutions to $x^2 \equiv a \pmod p$ is equal to $1 + (a/p)$.
 }
 
-\begin{proof} Let $N$ the number of solutions of $x^2\equiv a \pmod p$, where $p$ is a prime number.
+\begin{proof} Let $N$ the number of solutions of $x^2\equiv a \pmod p$.
 
 $\bullet$ If $\legendre{a}{p} = 0$, then $p\mid a$, $a\equiv 0 \pmod p$, so the unique solution of $x^2 \equiv a = 0$ is $x\equiv 0 \pmod p$, so $N = 1 = 1 + \legendre{a}{p}$.
 
 $\bullet$ If $\legendre{a}{p} = -1$, then $N = 0 = 1 + \legendre{a}{p}$.
 
-$\bullet$ If $\legendre{a}{p} = 1$, then $x^2\equiv a \pmod p$ has a solution $x_0$, and $x^2 \equiv a \pmod p \iff x^2 \equiv x_0^2 \pmod p\iff p \mid (x-x_0)(x+x_0) \iff x\equiv \pm x_0 \pmod p$, so $N = 2 = 1 + \legendre{a}{p}$.
+$\bullet$ If $\legendre{a}{p} = 1$, then $x^2\equiv a \pmod p$ has a solution $x_0$, and $x^2 \equiv a \pmod p\iff x^2 \equiv x_0^2 \pmod p\equiv p \mid (x-x_0)(x+x_0) \equiv x\equiv \pm x_0 \pmod p$, so $N = 2 = 1 + \legendre{a}{p}$.
 \end{proof}
 
+\paragraph{Ex. 5.3}
+
+{\it Suppose $p \not | \; a$. Show that the number of solutions to $a x^2 + bx + c \equiv 0 \pmod p$ is equal to $1 + ((b^2- 4ac)/p)$.
+}
+
+\begin{proof}
+Here $p$ is an odd prime number, and $p \nmid a$. Let $N$ be the number of solutions of $a x^2 + bx + c \equiv 0 \pmod p$
+
+For $\overline{x} \in \F_p = \Z/p\Z$, 
+\begin{align*}
+\overline{a} \overline{x}^2 + \overline{b}\overline{x} + \overline{c} &= \overline{a}\left( \overline{x}^2 + \frac{\overline{b}}{\overline{a}}\ \overline{x} + \frac{\overline{c}}{\overline{a}}\right)\\
+&=\overline{a} \left( \left(\overline{x} + \frac{\overline{b}}{2\overline{a}}\right)^2 - \frac{\overline{b}^2 - 4 \overline{a}\overline{c}}{4 \overline{a}^2} \right)
+\end{align*}
+Let $\Delta = b^2-4ac$. Then $N$ is the number of solutions of $\left(\overline{x} + \frac{\overline{b}}{2\overline{a}}\right)^2 - \frac{\overline{\Delta}}{4 \overline{a}^2} = \overline{0}$ in $\F_p$. As in Ex.5.2,  $N = 1$ if $\overline{\Delta} = \overline{0}$, $N=0$ if $\overline{\Delta}$ is not a square in $\F_p^*$,  otherwise $\overline{\Delta} = \delta^2, \delta \in \F_p^*$, and the solutions are $\overline{x} = (-\overline{b} \pm \overline{\delta})/ 2\overline{a}$, so  $N = 2$. In the three cases, $N = 1+ \legendre{\Delta}{p}$. 
+\end{proof}
+
+\paragraph{Ex. 5.4}
+
+{\it Prove that $\sum_{a=1}^{p-1} (a/p) = 0$.
+}
+
+\begin{proof} Here $p$ is an odd  prime (the result is false if $p=2$). In the interval $[1,p-1]$, there exist $(p-1)/2$ residues, and $(p-1)/2$ nonresidues (Prop. 5.1.2., Corollary 1), so $\sum_{a=1}^{p-1} (a/p) = 0$.
+\end{proof}
+
+\begin{proof}
+As an alternative proof, let $S = \sum\limits_{a=1}^{p-1} \legendre{a}{p}$, and  $b$ a nonresidue modulo $p$ : $\legendre{b}{p} = -1$ (such a $b$ exists if $p\neq 2$). As $a \mapsto ab$ is a bijection from $\F_p^*$ to itself, 
+$$\legendre{b}{p} S = \sum_{a=1}^{p-1} \legendre{ab}{p} = \sum_{c = 1}^{p-1} \legendre{c}{p}  = S,$$
+so $-S = S, S=0$.
+\end{proof}
+
+\paragraph{Ex. 5.5}
+
+{\it  Prove that $\sum_{x=1}^{p-1} ((ax + b)/p) = 0$ provided that $p \nmid a$.}
+
+There is a mistake in the sentence : we must read 
+
+{\it  Prove that $\sum_{x=0}^{p-1} ((ax + b)/p) = 0$ provided that $p \nmid a$.}
+
+By example, 
+$$\sum_{x=1}^{5-1} \legendre{x+1}{5} = \legendre{2}{5} +  \legendre{3}{5}+  \legendre{4}{5} = -1\neq 0.$$
+\begin{proof} 
+From exercise 5.3, as $\legendre{0}{p} = 0$, we know that
+$$\sum_{\overline{x} \in \F_p} \legendre{x}{p} = \sum _{x=0}^{p-1} \legendre{x}{p} = \sum_{x=1}^{p-1} \legendre{x}{p} =0.$$
+
+(This sum is well defined, since $\legendre{x}{p}$ depends only of $\overline{x}$ : $x\equiv x' \pmod p \Rightarrow \legendre{x}{p} =\legendre{x'}{p}$.)
+
+As $\overline{a} \neq \overline{0}$ in $\F_p$,
+$
+f :
+\left\{
+\begin{array}{ccc}
+  \F_p &\to   &\F_p   \\
+  x & \mapsto   & \overline{a} x+\overline{b}
+ \end{array}
+\right.
+$ is a bijection. Thus
+\begin{align*}
+\sum_{x=0}^{p-1} \legendre{ax+b}{p} & = \sum_{x \in \F_p} \legendre{f(x)}{p}\\
+&=\sum_{y \in \F_p} \legendre{y}{p}\qquad (y = f(x))\\
+&= 0
+\end{align*}
+\end{proof}
+
+\paragraph{Ex. 5.6}
+
+{\it  Show that the number of solutions to $x^2 - y^2 \equiv a \pmod p$ is given by:
+$$
+  \sum_{y=0}^{p-1}\left(1+\legendre{y^2 + a}{p}\right).
+$$
+
+}
+
+\begin{proof}
+Let $S =\{(\overline{x},\overline{y}) \in \F_p^2\ \vert \ \overline{x}^2 - \overline{y}^2 = \overline{a}\} $.
+From Ex.5.2,
+\begin{align*}
+\vert S \vert &= \sum_{\overline{y} \in \F_p} \mathrm{Card} \ \{\overline{x} \in \F_p\ \vert \ \overline{x}^2 = \overline{y}^2 + \overline{a}\} \\
+&= \sum_{y=0}^{p-1}\left(1+\legendre{y^2 + a}{p}\right).
+\end{align*}
+\end{proof}
+
+\paragraph{Ex. 5.7}
+
+{\it 
+By calculating directly show that the number of solutions to $x^2 - y^2 \equiv a \pmod p$ is $p-1$ if $p \nmid a$, and $2p - 1$ if $p \mid a$. (Hint. Use the change of variables $u = x+y, v=x-y$.)
+
+}
+
+\begin{proof}
+Let $S = \{(\overline{x},\overline{y}) \in \F_p^2\ \vert \ \overline{x}^2 - \overline{y}^2 = \overline{a}\}$, and $T = \{(\overline{u},\overline{v}) \in \F_p^2\ \vert \ \overline{u}\, \overline{v} = \overline{a}\}$.
+Then 
+$f:
+\left\{
+\begin{array}{ccc}
+ S &  \to  &  T\\
+  (\overline{x},\overline{y})&  \mapsto &  (\overline{x} + \overline{y},  \overline{x} - \overline{y})
+\end{array}
+\right.
+$ is well defined (if $(\overline{x},\overline{y}) \in S, (\overline{x}-\overline{y})(\overline{x}+\overline{y}) =a$, so $(\overline{x} + \overline{y},  \overline{x} - \overline{y}) \in T$). Moreover $f$ is a bijection, with inverse $(\overline{u},\overline{v}) \mapsto  ((\overline{u}+ \overline{v})/2, (\overline{u}- \overline{v})/2)$, so $\vert S \vert = \vert T \vert$.
+
+We compute $\vert T \vert$.
+
+$\bullet$  Suppose $p\nmid a$, so $\overline{a} \neq \overline{0}$. For $\overline{v}\neq {0}$, there is no solution, and for each $\overline{v} \neq 0$, we obtain the unique solution $(\overline{a} \, \overline{v}^{-1},\overline{v})$, so there exist $p-1$ solutions.
+
+$\bullet$ Suppose $p\mid a$. The solutions of $\overline{u} \overline{v} = \overline{0}$ are $(\overline{0},\overline{0})$, $(\overline{0},\overline{v})$ for each $\overline{v} \ne \overline{0}$, $(\overline{u},\overline{0})$ for each $\overline{v} \ne \overline{0}$, that is to say $N = 1+(p-1)+(p-1) = 2p-1$ solutions.
+
+Conclusion : 
+\begin{align*}
+\mathrm{Card} \ \{(\overline{x},\overline{y}) \in \F_p^2\ \vert \ \overline{x}^2 - \overline{y}^2 = \overline{a}\} &= p-1\quad \mathrm{if}\  p \nmid a\\
+&= 2p-1 \quad \mathrm{if}\  p \mid a\\
+\end{align*}
+\end{proof}
+
+\paragraph{Ex. 5.8}
+
+{\it Combining the results of Ex. 5.6 and 5.7 show that:
+$$
+  \sum_{y=0}^{p-1} \left(\frac{y^2 +a}{p}\right) =
+  \begin{cases}
+   \  -1 \ \quad \mathrm {if}\ p\nmid a \\
+   \  p-1 \quad \mathrm{if}\, p \mid a
+  \end{cases}
+$$
+}
+
+\begin{proof}
+Let $S =\{(\overline{x},\overline{y}) \in \F_p^2\ \vert \ \overline{x}^2 - \overline{y}^2 = \overline{a}\} $.
+
+We obtain in Ex 5.6, $\vert S \vert =    \sum\limits_{y=0}^{p-1}\left(1+\legendre{y^2 + a}{p}\right)$, and in Ex. 5.7. , $\vert S \vert  =  p-1$ if $p\nmid a$, $\vert S \vert  =  2p-1$ if $p\mid a$.
+
+So $$S - p = \sum\limits_{y=0}^{p-1} \legendre{y^2 + a}{p} = 
+ \begin{cases}
+   \  -1 \ \quad \mathrm {if}\ p\nmid a \\
+   \  p-1 \quad \mathrm{if}\, p \mid a
+  \end{cases}
+  $$
+\end{proof}
+
+\paragraph{Ex. 5.9}
+
+{\it  Prove that $1^2 3^2 \cdots (p-2)^2 \equiv (-1)^{(p+1)/2} \pmod p$ using Wilson's theorem.
+}
+
+\begin{proof}
+Here $p$ is an odd prime.
+
+From Wilson's theorem, as $k(p-k) \equiv -k^2 \pmod p$ for $k=1,2,\ldots,p-1$,
+\begin{align*}
+-1&\equiv (p-1)!\\
+&\equiv \left[1\times 2\times\cdots\times k\times \cdots\times\left(\frac{p-1}{2}\right)\right]\times\left[\left(\frac{p+1}{2}\right)\times\cdots\times(p-k)\cdots\times(p-2)\times(p-1)\right]\\
+&\equiv \prod_{k=1}^{(p-1)/2} k(p-k)\\
+&\equiv (-1)^{(p-1)/2} \prod_{k=1}^{(p-1)/2} k^2 \\
+&\equiv (-1)^{(p-1)/2}\left[\left(\frac{p-1}{2}\right)!\right]^2 \pmod p
+\end{align*}
+So $$\left[\left(\frac{p-1}{2}\right)!\right]^2 \equiv (-1)^{(p+1)/2} \pmod p.$$
+Moreover, from Wilson' theorem and Fermat's little theorem,
+\begin{align*}
+1^2 2^23^2\cdots(p-1)^2 &= [(p-1)!]^2 \equiv 1 \pmod p\\
+2^2 4^2 \cdots(p-1)^2 &=\left(2^{p-1}\right)^2 \left[\left(\frac{p-1}{2}\right)!\right]^2\equiv \left[\left(\frac{p-1}{2}\right)!\right]^2 \pmod p\\
+\end{align*}
+Thus
+$$1^2 3^2\cdots(p-2)^2 \left[\left(\frac{p-1}{2}\right)!\right]^2 \equiv 1 \pmod p.$$
+which gives
+$$1^2 3^2\cdots(p-2)^2 \equiv (-1)^{(p+1)/2} \pmod p.$$
+\end{proof}
+
+\paragraph{Ex. 5.10}
+
+{\it Let $r_1, r_2, \ldots, r_{(p-1)/2}$ be the quadratic residues between
+$1$ and $p$. Show that their product is congruent to $1 \pmod p$ if $p
+\equiv 3 \pmod 4$, and to $-1$ if $p \equiv 1 \pmod 4$.
+
+}
+
+\begin{proof}
+We proved in Ex. 5.9 that
+$$\left[\left(\frac{p-1}{2}\right)!\right]^2 \equiv (-1)^{(p+1)/2} \pmod p.$$
+The application 
+$ f:
+\left\{
+\begin{array}{ccc}
+\{\overline{1},\overline{2},\ldots,\overline{(p-1)/2}\}  & \mapsto    & \{ \overline{r_1},\overline{ r_2}, \ldots, \overline{r_{(p-1)/2}}\} \\
+  x &  \mapsto  &  x^2   
+\end{array}
+\right.
+$ is a bijection, so
+$$\prod_{i=1}^{(p-1)/2} r_i \equiv \left[\left(\frac{p-1}{2}\right)!\right]^2 \pmod p,$$
+so
+$$\prod_{i=1}^{(p-1)/2} r_i \equiv (-1)^{(p+1)/2} \pmod p.$$
+That is to say, the product of the quadratic residues between $1$ and $p$ is congruent to $1 \pmod p$ if $p
+\equiv 3 \pmod 4$, and to $-1$ if $p \equiv 1 \pmod 4$.
+\end{proof}
+
+\paragraph{Ex. 5.11}
+
+{\it  Suppose that $p \equiv 3 \pmod 4$, and that $q = 2p+1$ is also prime. Prove that $2^p -1$ is not prime. (Hint : Use the quadratic character of 2 to show that $q\mid 2^p-1$) One must assume that $p>3$.
+}
+
+\begin{proof}
+The result is false if $p=3$, so we must suppose $p>3$.
+
+$p=4k+3$ for an integer $k$, so $q = 2p+1 = 8k+7 \equiv -1 \pmod 8$. Thus
+$$\legendre{2}{q} = (-1)^{(q^2-1)/8} = 1.$$
+So $2^{(q-1)/2} \equiv 1 \pmod q$, $2^p  \equiv 1 \pmod q$, so $q \mid 2^p-1$.
+
+Moreover, as $p>3$, $q=2p+1<2^p-1$
+
+$(2p+1<2^p-1 \iff 2p < 2^p - 2 \iff p +1< 2^{p-1}$.
+
+$4+1 < 2^{4-1}$ and for all $k\geq 4$, $k+1 < 2^{k -1}$ implies $k+2 < 2^{k-1} + 1\leq 2^k$, and $4+1 < 2^{4-1}$, so by induction $k+1 < 2^{k -1}$ for all $k>3$. 
+
+So $q \mid 2^p-1$ with $1 < q < 2^p-1$  : $2^p - 1$ is composite.
+
+Conclusion : if $p \equiv 3 \pmod 4, p>3$ is prime, and  $q = 2p+1$ is also prime, then $2^p - 1$ is not a prime.
+
+For instance, le Mersenne's number $2^{11} - 1 =2047$ is not a prime : $2047 = 23 \times 89$.
+\end{proof}
+
+\paragraph{Ex. 5.12}
+
+{\it Let $f(x) \in \Z[x]$. We say that a prime $p$ divides $f(x)$ if there's an integer $n$ such that $p \mid f(n)$. Describe the prime divisors of $x^2 + 1$ and $x^2 -2$.
+}
+
+\begin{proof}
+$p$ divides $x^2+1$ iff there exists $a \in \Z$ such that $-1 \equiv a^2 \pmod p$, iff $p=2$ or $\legendre{-1}{p} = 1$ iff $ p=2$ or $p \equiv 1 \pmod 4$.
+
+$p$ divides $x^2-2$ iff there exists $a \in \Z$ such that $2 \equiv a^2 \pmod p$, iff $p=2$ or  $\legendre{2}{p} = 1$ iff $p=2$ or $p \equiv \pm 1 \pmod 8$.
+\end{proof}
+
+\paragraph{Ex. 5.13}
+
+{\it  Show that any prime divisor of $x^4 - x^2 + 1$ is congruent to $1$ modulo $12$.
+}
+
+\begin{proof}
+
+$\bullet$ As $a^6 +1 = (a^2+1)(a^4-a^2+1)$, $p\mid a^4 - a^2+1$ implies $p \mid a^6 + 1$, so $\legendre{-1}{p} = 1$ and $p\equiv 1 \pmod 4$.
+
+$\bullet$ $p \mid 4a^4 - 4 a^2 +4 = (2a-1)^2 + 3$, so $\legendre{-3}{p} = 1$.
+
+As $-3 \equiv 1 \pmod 4$, $\legendre{-3}{p} = \legendre{p}{3}$, so $\legendre{p}{3} = 1$, thus $p \equiv 1 \pmod 3$.
+
+$4 \mid p-1$ and $3 \mid p-1$, thus $12 \mid p-1$ : $$p \equiv 1 \pmod {12}.$$
+\end{proof}
+
+\paragraph{Ex. 5.14}
+
+{\it Use the fact that $U(\Z/p\Z)$ is cyclic to give a direct proof that $(-3/p) = 1$ when $p \equiv 1 \pmod 3$.[Hint : There is a $\rho$ in $U(\Z/p\Z)$ of order $3$. Show that $(2\rho + 1)^2 = -3$.]
+}
+
+\begin{proof}
+Suppose that $p\equiv 1 \pmod 3$. Let $g$ a generator of $\F_p^*$. Then $g$ has order $p-1$, thus $\rho = g^{(p-1)/3}$ has order $3$.
+As $\rho^3 = 1,\rho\ne 1$, then $\rho^2+\rho+1 = 0$.
+\begin{align*}
+(2\rho + 1)^2 &= 4\rho^2+ 4\rho +1\\
+&=4(\rho^2+\rho+1)-3\\
+&=-3.
+\end{align*}
+Thus $\legendre{-3}{p} = 1$.
+\end{proof}
+The inverse form of this proposition is also true for an odd prime $p$ :  if $\legendre{-3}{p} = 1$, then there exists $a\in \F_p^*$ such that $-\overline{3} =a^2$. $\rho = \frac{-1+a}{2}$ has order  $3$. Indeed
+$\rho^2 = \frac{1+a^2-2a}{4} = \frac{-2-2a}{4} = \frac{-1-a}{2}$, so
+\begin{align*}
+1+\rho + \rho^2 &= 1 +  \frac{-1+a}{2}+ \frac{-1-a}{2}\\
+&=0
+\end{align*}
+so $\rho\ne1, \rho^3=1$.
+The group $\F_p^*$ contains an element of order 3, thus from Lagrange's theorem $3 \mid p-1$ : $p\equiv 1 \pmod 3$.
+
+\paragraph{Ex. 5.15}
+
+{\it If $p \equiv 1 \pmod 5$, show directly that $(5/p) = 1$ by the method of Ex. 5.14. [Hint : Let $\rho$ be an element of $U(\Z/p\Z))$ of order $5$. Show that $(\rho+\rho^4)^2+ (\rho+\rho^4)-\overline{1}= \overline{0}$, etc.]
+}
+
+\begin{proof}
+Let $g$ a generator of $\F_p^*$. $g$ has order $p-1$, thus $\rho = g^{(p-1)/5}$ has order $5$.
+
+Let 
+$$
+\left\{
+\begin{array}{ccc}
+  \alpha & =  & \rho + \rho^4  \\
+  \beta &   = &  \rho^2 + \rho^3   
+\end{array}
+\right.
+$$
+As $0 = \rho^5- 1 = (\rho - 1)(1+\rho+\rho^2+\rho^3+\rho^4)$ and $\rho \neq 1$, then $1+\rho+\rho^2+\rho^3+\rho^4=0$, thus
+\begin{align*}
+\alpha+ \beta &= -1\\
+\alpha\beta &= \rho^3+\rho^4+ \rho +\rho^2 = -1
+\end{align*}
+So $\alpha,\beta$ are the roots in $\F_p$ of $x^2 +x - 1$ : $\alpha^2+\alpha-1 = 0$.
+
+Thus $4\alpha^2+4\alpha - 4 = (2\alpha+1)^2 - 5 = 0$ : $\overline{5}$ is a square in $\F_p^*$ and $\legendre{5}{p} = 1$.
+\end{proof}
+
+\paragraph{Ex. 5.16}
+
+{\it  Using quadratic reciprocity find the primes for which $7$ is quadratic residue. Do the same for $15$.
+}
+
+\begin{proof}
+$7$ is a quadratic residue for $2$ and for the odd primes such that $\legendre{7}{p} = 1$.
+
+From the law of quadratic reciprocity,
+\begin{align*}
+\legendre{7}{p} = 1 \iff (-1)^{(p-1)/2} \legendre{p}{7} = 1
+\end{align*}
+iff either $p\equiv 1 \pmod 4$ and $\legendre{p}{7} =1$, or $p\equiv -1 \pmod 4$ and $\legendre{p}{7} =-1$.
+
+In the first case , $p\equiv 1 \pmod 4, p\equiv 1,4,2 \pmod 7$, which gives $p \equiv 1,-3,9 \pmod {28}$.
+
+In the second case, $p\equiv -1 \pmod 4, p\equiv -1,-4,-2 \pmod 7$, which gives $p\equiv -1,3,-9 \pmod {28}$.
+
+Conclusion : the primes for which $7$ is a  quadratic residue are $2$ and the odd primes $p$ such that
+$$\legendre {7}{p} = 1 \iff p \equiv \pm 1,\pm 3, \pm 9 \pmod{28}.$$
+\end{proof}
+
+\bigskip
+
+$15$ is a  quadratic residue for $2$ and for the odd primes such that $\legendre{15}{p} = 1$.
+\begin{align*}
+\legendre{15}{p} = 1 \iff \legendre{3}{p} = \legendre{5}{p} = 1\ \mathrm{or} \ \legendre{3}{p} = \legendre{5}{p} = -1
+\end{align*}
+From the examples of theorem 2, we know that
+$$\legendre{3}{p} = 1 \iff p\equiv 1,-1 \pmod {12}, \quad \legendre{3}{p} = -1 \iff  p \equiv  5 ,-5\pmod {12},$$
+$$\legendre{5}{p} = 1 \iff p \equiv 1,-1 \pmod {5}, \quad \legendre{5}{p} = -1 \iff p \equiv 2,-2 \pmod {5}.$$
+As $5\wedge 12 = 1$, there exist 8 cases, all possible, which give
+$$\legendre{15}{p} = 1 \iff p \equiv \pm 1,\pm 7, \pm 11, \pm 17 \pmod {60}.$$
+For instance, the primes $2,7,11,17, 43, 53,59,  61,67, 137, \ldots$ are suitable.
 \end{document}
