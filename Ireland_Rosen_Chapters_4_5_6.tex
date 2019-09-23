@@ -1256,4 +1256,346 @@ $$\legendre{5}{p} = 1 \iff p \equiv 1,-1 \pmod {5}, \quad \legendre{5}{p} = -1 \
 As $5\wedge 12 = 1$, there exist 8 cases, all possible, which give
 $$\legendre{15}{p} = 1 \iff p \equiv \pm 1,\pm 7, \pm 11, \pm 17 \pmod {60}.$$
 For instance, the primes $2,7,11,17, 43, 53,59,  61,67, 137, \ldots$ are suitable.
+
+\paragraph{Ex. 5.17}
+
+{\it Supply the details to the proof of Proposition 5.2.1 and to the corollary to the lemma following it.
+}
+
+\medskip
+
+{\bf Proposition 5.2.1} 
+{\it
+\begin{enumerate}
+\item[(a)] $(a_1/b) = (a_2/b)$ if $a_1\equiv a_2 \pmod b$.
+\item[(b)] $(a_1a_2/b) = (a_1/b)(a_2/b)$.
+\item[(c)] $(a/b_1b_2) = (a/b_1)(a/b_2)$.
+\end{enumerate}
+}
+\begin{proof}  
+\begin{enumerate}
+\item[(a)] Let $b = p_1p_2\cdots p_m$, where the $p_i$ are not necessarily distinct primes.
+For each prime $p_i$, $(a_1,p_i) = (a_2,p_i)$ (Prop. 5.1.2 (c)), so $\prod_i (a_1,p_i) = \prod_i (a_2,p_i)$, thus $(a_1/b) = (a_2/b)$.
+\item[(b)] From Prop. 5.1.2(b), 
+
+$(a_1a_2/b) = \prod_i (a_1a_2/p_i) = \prod_i (a_1/p_i)(a_2/p_i) =\prod_i (a_1/p_i)\prod_i (a_2/p_i) = (a_1/b)(a_2/b)$.
+
+\item[(c)] Let $b_1 = p_1p_2\cdots p_m, b_2 = q_1 q_2\cdots q_l$. Then $b_1b_2 = p_1p_2\cdots p_m q_1 q_2\cdots q_l = \prod_{i=1}^{m+l} r_i$, where $r_i = p_i$ for $i=1,\ldots,m$, $r_i = q_{i-m}$ for $i = m+1,\ldots, m+l$. Then
+
+$(a/b_1b_2) =\prod_{i=1}^{m+l} (a/ r_i) =  \prod_{i=1}^m (a/p_i) \prod_{j=1}^l(a/q_i) = (a/b_1)(a/b_2)$. 
+\end{enumerate}
+\end{proof}
+
+
+{\bf Lemma.} {\it Let $r$ and $s$ be odd integers. Then
+\begin{enumerate}
+\item[(a)] $(rs-1)/2 \equiv ((r-1)/2) + ((s-1)/2) \pmod 2$.
+\item[(b)] $(r^2s^2 - 1)/8 \equiv ((r^2-1)/8) + ((s^2-1)/8)\pmod 2$.
+\end{enumerate}
+\it}
+
+(Proof in the book.)
+
+\bigskip
+
+{\bf Corollary.} {\it Let $r_1,r_2,\ldots,r_m$ be odd integers. Then
+\begin{enumerate}
+\item[(a)] $\sum_{i=1}^m (r_i-1)/2 \equiv (r_1r_2\cdots r_m-1)/2 \pmod 2$.
+\item[(b)] $\sum_{i=1}^m (r_i^2-1)/8 \equiv (r_1^2r_2^2\cdots r_m^2 -1)/8 \pmod 2$.
+\end{enumerate}
+\it}
+\begin{proof} Let ${\cal P}(m)$ the proposition defined by
+$${\cal P}(m) \iff \sum_{i=1}^m (r_i-1)/2 \equiv (r_1r_2\cdots r_m-1)/2 \pmod 2.$$
+Then ${\cal P}(1)\iff (r_1-1)/2 \equiv (r_1-1)/2 \pmod 2$ is true, and ${\cal P}(2)$ is part (a) of the lemma. If we make the induction hypothesis ${\cal P}(m)$, then
+\begin{align*}
+\sum_{i=1}^{m+1} (r_i-1)/2 &= \sum_{i=1}^m (r_i-1)/2 + (r_{m+1} -1)/2\\
+&\equiv (r_1r_2\cdots r_m-1)/2 + (r_{m+1} -1)/2 \pmod 2\\
+&\equiv (r_1r_2\cdots r_m r_{m+1}-1)/2 \pmod 2,
+\end{align*}
+where the last congruence is a consequence of the part (a) of the Lemma : the induction is completed, and ${\cal P}(m)$ is true for all $m\geq 1$.
+
+The proof of part (b) is similar.
+\end{proof}
+
+\paragraph{Ex. 5.18}
+
+{\it Let $D$ be a square-free integer that is also odd and positive. Show that there's an integer $b$ prime to $D$ such that $(b/D) = -1$.
+}
+
+\begin{proof}
+Let $D = p_1p_2\cdots p_k$, where the $p_i$ are distinct odd primes.
+
+Let $s$ a nonresidue modulo $p_k$. From Chinese remainder theorem, as $p_i \wedge p_j = 1$ if $i\ne j$,  there exists an integer $b$ such that
+$$b \equiv 1 \pmod {p_1}, b \equiv 1 \pmod {p_2},\cdots, b \equiv 1 \pmod {p_{k-1}}, b \equiv s \pmod {p_k}.$$
+Then $(b/p_i) = 1,\ i=1,2,\ldots k-1$, $(b/p_{k}) = -1$, so $b\wedge p_i = 1$ for all $i = 1,2,\ldots,k$. Then $b\wedge D = b\wedge p_1\cdots p_k = 1$ , and 
+$$\legendre{b}{D} = \prod_{i=1}^k \legendre {b}{p_i} = \legendre{b}{p_k} = -1.$$
+\end{proof}
+
+\paragraph{Ex. 5.19}
+
+{\it  Let $D$ be as in Exercise 18. Show that $\sum (a/D) = 0$, where the sum is over a reduced residue system modulo $D$. Conclude that exactly one half of the elements in $U(\Z/D\Z)$ satisfy $(a/D) = 1$.
+}
+
+\begin{proof}
+Let $b$ such that $(b/D) = 1$ : the existence of $b$ comes from Ex 5.18.
+
+Let $S = \sum_{a\in A} (a/D)$, where $A$ is reduced residue system modulo $D$. As two reduced system modulo $D$ represent the same elements in $U(\Z/D\Z)$, the sum is independent of the  reduced residue system $A$ : we can write $$S = \sum_{\overline{a} \in U(\Z/D\Z)} (a/D).$$
+
+ As $b \wedge D = 1$, we know from Ex. 3.6 that $B = bA = \{ba \ \vert \ a \in A\}$ is also a reduced system modulo $D$. In other words, the application  $U(Z/DZ) \to U(\Z/D\Z), \overline{a} \mapsto  \overline{a}\overline{b}$ is a bijection, so
+$$\legendre{b}{D} S = \sum_{\overline{a} \in U(\Z/D\Z)} \legendre{b}{D} \legendre{a}{D}  =  \sum_{\overline{a} \in U(\Z/D\Z)} \legendre{ba}{D} = \sum_{\overline{c} \in U(\Z/D\Z)} \legendre{c}{D} = S  \qquad (\overline{c} = \overline{a}\overline{b}).$$
+
+
+As $(b/D) = -1$, $-S = S $, so $S=0$.
+
+Since $(a/D) = \pm 1$, one half of the elements in $U(\Z/D\Z)$ satisfy $(a/D) = 1$, and one half of the elements in $U(\Z/D\Z)$ satisfy $(a/D) =-1$.
+\end{proof}
+
+\paragraph{Ex. 5.20}
+
+{\it (continuation) Let $a_1, a_2, \ldots, a_{\phi(D)/2}$ be integers between $1$ and $D$ such that $(a_i, D) = 1$ and $(a_i/D) = 1$. Prove that $D$ is a quadratic residue modulo a prime $p \not | \; D$, $p \equiv 1 \pmod 4$ iff $p \equiv a_i \pmod D$ for some $i$.
+}
+
+\begin{proof}
+From Ex. 5.19 we know that there exist exactly $\phi(D)/2$ integers $a_i$ between $1$ and $D$ such that $a_i \wedge D = 1$ and $(a_i/D)= 1$. So $\{\overline{a_1},\ldots,\overline{a_{\phi(D)/2}}\}$ is the set of all $\overline{a} \in U(\Z/D\Z)$ such that $ (a/D) = 1$.
+
+Let $D = p_1p_2\cdots p_k$, with distinct $p_i$, and $p$ a prime number, $p\equiv 1 \pmod 4, p \not \in \{p_1,\ldots,p_k\}$ (so $p = 4k+1, k \in \N$).
+
+($\Leftarrow$)  Suppose that  $p \equiv a_i$ for some $i,\ 1\leq i \leq \phi(D)/2$, then $(p/D) = (a_i/D) = 1$, so (Prop. 5.2.2)
+$$\legendre{D}{p} = (-1)^{\frac{p-1}{2} \frac{D-1}{2}} \legendre {p}{D} = (-1)^{2k\left(\frac{D-1}{2}\right)} \legendre {p}{D} = \legendre {p}{D} = 1 .$$
+
+($\Rightarrow$) Suppose that $D$ is a quadratic residue modulo $p$. Then $(D/p) = 1$, so 
+$$\legendre{p}{D} = (-1)^{\frac{p-1}{2} \frac{D-1}{2}} \legendre {D}{p} = 1.$$
+Thus $\overline{p} \in \{\overline{a_1},\ldots,\overline{a_{\phi(D)/2}}\}$ since $\{\overline{a_1},\ldots,\overline{a_{\phi(D)/2}}\}$ is the set of all $\overline{a} \in U(\Z/D\Z)$ such that $ (a/D) = 1$.
+Consequently $p \equiv a_i \pmod D$ for some $i$.
+\end{proof}
+
+\paragraph{Ex. 5.21}
+
+{\it  Apply the method of Ex. 5.19 and 5.20 to find those primes for which $21$ is a quadratic residue.
+}
+
+\begin{proof}
+Let $D = 21 = 3 \times 7$ ($D$ is positive, odd and square-free). We first search the $\phi(D)/2 = 6$ integers $a, \ 1\leq a \leq 21$, such that $ (a/D) = 1$.
+$$\legendre{a}{21} = 1 \iff \legendre{a}{3} = \legendre{a}{7}=1 \ \mathrm{or}\  \legendre{a}{3} = \legendre{a}{7}=-1.$$
+The first case is equivalent to $a\equiv 1 \pmod 3, a\equiv 1,2,4 \pmod 7$, that is $a\equiv 1,16,4 \pmod {21}$.
+
+The second case gives $a \equiv -1 \pmod 3, a \equiv -1,-2,-4 \pmod 7$,  that is $a \equiv -1,-16,-4\pmod {21}$, or equivalently $a \equiv 20,5,17 \pmod{ 21}$.
+
+So $A = \{1,4,5,16,17,20\}$ is the set of the integers $a$ such that $1 \leq a \leq 21$, $(a/D)=1$.
+
+As $(21/3) = (21/7) = 0$, $21$ is not a quadratic residue modulo $3$ or $7$.
+
+$\bullet$ $p \equiv 1 \pmod 4$.
+
+From Ex.5.20, we know that $D=21$ is a quadratic residue modulo an odd prime $p$, $p\neq 3, p\neq 7$, $p \equiv 1 \pmod {4}$, iff $p \equiv a \pmod D$ for some $a\in A$.
+
+$\bullet$ $p \equiv -1 \pmod 4$.
+
+As $D = 21 \equiv 1 \pmod 4$, $\legendre{D}{p} \legendre{p}{D} = (-1)^{\frac{p-1}{2}\frac{D-1}{2}} = 1$, so the same reasoning as in Ex. 5.20 show that $D$ is a quadratic residue modulo $21$ iff $p \equiv a, a \in A$.
+
+Conclusion : $21$ is a quadratic residue for $2$, and for the primes $p$ such that $$p \equiv 1,4,5,16,17,20 \pmod {21}.$$
+\end{proof}
+
+\paragraph{Ex. 5.22}
+
+{\it Use the Jacobi symbol to determine $(113/997)$, $(215/761)$, $(514/1093)$, and $(401/757)$.
+}
+
+\begin{proof}
+$(113/997) = (997/113) = (93/11) = (113/93) = (20/93) = (2^2/93)(5/93) = (5/93) = (93/5) = (3/5) =(5/3) = (2/3) = -1$.
+
+\medskip
+
+$(215/761) = (761/215) = (116/215) = (2^2/215)(29/215) = (29/215) = (215/29) = (12/29) = (2^2/29)(3/29) = (3/29) = (29/3) = (2/3) = -1$.
+
+\medskip
+
+$(514/1093) = (2/1093)(257/1093) = - (257/1093) = -(1093/57) = -(65/257) = -(257/65) = -(62/65) = -(2/65) (31/65) = -(31/65) = -(65/31) = - (3/31) = (31/3) = (1/3) = 1$.
+
+\medskip
+
+$(401/757) = (757/401) = (356/401) = (401/89) = (45/89) = (89/45) = (44/45) = (2^2/45) (11/45) = (11/45) = (45/11) = (1/11) = 1$.
+\end{proof}
+
+\paragraph{Ex. 5.23}
+
+{\it Suppose that $p \equiv 1 \pmod 4$. Show that there exist integers $s$ and $t$ such that $pt = 1 + s^2$.  Conclude that $p$ is not a prime in $\Z[i]$. Remember that $\Z[i]$ has unique factorization.
+}
+
+\begin{proof}
+As  $p \equiv 1 \pmod 4$, then $\legendre{-1}{p} = (-1)^{\frac{p-1}{2}} = 1$ : $-1$ is a square modulo $p$.
+ 
+ So  $-1 \equiv s^2 \pmod p,  s \in \mathbb{Z}$ : 
+  there exist $s \in \mathbb{Z}, t \in \mathbb{Z}$ such that $pt = 1+s^2$.
+ 
+In $\mathbb{Z}[i]$, $p \vert (s+i)(s-i)$.
+
+ If $p$ was a prime in $\mathbb{Z}[i]$, then  $p \mid s+i$ ou $p \mid s-i$.
+  
+ This implies $s \pm i = (a+bi)p, (a,b) \in \mathbb{Z}^2$, thus $\pm1 = b p , p\mid 1$ : it's impossible.
+ 
+Conclusion : if $p \equiv 1\pmod 4$, $p$ is not a prime in  $\mathbb{Z}[i]$.
+\end{proof}
+
+\paragraph{Ex. 5.24}
+
+{\it If $p \equiv 1 \pmod 4$, show that $p$ is a sum of two squares, i.e. $p = a^2 + b^2$ with $a, b \in \Z$.(Hint : $p = \alpha \beta$, with $ \alpha$ and $\beta$ being non units in $\Z[i]$. Remember that $\Z[i]$ has unique factorisation.)
+}
+
+\begin{proof}
+$\Z[i]$ is a principal ideal domain, thus  $p$  prime is in $ \Z[i]$  iff $p$ is irreducible in $ \Z[i]$.
+ 
+If $p \equiv 1\pmod 4$, $p$ is not a prime from Ex.5.23, so it is not irreducible :
+
+$p = \alpha \beta, \ \alpha,\beta \in \mathbb{Z}[i], N(\alpha)>1, N(\beta)>1$ (where $N(a+bi) = a^2 + b^2$ is the complex norm).
+
+$N(p) = p^2=  N(u) N(v), 1 < N(u) < p^2$
+
+Thus $N(u) = p$, that is  $p = a^2+b^2$, where $u = a+bi$.
+
+Conclusion : if $p$ is prime in $\mathbb{N}$, $p \equiv 1\pmod 4$, then $p = a^2+b^2,\ a,b \in \Z$, $p$ is a sum of two squares.
+
+\end{proof}
+
+\paragraph{Ex. 5.25}
+
+{\it An integer is called a biquadratic residue modulo $p$ if it is congruent to a fourth power. Using the identity $x^4 + 4 = ((x + 1)^2 + 1)((x - 1)^2 + 1)$ show that $-4$ is a biquadratic residue modulo $p$ iff $p \equiv 1 \pmod 4$.
+}
+
+\begin{proof}
+ 
+ $x^4+4 = (x^4 + 4 x^2 + 4) - 4 x^2 = (x^2+2)^2 - 4x^2 = (x^2 + 2 -2x)(x^2+2+2x) $, so
+ 
+ $$x^4+4 = ((x-1)^2+1)((x+1)^2+1).$$
+ 
+ If $-4 \equiv x^4\  [p]$, then $p \mid (x+1)^2 + 1$ or $p \mid (x-1)^2+1$
+ 
+In the two cases, $-1$ is a quadratic residue modulo $p$, thus $\legendre{-1}{p} = 1 : p \equiv 1\  [4]$.
+ 
+
+ 
+ Reciprocally, if $p\equiv 1\ [4], \legendre{-1}{p} = 1 $, then it exists an integer $a$ such that $-1 \equiv a^2 \ [p]$.
+ 
+Let  $x = a-1$. Then $p \mid (x+1)^2 +1$, thus $p \mid x^4+4$ : $-4$ is a biquadratic residue modulo $p$.
+ 
+ Conclusion : $$\exists x \in \mathbb{Z},\  x^4 \equiv -4 \ [p] \iff p \equiv 1\ [4].$$
+\end{proof}
+
+\paragraph{Ex. 5.26}
+
+{\it This exercise and Ex. 5.27 and 5.28 give Dirichlet's beautiful proof that $2$ is a biquadratic residue modulo $p$ iff $p$ can be written in the form $A^2 + 64B^2$ , where $A, B \in \Z$. Suppose that $p \equiv 1 \pmod 4$. Then $p = a^2 + b^2$ by Ex. 5.24. Take $a$ to be odd.  Prove the following statements:
+
+\begin{enumerate}
+\item[(a)]$(a/p) = 1$.
+\item[(b)] $((a + b)/p) = (-1)^{((a+b)^2 -1)/8}$.
+\item [(c)] $(a + b)^2 \equiv 2ab \pmod p$
+\item[(d)] $(a + b)^{(p- 1)/2} \equiv (2ab)^{(p- 1)/4} \pmod p$.
+\end{enumerate}
+}
+
+\begin{proof}
+Let $p$ a prime number, $p \equiv 1\  [4]$ : $p = 4k+1, k \in \mathbb{N}^*$.
+  
+Then  $p = a^2 + b^2$ (Ex. 5.24).
+  
+  As $a,b$ are not of the same parity, up to exchange $a$ and $b$, we will suppose that $a$ is odd (then  $b$ is even).
+  
+  (a) $$\legendre{a}{p} \equiv a^{\frac{p-1}{2}} = a^{2k} \ [p].$$
+  
+  Using the law of quadratic reciprocity for Jacobi's symbol (Proposition 5.2.2), where $a,p$ are odd numbers :
+  
+  $$\legendre{a}{p} = \legendre{p}{a} (-1)^{\frac{p-1}{2} \frac{a-1}{2}} = \legendre{p}{a},$$ since $p \equiv1 \ [4]$.
+  
+ If  $a = p_1 p_2 \cdots p_l$ is the decomposition of $a$ in prime factors, with not necessarily distinct primes , then
+  
+  $$\legendre{p}{a} = \legendre {p}{p_1}  \legendre {p}{p_2}\cdots \legendre {p}{p_l}.$$
+  
+Since $p = a^2+b^2$, $p \equiv b^2 \ [p_i]$, thus $\legendre {p}{p_i} = 1$ for all $i$.
+  
+  $$\legendre{a}{p} = \legendre{p}{a}=1.$$
+  
+   \vspace{0.5cm}
+   (b) $a+b$ is odd, and $p \equiv 1 \ [4]$, thus
+   
+   $$\legendre{a+b}{p} = \legendre{p}{a+b} =\legendre{2^2 p}{a+b}= \legendre{2}{a+b} \legendre{2p}{a+b}.$$
+  
+ If $a+b = q_1 q_2 \cdots q_l$, as $2p = (a+b)^2 +(a-b)^2$,
+   $2p \equiv (a-b)^2 \ [q_i]$, thus $\legendre {2p}{q_i}=1$.
+  
+  $$\legendre{2p}{a+b} = \legendre{2p}{q_1} \cdots \legendre {2p}{q_l} = 1.$$
+  
+  Moreover $\legendre {2}{a+b} = (-1)^{\frac{(a+b)^2-1}{8}}$, so
+  
+$$\legendre{a+b}{p} = (-1)^{\frac{(a+b)^2-1}{8}}.$$
+  
+     \vspace{0.5cm}
+     (c) $(a+b)^2 = a^2 + b^2 + 2ab = p + 2ab \equiv 2ab \ [p]$
+     
+       \vspace{0.5cm}
+       (d)$[(a+b)^2]^{\frac{p-1}{4}} \equiv (2ab)^{\frac{p-1}{4}} \ [p]$, thus
+       $$(a+b)^{\frac{p-1}{2}} \equiv (2ab)^{\frac{p-1}{4}} \ [p].$$
+\end{proof}
+
+\paragraph{Ex. 5.27}
+
+{\it Suppose that $f$ is such that $b \equiv af \pmod p$. Show that $f^2 \equiv -1 \pmod p$, and that $2^{(p-1)/4} \equiv f^{ab/2} \pmod p$.
+}
+
+\begin{proof}
+ Let $f$ such as $b \equiv af \ [p]$.
+ 
+This is equivalent to $\overline{f} = \overline{b} \overline{a}^{-1}$ dans $\mathbb{F}_p^*$.
+ 
+As $\overline{a}^2 = - \overline{b}^2$, $\overline{f}^2 = -\overline{1}$ : $f^2 \equiv -1 \ [p]$.
+ 
+We deduce from Ex. 5.26 (d) and (b) that
+ \begin{align*}
+ (2ab)^{\frac{p-1}{4}} &\equiv (a+b)^{\frac{p-1}{2}} = \legendre{a+b}{p}\\
+ &\equiv (-1) ^{\frac{(a+b)^2 - 1}{8}}\ \\
+ &\equiv (f^2)^{\frac{(a+b)^2 - 1}{8}}\\
+ &\equiv f ^{\frac{(a+b)^2 - 1}{4}} = f^{\frac{a^2+b^2-1 +  2ab}{4}}\\
+ &\equiv f^{\frac{p-1}{4}} f^{\frac{ab}{2}} \pmod p
+ \end{align*}
+Since $a^{\frac{p-1}{2}} = \legendre{a}{p} = 1$ from Ex. 5.26(a)),  
+then $$(ab)^{\frac{p-1}{4}} \equiv (a^2 f)^{\frac{p-1}{4}} \equiv a^{\frac{p-1}{2}} f^{\frac{p-1}{4}}\equiv  f^{\frac{p-1}{4}} \ [p],$$
+so $$2^{\frac{p-1}{4}} f^{\frac{p-1}{4}} \equiv f^{\frac{ab}{2}}f^{\frac{p-1}{4}}\ [p].$$
+As $f^{\frac{p-1}{4}} \not \equiv 0 \ [p]$,
+$$2^{\frac{p-1}{4}} \equiv f ^{\frac{a b }{2} }\ [p].$$
+\end{proof}
+
+\paragraph{Ex. 5.28}
+
+{\it Show that $x^4 \equiv 2 \pmod p$ has a solution for $p \equiv 1 \pmod 4$ iff $p$ is of the form $A^2 + 64B^2$.
+}
+
+\begin{proof}
+If  $p\equiv 1\ [4]$ and if there exists $x \in \mathbb{Z}$ such that $x^4 \equiv 2\ [p]$, then
+$$2^{\frac{p-1}{4} }\equiv  x^{p-1} \equiv 1 \ [p].$$ 
+
+From Ex. 5.27, where $p = a^2 +b^2, a$ odd,  we know that $$f^{\frac{ab}{2}} \equiv 2^{\frac{p-1}{4} } \equiv 1 \ [p].$$
+
+Since $f^2 \equiv -1\ [p]$, the order of $f$ modulo $p$ is 4, thus $4 \mid \frac{ab}{2}$, so $8\mid ab$.
+
+As $a$ is odd, $8 | b$, then $p = A^2 + 64 B^2$ (with $A = a, B = b/8$).
+
+\bigskip
+
+Reciprocaly, if $p=A^2+64 B^2$, then $p\equiv A^2 \equiv 1 \ [4]$.
+
+Let $a=A,b=8B$. Then $$2^{\frac{p-1}{4} } \equiv f^{\frac{ab}{2}} \equiv f^{4AB} \equiv (-1)^{2AB} \equiv 1 \ [p].$$
+
+As $2^{\frac{p-1}{4} } \equiv 1 \ [p]$, $x^4 \equiv 2 \ [p]$ has a solution in $\Z$ (Prop. 4.2.1) : $2$ is a biquadratic residue modulo $p$.
+
+Conclusion : 
+
+$$\exists A \in \mathbb{Z}, \exists B \in \mathbb{Z}\,, p = A^2+64 B^2 \iff( p\equiv 1 \ [4] \ \mathrm{and} \ \exists x \in \mathbb{Z}, \, x^4 \equiv 2 \ [p]).$$
+
+\vspace{0.5cm}
+Remark  : the equation $x^4 \equiv 2\ [p]$ has also solutions if $p \equiv -1 \ [8]$.
+
+Indeed, the equation $x^4 \equiv 2 \ [p]$ has a solution in $\Z$  iff $2^{\frac{p-1}{d}} = 1$, where $d = 4 \wedge (p-1) = 2$, thus  iff $2^{\frac{p-1}{2}} \equiv 1 \ [p]$, which is true as $\legendre{2}{p}=1$.
+
+For instance, $8^4 \equiv 2 \pmod {23}$, with $23\equiv -1 \pmod 8$.
+\end{proof}
+
 \end{document}
