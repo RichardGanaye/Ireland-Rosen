@@ -1598,4 +1598,232 @@ Indeed, the equation $x^4 \equiv 2 \ [p]$ has a solution in $\Z$  iff $2^{\frac{
 For instance, $8^4 \equiv 2 \pmod {23}$, with $23\equiv -1 \pmod 8$.
 \end{proof}
 
+\paragraph{Ex. 5.29}
+
+{\it Let $(RR)$ be the number of pairs $(n, n + 1)$ in the set $1,2,3,\ldots, p - 1$ such that $n$ and $n + 1$ are both quadratic residues modulo $p$. Let $(NR)$ be the number of pairs $(n, n + 1)$ in the set $1,2,3, \ldots, p - 1$ such that $n$ is a quadratic nonresidue and $n + 1$ is a quadratic residue. Similarly, define $(RN)$ and $(NN)$. Determine the sums $(RR) + (RN)$, $(NR) + (NN)$, $(RR) + (NR)$, and $(RN) + (NN)$.
+}
+
+\begin{proof}
+Let $E$ the set of pairs $(n,n+1)\in \N^2, 1 \leq n \leq p-2 : \vert E \vert = p-2$.  
+
+Write $RR$ the set of pairs $(n,n+1)$ such that $n$ and $n+1$ are both a quadratic residues, and $(RR) = \vert RR \vert$ its cardinality, and similar definitions for $RN,NR,NN$.
+
+As $E = RR \cup RN \cup NR \cup NN$ (disjoint union), 
+$$(RR) +(RN) + (NR)+ (NN) = \vert E \vert = p-2.$$
+
+$\bullet$ $RR \cup RN$ is the set of pairs $(n,n+1)$ in $E$ such that $n$ is a residue. Its cardinality is the number of residues in $[1,p-2]$, so the number of residues in $[1,p-1]$, minus $s$, where $s = 1$ if $p-1$ is a residue, $s=0$ otherwise. In both cases $p \equiv 1,3 \pmod 4$, $s = \frac{1+(-1)^{\frac{p-1}{2}}}{2}$, and the total number of residues is $(p-1)/2$, so
+$$(RR)+(RN) = \frac{p-1}{2} -s = \frac{p-1}{2} -\frac{1+(-1)^{\frac{p-1}{2}}}{2} = \frac{1}{2}(p - 2 - (-1)^{\frac{p-1}{2}}).$$
+
+$\bullet$ Similarly, $(NR)+(NN)$ is the number of nonresidues in $[1,p-1]$, minus $t$, where $t=1$ if $p-1$ is a nonresidue, $t=0$ otherwise : $t =\frac{1-(-1)^{\frac{p-1}{2}}}{2}$, so
+$$(NR)+(NN) = \frac{1}{2}(p - 2 + (-1)^{\frac{p-1}{2}})$$
+(the sum of these two results is indeed $p-2 = \vert E \vert$).
+
+$\bullet$ As $1$ is a residue, $(RR)+(NR)$ is the number of residues in $[1,p-1]$, minus $1$ :
+$$(RR)+(NR) = \frac{p-1}{2} - 1.$$
+
+$\bullet$ $(RN)+(NN)$ is the number of nonresidues in $[2,p-1]$, equal to the number of residues in $[1,p-1]$ :
+$$(RN)+(NN) = \frac{p-1}{2}.$$
+\end{proof}
+
+\paragraph{Ex. 5.30}
+
+{\it Show that $(RR) + (NN) - (RN) - (NR) = \sum_{n=1}^{p-1}(n(n+1)/p)$. Evaluate this sum and show that it is equal to $-1$. (Hint : The result of Exercise 8 is useful.)
+}
+
+\begin{proof}
+Let $\chi$ be  the characteristic function of $RR \cup NN$ : if $1 \leq n \leq p-1$,
+$\chi(n) = 1$ if $n,n+1$ are both  residues, or if $n,n+1$ are both non residues. Then 
+$$\chi(n) = \frac{1}{2} \left( 1 + \legendre{n}{p} \legendre{n+1}{p} \right) $$
+(if $\chi(n) = 1, \legendre{n}{p} \legendre{n+1}{p} = 1$, and $\legendre{n}{p} \legendre{n+1}{p} = -1$ otherwise.)
+
+Similarly, let $\chi'$ the characteristic function of $RN \cup NR$ : $\chi(n) =1$ if exactly one of the integer $n,n+1$ is a residue, $0$ otherwise. Then 
+$$\chi'(n) = \frac{1}{2} \left( 1 + \legendre{n}{p} \legendre{n+1}{p} \right).$$
+As each integer $n$ between $1$ and $p-1$ brings the contribution $1$ if $n \in RR \cup NN$, and $-1$ if $n \in RN \cup NR$, then
+\begin{align*}
+(RR) + (NN) - (RN) - (NR) &= \sum_{n=1}^{p-1} (\chi(n) - \chi'(n))\\
+&= \frac{1}{2} \sum_{n=1}^{p-1}  \left( 1 + \legendre{n(n+1)}{p}  \right)  - \left( 1 + \legendre{n(n+1)}{p}  \right) \\
+&= \sum_{n=1}^{p-1}   \legendre{n(n+1)}{p}  
+\end{align*}
+To evaluate this sum $S$, note that $4n(n+1) = (2n+1)^2 - 1$, so
+$$S = \sum_{n=1}^{p-1}   \legendre{n(n+1)}{p} = \sum_{n=1}^{p-1}   \legendre{4n(n+1)}{p} = \sum_{n=1}^{p-1}   \legendre{(2n+1)^2 - 1}{p}.$$
+This sum can be written $ S = \sum_{\overline{n} \in \F_p^*} ((2n+1)^2 - 1)/p)= \sum_{\overline{n} \in \F_p} ((2n+1)^2 - 1)/p)$, since $(0/p) = 0$.
+As $f : \F_p \to \F_p, \overline{n} \mapsto (2\overline{n}+1)$ is a bijection ($2$ is invertible in $\F_p^*$),
+$$\sum_{\overline{n} \in \F_p} \legendre{(2n+1)^2 - 1}{p}  = \sum_{\overline{y} \in \F_p} \legendre{y^2 - 1}{p}\qquad (y = 2n+1).$$
+As $p \nmid 1$, the evaluation of this last sum is given in Exercise 5.8 : $S = -1$, so 
+$$ (RR) + (NN) - (RN) - (NR)  = \sum_{n=1}^{p-1}   \legendre{n(n+1)}{p}  = -1.$$
+\end{proof}
+
+\paragraph{Ex. 5.31}
+{\it Use the results of Exercises 29 and 30 to show that $(RR) = \frac{1}{4}(p-4-\varepsilon)$, where $\varepsilon = (-1)^{(p-1)/2}$
+}
+
+\begin{proof}
+To summarize the results of the Ex. 5.29 and 5.30,
+\begin{align*}
+(a) (RR) +(RN) + (NR)+ (NN) &=  p-2\\
+(b) (RR) + (NN) - (RN) - (NR)  &= -1\\
+\end{align*}
+and
+\begin{align*}
+(c)(RR)+(RN) &=\frac{1}{2}\left(p - 2 - (-1)^{\frac{p-1}{2}}\right)\\
+(d)(RR)+(NR) &= \frac{p-1}{2} - 1\\
+\end{align*}
+The sum of (a) and (b) gives
+$$(e) (RR) + (NN) = \frac{p-3}{2}.$$
+The sum of (c),(d),(e) gives (using (a))
+$$2(RR) + p-2 = \frac{p-2}{2} + \frac{p-1}{2} + \frac{p-3}{2} - 1 - \frac{(-1)^{\frac{p-1}{2}}}{2},$$
+so
+$$2 (RR) = \frac{p-1}{2} + \frac{p-3}{2} - \frac{p-2}{2} - 1 - \frac{(-1)^{\frac{p-1}{2}}}{2} = \frac{p}{2} - 2 - \frac{(-1)^{\frac{p-1}{2}}}{2},$$
+$$(RR) = \frac{1}{4} (p-4-\varepsilon),\ \mathrm{where} \ \varepsilon = (-1)^{\frac{p-1}{2}}.$$
+\end{proof}
+
+\paragraph{Ex. 5.32}
+
+{\it If $p$ is an odd prime, show that $(2/p) = \prod_{j=1}^{(p-1)/2} 2\cos(2 \pi j/p)$. Use this to give another proof to Proposition 5.1.3.
+}
+
+\begin{proof}
+Let $p$ an odd prime number, and $\zeta = e^{2i\pi/p}$ : then $\zeta^p = 1$.
+
+Let $$P = \prod_{j=0}^{p-1} (\zeta^j + \zeta^{-j})= \prod_{j=0}^{p-1} 2 \cos(2\pi j/p).$$
+\begin{align*}
+P &= \zeta^0\zeta^{-1}\cdots\zeta^{-(p-1)} \prod_{j=0}^{p-1} (\zeta^{2j} + 1)\\
+&= (\zeta^p)^{-(p-1)/2} \prod_{j=0}^{p-1} (\zeta^{2j} + 1)\\
+&= \prod_{j=0}^{p-1} (\zeta^{2j} + 1)
+\end{align*}
+As $\zeta^j$ depends only of the class $\overline{j} \in \F_p$, this product can be written 
+$$P = \prod_{\overline{j }\in \F_p} (\zeta^{2j} + 1) = \prod_{\overline{k} \in \F_p} (\zeta^{k} + 1)\qquad (k=2j), $$
+since $f : \F_p \to \F_p, x \mapsto 2x$ is a bijection. So
+$$P = \prod_{k=0}^{p-1} (\zeta^{k} + 1).$$
+Since $\zeta^0 = 1, \zeta,\cdots, \zeta^{p-1}$ are the roots of the polynomial $f(x) = x^p-1$, then $1+\zeta^0, \cdots,1+\zeta^{p-1}$ are the roots of $g(x) =(x-1)^p - 1 = f(x-1)$, so $g(x) = \prod_{k=0}^{p-1} (x - (1+\zeta^k))$. 
+
+As $g(0) = (-1)^p - 1 = -2 = (-1-\zeta^0)\cdots(-1-\zeta^{p-1}) = -\prod_{k=0}^{p-1} (\zeta^{k} + 1)$, we obtain
+$$P = \prod_{j=0}^{p-1} 2 \cos(2\pi j/p) = \prod_{k=0}^{p-1} (\zeta^{k} + 1) = 2,$$
+so
+$$\prod_{j=1}^{p-1} 2 \cos(2\pi j/p)  = 1.$$
+\begin{align*}
+1 &= \prod_{j=1}^{p-1} 2 \cos(2\pi j/p)\\
+&=\prod_{j=1}^{(p-1)/2} 2 \cos(2\pi j/p) \prod_{j=(p+1)/2}^{p-1} 2 \cos(2\pi j/p)\\
+&= \prod_{j=1}^{(p-1)/2} 2 \cos(2\pi j/p)  \prod_{k = 1}^{(p-1)/2} 2 \cos(2\pi - 2\pi k/p) \qquad (k = p-j) \\
+\end{align*}
+As $\cos(2\pi - \alpha) = \cos(\alpha)$, 
+$$1 = \left ( \prod_{j=1}^{(p-1)/2} 2 \cos(2\pi j/p)  \right)^2, \ \mathrm{so} \ \prod_{j=1}^{(p-1)/2} 2 \cos(2\pi j/p) = \pm 1$$
+
+
+Case 1 : if $1\leq j \leq p/4, 0 \leq 2\pi j/p <\pi/2$, so $\cos (2\pi j/p)>0$, 
+
+case 2 : if $p/4<j\leq (p-1)/2, \pi/2 < 2\pi j/p < \pi$, so $\cos (2\pi j/p)<0$.
+
+In the first case, $2 \leq 2j \leq (p-1)/2$ : the least residue of $2j$ is positive. In the second case $ p/2< 2j \leq p-1$ : the least residue of $2j$ is negative.
+
+Let $\mu$ the number of negative least residues of the integer $2j,\ 1 \leq j \leq (p-1)/2 $ : we know from Gauss' Lemma that $(2/p) = (-1)^\mu$. As $\mu$ is also the number of $j,\ 1 \leq j \leq (p-1)/2$ such that $\cos (2\pi j/p)>0$,
+$$ \prod_{j=1}^{(p-1)/2} 2 \cos(2\pi j/p) = (-1)^\mu = \legendre{2}{p}.$$
+
+If $p \equiv 1\ [8]$ , $p = 8q +1, q \in \N$. For $1 \leq j \leq (p-1)/2$,
+
+$$\cos (2\pi j/p) < 0 \iff p/4\leq j \leq (p-1)/2 \iff 2q +1 \leq j \leq 4q,$$ so $\mu =2q$ and $(2/p) = (-1)^\mu = 1$.
+
+If $p\equiv -1 \ [8]$, $p = 8q - 1, q \in \N^*$.
+$$\cos (2\pi j/p) < 0 \iff p/4\leq j \leq (p-1)/2 \iff 2q \leq j \leq 4q -1,$$
+ so $\mu =2q$ and $(2/p) = (-1)^\mu = 1$.
+ 
+ If $p \equiv 3 \ [8]$, $p = 8q + 3, q \in \N$.
+ $$\cos (2\pi j/p) < 0 \iff p/4\leq j \leq (p-1)/2 \iff 2q + 1 \leq j \leq 4q +1,$$
+  so $\mu =2q+1$ and $(2/p) = (-1)^\mu = 1$.
+  
+  If $p \equiv -3 \ [8]$, $p = 8q - 3, q \in \N^*$,
+  $$\cos (2\pi j/p) < 0 \iff p/4\leq j \leq (p-1)/2 \iff 2q  \leq j \leq 4q -2,$$
+  so $\mu =2q-1$ and $(2/p) = (-1)^\mu = 1$.
+\end{proof}
+
+\paragraph{Ex. 5.33}
+
+{\it Use Proposition 5.3.2 to derive the quadratic character of $-1$.
+}
+
+\begin{proof}
+Let $f(z) = e^{2\pi i z}- e^{-2\pi i z}$. If $p$ is an odd prime, $a \in \Z$, and $p\nmid a$, we know from Prop. 5.3.2 that
+$$\prod_{l=1}^{(p-1)/2} f\left(\frac{la}{p} \right) = \legendre{a}{p} \prod_{l=1}^{(p-1)/2} f\left( \frac{l}{p} \right).$$
+For $a = -1$, as $f(-z) = -f(z)$, 
+\begin{align*}
+\legendre{-1}{p} \prod_{l=1}^{(p-1)/2} f\left( \frac{l}{p} \right) &= \prod_{l=1}^{(p-1)/2} f\left(\frac{-l}{p} \right)\\
+&=(-1)^{(p-1)/2} \prod_{l=1}^{(p-1)/2} f\left( \frac{l}{p} \right)
+\end{align*}
+Moreover $f(z) = 0 \iff e^{4\pi i z} = 1 \iff 4\pi i z = 2 k i \pi, k \in \Z \iff z = k/2, k\in \Z$, so, if $l \in \Z$,
+$f\left( \frac{l}{p} \right) = 0 \iff l/p = k/2, k \in \Z \iff p \mid 2l \iff p \mid l$. For $1\leq l <p$, this is impossible, so $\prod_{l=1}^{(p-1)/2} f\left( \frac{l}{p} \right) \ne 0$. Consequently,
+$$\legendre{-1}{p} = (-1)^{(p-1)/2}.$$
+\end{proof}
+
+\paragraph{Ex. 5.34}
+
+{\it If $p$ is an odd prime distinct from $3$, show that 
+$$\legendre{3}{p} = \prod_{j=1}^{(p-1)/2} \left(3-4 \sin^2\left(\frac{2 \pi j}{p}\right)\right).$$
+}
+
+\begin{proof}
+Let $p$ an odd prime number, $p\ne 3$ and $\zeta= e^{2i\pi/p}$.
+\begin{align*}
+3 - 4 \sin^2\left(\frac{2\pi j}{p}\right) &= 3 - 4  \left( \frac{\zeta^j - \zeta^{-j}}{2i}\right)^2\\
+&= 3 + \zeta^{2j} + \zeta^{-2j} - 21\\
+&= 1 +\zeta^{2j} + \zeta^{-2j}\\
+&= 1 + 2 \cos \left(\frac{4\pi j}{p} \right)
+\end{align*}
+(Or $\cos(2\alpha) = 1 - 2 \sin^2\alpha$, so $3 - 4 \sin^2 \alpha = 1 + 2 \cos \alpha$.)
+
+Let $$P = \prod_{j=1}^{p-1} \left(3-4 \sin^2\left(\frac{2 \pi j}{p}\right)\right) =  \prod_{\overline{j} \in \F_p^*} \left(3-4 \sin^2\left(\frac{2 \pi j}{p}\right)\right).$$
+Then
+\begin{align*}
+P  &= \prod_{\overline{j} \in \F_p^*} \left(1 + \zeta^{2 j}+ \zeta^{-2j}\right)\\
+&= \prod_{\overline{k} \in \F_p^*} \left(1 + \zeta^{k}+ \zeta^{-k}\right)\qquad (k = 2j)
+\end{align*}
+since $f : \F_p \to \F_p, \overline{j} \mapsto 2\overline{j}$ is a bijection. So
+\begin{align*}
+P &= \prod_{k=0}^{p-1} \zeta^{-k}\left(1 + \zeta^k + \zeta^{2k} \right)\\
+&=  3 \prod_{k=1}^{p-1} \zeta^{-k}\left(1 + \zeta^k + \zeta^{2k} \right)\\
+&= 3 \prod_{k=0}^{p-1} \zeta^{-k} \  \frac{\prod_{k=1}^{p-1} (1 - \zeta^{3k})}{\prod_{k=1}^{p-1} (1 - \zeta^{k})}
+\end{align*}
+$\prod_{k=0}^{p-1} \zeta^{-k} =\left( \zeta^p\right)^{-(p-1)/2} = 1$. Morover, $\prod_{k=1}^{p-1} (1 - \zeta^{3k}) = \prod_{k=1}^{p-1} (1 - \zeta^{k})$, since $\overline{k} \mapsto 3 \overline{k}$ is a bijection in $\F_p^*$, so $P = 3$, and consequently
+\begin{align*}
+1 &= \prod_{j=1}^{p-1}  \left(3-4 \sin^2\left(\frac{2 \pi j}{p}\right)\right)\\
+&=\prod_{j=1}^{(p-1)/2}  \left(3-4 \sin^2\left(\frac{2 \pi j}{p}\right)\right) \prod_{j=(p+1)/2}^{p-1}  \left(3-4 \sin^2\left(\frac{2 \pi j}{p}\right)\right)\\
+&= \prod_{j=1}^{(p-1)/2}  \left(3-4 \sin^2\left(\frac{2 \pi j}{p}\right)\right)  \prod_{k=1}^{(p-1)/2}  \left(3-4 \sin^2\left(\frac{2 \pi (k-j)}{p}\right)\right) \qquad (k=p-j)\\
+&=\left [ \prod_{j=1}^{(p-1)/2}  \left(3-4 \sin^2\left(\frac{2 \pi j}{p}\right)\right)\right]^2
+\end{align*}
+
+So $\prod_{j=1}^{(p-1)/2}  \left(3-4 \sin^2\left(\frac{2 \pi j}{p}\right)\right)= \pm 1$.
+
+Let $\nu$ the number of negative factors in this product.
+
+If $1 \leq j \leq (p-1)/2$, then $0 < 4\pi j/p < 2 \pi$.
+\begin{align*}
+1 + 2 \cos \frac{4\pi j}{p} <0 &\iff \cos \frac{4\pi j}{p} < \cos \frac{2\pi}{3}\\
+&\iff \frac{2\pi}{3} < \frac{4 \pi j}{p} < \frac{4 \pi}{3}\\
+&\iff \frac{p}{6} < j < \frac{p}{3}\\
+& \iff \frac{p}{2} < 3j < p
+\end{align*}
+Let $\mu$ the number of integers $j, 1 \leq j \leq (p-1)/2$ such their least remainder is negative. Since $3 \leq 3j \leq 3 (p-1)/2$ and $3j \ne p/2$, these $j$ are such that  $\frac{p}{2} < 3j < p$, so $\mu = \nu$.
+Therefore
+$$\prod_{j=1}^{(p-1)/2} \left(3-4 \sin^2\left(\frac{2 \pi j}{p}\right)\right)  =(-1)^\nu = (-1)^\mu = \legendre{3}{p}.$$
+\end{proof}
+
+\paragraph{Ex. 5.35}
+
+{\it Use the preceding exercise to show that $3$ is a square modulo $p$ iff $p$ is congruent to $1$ or $-1$ modulo $12$.
+}
+
+\begin{proof}
+We know from Ex. 5.34 that $\nu = \mathrm{Card}\, \{j \in [1,(p-1)/2] \ \vert \ p/2 \leq 3j < p\} = \mu$. 
+$\nu$ is the number of $j$ such that $p/6 \leq j < p/3$, so $\nu =\lfloor p/3 \rfloor - \lfloor p/6 \rfloor $.
+
+If $p = 12k +1$, $\nu = \lfloor p/3 \rfloor - \lfloor p/6 \rfloor = 4k - 2k = 2k :  (3/p) = (-1)^\nu = 1$
+
+If $p = 12k +5$, $\nu = \lfloor p/3 \rfloor - \lfloor p/6 \rfloor = 4k + 1 - 2k = 2k + 1:  (3/p) = (-1)^\nu = -1$
+
+If $p = 12k - 5$, $\nu = \lfloor p/3 \rfloor - \lfloor p/6 \rfloor = 4k - 2 - (2k-1) = 2k -1:  (3/p) = (-1)^\nu = -1$
+
+If $p = 12k  - 1$, $\nu = \lfloor p/3 \rfloor - \lfloor p/6 \rfloor = 4k  - 1 - (2k-1) = 2k :  (3/p) = (-1)^\nu = -1$
+
+$3$ is a square modulo $p$ ($p\ne 2, p \ne 3$)  iff $p$ is congruent to $1$ or $-1$ modulo $12$.
+\end{proof}
+
 \end{document}
