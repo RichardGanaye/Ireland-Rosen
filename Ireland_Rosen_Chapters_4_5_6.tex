@@ -1826,4 +1826,133 @@ If $p = 12k  - 1$, $\nu = \lfloor p/3 \rfloor - \lfloor p/6 \rfloor = 4k  - 1 - 
 $3$ is a square modulo $p$ ($p\ne 2, p \ne 3$)  iff $p$ is congruent to $1$ or $-1$ modulo $12$.
 \end{proof}
 
+\paragraph{Ex. 5.36}
+
+{\it Show that part (c) of Proposition 5.2.2 is true if $a$ is negative and $b$ is positive (both still odd).
+}
+
+\bigskip
+
+As said by Adam Michalik, the Jacobi symbol $\legendre{a}{b}$ only defined for positive $b$, so the question, which concerns $\legendre{a}{b} \legendre{b}{a}, a<0$ makes no sense.
+
+To give sense to this question, we must substitute the Kronecker symbol to the Jacobi symbol. The Kronecker symbol (not defined in Ireland-Rosen) is the usual extension of Jacobi symbol (see for instance [Henri Cohen] A course in computational algebraic number theory, [Henri Cohen] Number theory (vol. 1), or [Harvey Cohn] Advanced number theory).
+
+We define Kronecker (or Kronecker-Jacobi) symbol $\legendre{a}{b}$ for any $a$ and $b$ in $\Z$ in the following way.
+\begin{enumerate}
+\item[(1)] If $b=0$, then $\legendre{a}{0} = 1$ if $a = \pm 1$, and is equal to $0$ otherwise.
+
+\item[(2)] For $b \ne 0$, write $b = \prod p$, where the $p$ are not necessarily distinct primes (including $2$), or $p = -1$ to take care of the sign. Then we set
+$$\legendre{a}{b} = \prod \legendre{a}{p},$$
+where $\legendre{a}{p}$ is the Legendre symbol defined above for $p>2$, and where we define
+$$\legendre{a}{2} = 
+\begin{cases}
+0 & \text{if $a$ is even}\\
+(-1)^{(a^2-1)/8} &\text{if $a$ is odd,}
+\end{cases}
+$$
+and also
+$$\legendre{a}{-1} = 
+\begin{cases}
+1 & \text{if $a\geq 0$}\\
+-1 & \text{if $a<0$}
+\end{cases}
+$$
+\end{enumerate}
+\begin{proof} 
+Suppose $a <0, b>0$, both odd. Let $a = -A,A>0, A = p_1p_2\cdots p_k$, where the $p_i$ are not necessarily distinct primes. Then
+\begin{align*}
+\legendre{a}{b}\legendre{b}{a} &= \legendre{-A}{b}\legendre{b}{-A} \\
+\legendre{-A}{b} &= \legendre{-1}{b} \legendre{A}{b} 
+=(-1)^{(b-1)/2} \legendre{A}{b}\\
+\legendre{b}{-A} &= \legendre{b}{-1} \legendre{b}{p_1}\cdots \legendre{b}{p_k}
+= \legendre{b}{A}
+\end{align*}
+so, from Prop. 5.2.2, as $A,b$ are odd and positive,
+\begin{align*}
+\legendre{a}{b}\legendre{b}{a} &= (-1)^{ \frac{b-1}{2} } \legendre{A}{b} \legendre{b}{A}\\
+&=(-1)^{ \frac{b-1}{2} } (-1)^{\frac{A-1}{2}\frac{b-1}{2}}\\
+&=(-1) ^{\frac{b-1}{2} [1 + \frac{-a-1}{2}]}\\
+&=(-1)^{\frac{b-1}{2}\frac{1-a}{2} }\\
+&=(-1)^{\frac{b-1}{2}\frac{a-1}{2} }\\
+\end{align*}
+So the law of quadratic reciprocity remains valid for the Kronecker symbol when $a$ is negative ($b>0$, $a,b$ both odd).
+\end{proof}
+
+\paragraph{Ex. 5.37}
+
+{\it Show that if $a$ is negative, then $p \equiv q \pmod {4a}$, $p \nmid a$ implies $(a/p) = (a/q)$.
+}
+
+\begin{proof}
+Write $a = -A, A>0$. As $p \equiv q \pmod {4a}$, we know from Prop. 5.3.3. (b) that $(A/p) = (A/q)$.
+
+Moreover,
+\begin{align*}
+\legendre{a}{p}&= \legendre{-A}{p} = (-1)^{(p-1)/2} \legendre{A}{p}\\
+\legendre{a}{q}&= \legendre{-A}{q} = (-1^{(q-1)/2} \legendre{A}{q}
+\end{align*}
+As  $p \equiv q \pmod {4a}$, $ p = q + 4ak, k\in \Z$, so
+$$(-1)^{(p-1)/2} = (-1)^{(q+4ak-1)/2} = (-1)^{(q-1)/2},$$
+so $(a/p) = (a/q)$.
+\end{proof}
+
+\paragraph{Ex. 5.38}
+
+{\it Let $p$ be an odd prime. Derive the quadratic character of $2$ modulo $p$ by verifying the following steps, involving the Jacobi symbol:
+
+$$
+ \legendre{2}{p} = \legendre{8-p}{p} = \legendre{p}{p-8} = \legendre{8}{p-8} = \legendre{2}{p-8}.
+$$
+
+Generalize the argument to show that
+$$
+  \left(\frac{a}{p}\right) = \left(\frac{a}{p-4a}\right), \qquad a>0, p \nmid a.
+$$
+}
+(As in Ex. 5.36, since $8 - p$ or $p-8$ is negative, we interpret $(a/b)$ as the Kronecker symbol : see definition in Ex. 5.36.)
+\begin{proof}
+As $(2^2/p) = 1$ and $8-p \equiv 8 \pmod p$,
+$$ \legendre{2}{p} = \legendre{2^2}{p} \legendre{2}{p} = \legendre{8}{p} = \legendre{8-p}{p}.$$
+As $p$ and $8-p$ are odd numbers and $p>0$, from the extension of the law of quadratic reciprocity to $a<0$ proved in Ex. 5.36, we obtain
+$$\legendre{8-p}{p} = (-1)^{\frac{7-p}{2} \frac{p-1}{2}} \legendre{p}{8-p}.$$
+Moreover
+\begin{align*}
+(7-p)(p-1) &\equiv (-1-p)(p-1) = 1 - p^2 \pmod 8\\
+\end{align*}
+As $p= 2k+1$ is odd, $p^2 = 4k^2+4k+1 = 8 \frac{k(k+1)}{2} + 1 \equiv 1 \pmod 8$, so $(7-p)(p-1) \equiv 0 \pmod 8$ and $\frac{7-p}{2} \frac{p-1}{2}$ is even, so
+$$\legendre{8-p}{p} = \legendre{p}{8-p}.$$
+As $p>0$, $\legendre{p}{-1} = 1$, thus $ \legendre{p}{8-p} = \legendre{p}{-1}  \legendre{p}{p-8} = \legendre{p}{p-8}$ (with the same argument, this is also true for the  3 odd primes such that $8-p>0$), so
+$$\legendre{8-p}{p} = \legendre{p}{p-8}.$$
+\end{proof}
+As $p\equiv 8 \pmod{p-8}$, $\legendre{p}{p-8}  = \legendre{8}{p-8}$, and since $8 = 2^2\times 2$, $\legendre{8}{p-8} = \legendre{2}{p-8}$. We have proved for all odd primes $p$ that
+$$  \legendre{2}{p} = \legendre{8-p}{p} = \legendre{p}{p-8} = \legendre{8}{p-8} = \legendre{2}{p-8}.$$
+
+The preceding arguments remain valid if we replace the odd prime $p$ by any odd positive integer.  So with an immediate induction, we see that for all $k \in \N$,
+$$ \legendre{2}{p} = \legendre{2}{p-8k}.$$
+So the quadratic character of $2$ modulo $p$ depends only of the class of $p$ modulo $8$.
+
+If $p \equiv 1 \pmod 8$, $\legendre{2}{p} =\legendre{2}{1} = 1$.
+
+If $p \equiv -1 \pmod 8$, $\legendre{2}{p} =\legendre{2}{-1} = 1$.
+
+If $p \equiv \pm 3 \pmod 8$, $\legendre{2}{p} =\legendre{2}{\pm 3} = -1$.
+
+\bigskip
+
+Generalization : let $a>0$ and $p$ an odd positive integer such that $p \wedge a =1$ (not necessarily prime).
+
+$$\legendre{a}{p} = \legendre{4a p}{p} = \legendre{4a-p}{p} = (-1)^{\frac{4a - p -1}{2} \frac{p-1}{2}} \legendre{p}{4a-p}.$$
+$(4a-p-1)(p-1)=  4a(p-1)  + 1 - p^2 \equiv 0 \pmod 8$, so 
+$$\legendre{a}{p} =  \legendre{p}{4a-p}.$$
+As $\legendre{p}{-1} = 1$,
+$$  \legendre{p}{4a-p} =   \legendre{p}{p-4a}.$$
+Since $p \equiv 4a \pmod p-4a$,  and $4$ is a square,
+$$\legendre{p}{p-4a} \equiv \legendre{4a}{p-4a} =  \legendre{a}{p-4a}.$$
+
+We have proved
+$$\legendre{a}{p} = \legendre{4a-p}{p} =  \legendre{p}{p-4a} = \legendre{4a}{p-4a}  =  \legendre{a}{p-4a}.$$
+
+By induction, for all $k\geq 0$, $\legendre{a}{p} = \legendre{a}{p-4a}$, so $\legendre{a}{p}$ depends only of the class of $p$ modulo $4a$.
+
+
 \end{document}
