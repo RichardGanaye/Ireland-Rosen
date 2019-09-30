@@ -1954,5 +1954,330 @@ $$\legendre{a}{p} = \legendre{4a-p}{p} =  \legendre{p}{p-4a} = \legendre{4a}{p-4
 
 By induction, for all $k\geq 0$, $\legendre{a}{p} = \legendre{a}{p-4a}$, so $\legendre{a}{p}$ depends only of the class of $p$ modulo $4a$.
 
+\bigskip
+
+{ \Large \bf Chapter 6} 
+
+\paragraph{Ex. 6.1}
+
+{\it Show that $\sqrt{2} + \sqrt{3}$ is an algebraic integer.
+}
+
+\begin{proof}
+Let $x = \sqrt{2}+\sqrt{3}$. Then $x^2 = 5 + 2\sqrt{6}$.
+
+$(x^2-5)^2 = (2 \sqrt{6})^2 = 24$, so $x^4 - 10 x^2 + 1 = 0$ :  $x$ is an algebraic integer.
+\end{proof}
+
+\paragraph{Ex. 6.2}
+
+{\it Let $\alpha$ be an algebraic number. Show that there's an integer $n$ such that $n\alpha$ is an algebraic integer.
+}
+
+($0$ is a valid answer to this sentence ! More seriously, we search a {\it positive} integer $n$.)
+
+\begin{proof} 
+
+Let  $\alpha$ an algebraic number.  By definition, there exist $a_0,a_1,\cdots,a_n \in \Z, a_n \neq 0,$ such that
+$$a_n \alpha^n+ a_{n-1} \alpha^{n-1} + \cdots + a_k \alpha^k+\cdots +a_0 = 0.$$
+(Up to multiply this equation by $-1$, we can suppose that $a_n >0$). 
+
+Multiplying by $a_n^{n-1}$, we obtain
+$$a_n^n \alpha^n+ a_n^{n-1}a_{n-1} \alpha^{n-1} + \cdots + a_n^{n-1} a_k \alpha^k+\cdots + a_n^{n-1} a_0 = 0.$$
+So
+$$(a_n \alpha)^n+ a_{n-1} (a_n\alpha)^{n-1} + \cdots + a_n^{n-k-1}a_k (a_n \alpha)^k+\cdots + a_n^{n-1} a_0 = 0.$$
+
+Soit $p(x) = x^n +\sum\limits_{k=0}^{n-1} a_n^{n-k-1}a_k x^k$. Then $p(x) \in \mathbb{Z}[x]$, $p(x)$ is monic, and $p(a_n x) = 0$. So $a_n x$ is an algebraic integer, with $m = a_n \in \mathbb{N}^*$.
+
+Conclusion : if  $\alpha$ is an algebraic number, there exists an integer $m >0$ such that $m\alpha$ is an algebraic integer.
+\end{proof}
+
+\paragraph{Ex. 6.3}
+
+{\it If $\alpha$ and $\beta$ are algebraic integers, prove that any solution to $f(x) = x^2 + \alpha x + \beta = 0$ is an algebraic integer. Generalize this result.
+}
+
+\begin{proof}
+
+Let $\gamma$  a root of  $x^2 + \alpha x + \beta$, where $\alpha, \beta$ verify :
+$$\alpha^n + r_1 \alpha^{n-1}+ \cdots + r_n = 0,\quad r_i \in \mathbb{Z},$$
+$$\beta^m + s_1 \beta^{m-1}+ \cdots + s_m= 0,\quad  s_j \in \mathbb{Z}.$$
+
+Let $V$ the set of linear combinations with integer coefficients of 
+$$\alpha^i \beta^j \gamma^k, 0\leq i <n,0 \leq j <m,0 \leq k <2.$$
+
+Then $V$ if a finitely generated $\Z$-module. 
+
+Moreover, for all  $\delta \in V, \gamma \delta \in V$. Indeed, every $\delta \in V$ is a linear combination with coefficients in $\Z$ of $\alpha^i \beta^j, \alpha^i \beta^j \gamma$, and
+ \begin{align*}
+ \gamma (\alpha^i \beta^j) &= \alpha^i \beta^j \gamma \in V\\
+ \gamma(\alpha^i \beta^j \gamma) &= \alpha^i \beta ^j \gamma^2 = \alpha^i \beta^j (-\alpha \gamma - \beta) = - \alpha ^{i+1} \beta^j \gamma - \alpha^i \beta^{j+1} \in V.
+ \end{align*}
+ (if $i+1 = n$, we replace $\alpha^{i+1} = \alpha^n$ by $ -\sum\limits_{k=1}^{n-1} r_k \alpha^{n-k}$, and a similar replacement if if $j+1 = m$.)
+ 
+ As for each $\gamma \in V$, where $V$ if a finitely generated $\Z$-module, $x \gamma \in V$, so  $\gamma$ is an algebraic integer (Proposition 6.1.4).
+
+More generaly,  if  $\gamma^n + \alpha_1 \gamma^{n-1}+ \cdots + \alpha_n = 0$, where the $\alpha_i$ are algebraic integers, then  $x$ is an algebraic integer.
+\end{proof}
+
+\paragraph{Ex. 6.4}
+
+{\it A polynomial $f(x) \in \Z[x]$ is said to be primitive if the greatest common divisor of its coefficients is 1. Prove that product of primitive polynomials is also primitive.}
+
+\bigskip
+
+{\bf Solution 1}
+\begin{proof}
+Let $p(x) =\sum_{i=0}^n a_i x^i, q(x) = \sum_{j=0}^m b_j x^j$ two primitive polynomials, and $p$ a prime number. There exist a coefficient of $p(x)$ (and of $q(x)$) not divisible by $p$.
+Let 
+\begin{align*}
+i_0 &= \min\{i \in [0,n]\ \  \vert \ a_i \not \equiv 0 \ [p]\}\\
+j_0 &= \min\{j \in [0,m]\ \vert\  b_j \not \equiv 0 \ [p]\}\\
+\end{align*}
+Let $p(x) q(x) = \sum_{k=0}^{n+m} c_k x^k$. Then $c_k = \sum\limits_{i+j = k} a_i b_{j}, \ k=0,\ldots n+m$.
+Then $$c_{i_0+j_0} = \sum_{i+j = i_0+j_0} a_i b_j.$$
+
+$\bullet$ If $i<i_0$, then $a_i \equiv 0 \pmod p$.
+
+$\bullet$ If $i>i_0$, then $j<j_0$ and $b_j \equiv 0 \pmod p$.
+
+In the two cases $a_i b_j \equiv 0 \pmod p$, so $c_{i_0+j_0} \equiv a_{i_0} b_{j_0} \pmod p$, so $c_{j_0} \not \equiv 0 \pmod p$ : as it's true for all primes $p$, the polynomial $p(x)q(x)$ is primitive.
+\end{proof}
+
+\bigskip
+
+{\bf Solution 2}
+\begin{proof}
+Let
+$$
+\varphi : 
+\left\{
+\begin{array}{ccc}
+  \Z[x]&   \to & \F_p[x]  \\
+  p(x)= a_0 +\cdots+a_n x^n& \mapsto  & \overline{p}(x) =  \overline{a_0}+\cdots+\overline{a_n}x^n,
+\end{array}
+\right.
+$$
+where $\overline{a_i}$ is the class of $a_i$ in $\F_p$.  $\varphi$ is a ring homomorphism.
+
+As $\F_p[x]$ is an integrity domain, if $p(x), q(x)$ are both primitive,
+$$\overline{p(x)} \ne 0, \overline{q(x)} \ne 0 \Rightarrow \overline{p(x)q(x)} =\overline{p(x)}\,   \overline{q(x)}  \ne 0.$$
+As $\overline{p(x)q(x)} \ne 0$ in all fields $\F_p$, $p(x)q(x)$ is a primitive polynomial.
+\end{proof}
+
+\paragraph{Ex. 6.5}
+{\it Let $\alpha$ be an algebraic integer and $f(x) \in \Q[x]$ be the monic polynomial of least degree such that $f(\alpha) = 0$. Use Exercise 6.4 to show that $f(x) \in \Z[x]$.
+}
+
+\begin{proof}
+As $\alpha$ is an algebraic integer, there exists a monic polynomial $h(x) \in \Z[x]$ such that $h(\alpha) = 0$. As $f(x) \in \Q[x]$ is the minimal polynomial  of $\alpha$, and $h(\alpha) = 0$, $f(x)$ divides $h(x)$ in $\Q[x]$.
+
+ (quick reminder :  $h(x) = q(x) f(x) + r(x),\  q(x),r(x) \in \Q[x],  \deg(r(x)) < \deg(f(x))$ or $r(x) = 0$. As $r(\alpha) = 0$ and $f(x) \in \Q[x]$ is  the monic polynomial of least degree such that $f(\alpha) = 0$, $r =0$ so $f(x) \mid h(x)$).
+ 
+ So there exists $g(x) \in \Q[x]$ such that $h(x) = f(x) g(x)$. As $h(x), f(x)$ are both monic, $g(x)$ is also monic. 
+ 
+ Let $d \in \Z, d\ne 0$ such that $df(x) =\sum_{i=0}^m a_i x^i \in \Z[x]$, and $c = a_1\wedge a_2\wedge \cdots \wedge a_m$, $a_i = c b_i$, with $b_1\wedge b_2\wedge \cdots \wedge b_m = 1$, so
+ $f(x) = \frac{c}{d} f_1(x) $, with $f_1$ is primitive. Similarly $g(x) =\frac{s}{t} g_1(x)$, $s ,t \in \Z$,  $g_1(x)$ primitive.
+ 
+ So $h(x) = \frac{cs}{dt} f_1(x) f_2(x) = \frac{u}{v} f_1(x) f_2(x) $, where $u\wedge v = 1$.
+The polynomial $f_1(x)f_2(x) = \sum_{k=0}^r c_k x^k$ is primitive (Ex. 6.4). As $vh(x)(x) = u f_1(x)f_2(x)$, $c \mid uc_k$ , and $u\wedge v = 1$, thus $v \mid c_k, k=0,1,\ldots,r$. As $c_1 \wedge \cdots c_k = 1$, $v \mid 1$, so $v = \pm 1$. $h(x) = u f_1(x) f_2(x)$ is monic, thus $u=1$, and $f_1,f_2$ are monic. From $f(x) = \frac{c}{d} f_1(x)$ we deduce $\frac{c}{d} = 1$ and $f(x) = f_1(x) \in \Z[x]$.
+
+Conclusion : if $f(x)$ is the minimal polynomial of an algebraic integer $\alpha$, $f \in \Z[x]$.
+\end{proof}
+
+\paragraph{Ex. 6.6}
+
+{\it Let $x^2 + mx + n \in \Z[x]$ be irreducible, and $\alpha$ be a root. Show that $\Q[\alpha] = \{r +s\alpha: r, s \in \Q\}$ is a ring (in fact, it is a field). Let $m^2 - 4n = D_0^2 D$, where $D$ is square-free. Show that $\Q[\alpha] = \Q[\sqrt{D}]$.
+}
+
+\begin{proof}
+By definition, for all $z \in \C, z \in \Q[\alpha] \iff \exists P \in \Q[x], z = P(\alpha)$.
+
+The Euclidean division gives $P = Q_1 (x^2+mx+n) + R(x), \ Q_1,R  \in \Q[x], \deg(R) < 2$, so $R = rx+s,\ r,s \in \Q$. So $z = Q_1(\alpha) (\alpha^2+m\alpha+n) + r\alpha + s = r\alpha + s$ :
+$$\Q(\alpha) = \{z \in \C\ \vert \ \exists r \in \Q, \exists s \in \Q, \ z = r+s \alpha\}.$$
+
+$\bullet$ $\Q[\alpha] \subset \C$, where $(\C,+,\times)$ is a field. $1 \in \Q[\alpha]$ ($1 = P_0(\alpha)$, where $P_0$ is the constant polynomial $1$).
+
+$\bullet$ Let $\beta, \gamma \in \Q[\alpha] : \beta = P(\alpha), \gamma = Q(\alpha)$, where $P,Q$ are in $\Q[x]$.
+Then $\alpha - \beta =  P(\alpha) -  Q(\alpha) = R(\alpha)$, where $R = P-Q \in \Q[x]$, and $\alpha \beta =  P(\alpha) Q(\alpha) = S(\alpha)$, where $S = PQ \in \Q[x]$. So $\alpha - \beta \in \Q[\alpha], \alpha \beta \in \Q[\alpha]$. So $\Q[\alpha]$ is a subring of $(\C,+,\times)$.
+
+$\bullet$ Let $\beta = P(\alpha) \in \Q[\alpha), P \in \Q[x]$ and $\beta \neq 0$.
+As $\beta \ne 0$, $Q = x^2+mx+n \nmid P$. 
+
+Let $D \in \Q[x]$  such that $D \mid P,D \mid Q$. As $Q$ is irreducible by hypothesis, $D = \lambda$ or $D = \lambda Q, \lambda \in \C^*$ ($D$ is an associate of $1$ or $Q$). If $D = \lambda Q$, then $Q \mid D$, and $D \mid P$, so $Q \mid P$. Since $Q(\alpha) = 0$,  this implies $\beta = P(\alpha) = 0$, in contradiction with the definition of $\beta$. So $D = \lambda \mid 1$. Therefore $P\wedge Q = 1$. 
+
+From BŽzout's theorem, there exist polynomials $U,V \in \Q[x]$ such that $UP+VQ = 1$. As $\Q(\alpha) = 0$, $U(\alpha) P(\alpha) = 1$ and $\gamma = U(\alpha) \in \Q[\alpha]$ is such that $\gamma \beta$ = 1. Therefore $\Q[\alpha]$ is a subfield of $(\C,+,\times)$ (and $\Q(\alpha) = \Q[\alpha]$).
+
+As $x^2+mx+n$ is irreducible, $\Delta = m^2-4n \ne 0$ (if not, $x^2+mx +n = (x+m/2)^2 -(m^2 -4n)/4 = (x +m/2)^2$ is not irreducible). So $\Delta \in \Z \setminus\{ 0\}$ can be written $\Delta = m^2 - 4n = D_0^2D$, where $D$ is square-free (positive or negative), $D \neq 0, D_0 \neq 0$.
+
+$\alpha = -\frac{m}{2} + \varepsilon\frac{\sqrt{\Delta}}{2},\ \varepsilon = \pm 1$, 
+so $\alpha = -\frac{m}{2} + \varepsilon D_0 \frac{\sqrt{D}}{2}$, thus  $\alpha \in \Q[\sqrt{D}]$ and $\Q[\alpha] \subset \Q[\sqrt{D}]$.
+
+ As $D_0 \neq 0$, $\sqrt{D} = \varepsilon \frac{2 \alpha + m}{D_0} \in \Q[\alpha]$, 
+ so $\Q[\sqrt{D}] \subset \Q[\alpha)]$ :
+$$\Q[\alpha] = \Q[\sqrt{D}].$$ 
+\end{proof}
+
+\paragraph{Ex. 6.7}
+
+{\it (continuation) If $D \equiv 2, 3  \pmod 4$, show that all the algebraic integers in $\Q[\sqrt{D}]$ have the form $a + b \sqrt{D}$, where $a, b \in \Z$. If $D \equiv 1  \pmod 4$, show that all the algebraic integers in $\Q[\sqrt{D}]$ have the form $a + b((-1 + \sqrt{D})/2)$, where $a, b \in \Z$.
+}
+
+\begin{proof}
+(We write $\overline{\Z}$ the ring of algebraic integers in $\C$, and ${\cal O}_K$ (or $\Z_K$) the ring of algebraic integers in the field $K$.)
+
+If $D=1$, $\Q[\sqrt{D}] = \Q$. If $D \neq 1$, as $D$ is square-free, $D$ in not a square, so $\sqrt{D}$ is irrational.
+
+Let $\gamma = r + s \sqrt{D} \in \Q[\sqrt{D}]\ (r,s \in \Q)$ an algebraic integer of $\Q[\sqrt{D}]$ ($D\in \Z, D$ square-free).
+$(\gamma - r)^2 = s^2 D$, so  $\gamma^2 - 2r\gamma +r^2 - Ds^2 = 0$. $\gamma$ is a root of 
+$$p(x) = x^2-2rx+r^2-Ds^2.$$
+
+If $s = 0$, then the minimal polynomial of $\gamma$ is $x-r$.  As $r = \gamma $ is an algebraic integer and $r\in \Q$, then $r\in \Z$. In this case $r\in \Z$ and $s=0$.
+
+If $s\neq 0$, $\gamma \not \in \Q$, so no polynom of degree $d\leq 1$ has the root $\gamma$. Thus the minimal polynomial of $\gamma$ is $p(x)$. From Exercise 6.5, $p(x) \in \Z[x]$, so (in the two cases $s=0,s\neq 0$)
+$$2r \in \Z, r^2-Ds^2 \in \Z.$$
+Reciprocally, if $2r \in \Z, r^2-Ds^2 \in \Z$, then $p(x)\in \Z[x]$ and $p(\gamma) = 0$, thus $\gamma$ is an algebraic integer.
+
+If  $r,s \in \Q$, $D\neq 1$ square-free,
+$$r+s\sqrt{D} \in \overline{\Z}  \iff 2r \in \Z,\  r^2-Ds^2 \in \Z.$$
+Let $\gamma =  r + s \sqrt{D} \in \overline{\Z}$.
+We can write $$r = \frac{a}{d}, s = \frac{b}{d}, \qquad a,b,d \in \Z, d\geq 1, d\wedge a \wedge b = 1.$$
+Then
+$$n = \frac{2a}{d} \in \Z, \quad m = \frac{a^2-Db^2}{d^2} \in \Z.$$
+As $D$ is square-free, $D\not \equiv 0 \pmod 4$.
+\begin{enumerate}
+\item[$\bullet$] Case 1 : $D \equiv 2,3 \pmod 4$.
+
+$n^2-4m = \frac{4Db^2}{d^2}$, so $d \mid 2a, d^2 \mid 4Db^2$.
+
+If $2\mid d$, $4 \mid a^2-Db^2$, $a^2 \equiv Db^2 \pmod 4$.
+As $d\wedge a \wedge b = 1$, and $2 \mid d$, $a$ or $b$ is odd, and $a^2 \equiv Db^2 \pmod 4, D \not \equiv 0 \pmod 4$, implies that $a$ and $b$ are both odd. Then $a^2 \equiv b^2 \equiv 1 \pmod 4$, so $D \equiv 1 \pmod 4$ : this is in contradiction with the hypothesis $D \equiv 2,3 \pmod 4$. So $d$ is an odd number.
+
+Consequently, $d\mid p, d^2 \mid Dq^2$. If $p\in \N$ is a prime factor of $d$, $p \mid d, p \mid a$ ,and $d \wedge a \wedge b = 1$, so $p \nmid b$, and since $p^2 \mid D b^2$, $p^2 \mid D$, in contradiction with $D$ square-free. So $d\geq 1$ has no prime factor : $d = 1$ and $r = a,s = b \in \Z$. Reciprocally , any $\gamma = a+b\sqrt{D}, a,b \in \Z$ is an algebraic integer, so 
+$${\cal O}_{\Q[{\sqrt{D}}]} = \overline{\Z} \cap \Q[{\sqrt{D}}] = \{a + b \sqrt{D}\ \vert \ a,b \in \Z\}.$$
+\item[$\bullet$] Case 2 : $D \equiv 1 \pmod 4$.
+
+Then $r = \frac{n}{2}, n \in \Z$. Write $s = \frac{u}{v}, u \wedge v = 1, v \geq 1$.
+
+$m = r^2 - D s^2 = \frac{n^2}{4} - D \frac{u^2}{v^2} \in \Z$, $4 D \frac{u^2}{v^2} = n^2 - 4 m \in \Z$, so $v^2 \mid 4 D u^2$. Since $u\wedge v = 1, u^2 \wedge v^2 = 1$, so  $v^2 \mid 4 D$. As $D$ is square-free, $v$ has no odd prime factor, so $v = 2^k$. Since $D$ is odd, $k\leq1$ and $v = 1$ or $v = 2$. So $r,s$ are both half-integers: $r = n/2, s = n'/2,\ n,n' \in \Z$.
+
+$4 m = n^2 - D n'^2$, thus $n^2 \equiv n'^2 \pmod 4$, so $n,n'$ have the same parity. Let $a = \frac{n+n'}{2} \in \Z, b = n' \in \Z$. Then $n = 2a -b, n' = b$ and  $\gamma = \frac{n}{2} + \frac{n'}{2} \sqrt{D} =  a - \frac{b}{2} + \frac{b}{2} \sqrt{D} = a + b\left( \frac{-1+ \sqrt{D}}{2} \right)$.
+
+Reciprocally, $\frac{-1+ \sqrt{D}}{2}$ is a root of $x^2 + x +\frac{1-D^2}{4} \in \Z[x]$, so every $a + b\left( \frac{-1+ \sqrt{D}}{2} \right)$ is an algebraic integer.
+$${\cal O}_{\Q[{\sqrt{D}}]} = \overline{\Z} \cap \Q[{\sqrt{D}}] = \{a + b\left( \frac{-1+ \sqrt{D}}{2} \right)\ \vert \ a,b \in \Z\}.$$
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 6.8}
+
+{\it Let $\omega = e^{2 \pi i/3}$, $\omega$ satisfies $x^3 - 1 = 0$. Show that $(2 \omega + 1)^2 = -3$, and use this to determine $(-3/p)$ by the method of section $2$.
+}
+
+\begin{proof}
+As $\omega^2+\omega+1 = 0$,$(2\omega+1)^2 = 4\omega^2+4\omega+1 = -4+1 = -3$. Let $\alpha = 2\omega+1$ ,so $\alpha^2 = -3$
+\begin{align*}
+\legendre{-3}{p} &\equiv (-3)^{(p-1)/2} \pmod p\\
+&\equiv \alpha^{p-1} \pmod p
+\end{align*}
+$$\alpha^p = \legendre{-3}{p} \alpha.$$
+From Prop. 6.1.6,
+\begin{align*}
+\alpha^p &= (2\omega+1)^p\\
+&\equiv 2^p \omega^p + 1 \pmod p\\
+&\equiv 2 \omega^p + 1\pmod p
+\end{align*}
+\begin{enumerate}
+\item[$\bullet$] If $p \equiv 0 \pmod 3$, $\legendre{-3}{p} = 0$.
+\item[$\bullet$] If $p \equiv 1 \pmod 3$, $\omega^p  = \omega$, so $\alpha^p \equiv \alpha \pmod p$.
+
+$\legendre{-3}{p} \alpha \equiv \alpha \pmod p$, thus $\legendre{-3}{p} \alpha^2 \equiv \alpha^2 \pmod p$, $\legendre{-3}{p} 3 \equiv 3 \pmod p$. As $p \wedge 3 = 1$, $\legendre{-3}{p}  \equiv 1 \pmod p$. Since $\legendre{-3}{p} = \pm 1$,  $\legendre{-3}{p}  = 1$.
+
+\item[$\bullet$] If $p \equiv -1 \pmod 3$,
+\begin{align*}
+\alpha^p &\equiv 2 \omega^p + 1 \pmod p\\
+&\equiv 2\omega^2 + 2 = 2(-1-\omega)+1 = -2 \omega - 1 = -\alpha\pmod p.\\
+\end{align*}
+$\legendre{-3}{p} \alpha \equiv -\alpha \pmod p$, thus $\legendre{-3}{p} \alpha^2 \equiv -\alpha^2 \pmod p$, $\legendre{-3}{p} 3 \equiv -3 \pmod p$. As $p \wedge 3 = 1$, $\legendre{-3}{p}  \equiv -1 \pmod p$. Since $\legendre{-3}{p} = \pm 1$,  $\legendre{-3}{p}  = -1$.
+\end{enumerate}
+Conclusion : 
+\begin{align*}
+p \equiv 0 [3] &\iff \legendre{-3}{p} = 0\\
+p \equiv 1 [3] &\iff \legendre{-3}{p} = 1\\
+p \equiv -1 [3] &\iff \legendre{-3}{p} = -1\\
+\end{align*}
+In other words, $ \legendre{-3}{p} =  \legendre{p}{3}$.
+
+Remark : $\alpha = 2 \omega + 1 = \omega - \omega^2 = g$, the quadratic Gauss sum for $p=3$.
+\end{proof}
+
+\paragraph{Ex. 6.9}
+
+{\it Verify Proposition 6.3.2 explicitly for $p = 3, 5$, i.e., write out the Gauss sum longhand and square.
+}
+
+\begin{proof}
+\begin{enumerate}
+\item[$\bullet$] p=3. Let $\omega = e^{2i\pi/3}$.
+Let $g = \sum_{t=0}^2 (t/3)\omega^t$ the quadratic Gauss sum. Then $g =\omega - \omega^2$.
+
+As $1+\omega+\omega^2 = 0$,
+$g^2 = (\omega- \omega^2)^2 = \omega^2 - 2 \omega^3 + \omega^4 = \omega^2 - 2 + \omega  =-3$ :
+
+$$g^2 = -3.$$
+
+\item[$\bullet$] p=5. Let $\zeta= e^{2i\pi/5}$.
+
+$g = \sum_{t=0}^4 (t/3)\zeta^t = \zeta- \zeta^2-\zeta^3+\zeta^4.$ 
+
+Then $g = \alpha - \beta$, where $\alpha = \zeta + \zeta^4, \beta = \zeta^2+\zeta^3$.
+
+$\alpha + \beta = \zeta + \zeta^4+\zeta^2 + \zeta^3 = -1$.
+
+$\alpha \beta= \zeta^3+ \zeta^4+\zeta^6+\zeta^7 = \zeta^3+ \zeta^4+\zeta+\zeta^2 = -1$
+
+So $\alpha, \beta$ are the two roots of $x^2+x-1$.
+\begin{align*}
+g^2 &= (\alpha - \beta)^2\\
+&=\alpha^2+\beta^2 - 2 \alpha \beta\\
+&=(\alpha+ \beta)^2 - 4 \alpha \beta\\
+&= (-1)^2-4(-1)\\
+&= 5.
+\end{align*}
+
+Remark : here we know explicitely $g$ :
+
+if $p = 3$, $g = \omega - \omega^2 = i \sqrt{3}$.
+
+If $p=5$, $g = \alpha - \beta = (-1+\sqrt{5})/2 - (-1 - \sqrt{5})/2 = \sqrt{5}$.
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 6.10}
+
+{\it  What is $\sum_{a=1}^{p-1} g_a$?
+}
+
+\begin{proof}
+From Prop. 6.3.1 and Lemma 2,
+$$\sum_{a=1}^{p-1} g_a = g_1 \sum_{a=1}^{p-1} \legendre{a}{p} = 0.$$
+\end{proof}
+
+\paragraph{Ex. 6.11}
+
+{\it By evaluating $\sum_t (1+(t/p)) \zeta^t$ in two ways, prove that $g = \sum_t \zeta^{t^2}$.
+}
+
+\begin{proof}
+For $ a \in \F_p$, Write $N[x^2 = a]$ the number of solutions of the equation $x^2 = a$ in $\F_p$.
+We know from Ex. 5.2 that $N[x^2 = a] = 1 + (a/p)$. So
+\begin{align*}
+\sum_{t=0}^{p-1} \zeta^{t^2} &= \sum_{\overline{t} \in \F_p} \zeta^{t^2} \\
+ & = \sum_{\overline{t} \in \F_p} N[x^2 = t] \zeta^t\\
+&=\sum_{\overline{t} \in \F_p} \left(1 + \legendre{t}{p} \right) \zeta^t\\
+&=\sum_{\overline{t} \in \F_p} \zeta ^t + \sum_{\overline{t} \in \F_p}  \legendre{t}{p} \zeta^t\\
+ &=\sum_{t = 0} ^{p-1}  \legendre{t}{p} \zeta^t\\
+ &= g
+\end{align*}
+\end{proof}
 
 \end{document}
