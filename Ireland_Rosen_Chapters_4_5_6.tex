@@ -2280,4 +2280,310 @@ We know from Ex. 5.2 that $N[x^2 = a] = 1 + (a/p)$. So
 \end{align*}
 \end{proof}
 
+\paragraph{Ex. 6.12}
+
+{\it Write $\psi_a(t) = \zeta^{at}$. Show that
+\begin{enumerate}
+\item[(a)] $\overline{\psi_a(t)} = \psi_a(-t) = \psi_{-a}(t)$
+\item[(b)] $(1/p)\sum_a \psi_a(t-s) = \delta(t, s)$
+\end{enumerate}
+}
+
+\begin{proof}
+\begin{enumerate}
+\item[(a)]  Let $a\in \Z$. As $\overline{\zeta} = \zeta^{-1}$, 
+\begin{align*}
+\overline{\psi_a(t)} &=\overline{\zeta^{at}}= \zeta^{-at}\\
+& = \zeta^{a(-t)} = \zeta^{(-a)t}\\
+& = \psi_a(-t) = \psi_{-a}(t)
+\end{align*}
+$\overline{\psi_a(t)} = \psi_a(-t) = \psi_{-a}(t)$
+\item[(b)] 
+From Corollary of Lemma 1 :
+$$\frac{1}{p} \sum_{a=0}^{p-1} \psi_a(t-s) = \frac{1}{p} \sum_{a=0}^{p-1} \zeta^{a(t-s)} = \delta(t,s)$$
+$$\frac{1}{p}\sum_a \psi_a(t-s) = \delta(t, s).$$
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 6.13}
+
+{\it Let $f$ be a function from $\Z$ to the complex numbers. Suppose that $p$ is a prime and that $f(n+p) = f(n)$ for all $n \in \Z$. Let $\hat{f}(a) = p^{-1} \sum_t f(t) \psi_{-a}(t)$. Prove that $f(t) = \sum_a\hat{f}(a)\psi_a(t)$. This result is directly analogous to a result in the theory of Fourier series.
+}
+
+\begin{proof}
+Let $\hat{f}(a) = p^{-1} \sum_t f(t) \psi_{-a}(t)$. Then
+\begin{align*}
+\sum_{a=0}^{p-1} \hat{f}(a) \psi_a(t) &= \sum_{a=0}^{p-1} p^{-1} \sum_{s=0}^{p-1} f(s) \psi_{-a}(s) \psi_{a}(t)\\
+&=p^{-1} \sum_{s=0}^{p-1}f(s)  \sum_{a=0}^{p-1} f(s) \psi_{-a}(s) \psi_{a}(t)\\
+&=p^{-1} \sum_{s=0}^{p-1}f(s)  \sum_{a=0}^{p-1} f(s) \psi_{a}(t-s) \\
+&= \sum_{s=0}^{p-1} f(s) \delta(s,t)\\
+&=f(t)
+\end{align*}
+\end{proof}
+
+\paragraph{Ex. 6.14}
+
+{\it In Ex. 13 take $f$ to be the Legendre symbol and show that $\hat{f}(a) = p^{-1} g_{-a}$.
+}
+
+\begin{proof}
+Here $f(a) = \legendre{a}{p}$. Then
+$\hat{f}(a) = p^{-1} \sum_{t=0}^{p-1} \legendre{t}{p} \zeta^{-at} = p^{-1} g_{-a}$.
+\end{proof}
+
+\paragraph{Ex. 6.15}
+
+{\it Show that
+$$ \left|\sum_{t = n}^m \legendre{t}{p}\right| < \sqrt{p}\log p.$$
+The inequality holds for the sum over any range.
+}
+
+
+{\bf Lemma.} If $0\leq x \leq \frac{\pi}{2}, \sin x \geq \frac{2}{\pi} x$.
+\begin{proof}
+As $-\sin$ is a convex function on $[0,\pi/2]$, the graph of $\sin$ is above any chord, and the chord between the points $(0,0)$ and $(\pi/2,1)$ has equation $y = (2/\pi) x$, we conclude that
+ $\sin x \geq \frac{2}{\pi}$ for $0\leq x \leq \pi/2$. 
+\end{proof}
+\begin{proof}
+Let $S = \sum\limits_{t = n}^m \legendre{t}{p} g$ with $n\leq m$. Then $\vert S \vert = \sqrt{p} \left|\sum\limits_{t = n}^m \legendre{t}{p}\right|$. As $(t/p)g = g_t$,
+\begin{align*}
+S&= \sum _{t=m}^n g_t\\
+&=\sum _{t=m}^n \sum_{s=0}^{p-1}\legendre{s}{p} \zeta^{ts}\\
+&=\sum_{s=0}^{p-1} \legendre{s}{p} \zeta^{ms} \sum _{t=m}^n \zeta^{(t-m)s}\\
+&=\sum_{s=0}^{p-1} \legendre{s}{p} \zeta^{ms} \sum _{u=0}^{n-m} \zeta^{us} \qquad( u=t-m)\\
+&=\sum_{s=1}^{p-1} \legendre{s}{p} \zeta^{ms} \frac{\zeta^{(n-m+1)s}-1}{\zeta^s-1}\\
+\end{align*}
+(since for $s=0$, the sum $\sum _{u=0}^{n-m} \zeta^{us} = n-m+1$ and $\sum_{s=0}^{p-1} \legendre{s}{p} = 0$). So
+\begin{align*}
+S &= \sum_{s=1}^{p-1} \legendre{s}{p} \frac{\zeta^{(n+1)s}-\zeta^{ms}}{\zeta^s-1}\\
+&=\sum_{s=1}^{p-1} \legendre{s}{p} \frac{\zeta^{\frac{n+m+1}{2} s}}{\zeta^{\frac{s}{2}}} \  \frac{\zeta^{\frac{n-m+1}{2} s}-\zeta^{\frac{-n+m-1}{2} s}}{\zeta^{\frac{s}{2}}-\zeta^{\frac{-s}{2}}}\\
+&= \sum_{s=1}^{p-1} \legendre{s}{p}\zeta^{\frac{n+m}{2} s} \ \frac{\sin \left((n-m+1)s \frac{\pi}{p}\right)} { \sin \left(s \frac{\pi}{p}\right) }
+\end{align*}
+As $\sin(x) \geq \frac{2}{\pi} x$ for $x \in [0,\frac{\pi}{2}]$, for all $s$, $1\leq s <\frac{p}{2}$, $0 \leq \frac{s \pi}{p} \leq \frac{\pi}{2} $, so
+$$\left| \frac{\sin \left((n-m+1)s \frac{\pi}{p}\right)} { \sin \left(s \frac{\pi}{p}\right)} \right |  \leq \frac{1}{\frac{2}{\pi} \left(s\frac{\pi}{p} \right)} = \frac{p}{2s}\qquad (s = 1,2,\ldots,(p-1)/2).$$
+Since $\legendre{s}{p} \zeta^{ts}$ depends only of the class of $s$, we can replace in the preceding calculation the values $s = 1,2,\ldots,p-1$ by $s=-(p-1)/2,\ldots, -1,1,\ldots,(p-1)/2$, so
+$$S = \sum_{s=1}^{(p-1)/2}\legendre{s}{p}\zeta^{\frac{n+m}{2} s} \ \frac{\sin \left((n-m+1)s \frac{\pi}{p}\right)} { \sin \left(s \frac{\pi}{p}\right) }
++\sum_{s=-(p-1)/2}^{-1} \legendre{s}{p}\zeta^{\frac{n+m}{2} s} \ \frac{\sin \left((n-m+1)s \frac{\pi}{p}\right)} { \sin \left(s \frac{\pi}{p}\right) }.$$
+As $\sin$ is an odd function,
+$$S = \sum_{s=1}^{(p-1)/2}\legendre{s}{p}\zeta^{\frac{n+m}{2} s} \ \frac{\sin \left((n-m+1)s \frac{\pi}{p}\right)} { \sin \left(s \frac{\pi}{p}\right) }
++\sum_{s=1}^{(p-1)/2} \legendre{-s}{p}\zeta^{-\frac{n+m}{2} s} \ \frac{\sin \left((n-m+1)s \frac{\pi}{p}\right)} { \sin \left(s \frac{\pi}{p}\right) }.$$
+Thus 
+$$\vert S \vert \leq 2 \sum_{s=1}^{(p-1)/2}\frac{p}{2s} = p\sum_{s=1}^{(p-1)/2} \frac{1}{s}.$$
+As $S = \sum\limits_{t = n}^m \legendre{t}{p} g$ and $|g| = \sqrt{p}$,
+$$ \left|\sum_{t = n}^m \legendre{t}{p}\right| \leq \sqrt{p} \sum_{s=1}^{(p-1)/2} \frac{1}{s}.$$
+It remains to do a sufficient estimation of the harmonic sum. 
+We prove by induction that for all $n \geq 1$,
+$$1+\frac{1}{2}+\cdots+\frac{1}{n} \leq \log(2n+1).$$
+As $1 \leq \log(3)$, this proposition is true for $n=1$. Suppose that is it true for $n-1$ :
+$$1+\frac{1}{2}+\cdots+\frac{1}{n-1} \leq \log(2n-1).$$
+Then $$1+\frac{1}{2}+\cdots+\frac{1}{n} \leq \frac{1}{n} + \log(2n-1).$$
+If we prove that $\frac{1}{n} + \log(2n-1) \leq \log(2n+1)$, the induction is done.
+
+Let $u(x) = \log(2x+1) - \log(2x-1) - \frac{1}{x}, x > \frac{1}{2}$.
+\begin{align*}
+u'(x) &= \frac{2}{2x+1} - \frac{2}{2x-1} -\frac{1}{x^2}\\
+&=\frac{-4}{4x^2-1} + \frac{1}{x^2}\\
+&= \frac{-1}{(4x^2-1)x^2} <0
+\end{align*}
+As $u(x) = \log\left(\frac{2x+1}{2x-1}\right)  - \frac{1}{x}$, $ \lim\limits_{x\to +\infty} u(x) =0$. Moreover $u$ is a decreasing function, so for all $x>1/2, u(x)>0$, and for all $n\in \N, n\geq 1$,
+$$\frac{1}{n} + \log(2n-1) \leq \log(2n+1).$$
+We have proved by induction that for all $n\geq 1$,
+$$1+\frac{1}{2}+\cdots+\frac{1}{n} \leq \log(2n+1).$$
+If $n = (p-1)/2$, where $p$ is an odd prime ($p\geq 3$),
+$$\sum_{s=1}^{(p-1)/2} \frac{1}{s} \leq \log p.$$
+Conclusion : $$ \left|\sum_{t = n}^m \legendre{t}{p}\right| < \sqrt{p}\log p.$$
+\end{proof}
+
+\paragraph{Ex. 6.16}
+
+{\it Let $\alpha$ be an algebraic number with minimal polynomial
+$f(x)$. Show that $f(x)$ does not have repeated roots in $\C$.
+}
+
+\begin{proof}
+Let $\gamma$ a repeated root of $f(x)$. Then $f(\gamma) = f'(\gamma) = 0$, so $x -\gamma$ is a common factor of $f$ and $f'$. Thus  $f \wedge f' \neq 1$ ($ \deg(f\wedge f') \geq 1)$.
+Since $f \wedge f' \mid f$ and $f$ is irreducible (with $f$ , $f\wedge f'$ monic), we conclude $f\wedge f' = f$, so $f \mid f'$. In $\C$, this is impossible since $\deg(f) \geq 1$, so $f'\neq 0$, and $\deg(f') < \deg(f)$. $f(x)$ does not have repeated roots in $\C$.
+\end{proof}
+
+\paragraph{Ex. 6.17}
+
+{\it Show that the minimal polynomial for $\sqrt[3]{2}$ is $x^3 -2$.
+}
+
+\begin{proof}
+Let $f(x) = x^3-2$. Then $f(\sqrt[3]{2}) = 0$.
+If $f(x)$ was not irreducible, then $f(x) = u(x) v(x)$, with $1\leq \deg(u) \leq \deg(v) \leq 2, \deg(u) + \deg(v) = \deg(f) = 3$, so $\deg(u) = 1,\deg(v) = 2$.
+
+Then $f(x) = (ax+b)(cx^2+dx+e), \ a,b,c,d,e \in \Q$.
+Let $w = -b/a$. Then $f(w) = w^3 - 2= 0$ and $w\in \Q$, so there exist $p,q\in \Z$, such that $w = p/q, p\wedge q = 1$.
+
+Thus $p^3 = 2 q^3$, so $p^3$ is even, thefore $p$ is even : $p = 2 p', p' \in \Z$.
+
+$8 p'^3 = 2 q^3$, $4p'^3 = q^3$, so $q^3$ is even, which implies that $q$ is even. Then $2 \mid p\wedge q = 1$ : this is a contradiction.
+
+So $f(\sqrt[3]{2}) = 0$, and $f$ is monic, irreducible : $f$ is the minimal polynomial of $\sqrt[3]{2}$ on $\Q$.
+\end{proof}
+
+\paragraph{Ex. 6.18}
+
+{\it Show that there exist algebraic numbers of arbitrarily high degree.
+}
+
+\begin{proof}
+As $1+x+\cdots+x^{p-1}$ is irreducible on $\Q[x]$ (Prop. 6.4.1), the numbers $\zeta_p = e^{2i\pi/p}$, with $p$ prime number, are algebraic numbers of arbitrary large degree.
+\end{proof}
+
+\paragraph{Ex. 6.19}
+
+{\it Find the conjugates of $\cos(2 \pi/5)$.
+}
+
+\begin{proof}
+Let $\gamma = \cos(2 \pi/5)$, $\zeta= e^{2i\pi/5}$ and $\alpha = \zeta + \zeta^4, \beta= \zeta^2+\zeta^3$. 
+
+Then $\gamma = \frac{\zeta + \zeta^{-1}}{2} = \frac{\zeta + \zeta^{4}}{2}  = \frac{\alpha}{2}$.
+
+$\alpha + \beta = \zeta + \zeta^4+\zeta^2 + \zeta^3 = -1$.
+
+$\alpha \beta= \zeta^3+ \zeta^4+\zeta^6+\zeta^7 = \zeta^3+ \zeta^4+\zeta+\zeta^2 = -1$
+
+So $\alpha, \beta$ are the two roots of $x^2+x-1$ : 
+
+$\alpha^2 + \alpha-1$ = 0, so $ 4(\alpha/2)^2 + 2 (\alpha/2) - 1=0$ : $\gamma = \alpha/2$ is a root of
+$$f(x) = 4x^2+2x-1.$$
+As $\Delta = 4 \times 5$ ,the two roots of $f$ are irrational. $\deg(f) = 2$ and $f$ has no root in $\Q$, so $f(x)$ is irreducible in $\Q[x]$. So the minimal polynomial of $\gamma = \cos(2 \pi/5)$ is $f(x) = 4x^2+2x -1.$
+The other root of $f$ is $\beta/2 = (\zeta^2+\zeta^3)/2 = \cos(4pi/5)$.
+
+Conclusion : the conjugates of $\gamma = \cos(2 \pi/5)$ are $\gamma = \cos(2 \pi/5)$ and $\cos(4 \pi/5)$.
+\end{proof}
+
+\paragraph{Ex. 6.20}
+
+{\it Let $F$ be a subfield of $\C$ which is a finite-dimensional vector space over $\Q$ of degree $n$. Show that every element of $F$ is algebraic of degree at most $n$.
+}
+
+\begin{proof}
+Let $\alpha \in F$, with $\dim_{\Q} F = n$.
+Any subset of $n+1$ vectors in $F$ is linearly dependent, so $\{1,\alpha,\alpha^2,\cdots,\alpha^{n}\}$ is linearly dependent. 
+
+Thus there exists $(a_0,\ldots,a_n) \in \Q^{n+1}, (a_0,\ldots,a_n) \ne (0,0,\ldots,0)$ such that $a_0+a_1\alpha +\cdots+a_n \alpha^n = 0$.
+
+Let $f(x) = a_0+a_1x+\cdots+a_n x^n$. Then $f(x) \in \Q[x], f(x) \neq 0$ and $f(\alpha) = 0, \deg(f(x)) \leq n$. So  every element of $F$ is algebraic of degree at most $n$.
+\end{proof}
+
+\paragraph{Ex. 6.21}
+
+{\it Let $f(x) = \sum_{n=0}^\infty a_n x^n/n!$ and $g(x) =\sum_{n=0}^\infty b_n x^n/n!$ be power series with $a_n$ and $b_n$integers. If $p$ is a prime such that $p|a_i$ for $i = 0, \ldots,
+p-1$, show that each coefficient $c_t$ of the product $f(x)g(x) = \sum_{n=0}^\infty c_n x^n$ for $t = 0, \ldots, p-1$ may be written in the form $p(A/B)$, $p\not | B$.
+}
+
+\begin{proof}
+Let $k \in \N, 0 \leq k \leq p-1$.
+\begin{align*}
+c_k &= \sum_{i+j=k} \frac{a_i}{i!}\frac{b_j}{j!}\\
+&= \sum_{i=0}^k \frac{a_i}{i!}\frac{b_{k-i}}{(k-i)!}\\
+&=\frac{1}{k!} \sum_{i=0}^k \binom{k}{i} a_i b_{k-i}
+\end{align*}
+As $k! \wedge p = 1$, and $\sum_{i=0}^k \binom{k}{i} a_i b_{k-i} \equiv 0 \pmod p$ for $k=0,1,\ldots,p-1$,
+
+$c_k = p(A/B) , p \wedge B = 1$.
+\end{proof}
+
+
+\paragraph{Ex. 6.22}
+
+{\it Show that the relation $\varepsilon \equiv 1 \pmod p$ in Proposition
+6.4.4 can also be achieved by replacing $x$ by $1+t$ instead of $e^z$.
+}
+
+\bigskip
+
+Warning : incomplete solution.
+
+\begin{proof}
+We know from Prop. 6.4.3 that
+$$g(\zeta) = \varepsilon \prod_{k=1}^{(p-1)/2}(\zeta^{2k-1} - \zeta^{-(2k-1)}),$$
+where $\varepsilon = \pm 1$.
+Let $$f(x) = \sum_{j=1}^{p-1} \chi(j) x^j -\varepsilon \prod_{k=1}^{(p-1)/2}(x^{2k-1} - x^{p-(2k-1)}).$$
+Then $f(0) = 0$ and  $f(\zeta) = 0$, so $(x^p-1)$ divides $f(x)$. As $f(x) \in \Z[x]$ and $x^p-1 \in \Z[x]$ is monic,  $f(x) = (x^p-1)h(x), h(x) \in \Z[x]$.
+If we replace $x$ by $1+t$, we obtain
+$$f(1+t) = \sum_{j=1}^{p-1} \chi(j) (1+t)^j -\varepsilon \prod_{k=1}^{(p-1)/2}\left((1+t)^{2k-1} - (1+t)^{p-(2k-1)}\right).$$
+We compute the coefficient of $t^{(p-1)/2}$ in the polynomial $f(1+t)$ :
+\begin{align*}
+\sum_{j=1}^{p-1} \chi(j) (1+t)^j &= \sum_{j=1}^{p-1} \chi(j)  \sum_{i=1}^j \binom{j}{i}t^i\\
+&= \sum_{i=1}^{p-1} \sum_{j=i}^{p-1} \chi(j) \binom{j}{i}t^i\\
+\end{align*}
+So the coefficient of $t^{(p-1)/2}$ in  $\sum\limits_{j=1}^{p-1} \chi(j) (1+t)^j$ is $\sum\limits_{j=(p-1)/2}^{p-1} \chi(j) \binom{j}{(p-1)/2}$.
+\begin{align*}
+\prod_{k=1}^{(p-1)/2}((1+t)^{2k-1} - (1+t)^{p-(2k-1)})& = \prod_{k=1}^{(p-1)/2} \left((1+ (2k-1) t ) - (1+(p-(2k-1)) t +t^2u(t)\right)\\
+&=\prod_{k=1}^{(p-1)/2} \left((4k-2-p)t + t^2v(t)\right)\\
+&=t^{(p-1)/2} \prod_{k=1}^{(p-1)/2} (4k-2-p) + t^{(p-1)/2} w(t),
+\end{align*}
+where $u(t),v(t),w(t)$ are polynomials. So the coefficient of $t^{(p-1)/2}$ in $f(1+t)$ is
+$$c_{(p-1)/2} =  \sum\limits_{j=(p-1)/2}^{p-1} \chi(j) \binom{j}{(p-1)/2} - \varepsilon  \prod_{k=1}^{(p-1)/2} (4k-2-p) .$$
+Furthermore, 
+\begin{align*}
+f(1+t) &= \left((1+t)^p-1\right) h(1+t)\\
+&=\left[\sum_{i=1}^p \binom{p}{i} t^i\right] h(1+t)\\
+&= \left[\sum_{i=1}^p i!\binom{p}{i} \frac{t^i}{i!}\right] h(1+t)\\
+&= \left[\sum_{i=0}^p a_i \frac{t^i}{i!}\right] h(1+t),\\
+\end{align*}
+where $a_0 = 0, a_i = i!\binom{p}{i} = \frac{p!}{(p-i)!}$, so $p \mid a_i, i=0,\ldots,p-1$ : the conditions of Ex.21 are verified, so $f(1+t) = \sum_{i=0}^{p-1} c_i t^i$ is such that 
+$c_{(p-1)/2} = p (A/B),\ p \nmid B$. Equating these two evaluations of $c_{(p-1)/2}$, we obtain
+$$\sum\limits_{j=(p-1)/2}^{p-1} \chi(j) \binom{j}{(p-1)/2} - \varepsilon  \prod_{k=1}^{(p-1)/2} (4k-2-p) = p \frac{A}{B}, \quad p \nmid B.$$
+Multiplying by $B (p-1)!/2$, we obtain, as $p\nmid B$,
+\begin{align*}
+\frac{(p-1)!}{2}  \sum_{j=(p-1)/2}^{p-1} \chi(j) \binom{j}{(p-1)/2} &\equiv  \varepsilon  \frac{(p-1)!}{2} \prod_{k=1}^{(p-1)/2} (4k-2) \\
+&\equiv \varepsilon ( 2\cdot 4\cdot6\cdots(p-1)) \prod_{k=1}^{(p-1)/2} (2k-1) \
+&\equiv \varepsilon (p-1)!\\
+&\equiv -\varepsilon \pmod p
+\end{align*}
+To prove that $\varepsilon = +1$, it remains to prove
+$$\frac{(p-1)!}{2}  \sum_{j=(p-1)/2}^{p-1} \chi(j) \binom{j}{(p-1)/2} \equiv -1 \pmod p \qquad ??$$
+I haven't found such a direct proof, but if we know from Prop. 6.4.4. that $\varepsilon = 1$, then this proposition is certainly true (morever, I have verified this proposition on S.A.G.E. for the primes $p<100$). I will appreciate an answer.
+\end{proof}
+
+\paragraph{Ex. 6.23}
+
+{\it If $f(x) = x^n + a_1 x^{n-1} + \ldots + a_n$, $a_i \in \Z$, and $p$ is prime such that $p \mid a_i$ for $i = 1, \ldots, n$, and $p^2 \nmid a_n$, show that $f(x)$ is irreducible over $\Q$ (Eisenstein's irreducibility criterion).
+}
+
+\bigskip
+
+{\bf Lemma.} If $f \in \Z[x], \deg(f) \geq 1,$ is not irreducible in $\Q[x]$, then there exist $g,h \in \Z[x] , \deg(g) \geq 1, \deg(h) \geq 1$ such that $f = gh$.
+\begin{proof}(lemma)
+Suppose that  $f(x)  = \sum\limits_{k=0}^n a_k x^k, a_k \in \mathbb{Z}$, is not irreducible in $\mathbb{Q}[x]$.
+
+Then $f(x)= f_1(x)f_2(x) $, with $f_1,f_2 \in \mathbb{Q}[X]$, and $\deg(f_1)\geq 1, \deg(f_2) \geq 1$. As in Ex. 6.5, we can write $f_1(x) = \lambda p(x), f_2(x) = \mu q(x)$ where $\lambda, \mu \in \mathbb{Q}$, and $p,q \in \mathbb{Z}[X]$ are primitive. Let $\nu = \lambda \mu \in \Q$ : write $\nu = u/v, u\wedge v = 1, v \geq 1$. Then  $r(x) =  p(x)q(x) = \sum\limits_{k=0}^n c_k x^k$ is primitive (Ex. 6.4), and $f(x) = \frac{u}{v} r(x) =  \frac{u}{v} p(x)q(x)$.
+
+As $vf(x) = ur(x)$, $v\mid uc_i,\ i=0,1,\ldots,n$, with $u \wedge v = 1$, so   $u \mid c_i$ for all $i$. The polynomial $r$ being primitive, $v \mid 1$, so $v = \varepsilon = \pm 1$.
+
+Let $g(x) = \varepsilon u p(x), h(x)  = q(x)$.Then $g,h \in \Z[x]$,  $\deg(g)  \geq 1, \deg(h)  \geq 1$, and $f = gh$ is the product of  two non constant polynomials in  $\Z[x]$.
+
+\end{proof}
+\begin{proof}(Ex. 6.23) 
+
+Let
+$$
+\varphi : 
+\left\{
+\begin{array}{ccc}
+  \Z[x]&   \to & \F_p[x]  \\
+  p(x)= a_0 +\cdots+a_n x^n& \mapsto  & \overline{p}(x) =  \overline{a_0}+\cdots+\overline{a_n}x^n,
+\end{array}
+\right.
+$$
+where $\overline{a_i}$ is the class of $a_i$ in $\F_p$.  $\varphi$ is a ring homomorphism.
+
+We show that $f(x) = g(x) h(x),\  g,h \in \Z[x], \deg(g) \geq 1, \deg(h) \geq 1$ is impossible. Indeed in such a situation,
+$$\overline{f}(x) = x^n = \overline{g}(x)\overline{h}(x).$$ 
+As the only irreducible factor of $x^n$ is $x$, the unicity of the decomposition of a polynomial in irreducible factors in $\F_p[x]$ gives
+$$\overline{g}(x) = \lambda x^i,\,  \overline{h}(x) = \mu x^j,\ \lambda, \mu \in \F_p, i,j \in \N.$$
+
+As $\deg(\overline{g}) \leq \deg(g), \deg(\overline{h}) \leq \deg(h)$ and $\deg(\overline{g}) + \deg(\overline{h}) = n = \deg(f) + \deg(g)$, this implies that $i = \deg(\overline{f}) = \deg(f)$, $j=\deg(\overline{g}) = \deg(g)$, so $i\geq 1, j \geq 1$. Therefore $p \mid g(0), p \mid h(0)$, so $p^2 \mid a_n = g(0)h(0)$, which is in contradiction with the hypothesis.
+
+From the lemma we deduce that $f(x)$ is irreducible in $\Q[x]$.
+\end{proof}
+
+
 \end{document}
