@@ -1,0 +1,240 @@
+%&LaTeX
+\documentclass[11pt,a4paper]{article}
+\usepackage[frenchb,english]{babel}
+\usepackage[applemac]{inputenc}
+\usepackage[OT1]{fontenc}
+\usepackage[]{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{yfonts}
+%\input{8bitdefs}
+
+% marges
+\topmargin 10pt
+\headsep 10pt
+\headheight 10pt
+\marginparwidth 30pt
+\oddsidemargin 40pt
+\evensidemargin 40pt
+\footskip 30pt
+\textheight 670pt
+\textwidth 420pt
+
+\def\imp{\Rightarrow}
+\def\gcro{\mbox{[\hspace{-.15em}[}}% intervalles d'entiers 
+\def\dcro{\mbox{]\hspace{-.15em}]}}
+
+\newcommand{\D}{\mathrm{d}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\ord}{\mathrm{ord}}
+\newcommand{\legendre}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
+
+
+
+\title{Solutions to Ireland, Rosen ``A Classical Introduction to Modern Number Theory''}
+\author{Richard Ganaye}
+
+\begin{document}
+
+\maketitle
+
+{\large \bf Chapter 7}
+
+\paragraph{Ex. 7.1}
+
+{\it Use the method of Theorem 1 to show that a finite subgroup of the
+multiplicative group of a field is cyclic.
+}
+
+\bigskip
+
+A solution is already given in Ex. 4.15
+
+\paragraph{Ex. 7.2}
+
+{\it Find the finite subgroups of $\R^*$ and $\C^*$ and show directly that they are cyclic.
+}
+
+\begin{proof}
+If $G$ is a finite subgroup of $\R$ or $\C$, and $n = \vert G \vert$, then from Lagrange's Theorem, $x^n = 1$ for all $x \in G$.
+
+$\bullet$ If  $G$ is a finite subgroup of $\R^*$, then the solutions of $x^n=1$ are in $\{-1,1\}$, so $\{1\} \subset G\subset \{-1,1\}$ : 
+$G = \{1\}$ or $G = \{-1,1\}$, both cyclic.
+
+$\bullet$ If  $G$ is a finite subgroup of $\C^*$, then $G \subset \mathbb{U}_n = \{e^{2ik\pi/n}\ \vert \ 0 \leq k \leq n-1\}$. As $\vert G \vert = \vert \mathbb{U}_n \vert = n$, then  $G = \mathbb{U}_n \simeq \Z/n\Z$ is cyclic.
+\end{proof}
+
+\paragraph{Ex. 7.3}
+
+{\it  Let $F$ a field with $q$ elements and suppose that $q\equiv 1 \pmod n$. Show that for $\alpha \in \F^*$, the equation $x^n = \alpha$ has either no solutions or $n$ solutions.
+}
+
+\begin{proof} This is a particular case of Prop. 7.1.2., where $d = n \wedge (q-1) = n$ : the equation $x^n =\alpha$ has solutions iff $\alpha^{(q-1)/n} = 1$. In this case, there are exactly $d = n$ solutions.
+
+We give  here a direct proof.
+
+Let $g$ a generator of $F^*$.  Write $x = g^y, \alpha = g^a$. Then
+$$x^n = \alpha \iff g^{ny} = g^a\iff q-1 \mid ny -a.$$
+
+Suppose that there exists $x\in F$ such that $x^n = \alpha$. Then there exists $y\in \Z$ such that $q-1 \mid ny -a$. Since $n \mid q-1$, then  $n \mid a$.
+$$q-1 \mid ny -a \iff \frac{q-1}{n} \mid y - \frac{a}{n}\iff y= \frac{a}{n} + k \frac{q-1}{n}, k\in \mathbb{Z}.$$
+
+As  $\frac{a}{n} + (k+n) \frac{q-1}{n} = \frac{a}{n} + k \frac{q-1}{n}, k\in \mathbb{Z}$, the values $k=0,1\cdots,n-1 $ are sufficient :
+$$x^n=\alpha \iff y = \frac{a}{n} + k \frac{q-1}{n}, k\in \{0,1,\cdots,n-1\}.$$
+
+Moreover, these solutions are all distinct : if $k,l\in  \{0,1,\cdots,n-1\}$,
+\begin{align*}
+g^{\frac{a}{n} + k \frac{q-1}{n}} = g^{\frac{a}{n} + l \frac{q-1}{n}} & \Rightarrow g^{(k-l) \frac{q-1}{n}} = 1\\
+&\Rightarrow q-1 \mid (k-l) \frac{q-1}{n}\\
+& \Rightarrow n \mid k-l \\
+&\Rightarrow k\equiv l \ [n] \Rightarrow k=l.
+\end{align*}
+
+Conclusion : if  $F$ is a field with $q$ elements and $n \mid q-1$, the equation $x^n = \alpha$ has either no solutions or $n$ solutions in $F$.
+
+Remark : $$\exists x \in F^*, x^n = \alpha \iff n \mid a \iff \alpha^{(q-1)/n} = 1.$$
+
+Indeed, if $x^n = \alpha$ has a solution, we have proved that $n\mid a$, thus $\alpha^{(q-1)/n} = (g^{a/n})^{q-1} = 1$.
+
+Reciprocally, if $\alpha^{(q-1)/n} = 1$, $g^{a.(q-1)/ n }=1$, thus $q-1 \mid a(q-1)/n$, so $ n \mid a$ :  $\alpha = x^n$, with $x = g^{n/a}$.
+\end{proof}
+
+\paragraph{Ex. 7.4}
+
+{\it (continuation) Show that the set of $\alpha \in F^*$ such that $x^n = \alpha$ is solvable is a subgroup with $(q-1)/n$ elements.
+}
+
+\begin{proof}
+Here $n \mid q-1$.
+
+Let $\varphi = F^* \to F^*$ the application defined by $\varphi(x) = x^n$. $\varphi$ is a morphism of groups, and $\ker \varphi$ is the set of solutions of $x^n = 1$.
+As $n \mid q-1$, $x^n = 1$ has exactly $n$ solutions (Prop 7.1.1, Corollary2, or Ex 7.3 with $\alpha = 1$). So $\vert \ker \varphi \vert = n$.
+
+Thus $\mathrm{Im} \varphi \simeq F^*/\ker \varphi$ is a subgroup with cardinality $\vert F^* \vert / \vert \ker \varphi \vert = (q-1)/n$, and $\mathrm{Im} \varphi$ is the set of $\alpha$ such that $x^n = \alpha$ is solvable.
+
+Conclusion : the set of $\alpha \in F^*$ such that $x^n = \alpha$ is solvable is a subgroup with $(q-1)/n$ elements.
+
+\end{proof}
+
+\paragraph{Ex. 7.5}
+
+{\it (continuation) Let $K$ be a field containing $F$ such that $[K:F] = n$. For all $\alpha \in F^*$, show that the equation $x^n = \alpha$ has $n$ solutions in $K$. [Hint: Show that $q^n-1$ is divisible by $n(q-1)$ and use the fact that $\alpha^{q-1} = 1$.]
+
+}
+
+\begin{proof}
+As $q\equiv 1 \ [n], \frac{q^n-1}{q-1} = 1+q+\cdots+q^{n-1} \equiv 0 \ [n]$, then $n \mid \frac{q^n-1}{q-1} : $
+$$q^n-1 = k n (q-1), k \in \mathbb{N}.$$
+
+Since $\alpha \in F^*$, $\alpha^{q-1} = 1$, so $$\alpha^{(q^n-1)/n} = (\alpha^{q-1})^k = 1.$$
+
+As $\vert K \vert = q^n$, Prop. 7.1.2 (or the final remark in Ex.7.3) show that there exists $x \in K^*$ such that $x^n = \alpha$. Then, from Ex.7.3, we know that there exist $n$ solutions in $K$.
+
+Conclusion : if $[K:F] = n$, the equation $x^n = \alpha$ has $n$ solutions in $K$.
+
+\end{proof}
+
+\paragraph{Ex. 7.6}
+
+{\it Let $K \supset F$ be finite fields with $[K:F] = 3$. Show that if $\alpha \in F$ is not a square in $F$, it is not a square in $K$.
+
+}
+
+\begin{proof}
+Let $q = \vert F \vert$. Then $\vert K \vert = q^3.$
+
+If the characteristic of $F$ is 2, $q = 2^k$, and for all $x \in F$, $x = x^q = \left (x^{2^{k-1}}\right)^2$. So all elements in $F$ or $K$ are squares.
+We can now suppose that the characteristic of $F$ is not 2, and consequently $1 \neq -1$ in $F$.
+
+As $\alpha$ is not a square in $F$, $\alpha^{(q-1)/2} \ne 1$ (Prop. 7.1.2). From  $0 = \alpha^{q-1} - 1 = (\alpha^{(q-1)/2}-1)(\alpha^{(q-1)/2}+1)$, we deduce $\alpha^{(q-1)/2} = -1$. Then 
+$$\alpha^{(q^3-1)/2} = (\alpha^{(q-1)/2})^{q^2+q+1} = (-1)^{q^2+q+1} = -1,$$
+since $q^2+q+1$ is always odd.
+
+$\alpha^{(q^3-1)/2} \neq 1$ : this implies (Prop. 7.1.2) that $\alpha$ is not a square in $K$.
+\end{proof}
+
+\paragraph{Ex. 7.7}
+
+{\it  Generalize Exercise 6 by showing that if $\alpha$ is not a square in $F$, it is not a square in any extension of odd degree and is a square in every extension of even degree.
+
+}
+
+\begin{proof}
+Write $q = [K:F]$, and $q = \mathrm{Card}\ F$.
+
+As $\alpha$ is not a square in $F$, the characteristic of $F$ is not 2 (see Ex.7.6), and $\alpha^{(q-1)/2} \ne 1$. Since $\alpha^{q-1} = 1$, $\alpha^{(q-1)/2}= -1$.
+$$\alpha^{(q^n-1)/2} =( \alpha^{(q-1)/2})^{1+q+\cdots+q^{n-1}} = (-1)^{1+q+\cdots+q^{n-1}} .$$
+
+$\bullet$ If $n$ is odd, $1 + q +\cdots+q^{n-1} \equiv 1 \pmod 2$, thus $\alpha^{(q^n-1)/2} = -1\ne 1$, and consequently $\alpha$ is not a square in $K$.
+
+$\bullet$ If $n$ is even, as $q$ is odd ($\mathrm{char}(F) \ne 2$), $1 + q +\cdots+q^{n-1} \equiv 0 \pmod 2$, thus $\alpha^{(q^n-1)/2} = 1$, so $\alpha$ is a square in $K$.
+\end{proof}
+
+\paragraph{Ex. 7.8}
+
+{\it  In a field with $2^n$ elements, what is the subgroup of squares.
+}
+
+\bigskip
+
+Let $F$ a field with $q = 2^n$ elements. 
+
+\bigskip
+
+{\bf Proof 1}
+\begin{proof}
+$d = (q-1) \wedge 2 = (2^n - 1) \wedge 2 = 1$, thus each $\alpha \in F^*$ verifies $\alpha^{(q-1)/d} = \alpha^{q-1} = 1$. Theorem 7.1.2 show that $\alpha$ is a square in $F$, of exactly one root.
+\end{proof}
+
+{\bf Proof 2}
+\begin{proof}
+For all $x \in F$, $x = x^q = \left (x^{2^{n-1}}\right)^2$. So all elements in $F$ or $K$ are squares.
+\end{proof}
+
+\paragraph{Ex. 7.9}
+
+{\it If $K \supset F$ are finite fields, $\vert F \vert = q, \alpha \in F, q\equiv 1 \pmod n$, and $x^n = \alpha$ is not solvable in $F$, show that $x^n = \alpha$ is not solvable in $K$ if $(n,[K:F]) = 1$.
+}
+
+\begin{proof}
+Let $k = [K:F]$. From hypothesis, $k\wedge n = 1$, so there exist integers $u,v$ such that $uk+vn = 1$.
+
+As $n \mid q-1$, $n \wedge (q-1) = n$, so the hypothesis "$x^n = \alpha$ is not solvable in $F$" implies that $\alpha^{(q-1)/n} \neq 1$ (Prop. 7.1.2).
+
+Write $\omega =\alpha^{(q-1)/n}$, so $\omega \ne 1$ and $\omega^n = 1$.
+
+As $n \mid q-1$, $n \mid q^k - 1$ and
+$$\alpha^{(q^k-1)/n} = (\alpha^{(q-1)/n})^{1+q+q^2+\cdots+q^{k-1}} =  \omega^{1+q+q^2+\cdots+q^{k-1}}.$$
+Moreover $1+q+\cdots+q^{k-1} \equiv k \pmod n$, and $\omega^n = 1$, so $\alpha^{(q^k-1)/n} = \omega^k$.
+
+If $\omega^k = 1$, then $\omega = \omega^{uk+vn} = (\omega^k)^u (\omega^n)^v = 1$, which is in contradiction with $\omega = \alpha^{(q-1)/n} \ne 1$.
+
+So $\alpha^{(q^k-1)/n} = \omega^k \ne 1$, and consequently the equation $x^n = \alpha$ has no solution in $K$.
+\end{proof}
+
+\paragraph{Ex. 7.10}
+
+{\it If $K \supset F$ be finite fields and $[K:F] = 2$. For $\beta \in K$, show that $\beta^{1+q} \in F$ and moreover that every element in $F$ is of the form $\beta^{1+q}$ for some $\beta \in K$.
+}
+
+\begin{proof}
+If $\beta = 0$, $\beta^{1+q} = 0 \in F$, and if $\beta \in K^*$, $\beta^{q^2-1} = 1$, so $\left(\beta ^{1+q}\right)^{q-1} = 1$, thus $ \beta^{1+q} \in F$ (Prop. 7.1.1, Corollary 1).
+
+Let  $g$ a generator of $K^*$ : $K^* = \{1,g,g^2,\cdots,g^{q^2-2}\}$.
+
+For every in integer $k \in \Z$, 
+$$g^k  \in F^* \iff (g^k)^{q-1} = 1 \iff g^{k(q-1)}=1 \iff q^2-1 \mid k(q-1) \iff q+1 \mid k.$$
+Thus $F^* = \{1,g^{q+1}, g^{2(q+1)},\cdots, g^{(q-2)(q+1)}\}$. I $\alpha \in F^*$, there exists $i, 0 \leq i \leq q-1$ such that $\alpha = g^{i(q+1)}$.
+If we write $\beta = g^i$, then $\alpha = \beta^{1+q}$ (and for $\alpha = 0$, we take $\beta = 0$).
+
+Conclusion : if $K$ is a quadratic extension of $F$ ($F,K$ finite fields), every element in $F$ is of the form $\beta^{1+q}$ for some $\beta \in K$.
+\end{proof}
+
+\end{document}
