@@ -237,4 +237,163 @@ If we write $\beta = g^i$, then $\alpha = \beta^{1+q}$ (and for $\alpha = 0$, we
 Conclusion : if $K$ is a quadratic extension of $F$ ($F,K$ finite fields), every element in $F$ is of the form $\beta^{1+q}$ for some $\beta \in K$.
 \end{proof}
 
+\paragraph{Ex. 7.11}
+
+{\it With the situation being that of Exercise 10 suppose that $\alpha \in F$ has order $q-1$. Show that there is a $\beta \in K$ with order $q^2-1$ such that $\beta^{1+q} = \alpha$.
+}
+
+\bigskip
+
+Write $|a|$ the order of an element $a$ in a group $G$. We recall the following lemma :
+
+\bigskip
+
+{\bf Lemma} If $|a| = d$, then for all $i \in \Z$, $| a^i | = \frac{d}{d\wedge i}$.
+\begin{proof}
+Indeed, for all $k \in \Z$,
+$$(a^i)^k=e \iff a^{ik}=e \iff d \mid ik \iff \frac{d}{d \wedge i} \mid \frac{i}{d \wedge i}\,k \iff \frac{d}{d \wedge i} \mid k.$$
+\end{proof}
+\begin{proof}(Ex. 7.11)
+
+Let $\alpha \in F^*$ with $|a| = q-1$, and $g$ a generator of $K^*$, so $|g| = q^2-1$. We know from exercise 7.10 that there exists an integer i such that $\alpha = g^{i(q+1)}$.
+
+Let $h = g^{q+1}$. As $h^{q-1} = 1$, then $h \in F^*$, and since $|g| = q^2-1$, $|h| = q-1$, so $h$ is a generator of $F^*$.
+
+Note that for all $s\in \Z$, $\alpha = g^{(i+s(q-1))(q+1)}$, since $g^{q^2-1} = 1$.
+
+We will show that we can choose $s$ such that $j = i +s(q-1)$ is relatively prime with $q+1$. Then  $j$ is such that $\alpha = g^{j(q+1)} = h^j$.
+
+
+$i$ is odd : if not $\alpha$ is an element of the subgroup of squares in $F^*$, so its order divides $(q-1)/2$, in contradiction with $|\alpha| = q-1$.
+
+ $(q-1)\wedge (q+1) \mid 2$. Since $i-1$ is even, there exist integers $s,t$ verifying the BŽzout's equation
+$$i-1 = t(q+1)-s(q-1).$$
+Then $j = i+s(q-1) = 1 + t(q+1)$ is relatively prime with $q+1$ : $j \wedge (q+1) = 1$.
+
+Moreover, as $\alpha = h^j$, with $|\alpha| = |h| = q-1$, the lemme implies that
+$$q-1 = |\alpha| = \frac{q-1}{(q-1)\wedge j},$$
+so $(q-1) \wedge j = 1$.
+As $(q+1) \wedge j = 1$ and $(q-1) \wedge j = 1$, then $(q^2-1) \wedge j = 1$.
+
+Let $\beta = g^j$ : then $\alpha = \beta^{1+q}$, and using the lemma :
+$$|\beta| = |g^j| = \frac{q^2-1}{(q^2-1)\wedge j} = q^2-1.$$
+Conclusion :  there exists a $\beta \in K^*$ with order $q^2-1$ such that $\beta^{1+q} = \alpha$.
+\end{proof}
+
+\paragraph{Ex. 7.12}
+
+{\it Use Proposition 7.2.1 to show that given a field $k$ and a polynomial $f(x) \in k[x]$ there is a field $K\supset k$ such that $[K:k]$ is finite and $f(x) = a(x-\alpha_1)(x-\alpha_2)\cdots(x-\alpha_n)$ in $K[x]$.
+}
+
+\begin{proof}
+We show by induction on the degree $n$ of $f$ that for all polynomials $f \in k[x]$ with $\deg(f) = n \geq 1$, there exists a field extension $K$ such that $[K:k]$ is finite, and $f(x)$ splits in linear factors on $K$.
+
+If $n = 1$, $f(x) = ax+b = a(x-\alpha_0)$, where $\alpha_0 = -b/a$ : $K = k$ is suitable.
+
+Suppose that the property is true for all polynomials of degree less than $n$ on an arbitrary field $k$.
+
+Let $f(x) \in k[x], \deg(f) = n$. From propoistion 7.2.1. applied to an irreducible factor of $f$, there exists a field $L, [L:K]<\infty$ and $\alpha \in L$ such that $f(\alpha_1) = 0$. Then $f(x) = (x-\alpha_1) g(x), g(x) \in L[x]$. 
+
+Applying the induction hypothesis in the field $L$ on the polynomial $g \in L[x]$ with $\deg(g) = n-1$, we obtain a field $K, [K:L]<\infty$ such that $g(x) = a(x-\alpha_2)\cdots(x-\alpha_n)$ with $\alpha_i \in K$. So  $f(x) = a(x-\alpha_1)(x-\alpha_2)\cdots(x-\alpha_n)$ splits in linear factors in $K$. The induction is achieved.
+\end{proof}
+
+\paragraph{Ex. 7.13}
+
+{\it Apply Exercise 7.12 to $k = \Z/p\Z$ and $f(x) = x^{p^n} -x$ to obtain another proof of Theorem 2.
+}
+
+\begin{proof}
+Let $f(x) =  x^{p^n} -x$. We know from Ex. 7.12 that there exists a finite extension $K$ of $\F_p$ such that $f$ splits in linear factors on $K$ :
+$$f(x) = \prod_{k=1}^{p^n} (x-\alpha_k), \qquad \alpha_1,\ldots, \alpha_{p^n} \in K.$$
+The set $k =\{\alpha_1,\cdots,\alpha_{p_n}\} \subset K$ of the roots of $x^{p^n} -x$ is a subfield of $K$ : indeed, if $\alpha, \beta \in k$,
+\begin{enumerate}
+\item[(a)] $f(1) = 0$, so $1 \in k$
+\item[(b)]$(\alpha- \beta)^{p^n} = \alpha^{p^n} - \beta^{p^n} = \alpha - \beta$, so $\alpha - \beta \in k$.
+\item[(c)] $(\alpha\beta)^{p^n} = \alpha^{p^n} \beta^{p^n} = \alpha  \beta$, so $\alpha \beta \in k$.
+\item[(d)] $(\alpha^{-1})^{p^n} = (\alpha^{p^n})^{-1} = \alpha^{-1}$, so $\alpha^{-1} \in k$ if $\alpha \ne 0$.
+\end{enumerate}
+As $f'(x) = -1$, $f(x) \wedge f'(x) = 1$, so $f$ has no multiple root, so the cardinality of $k$ is $p^n$.
+
+Let $g(x) \in \F_p[x]$ a factor of $f(x)$, irreducible in $\F_p[x]$, with $d =\deg(g)$. As $g \mid f$, $g$ splits in linear factors in $k[x]$. Let $\alpha$ a root of $g(x)$ in $k$. As $g$ is irreducible on $\F_p$, 
+$d = \deg(g) = [\F_p[\alpha] : \F_p]$. Moreover $ n = [k : \F_p] = [k : \F_p[\alpha]]\,[\F_p[\alpha] : \F_p]$, so $d \mid n$.
+
+Reciprocally, suppose that $g$ is any irreducible polynomial in $\F_p[x]$, with $d = \deg(g) \mid n$. Then $K_0 = \F_p[x]/ \langle g\rangle$  contains a root $\alpha$ of $g$, and $[K_0:\F_p] = \deg(g) = d$, so $\alpha^{p^d} = \alpha$.
+
+As $d\mid n$ , then $p^d-1 \mid p^n-1$ and $x^{p^d}-1 \mid x^{p^n}-1$ (Lemma 2,3 in section 1), so
+$$x^{p^d} - x \mid x^{p^n}-x.$$
+$f(\alpha) = \alpha^{p^n} - \alpha = 0$ and $g$ is the minimal polynomial of $\alpha$, so $g \mid f$.
+
+Conclusion : 
+$$ x^{p^n}-x = \prod_{d\mid n} F_d(x),$$
+where $F_d(x)$ is the product of the monic irreducible polynomial of degree $d$.
+\end{proof}
+
+\paragraph{Ex. 7.14}
+
+{\it  Let $F$ be a field with $q$ elements and $n$ a positive integer. Show that there exist irreducible polynomials in $F[x]$ of degree $n$.
+}
+
+\begin{proof}
+Leq $F = \F_q$ a field with $q = p^m$ elements, and $n$ a positive integer.
+
+From Theorem 2 Corollary 3, there exists an irreducible polynomial $f(x) \in \F_p[x]$ of degree $nm$. Let $g$ an irreducible factor of $f$ in $\mathbb{F}_q[x]$, and $\alpha$ a root of $g$ in an extension of $\F_q$.
+
+\bigskip
+
+We show that $\F_q \subset \F_p[\alpha]$.
+
+$\F_q$ and $\F_p[\alpha]$ are two subfield of the same finite field $\F_q[\alpha]$. Moreover, $|\F_q| = p^m$, and $|\F_p[\alpha]| = p^{nm} $. As $m\mid n$, $\F_q \subset \F_p[\alpha]$ .
+
+Indeed, for all  $\gamma \in \F_q[\alpha]$,$$ \gamma \in \F_q \Rightarrow  \gamma^{p^m} =  \gamma \Rightarrow  \gamma^{p^{mn}} =  \gamma \Rightarrow  \gamma \in \F_p[\alpha].$$
+So $\F_q \subset \F_p[\alpha]$.
+
+\bigskip
+
+We show that $\F_q[\alpha] =  \F_p[\alpha]$.
+
+As $\F_p \subset \F_q$, $\F_p[\alpha] \subset \F_q[\alpha]$.
+
+Let $\beta \in \F_q[\alpha]$ : $\beta = \sum\limits_{i=1}^k a_i\alpha^i$, where $a_i \in \F[q] \subset \F_p[\alpha]$, so $a_i = p_i(\alpha), p_i \in \F_p[\alpha]$. Consequently
+$$\beta = \sum\limits_{i=1}^k p_i(\alpha) \alpha^i \in \F_p[\alpha],$$
+so $\F_q[\alpha] =  \F_p[\alpha]$.
+
+$$nm = [\mathbb{F}_p[\alpha] : \mathbb{F}_p] = [\mathbb{F}_q[\alpha]:\mathbb{F}_p] = [\mathbb{F}_q[\alpha] : \mathbb{F}_q]\times [\mathbb{F}_q:\mathbb{F}_p] =  [\mathbb{F}_q[\alpha] : \mathbb{F}_q]\times m .$$
+Thus  $[\mathbb{F}_q[\alpha] : \mathbb{F}_q] = n$, and $g$ is the minimal polynomial of $\alpha$ on $\F_q$, so $\deg(g) = n$.
+
+Conclusion : if $F$ is a field with $q = p^m$ elements, there exist irreducible polynomials in $F[x]$ of degree $n$ for all positive integers $n$.
+\end{proof}
+
+\paragraph{Ex. 7.15}
+
+{\it Let $x^n-1 \in F[x]$, where $F$ is a finite field with $q$ elements. Suppose that $(q,n) = 1$. Show that $x^n-1$ splits into linear factors in some extension field and that the least degree of such a field is the smallest integer $f$ such that $q^f \equiv 1 \pmod n$.
+
+}
+
+\begin{proof}
+From exercise 7.12, we know that $x^n-1$ splits into linear factors in some extension field $K$, with $[K:F]<\infty$ :
+$$u(x)= x^n-1 = (x-\zeta_0)(x-\zeta_1)\cdots(x-\zeta_{n-1}), \qquad \zeta_i \in K.$$
+$u'(x)\wedge u(x) = nx^{n-1} \wedge (x^n-1) = 1$, since $x(nx^{n-1}) - n(x^n-1) = n$, and $n\neq 0$ in the field $F$, since we know from the hypothesis $q \wedge n=1$ that the characteristic $p$ doesn't divide $n$. So the $n$ roots of $x^n-1$ are distinct.
+
+The set $G = \{x \in K \ \vert \ x^n=1\}$ is a subgroup of $K^*$, thus $G$ is cyclic of order $n$. Let $\zeta$ a generator of $G$. Then
+$$x^n-1 = (x-1)(x-\zeta)(x-\zeta^2)\cdots(x-\zeta^{n-1}).$$
+
+Let $p(x)$ the minimal polynomial of $\zeta$ on $F$, and $f$ the degree of $p$ :
+$$f = \deg(p) = [F[\zeta] : F].$$
+So $\mathrm{Card}\, F[\zeta] = q^f$, and since $\zeta \in F[\zeta]^*$, $\zeta^{q^f - 1} -1 = 0$.
+As the order of $\zeta$ in the group $G$ is $n$, $n \mid q^f - 1$, namely $q^f \equiv 1 \pmod n$.
+
+\bigskip
+
+Let $k$ any positive integer such that $q^k \equiv 1 \pmod n$.
+
+Then $n \mid q^k - 1$, so $\zeta^{q^k-1} - 1 = 0$, $\zeta^{q^k} - \zeta = 0$. Let $L$ an extension of $K$ such that $x^{q^k} - x$ splits in linear factors in $L$. As $\zeta^{q^k} - \zeta = 0$, $\zeta $ belongs to the subfield $M$ of $L$ with cardinality $q^k$, such that $[M:F]= k$. Thus $\F[\zeta] \subset M$, so $f = [F[\zeta] : F] \leq k = [M:F]$.
+
+$f = [F[\zeta] : F]$ is the smallest $k \in \N^*$ such that $q^k\equiv 1 \pmod n$.
+
+If $K$ is any extension of $F$ containing the roots of $x^n-1$, then $K \supset F[\zeta]$, where $\zeta$ is a primitive root of unity, so $[K : F] \geq [F[\zeta]:F] = f$.
+
+Conclusion : the minimal degree of a extension $K \supset F$ containing the roots of $x^n - 1$, with $n\wedge q = 1$, is the smallest positive integer $f$ such that $q^f \equiv 1 \pmod n$, the order of $q$ modulo $n$.
+\end{proof}
+
+
 \end{document}
