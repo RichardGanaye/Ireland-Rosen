@@ -395,5 +395,39 @@ If $K$ is any extension of $F$ containing the roots of $x^n-1$, then $K \supset 
 Conclusion : the minimal degree of a extension $K \supset F$ containing the roots of $x^n - 1$, with $n\wedge q = 1$, is the smallest positive integer $f$ such that $q^f \equiv 1 \pmod n$, the order of $q$ modulo $n$.
 \end{proof}
 
+\paragraph{Ex. 7.16}
+
+{\it Calculate the monic irreducible polynomials of degree 4 in $\Z/2\Z[x]$.
+
+}
+
+\begin{proof}
+Write $F_d$ the product of irreducible monic polynomials in $\mathbb{F}_2[x]$.
+
+Theorem 2 gives $$x^{16}-x=x^{2^4}-x = \prod\limits_{d\mid 4} F_d(x) = F_1(x) F_2(x) F_4(x)$$ 
+and 
+
+$$x^{4}-x=x^{2^2}-x = \prod\limits_{d\mid 2} F_d(x) = F_1(x) F_2(x)$$
+
+so $F_4(x) = \frac{x^{16}-x}{x^4-x} = \frac{x^{15}-1}{x^3-1} = x^{12}+x^9+x^6+x^3+1$
+
+$F_4(x) = (x^4+x^3+x^2+x+1)(x^4+x+1)(x^4+x^3+1)$
+
+Among the 16 monic polynomials of degree 4 in $\mathbb{F}_2[x]$, 3 are irreducible :
+\begin{align*}
+P_1(x) &= x^4+x^3+x^2+x+1,\\
+ P_2(x)&=x^4+x+1\\
+  P_3(x)&=x^4+x^3+1
+\end{align*}
+
+With sage : 
+\begin{verbatim}
+sage: A = PolynomialRing(GF(2),'x')
+sage: x = A.gen()
+sage: f = (x^16-x)/(x^4-x)
+sage: factor(f)
+(x^4 + x + 1) * (x^4 + x^3 + 1) * (x^4 + x^3 + x^2 + x + 1)
+\end{verbatim}
+\end{proof}
 
 \end{document}
