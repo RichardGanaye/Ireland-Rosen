@@ -672,4 +672,181 @@ If we write $a_k = c_{p^k}$, then $f(x)$ is of the form
 $$f(x) = a_0 x+a_1x^p +a_2 x^{p^2}+\cdots+a_m x^{p^m}.$$
 \end{proof}
 
+{ \Large \bf Chapter 8} 
+
+\paragraph{Ex. 8.1}
+
+{\it Let $p$ be a prime and $d=(m,p-1)$. Prove that $N(x^m = a) =\sum \chi(a)$, the sum being over all $\chi$ such that $\chi^d = \varepsilon$.
+}
+
+\begin{proof}
+Let $d = m\wedge (p-1)$ . we prove that $N(x^m =a) = N(x^d = a)$ for all $d \in \F_p$.
+
+$\bullet$ If $a = 0$, $0$ is the only root of $x^m -a$ or $x^d -a$, so  $N(x^m = a) = N(x^d = a) = 1$.
+
+$\bullet$ If $a \in \F_p^*$ and $x^n = a$ has a solution, then we know from the demonstration of Proposition 4.2.1 that $N(x^n-a) = d = N(x^d-a)$.
+
+$\bullet$ If If $a \in \F_p^*$ and $x^n = a$ has no solution, then (Prop. 4.2.1) $a^{(p-1)/d} \ne 1$, so $x^d = a$ has no solution : $N(x^n-a) = 0 = N(x^d-a)$.
+
+Using Prop. 8.1.5, as $d \mid n$, we obtain
+$$N(x^n =a) = N(x^d = a) = \sum_{\chi^d = \varepsilon} \chi(a).$$
+\end{proof}
+
+\paragraph{Ex. 8.2, false sentence.}
+
+{\it With the notation of Exercise 1 show that $N(x^m = a) = N(x^d = a)$ and conclude that if $d_i = (m_i,p-1)$, then $\sum_i a_ix^{m_i} = b$ and $\sum_i a_i x^{d_i} = b$ have the same number of solutions.
+}
+
+\bigskip
+
+This result is false. I give a counterexample with $p=5$ :  $x + x^3 =0 \in \F_5[x]$ has 3 solutions $0,2,-2$.  As $3\wedge (p-1) = 3 \wedge 4 = 1$, the reduced equation is $x + x = 0$, which has an unique solution $0$. The true sentence is :
+
+\bigskip\paragraph{Ex. 8.2}
+{\it With the notation of Exercise 1 show that $N(x^m = a) = N(x^d = a)$ and conclude that if $d_i = (m_i,p-1)$, then $\sum_i a_ix_i^{m_i} = b$ and $\sum_i a_i x_i^{d_i} = b$ have the same number of solutions.
+}
+
+\begin{proof}
+From Ex. 8.1, we know that
+$$N(x^m=a) = \sum_{\chi^d=\varepsilon} \chi(a) = N(x^d=a).$$
+Using this result, we obtain
+\begin{align*}
+N\left(\sum\limits_{i=1}^l a_i x_i^{m_i} = b\right) &= \sum\limits_{a_1u_1+\cdots+a_l u_l= b}\, \prod\limits_{i=1}^l N(x^{m_i} = u_i)\\
+&= \sum\limits_{a_1u_1+\cdots+a_l u_l= b}\, \prod\limits_{i=1}^l N(x^{d_i} = u_i)\\
+&=N\left(\sum\limits_{i=1}^l a_i x_i^{d_i} = b\right)
+\end{align*}
+\end{proof}
+
+\paragraph{Ex. 8.3}
+
+{\it Let $\chi$ be a non trivial multiplicative character of $\F_p$ and $\rho$ be the character of order 2. Show that $\sum_t\chi(1-t^2) = J(\chi,\rho)$.[Hint: Evaluate $J(\chi,\rho)$ using the relation $N(x^2 = a) = 1 + \rho(a)$.]
+
+}
+
+\begin{proof}
+\begin{align*}
+J(\chi,\rho) &= \sum\limits_{a+b=1} \chi(a)\rho(b)\\
+&= \sum\limits_{a+b=1}\chi(a)(N(x^2=b) -1)\\
+&=\sum\limits_{a+b=1}\chi(a)N(x^2=b) -\sum\limits_{a+b=1}\chi(a)\\
+\end{align*}
+As $\chi \neq \varepsilon$, 
+$$\sum\limits_{a+b=1}\chi(a)= \sum\limits_{a\in\mathbb{F}_p}\chi(a)=0.$$
+Let $C = \{x^2 \ \vert\  x \in \mathbb{F}^*\}$ the set of squares in $\F_p^*$ , $\overline{C}$ its complementary in  $\mathbb{F}_p^*$ : 
+$$\mathbb{F}_p = \{0\} \cup C \cup \overline{C}.$$
+Then 
+\begin{align*}
+J(\chi,\rho) &= \sum\limits_{a+b=1}\chi(a)N(x^2=b)\\
+&= \sum\limits_{a+b=1, b=0}\chi(a)N(x^2=b)+\sum\limits_{a+b=1,b\in C}\chi(a)N(x^2=b)+\sum\limits_{a+b=1,b\in\overline{C}}\chi(a)N(x^2=b)\\
+&=\chi(1)+ 2 \sum\limits_{b\in C} \chi(1-b)
+ \end{align*}
+ (because $N(x^2=b)=0$ if $x \in \overline{C}$, and $N(x^2=b)=2$ if $x\in C$).
+ As each $b\in C$ has two roots, and as the set of roots of two distinct $b$ are disjointed,
+ $$J(\chi,\rho) = \chi(1) + \sum\limits_{t \in \mathbb{F}_p^*} \chi(1-t^2) = \sum\limits_{t \in \mathbb{F}_p} \chi(1-t^2).$$
+ 
+ Conclusion : if $\chi$ is a non trivial multiplicative character of $\F_p$ and $\rho$  the character of order 2,
+ $$ J(\chi,\rho) = \sum_{t\in\F_p}\chi(1-t^2) .$$
+\end{proof}
+
+\paragraph{Ex. 8.4}
+
+{\it Show, if $k \in \F_p, k\neq 0$, that $\sum_t \chi(t(k-t)) = \chi(k^2/2^2)J(\chi,\rho)$.
+
+}
+
+\begin{proof}
+We know from Ex. 8.3 that  $J(\chi,\rho) = \sum_t \chi(1-t^2)$, so
+
+\begin{align*}²
+J(\chi,\rho) &= \sum_{t \in \F_p}\chi(1-t)\chi(1+t)\\
+&=\sum_{u \in \F_p} \chi(u) \chi(2-u)\qquad(u = 1-t)\\
+&=\chi(2^2) \sum_{u \in \F_p} \chi\left(\frac{u}{2}\right) \chi\left(1-\frac{u}{2}\right)\\
+&= \chi(2^2) \sum_{v \in \F_p} \chi(v) \chi(1-v)\qquad(u = 2v)\\
+&= \chi(2^2) \chi(k^{-2}) \sum_{w \in \F_p} \chi(kv) \chi(k-kv)\\
+&=\chi(2^2/k^2) \sum_{t \in \F_p} \chi(t) \chi(k-t)\qquad(t=kv).
+\end{align*}
+
+Conclusion : if $k \in \mathbb{F}^*$, and $\chi$ is a non trivial character, $\rho$ the character of order 2,
+$$ \sum_{t\in \F_p}\chi(t(k-t)) = \chi(k^2/2^2) J(\chi,\rho).$$
+\end{proof}
+
+\paragraph{Ex. 8.5}
+
+{\it If $\chi^2 \ne \varepsilon$, show that $g(\chi)^2 = \chi(2)^{-2}J(\chi,\rho)g(\chi^2)$. [Hint: Write out $g(\chi)^2$ explicitly and use Exercise 4.]
+
+}
+
+\begin{proof}
+Let  $\zeta = e^{2i\pi/p}$.
+Using the result of Ex. 8.4, we obtain
+\begin{align*}
+g(\chi)^2 &= \left(\sum_t \chi(t) \zeta^t \right)\left(\sum_s \chi(s) \zeta^s\right)\\
+&=\sum_{s,t} \chi(t)\chi(s) \zeta^{t+s}\\
+&=\sum_k\left(\sum_{s+t=k} \chi(t) \chi(s)\right)\zeta^k\\
+&=\sum_k\left( \sum_t \chi(t(k-t) \right) \zeta^k\\
+&= \chi(-1)\sum_t \chi(t^2) + \sum_{k\neq0} \chi(k^2/2^2) J(\chi,\rho) \zeta^k\\
+&= \chi(-1)\sum_t \chi^2(t) + \chi(2)^{-2}  J(\chi,\rho) \sum_{k\neq0} \chi^2(k)  \zeta^k\\
+\end{align*}
+
+If $\chi^2 \neq \varepsilon, \sum_t \chi^2(t)=0$, so
+
+$$g(\chi)^2 = \chi(2)^{-2}  J(\chi,\rho) g(\chi^2).$$
+\end{proof}
+
+\paragraph{Ex. 8.6}
+
+{\it (continuation) Show that $J(\chi,\chi) = \chi(2)^{-2} J(\chi,\rho)$.
+
+}
+
+\begin{proof}
+As $\chi^2 \ne \rho$, Theorem 1 Chapter 8 gives $J(\chi,\chi) = g(\chi)^2/g(\chi^2)$, and Exercise 8.5 gives $g(\chi)^2/g(\chi^2) = \chi(2)^{-2} J(\chi,\rho)$, so
+$$J(\chi,\chi) =  \chi(2)^{-2} J(\chi,\rho).$$
+\end{proof}
+
+\paragraph{Ex. 8.7}
+
+{\it Suppose that $p\equiv 1 \pmod 4$ and that $\chi$ is a character of order 4. Then $\chi^2 = \rho$ and $J(\chi,\chi) = \chi(-1) J(\chi,\rho)$. [Hint: Evaluate $g(\chi)^4$ in two ways.]
+
+}
+
+\begin{proof}
+As $\chi$ is a character of order 2, $\chi^2$ is a character of order, and $\rho$ (Legendre's character) is the unique character of order 2, so $\chi^4 = \rho$.
+
+From Prop. 8.3.3 we have
+$$g(\chi)^4 = \chi(-1) p J(\chi,\chi) J(\chi,\chi^2)  =  \chi(-1) p J(\chi,\chi) J(\chi,\rho).$$
+Squaring the result of Ex. 8.5, we obtain
+$$g(\chi)^4 = \chi(2)^{-4} J(\chi,\rho)^2 \left[g(\chi^2)\right]^2.$$
+Moreover $\chi(2^4) = \chi^4(2) = \varepsilon(2) = 1$, and $g(\chi^2) = g(\rho) = g$, so $\left[g(\chi^2)\right]^2=g^2 = (-1)^{(p-1)/2} p = p $ (From Prop. 6.3.2 and $p\equiv 1 \pmod 4)$. 
+
+Equating these two result, we obtain 
+$$\chi(-1) p J(\chi,\chi) J(\chi,\rho)= J(\chi,\rho)^2 p.$$
+As $g(\chi)^4 \ne 0$ since $|g(\chi)|^2 = p$, we have $J(\chi,\rho) \ne 0$, so
+$$\chi(-1) J(\chi,\chi) = J(\chi,\rho).$$
+$[\chi(-1)]^2 = \chi((-1)^2) = \chi(1) = 1$, so $\chi(-1) = \pm 1$, and $\chi(-1)^{-1} = \chi(-1)$, thus
+$$ J(\chi,\chi) = \chi(-1) J(\chi,\rho).$$
+\end{proof}
+
+\paragraph{Ex. 8.8}
+
+{\it Generalize Exercise 3 in the following way. Suppose that $p$ is a prime, $\sum_t \chi(1-t^m) = \sum_{\lambda} J(\chi,\lambda)$, where $\lambda$ varies over all characters such that $\lambda^m = \varepsilon$. Conclude that $\left | \sum_t \chi(1-t^m) \right | \leq (m-1)p^{1/2}$.
+
+}
+
+\begin{proof}
+For all $y \in \F_p$, write  $A_y =\{x \in \mathbb{F}_p\ \vert \ x^m = y\}$. Then $\vert A_y\vert = N(x^m = y)$.
+
+$\mathbb{F}_p = \coprod\limits_{y \in \mathbb{F}_p} A_y$ is the disjoint union of the $A_y$, so
+$$\sum_{t\in \mathbb{F}_p} \chi(1-t^m) = \sum_{y\in \mathbb{F}_p} \sum\limits_{t \in A_y} \chi(1-t^m) = \sum_{y\in \mathbb{F}_p} \vert A_y \vert \chi(1-y) =\sum_{y\in \mathbb{F}_p} N(x^m = y) \chi(1-y).$$
+Moreover, $N(x^m=y) = \sum\limits_{\lambda^m = \varepsilon} \lambda(y)$ (Prop. 8.1.5), so
+\begin{align*}
+\sum_{t\in \mathbb{F}_p} \chi(1-t^m) &= \sum_{y\in \mathbb{F}_p}  \sum_{\lambda^m = \varepsilon} \lambda(y)  \chi(1-y)\\
+& =  \sum\limits_{\lambda^m = \varepsilon}  \sum\limits_{x+y=1} \chi(x) \lambda(y)\\
+& = \sum\limits_{\lambda^m = \varepsilon} J(\chi,\lambda)
+\end{align*}
+Conclusion : $$\sum\limits_{t\in \mathbb{F}_p} \chi(1-t^m) = \sum\limits_{\lambda^m = \varepsilon} J(\chi,\lambda).$$
+
+We know that there exist $m$ character whose order divides $m$. As $\chi \ne \varepsilon$, $J(\chi,\varepsilon)=0$, and  $\vert J(\chi,\lambda) \vert = \sqrt{p}$ for every $\lambda \ne \varepsilon$,
+$$\left \vert \sum_{t\in \mathbb{F}_p} \chi(1-t^m)\right  \vert \leq \sum_{\lambda^m = \varepsilon, \lambda \neq \varepsilon} \vert J(\chi,\lambda) \vert = (m-1)\sqrt{p}.$$
+\end{proof}
+
+
 \end{document}
