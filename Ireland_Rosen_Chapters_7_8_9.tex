@@ -33,6 +33,7 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\F}{\mathbb{F}}
+\newcommand{\re}{\,\mathrm{Re}\,}
 \newcommand{\ord}{\mathrm{ord}}
 \newcommand{\legendre}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
 
@@ -847,6 +848,377 @@ Conclusion : $$\sum\limits_{t\in \mathbb{F}_p} \chi(1-t^m) = \sum\limits_{\lambd
 We know that there exist $m$ character whose order divides $m$. As $\chi \ne \varepsilon$, $J(\chi,\varepsilon)=0$, and  $\vert J(\chi,\lambda) \vert = \sqrt{p}$ for every $\lambda \ne \varepsilon$,
 $$\left \vert \sum_{t\in \mathbb{F}_p} \chi(1-t^m)\right  \vert \leq \sum_{\lambda^m = \varepsilon, \lambda \neq \varepsilon} \vert J(\chi,\lambda) \vert = (m-1)\sqrt{p}.$$
 \end{proof}
+
+\paragraph{Ex. 8.9}
+
+{\it Suppose that $p\equiv 1 \pmod 3$ and that $\chi$ is a character of order 3. Prove (using Exercise 5) that $g(\chi)^3 = p\pi$, where $\pi = \chi(2)J(\chi,\rho)$.
+}
+
+\begin{proof}
+As $\chi$ is o  character of order 3, $\chi^2\neq \varepsilon$. From Exercise 5, we know that
+$$g(\chi)^2 = \chi(2)^{-2} J(\chi,\rho) g(\chi^2).$$
+So
+$$g(\chi)^3 = \chi(2)^{-2} J(\chi,\rho) g(\chi^2)g(\chi).$$
+Recall  (¤8.2) that
+$$\overline{g(\chi)} = \sum_t \overline{\chi(t)} \zeta^{-t} = \chi(-1) \sum_t \overline{\chi(-t)} \zeta(-t) = \chi(-1) g(\chi),$$
+Here $\chi(-1) = 1$, because $\chi(-1) = \chi((-1)^3) = \chi^3(-1) = \varepsilon(-1) = 1$.
+Hence
+$$g(\chi^2) g(\chi) = g(\bar{\chi}) g(\chi) =\overline{g(\chi)} g(\chi) = \vert g(\chi) \vert^2 =p.$$
+Moreover $\chi(2)^3 = \chi^3(2) = 1$, so $\chi(2)^{-2} = \chi(2)$.
+
+\medskip
+
+Conclusion : if $\chi$ is a character of order 3,
+ $$g(\chi)^3 = p \pi, \ \mathrm{where}\ \pi = \chi(2) J(\chi,\rho).$$
+\end{proof}
+
+\paragraph{Ex. 8.10}
+
+{\it (continuation) Show that $\chi \rho$ is a character of order 6 and that $$g(\chi \rho)^6 = (-1)^{(p-1)/2} p \overline{\pi}^4$$.
+}
+
+\begin{proof}
+$(\chi \rho)^6 = \chi^6 \rho^6 = \varepsilon, (\chi \rho)^2 = \chi^2 \neq \varepsilon, (\chi \rho)^3 = \rho^3 = \rho \neq \varepsilon$, so  $\chi \rho$ is of order 6.
+
+$J(\chi,\rho) g(\chi \rho) = g(\chi) g(\rho)$ since $\chi, \rho, \chi \rho$ are non trivial characters. So
+$$g(\chi \rho)^6 = \frac{g(\chi)^6 g(\rho)^6}{J(\chi, \rho)^6}.$$
+From Exercise 8.9, $g(\chi)^6 = p^2 \pi^2$. Proposition 6.3.2 gives $g(\rho)^2 = (-1)^{(p-1)/2} p$, so $g(\rho)^6 =  (-1)^{(p-1)/2} p^3$. 
+As $\pi = \chi(2) J(\chi,\rho)$,  $J(\chi,\rho)^6 = \chi(2)^{-6} \pi^6 = \pi^6$, since $\chi(2)^3=1$. Therefore
+ $$g(\chi \rho)^6 = \frac{p^2 \pi^2 (-1)^{(p-1)/2} p^3}{\pi^6} = (-1)^{(p-1)/2} p^5 \pi^{-4}.$$
+ Moreover, $\pi \bar{\pi} = \chi(2) \overline{\chi(2)} J(\chi,\rho) \overline {J(\chi,\rho)} = \vert J(\chi,\rho) \vert^2 =p$ (Theorem 8.1, Corollary), so $ \pi^{-1} = \bar{\pi}/p$. In conclusion,
+$$g(\chi \rho)^6 = (-1)^{(p-1)/2} p \bar{\pi}^4.$$
+\end{proof}
+
+\paragraph{Ex. 8.11}
+
+{\it Use Gauss' theorem to find the number of solutions to $x^3+y^3 = 1$ in $\F_p$ for $p=13,19,37$, and $97$.
+}
+
+\begin{proof}
+$\bullet$ $p = 13$.
+
+ $4 \times 13 = 52 =(-5)^2+27\times 1^2$, where $-5 \equiv 1 \pmod 3$, so $A = -5$.
+
+If $p=13$, $N(x^3+y^3=1) = p-2+A = 13 - 2  - 5 = 6$ : the solutions are only the trivial solutions.
+
+\medskip
+
+$\bullet$ $p=19$.
+
+$4 \times 19 = 76 = 7^2+27\times 1^2$, where $7\equiv1 \pmod 3$, so $A = 7$.
+
+If $p = 19$, $N(x^3+y^3 = 1) = 19 -2 + 7 = 24$.
+
+\medskip
+
+$\bullet$ $p=37$.
+
+$4\times 37 = 148 = (-11)^2 + 27 \times 1^2$, where $-11 \equiv 1 \pmod 3$, so $A = -11$.
+
+If $p=37$, $N(x^3+y^3 = 1) = 37 - 2 -11 = 24$.
+
+\medskip
+
+$\bullet$ $p=97$.
+
+$4 \times 97 = 388 = 19^2 + 27 \times 1^2$, where $19 \equiv 1 \pmod 3$, so $A = 19$.
+
+If $p=97$, $N(x^3+y^3=1) = 97 - 2 + 19 = 114$.
+
+(These results were verified on pari/gp).)
+\end{proof}
+
+\paragraph{Ex. 8.12}
+
+{\it If $p\equiv 1 \pmod 4$, then we have seen that $p = a^2+b^2$ with $a,b \in \Z$. If we require that $a$ and $b$ are positive, that $a$ be odd, and that $b$ is even, show that $a$ and $b$ are uniquely determined. (Hint: Use the fact that unique factorization holds in $\Z[i]$ and that if $p = a^2+b^2$ then $a+bi$ is a prime in $\Z[i]$.)
+}
+
+\begin{proof}
+Suppose that $p$ is prime, $p\equiv 1 \pmod 4$, and $p = a^2+b^2 = c^2+d^2$, where $a,b,c,d$ are positive integers, $a,c$ odd, $b,d$ even. We will show that $a=c, b=d$.
+
+As $p = N(a+bi)$, $\pi = a+bi$ is irreducible in $\Z[i]$ : indeed $\pi = uv$ implies that $p=N(\pi) = N(u)N(v)$, so $N(u)= 1$ or $N(v) = 1$, and $u$ or $v$ is an unit.
+
+Since $\Z[i]$ is a principal ideal domain, $\pi$ is a prime in $\Z[i]$.
+
+$(a+bi)(a-bi) = (c+di)(c-di)$, so the prime $\pi$ divides $c+di$, or it divides $c-di$.
+
+As $N(\pi) = N(c+di) = N(c-di)$, the quotient is an unit. Therefore $\pi$ is an associate of $c+di$ or $c-di$. Since the units in $\Z[i]$ are $1,-1,i,-i$,
+$$a+bi = \pm (c+di),\ \mathrm{or}\ a+bi = \pm i (c+di), \ \mathrm{or}\ a+bi = \pm (c-di), \ \mathrm{or}\ a+bi = \pm i(c-di).$$
+In all cases, $a=\pm c, b = \pm d$, or $a=\pm d, b = \pm c$.
+Since $a,b,c,d$ are positive, $a=c, b=d$, or $a=d,b=c$.
+As $ac$ are odds, and $b,d$ even, $a=c, b=d$ : the unicity of the decomposition is proved.
+\end{proof}
+
+\paragraph{Ex. 8.13}
+
+{\it If $p\equiv 1 \pmod 3$, we have seen that $4p = A^2+27B^2$, with $A,B \in \Z$. If we require that $A\equiv 1 \pmod 3$, show that $A$ is uniquely determined. (Hint: Use the fact that unique factorization holds in $\Z[\omega]$. This proof is a little trickier than that for Exercise 12.)
+}
+
+\begin{proof}
+Suppose that $4p = A^2 + 27 B^2 = C^2 + 27 D^2$, where $A \equiv C \equiv 1 \pmod 3$. We will show that $A = C$.
+
+Let $\omega = e^{2i\pi/3} = -1/2 + i \sqrt{3}/2$. Then $i\sqrt{3} = 2 \omega +1$, and for all $x,y$,
+$x^3 + 3 y^2 = (x+i\sqrt{3}y)(x-i\sqrt{3}y) = (x + (2\omega+1)y)(x - (2\omega+1)y),$
+$$x^2+3y^2 = (x+y+2jy)(x-y-2jy).$$
+With $x =A, y = 3B$, we obtain
+$$4p = A^2+27B^2 = (A+3B+6\omega B)(A-3B-6\omega B).$$
+Note that $A,B$ are of same parity, since $4p = A^2 + 27 B^2$.
+
+So we can write $p = ((A+3B)/2 + 3\omega B)((A-3B)/2 - 6\omega B)$ :
+$$p = \pi \overline{\pi},\ \mathrm{where}\ \pi = \frac{A+3B}{2} + 3\omega B \in \Z[\omega].$$
+$\pi$ is a prime in $\Z[\omega]$ : indeed $\pi = uv,\ u,v \in \Z[\omega]$ implies $p = N(\pi) = N(u)N(v)$, then $N(u) = 1$ or $N(v) = 1$, $u$ or $v$ is an unit, so $\pi$ is irreducible in the principal ideal domain $\Z[\omega]$, thus $\pi$ is a prime in $\Z[\omega]$.
+$$\pi \overline{\pi} = \left(\frac{A+3B}{2} + 3\omega B\right)\left(\frac{A-3B}{2} - 3\omega B\right)=\left(\frac{C+3D}{2} + 3\omega D\right)\left(\frac{C-3D}{2} - 3\omega D\right).$$
+As $\pi$ is a prime, it divides $\frac{C+3D}{2} + 3\omega D$ or its conjugate. Since they have the same norm $p$, they are associated. The units of $\Z[\omega]$ are $\pm1,\pm j,\pm j^2$, so there exists $12$ cases :
+\begin{align*}
+\frac{A+3B}{2} + 3\omega B &= \pm \left(\frac{C+3D}{2} + 3\omega D\right)\\
+\frac{A+3B}{2} + 3\omega B &= \pm \omega \left(\frac{C+3D}{2} + 3\omega D\right)\\
+\frac{A+3B}{2} + 3\omega B &= \pm \omega^2\left(\frac{C+3D}{2} + 3\omega D\right)\\
+\frac{A+3B}{2} + 3\omega B &= \pm \left(\frac{C-3D}{2} - 3\omega D\right)\\
+\frac{A+3B}{2} + 3\omega B &= \pm \omega \left(\frac{C-3D}{2} - 3\omega D\right)\\
+\frac{A+3B}{2} + 3\omega B &= \pm \omega^2\left(\frac{C-3D}{2} - 3\omega D\right)\\
+\end{align*}
+If we replace $D$ by $-D$, we obtain the 6 last cases from the 6 first cases, so it is sufficient to examine the first 6 cases. Recall that $(1,\omega)$ is a $\Z$-base of $\Z[\omega]$.
+\begin{enumerate}
+\item[1)] $A + 3B + 6\omega B = C + 3D + 6\omega D$.
+
+Then $B = D$ and $A+3B = C + 3D$, so $A = C$, which is the expected result.
+The five other cases are impossible :
+\item[2)] $A+3B + 6\omega B = -C-3D -6\omega D$.
+
+Then $B = -D, A = -C$. As $A\equiv C \equiv 1 \pmod 3$, this is impossible.
+\item[3)] $A + 3 B + 6\omega B = \omega(C+3D+6\omega D) = \omega(C+3D) + (-1 - \omega) 6 D = -6D + \omega(C-3D)$.
+
+Then $A+3B = - 6 D$, $A \equiv 0 \pmod 3$, this is impossible.
+\item[4)] $A+3B + 6 \omega B = -\omega (C+3D+6\omega D) = -\omega (C+3D) + (1+\omega) 6D = 6D + \omega(-C+3D)$.
+
+Then $A+3B = -6D$, $A \equiv 0 \pmod 3$, this is impossible.
+
+\item[5)] $A+3B + 6\omega B = \omega^2(C+D+6\omega D) = (-1-\omega)(C + 3D) + 6D  = -C + 3D + \omega (-C-3D)$.
+Then $A+3B = - C +3D$, $A\equiv -C \pmod 3$ , this is impossible.
+
+\item[6)] $A + 3B + 6 \omega B = -\omega^2(C+3D + 6\omega D) = (1 + \omega)(C+3D) - 6D = (C-3D) + \omega(C+3D)$.
+
+Then $6B = C+ 3D$, $C \equiv 0 \pmod 3$, this is impossible.
+\end{enumerate}
+In conclusion $A = C$.
+\end{proof}
+
+\paragraph{Ex. 8.14}
+
+{\it Suppose that $p\equiv 1 \pmod n$ and that $\chi$ is a character of order $n$. Show that $g(\chi^n) \in\Z[\zeta]$, where $\zeta = e^{2\pi i/n}$.
+}
+
+\begin{proof}
+From Proposition 8.3.3 we know that
+$$g(\chi)^n = \chi(-1) p J(\chi,\chi) J(\chi, \chi^2) \cdots J(\chi, \chi^{n-2}).$$
+Let $\mathbb{U}_n =\{x \in \C\ | \ x^n = 1\} = \{1, \zeta, \ldots, \zeta^{n-1}\}$, with $\zeta = e^{2\pi i/n}$, the group of $n$-th roots of unity. As the order of $\chi$ is $n$, for all $x \in \F_p^*$, $(\chi(x))^n = \chi^n(x) = \varepsilon(x) = 1$, so $\chi(x) \in \mathbb{U}_n$, and also $\chi^k(x) = (\chi(x))^k$.
+
+Therefore $J(\chi,\chi^k) = \sum\limits_{x+y=1} \chi(x) \chi^k(x) \in \Z[\zeta]$. Moreover $\chi(-1) = \pm 1$, so $\chi(-1)$ and $p$ are in $\Z[\zeta]$. In conclusion $g(\chi^n) \in \Z[\zeta]$.
+\end{proof}
+
+\paragraph{Ex. 8.15}
+
+{\it Suppose that $p\equiv 1 \pmod 6$ and let $\chi$ and $\rho$ be characters of order 3 and 2, respectively. Show that the number of solutions to $y^2 = x^3 + D$ in $\F_p$ is $p+\pi+\overline{\pi}$, where $\pi = \chi \rho(D) J(\chi\rho)$. If $\chi(2) = 1$, show that the number of solutions to $y^2 = x^3 + 1$ is $p+A$, where $4p = A^2+27B^2$ and $A\equiv 1 \pmod 3$. Verify this result numerically when $p=31$.
+}
+
+\begin{proof}
+$x \mapsto -x$ is a bijection between the set of roots of $x^3 = b$ and the set of roots of $(-x)^3 = b$, so $N(x^3 = b) = N((-x)^3 = b) = N(x^3 = -b)$. 
+
+As $\chi$ is a character of order 3, the characters whose order divides 3 are $\varepsilon,\chi,\chi^2$. Using Prop. 8.1.5, we obtain
+\begin{align*}
+N(y^2=x^3+D)  &= \sum\limits_{a+b=D} N(y^2=a) N((-x)^3 = b)\\
+&= \sum\limits_{a+b=D} N(y^2=a) N(x^3=b)\\
+&= \sum\limits_{a+b=D}(1+\rho(a))(1+\chi(b)+\chi^2(b))\\
+&=\sum\limits_{i=0}^1\sum\limits_{j=0}^2\sum\limits_{a+b=D} \rho^i(a) \chi^j(b)\\
+&=\sum\limits_{i=0}^1\sum\limits_{j=0}^2\rho(D)^i \chi(D)^j\sum\limits_{a'+b'=1} \rho^i(a') \chi^j(b')\qquad (a = Da', b = D b')\\
+&=\sum\limits_{i=0}^1\sum\limits_{j=0}^2\rho(D)^i \chi(D)^j J(\chi^j,\rho^i)\\
+\end{align*}
+We know (Theorem 1) that  $J(\chi,\varepsilon)=J(\chi^2,\varepsilon)=J(\varepsilon,\rho)=0, J(\varepsilon,\varepsilon)=p$, so
+$$N(y^2=x^3+D) = p + \rho(D)\chi(D) J(\chi,\rho) + \rho(D) \chi^2(D) J(\chi^2,\rho).$$
+As $\chi^2(D) = \chi^{-1}(D) = \overline{\chi(D)}$, and as $\overline{\rho(D)} = \rho(D)$, then $J(\chi^2,\rho) =  J(\overline{\chi},\overline{\rho}) = \overline{J(\chi,\rho)}$, and
+$$N(y^2 = x^3+D) = p +\pi + \bar{\pi},\ \mathrm{where}\ \pi = (\rho \chi)(D) J(\chi,\rho).$$
+
+If  $\chi(2)=1$, then from Exercise 8.6 we have
+$$J(\chi,\chi) = \chi(2)^{-2} J(\chi,\rho) = J(\chi,\rho).$$
+With $D = 1$ (if $\chi(2)=1$), we obtain
+$$N(y^2=x^3+1) = p+\pi +\bar{\pi}, \pi = J(\chi,\rho) = J(\chi,\chi).$$
+From Prop. 8.3.4 we know that  $J(\chi,\chi) = a + b\omega, b\equiv0 \pmod 3, a \equiv-1\pmod 3$.
+
+$ \pi+ \overline{\pi} = 2\, \mathrm{Re}\, J(\chi,\chi) =2a-b \equiv 1 \pmod 3$, and $p = N(J(\chi,\rho)) = a^2-ab+b^2$, so $4p =(2a-b)^2 + 3b^2$.
+
+Writing $A=2a-b, B=b/3$, we obtain $4p = A^2+27B^2,A\equiv1 \pmod 3$ (the unicity of $A$ if proved in Exercise 8.13).
+
+Conclusion : $N(y^2=x^3+1) = p+A$, where $4p = A^2+27B^2, A\equiv1 \pmod 3$.
+
+\bigskip
+
+If $p=31$, 3 is a primitive element, and $2 = 3^{24} = (3^8)^3$ in $\F_{31}$, therefore $\chi(2)=1$.
+
+$31 = 4 + 27$, $4\times31 = 124 = 4^2+27\times2^2$, and $4\equiv 1 \pmod 3$, so
+
+if $p=31$, $N(y^2 = x^3+1) = 35$.
+\end{proof}
+
+\paragraph{Ex. 8.16}
+
+{\it Suppose that $p\equiv 1 \pmod 4$ and that $\chi$ is a character of order 4. Let $N$ be the number of solutions to $x^4+y^4 = 1$ in $\F_p$. Show that $N = p+1-\delta_4(-1) 4 + 2\, \mathrm{Re}\, J(\chi,\chi) + 4 \, \mathrm{Re}\, J(\chi,\rho)$.
+}
+
+\begin{proof}
+Let $\chi$ a character of order 4 : such a character exists since $p\equiv 1 \pmod 4$. Then
+
+\begin{align*}
+N(x^4+y^4=1) &=\sum\limits_{a+b=1} N(x^4=a)N(y^4=b)\\
+&=\sum\limits_{a+b=1} \sum\limits_{i=0}^3 \chi^i(a) \sum\limits_{j=0}^3 \chi^j(b)\\
+&= \sum\limits_{i=0}^3 \sum\limits_{j=0}^3\sum\limits_{a+b=1} \chi^i(a)  \chi^j(b)\\
+&= \sum\limits_{i=0}^3 \sum\limits_{j=0}^3 J(\chi^i,\chi^j)\\
+&= p-\chi(-1)-\chi^2(-1) - \chi^3(-1) \\
+&+ J(\chi,\chi) + J(\chi,\chi^2) +J(\chi^2,\chi)\\
+&+J(\chi^2,\chi^3)+J(\chi^3,\chi^2)+J(\chi^3,\chi^3),
+\end{align*}
+since from Theorem 1, we have $J(\varepsilon,\varepsilon) = p, J(\varepsilon,\chi^j) = 0$ for $j = 1,2,3$, and $J(\chi^i, \chi^{4-i}) = -\chi^i(-1)$.
+
+Moreover
+ $$-[\chi(-1)+\chi^2(-1)+\chi^3(-1)] = 1-[1+\chi(-1)+\chi^2(-1)+\chi^3(-1)],$$
+ 
+ and
+ $$
+\left\{
+\begin{array}{ccll}
+  1+\chi(-1)+\chi^2(-1)+\chi^3(-1) = \frac{1-\chi^4(-1)}{1-\chi(-1)} & = 0&\ \mathrm{if}\ \chi(-1) \neq 1    \\
+  &     =4&\ \mathrm{if}\ \chi(-1) =1.
+\end{array}
+\right.
+$$
+
+ Let $g$ a generator of $\F_p^*$. Recall that  $\chi(g) = e^{qi\pi/2}$ with $q$ odd, so $\chi : a = g^k \mapsto e^{i qk\pi k/2} = i^{qk}$, thus
+ $$\chi(a) = 1 \iff \chi(g^k)=1 \iff  i^{qk} = 1 \iff 4 \mid k \iff a = b^4, b \in \F^*.$$
+ $\delta_4$ is defined by  $\delta_4(a) = 1$ if $a$ is a fourth power, 0 if not. Then  
+ $$-[\chi(-1)+\chi^2(-1)+\chi^3(-1)] = 1 - \delta_4(-1)4.$$
+ Moreover $J(\chi,\chi)+ J(\chi^3,\chi^3) = 2 \,\mathrm{Re}\,( J (\chi,\chi))$, and
+ $$J(\chi,\chi^2)+J(\chi^3,\chi^2) + J(\chi^2,\chi)+J(\chi^2,\chi^3) = 2 \,\mathrm{Re}\,(J(\chi,\chi^2) + 2\,\mathrm{Re}\,(J(\chi^2,\chi) = 4\,\mathrm{Re}\,(J(\chi,\chi^2)).$$
+$\chi$ is of order 4, so $\rho = \chi^2$ is the unique character of order 2, the Legendre's character.
+
+In conclusion,
+ $$N(x^4+y^4=1) = p+1- \delta_4(-1)4+ 2 \,\mathrm{Re}\,( J (\chi,\chi))+4\,\mathrm{Re}\,(J(\chi,\rho)).$$
+\end{proof}
+
+\paragraph{Ex. 8.17}
+
+{\it (continuation) By Exercise 8.7, $J(\chi,\chi) = \chi(-1) J(\chi,\rho)$. Let $\pi = -J(\chi,\rho)$. Show that
+\begin{enumerate}
+\item[(a)] $N = p-3 - 6\,\mathrm{Re}\, \pi$ if $p\equiv 1 \pmod 8$.
+\item[(b)] $N = p+1 - 2 \,\mathrm{Re}\,  \pi$ if $p \equiv 5 \pmod 8$.
+\end{enumerate}
+}
+
+\begin{proof}
+Let $g$ a generator in  $\mathbb{F}_p^*$. As $(g^{(p-1)/2})^2=1$ and $g^{(p-1)/2} \neq 1$, then $g^{(p-1)/2} = -1$.
+As in Exercise 8.16, write $\chi(g) = e^{q i\pi/2}$, with $q$ odd.
+
+Then $-1$ is a fourth power in $\F_p^*$ iff (see Exercice 8.16)
+\begin{align*}
+\delta_4(-1) = 1 &\iff \chi(-1)=1\\
+&\iff \chi(g^{(p-1)/2}) = 1\\
+&\iff e^{q ((p-1)/2 )i\pi/2} = 1\\
+&\iff  4 \mid q(p-1)/2\\
+&\iff 4 \mid (p-1)/2\\
+&\iff p\equiv 1 \pmod 8.
+\end{align*}
+By Exercise 8.7, as $\chi$ is a character of order 4,
+$$J(\chi,\chi) = \chi(-1) J(\chi,\rho).$$
+$\bullet$ If $p\equiv 1 [8],$
+
+$\chi(-1) = 1$, so $J(\chi,\chi) = J(\chi,\rho)$, and $\delta_4(-1) = 1$.
+\begin{align*}
+N &= p+1 - \delta_4(-1) 4 + 2 \re J(\chi,\chi)  + 4 \re J(\chi,\rho)\\
+&=p-3+6 \re J(\chi,\rho)\\
+ &= p-3-6\re \pi,\qquad  \ \mathrm{where}\ \pi = -J(\chi,\rho).
+\end{align*}
+$\bullet$ If $p\equiv 5 [8],$
+
+$\chi(-1) = -1$, donc $J(\chi,\chi) = -J(\chi,\rho)$, et $\delta_4(-1) = 0$
+\begin{align*}
+N &= p+1 - \delta_4(-1) 4 + 2 \re J(\chi,\chi)  + 4 \re J(\chi,\rho)\\
+&= p+1 + 2 \re J(\chi,\rho)\\
+ &= p+1 - 2 \re \pi.
+\end{align*}
+\end{proof}
+
+\paragraph{Ex. 8.18}
+
+{\it (continuation) Let $\pi = a+bi$. One can show (see Chapter 11, Section 5) that $a$ is odd, $b$ is even, and $a\equiv 1 \pmod 4$ if $4\mid b$ and $a\equiv -1 \pmod 4$ if $4\nmid b$. Let $p=A^2+B^2$ and fix $A$ by requiring that $A\equiv 1 \pmod 4$. Then show that
+\begin{enumerate}
+\item[(a)] $N = p-3 -6A$ if $p\equiv 1 \pmod 8$,
+\item[(b)] $N = p+1 + 2A$ if $p \equiv 5 \pmod 8$.
+\end{enumerate}
+}
+
+\begin{proof}
+Recall that $\pi = -J(\chi,\rho) \in \Z[i]$, so $\pi = a + bi,\ a,b \in \Z$.
+\begin{enumerate}
+\item[1)] We begin by proving that $\pi \equiv 1 \pmod {2+2i}$ ( see Chapter 11, Section 5).
+
+For all $ t \in \F_p^*$, $\rho(t) = \pm 1$, so $\rho(t) - 1 \equiv 0 \pmod 2$.
+
+Let's verify that $\chi(t) - 1 \equiv 0 \pmod{1+i}$. $\chi(t) \in \{1,-1,i,-i\}$, so  $\chi(t) - 1 \in \{0,-2, i - 1, - i-1\}$. As $2 = (1-i)(1+i)$ and $i-1 = i(1+i)$, we obtain
+$$\forall t \in \F_p^*, \ 1+i \mid \chi(t) - 1.$$
+Thus
+$$\forall s \in \F_p^*, \forall t \in \F_p^*, \ (\rho(s)-1)(\chi(t) - 1) \equiv 0 \pmod {2+2i}.$$
+Moreover, if $s = 0, t= 1$, then $\chi(b) = 1$, and if $s=1,t=0$, then $\rho(s) = 1$, so
+$$\sum_{s+t=1} (\rho(s)-1)(\chi(b)-1) \equiv 0 \pmod {2+2i}.$$
+This gives, when developing this expression, :
+$$-\pi - \sum_{b \in \F_p} \chi(b) - \sum_{a\in \F_p} \rho(a) + p \equiv 0 \pmod {2+2i}.$$
+As $\sum_b \chi(b) = \sum_a \rho(a) = 0$, we obtain
+$$\pi \equiv p \pmod {2+2i}.$$
+Finally, $p \equiv 1 \pmod 4$, and $2+2i \mid 4$ since $4 = (1-i)(2+2i)$, so $p \equiv 1 \mod 2+2i$, so
+$$\pi \equiv 1 \pmod {2+2i}.$$
+\item[2)] By Corollary of Theorem 1, $N(\pi) = N(J(\chi,\rho) = p = a^2+b^2$.
+
+We know that $p\equiv 1 \pmod 4$, $p = a^2 + b^2$ and $a+ib \equiv 1 \pmod {2+2i}$. Then  we prove that $a$ is odd, $b$ is even, and $a\equiv 1 \pmod 4$ if $4\mid b$ and $a\equiv -1 \pmod 4$ if $4\nmid b$. 
+
+$a + bi \equiv 1 \pmod {2+2i}$, so $a+bi \equiv 1 \pmod 2$, so $a$ is odd, and $b$ is even.
+
+$\bullet$ If $4 \mid b$, then $2+2i \mid b$.
+
+$a \equiv 1 \pmod {2+2i}$, and by complex conjugation, $a\equiv 1 \pmod{2-2i}$, so $52+2i)(2-2i) = 8 \mid (a-1)^2$, thus $4 \mid a-1$.
+
+$\bullet$ If $4 \nmid b$, then $b = 4k+2, k\in \Z$.
+
+Therefore, $1 \equiv a+bi \equiv a +2i \pmod{2+2i}$. As $2i \equiv -2 \pmod{2+2i}$, $a\equiv 3 \equiv -1 \pmod {2+2i}$.
+By conjugation, $a \equiv -1 \pmod{2-2i}$. Multiplying these congruences, we obtain $8 \mid (a+1)^2$, so $a \equiv -1 \pmod 4$.
+\item[3)] $\pi = -J(\chi,\rho) = a + bi$ is such that  $a^2+b^2 = p$, $a$ odd, $b$ even and also
+$$(4 \mid b \ \mathrm{and} \ a\equiv 1\ [4]) \ \mathrm{or}\ (4\nmid b\ \mathrm{and}\ a\equiv -1 \ [4]).$$
+If $p = A^2+B^2$, $A$ odd and $B$ even, then also $p = (-A)^2 + B^2$, and $A \equiv 1 \pmod 4$ or $-A \equiv 1 \pmod 4$. So there exists a decomposition $p = A^2+B^2$ such that $A\equiv1 \pmod 4$. Such a decomposition is unique.
+Let's verify that $4 \mid b$ if $p \equiv 1 \pmod 8, 4 \nmid b$ if $p \equiv 5 \pmod 8$.
+
+$p = a^2 +b^2, a = 2a'+1, b = 2b'$, so $p = 4a'^2 + 4a'+1 + 4b'^2 = 8 \frac{a'(a'+1)}{2} + 1 + 4b'^2$.
+
+Hence $4 \mid b \iff 2 \mid b' \iff 8 \mid p-1$.
+
+Therefore if $p\equiv 1 \pmod 8$, $\re \pi = a = A$, and if $p\equiv 5 \pmod 8$, $\re \pi = a = -A$.
+
+In conclusion, by Exercise 8.17 :
+
+ if $p = A^2+B^2, A\equiv1 \pmod 4$, and $N =N(x^4+y^4 = 1)$ in $\F_p$,
+\begin{enumerate}
+\item[(a)] $N = p-3 -6A$ if $p\equiv 1 \pmod 8$,
+\item[(b)] $N = p+1 + 2A$ if $p \equiv 5 \pmod 8$.
+\end{enumerate}
+\end{enumerate}
+
+
+Note : if $p\equiv -1 \pmod 4$, then there is no character of order 4 on $\F_p^*$,  and $d = 4 \wedge (p-1) = 4 \wedge (4k+2) = 2$, so
+$$N(x^4 = a) = \sum_{\chi_d = 1} \chi(a) = 1 + \rho(a) = N(x^2 = a).$$
+\begin{align*}
+N(x^4+y^4 = 1) &= \sum_{a+b=1} N(x^4 = a) N(y^4=b)\\
+&= \sum{a+b=1} N(x^2=a) N(y^2=b)\\
+&=N(x^2+y^2)=1
+\end{align*}
+Using Chapter 8, Section 3, we obtain
+$$N(x^4+y^4=1) = p+1 \ \mathrm{if} \ p\equiv -1 \pmod 4.$$
+\end{proof}
+
 
 
 \end{document}
