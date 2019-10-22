@@ -1219,6 +1219,69 @@ Using Chapter 8, Section 3, we obtain
 $$N(x^4+y^4=1) = p+1 \ \mathrm{if} \ p\equiv -1 \pmod 4.$$
 \end{proof}
 
+\paragraph{Ex. 8.19}
+
+{\it Find a formula for the number of solutions to $x_1^2+x_2^2+\cdots+x_r^2 = 0$ in $\F_p$.
+}
+
+\begin{proof}
+Let $\chi$ be the Legendre character. Then
+\begin{align*}
+N(x_1^2+x_2^2+\cdots+x_r^2=0) &= \sum\limits_{a_1+a_2+\cdots+a_r=0} N(x_1^2=a_1)N(x_2^2=a_2)\cdots N(x_r^2 = a_r)\\
+&=\sum\limits_{a_1+a_2+\cdots+a_r=0} (1+\chi(a_1))(1+\chi(a_2)\cdots(1+\chi(a_r))\\
+&=p^{r-1} + J_0(\chi,\chi,\cdots,\chi)
+\end{align*}
+(We used Proposition 8.5.1)
+For all $k$, $\chi^{2k} = \varepsilon, \chi^{2k+1} = \chi$.
+
+$\bullet$ If $r$ is odd, $\chi^r \neq \varepsilon$, so $J_0(\chi,\chi,\cdots,\chi) = 0$ (Proposition 8.5.1).
+$$N(x_1^2+x_2^2+\cdots+x_r^2=0)  = p^{r-1}.$$
+
+$\bullet$ If $r$ is even, $\chi^r = \varepsilon$, so $J_0(\chi,\chi,\cdots,\chi) = \chi(-1)(p-1)J(\chi,\chi,\cdots, \chi)$, where there are  $r-1$ components in the Jacobi sum ( Proposition 8.5.1).
+
+By Theorem 3, $J(\chi,\chi,\cdots,\chi) g(\chi^{r-1}) = g(\chi)^{r-1}$, and  $g(\chi^{r-1}) = g(\chi)$, so
+$$J(\chi,\chi,\cdots,\chi)=g(\chi)^{r-2}.$$
+$g(\chi)^2 = \chi(-1) p$, therefore $\chi^{r-2} = \chi(-1)^{(r/2)-1} p^{(r/2)-1)} = (-1)^{((p-1)/2) (r/2-1)}p^{(r/2)-1)}$. So
+$$N(x_1^2+x_2^2+\cdots+x_r^2=0)  = p^{r-1}+(-1)^{\frac{p-1}{2} \frac{r}{2}} (p-1)p^{\frac{r}{2}-1}.$$
+(Verified in C++ with small values of $p$ and $r$.)
+
+Conclusion :
+$$
+\left\{
+\begin{array}{ccll}
+ N(x_1^2+x_2^2+\cdots+x_r^2=0)  & =  & p^{r-1}  &\mathrm{if}\ r\ \mathrm{is}\ \mathrm{odd} \\
+  &  = &   p^{r-1}+(-1)^{\frac{p-1}{2} \frac{r}{2}} (p-1)p^{\frac{r}{2}-1} &\mathrm{if}\ r\  \mathrm{is}\ \mathrm{even}.
+\end{array}
+\right.
+$$
+\end{proof}
+
+\paragraph{Ex. 8.20}
+
+{\it Generalize Proposition 8.6.1 by finding an explicit formula for the number of solutions to $a_1x_1^2+a_2x_2^2+\cdots+a_rx_r^2 = 1$ in $\F_p$.
+}
+
+\begin{proof}
+Write $\chi$ the Legendre character.
+\begin{align*}
+N(a_1x_1^2+\cdots+a_r x_r^2=1)&=\sum\limits_{a_1u_1+\cdots+a_r u_r=1}N(x_1^2=u_1)\cdots N(x_r^2=u_r)\\
+&=\sum\limits_{a_1u_1+\cdots+a_r u_r=1}(1+\chi(u_1)\cdots(1+\chi(u_r))  \hspace{0.5cm}(v_i = a_i u_i)\\
+&=\sum\limits_{v_1+\cdots+v_r=1}(1+\chi(a_1)^{-1}\chi(v_1))\cdots(1+\chi(a_r^{-1})\chi(v_r))\\
+&=p^{r-1} + \chi(a_1^{-1})\cdots\chi(a_r^{-1})J(\chi,\chi,\cdots,\chi)
+\end{align*}
+
+$\chi(a_i^{-1}) = \overline{\chi(a_i)} = \chi(a_i) = \legendre{a_i}{p}$
+
+$J(\chi,\chi,\cdots,\chi)$ is computed in Chapter 5 Section 6. We obtain
+$$
+\left\{
+\begin{array}{ccll}
+ N(a_1x_1^2+\cdots+a_r x_r^2=1)  & =  & p^{r-1}+\legendre{a_1}{p}\cdots\legendre{a_r}{p}(-1)^{\frac{r-1}{2}\frac{p-1}{2}}p^{\frac{r-1}{2}}&\mathrm{if}\ r\ \mathrm{is}\ \mathrm{odd} \\
+  &  = &p^{r-1}-\legendre{a_1}{p}\cdots\legendre{a_r}{p}(-1)^{\frac{r}{2}\frac{p-1}{2}}p^{\frac{r}{2}-1}&\mathrm{if}\ r\  \mathrm{is}\ \mathrm{even}.
+\end{array}
+\right.
+$$
+\end{proof}
 
 
 \end{document}
