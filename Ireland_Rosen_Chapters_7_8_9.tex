@@ -810,7 +810,7 @@ $$J(\chi,\chi) =  \chi(2)^{-2} J(\chi,\rho).$$
 }
 
 \begin{proof}
-As $\chi$ is a character of order 2, $\chi^2$ is a character of order, and $\rho$ (Legendre's character) is the unique character of order 2, so $\chi^4 = \rho$.
+As $\chi$ is a character of order 4, $\chi^2$ is a character of order 2, and $\rho$ (Legendre's character) is the unique character of order 2, so $\chi^2 = \rho$.
 
 From Prop. 8.3.3 we have
 $$g(\chi)^4 = \chi(-1) p J(\chi,\chi) J(\chi,\chi^2)  =  \chi(-1) p J(\chi,\chi) J(\chi,\rho).$$
@@ -1283,5 +1283,112 @@ $$
 $$
 \end{proof}
 
+\paragraph{Ex. 8.21}
+
+{\it Suppose that $p\equiv 1 \pmod d$, $\zeta = e^{2\pi i/p}$, and consider $\sum_x \zeta^{ax^d}$. Show that $\sum_x \zeta^{ax^d} = \sum_r m(r)\zeta^{ar}$, where $m(r) = N(x^d = r)$.
+}
+
+\begin{proof}
+Let $A_r = \{x \in \mathbb{F}_p \ \vert \ x^d=r\}$
+
+Then  $\mathbb{F}_p = \coprod_r A_r$, thus
+
+$$\sum\limits_{x\in \mathbb{F}_p} \zeta^{ax^d} = \sum\limits_{r \in \mathbb{F}_p} \sum\limits_{x \in A_r} \zeta^{a x^d} = \sum\limits_{r \in \mathbb{F}_p} \vert A_r\vert \zeta^{ar}= \sum\limits_{r \in \mathbb{F}_p} m(r)\zeta^{ar},$$
+
+where $m(r) = \vert A_r\vert = N(x^d=r)$
+\end{proof}
+
+\paragraph{Ex. 8.22} 
+{\it  (continuation) Prove that $\sum_x \zeta^{ax^d} = \sum_\chi g_a(\chi)$, where the sum is over all $\chi$ such that $\chi^d=\varepsilon, \chi \ne \varepsilon$. Assum that $p \nmid a$.
+}
+
+\begin{proof}
+By Exercise 8.21,
+$$S = \sum_{x \in \F_p} \zeta^{ax^d} = \sum_{ r \in \F_p} m(r) \zeta^{ar}.$$
+
+As  $d \mid p-1$, by Proposition 8.1.5,
+$$m(r) = N(x^d=r) = \sum_{\chi^d = \varepsilon} \chi(r).$$
+
+Therefore
+ $$S = \sum_{r\in \F_p}\, \sum_{\chi^d = \varepsilon} \chi(r) \zeta^{ar} =\sum_{\chi^d = \varepsilon} \sum_{r\in \F_p} \chi(r) \zeta^{ar}.$$
+
+If $\chi = \varepsilon, \sum\limits_{r\in \F_p} \chi(r) \zeta^{ar} = \sum\limits_{r\in \F_p} \zeta^{ar} = 0$, since $a\not \equiv 0 \pmod p$.
+
+By definition $g_a(\chi) =  \sum_r \chi(r) \zeta^{ar}$, so, if $d \mid p-1$, $p \nmid a$,
+
+$$\sum_{x\in \mathbb{F}_p} \zeta^{a x^d} = \sum_{\chi^d=\varepsilon,\, \chi\neq \varepsilon} g_a(\chi)$$
+\end{proof}
+
+\paragraph{Ex. 8.23}
+
+{\it Let $f(x_1,x_2,\ldots,x_n) \in \F_p[x_1,x_2,\ldots,x_n]$. Let $N$ be the number of zeros of $f$ in $\F_p$. Show that $N = p^{n-1} + p^{-1} \sum_{a\neq 0} (\sum_{x_1,\ldots,x_n } \zeta^{af(x_1,\ldots,x_n)})$.
+}
+
+\begin{proof}
+Let $A_r= \{(x_1,x_2,\cdots,x_n)\in\mathbb{F}_p^n \ \vert \ f(x_1,x_2,\cdots,x_n)=r\}$. Then $\mathbb{F}_p^n = \coprod\limits_{r\in\mathbb{F}_p} A_r$, so, for all $a \in \mathbb{F}_p$,
+\begin{align*}
+\sum\limits_{(x_1,x_2,\cdots,x_n) \in \mathbb{F}_p^n} \zeta^{af(x_1,x_2,\cdots,x_n)} 
+&=\sum\limits_{r\in \mathbb{F}_p} \sum\limits_{(x_1,x_2,\cdots,x_n) \in A_r}  \zeta^{ar}\\
+&=\sum\limits_{r\in \mathbb{F}_p} \vert A_r\vert \zeta^{ar}\\
+\end{align*}
+Let $m(r) = \vert A_r\vert = N(f(x_1,x_2,\cdots,x_n)=r)$. Then
+\begin{align*}
+\sum\limits_{a\in \mathbb{F}_p} \sum\limits_{(x_1,x_2,\cdots,x_n) \in \mathbb{F}_p^n} \zeta^{af(x_1,x_2,\cdots,x_n)} &=\sum\limits_{a\in \mathbb{F}_p}\sum\limits_{r\in \mathbb{F}_p} m(r) \zeta^{ar}\\
+&=\sum\limits_{r\in \mathbb{F}_p} m(r) \sum\limits_{a\in \mathbb{F}_p} \zeta^{ar}
+\end{align*}
+As $\sum\limits_{a\in \mathbb{F}_p} \zeta^{ar}=0$ if $r\neq 0$, and $\sum\limits_{a\in \mathbb{F}_p} \zeta^{ar} = p$ if $r=0$, we obtain
+$$\sum\limits_{a\in \mathbb{F}_p} \sum\limits_{(x_1,x_2,\cdots,x_n) \in \mathbb{F}_p^n} \zeta^{af(x_1,x_2,\cdots,x_n)} = m(0) p = p N.$$
+
+Moreover
+$$\sum\limits_{a\in \mathbb{F}_p} \sum\limits_{(x_1,x_2,\cdots,x_n) \in \mathbb{F}_p^n} \zeta^{af(x_1,x_2,\cdots,x_n)} = p^n + \sum\limits_{a\in \mathbb{F}_p^*} \sum\limits_{(x_1,x_2,\cdots,x_n) \in \mathbb{F}_p^n} \zeta^{af(x_1,x_2,\cdots,x_n)},$$
+
+so $$pN = p^n +\sum\limits_{a\in \mathbb{F}_p^*} \sum\limits_{(x_1,x_2,\cdots,x_n) \in \mathbb{F}_p^n} \zeta^{af(x_1,x_2,\cdots,x_n)}.$$  In conclusion,
+
+$$N = p^{n-1}+p^{-1} \sum\limits_{a\in \mathbb{F}_p^*} \sum\limits_{(x_1,x_2,\cdots,x_n) \in \mathbb{F}_p^n} \zeta^{af(x_1,x_2,\cdots,x_n)}.$$
+\end{proof}
+
+\paragraph{Ex. 8.24}
+
+{\it (continuation) Let $f(x_1,x_2,\ldots,x_n) = a_1x_1^{m_1}+a_2x_2^{m_2}+\cdots+a_n x_n^{m_n}$. Let $d_i = (m_i,p-1)$. Show that $N = p^{n-1} + p^{-1} \sum_{a\neq 0} \prod_{i=1}^n \sum_{\chi_i} g_{aa_i}(\chi_i)$ where $\chi_i$ runs over all characters such that $\chi_i^{d_i} = \varepsilon$ and $\chi_i \neq \varepsilon$.
+}
+
+\begin{proof}
+By Exercise 8.2, $$N = N(a_1 x_1^{m_1}+\cdots a_n x_n^{m_n} = 0) = N(a_1 x_1^{d_1}+\cdots a_n x_n^{d_n} = 0),$$where $d_i = m_i \wedge (p-1)$ divides $p-1$.
+
+By Exercise 8.23, 
+$$N = p^{n-1}+p^{-1} \sum\limits_{a\in \mathbb{F}_p^*} \sum\limits_{(x_1,x_2,\cdots,x_n) \in \mathbb{F}_p^n} \zeta^{a(a_1 x_1^{d_1}+\cdots a_n x_n^{d_n} )}$$
+
+By Exercise 8.22, since $p \nmid a, p\nmid a_i$,
+\begin{align*}
+\sum\limits_{(x_1,x_2,\cdots,x_n) \in \mathbb{F}_p^n} \zeta^{a(a_1 x_1^{d_1}+\cdots a_n x_n^{d_n} )} &=\left( \sum\limits_{x_1 \in \mathbb{F}_p} \zeta^{aa_1 x_1^{d_1}}\right)\cdots\left(\sum\limits_{x_1 \in \mathbb{F}_p} \zeta^{aa_n x_n^{d_n}}\right)\\
+&=\left(\sum\limits_{\chi_1^{d_1} = \varepsilon,\, \chi_1\neq \varepsilon} g_{aa_1}(\chi_1)\right)\cdots\left(\sum\limits_{\chi_n^{d_n}= \varepsilon,\,\chi_n \neq \varepsilon} g_{aa_n}(\chi_n)\right)\\
+&=\prod\limits_{i=1}^n \sum\limits_{\chi_i^{d_i}= \varepsilon,\, \chi_i \neq \varepsilon} g_{aa_i}(\chi_i)
+\end{align*}
+In conclusion,
+
+$$N = p^{n-1}+p^{-1} \sum\limits_{a\in \mathbb{F}_p^*}  \prod\limits_{i=1}^n \sum\limits_{\chi_i^{d_i} = \varepsilon,\chi_i \neq \varepsilon} g_{aa_i}(\chi_i)$$
+\end{proof}
+
+\paragraph{Ex. 8.25}
+
+{\it Deduce from Exercise 8.24 that $|N-p^{n-1}| \leq (p-1)(d_1-1)\cdots(d_n-1)p^{(n/2)-1}$.
+}
+
+\begin{proof}
+As $\vert g_{aa_i}(\chi_i)  \vert= \sqrt{p}$,
+
+$$\left\vert\sum\limits_{\chi_i^{d_i} = \varepsilon,\,\chi_i \neq \varepsilon} g_{aa_i}(\chi_i)\right\vert \leq \sqrt{p} \ n_i,$$ where $n_i = \mathrm{Card}\,\{\chi_i \neq \varepsilon \ \vert\  \chi_i^{d_i} = \varepsilon \}$.
+
+As $d_i \mid p-1$, there exists exactly $d_i$ characters of order dividing $d_i$, so $n_i = d_i-1$ :
+
+$$\left | \sum\limits_{\chi_i^{d_i} = \varepsilon,\,\chi_i \neq \varepsilon} g_{aa_i}(\chi_i)\right | \leq \sqrt{p} (d_i-1).$$
+
+By Exercise 8.24,
+ $$N = p^{n-1}+p^{-1} \sum\limits_{a\in \mathbb{F}_p^*}  \prod\limits_{i=1}^n \sum\limits_{\chi_i^{d_i} = \varepsilon,\chi_i \neq \varepsilon} g_{aa_i}(\chi_i)$$
+ 
+so $$\vert N - p^{n-1}\vert  \leq p^{-1} (p-1) \sqrt{p}(d_1-1)\cdots \sqrt{p}(d_n-1),$$ that is
+ 
+$$\vert N - p^{n-1}\vert  \leq (p-1)(d_1-1)\cdots(d_n-1) p^{\frac{n}{2}-1}$$
+\end{proof}
 
 \end{document}
