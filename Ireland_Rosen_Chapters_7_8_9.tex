@@ -1391,4 +1391,253 @@ so $$\vert N - p^{n-1}\vert  \leq p^{-1} (p-1) \sqrt{p}(d_1-1)\cdots \sqrt{p}(d_
 $$\vert N - p^{n-1}\vert  \leq (p-1)(d_1-1)\cdots(d_n-1) p^{\frac{n}{2}-1}$$
 \end{proof}
 
+\paragraph{Ex. 8.26}
+
+{\it  Let $p$ be a prime, $p \equiv 1 \pmod 4$, $\chi$ a multiplicative character of order $4$ on $\F_p$, and $\rho$ the Legendre symbol. Put $J(\chi,\rho) = a + bi$. Show
+\begin{enumerate}
+\item[(a)] $N(y^2+x^4 = 1) = p-1 + 2a$.
+\item[(b)] $N(y^2 = 1 -x^4) = p + \sum\rho(1-x^4)$.
+\item[(c)] $ 2a \equiv -(-1)^{(p-1)/4} \binom{2m}{m}   \pmod p$ where $m = (p-1)/4$.
+\item[(d)] Verify (c) for $p=13,17,29$.
+\end{enumerate}
+}
+
+\begin{proof}
+\begin{enumerate}
+\item[(a)] By Proposition 8.1.5,
+\begin{align*}
+N(y^2+x^4=1) &=\sum\limits_{a+b=1} N(y^2=a)N(x^4=b)\\
+&=\sum\limits_{a+b=1}(1+\rho(a))(1+\chi(b)+\chi^2(b)+\chi^3(b))\\
+&=\sum\limits_{i=0}^1 \sum\limits_{j=0}^3\sum\limits_{a+b=1}\rho^i(a) \chi^j(b)\\
+&=\sum\limits_{i=0}^1 \sum\limits_{j=0}^3 J(\rho^i, \chi^j)
+\end{align*}
+
+As $J(\varepsilon,\varepsilon)=p$, and $0 = J(\varepsilon,\chi) = J(\varepsilon,\chi^2)=J(\varepsilon,\chi^3) = J(\rho,\varepsilon)$, we obtain
+
+$$N(y^2+x^4=1)  = p + J(\rho,\chi)+J(\rho,\chi^2)+J(\rho,\chi^3).$$
+
+As $J(\rho,\chi^3)=J(\bar{\rho},\bar{\chi}) = \overline{J(\rho,\chi)}$,
+and
+$J(\rho,\chi^2) = J(\rho,\rho) = J(\rho,\rho^{-1}) = -\rho(-1) = -(-1)^{(p-1)/2} = -1$ (since $p\equiv 1 \pmod 4$).
+Moreover, by Exercise 8.7,
+$$J(\chi,\rho) = \chi(-1) J(\chi,\chi) = \pm J(\chi,\chi) \in \mathbb{Z}[i] : J(\chi, \rho) = a+bi, (a,b) \in \mathbb{Z}^2.$$
+
+Thus $N(y^2+x^4 = 1) = p + 2\re J(\chi,\rho) + J(\rho,\rho) = p-1+2a$
+
+In conclusion, 
+$$N(y^2+x^4 = 1) = p-1+2a,  \ \mathrm{where}\  J(\chi,\rho) = a+bi.$$
+
+\item[(b)]  By Exercise 8.8, 
+\begin{align*}
+\sum\limits_{t \in \mathbb{F}_p} \rho(1-t^4) &= \sum\limits_{\lambda^4 = \varepsilon} J(\rho,\lambda)\\
+&=J(\rho,\varepsilon) + J(\rho,\chi)+ J(\rho,\chi^2)+ J(\rho,\chi^3)\\
+&=J(\rho,\rho)+ J(\rho,\chi)+J(\rho,\bar{\chi})\\
+&=-1 + 2 \re J(\chi,\rho)\\
+&=-1+2a
+\end{align*}
+
+So $N(y^2=1-x^4) = p-1+2a = p+\sum\limits_{t\in \mathbb{F}_p} \rho(1-t^4)$
+
+
+\item[(c)]  Reducing modulo $p$, we obtain :
+\begin{align*}
+2\,\overline{a}  &= 1 + \sum\limits_{t\in \mathbb{F}_p} \rho(1-t^4)\\
+&= 1 + \sum\limits_{t\in \mathbb{F}_p}(1-t^4)^{\frac{p-1}{2}}\\
+&=1 + \sum\limits_{t\in \mathbb{F}_p} \sum\limits_{k=0}^{(p-1)/2} \binom{\frac{p-1}{2}}{k} (-1)^k t^{4k}\\
+&= 1 + \sum\limits_{k=0}^{(p-1)/2}(-1)^k \binom{\frac{p-1}{2}}{k}\sum_{t\in \mathbb{F}_p}  t^{4k}\\
+&= 1 + \sum\limits_{k=1}^{(p-1)/2}(-1)^k \binom{\frac{p-1}{2}}{k}\sum\limits_{t\in \mathbb{F}_p^*}   t^{4k} 
+\end{align*}
+
+Let $S_k = \sum\limits_{t\in \F_p^*}  t^{4k} ,\  k>0 $, and $g$ a generator of $\F_p^*$ : $t = g^i, 0 \leq i \leq p-2$.
+
+$$S_k = \sum\limits_{i=0}^{p-2} (g^{i})^{4k}=\sum\limits_{i=0}^{p-2} (g^{4k})^i.$$
+
+If $g^{4k} \ne 1$, $S_k \equiv \frac{g^{4k(p-1)}-1}{g^{4k}-1} = 0$, if not $S_k = p-1 = -1$.
+
+
+For every $k$, $1\leq k \leq (p-1)/2$,
+$$g^{4k} = 1\iff p-1 \mid 4k \iff \frac{p-1}{4} \mid k \iff k=\frac{p-1}{4} \ \mathrm{or}\  k=\frac{p-1}{2},$$ therefore
+
+$$2a \equiv 1 - (-1)^{\frac{p-1}{4}}\binom{\frac{p-1}{2}}{\frac{p-1}{4}} - (-1)^{\frac{p-1}{2}}\binom{\frac{p-1}{2}}{\frac{p-1}{2}}\pmod p,$$
+
+$$2a \equiv - (-1)^{\frac{p-1}{4}}\binom{\frac{p-1}{2}}{\frac{p-1}{4}}\ \pmod p$$
+
+
+\item[(d)] 
+
+ $\bullet$ If $p=13$, I choose the primitive root $g = \overline{2}$, and $\chi$ the character of order 4 defined by $\chi(g) = i$ (the only other character of order 4 is $\overline{\chi}$).
+ 
+Then $J(\chi,\rho) = -3+2i, a = -3$.
+
+$$N=p-1+2a=6.$$
+
+$2a=-6, -(-1)^{\frac{13-1}{4}} \binom{6}{3} = 20$ et $-6\equiv20\pmod {13}$.
+
+$\bullet$ If $p=17$, $g = 3$,  $\chi(g) = i$, $J(\chi,\rho) = -1+4i, a=-1$.
+
+$$N = p-1+2a = 14.$$
+
+$2a=-2, -(-1)^{\frac{17-1}{4}} \binom{8}{4} =-70 \equiv -2\pmod{17}$.
+
+$\bullet$ Si $p=29$, $g = 3$,  $\chi(g) = i$, $J(\chi,\rho) = 5+2i, a=5$.
+
+$$N = p-1+2a = 38.$$
+
+$2a=10, -(-1)^{\frac{29-1}{4}} \binom{14}{7} =3432 \equiv 10\pmod {29}$ ($3422 = 118\times 29$).
+
+\end{enumerate}
+\end{proof}
+
+Note : By Prop. 8.3.1 (and Ex. 8.7),  $ p = | J(\chi,\rho) |^2 = |J(\chi,\chi)|$, so $a^2 + b^2 = p$ (where $p = 4m+1$).
+
+As $\binom{2m}{m} = 2 \binom{2m-1}{m-1}$ is even, and as $p$ is an odd prime $a \equiv \pm \frac{1}{2} \binom{2m}{m} \pmod p$.
+
+Since $p\geq 5$, $p = a^2+b^2$ implies $|a| < \sqrt{p} < p/2$, thus the least remainder of $\frac{1}{2} \binom{2m}{m}$ is $\pm a$. 
+
+Moreover, from Wilson theorem, we obtain a square root of $-1$ in $\F_p$ ($p = 4 m +1$) :
+$$-1 \equiv (p-1)! \equiv \left[ (-1)^{(p-1)/4} \left( \frac{p-1}{2}\right)!\right]^2 = [(2m)!]^2.$$
+Since $\overline{b}\overline{a}^{-1} = -\overline{1}$ in $\F_p$, we obtain $ b \equiv (2m)! a \pmod p$. The conclusion is the proposition of Gauss, which  gives an explicit formula for the solution of $p=a^2+b^2$ :
+
+{\bf Proposition} {\it Let $p$ a prime of the form $p=4m+1$.
+
+If 
+\begin{align*}
+a &\equiv \frac{1}{2} \binom{2m}{m} \pmod p,\qquad -\frac{p}{2} < a < \frac{p}{2},\\
+b &\equiv (2m)!\, a\ \pmod p,\qquad  -\frac{p}{2} < b < \frac{p}{2},
+\end{align*}
+then $p = a^2+b^2$.
+}
+
+\paragraph{Ex. 8.27}
+
+{\it Let $p\equiv 1 \pmod 3$, $\chi$ a character of order 3, $\rho$ the Legendre symbol. Show
+\begin{enumerate}
+\item[(a)] $N(y^2 = 1 - x^3) = p + \sum \rho(1-x^3)$.
+\item[(b)] $N(y^2 + x^3 = 1) = p + 2 \re J(\chi,\rho)$.
+\item[(c)] $2a-b \equiv - \binom{(p-1)/2}{(p-1)/3} \pmod p$ where $J(\chi,\rho) = a + b \omega$.
+\end{enumerate}
+}
+
+\begin{proof} 
+
+
+\begin{enumerate} 
+
+\item[(b)] By Exercise 8.15,
+
+$$N(y^2=x^3+D) = p + 2 \re(\pi), \ \mathrm{where}\ \pi =(\rho \chi)(D) J(\chi,\rho).$$
+
+Moreover, with $D = 1$, we obtain
+\begin{align*}
+N(y^2+x^3=1) &= N(y^2+(-x)^3=1) \\
+ &= p+  2 \re J(\chi,\rho).
+\end{align*}
+
+$J(\chi,\rho) = \sum\limits_{a+b=1} \chi(a) \rho(b)$, where $\rho(b)\in \{-1,1\}, \chi(a) \in \{1,\omega,\omega^2\}$, so $J(\chi,\rho) \in \mathbb{Z}[\omega]$.
+
+$J(\chi,\rho) = a + b\omega, a\in \mathbb{Z}, b \in \mathbb{Z}$ and $2 \re(J(\chi,\rho)) = 2a-b$.
+
+\item[(a)] By Exercise 8.8,
+\begin{align*}
+\sum\limits_x\rho(1-x^3) &= \sum\limits_{\lambda^3=\varepsilon} J(\rho,\lambda)\\
+&=J(\rho,\varepsilon) + J(\rho,\chi) + J(\rho,\chi^2)\\
+&= 2 \re J(\chi,\rho)
+\end{align*}
+so
+\begin{align*}
+N(y^2=1-x^3) &= p + \sum_x \rho(1-x^3)\\
+&= p+2a-b
+\end{align*}
+
+
+\item[(c)]Reducing modulo $p$, we obtain  in $\F_p$ :
+\begin{align*}
+2\overline{a}  -\overline {b} &= \sum\limits_{x} \rho(1-x^3)\\
+&=  \sum\limits_{t \in \F_p} (1-t^3)^{\frac{p-1}{2}}\\
+&= \sum\limits_{t \in \F_p} \sum\limits_{k=0}^{(p-1)/2} \binom{\frac{p-1}{2}}{k} (-1)^k t^{3k}\\
+&=  \sum\limits_{k=0}^{(p-1)/2}(-1)^k \binom{\frac{p-1}{2}}{k}\sum\limits_{t \in \F_p}   t^{3k}\\
+&= \sum\limits_{k=1}^{(p-1)/2}(-1)^k \binom{\frac{p-1}{2}}{k}\sum\limits_{t \in \F_p}   t^{3k} \pmod p
+\end{align*}
+
+Let $S_k = \sum\limits_{t \in \F_p}   t^{3k} \ (0<k\leq\frac{p-1}{2}) $, and $g$ a primitive root in $\F_p$ : $t = g^i, 0 \leq i \leq p-2$.
+
+$S_k = \sum\limits_{i=0}^{p-2} (g^{i})^{3k}=\sum\limits_{i=0}^{p-2} (g^{3k})^i$
+
+If $g^{3k} \ne 1 , S_k = \frac{g^{3k(p-1)}-1}{g^{3k}-1} = 0$, if not $S_k = p-1 = -1$.
+
+$$g^{3k} = 1 \iff p-1 \mid 3k \iff \frac{p-1}{3} \mid k \iff k=\frac{p-1}{3}$$ and $\frac{p-1}{3}$ even, so
+
+$$2a-b \equiv -\binom{\frac{p-1}{2}}{\frac{p-1}{3}}\pmod p \ \ (\mathrm{with}\ J(\chi,\rho) = a+b \omega)$$
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 8.28}
+
+{\it Let $p\equiv 3 \pmod 4$ and $\chi$ the quadratic character defined on $\Z/p\Z$. Show
+\begin{enumerate}
+\item[(a)] $\sum_{x=1}^{p-1} x\chi(x) = 2 \sum_{x=1}^{(p-1)/2} x\chi(x) - p \sum_{x=1}^{(p-1)/2} \chi(x)$.
+\item[(b)] $\sum_{x=1}^{p-1} x\chi(x) =  4 \chi(2)\sum_{x=1}^{(p-1)/2} x \chi(x) - p \chi(2) \sum_{x=1}^{(p-1)/2}\chi(x)$.
+\item[(c)] If $p\equiv 3 \pmod 8$ then $\sum_{x=1}^{p-1} x\chi(x)/p =- \frac{1}{3} \sum_{x=1}^{(p-1)/2} \chi(x)$.
+\item[(d)] If $p \equiv 7 \pmod 8$ then $\sum_{x=1}^{p-1} x\chi(x)/p =- \sum_{x=1}^{(p-1)/2} \chi(x)$.
+\end{enumerate}
+}
+Note : I added two minus signs in (c) and (d) to write a true sentence. See the verification below.
+\begin{proof}
+\begin{enumerate}
+\item[(a)]  $\chi(-1) = (-1)^{(p-1)/2}=-1$, thus
+\begin{align*}
+\sum_{x=1}^{p-1} x \chi(x) &= \sum_{x=1}^{(p-1)/2} x \chi(x)+ \sum_{x=(p-1)/2+1}^{p-1} x \chi(x)\\
+&=\sum_{x=1}^{(p-1)/2} x \chi(x) + \sum_{y=1}^{(p-1)/2} (p-y) \chi(p-y)\qquad (x = p-y)\\
+&=\sum_{x=1}^{(p-1)/2} x \chi(x) -\left [ p\sum_{x=1}^{(p-1)/2}  \chi(x) - \sum_{x=1}^{(p-1)/2} x \chi(x)\right ]\\
+&= 2 \sum_{x=1}^{(p-1)/2} x \chi(x) - p \sum_{x=1}^{(p-1)/2}  \chi(x)
+\end{align*}
+
+
+\item[(b)] If we separate even and odd indices, we obtain, as $p$ is odd :
+\begin{align*}
+\sum_{x=1}^{p-1} x \chi(x)  &=\sum_{k=1}^{(p-1)/2} 2k \chi(2k) + \sum_{k=0}^{(p-1)/2 - 1} (2k+1) \chi(2k+1)\\
+&= \sum_{x=1}^{(p-1)/2} 2x \chi(2x)+\sum_{x=1}^{(p-1)/2}(p-2x) \chi(p-2x))\qquad (2k+1 = p - 2x) \\
+&=2 \chi(2)\sum_{x=1}^{(p-1)/2} x \chi(x) - \chi(2) \sum_{x=1}^{(p-1)/2} (p-2x) \chi(x)\\
+&=4 \chi(2) \sum_{x=1}^{(p-1)/2} x \chi(x) - p\chi(2) \sum_{x=1}^{(p-1)/2}  \chi(x)
+\end{align*}
+
+\item[(c)] Let $S= \sum\limits_{x=1}^{(p-1)/2}  \chi(x), T = \sum\limits_{x=1}^{(p-1)/2} x \chi(x)$. Then
+\begin{align*}
+(a) \sum_{x=1}^{p-1} x \chi(x) &= 2 T - p S\\
+(b) \sum_{x=1}^{p-1} x \chi(x) &= 4 \chi(2) T - p \chi(2) S
+\end{align*}
+
+Subtracting theses equalities , we obtain
+
+\begin{align*}
+(4\chi(2)-2 )T &= p(\chi(2) - 1) S \\
+\frac{T}{p} &= \frac{\chi(2) - 1}{4\chi(2) - 2} S
+\end{align*}
+
+$\chi(2) = (-1)^{(p^2-1)/8} = -1 $ if $p\equiv 3\pmod 8$, so  $\frac{\chi(2) - 1}{4\chi(2) - 2} = \frac{1}{3}$, and $T/p = (1/3) S$.
+$$\sum_{x=1}^{ p-1} x \chi(x) /p = 2T/p - S =  -(1/3)S,$$
+$$\sum_{x=1}^{ p-1} x \chi(x) /p = -\frac{1}{3} \sum\limits_{x=1}^{(p-1)/2}  \chi(x).$$
+
+\item[(d)] 
+$\chi(2) = (-1)^{(p^2-1)/8}  = 1$ if $p\equiv 7\pmod 8$ : $\frac{\chi(2) - 1}{4\chi(2) - 2} = 0$.
+$$\sum_{x=1}^{p-1} x \chi(x) /p = - \sum_{x=1}^{(p-1)/2}  \chi(x).$$
+Verification : with $p=7$, the squares are $1,4,2=9$, so
+\begin{align*}
+\sum_{x=1}^{p-1} x \chi(x) /p  &= \frac{1}{7} \left[ \legendre{1}{7} + 2 \legendre{2}{7} + 3 \legendre{3}{7} + 4 \legendre{4}{7} + 5 \legendre{5}{7} + 6 \legendre{6}{7} \right]\\
+&= \frac{1}{7} \left( 1 + 2 -3+4-5-6\right) = -1\\
+\sum_{x=1}^{(p-1)/2}  \chi(x)&=\legendre{1}{7} + \legendre{2}{7} + \legendre{3}{7}\\
+&= 1 + 1 - 1 = 1.
+\end{align*}
+With $p = 3$,
+\begin{align*}
+\sum_{x=1}^{p-1} x \chi(x) /p  &= \frac{1}{3} \left[ \legendre{1}{3} + 2 \legendre{2}{3} \right]\\
+&= \frac{1}{3} \left( 1  - 2 \right)= -\frac{1}{3}\\
+\sum_{x=1}^{(p-1)/2}  \chi(x)&=\legendre{1}{3}\\
+&= 1 
+\end{align*}
+This confirms the misprints  in the initial sentence.
+\end{enumerate}
+\end{proof}
+
+
 \end{document}
