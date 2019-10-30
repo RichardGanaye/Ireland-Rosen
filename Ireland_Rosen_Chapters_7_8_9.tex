@@ -1640,4 +1640,261 @@ This confirms the misprints  in the initial sentence.
 \end{proof}
 
 
+{ \Large \bf Chapter 9} 
+
+\paragraph{Ex. 9.1}
+
+{\it If $\alpha \in \Z[\omega]$, show that $\alpha$ is congruent to either $0,1$, or $-1$ modulo $1-\omega$.
+}
+
+\begin{proof}
+Let $\lambda = 1 - \omega$, and $z = a+b\omega \in D = \Z[\omega], a,b \in \Z$.
+
+$\omega \equiv 1 \pmod \lambda$, so $z \equiv a+b \pmod \lambda$, with $c = a+b \in \Z$.
+
+$c\equiv 0,1,-1 \pmod 3$, and since $\lambda \mid 3$, $\lambda \equiv 0,1,-1 \pmod \lambda$.
+
+Conclusion : every $z \in D$ is congruent to either $0,1$, or $-1$ modulo $\lambda = 1 -\omega$.
+
+Note :  $1\not \equiv -1 \pmod \lambda$, if not $\lambda \mid 2$, so $2 = \lambda \lambda'$, $N(2) = N(\lambda) N(\lambda')$, thus $4 = 3 N(\lambda')$, so $3 \mid 4$ : this is absurd.
+
+$\pm1 \equiv 0 \pmod \lambda$ implies $\lambda \mid 1$, so $\lambda$ would be an unit, in contradiction with $\lambda$ prime.
+
+So there exist exactly three classes modulo $\lambda$ in $D$ : $ | D/\lambda D | = 3 = N(\lambda)$.
+
+\end{proof}
+
+\paragraph{Ex. 9.2}
+
+{\it From now on we shall set $D = \Z[\omega]$ and $\lambda = 1 - \omega$. For $\mu$ in $D$ show that we can write $\mu = (-1)^a \omega^b \lambda^c\pi_1^{a_1}\pi_2^{a_2}\cdots\pi_t^{a_t}$, where $a,b,c$, and the $a_i$ are nonnegative integers and the $\pi_i$ are primary primes.
+}
+
+\begin{proof}
+Let $S$ the set containing $\lambda = 1 - \omega$ and all primary primes. By Proposition 9.3.5,
+\begin{enumerate}
+\item[(a)] Every prime in $D$ is associate to a prime in $S$.
+\item[(b)] No two primes in $S$ are associate.
+\end{enumerate}
+By Theorem 3, Chapter 1, as $D = \Z[\omega]$ is a principal ideal domain,  every $\mu \in D$ is of the form
+$$\mu = u \prod_{\lambda \in S} \lambda^{e(\lambda)},$$
+where $u$ is a unit, so $u = (-1)^a\omega^b$. Thus
+$$\mu = (-1)^a \omega^b \lambda^c\pi_1^{a_1}\pi_2^{a_2}\cdots\pi_t^{a_t},$$ where the $\pi$ are primary primes, and $a,b,c$ and the $a_i$ are nonnegative integers.
+\end{proof}
+
+\paragraph{Ex. 9.3}
+
+{\it Let $\gamma$ a primary prime. To evaluate $\chi_\gamma(\mu)$ we see, by Exercise 2, that it is enough to evaluate $\chi_\gamma(-1), \chi_\gamma(\omega), \chi_\gamma(\lambda)$, and $\chi_\gamma(\pi)$, where $\pi$ is a primary prime. Since $-1 =(-1)^3$ we have $chi_\gamma(-1) = 1$. We now consider $\chi_\gamma(\omega)$. Let $\gamma = a+b \omega$ and set $a = 3m -1$ and $b=3n$. Show that $\chi_\gamma(\omega) = \omega^{m+n}$.
+}
+
+\begin{proof}
+Let $\gamma = a+b\omega=3m-1+3n\omega$. Then  $\chi_{\gamma}(\omega) = \omega^{\frac{N(\gamma)-1}{3}}$.
+\begin{align*}
+N(\gamma)-1 &= (3m-1)^2+(3n)^2-3n(3m-1)-1\\
+&=9m^2 - 6m + 9n^2 -9nm + 3n\\
+\frac{N(\gamma)-1}{3}&= 3m^2-2m+3n^2-3nm+n \equiv n+m \ [3]
+\end{align*}
+Thus, for $\gamma = a+b\omega=3m-1+3n\omega$,
+
+$$\chi_{\gamma}(\omega) = \omega^{\frac{N(\gamma)-1}{3}} = \omega^{n+m}$$
+\end{proof}
+
+\paragraph{Ex. 9.4}
+
+{\it (continuation) Show that $\chi_\gamma(\omega) = 1,\omega$, or $\omega^2$ according to whether $\gamma$ is congruent to 8,2, or 5 modulo $3\lambda$. In particular, if $q$ is a rational prime, $q \equiv 2 \pmod 3$, then $\chi_q(\omega) = 1, \omega$, or $\omega^2$ according to whether $q \equiv 8,2$, or $5,\pmod 9$. [Hint : $\gamma = a + b \omega = -1 + 3(m+n\omega)$, and so $\gamma \equiv -1 + 3(m+n) \pmod{3\lambda}$.]
+}
+
+\begin{proof}
+$\lambda=1-\omega$, so $\omega\equiv1\ \pmod \lambda$. Thus
+\begin{align*}
+m+n\omega &\equiv m+n\ \pmod \lambda\\
+3(m+n \omega) &\equiv 3 (m+n) \pmod{3\lambda}\\
+\gamma = -1 + 3(m+n\omega) &\equiv -1+3(m+n) \pmod{3 \lambda}
+\end{align*}
+Moreover $9 = 3 \lambda \bar{\lambda} \equiv 0 \pmod{3 \lambda}$, thus $\gamma$ is congruent modulo $3\lambda$ to an integer between  $0$ and $8$ of the form $3k-1$ : $\gamma \equiv 8,2$ or $5 \pmod{3\lambda}$.
+
+By Ex. 9.3, $\chi_\gamma(\omega) = 1 \iff m+n \equiv 0 \ [3]$, and $m+n  \equiv 0 \ [3]$ implies $m+n = 3k, k \in \Z$, so $\gamma  \equiv -1+ 9k \equiv -1 \equiv 8 \ [3\lambda]$.
+
+Reciprocally, if $\gamma \equiv 8 \equiv -1 \ [3\lambda]$, then $3\lambda \mid 3(m+n)$, so $\lambda \mid m+n$, and $N(\lambda) \mid N(m+n)$, $3 \mid (m+n)^2$, thus $3 \mid m+n$,  $m+n \equiv 0 \ [3]$, and so $\chi_\gamma(\omega) = 1$. As the two other cases are similar, we obtain
+
+\begin{align*}
+\chi_\gamma(\omega) = 1 &\iff m+n \equiv 0\ [3] \iff \gamma \equiv 8 \ [3\lambda]\\
+\chi_\gamma(\omega) = \omega &\iff m+n \equiv 1\ [3] \iff \gamma \equiv 2 \ [3\lambda]\\
+\chi_\gamma(\omega) = \omega^2 &\iff m+n \equiv 2\ [3] \iff \gamma \equiv 5 \ [3\lambda]
+\end{align*}
+
+If $\gamma = q$ is a rational prime,
+$q \equiv 8 \ [9]$ implies $q \equiv 8\ [3\lambda]$, since $3 \lambda \mid 9 = 3 \lambda \bar{\lambda}$, thus $\chi_q(\omega) = 1$.
+
+Reciprocally, if $\chi_q(\omega) = 1$, then $q \equiv 8\ [3\lambda]$, $q-8 = \mu (3 \lambda), \mu \in D$, therefore 
+
+$(q-8)^2 = N(\mu) 3^3, 3^3 \mid (q-8)^2$, thus $3^2 \mid q-8$ and so $q \equiv 8 \ [9]$. The two other cases are similar.
+
+\begin{align*}
+\chi_q(\omega) = 1 & \iff q \equiv 8 \ [9]\\
+\chi_q(\omega) = \omega & \iff q \equiv 2 \ [9]\\
+\chi_q(\omega) = \omega^2 &\iff q \equiv 5 \ [9]
+\end{align*}
+\end{proof}
+
+\paragraph{Ex. 9.5}
+{\it In the text we stated Eisenstein's result $\chi_\gamma(\lambda) = \omega^{2m}$. Show that $\chi_{\gamma}(3) = \omega^{2n}$.
+}
+
+\begin{proof}
+$(1-\omega)^2 = -3 \omega$, thus $\chi_\gamma((1-\omega)^2) = \chi_\gamma(-1)\chi_\gamma(3)\chi_\gamma(\omega)$.
+
+$\chi_\gamma((1-\omega)^2)= \chi_\gamma(\lambda^2) = \omega^{4m} = \omega^m$
+
+As $-1 = (-1)^3, \chi_\gamma(-1) = 1$. Finally  $\chi_\gamma(\omega) = \omega^{m+n}$ by Exercise 9.3. Thus
+
+$$\omega^m = \chi_\gamma(3) \omega^{m+n},\qquad  \chi_\gamma(3) = \omega^{-n} = \omega^{2n}.$$
+
+Conclusion : 
+$$\chi_\gamma(3) = \omega^{2n}$$
+\end{proof}
+
+\paragraph{Ex. 9.6}
+
+{\it Prove that
+\begin{enumerate}
+\item[(a)] $\chi_\gamma(\lambda) = 1$ for $\gamma \equiv 8, 8 + 3\omega, 8 + 6 \omega \ [9]$.
+\item[(b)] $\chi_\gamma(\lambda) = \omega$ for $\gamma \equiv 5, 5 + 3\omega, 5 + 6 \omega \ [9]$.
+\item[(c)]$\chi_\gamma(\lambda) = \omega^2$ for $\gamma \equiv 2, 2 + 3\omega, 2 + 6 \omega \ [9]$.
+\end{enumerate}
+}
+
+\begin{proof}
+$\gamma = -1 + 3(m+n\omega)$, et $\chi_\gamma(\lambda) = \omega^{2m}$.
+\begin{align*}
+\chi_\gamma(\lambda)=1 &\iff m\equiv0\ [3] \Rightarrow \gamma \equiv 8+3n\omega\ [9]\Rightarrow \gamma\equiv8,8+3\omega,8+6\omega\ [9]\\
+\chi_\gamma(\lambda)=\omega&\iff m\equiv2\ [3] \Rightarrow \gamma \equiv5+3n\omega\ [9]\Rightarrow \gamma\equiv5,5+3\omega,5+6\omega\ [9]\\
+\chi_\gamma(\lambda)=\omega^2& \iff m\equiv1\ [3] \Rightarrow \gamma \equiv2+3n\omega\ [9]\Rightarrow \gamma\equiv2,2+3\omega,2+6\omega\ [9]\\
+\end{align*}
+
+As $\chi_\gamma(\lambda) \in \{1,\omega,\omega^2\}$, these 9 cases are the only possibilities. Moreover these 9 cases are mutually exclusive, since $9$ doesn't divide  any difference. Thus the reciprocals are true.
+\begin{align*}
+\chi_\gamma(\lambda)=1 &\iff \gamma\equiv8,8+3\omega,8+6\omega\ [9]\\
+\chi_\gamma(\lambda)=\omega&\iff \gamma\equiv5,5+3\omega,5+6\omega\ [9]\\
+\chi_\gamma(\lambda)=\omega^2&\iff \gamma\equiv2,2+3\omega,2+6\omega\ [9]\\
+\end{align*}
+\end{proof}
+
+\paragraph{Ex. 9.7}
+
+{\it Find primary primes associate to $1-2\omega, -7-3\omega$, and $3-\omega$.
+}
+
+\begin{proof} 
+: \\
+\begin{enumerate}
+\item[$\bullet$] $(1-2\omega)\omega = 2 + 3 \omega \equiv 2 \pmod 3$, so $2+3\omega$ is primary, and associate to $1-2\omega$.
+$N(2+3\omega) = 7$ and 7 is a rational prime, thus $2 + 3\omega$ is a primary prime.
+\item[$\bullet$] $-7 - 3 \omega \equiv 2 \pmod 3$.
+
+$N(-7-3\omega) = 37$ and 37 is a rational prime, thus $-7 - 3\omega$ is a primary prime.
+\item[$\bullet$] $(3-\omega)\omega^2 = -4 - 3\omega \equiv 2 \pmod 3$, so $-4-3\omega$ is primary, and  associate to $3-\omega$.
+
+$N(-4 - 3 \omega) = 13$ and 13 is a rational prime, thus $-4 - 3 \omega$ is a primary prime.
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 9.8}
+
+{\it Factor the following numbers into primes in $D$ : $7,21,45,22$, and $143$.
+}
+
+\begin{proof}
+$7=N(2+3\omega)$, thus $ 7 = (2+3\omega)(2+3\omega^2) = (2+3\omega)(-1-3\omega)$.
+
+$21 = 3\times 7 = -\omega^2 \lambda^2 (2+3\omega)(-1-3\omega)$  since $3=-\omega^2(1-\omega)^2$.
+
+$45 = 3^2\times 5 = \omega \lambda^4 5$
+
+$22=2\times 11$ (2 and 11 are primes in $D$)
+
+$143 = 11\times 13 = 11(-4-3\omega)(-4-3\omega^2) = 11  (-4-3\omega)(-1+3\omega)$
+\end{proof}
+
+\paragraph{Ex. 9.9}
+{\it Show that $\overline{\alpha} \ne 0$, the residue class of $\alpha$, is a cube in the field $D/\pi D$ iff $\alpha^{(N\pi -1)/3} \equiv 1 \pmod \pi$. Conclude that there are $(N\pi - 1)/3$ cubes in $(D/\pi D)^*$.
+}
+
+\bigskip
+Solution 1 : 
+\begin{proof}
+Let $\pi$ a prime in $D$, $N\pi \ne 3$, and $\alpha \in D,\pi \nmid \alpha$.
+
+$\overline{\alpha}$ is a cube in $(D/\pi D)^*$
+
+$\iff x^3 \equiv \alpha \pmod \pi$ has a solution
+
+$\iff \chi_{\pi}(\alpha)= 1$ (by Prop. 9.3.3(a))
+
+$\iff \alpha^{\frac{N\pi-1}{3}} \equiv 1 \pmod \pi$
+
+$\iff \overline{\alpha}^{\frac{N\pi-1}{3}}  = \overline{1}$.
+
+The cubes in $(D/\pi D)^*$ are then the roots of the polynomial $f(x) = x^{\frac{N\pi-1}{3}} - \overline{1}$ in $D/\pi D$. 
+
+As $d = |D/\pi D| = N\pi$, $(N\pi - 1)/3 \mid q-1$, $f(x) \mid x^{q-1}-1 \mid x^q-x$. By Corollary 2 of Proposition 8.1.1, $f$ has $\deg(f) = \frac{N\pi-1}{3}$ roots.
+
+Conclusion  : there exist exactly $\frac{N\pi-1}{3}$ cubes in $(D/\pi D)^*$.
+\end{proof}
+
+Solution 2 :
+\begin{proof}
+Let $\varphi : (D/\pi D)^* \to (D/\pi D)^*$ the group homomorphism defined by $\varphi(x) = x^3$.
+
+Then $\mathrm{im}(\varphi)$ is the set of cubes in $(D/\pi D)^*$.
+
+The equation $x^3 = \overline{1}$ has three distinct solutions $\overline{1}, \overline{\omega}, \overline{\omega}^2$  in $D/ \pi D$ if $N\pi \ne 3$ (see the demonstration of Proposition 9.3.1).
+
+So $\ker(\varphi)= \{\overline{1}, \overline{\omega}, \overline{\omega}^2\}$ and $| \ker(\varphi)| = 3$. Thus $| \mathrm{im} \varphi | = | (D/\pi D)^* \ / |\ker(\varphi) | = (N\pi - 1)/3$. There exist exactly $\frac{N\pi-1}{3}$ cubes in $(D/\pi D)^*$.
+\end{proof}
+
+Note : if $N\pi = 3$, that is to say if $\pi$ is associate to $1-\omega$, $D/\pi D = \{\overline{0},\overline{1}, \overline{2}\}$. As $\overline{1}^3 = \overline{1}, \overline{2}^3 = \overline{2}$, all the elements of $(D/\pi D)^*$ are cubes.
+
+\paragraph{Ex. 9.10}
+
+{\it What is the factorisation of $x^{24}-1$ in $D/5D$.
+}
+
+\begin{proof}
+$\vert (D/5D)^*\vert = N(5) - 1 = 24$, thus $x^{24} - 1 = \prod\limits_{\alpha \in (D/ 5 D)^*} (x - \alpha)$.
+
+( $\alpha = a + b\, \overline{\omega},\  0 \leq a <5, 0 \leq b <5$).
+\end{proof}
+
+\paragraph{Ex. 9.11}
+
+{\it How many cubes are there in $D/5D$ ?
+}
+
+\begin{proof}
+By Exercise 9.9, there exist $(N(5) - 1)/3 = 8$ cubes in $D/5D$.
+\end{proof}
+
+\paragraph{Ex. 9.12}
+
+{\it Show that $\omega \lambda$ has order 8 in $D/5D$ and that $\omega^2 \lambda$ has order 24. [Hint : Show first that $(\omega \lambda)^2$ has order 4.]
+}
+
+\begin{proof}
+$\alpha = (\omega \lambda)^2 = \omega^2 (1-\omega)^2 = \omega^2(1 + \omega^2-2 \omega) = \-3\omega^3= -3$.
+
+$\alpha^2 =9 \equiv -1\pmod 5, \alpha^4 \equiv 1 \pmod 5$, thus $\alpha= (\omega \lambda)^2$ is of order 4 in $D/5D$, and $\omega \lambda$ of order 8.
+
+Let $\beta = \omega^2 \lambda$. $\vert (D/5 D)^* \vert = 24$, thus  $\overline{\beta}^{24} = 1$.
+
+To verify that $\overline{\beta}$ has order 24, it is sufficient to verify $\overline{\beta}^{8}\neq 1,\overline{\beta}^{12}\neq 1$ :
+
+$\beta^8 = \omega ^{16} \lambda^8 = \omega \lambda^8 = (\omega \lambda)^8 \omega^2 \equiv  \omega^2 \not \equiv 1 \pmod 5$.
+
+$\beta^{12} = (\omega^2 \lambda)^{12} = \lambda^{12} = (\omega \lambda)^{12} \equiv  (\omega \lambda)^{4}  \equiv -1 \pmod 5$ (since $(\omega \lambda)$ has order 8 in $D/5D$).
+
+
+Conclusion : $\omega \lambda$ has order 8, $\omega \lambda^2$ has order 24.
+\end{proof}
+
+
 \end{document}
