@@ -1896,5 +1896,104 @@ $\beta^{12} = (\omega^2 \lambda)^{12} = \lambda^{12} = (\omega \lambda)^{12} \eq
 Conclusion : $\omega \lambda$ has order 8, $\omega \lambda^2$ has order 24.
 \end{proof}
 
+\paragraph{Ex. 9.13}
+
+{\it Show that $\pi$ is a cube in $D/5D$ iff $\pi \equiv 1,2,3,4,1+2\omega, 2 + 4\omega, 3 + \omega$, or $4+3\omega \pmod 5$.
+}
+
+\begin{proof}
+Let $\pi \in D, \overline{\pi} \neq 0$. Then $\overline{\pi} $ is a cube in $D/5D$ iff $\overline{\pi}^{(q^2-1)/3} = 1$, with $q = 5$, namely $\overline{\pi}^8 = 1$ (Prop. 7.1.2, where $3 \mid q^2-1 = 24 = |(D/5D)^*| $).
+
+By Exercise 9.12, the class of $\gamma = \omega \lambda$ has order 8, thus the 8 elements $\overline{\gamma}^k, 0 \leq k \leq 7$ are distinct roots of the polynomial $x^8-1$, which has at most 8 roots. Therefore  the subgroup of cubes in $(D/5D)^*$ is
+$$\{1 ,\overline{\gamma}, \overline{\gamma}^2,\ldots, \overline{\gamma}^7\}.$$
+$\gamma=\omega(1-\omega) = \omega+1+\omega = 1 + 2\omega$, so
+\begin{align*}
+\gamma^0 &= 1\\
+\gamma^1 & = 1 + 2\omega\\
+\gamma^2 &\equiv -3 \equiv 2\ [5]\qquad (\mathrm{Ex}.\ 9.12)\\
+\gamma^3 &= -3 - 6\omega \equiv 2 + 4 \omega \ [5]\\
+\gamma^4&\equiv -1 \equiv 4\ [5]\\
+\gamma^5 &\equiv -1 - 2 \omega \equiv 4 + 3\omega\ [5]\\
+\gamma^6 &\equiv 3 \ [5]\\
+\gamma^7 &\equiv 3+6\omega \equiv 3 + \omega \ [5]
+\end{align*}
+Conclusion : If $\pi \not \equiv 0 \pmod 5$, $\pi \equiv \alpha^3 \pmod 5,\alpha \in D$ iff 
+
+$$\pi \equiv 1,2,3,4,1+2\omega,2+4\omega,3+\omega,4+3\omega\ [5].$$ 
+\end{proof}
+
+\paragraph{Ex. 9.14}
+
+{\it For which primes $\pi \in D$ is $x^3 \equiv 5 \pmod \pi$ solvable ?
+}
+
+\begin{proof}
+If $\pi$ is a primary prime, and not an associate of 5, the Law of Cubic Reciprocity gives
+\begin{align*}
+5\equiv x^3 \ [\pi], x \in D &\iff \chi_\pi(5)=1\\
+&\iff \chi_5(\pi)=1\\
+&\iff  \pi \ \mathrm{ is\ a\ cube\ in\  } D/5D\\
+&\iff \pi \equiv1,2,3,4,1+\omega,2+4\omega,3+\omega,4+3\omega \ [5]
+\end{align*}
+(see Ex. 9.13)
+
+\bigskip
+
+Conclusion : the equation $5\equiv x^3 \ [\pi], x \in D $ is solvable iff the primary prime associate to $\pi$ is congruent modulo 5 to $1,2,3,4,1+2\omega,2+4\omega,3+\omega,4+3\omega$.
+
+Examples : 
+
+$\bullet$ $q=23$ is a primary prime congruent to 3 modulo 5, thus the equation $x^3 \equiv 5\pmod{23}$ has a solution $x  \in D$ ($x = 19)$.
+
+$\bullet$ $-4 - 3 \omega$ is the primary prime associate to the prime $3- \omega$, and $-4 - 3 \omega \equiv 1 + 2 \omega \pmod 5$, thus the equation $x^3 \equiv 5 \pmod {3-\omega}$ has a solution $a + b \omega \in \Z[\omega]$.
+
+Indeed , $7^3 \equiv 5^3 \equiv 11^3 \equiv 5 \pmod {13}$, and $3 - \omega \mid 13$, so $7^3 \equiv 5^3 \equiv 11^3 \equiv 5 \pmod{ 3 - \omega}$.
+\end{proof}
+
+\paragraph{Ex. 9.15}
+
+{\it Suppose that $p \equiv 1 \pmod 3$ and that $p = \pi \overline{\pi}$, where $\pi$ is a primary prime in $D$. Show that $x^3 \equiv a \pmod p$ is solvable in $\Z$ iff $\chi_{\pi}(a) = 1$ . We assume that $a \in \Z$.
+}
+
+\begin{proof}
+As $\pi \mid p$, if $ a \equiv x^3 \pmod p, x \in \Z$, then $ a \equiv x^3 \pmod \pi$, thus $\chi_{\pi}(a) = 1$.
+
+Reciprocally, suppose that $\chi_{\pi}(a) = 1$. Then the equation $a \equiv y^3 \pmod \pi$ has a solution $y = u + v \omega, \ u,v \in \Z$. Moreover, $\overline{y}$ has a representant $x \in \Z$ modulo $\pi$ :
+$$y\equiv  x \pmod \pi, x \in \Z.$$
+
+So $a \equiv x^3$ has a solution $x \in \Z$.
+
+Thus $\pi \mid a-x^3, N(\pi) = p \mid (a-x^3)^2$, therefore $p \mid a-x^3$ and so $a \equiv x^3 \pmod p$.
+
+Conclusion ; if $p\equiv 1 \pmod 3$ , $p = \pi \overline{\pi}$, where $\pi$ is is a primary prime  and $a \in \Z$,
+$$\exists x \in \Z, \ a \equiv x^3 \pmod p \iff \chi_{\pi}(a) = 1.$$
+In other words, $x^3 \equiv a \pmod \pi$ is solvable in $D$ iff it is solvable in $\Z$.
+\end{proof}
+
+\paragraph{Ex. 9.16}
+
+{\it Is $x^3 \equiv 2 - 3\omega \pmod {11}$ solvable ? Since $D/11D$ has 121 elements this is hard to resolve by straightforward checking. Fill in the details of the following proof that it is not solvable. $\chi_{\pi}(2 - 3 \omega) = \chi_{2-3\omega}(11)$ and so we shall have a solution iff $x^3 \equiv 11 \pmod {2-3\omega}$ is solvable. This congruence is solvable iff $x^3 = 11\pmod 7$ is solvable in $\Z$. However, $x^3 \equiv a \pmod 7$ is solvable in $\Z$ iff $a \equiv 1$ or $6 \pmod 7$.
+}
+
+\bigskip
+Warning : false sentence, since 
+$$N(2 - 3 \omega) = (2-3\omega)(2 - 3 \omega^2) = 4 + 9 -6(\omega+\omega^2) = 4 + 9 + 6 = 1\ (\mathrm{and}\ \mathrm{not}\ 7!).$$
+\begin{proof}
+As $19$ is a rational prime, and $\pi= 2 - 3\omega$ and $11$  are primary primes, by Exercise 9.15,
+\begin{align*}
+\exists x \in D,\ 2-3\omega \equiv x^3\ [11]&\iff \chi_{11}(2-3\omega) = 1\\
+&\iff \chi_{2-3\omega}(11)=1\\
+&\iff \exists x \in \mathbb{Z},\  x^3 \equiv 11\  [19]
+\end{align*}
+Moreover 
+$$\exists x \in \mathbb{Z},\  x^3 \equiv 11\  [19] \iff 11^6 \equiv 1 \pmod {19},$$
+which is true : $11^6 = 121^3 = (19 \times 6 + 7)^3 \equiv 49 \times 7 \equiv 11 \times 7 \equiv 77 \equiv 1 \ [19]$.
+
+Conclusion : there exists $x \in D$ such that $2-3\omega  \equiv x^3 \pmod {11}$.
+
+We a little programming, we find a solution $x = 1 + 8\omega$ (and its associates $\omega^2 x =  7 - \omega, \omega x = -8- 7\omega \equiv 3 + 4 \omega \pmod{11} $) :
+$$x^3 = (1+8\omega)^3 = 321 - 168 \omega \equiv 2 - 3 \omega \pmod {11}.$$
+\end{proof}
+
 
 \end{document}
