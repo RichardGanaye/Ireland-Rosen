@@ -1996,4 +1996,424 @@ $$x^3 = (1+8\omega)^3 = 321 - 168 \omega \equiv 2 - 3 \omega \pmod {11}.$$
 \end{proof}
 
 
+\paragraph{Ex. 9.17}
+
+{\it An element $\gamma \in D$ is called primary if $\gamma \equiv2 \pmod 3$. If $\gamma$ and $\rho$ are primary, show that $-\gamma \rho$ is primary. If $\gamma$ is primary, show that $\gamma = \pm \gamma_1\gamma_2\ldots \gamma_t$, where the $\gamma_i$ are (not necessarily distinct) primary primes.
+}
+
+\begin{proof}
+If $\gamma \equiv 2, \rho \equiv 2 \pmod 3$, then $-\gamma \rho \equiv -2 \times 2 \equiv 2 \pmod 3$, so $-\gamma \rho$ is primary.
+
+\bigskip
+
+By Ex. 9.2, $\gamma$ can be  written 
+$$\gamma = (-1)^a \omega^b \lambda^c \pi_1^{a_1}\cdots \pi_t^{a_t},$$
+where $\pi_i \equiv 2 \pmod 3, a \in \{0,1\}, b \in \{0,1,2\}$.
+
+As $\pi_i \equiv -1 \pmod 3$, and $\gamma \equiv -1 \pmod 3$, we obtain $\omega^b \lambda^c \equiv \pm 1 \pmod 3$. We prove that $b = c = 0$.
+
+$\lambda^2 = (1-\omega)^2 = -3\omega \equiv 0 \pmod 3$. If $c \geq 2$, we woulfd obtain $\gamma \equiv 0 \pmod 3$, in contradiction with the hypothesis, thus $c = 0$ or $c = 1$.
+
+If $c=1$, $\omega^b\lambda^c \in \{1-\omega, \omega(1-\omega) = 1+2\omega, \omega^2(1-\omega) = - 2 - \omega$. Since $1-\omega \not \equiv \pm 1, 1+2\omega \not \equiv \pm 1, - 2 - \omega \not \equiv \pm 1 \pmod 3$, this is impossible, so $c=0$.
+$\omega^b \in \{1,\omega, -1-\omega$. Since $\omega \not \equiv \pm1 \pmod 3$, and $-1 - \omega \not \equiv \pm 1 \pmod 3$, then $\omega^b = 1, 0 \leq b \leq 2$, thus $b=0$.
+
+Finally, $\gamma = (-1)^a \pi_1^{a_1}\cdots \pi_t^{a_t}$.
+
+Conclusion : every primary $\gamma \in D$ is under the form
+$$\gamma = \pm \gamma_1\gamma_2\cdots \gamma_t,$$
+where the $\gamma_i$ are primary primes.
+\end{proof}
+
+\paragraph{Ex. 9.18}
+
+{\it (continuation) If $\gamma = \pm \gamma_1 \gamma_2\cdots \gamma_t$ is a primary decomposition of the primary element $\gamma$, define $\chi_{\gamma}(\alpha) = \chi_{\gamma_1}(\alpha)\chi_{\gamma_2}(\alpha)\cdots\chi_{\gamma_t}(\alpha)$. Prove that $\chi_{\gamma}(\alpha) = \chi_{\gamma}(\beta)$ if $\alpha \equiv \beta \pmod \gamma$ and $\chi_{\gamma}(\alpha \beta) = \chi_\gamma(\alpha) \chi_\gamma(\beta)$. If $\rho$ is primary, show that $\chi_\rho(\alpha) \chi_\gamma(\alpha) = \chi_{-\rho \gamma}(\alpha)$.
+}
+
+\begin{proof}
+If $\alpha \equiv \beta\ [\gamma]$, then $\alpha \equiv \beta\pmod {\gamma_i}, 1 \leq i \leq t$, so $\chi_{\gamma_i}(\alpha) = \chi_{\gamma_i}(\beta)$, thus $\chi_\gamma(\alpha) = \chi_\gamma(\beta)$.
+
+By Proposition 9.3.3,
+\begin{align*}
+\chi_\gamma(\alpha \beta) &= \chi_{\gamma_1}(\alpha \beta)\chi_{\gamma_2}(\alpha \beta)\cdots\chi_{\gamma_t}(\alpha \beta)\\
+&= \chi_{\gamma_1}(\alpha)\chi_{\gamma_2}(\alpha)\cdots\chi_{\gamma_t}(\alpha)\chi_{\gamma_1}(\beta)\chi_{\gamma_2}(\beta)\cdots\chi_{\gamma_t}(\beta)\\
+&= \chi_\gamma(\alpha) \chi_{\gamma}(\beta)
+\end{align*}
+Finally if $\rho = \pm \rho_1\rho_2\cdots\rho_l$ is primary, then $-\rho \gamma = \pm \rho_1\rho_2\cdots\rho_l\gamma_1\gamma_2\cdots\gamma_t$ is primary by Ex. 9.17, therefore
+
+$$\chi_{-\rho \gamma}(\alpha) = (\chi_{\rho_1} \chi_{\rho_2}\cdots \chi_{\rho_l}\chi_{\gamma_1} \chi_{\gamma_2}\cdots \chi_{\gamma_t} )(\alpha)= \chi_\rho(\alpha)\chi_\gamma(\alpha).$$
+\end{proof}
+
+\paragraph{Ex. 9.19}
+
+{\it Suppose that $\gamma = A + B \omega$ is primary and that $A = 3M-1$ and $B = 3N$. Prove that $\chi_\gamma(\omega) = \omega^{M+N}$ and that $\chi_\gamma(\lambda) = \omega^{2M}$.
+}
+
+\begin{proof}
+We verify first that if $\gamma = -\gamma_1 \gamma_2$, with
+$$
+\begin{array}{lll}
+  \gamma = A+B\omega, & A=3M-1,  & B=3N,  \\
+   \gamma_1 = A_1+B_1\omega,& A_1= 3M_1-1,  &  B_1=3N_1, \\
+  \gamma_2 = A_2+B_2\omega,&  A_2= 3M_2-1, &  B_2=3N_2, 
+\end{array}
+$$
+then $M \equiv M_1+M_2\pmod 3,N \equiv N_1+N_2 \pmod 3$.
+$$-\gamma_1 \gamma_2 = -A_1A_2 + B_1 B_2  + (- A_1B_2-A_2B_1+B_1B_2) \omega=A+B\omega,$$
+therefore
+$$3M-1 = A =-A_1A_2 + B_1 B_2 \equiv 3(M_1+M_2) - 1\pmod 9,$$
+thus $M\equiv M_1+M_2\pmod 3.$
+$$3N = B = -A_1B_2-A_2B_1+B_1B_2 \equiv 3 (N_1+N_2)\pmod 9,$$ 
+thus $N \equiv N_1+N_2 \pmod 3.$
+
+By induction, if $\gamma = \pm \gamma_1 \gamma_2\cdots \gamma_t = (-1)^{t-1} \gamma_1 \gamma_2\cdots \gamma_t$, where $\gamma_i = A_i+B_i\omega,A_i= 3M_i-1,B_i=3N_i$, then
+$$M \equiv M_1+\cdots+M_t\pmod 3, N \equiv N_1+\cdots + N_t \pmod 3.$$
+
+By Exercise 9.3,
+\begin{align*}
+\chi_\gamma(\omega) &= \chi_{\gamma_1}(\omega)\cdots\chi_{\gamma_t}(\omega)\\
+&=\omega^{M_1+N_1}\cdots \omega^{M_t+N_t}\\
+&=\omega^{(M_1+\cdots+M_t)+(N_1+\cdots+N_t)}\\
+&=\omega^{M+N}
+\end{align*}
+
+and by Eisenstein's result,
+\begin{align*}
+\chi_\gamma(\lambda) &= \chi_{\gamma_1}(\lambda)\cdots\chi_{\gamma_t}(\lambda)\\
+&=\omega^{2M_1}\cdots \omega^{2M_t}\\
+&=\omega^{2(M_1+\cdots+M_t)}\\
+&=\omega^{2M}
+\end{align*}
+
+Conclusion : if $\gamma = 3M-1+3N\omega$, then
+
+$$\chi_\gamma(\omega) = \omega^{M+N}, \chi_\gamma(\lambda)=\omega^{2M}.$$
+\end{proof}
+
+\paragraph{Ex. 9.20}
+
+{\it If $\gamma$ and $\rho$ are primary, show that $\chi_\gamma(\rho) = \chi_\rho(\gamma)$.
+}
+
+\begin{proof}
+
+\end{proof}
+$\rho, \gamma$ are written
+\begin{align*}
+\rho&=\pm\rho_1\rho_2\cdots\rho_l,\\
+\gamma &= \pm \gamma_1 \gamma_2\cdots \gamma_m, 
+\end{align*}
+ where $\rho_i,\gamma_i$ are primary primes.
+By the law of Cubic Reciprocity, we obtain
+\begin{align*}
+\chi_\gamma(\rho) &= \prod_{j=1}^m \chi_{\gamma_j}(\rho)\\
+& = \prod_{j=1}^m\prod_{i=1}^l \chi_{\gamma_j}(\rho_{i})\\
+& = \prod_{i=1}^l\prod_{j=1}^m \chi_{\gamma_j}(\rho_{i})\\
+& = \prod_{i=1}^l\prod_{j=1}^m \chi_{\rho_i}(\gamma_j)\\
+&=\prod_{i=1}^l \chi_{\rho_i}(\gamma)\\
+&=\chi_{\rho}( \gamma)
+\end{align*}
+
+\paragraph{Ex. 9.21}
+
+{\it If $\gamma$ is primary, show that there are infinitely many primary primes $\pi$ such that $x^3 \equiv \gamma \pmod \pi$ is not solvable. Show also that there are infinitely many primary primes $\pi$ such that $x^3 \equiv \omega \pmod \pi$ is not solvable and the same for $x^3 \equiv \lambda \pmod \pi$. (Hint: Imitate the proof of Theorem 3 of Chapter 5.)
+}
+
+\begin{proof}
+\begin{enumerate}
+\item[a)] As some primary elements of $D$ may be cubes, by example $53 + 36 \omega = (-1 + 3 \omega)^3$, we must of course suppose that $\gamma$ is not the cube of some element of $D$ (in the contrary case $x^3 \equiv \gamma \pmod \pi $ is solvable for all prime $\pi$).
+
+Note first that for all prime $\pi$ in $D$, there exists $\sigma \in D$ such that $\chi_\pi(\sigma) = \omega$. Indeed, there exist $(N\pi - 1)/3$ cubes in $(D/\pi D)^*$, which has $N\pi - 1$ elements, so there exists an element $\overline{\tau} \in (D/\pi D)^*$ which is not a cube, therefore there exists $\tau \in D$ such that $\chi_\pi(\tau) \neq 1$. If $\chi_\pi(\tau) = \omega$, we put $\sigma = \tau$ and if $\chi_\pi(\tau) = \omega^2$, we put $\sigma = \tau^2$. In the two cases, $\chi_\pi(\sigma) = \omega$.
+
+\bigskip
+
+Let $\gamma \in D$, where $\gamma$ is primary. Then $\gamma = \pm \gamma_2^{n_1}\gamma_1^{n_2}\cdots\gamma_p^{n_p}$, where the $\gamma_i$ are distinct primary primes. 
+Write $n_i = 3q_i + r_i, \ r_i \in \{0,1,2\}$. Then grouping in $\gamma'$ the $r_i \ne 0$, we can write $\gamma = \delta^3 \gamma', \gamma' = \gamma_1^{r_1} \gamma_2^{r_2}\cdots \gamma_l^{r_l}, r_i \in \{1,2\}, \delta \in D$ ($-1$ is a cube). Since by hypothesis $\gamma$ is not a cube, $l\geq 1$. Moreover the equation $x^3 \equiv \gamma \pmod \pi$ is solvable iff $x^3 \equiv \gamma' \pmod \pi$ is solvable. We may then suppose $$\gamma = \gamma_1^{r_1} \gamma_2^{r_2}\cdots \gamma_l^{r_l}, 1\leq r_i \leq 2,$$ without cubic factors.
+
+Note that the $\gamma_i$ are not associate to $\lambda = 1-\omega$ (see Ex. 9.17).
+
+Let $A = \{\lambda_1,\lambda_2,\ldots, \lambda_k\}$  a set (possibly empty) of distinct primary primes $\lambda_i$ (therefore  they are not associate), and not associate neither to $\gamma_i, 1 \leq i \leq l$, nor $\lambda = 1 - \omega$.
+
+We will show that we can find a primary prime $\lambda_{k+1}$ distinct of the $\lambda_i$ with the same properties and such that the equation $x^3 \equiv \lambda \pmod {\lambda_{k+1}}$ is not solvable. This proves the existence of infinitely many primes $\pi$ such that the equation $x^3 \equiv \lambda \pmod \pi$ is not solvable.
+
+With the initial note, let $\sigma \in D$ such that $\chi_{\gamma_l}(\sigma) = \omega$. As $D$ is a principal ideal domain, the Chinese Remainder Theorem is valid. Since $3 = \lambda \overline{\lambda}$ is relatively prime to $\gamma_i, \lambda_i$, there exists $\beta \in D$ such that
+\begin{align*}
+\beta &\equiv 2 \ [3]\\
+\beta &\equiv 1 \ [\lambda_i] \hspace{1cm} (1\leq i\leq k)\\
+\beta &\equiv 1 \ [\gamma_i] \hspace{1cm} (1 \leq i \leq l-1)\\
+\beta &\equiv  \sigma \ [\gamma_l]\\
+\end{align*}
+The first equation show that $\beta$ is primary, so $\beta= (-1)^{m-1} \beta_1\ldots \beta_m$, where the $\beta_i$ are primary primes.
+
+By Exercise 9.20,
+$$\chi_\beta(\gamma) = \chi_\beta(\gamma_1)^{r_1}\cdots\chi_\beta(\gamma_l)^{r_l} = \chi_{\gamma_1}(\beta)^{r_1}\cdots\chi_{\gamma_l}(\beta)^{r_l}.$$
+As $\chi_\beta(\gamma) = \chi_{\gamma_i}(1) = 1 \ (1\leq i \leq l-1)$, and $\chi_{\gamma_l}(\beta) = \chi_{\gamma_l}(\sigma) =\omega$, we obtain $\chi_\beta(\gamma) = \omega^{r_l} \neq 1$, since $r_l =$ or $r_l = 2$.
+
+By Exercise 9.18, $\chi_\rho(\alpha) \chi_\gamma(\alpha) = \chi_{-\rho \gamma}(\alpha)$, with primary $\rho, \gamma$, so by induction, as $\beta= (-1)^{m-1} \beta_1\cdots\beta_m$,
+$$\chi_\beta(\gamma) = \chi_{\beta_1}(\gamma)\cdots\chi_{\beta_m}(\gamma) \neq 1.$$
+Thus there exists a subscript $j$ such that $\chi_{\beta_j}(\gamma) \neq 1$.
+
+We can then take $\lambda_{k+1} = \beta_j$. Indeed, as $\beta \equiv 1 \ [\lambda_i]$ and $\beta \not \equiv 0\ [\gamma_i]$, $\beta_j$ is distinct of the $\lambda_i$ and $\gamma_i$, and $\beta_j$ is not associate to $\lambda$ since $\beta \equiv 2 \pmod 3$.
+
+As $\chi_{\lambda_{k+1}}(\gamma) \neq 1$, the equation $x^3 \equiv \gamma \ [\lambda _{k+1}]$ is not solvable, so $\lambda_{k+1}$ is convenient. 
+
+Conclusion : if $\gamma \in D$ is primary and is not a cube in $D$, there exist infinitely many primes $\pi \in D$ such that the equation $x^3 \equiv \lambda \ [\pi]$ is not solvable.
+\item[b)] We show that $x^3 \equiv \omega \ [\pi]$ has no solution for infinitely many primes $\pi$.
+
+To begin the induction, we display such a prime $\pi$, namely $\pi = 2+ 3 \omega$. Indeed, $N(\pi) = 4 + 9 - 6 = 7$, 7 is a rational prime, so $\pi$ is a primary prime in $D$, of the form $\pi = 3m-1 + 3n\omega$, with $n = m =1$, so $\chi_\pi(\omega) = \omega^{m+n} = \omega^2 \neq 1$ : the equation $x^3 \equiv \omega \ [\pi]$ is not solvable. Moreover $\pi$ is not associate to $\lambda = 1 - \omega$.
+
+Suppose now the existence of a set $A = \{\lambda_1,\lambda_2,\ldots,\lambda_l\}, l \geq 1$, of distinct primary primes $\lambda_i$, not associate to $\lambda$ and such the equation $x^3 \equiv \omega\ [\lambda_i]$ is not solvable. We will show that we can add a prime $\lambda_{l+1}$  to the set $A$ with the same properties.
+
+
+Let $$\beta = 3(-1)^{l-1} \lambda_1\cdots\lambda_l - 1.$$
+
+$(-1)^{l-1} \lambda_1\cdots\lambda_l$ is primary, so $(-1)^{l-1} \lambda_1\cdots\lambda_l = 3m-1 + 3n\omega,\ m,n \in \Z$.
+
+$\beta = 3(3m-1 + 3n\omega) - 1 = 3(3m-1) - 1 + 9n\omega = 3M-1 + 3 N \omega$, where $M = 3m-1, N = 3n$. By Exercise 9.19,
+$$\chi_\beta(\omega) = \omega^{M+N} = \omega^{3m-1+3n} = \omega^2 \neq 1.$$
+As $\beta = \pm \beta_1\cdots\beta_m$, where the $\beta_i$ are primary primes, $\chi_\beta(\omega) = \chi_{\beta_1}(\omega) \cdots \chi_{\beta_m}(\omega) \neq 1$, so there exists a subscript $i$ such that $\chi_{\beta_i}(\omega) \ne 1$. 
+
+Since $\beta = 3(-1)^{l-1} \lambda_1\cdots\lambda_l - 1$, $\beta_i$ is associate neither to $\lambda_i$ nor to $\lambda$. Moreover $\chi_{\beta_i}(\omega)\ne 1$, thus the equation $x^3 \equiv \omega\ [\beta_i]$ is not solvable : $\lambda_{l+1} = \beta_i$ is convenient.
+
+Conclusion : the equation $x^3 \equiv \omega \ [\pi]$ is not solvable for infinitely many primes $\pi$.
+
+\item[c)] We show that $x^3 \equiv \lambda \ [\pi]$ has no solution for infinitely many primes $\pi$.
+
+To begin the induction, we display such a prime $\pi$, namely $\pi = -4 + 3 \omega$. Indeed, $N(\pi) = 16 + 9 + 12 = 37$, 37 is a rational prime, so $\pi$ is a primary prime in $D$, of the form $\pi = 3m-1 + 3n\omega$, with $m=-1,n=1$, so $\chi_\pi(\lambda) = \omega^{2m} = \omega \neq 1$ : the equation $x^3 \equiv \lambda \ [\pi]$ is not solvable.
+
+Suppose now the existence of a set $A = \{\lambda_1,\lambda_2,\ldots,\lambda_l\}, l \geq 1$, of distinct primary primes $\lambda_i$, not associate to $\lambda$ and such the equation $x^3 \equiv \lambda\ [\lambda_i]$ is not solvable. We will show that we can add a prime $\lambda_{l+1}$  to the set $A$ with the same properties.
+
+Let $$\beta = 3(-1)^{l-1} \lambda_1\cdots\lambda_l - 1.$$
+$(-1)^{l-1} \lambda_1\cdots\lambda_l$ is primary, so $(-1)^{l-1} \lambda_1\cdots\lambda_l = 3m-1 + 3n\omega,\ m,n \in \Z$.
+
+$\beta = 3(3m-1 + 3n\omega) - 1 = 3(3m-1) - 1 + 9n\omega = 3M-1 + 3 N \omega$, where $M = 3m-1, N = 3n$. By Exercise 9.19,
+$$\chi_\beta(\lambda) = \omega^{2M} = \omega^{2(3m-1)} = \omega \neq 1.$$
+As $\beta = \pm \beta_1\cdots\beta_m$, where the $\beta_i$ are primary primes, $\chi_\beta(\omega) = \chi_{\beta_1}(\omega) \cdots \chi_{\beta_m}(\omega) \neq 1$, so there exists a subscript $i$ such that $\chi_{\beta_i}(\lambda) \ne 1$. 
+
+Since $\beta = 3(-1)^{l-1} \lambda_1\cdots\lambda_l - 1$, $\beta_i$ is associate neither to $\lambda_i$ nor to $\lambda$. Moreover $\chi_{\beta_i}(\lambda)\ne 1$, thus the equation $x^3 \equiv \lambda\ [\beta_i]$ is not solvable : $\lambda_{l+1} = \beta_i$ is convenient.
+
+Conclusion : the equation $x^3 \equiv \lambda \ [\pi]$ is not solvable for infinitely many primes $\pi$.
+
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 9.22}
+
+{\it (continuation) Show in general that if $\gamma \in D$ and $x^3 \equiv \gamma \pmod \pi$ is solvable for all but finitely finitely many primary primes $\pi$, then $\gamma$ is a cube in $D$.
+}
+
+\begin{proof}
+Let $\gamma \in D$ and suppose that $\gamma$ is not a cube in $D$. We will show that the equation $x^3 \equiv \gamma \ [\pi]$ is not solvable for infinitely primes $\pi \in D$.
+
+By Exercise 9.2, we can write
+$$\gamma = (-1)^u\omega^v \lambda^w \gamma_1^{n_1}\cdots\gamma_p^{n_p},$$
+where the $\gamma_i$ are distinct primary primes. Let $v = 3q + b, w = 3q' +c, n_i = 3q_i +r_i$, with the remainders $b,c,r_i$ in $\{0,1,2\}$. Grouping the factors with null remainders, we obtain $\gamma = \delta^3 \gamma', \gamma' = \omega^b \lambda^c\gamma_1^{r_1}\cdots \gamma_l^{r_l}$, with  $b,c,r_i$ in $\{1,2\}, \delta \in D, l \geq 0$ ($-1$ is a cube).
+
+Moreover the equation $x^3 \equiv \gamma \ [\pi]$ is solvable iff the equation $x^3 \equiv \gamma'\ [\pi]$ is solvable. So we may suppose that 
+$$\gamma =  \omega^b \lambda^c\gamma_1^{r_1}\cdots \gamma_l^{r_l},\qquad b\in \{1,2\}, c\in \{1,2\}, r_i \in \{1,2\},$$
+without cubic factors.
+
+\begin{enumerate}
+\item[$\bullet$] Case 1 : $l\geq 1$.
+
+Let $A = \{\lambda_1,\ldots,\lambda_k\}$ a possibly empty set of distinct primary primes $\lambda_i$, distinct of the $\gamma_i$ and such that the equation $x^3 \equiv \gamma \ [\lambda_i]$ is not solvable. We will show that we can add a prime $\lambda_{k+1}$ with the same properties.
+
+Suppose that $l\geq 1$. We have proved in Ex. 9.21 that there exists $\sigma \in D$ such that $\chi_{\gamma_l}(\sigma) = \omega$. Let $\beta \in D$ such that
+\begin{align*}
+\beta &\equiv -1\ [9]\\
+\beta & \equiv 1 \ [\lambda_i], 1 \leq i \leq k\\
+\beta & \equiv 1 \ [\gamma_i], 1 \leq i \leq l-1\\
+\beta & \equiv \sigma\  [\gamma_l]
+\end{align*}
+$\beta \equiv -1 \ [9]$, thus $\beta \equiv -1 \ [3]$ : $\beta$ is primary, of the form $\beta = 3M-1+3N\omega$.
+
+$\beta = 3M-1+3N\omega \equiv -1 \ [9]$, so $3M+3N\omega \equiv 0 \ [9]$, $M+N\omega \equiv 0 \ [3]$, thus $3\mid M,3\mid N$.
+
+By Exercise 9.18,
+\begin{align*}
+\chi_\beta(\omega) &= \omega^{M+N} = 1\\
+\chi_\beta(\lambda) &= \omega^{2M} = 1
+\end{align*}
+As $\beta$ and $\gamma_i$ are primary, $\chi_\beta(\gamma_i) = \chi_{\gamma_i}(\beta) = \chi_{\gamma_i}(1) = 1\ (1\leq i \leq l-1)$. 
+
+$\chi_\beta(\gamma) =\chi_\beta(\omega)^b \chi_\beta(\lambda)^c\chi_\beta(\gamma_1)^{r_1}\cdots\chi_\beta(\gamma_l)^{r_l} = \chi_{\beta}(\gamma_l)^{r_l} = \chi_{\gamma_l}(\beta)^{r_l} = \chi_{\gamma_l}(\sigma)^{r_l} = \omega^{r_l}  \neq 1$, since $r_l \in \{1,2\}$. 
+
+$\beta = \pm \beta_1\cdots \beta_m$, with $\beta_i$ primary primes, therefore
+$$\chi_\beta(\gamma) = (\chi_{\beta_1}\cdots \chi_{\beta_m})(\gamma) \neq 1. $$ Thus there exists a subscript $i$ such that $\chi_{\beta_i}(\gamma) \ne 1$, so $x^3 \equiv \gamma\ [\beta_i]$ is not solvable. Moreover $\beta \equiv 1 \ [\gamma_i]$, so $\beta_i$ is not associate to any $\gamma_j$. Similarly, $\beta_i$ is not associate to any $\gamma_j$. $\lambda_{k+1} = \beta_i$ is convenient.
+
+So there exist infinitely many $\pi$ such that $x^3 \equiv \gamma \ [\pi]$ is not solvable.
+
+
+\item[$\bullet$] Case 2 : $l = 0$, so $\gamma = \omega^b\lambda^c,\ 1\leq b \leq 2, 1 \leq c \leq 2$.
+
+$\pi_0 = 2 - 3 \omega$ is a primary prime ($N(\pi_0) = 19$).
+
+Let $A = \{\lambda_1,\ldots,\lambda_k\}$ a possibly empty set of distinct primary primes $\lambda_i \neq \pi_0$ such that the equation $x^3 \equiv \gamma \ [\lambda_i]$ is not solvable. We will show that we can add a prime $\lambda_{k+1}$ with the same properties.
+
+Let $\beta = 9 (-1)^{k-1} \lambda_1\cdots \lambda_k + 2-3\omega$.
+
+$\beta\equiv 2 \ [3]$ : $\beta$ is primary.
+
+Moreover $(-1)^{k-1} \lambda_1\cdots \lambda_k $ is primary, of the form 
+
+$$(-1)^{k-1} \lambda_1\cdots \lambda_k  = 3m-1+3n\omega, m \in \mathbb{Z},n\in \mathbb{Z}.$$
+
+\begin{align*}
+\beta&=9(3m-1+3n\omega)+2-3\omega\\
+&=27m-7+(27n-3)\omega\\
+&=3(9m-2)-1+3(9n-1)\omega\\
+&=3M-1+3N\omega
+\end{align*}
+
+where $M=9m-2,N=9n-1$
+
+\begin{align*}
+\chi_\beta(\omega) &= \omega^{M+N} = \omega^{9m-2+9n-1}=1\\
+\chi_\beta(\lambda) &=\omega^{2M} = \omega^{2(9m-2)}=\omega^2\neq 1
+\end{align*}
+
+$\beta = \pm\beta_1\cdots\beta_m$, where the $\beta_i$ are primary primes.
+
+$\chi_\beta(\gamma) = \chi_\beta(\omega)^b \chi_\beta(\lambda)^c = \omega^{2c} \neq 1$ since $c = 1$ or $c = 2$.
+$$\chi_\beta(\gamma) = (\chi_{\beta_1}\cdots \chi_{\beta_m})(\gamma) \neq 1. $$ Thus there exists a subscript $i$ such that $\chi_{\beta_i}(\gamma) \ne 1$, so $x^3 \equiv \gamma\ [\beta_i]$ is not solvable. 
+
+As $\beta_i \mid \beta = 9 (-1)^{k-1} \lambda_1\cdots \lambda_k + 2-3\omega$, if $\beta_i = \lambda_j$ for some subscript $j$, $\lambda_j \mid \pi_0 = 2 - 3\omega$, so $\lambda_j = \pi_0$, which is a contradiction, thus $\beta_i \not \in A$. Similarly, if  $\beta_i = \pi_0 = 2 - 3\omega$, then $\pi_0 \mid 9 \lambda_1\cdots\lambda_k$, and $\pi_0$ is relatively prime to $\lambda$, so $\pi_0 = \lambda_j$ for some subscript $j$ : this is a contradiction, thus $\beta_i \ne \pi_0$. $\lambda_{k+1} = \beta_i$ is convenient.
+
+So there exist infinitely many $\pi$ such that $x^3 \equiv \gamma \ [\pi]$ is not solvable.
+
+$\bullet$ Conclusion :
+
+if $\gamma$ is not a cube in $D$, there exist infinitely many primes $\pi$ such that $x^3 \equiv \gamma \ [\pi]$ is not sovable.
+
+By contraposition, if the equation $x^3 \equiv \gamma \ [\pi]$ is solvable for every prime $\pi$, at the exception perhaps of the primes in a finite set, then $\gamma$ is a cube in $D$.
+
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 9.23}
+
+{\it Suppose that $p\equiv 1 \pmod 3$. Use Exercise 5 to show that $x^3 \equiv 3 \pmod p$ is solvable in $\Z$ iff $p$ is of the form $4p = C^2 + 243 B^2$.
+}
+
+\begin{proof}
+Let $p$ a rational prime, $p \equiv 1 \pmod 3$, then $p = \pi \overline{\pi}$, where $\pi \in D$ is a primary prime : $\pi = a + b \omega = 3m-1 + 3 \omega$.
+\begin{enumerate}
+\item[$\bullet$] Suppose that there exists $x \in \Z$ such that $x^3 \equiv 3 \pmod p$. Then $x^3 \equiv 3 \pmod \pi$, so $\chi_\pi(3) = 1$. By Exercise 9.5, $\omega^{2n} = \chi_\pi(3) = 1$, thus $3 \mid n$, therefore $9 \mid b = 3n$, namely $b = 9B, B \in \Z$.
+
+$p = N\pi = a^2+b^2 -ab, 4p = (2a-b)^2+3b^3 = C^2 + 243 B^2$, where $C = 2a-b,B=b/9$.
+So there exists $C,B\in \Z$ such that $4p = C^2 + 243B^2$.
+\item[$\bullet$] Reciprocally, suppose that there exist $C,B \in \Z$ such that $4p = C^2 + 243 B^2$.
+
+As $4p = (2a-b)^2 + 3 b^2 = C^2 + 3(9B)^2$, from the unicity proved in Exercise 8.13, we obtain $b = \pm9B$, so $9 \mid b=3n, 3 \mid n$, and $\chi_\pi(3) = \omega^{2n} = 1$.
+
+Thus there exists $x \in D$ such that $x^3 \equiv 3 \pmod \pi$. As $p \equiv 1\pmod 3$, $D/\pi D = \{\overline{0},\ldots,\overline{p-1}\}$, so there exists $h \in \Z$ such that $x \equiv h \pmod \pi$, and $h^3 \equiv 3 \pmod \pi$.
+
+Therefore $p = N\pi \mid N(h^3 - 3)$, namely $p \mid (h^3-3)^2$, where $p$ is a rational prime, thus $p \mid h^3 -3$ : there exists $x \in \Z$ such that $x^3 \equiv 3 \pmod p$.
+
+Moreover $4p = C^2 + 243 B^2$ implies $p \equiv 1 \pmod 3$.
+
+$$(p\equiv 1 \ [3]\ \mathrm{and}\ \exists x \in \mathbb{Z}, x^3 \equiv 3 \ [p] )\iff \exists C \in \mathbb{Z}, \exists B \in \mathbb{Z}, 4p = C^2+243 B^2.$$
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 9.24}
+
+{\it Let $\pi = a +b \omega$ be a complex primary element of $D = \Z[\omega]$. Put $a = 3m-1,b=3n,p = N(\pi)$.
+\begin{enumerate}
+\item[(a)] $(p-1)/3 \equiv -2m + n \pmod 3$.
+\item[(b)] $(a^2-1)/3 \equiv m \pmod 3$.
+\item[(c)] $\chi_\pi(a) = \omega^m$.
+\item[(d)] $\chi_\pi(a+b) = \omega^{2n} \chi_\pi(1-\omega)$.
+\end{enumerate}
+}
+
+\begin{proof}
+As $N\pi = p$ is a rational prime, $\pi$ is a primary prime.
+\begin{enumerate}
+\item[(a)]$p-1 = (3m-1)^2+(3n)^2-3n(3m-1) - 1 \equiv -6m + 3n \pmod 9$, thus $$\frac{p-1}{3} \equiv -2m + n \pmod 3.$$
+\item[(b)]$a^2 - 1 = (3m-1)^2-1 \equiv -6m \pmod 9$, thus
+$$\frac{a^2-1}{3} \equiv m \pmod 3.$$
+\item[(c)]  As $\pi,a$ are primary, by Exercise 9.20, $\chi_\pi(a) = \chi_a(\pi)$.
+
+Since $\pi \equiv b\omega \pmod a$, $\chi_a(\pi) = \chi_a(b) \chi_a(\omega)$.
+
+By Exercise 9.3,  as $a = 3m-1$, $\chi_a(\omega) = \omega^{M+N}$, where $M = m, N = 0$, so $$\chi_a(\omega) = \omega^m.$$
+
+If $q$ is a rational prime, $q \equiv 2 \pmod 3$, and $q \wedge b = 1$, then $\chi_q(b) = 1$ (Prop. 9.3.4, Corollary).
+
+If $p$ is a rational prime, $p \equiv 1 \pmod 3$ and $p \wedge b = 1$, then $p = \pi \overline{\pi}$, with $\pi$ primary prime in $D$ (and also $\overline{\pi}$), and by definition of $\chi_p$, $\chi_p(b) = \chi_\pi(b) \chi_{\overline{\pi}}(b)$.
+
+As $\chi_{\overline{\pi}}(b) = \chi_{\overline{\pi}}(\overline{b}) = \overline{\chi_\pi(b)}$ (Prop. 9.3.4(b)), so $\chi_p(b) = 1$.
+$a$ has a decomposition in prime  factors of the form :
+$$a = \pm q_1q_2\cdots q_k p_1p_2\cdots p_l = \pm q_1q_2\cdots q_k \pi_1 \overline{\pi_1} \pi_2 \overline{\pi_2}\cdots \pi_l \overline{\pi_l},$$
+where $q_i \equiv -1 , p_j \equiv 1 \pmod 3$, and  the $\pi_k$ are primary primes (since all these elements are primary, the symbol $\pm$ is $(-1)^{k-1}$).
+Thus, by Ex. 9.21,
+$$\chi_a(b) = \chi_{q_1}(b)\cdots \chi_{q_k(b)} \chi_{\pi_1}(b)\chi_{\overline{\pi_1}}(b)\cdots \chi_{\pi_l}(b)\chi_{\overline{\pi_l}}(b) = 1.$$
+($a$ is relatively prime to $b$ in $\Z$ : if a rational prime $r$ divides $a,b$, then $r \mid \pi$ in $D$, thus $r \mid \overline{\pi}$, so $r^2 \mid \pi \overline{\pi} = p$ in $D$, thus $r^2 \mid p$ in $\Z$, which implies $r = p$.
+ But then $p \mid \pi, N(p) \mid N(\pi), p^2 \mid p$ : this is absurd.
+ As $a$ is relatively prime to $b$ in $\Z$, $ua + vb = 1,\ u,v \in \Z$, so $a,b$ are relatively prime in $D$, each prime factor $q_i,\pi_i,\overline{\pi_i}$ of $b$ is relatively prime to $a$.)
+ 
+ We conclude that $\chi_a(b) = 1,\chi_a(\omega) = \omega^m$, so $\chi_\pi(a) = \chi_a(\pi) = \chi_a(b) \chi_a(\omega) = \omega^m$.
+ $$\chi_\pi(a) = \omega^m.$$
+ \item[(d)] 
+ $$a+b = [(a+b) \omega] \omega^{-1},$$
+and 
+$$(a+b) \omega = (a+b\omega) +a\omega -a \equiv a(\omega-1)\pmod \pi,$$ thus
+$$a+b \equiv -a(1-\omega) \omega^{-1} \ [\pi],$$
+$$\chi_\pi (a+b) = \chi_\pi(1-\omega) \chi_\pi(a) \chi_\pi(\omega)^{-1},$$
+$\chi_\pi(a) = \omega^m$ by (c), and $\chi_\pi(\omega) = \omega^{m+n}$(Ex. 9.3), thus
+
+$$\chi_\pi(a+b) = \omega^{2n} \chi_\pi(1-\omega).$$
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 9.25}
+
+{\it Show that $\chi_{a+b}(\pi)$ may be computed as follows.
+\begin{enumerate}
+\item[(a)] $\chi_{a+b}(\pi) = \chi_{a+b}(1-\omega)$.
+\item[(b)] $\chi_{a+b}(\pi) = \omega^{2(m+n)}$.
+\end{enumerate}
+}
+
+\begin{proof}
+\begin{enumerate}
+\item[(a)] $\pi = a + b \omega$ and $a \equiv -b \pmod {a+b}$, thus $\pi \equiv -b(1-\omega) \pmod {a+b}$. So
+$$\chi_{a+b}(\pi) = \chi_{a+b}(b) \chi_{a+b}(1-\omega).$$
+As $a \wedge b = 1$, $(a+b) \wedge b = 1$ : as in Ex. 9.24, $\chi_{a+b}(b) = 1$. So
+$$\chi_{a+b}(\pi) =  \chi_{a+b}(1-\omega).$$
+\item[(b)] Since $\chi_{a+b}$ is a character of order 3,
+\begin{align*}
+\chi_{a+b}(1-\omega) &= (\chi_{a+b}((1-\omega)^2))^2\\
+&=(\chi_{a+b}(-3\omega))^2\\
+&=[\chi_{a+b}(3) \chi_{a+b}(\omega)]^2
+\end{align*}
+
+$\chi_{a+b}(3) = 1$ car $(a+b) \wedge 3 = (3(m+n)-1) \wedge 3 = 1$.
+
+$\chi_{a+b}(\omega) = \omega^{m+n}$ (Ex. 9.19).
+
+Conclusion : $$\chi_{a+b}(1-\omega) = \omega^{2(m+n)}.$$
+\end{enumerate}
+\end{proof}
+
+\paragraph{Ex. 9.26}
+
+{\it Combine the previous two exercises to conclude that $\chi_\pi(1-\omega) = \omega^{2m}$.
+}
+
+\begin{proof}
+$\pi$ and $a+b$ are primary elements of $D$, so
+$$\chi_\pi(a+b) = \chi_{a+b}(\pi).$$
+By Exercises 9.24 and 9.24,
+\begin{align*}
+\chi_\pi(a+b) &= \omega^{2n} \chi_\pi(1-\omega)\\
+\chi_{a+b}(\pi) &= \omega^{2(m+n)}
+\end{align*}
+Thus $\omega^{2n} \chi_\pi(1-\omega) = \omega^{2(m+n)}$.
+
+In conclusion,
+$$\chi_\pi(1-\omega) = \omega^{2m}.$$
+\end{proof}
+
+
 \end{document}
