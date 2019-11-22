@@ -1133,6 +1133,27 @@ From the first part of this proof, $\chi_{a+b}(1+i) = i^{(a+b-1)/4}$, so
  Conclusion : if $\pi = a+b i, a \wedge b = 1$ is a primary irreducible, then $$\chi_{\pi}(a) \chi_{\pi}(1+i) = i^{3(a+b-1)/4}$$
 \end{proof} 
 
+\paragraph{Ex. 9.36}
+
+{\it Remove the restriction $(a,b)=1$ in Exercise 9.34.
+}
+
+\begin{proof}
+Suppose that $q = a\wedge b >1$. Then $a = qa',b = qb', \ a',b' \in \Z$, so $\pi = q(a'+ib')$.
+
+As $\pi$ is irreducible, and as $q$ is not an unit, $u = a'+b'i$ is an unit, and so $\pi = uq$ is associate to $q$ : the rational integer $q$ is then a prime in $D$, so a rational prime $q \equiv 3 \pmod 4$.
+
+If $u = \pm i$, then $\pi = \pm q = a + bi$ is such that $b$ is odd, in contradiction with $\pi$ primary. Thus $u = \pm 1$, and $\pi = \varepsilon q, \varepsilon = \pm 1$. As $\pi$ is primary, $\varepsilon = -1$, so $\pi = -q$.
+
+Then $\chi_\pi(a) = \chi_{-q}(-q) = 0$, the result of Ex. 34 is false if $b=0$.
+
+Conclusion : if $\pi = a+bi$ is a primary irreducible, and $b\neq 0$, then 
+\begin{enumerate}
+\item[(a)] if $\pi \equiv 1 \ [4], \chi_\pi(a) = i^{(a-1)/2}$,
+\item[(b)] if $\pi \equiv 3+2i\ [4]$, $\chi_\pi(a) = -i^{(-a-1)/2}$.
+\end{enumerate}
+\end{proof}
+
 \paragraph{Ex. 9.37}
 
 {\it Combine Exercises 32, 33, 34, and 35 to show $\chi_\pi(1+i) = i^{(a-b-b^2-1)/4}$. Show that this result implies Exercise 26 of Chapter 5 ("the biquadratic character of 2").
