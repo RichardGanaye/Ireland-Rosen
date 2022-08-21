@@ -114,15 +114,16 @@ Consider a prime $p$ of the form $4t + 1$. Show that $a$ is a primitive root mod
 \begin{proof} 
 Solution 1.
 
-As. $p-1$ is even, $(-a)^{p-1} = a^{p-1} \equiv 1 \pmod p$.
+Suppose that $a$ is a primitive root modulo $p$.
+As $p-1$ is even, $(-a)^{p-1} = a^{p-1} \equiv 1 \pmod p$.
 
 If $(-a)^n \equiv 1 \pmod p$, with $n \in \N$, then $a^n \equiv (-1)^n \pmod p$. 
 
-If $n$ is odd, then $a^n \equiv -1 , a^{2n} \equiv 1 \pmod p$. As $a$ is a primitive root modulo $p$, $p-1 \mid 2n$, $2t \mid n$, so $n$ is even : this is a contradiction.
+Therefore $a^{2n} \equiv 1 \pmod p$. As $a$ is a primitive root modulo $p$, $p-1 \mid 2n$, $2t \mid n$, so $n$ is even.
 
-Consequently, $n$ is even, and $a^n \equiv 1 \pmod p$, so $p-1 \mid n$, so the least $n\in \N^*$ such that $a^n \equiv 1 \pmod p$ is $p-1$ : the order of $a$ modulo $p$ is $p-1$, $a$ is a primitive root modulo $p$.
+Hence $a^n \equiv 1 \pmod p$, and  $p-1 \mid n$. So the least $n\in \N^*$ such that $(-a)^n \equiv 1 \pmod p$ is $p-1$ : the order of $-a$ modulo $p$ is $p-1$, $-a$ is a primitive root modulo $p$.
 
-Reciprocally, if $-a$ is a primitive root modulo $p$, we apply the previous  result at $-a$ to to obtain that $-(-a) = a$ is a primitive root.
+Conversely, if $-a$ is a primitive root modulo $p$, we apply the previous  result at $-a$ to to obtain that $-(-a) = a$ is a primitive root.
 \bigskip
 
 Solution 2.
@@ -159,7 +160,7 @@ So $-a$ has order $(p-1)/2$ modulo $p$.
 
 \bigskip
 
-Reciprocally, suppose that $-a$ has order $(p-1)/2 = 2t+1$ modulo $p$. Let $2,p_1,\ldots p_k$ the prime factors of $p-1$, where $p_i$ are odd.
+Conversely, suppose that $-a$ has order $(p-1)/2 = 2t+1$ modulo $p$. Let $2,p_1,\ldots p_k$ the prime factors of $p-1$, where $p_i$ are odd.
 
 $a^{(p-1)/2} = a^{2t+1} = -(-a)^{2t+1} = -(-a)^{(p-1)/2} \equiv - 1$, so $a^{(p-1)/2} \not \equiv 1 \pmod 2$.
 
@@ -210,7 +211,7 @@ $$ F_n = 2^{2^n} + 1 \ \mathrm{is}\ \mathrm{prime}\ \iff 3^{(F_n-1)/2} = 3^{2^{2
 
 Solution 2 (without quadratic reciprocity, with the hint of  chapter 4).
 
-As above, if if we suppose that $3$ is not a primitive root modulo $p$, then $3^{2^{n-1}}  \equiv 1 \pmod p$, so  $n\geq 2$, and $(-3)^{(p-1)/2} = 3^{2^{n-1}}  \equiv 1 \pmod p$, so $-3$ is a square modulo $p$ : there exists $a \in \Z$ such that $-3 \equiv a^2 \pmod p$. 
+As above, if we suppose that $3$ is not a primitive root modulo $p$, then $3^{2^{n-1}}  \equiv 1 \pmod p$, so  $n\geq 2$, and $(-3)^{(p-1)/2} = 3^{2^{n-1}}  \equiv 1 \pmod p$, so $-3$ is a square modulo $p$ : there exists $a \in \Z$ such that $-3 \equiv a^2 \pmod p$. 
 
 As $2\wedge p = 1$, there exists $u \in \Z $ such that $2u \equiv -1+a \pmod p$ ($\overline{u}$ is similar to $\omega = \frac{-1 + i \sqrt{3}}{2} \in \C$). Then
 \begin{align*}
@@ -242,9 +243,9 @@ If $2^2 \equiv 1 \pmod p$, then $p \mid 3$, $p=3$ and $q = 1$ : $q$ is not a pri
 If $2^q  = 2^{(p-1)/2} \equiv 1 \pmod p$, then $2$ is a square modulo $p$ (prop. 4.2.1) : there exists $a \in \Z$ such that $2\equiv a^2 \pmod p$.
 
 
-From the complementary case of law of quadratic reciprocity (see next chapter, prop. 5.1.3),  $2$ is a square modulo $p$ iff 
+From the complementary case of the law of quadratic reciprocity (see next chapter, prop. 5.1.3),  $2$ is a square modulo $p$ iff 
 $$1 = \legendre{2}{p} = (-1)^{(p^2-1)/8}.$$
-Yet  $p\equiv 3 \pmod 8$, so $p^2 \equiv 1 \pmod {16}$, $\legendre{2}{p} = (-1)^{(p^2-1)/8} = -1$, so $2$ is not a square modulo $p$. This is a contradiction, so $2^q\not \equiv 1 \pmod p$ : $2$ is a primitive root modulo $p$.
+Yet  $p\equiv 3 \pmod 8$, so $p^2 \equiv 9 \pmod {16}$, $\legendre{2}{p} = (-1)^{(p^2-1)/8} = -1$, so $2$ is not a square modulo $p$. This is a contradiction, so $2^q\not \equiv 1 \pmod p$ : $2$ is a primitive root modulo $p$.
 \end{proof}
 
 \paragraph{Ex. 4.8}
@@ -348,7 +349,7 @@ Conclusion :
 
 \paragraph{Ex. 4.12}
 
-{\it Use the existence of a primitive root to give another proof of Wilson's theorem$(p - 1)! \equiv -1  \pmod p$.
+{\it Use the existence of a primitive root to give another proof of Wilson's theorem $(p - 1)! \equiv -1  \pmod p$.
 }
 
 \begin{proof} As the result is trivial if $p=2$, we suppose that $p$ is an odd prime. 
@@ -377,7 +378,7 @@ Suppose $G = \langle g \rangle$, with $\mathrm{Card}\, G = n$, so the order of $
 
 Let $x$ another generator of $G$, then $x= g^k$, and $g = x^l, \ k,l \in \Z$, so $g = g^{kl}, g^{kl-1} = e : n \mid kl-1$, then $kl - 1 = qn, q\in \Z$, so $n\wedge k = 1$.
 
-Reciprocally, if $u\wedge k = 1$, there exist $u,v \in \Z$ such that $un+vk=1$, so $g = g^{un+vk} = (g^n)^u(g^k)v = x^v \in \langle x \rangle$, so $G \subset \langle x \rangle$, $G = \langle x \rangle$ : $x$ is a generator of $G$.
+Conversely, if $u\wedge k = 1$, there exist $u,v \in \Z$ such that $un+vk=1$, so $g = g^{un+vk} = (g^n)^u(g^k)v = x^v \in \langle x \rangle$, so $G \subset \langle x \rangle$, $G = \langle x \rangle$ : $x$ is a generator of $G$.
 
 Conclusion : if $g$ is a generator of $G$, all the other generators are the elements $g^k$, where $k \wedge n  = 1$, $n = \vert G \vert$.
 \end{proof}
@@ -390,13 +391,13 @@ Conclusion : if $g$ is a generator of $G$, all the other generators are the elem
 \begin{proof}
 Suppose $\vert a \vert = m, \vert b \vert = n, m\wedge n = 1$.
 
-$\bullet$ If $(ab)^k = e$, then $a^k= b^{-k}$, so $a^{kn} = b^{-kn} = (b^n)^{-k} = e$, so $m\mid kn$, with $m\wedge n = 1$, so $m \wedge k$.
+$\bullet$ If $(ab)^k = e$, then $a^k= b^{-k}$, so $a^{kn} = b^{-kn} = (b^n)^{-k} = e$, so $m\mid kn$, with $m\wedge n = 1$, so $m \mid k$.
 
 Similarly, $ b^{km} =a^{-km} = (a^m)^{-k} = e$, so $n \mid km, n \wedge m = 1$ : $n \mid k$. 
 
 As $n \mid k, m \mid k, n \wedge m = 1, nm \mid k$.
 
-$\bullet$ Reciprocally, if $nm \mid k, nm = qnm, q\in \Z$, so $(ab)^k = a^k b^k = (a^m)^{qn} (b^n)^{qm} = e$.
+$\bullet$ Conversely, if $nm \mid k, k = qnm, q\in \Z$, so $(ab)^k = a^k b^k = (a^m)^{qn} (b^n)^{qm} = e$.
 $$\forall k \in \Z,\ (ab)^k = e \iff nm \mid k.$$
 So $\vert ab \vert = nm$.
 \end{proof}
@@ -416,7 +417,7 @@ $$\forall x \in K, x \in G \iff x^n=1.$$
 
 If $d \mid n$, the polynomial $x^d-1 \in K[x]$ has exactly $d$ roots in $K$ otherwise $x^n-1 = (x^d-1) g(x), g(x) \in K[x]$, and $\deg(g) = n-d$ has at most $n-d$ roots, so $x^n - 1$ would have less than $n$ roots in $K$. As $x_0^d = 1 \Rightarrow x_0^n = 1$, all these roots are in $G$ : $x^d - 1$ has $d$ roots in $G$.
 
-Let $\psi(d)$ the number of elements in $G$ of order $d$ ( $\psi(d) = 0$ if $d \nmid n$). Then $\sum_{c\mid d} \psi(c) = d$. Applying the Mšbius inversion theorem, $\psi(d) = \sum_{c\mid d} \mu(c) d/c=\Phi(d)$ (Prop. 2.2.5), in particular, $\psi(n) = \phi(n)>1$ if $n>2$. Since a group of order 2 is cyclic, we have shown in all cases the existence of an element of order $n$ in $G$, so $G$ is cyclic.
+Let $\psi(d)$ the number of elements in $G$ of order $d$ ( $\psi(d) = 0$ if $d \nmid n$). Then $\sum_{c\mid d} \psi(c) = d$. Applying the Mšbius inversion theorem, $\psi(d) = \sum_{c\mid d} \mu(c) d/c=\phi(d)$ (Prop. 2.2.5), in particular, $\psi(n) = \phi(n)\geq 1$. This proves the existence of an element of order $n$ in $G$, so $G$ is cyclic.
 
 (variation : $\psi(d) = 0$ if there exists no element of order $d$, and $\psi(d) = \phi(d)$ otherwise : see Ex.4.13. So $\psi(d) \leq \phi(d)$ for all $d\mid n$. As $\sum_{d\mid n} \psi(d) = \sum_{d\mid n} \phi(d) = n$, $\psi(d) = \phi(d)$ for all $d\mid n$. So there exists in $G$ an element of order $n$, and $G$ is cyclic.)
 \end{proof}
@@ -442,41 +443,41 @@ From exercise 4.14, we obtain by induction that $c =c_1\cdots c_k$ has order $ p
 }
 
 \begin{proof}
-Here we note $a$ the class of $a$ in $\Z/p\Z$.
+Here we note $a$ the class of $x$ in $\Z/p\Z$.
 
-Let $x \in \F_{19}$.
-$x^3 - 1 = 0 \iff x-1 = 0$ or $x^2+x+1=0$.
+Let $a \in \F_{19}$. Then
+$$a^3 - 1 = 0 \iff a-1 = 0 \text{ or }a^2+a+1=0.$$
 \begin{align*}
-x^2+x+1 = 0 &\iff (x + 10) - 99 = 0\\
-&\iff (x+10)^2 - 4 = 0\\
-&\iff (x+8)(x+12) = 0
+a^2+a+1 = 0 &\iff (a + 10) - 99 = 0\\
+&\iff (a+10)^2 - 4 = 0\\
+&\iff (a+8)(a+12) = 0
 \end{align*}
 So, for all $x\in \Z$,
 $$x^3 \equiv 1 \pmod {19} \iff x \equiv 1,7,11 \pmod {19}.$$
 
-Let $x \in \F_{17}$.
+Let $a \in \F_{17}$.
 \begin{align*}
-x^4 = 1 &\iff x^2 = 1 \ \mathrm{or}\ x^2 = -1 = 4^2\\
-&\iff x = \pm 1 \ \mathrm{or}\  x =\pm 4
+a^4 = 1 &\iff a^2 = 1 \ \mathrm{or}\ a^2 = -1 = 4^2\\
+&\iff a = \pm 1 \ \mathrm{or}\  a =\pm 4
 \end{align*}
 So, for all $x\in \Z$,
 $$x^4 \equiv 1 \pmod {17} \iff x\equiv -1,1,-4,4 \pmod {17}.$$
 
 Alternatively, we can take primitives roots modulo 19 and 17.
 
-$2$ is a primitive root modulo $19$, Let $x = 2^k \in \F_{19}$.
+$2$ is a primitive root modulo $19$, Let $a = 2^k \in \F_{19}$.
 \begin{align*}
-x^3 = 1 &\iff 2^{3k} = 1\\
+a^3 = 1 &\iff 2^{3k} = 1\\
 &\iff 18 \mid 3k\\
 &\iff 6 \mid k\\
-&\iff x = 1, 2^6 = 7, 2^{12} = 11
+&\iff a = 1, 2^6 = 7, 2^{12} = 11
 \end{align*}
-$3$ is a primitive root modulo 17. Let $x = 3^k \in \F_{17}$.
+$3$ is a primitive root modulo 17. Let $a = 3^k \in \F_{17}$.
 \begin{align*}
-x^4 = 1 &\iff 3^{4k} = 1\\
+a^4 = 1 &\iff 3^{4k} = 1\\
 &\iff 16 \mid 4 k\\
 &\iff 4 \mid k\\
-&\iff x = 1, 3^4 = -4, 3^8 = -1, 3^{12} = 4
+&\iff a = 1, 3^4 = -4, 3^8 = -1, 3^{12} = 4
 \end{align*}
 \end{proof}
 
@@ -580,7 +581,7 @@ So there exist exactly $(p-1)/d$ $d$th powers in $(\Z/p\Z)^*$.
 
 \bigskip
 
-From Prop. 4.2.1, as $d \mid p-1, d \wedge p-1$, for all $x \in \F_p^*$, 
+From Prop. 4.2.1, as $d \mid p-1, d \wedge (p-1)=d$, for all $x \in \F_p^*$, 
 
 $$x \in \mathrm{im}(f) \iff x^{(p-1)/d} = 1.$$
 
@@ -607,7 +608,7 @@ x^k = 1 &\iff g^{k \frac{p-1}{d}} = 1\\
 &\iff p-1 \mid k \frac{p-1}{d}\\
 &\iff d \mid k
 \end{align*}
-So the ordre of $\overline{g}^{(p-1)/d}$ is $d$.
+So the order of $\overline{g}^{(p-1)/d}$ is $d$.
 
 $\bullet$ If $\overline{a} = \overline{g}^{kd}$, then $\overline{a} = x^d$, where $x =\overline{g}^k$, so $\overline{a}$ is a $d$th power.
 
@@ -644,11 +645,11 @@ So $(1+a)^6 \equiv 1,  (1+a)^2 \not \equiv 1, (1+a)^3 \not \equiv 1 \pmod p$, so
 \begin{proof}
 If $x^2\equiv -1 \pmod p$, then  $\overline{x}$ has order 4 in  $\F_p^*$, hence from Lagrange's theorem, $4 \mid p-1$.
 
-Reciprocally, suppose $4 \mid p-1$, so $p = 4k+1, k \in \N^*$.  From proposition 4.2.1, as $2 \mid p-1$, $-1$ is a square modulo $p$ iff $(-1)^{(p-1)/2} \equiv 1 \pmod p$, which is true because $(-1) ^{(p-1)/2} =(-1)^{2k} = 1$.
+Conversely, suppose $4 \mid p-1$, so $p = 4k+1, k \in \N^*$.  From proposition 4.2.1, as $2 \mid p-1$, $-1$ is a square modulo $p$ iff $(-1)^{(p-1)/2} \equiv 1 \pmod p$, which is true because $(-1) ^{(p-1)/2} =(-1)^{2k} = 1$.
 
-If $x^4 \equiv -1 \pmod p$, then $\overline{x}^8 = 1 \in \F_p^*$, and $\overline{x}^4 \ne 1$, so $x$ has order $8$ in $\F_p^*$, so $8 \mid p-1$.
+If $x^4 \equiv -1 \pmod p$, then $\overline{x}^8 = 1 \in \F_p^*$, and $\overline{x}^4 \ne 1$, so $\overline{x}$ has order $8$ in $\F_p^*$, so $8 \mid p-1$.
 
-Reciprocally, if $p\equiv 1 \pmod 8$, $p = 8K+1, K\in \N^*$. From Prop.4.2.1, as $4 \mid p-1$, there exists $x \in \Z$ such that $-1 = x^4$ iff $(-1)^{(p-1)/4} \equiv 1 \pmod 8$, which is true because $(-1)^{(p-1)/4} = (-1)^{2K} = 1$.
+Conversely, if $p\equiv 1 \pmod 8$, $p = 8K+1, K\in \N^*$. From Prop.4.2.1, as $4 \mid p-1$, there exists $x \in \Z$ such that $-1 = x^4$ iff $(-1)^{(p-1)/4} \equiv 1 \pmod 8$, which is true because $(-1)^{(p-1)/4} = (-1)^{2K} = 1$.
 
 Conclusion : 
 $$\exists x \in \Z, \ x^4 \equiv -1 \pmod p \iff p \equiv 1 \pmod 8.$$
@@ -668,7 +669,7 @@ N &= \mathrm{Card} \{(\overline{x},\overline{y}) \in \F_p\times \F_p\ \vert\  \o
 &=\sum_{\overline{a}\overline{u}+\overline{b} \overline{v}=\overline{c}} \mathrm{Card} \{(\overline{x},\overline{y}) \in \F_p\times \F_p\ \vert\  \overline{x}^m = \overline{u} ,\overline{y}^n = \overline{v}\}\\
 &= \sum_{\overline{a}\overline{u}+\overline{b} \overline{v}=\overline{c}} \mathrm{Card}\{\overline{x} \in \F_p\ \vert \overline{x}^m = \overline{u}\} \times \mathrm{Card}\{\overline{y} \in \F_p\ \vert \overline{y}^n = \overline{v}\}.
 \end{align*}
-The same is true for $N'$, so it is suffisant to prove that
+The same is true for $N'$, so it is suffisiant to prove that
 $$\mathrm{Card}\{\overline{x} \in \F_p\ \vert\  \overline{x}^m  = \overline{u}\} = \mathrm{Card}\{\overline{x} \in \F_p\ \vert \ \overline{x}^{m'} = \overline{u}\},$$ 
 where $m' = m \wedge (p-1)$, and a similar equality for the equation $\overline{y}^n = \overline{v}$.
 
@@ -724,7 +725,7 @@ x^n \equiv a\pmod {2^e} &\iff (-1)^{ny} 5^{nz} \equiv (-1)^s 5^t \pmod {2^e}\\
 \end{align*}
 Then  $(-1)^{ny} \equiv (-1)^s \pmod4, ny\equiv s \pmod 2, (-1)^{ny} = (-1)^s$, so $5^{nz} \equiv 5^t \pmod{2^e}$.
 
-Reciprocally, if $ny \equiv s \pmod {2}$ and $5^{nz} \equiv 5^t \pmod{2^e}$, then $x^n\equiv a \pmod{2^e}$, so
+Conversely, if $ny \equiv s \pmod {2}$ and $5^{nz} \equiv 5^t \pmod{2^e}$, then $x^n\equiv a \pmod{2^e}$, so
 $$
 x^n\equiv a \pmod{2^e} \iff 
 \left\{
@@ -781,17 +782,18 @@ Then $a \equiv (-1)^s 5^t \equiv 5^t  \pmod {2^{e}}$, so $a\equiv 1 \pmod 4$.
  $$\exists x \in \Z,\ x^n\equiv a \pmod{2^e} \Rightarrow 
  \left\{
  \begin{array}{ccl}
-  a& \equiv   &1 \pmod{4}   \\
-  a^{\frac{2^{e-2}}{d}} & \equiv  &    1 \pmod {2^{e}}
+  a& \equiv   &1 \pmod{4},   \\
+  a^{\frac{2^{e-2}}{d}} & \equiv  &    1 \pmod {2^{e}}.
 \end{array}
 \right.
 $$
-Reciprocally, suppose that $\left\{
+Conversely, suppose that $\left\{
  \begin{array}{ccl}
-  a& \equiv   &1 \pmod{4}   \\
-  a^{\frac{2^{e-2}}{d}} & \equiv  &    1 \pmod {2^{e}}
+  a& \equiv   &1 \pmod{4},   \\
+  a^{\frac{2^{e-2}}{d}} & \equiv  &    1 \pmod {2^{e}}.
 \end{array}
-\right.$.
+\right.$
+
 Then $a\equiv(-1)^s 5^t \pmod {2^e} $ implies $ a \equiv (-1)^s \pmod 4$, so $s$ is even, and $a \equiv 5^t \pmod{2^e}$.
 
 Therefore $5^{t \frac{2^{e-2}}{d}} \equiv 1 \pmod {2^e}$, which  implies $2^{e-2} \mid t \frac{2^{e-2}}{d}$, so $d \mid t$.
@@ -836,7 +838,7 @@ As the order of $5$ modulo $2^e$ is $2^{e-2}$, the solutions of $x^n \equiv a \p
 
 \bigskip
 {\bf Proposition 4.2.4.} 
-{\it Let $2^l$ be the highest power of $2$ dividing $n$. Suppose that $a$ is odd and that $x^n \equiv a \pmod {2^{2l+1}}$ is solvable. Then $x^n \equiv a \pmod{2^e}$ is solvable for all $e\geq 2l+1$, and consequently for all $e\geq 1$). Moreover, all these congruences have the same number of solutions.
+{\it Let $2^l$ be the highest power of $2$ dividing $n$. Suppose that $a$ is odd and that $x^n \equiv a \pmod {2^{2l+1}}$ is solvable. Then $x^n \equiv a \pmod{2^e}$ is solvable for all $e\geq 2l+1$ (and consequently for all $e\geq 1$). Moreover, all these congruences have the same number of solutions.
 }
 \begin{proof}
 We suppose that $a$ is odd, and that $x^n\equiv a \pmod {2^{2l+1}}$ is solvable. $l$ is such that $n = 2^l n'$, where $n'$ is an odd integer.
@@ -850,10 +852,10 @@ $x_1^n = x_0^n + nb2^{m-l}x_0^{n-1} + 2^{2m-2l} A,\  A \in \Z$.
 Since $m\geq 2l+1, 2m-2l \geq m+1$, so
 $$x_1^n \equiv x_0^n + nb2^{m-l}x_0^{n-1} \pmod {2^{m+1}}.$$
 \begin{align*}
-x_1^n \equiv a \pmod {2^{m+1}} &\iff (x_0^n -a) + n' b x_0^{n-1} 2^m \equiv 0 \pmod {2^{n+1}}\\
+x_1^n \equiv a \pmod {2^{m+1}} &\iff (x_0^n -a) + n' b x_0^{n-1} 2^m \equiv 0 \pmod {2^{m+1}}\\
 &\iff\frac{x_0^n - a}{2^m} + n' b x_0^{n-1} \equiv 0 \pmod 2
 \end{align*}
-As $a$ is odd, and  $x_0^n \equiv a \pmod {2^m}, m\geq 1$, $x_0$ is odd, and $n'$ is odd, so there exists an unique $b \in \{0,1\}$ such that $\frac{x_0^n - a}{2^m} + n' b x_0^{n-1} \equiv 0 \pmod 2$. So there exists $x_1 \in \Z$ such that $x_1^b \equiv a \pmod {2^{m+1}}$, and the induction is completed. Therefore, $x^n \equiv a \pmod{2^e}$ is solvable for all $e\geq 2l+1$, and consequently for all $e\geq 1$). 
+As $a$ is odd, and  $x_0^n \equiv a \pmod {2^m}, m\geq 1$, $x_0$ is odd, and $n'$ is odd, so there exists an unique $b \in \{0,1\}$ such that $\frac{x_0^n - a}{2^m} + n' b x_0^{n-1} \equiv 0 \pmod 2$. So there exists $x_1 \in \Z$ such that $x_1^b \equiv a \pmod {2^{m+1}}$, and the induction is completed. Therefore, $x^n \equiv a \pmod{2^e}$ is solvable for all $e\geq 2l+1$, and consequently for all $e\geq 1$. 
 
 \bigskip
 
@@ -908,7 +910,7 @@ $$
 $$
 So $\mu = 3$, $\legendre{6}{13} = (-1)^\mu = -1$.
 
-$\bullet$ If $a=-1$, and $p$ an odd prime, the values of the least residues of $-k$ modulo $p$ for $k=1,2,\ldots,(p-1)/2$ are $-k$, all negative. So  the number of negative least residues is $\mu = (p-1)/2$, and 
+$\bullet$ If $a=-1$, and $p$ is an odd prime, the values of the least residues of $-k$ modulo $p$ for $k=1,2,\ldots,(p-1)/2$ are $-k$, all negative. So  the number of negative least residues is $\mu = (p-1)/2$, and 
 $\legendre{-1}{p} = (-1)^{(p-1)/2}$.
 \end{proof}
 
@@ -964,7 +966,7 @@ There is a mistake in the sentence : we must read
 
 {\it  Prove that $\sum_{x=0}^{p-1} ((ax + b)/p) = 0$ provided that $p \nmid a$.}
 
-By example, 
+For instance, 
 $$\sum_{x=1}^{5-1} \legendre{x+1}{5} = \legendre{2}{5} +  \legendre{3}{5}+  \legendre{4}{5} = -1\neq 0.$$
 \begin{proof} 
 From exercise 5.3, as $\legendre{0}{p} = 0$, we know that
@@ -1028,9 +1030,9 @@ $ is well defined (if $(\overline{x},\overline{y}) \in S, (\overline{x}-\overlin
 
 We compute $\vert T \vert$.
 
-$\bullet$  Suppose $p\nmid a$, so $\overline{a} \neq \overline{0}$. For $\overline{v}\neq {0}$, there is no solution, and for each $\overline{v} \neq 0$, we obtain the unique solution $(\overline{a} \, \overline{v}^{-1},\overline{v})$, so there exist $p-1$ solutions.
+$\bullet$  Suppose that $p\nmid a$, so $\overline{a} \neq \overline{0}$. For $\overline{v} = {0}$, there is no solution, and for each $\overline{v} \neq 0$, we obtain the unique solution $(\overline{a} \, \overline{v}^{-1},\overline{v})$, so there exist $p-1$ solutions.
 
-$\bullet$ Suppose $p\mid a$. The solutions of $\overline{u} \overline{v} = \overline{0}$ are $(\overline{0},\overline{0})$, $(\overline{0},\overline{v})$ for each $\overline{v} \ne \overline{0}$, $(\overline{u},\overline{0})$ for each $\overline{v} \ne \overline{0}$, that is to say $N = 1+(p-1)+(p-1) = 2p-1$ solutions.
+$\bullet$ Suppose that $p\mid a$. The solutions of $\overline{u} \overline{v} = \overline{0}$ are $(\overline{0},\overline{0})$, $(\overline{0},\overline{v})$ for each $\overline{v} \ne \overline{0}$, $(\overline{u},\overline{0})$ for each $\overline{v} =\overline{0}$, that is to say $N = 1+(p-1)+(p-1) = 2p-1$ solutions.
 
 Conclusion : 
 \begin{align*}
@@ -1056,7 +1058,7 @@ Let $S =\{(\overline{x},\overline{y}) \in \F_p^2\ \vert \ \overline{x}^2 - \over
 
 We obtain in Ex 5.6, $\vert S \vert =    \sum\limits_{y=0}^{p-1}\left(1+\legendre{y^2 + a}{p}\right)$, and in Ex. 5.7. , $\vert S \vert  =  p-1$ if $p\nmid a$, $\vert S \vert  =  2p-1$ if $p\mid a$.
 
-So $$S - p = \sum\limits_{y=0}^{p-1} \legendre{y^2 + a}{p} = 
+So $$|S| - p = \sum\limits_{y=0}^{p-1} \legendre{y^2 + a}{p} = 
  \begin{cases}
    \  -1 \ \quad \mathrm {if}\ p\nmid a \\
    \  p-1 \quad \mathrm{if}\, p \mid a
@@ -1087,7 +1089,7 @@ Moreover, from Wilson' theorem and Fermat's little theorem,
 2^2 4^2 \cdots(p-1)^2 &=\left(2^{p-1}\right)^2 \left[\left(\frac{p-1}{2}\right)!\right]^2\equiv \left[\left(\frac{p-1}{2}\right)!\right]^2 \pmod p\\
 \end{align*}
 Thus
-$$1^2 3^2\cdots(p-2)^2 \left[\left(\frac{p-1}{2}\right)!\right]^2 \equiv 1 \pmod p.$$
+$$1^2 3^2\cdots(p-2)^2 \left[\left(\frac{p-1}{2}\right)!\right]^2 \equiv 1 \pmod p,$$
 which gives
 $$1^2 3^2\cdots(p-2)^2 \equiv (-1)^{(p+1)/2} \pmod p.$$
 \end{proof}
@@ -1186,7 +1188,7 @@ As $\rho^3 = 1,\rho\ne 1$, then $\rho^2+\rho+1 = 0$.
 \end{align*}
 Thus $\legendre{-3}{p} = 1$.
 \end{proof}
-The inverse form of this proposition is also true for an odd prime $p$ :  if $\legendre{-3}{p} = 1$, then there exists $a\in \F_p^*$ such that $-\overline{3} =a^2$. $\rho = \frac{-1+a}{2}$ has order  $3$. Indeed
+The converse is also true for an odd prime $p$ :  if $\legendre{-3}{p} = 1$, then there exists $a\in \F_p^*$ such that $-\overline{3} =a^2$. $\rho = \frac{-1+a}{2}$ has order  $3$. Indeed
 $\rho^2 = \frac{1+a^2-2a}{4} = \frac{-2-2a}{4} = \frac{-1-a}{2}$, so
 \begin{align*}
 1+\rho + \rho^2 &= 1 +  \frac{-1+a}{2}+ \frac{-1-a}{2}\\
@@ -1319,7 +1321,7 @@ The proof of part (b) is similar.
 
 \paragraph{Ex. 5.18}
 
-{\it Let $D$ be a square-free integer that is also odd and positive. Show that there's an integer $b$ prime to $D$ such that $(b/D) = -1$.
+{\it Let $D$ be a square-free integer that is also odd and positive. Show that there is an integer $b$ prime to $D$ such that $(b/D) = -1$.
 }
 
 \begin{proof}
@@ -1337,11 +1339,11 @@ $$\legendre{b}{D} = \prod_{i=1}^k \legendre {b}{p_i} = \legendre{b}{p_k} = -1.$$
 }
 
 \begin{proof}
-Let $b$ such that $(b/D) = 1$ : the existence of $b$ comes from Ex 5.18.
+Let $b$ such that $(b/D) = -1$ and $b \wedge D = 1$ : the existence of $b$ comes from Ex 5.18.
 
 Let $S = \sum_{a\in A} (a/D)$, where $A$ is reduced residue system modulo $D$. As two reduced system modulo $D$ represent the same elements in $U(\Z/D\Z)$, the sum is independent of the  reduced residue system $A$ : we can write $$S = \sum_{\overline{a} \in U(\Z/D\Z)} (a/D).$$
 
- As $b \wedge D = 1$, we know from Ex. 3.6 that $B = bA = \{ba \ \vert \ a \in A\}$ is also a reduced system modulo $D$. In other words, the application  $U(Z/DZ) \to U(\Z/D\Z), \overline{a} \mapsto  \overline{a}\overline{b}$ is a bijection, so
+ As $b \wedge D = 1$, we know from Ex. 3.6 that $B = bA = \{ba \ \vert \ a \in A\}$ is also a reduced system modulo $D$. In other words, the application  $U(\Z/D\Z) \to U(\Z/D\Z), \overline{a} \mapsto  \overline{a}\overline{b}$ is a bijection, so
 $$\legendre{b}{D} S = \sum_{\overline{a} \in U(\Z/D\Z)} \legendre{b}{D} \legendre{a}{D}  =  \sum_{\overline{a} \in U(\Z/D\Z)} \legendre{ba}{D} = \sum_{\overline{c} \in U(\Z/D\Z)} \legendre{c}{D} = S  \qquad (\overline{c} = \overline{a}\overline{b}).$$
 
 
@@ -1402,7 +1404,7 @@ Conclusion : $21$ is a quadratic residue for $2$, and for the primes $p$ such th
 }
 
 \begin{proof}
-$(113/997) = (997/113) = (93/11) = (113/93) = (20/93) = (2^2/93)(5/93) = (5/93) = (93/5) = (3/5) =(5/3) = (2/3) = -1$.
+$(113/997) = (997/113) = (93/113) = (113/93) = (20/93) = (2^2/93)(5/93) = (5/93) = (93/5) = (3/5) =(5/3) = (2/3) = -1$.
 
 \medskip
 
@@ -1474,7 +1476,7 @@ In the two cases, $-1$ is a quadratic residue modulo $p$, thus $\legendre{-1}{p}
  
 
  
- Reciprocally, if $p\equiv 1\ [4], \legendre{-1}{p} = 1 $, then it exists an integer $a$ such that $-1 \equiv a^2 \ [p]$.
+ Conversely, if $p\equiv 1\ [4], \legendre{-1}{p} = 1 $, then it exists an integer $a$ such that $-1 \equiv a^2 \ [p]$.
  
 Let  $x = a-1$. Then $p \mid (x+1)^2 +1$, thus $p \mid x^4+4$ : $-4$ is a biquadratic residue modulo $p$.
  
@@ -1544,7 +1546,7 @@ $$\legendre{a+b}{p} = (-1)^{\frac{(a+b)^2-1}{8}}.$$
 \begin{proof}
  Let $f$ such as $b \equiv af \ [p]$.
  
-This is equivalent to $\overline{f} = \overline{b} \overline{a}^{-1}$ dans $\mathbb{F}_p^*$.
+This is equivalent to $\overline{f} = \overline{b} \overline{a}^{-1}$ in $\mathbb{F}_p^*$.
  
 As $\overline{a}^2 = - \overline{b}^2$, $\overline{f}^2 = -\overline{1}$ : $f^2 \equiv -1 \ [p]$.
  
@@ -1580,7 +1582,7 @@ As $a$ is odd, $8 | b$, then $p = A^2 + 64 B^2$ (with $A = a, B = b/8$).
 
 \bigskip
 
-Reciprocaly, if $p=A^2+64 B^2$, then $p\equiv A^2 \equiv 1 \ [4]$.
+Conversely, if $p=A^2+64 B^2$, then $p\equiv A^2 \equiv 1 \ [4]$.
 
 Let $a=A,b=8B$. Then $$2^{\frac{p-1}{4} } \equiv f^{\frac{ab}{2}} \equiv f^{4AB} \equiv (-1)^{2AB} \equiv 1 \ [p].$$
 
@@ -1591,9 +1593,9 @@ Conclusion :
 $$\exists A \in \mathbb{Z}, \exists B \in \mathbb{Z}\,, p = A^2+64 B^2 \iff( p\equiv 1 \ [4] \ \mathrm{and} \ \exists x \in \mathbb{Z}, \, x^4 \equiv 2 \ [p]).$$
 
 \vspace{0.5cm}
-Remark  : the equation $x^4 \equiv 2\ [p]$ has also solutions if $p \equiv -1 \ [8]$.
+Note  : the equation $x^4 \equiv 2\ [p]$ has also solutions if $p \equiv -1 \ [8]$.
 
-Indeed, the equation $x^4 \equiv 2 \ [p]$ has a solution in $\Z$  iff $2^{\frac{p-1}{d}} = 1$, where $d = 4 \wedge (p-1) = 2$, thus  iff $2^{\frac{p-1}{2}} \equiv 1 \ [p]$, which is true as $\legendre{2}{p}=1$.
+Indeed, the equation $x^4 \equiv 2 \ [p]$ has a solution in $\Z$  iff $2^{\frac{p-1}{d}} = 1$, where $d = 4 \wedge (p-1) = 2$, thus  iff $2^{\frac{p-1}{2}} \equiv 1 \ [p]$, which is true since $\legendre{2}{p}=1$.
 
 For instance, $8^4 \equiv 2 \pmod {23}$, with $23\equiv -1 \pmod 8$.
 \end{proof}
@@ -1636,12 +1638,12 @@ $\chi(n) = 1$ if $n,n+1$ are both  residues, or if $n,n+1$ are both non residues
 $$\chi(n) = \frac{1}{2} \left( 1 + \legendre{n}{p} \legendre{n+1}{p} \right) $$
 (if $\chi(n) = 1, \legendre{n}{p} \legendre{n+1}{p} = 1$, and $\legendre{n}{p} \legendre{n+1}{p} = -1$ otherwise.)
 
-Similarly, let $\chi'$ the characteristic function of $RN \cup NR$ : $\chi(n) =1$ if exactly one of the integer $n,n+1$ is a residue, $0$ otherwise. Then 
-$$\chi'(n) = \frac{1}{2} \left( 1 + \legendre{n}{p} \legendre{n+1}{p} \right).$$
+Similarly, let $\chi'$ the characteristic function of $RN \cup NR$ : $\chi'(n) =1$ if exactly one of the integer $n,n+1$ is a residue, $0$ otherwise. Then 
+$$\chi'(n) = \frac{1}{2} \left( 1 - \legendre{n}{p} \legendre{n+1}{p} \right).$$
 As each integer $n$ between $1$ and $p-1$ brings the contribution $1$ if $n \in RR \cup NN$, and $-1$ if $n \in RN \cup NR$, then
 \begin{align*}
 (RR) + (NN) - (RN) - (NR) &= \sum_{n=1}^{p-1} (\chi(n) - \chi'(n))\\
-&= \frac{1}{2} \sum_{n=1}^{p-1}  \left( 1 + \legendre{n(n+1)}{p}  \right)  - \left( 1 + \legendre{n(n+1)}{p}  \right) \\
+&= \frac{1}{2} \sum_{n=1}^{p-1}  \left( 1 + \legendre{n(n+1)}{p}  \right)  - \left( 1 - \legendre{n(n+1)}{p}  \right) \\
 &= \sum_{n=1}^{p-1}   \legendre{n(n+1)}{p}  
 \end{align*}
 To evaluate this sum $S$, note that $4n(n+1) = (2n+1)^2 - 1$, so
@@ -1716,7 +1718,7 @@ case 2 : if $p/4<j\leq (p-1)/2, \pi/2 < 2\pi j/p < \pi$, so $\cos (2\pi j/p)<0$.
 
 In the first case, $2 \leq 2j \leq (p-1)/2$ : the least residue of $2j$ is positive. In the second case $ p/2< 2j \leq p-1$ : the least residue of $2j$ is negative.
 
-Let $\mu$ the number of negative least residues of the integer $2j,\ 1 \leq j \leq (p-1)/2 $ : we know from Gauss' Lemma that $(2/p) = (-1)^\mu$. As $\mu$ is also the number of $j,\ 1 \leq j \leq (p-1)/2$ such that $\cos (2\pi j/p)>0$,
+Let $\mu$ the number of negative least residues of the integer $2j,\ 1 \leq j \leq (p-1)/2 $ : we know from Gauss' Lemma that $(2/p) = (-1)^\mu$. As $\mu$ is also the number of $j,\ 1 \leq j \leq (p-1)/2$ such that $\cos (2\pi j/p)<0$,
 $$ \prod_{j=1}^{(p-1)/2} 2 \cos(2\pi j/p) = (-1)^\mu = \legendre{2}{p}.$$
 
 If $p \equiv 1\ [8]$ , $p = 8q +1, q \in \N$. For $1 \leq j \leq (p-1)/2$,
@@ -1764,11 +1766,11 @@ $$\legendre{3}{p} = \prod_{j=1}^{(p-1)/2} \left(3-4 \sin^2\left(\frac{2 \pi j}{p
 Let $p$ an odd prime number, $p\ne 3$ and $\zeta= e^{2i\pi/p}$.
 \begin{align*}
 3 - 4 \sin^2\left(\frac{2\pi j}{p}\right) &= 3 - 4  \left( \frac{\zeta^j - \zeta^{-j}}{2i}\right)^2\\
-&= 3 + \zeta^{2j} + \zeta^{-2j} - 21\\
+&= 3 + \zeta^{2j} + \zeta^{-2j} - 2\\
 &= 1 +\zeta^{2j} + \zeta^{-2j}\\
 &= 1 + 2 \cos \left(\frac{4\pi j}{p} \right)
 \end{align*}
-(Or $\cos(2\alpha) = 1 - 2 \sin^2\alpha$, so $3 - 4 \sin^2 \alpha = 1 + 2 \cos \alpha$.)
+(As $\cos(2\alpha) = 1 - 2 \sin^2\alpha$, so $3 - 4 \sin^2 \alpha = 1 + 2 \cos \alpha$.)
 
 Let $$P = \prod_{j=1}^{p-1} \left(3-4 \sin^2\left(\frac{2 \pi j}{p}\right)\right) =  \prod_{\overline{j} \in \F_p^*} \left(3-4 \sin^2\left(\frac{2 \pi j}{p}\right)\right).$$
 Then
@@ -1776,13 +1778,12 @@ Then
 P  &= \prod_{\overline{j} \in \F_p^*} \left(1 + \zeta^{2 j}+ \zeta^{-2j}\right)\\
 &= \prod_{\overline{k} \in \F_p^*} \left(1 + \zeta^{k}+ \zeta^{-k}\right)\qquad (k = 2j)
 \end{align*}
-since $f : \F_p \to \F_p, \overline{j} \mapsto 2\overline{j}$ is a bijection. So
+since $f : \F_p^* \to \F_p^*, \overline{j} \mapsto 2\overline{j}$ is a bijection. So
 \begin{align*}
-P &= \prod_{k=0}^{p-1} \zeta^{-k}\left(1 + \zeta^k + \zeta^{2k} \right)\\
-&=  3 \prod_{k=1}^{p-1} \zeta^{-k}\left(1 + \zeta^k + \zeta^{2k} \right)\\
-&= 3 \prod_{k=0}^{p-1} \zeta^{-k} \  \frac{\prod_{k=1}^{p-1} (1 - \zeta^{3k})}{\prod_{k=1}^{p-1} (1 - \zeta^{k})}
+P &=  \prod_{k=1}^{p-1} \zeta^{-k}\left(1 + \zeta^k + \zeta^{2k} \right)\\
+&=  \prod_{k=1}^{p-1} \zeta^{-k} \  \frac{\prod_{k=1}^{p-1} (1 - \zeta^{3k})}{\prod_{k=1}^{p-1} (1 - \zeta^{k})}
 \end{align*}
-$\prod_{k=0}^{p-1} \zeta^{-k} =\left( \zeta^p\right)^{-(p-1)/2} = 1$. Morover, $\prod_{k=1}^{p-1} (1 - \zeta^{3k}) = \prod_{k=1}^{p-1} (1 - \zeta^{k})$, since $\overline{k} \mapsto 3 \overline{k}$ is a bijection in $\F_p^*$, so $P = 3$, and consequently
+$\prod_{k=1}^{p-1} \zeta^{-k} =\left( \zeta^p\right)^{-(p-1)/2} = 1$. Moreover, $\prod_{k=1}^{p-1} (1 - \zeta^{3k}) = \prod_{k=1}^{p-1} (1 - \zeta^{k})$, since $\overline{k} \mapsto 3 \overline{k}$ is a bijection in $\F_p^*$, so $P = 1$, and consequently
 \begin{align*}
 1 &= \prod_{j=1}^{p-1}  \left(3-4 \sin^2\left(\frac{2 \pi j}{p}\right)\right)\\
 &=\prod_{j=1}^{(p-1)/2}  \left(3-4 \sin^2\left(\frac{2 \pi j}{p}\right)\right) \prod_{j=(p+1)/2}^{p-1}  \left(3-4 \sin^2\left(\frac{2 \pi j}{p}\right)\right)\\
@@ -1801,7 +1802,7 @@ If $1 \leq j \leq (p-1)/2$, then $0 < 4\pi j/p < 2 \pi$.
 &\iff \frac{p}{6} < j < \frac{p}{3}\\
 & \iff \frac{p}{2} < 3j < p
 \end{align*}
-Let $\mu$ the number of integers $j, 1 \leq j \leq (p-1)/2$ such their least remainder is negative. Since $3 \leq 3j \leq 3 (p-1)/2$ and $3j \ne p/2$, these $j$ are such that  $\frac{p}{2} < 3j < p$, so $\mu = \nu$.
+Let $\mu$ the number of integers $j, 1 \leq j \leq (p-1)/2$ such that their least remainder is negative. Since $3 \leq 3j \leq 3 (p-1)/2$ and $3j \ne p/2$, these $j$ are such that  $\frac{p}{2} < 3j < p$, so $\mu = \nu$.
 Therefore
 $$\prod_{j=1}^{(p-1)/2} \left(3-4 \sin^2\left(\frac{2 \pi j}{p}\right)\right)  =(-1)^\nu = (-1)^\mu = \legendre{3}{p}.$$
 \end{proof}
@@ -1813,7 +1814,7 @@ $$\prod_{j=1}^{(p-1)/2} \left(3-4 \sin^2\left(\frac{2 \pi j}{p}\right)\right)  =
 
 \begin{proof}
 We know from Ex. 5.34 that $\nu = \mathrm{Card}\, \{j \in [1,(p-1)/2] \ \vert \ p/2 \leq 3j < p\} = \mu$. 
-$\nu$ is the number of $j$ such that $p/6 \leq j < p/3$, so $\nu =\lfloor p/3 \rfloor - \lfloor p/6 \rfloor $.
+Therefore $\nu$ is the number of $j$ such that $p/6 \leq j < p/3$, so $\nu =\lfloor p/3 \rfloor - \lfloor p/6 \rfloor $.
 
 If $p = 12k +1$, $\nu = \lfloor p/3 \rfloor - \lfloor p/6 \rfloor = 4k - 2k = 2k :  (3/p) = (-1)^\nu = 1$
 
@@ -1839,7 +1840,7 @@ To give sense to this question, we must substitute the Kronecker symbol to the J
 
 We define Kronecker (or Kronecker-Jacobi) symbol $\legendre{a}{b}$ for any $a$ and $b$ in $\Z$ in the following way.
 \begin{enumerate}
-\item[(1)] If $b=0$, then $\legendre{a}{0} = 1$ if $a = \pm 1$, and is equal to $0$ otherwise.
+\item[(1)] If $b=0$, then $\legendre{a}{0} = 1$ if $a = \pm 1$, and$\legendre{a}{0} = 0$ otherwise.
 
 \item[(2)] For $b \ne 0$, write $b = \prod p$, where the $p$ are not necessarily distinct primes (including $2$), or $p = -1$ to take care of the sign. Then we set
 $$\legendre{a}{b} = \prod \legendre{a}{p},$$
@@ -1987,7 +1988,7 @@ $$a_n^n \alpha^n+ a_n^{n-1}a_{n-1} \alpha^{n-1} + \cdots + a_n^{n-1} a_k \alpha^
 So
 $$(a_n \alpha)^n+ a_{n-1} (a_n\alpha)^{n-1} + \cdots + a_n^{n-k-1}a_k (a_n \alpha)^k+\cdots + a_n^{n-1} a_0 = 0.$$
 
-Soit $p(x) = x^n +\sum\limits_{k=0}^{n-1} a_n^{n-k-1}a_k x^k$. Then $p(x) \in \mathbb{Z}[x]$, $p(x)$ is monic, and $p(a_n x) = 0$. So $a_n x$ is an algebraic integer, with $m = a_n \in \mathbb{N}^*$.
+Soit $p(x) = x^n +\sum\limits_{k=0}^{n-1} a_n^{n-k-1}a_k x^k$. Then $p(x) \in \mathbb{Z}[x]$, $p(x)$ is monic, and $p(a_n \alpha) = 0$. So $a_n \alpha$ is an algebraic integer, with $m = a_n \in \mathbb{N}^*$.
 
 Conclusion : if  $\alpha$ is an algebraic number, there exists an integer $m >0$ such that $m\alpha$ is an algebraic integer.
 \end{proof}
@@ -2015,9 +2016,9 @@ Moreover, for all  $\delta \in V, \gamma \delta \in V$. Indeed, every $\delta \i
  \end{align*}
  (if $i+1 = n$, we replace $\alpha^{i+1} = \alpha^n$ by $ -\sum\limits_{k=1}^{n-1} r_k \alpha^{n-k}$, and a similar replacement if if $j+1 = m$.)
  
- As for each $\gamma \in V$, where $V$ if a finitely generated $\Z$-module, $x \gamma \in V$, so  $\gamma$ is an algebraic integer (Proposition 6.1.4).
+ As for each $x\in V$, where $V$ if a finitely generated $\Z$-module, $x \gamma \in V$, so  $\gamma$ is an algebraic integer (Proposition 6.1.4).
 
-More generaly,  if  $\gamma^n + \alpha_1 \gamma^{n-1}+ \cdots + \alpha_n = 0$, where the $\alpha_i$ are algebraic integers, then  $x$ is an algebraic integer.
+More generally,  if  $\gamma^n + \alpha_1 \gamma^{n-1}+ \cdots + \alpha_n = 0$, where the $\alpha_i$ are algebraic integers, then  $x$ is an algebraic integer.
 \end{proof}
 
 \paragraph{Ex. 6.4}
@@ -2080,7 +2081,7 @@ As $\alpha$ is an algebraic integer, there exists a monic polynomial $h(x) \in \
  $f(x) = \frac{c}{d} f_1(x) $, with $f_1$ is primitive. Similarly $g(x) =\frac{s}{t} g_1(x)$, $s ,t \in \Z$,  $g_1(x)$ primitive.
  
  So $h(x) = \frac{cs}{dt} f_1(x) f_2(x) = \frac{u}{v} f_1(x) f_2(x) $, where $u\wedge v = 1$.
-The polynomial $f_1(x)f_2(x) = \sum_{k=0}^r c_k x^k$ is primitive (Ex. 6.4). As $vh(x)(x) = u f_1(x)f_2(x)$, $c \mid uc_k$ , and $u\wedge v = 1$, thus $v \mid c_k, k=0,1,\ldots,r$. As $c_1 \wedge \cdots c_k = 1$, $v \mid 1$, so $v = \pm 1$. $h(x) = u f_1(x) f_2(x)$ is monic, thus $u=1$, and $f_1,f_2$ are monic. From $f(x) = \frac{c}{d} f_1(x)$ we deduce $\frac{c}{d} = 1$ and $f(x) = f_1(x) \in \Z[x]$.
+The polynomial $f_1(x)f_2(x) = \sum_{k=0}^r c_k x^k$ is primitive (Ex. 6.4). As $vh(x)(x) = u f_1(x)f_2(x)$, $v \mid uc_k$ , and $u\wedge v = 1$, thus $v \mid c_k, k=0,1,\ldots,r$. As $c_1 \wedge \cdots c_k = 1$, $v \mid 1$, so $v = \pm 1$. $h(x) = u f_1(x) f_2(x)$ is monic, thus $u=1$, and $f_1,f_2$ are monic. From $f(x) = \frac{c}{d} f_1(x)$ we deduce $\frac{c}{d} = 1$ and $f(x) = f_1(x) \in \Z[x]$.
 
 Conclusion : if $f(x)$ is the minimal polynomial of an algebraic integer $\alpha$, $f \in \Z[x]$.
 \end{proof}
@@ -2093,15 +2094,15 @@ Conclusion : if $f(x)$ is the minimal polynomial of an algebraic integer $\alpha
 \begin{proof}
 By definition, for all $z \in \C, z \in \Q[\alpha] \iff \exists P \in \Q[x], z = P(\alpha)$.
 
-The Euclidean division gives $P = Q_1 (x^2+mx+n) + R(x), \ Q_1,R  \in \Q[x], \deg(R) < 2$, so $R = rx+s,\ r,s \in \Q$. So $z = Q_1(\alpha) (\alpha^2+m\alpha+n) + r\alpha + s = r\alpha + s$ :
-$$\Q(\alpha) = \{z \in \C\ \vert \ \exists r \in \Q, \exists s \in \Q, \ z = r+s \alpha\}.$$
+The Euclidean division gives $P = Q_1 (x^2+mx+n) + R, \ Q_1,R  \in \Q[x], \deg(R) < 2$, so $R = rx+s,\ r,s \in \Q$. So $z = Q_1(\alpha) (\alpha^2+m\alpha+n) + r\alpha + s = r\alpha + s$ :
+$$\Q[\alpha] = \{z \in \C\ \vert \ \exists r \in \Q, \exists s \in \Q, \ z = r+s \alpha\}.$$
 
 $\bullet$ $\Q[\alpha] \subset \C$, where $(\C,+,\times)$ is a field. $1 \in \Q[\alpha]$ ($1 = P_0(\alpha)$, where $P_0$ is the constant polynomial $1$).
 
 $\bullet$ Let $\beta, \gamma \in \Q[\alpha] : \beta = P(\alpha), \gamma = Q(\alpha)$, where $P,Q$ are in $\Q[x]$.
 Then $\alpha - \beta =  P(\alpha) -  Q(\alpha) = R(\alpha)$, where $R = P-Q \in \Q[x]$, and $\alpha \beta =  P(\alpha) Q(\alpha) = S(\alpha)$, where $S = PQ \in \Q[x]$. So $\alpha - \beta \in \Q[\alpha], \alpha \beta \in \Q[\alpha]$. So $\Q[\alpha]$ is a subring of $(\C,+,\times)$.
 
-$\bullet$ Let $\beta = P(\alpha) \in \Q[\alpha), P \in \Q[x]$ and $\beta \neq 0$.
+$\bullet$ Let $\beta = P(\alpha) \in \Q[\alpha], P \in \Q[x]$ and $\beta \neq 0$.
 As $\beta \ne 0$, $Q = x^2+mx+n \nmid P$. 
 
 Let $D \in \Q[x]$  such that $D \mid P,D \mid Q$. As $Q$ is irreducible by hypothesis, $D = \lambda$ or $D = \lambda Q, \lambda \in \C^*$ ($D$ is an associate of $1$ or $Q$). If $D = \lambda Q$, then $Q \mid D$, and $D \mid P$, so $Q \mid P$. Since $Q(\alpha) = 0$,  this implies $\beta = P(\alpha) = 0$, in contradiction with the definition of $\beta$. So $D = \lambda \mid 1$. Therefore $P\wedge Q = 1$. 
@@ -2126,7 +2127,7 @@ $$\Q[\alpha] = \Q[\sqrt{D}].$$
 \begin{proof}
 (We write $\overline{\Z}$ the ring of algebraic integers in $\C$, and ${\cal O}_K$ (or $\Z_K$) the ring of algebraic integers in the field $K$.)
 
-If $D=1$, $\Q[\sqrt{D}] = \Q$. If $D \neq 1$, as $D$ is square-free, $D$ in not a square, so $\sqrt{D}$ is irrational.
+If $D=1$, $\Q[\sqrt{D}] = \Q$. If $D \neq 1$, as $D$ is square-free, $D$ is not a square, so $\sqrt{D}$ is irrational.
 
 Let $\gamma = r + s \sqrt{D} \in \Q[\sqrt{D}]\ (r,s \in \Q)$ an algebraic integer of $\Q[\sqrt{D}]$ ($D\in \Z, D$ square-free).
 $(\gamma - r)^2 = s^2 D$, so  $\gamma^2 - 2r\gamma +r^2 - Ds^2 = 0$. $\gamma$ is a root of 
@@ -2136,7 +2137,7 @@ If $s = 0$, then the minimal polynomial of $\gamma$ is $x-r$.  As $r = \gamma $ 
 
 If $s\neq 0$, $\gamma \not \in \Q$, so no polynom of degree $d\leq 1$ has the root $\gamma$. Thus the minimal polynomial of $\gamma$ is $p(x)$. From Exercise 6.5, $p(x) \in \Z[x]$, so (in the two cases $s=0,s\neq 0$)
 $$2r \in \Z, r^2-Ds^2 \in \Z.$$
-Reciprocally, if $2r \in \Z, r^2-Ds^2 \in \Z$, then $p(x)\in \Z[x]$ and $p(\gamma) = 0$, thus $\gamma$ is an algebraic integer.
+Conversely, if $2r \in \Z, r^2-Ds^2 \in \Z$, then $p(x)\in \Z[x]$ and $p(\gamma) = 0$, thus $\gamma$ is an algebraic integer.
 
 If  $r,s \in \Q$, $D\neq 1$ square-free,
 $$r+s\sqrt{D} \in \overline{\Z}  \iff 2r \in \Z,\  r^2-Ds^2 \in \Z.$$
@@ -2153,8 +2154,9 @@ $n^2-4m = \frac{4Db^2}{d^2}$, so $d \mid 2a, d^2 \mid 4Db^2$.
 If $2\mid d$, $4 \mid a^2-Db^2$, $a^2 \equiv Db^2 \pmod 4$.
 As $d\wedge a \wedge b = 1$, and $2 \mid d$, $a$ or $b$ is odd, and $a^2 \equiv Db^2 \pmod 4, D \not \equiv 0 \pmod 4$, implies that $a$ and $b$ are both odd. Then $a^2 \equiv b^2 \equiv 1 \pmod 4$, so $D \equiv 1 \pmod 4$ : this is in contradiction with the hypothesis $D \equiv 2,3 \pmod 4$. So $d$ is an odd number.
 
-Consequently, $d\mid p, d^2 \mid Dq^2$. If $p\in \N$ is a prime factor of $d$, $p \mid d, p \mid a$ ,and $d \wedge a \wedge b = 1$, so $p \nmid b$, and since $p^2 \mid D b^2$, $p^2 \mid D$, in contradiction with $D$ square-free. So $d\geq 1$ has no prime factor : $d = 1$ and $r = a,s = b \in \Z$. Reciprocally , any $\gamma = a+b\sqrt{D}, a,b \in \Z$ is an algebraic integer, so 
+Consequently, $d\mid a, d^2 \mid Dq^2$. If $p\in \N$ is a prime factor of $d$, $p \mid d, p \mid a$ ,and $d \wedge a \wedge b = 1$, so $p \nmid b$, and since $p^2 \mid D b^2$, $p^2 \mid D$, in contradiction with $D$ square-free. So $d\geq 1$ has no prime factor : $d = 1$ and $r = a,s = b \in \Z$. Conversely, any $\gamma = a+b\sqrt{D}, a,b \in \Z$ is an algebraic integer, so 
 $${\cal O}_{\Q[{\sqrt{D}}]} = \overline{\Z} \cap \Q[{\sqrt{D}}] = \{a + b \sqrt{D}\ \vert \ a,b \in \Z\}.$$
+
 \item[$\bullet$] Case 2 : $D \equiv 1 \pmod 4$.
 
 Then $r = \frac{n}{2}, n \in \Z$. Write $s = \frac{u}{v}, u \wedge v = 1, v \geq 1$.
@@ -2163,7 +2165,7 @@ $m = r^2 - D s^2 = \frac{n^2}{4} - D \frac{u^2}{v^2} \in \Z$, $4 D \frac{u^2}{v^
 
 $4 m = n^2 - D n'^2$, thus $n^2 \equiv n'^2 \pmod 4$, so $n,n'$ have the same parity. Let $a = \frac{n+n'}{2} \in \Z, b = n' \in \Z$. Then $n = 2a -b, n' = b$ and  $\gamma = \frac{n}{2} + \frac{n'}{2} \sqrt{D} =  a - \frac{b}{2} + \frac{b}{2} \sqrt{D} = a + b\left( \frac{-1+ \sqrt{D}}{2} \right)$.
 
-Reciprocally, $\frac{-1+ \sqrt{D}}{2}$ is a root of $x^2 + x +\frac{1-D^2}{4} \in \Z[x]$, so every $a + b\left( \frac{-1+ \sqrt{D}}{2} \right)$ is an algebraic integer.
+Conversely, $\frac{-1+ \sqrt{D}}{2}$ is a root of $x^2 + x +\frac{1-D^2}{4} \in \Z[x]$, so every $a + b\left( \frac{-1+ \sqrt{D}}{2} \right)$ is an algebraic integer.
 $${\cal O}_{\Q[{\sqrt{D}}]} = \overline{\Z} \cap \Q[{\sqrt{D}}] = \{a + b\left( \frac{-1+ \sqrt{D}}{2} \right)\ \vert \ a,b \in \Z\}.$$
 \end{enumerate}
 \end{proof}
@@ -2174,7 +2176,7 @@ $${\cal O}_{\Q[{\sqrt{D}}]} = \overline{\Z} \cap \Q[{\sqrt{D}}] = \{a + b\left( 
 }
 
 \begin{proof}
-As $\omega^2+\omega+1 = 0$,$(2\omega+1)^2 = 4\omega^2+4\omega+1 = -4+1 = -3$. Let $\alpha = 2\omega+1$ ,so $\alpha^2 = -3$
+As $\omega^2+\omega+1 = 0$,$(2\omega+1)^2 = 4\omega^2+4\omega+1 = -4+1 = -3$. Let $\alpha = 2\omega+1$, so $\alpha^2 = -3$
 \begin{align*}
 \legendre{-3}{p} &\equiv (-3)^{(p-1)/2} \pmod p\\
 &\equiv \alpha^{p-1} \pmod p
@@ -2195,7 +2197,7 @@ $\legendre{-3}{p} \alpha \equiv \alpha \pmod p$, thus $\legendre{-3}{p} \alpha^2
 \item[$\bullet$] If $p \equiv -1 \pmod 3$,
 \begin{align*}
 \alpha^p &\equiv 2 \omega^p + 1 \pmod p\\
-&\equiv 2\omega^2 + 2 = 2(-1-\omega)+1 = -2 \omega - 1 = -\alpha\pmod p.\\
+&\equiv 2\omega^2 + 1 = 2(-1-\omega)+1 = -2 \omega - 1 = -\alpha\pmod p.\\
 \end{align*}
 $\legendre{-3}{p} \alpha \equiv -\alpha \pmod p$, thus $\legendre{-3}{p} \alpha^2 \equiv -\alpha^2 \pmod p$, $\legendre{-3}{p} 3 \equiv -3 \pmod p$. As $p \wedge 3 = 1$, $\legendre{-3}{p}  \equiv -1 \pmod p$. Since $\legendre{-3}{p} = \pm 1$,  $\legendre{-3}{p}  = -1$.
 \end{enumerate}
@@ -2207,7 +2209,7 @@ p \equiv -1 [3] &\iff \legendre{-3}{p} = -1\\
 \end{align*}
 In other words, $ \legendre{-3}{p} =  \legendre{p}{3}$.
 
-Remark : $\alpha = 2 \omega + 1 = \omega - \omega^2 = g$, the quadratic Gauss sum for $p=3$.
+Note : $\alpha = 2 \omega + 1 = \omega - \omega^2 = g$, the quadratic Gauss sum for $p=3$.
 \end{proof}
 
 \paragraph{Ex. 6.9}
@@ -2244,7 +2246,7 @@ g^2 &= (\alpha - \beta)^2\\
 &= 5.
 \end{align*}
 
-Remark : here we know explicitely $g$ :
+Note : here we know explicitely $g$ :
 
 if $p = 3$, $g = \omega - \omega^2 = i \sqrt{3}$.
 
@@ -2314,8 +2316,8 @@ $$\frac{1}{p}\sum_a \psi_a(t-s) = \delta(t, s).$$
 Let $\hat{f}(a) = p^{-1} \sum_t f(t) \psi_{-a}(t)$. Then
 \begin{align*}
 \sum_{a=0}^{p-1} \hat{f}(a) \psi_a(t) &= \sum_{a=0}^{p-1} p^{-1} \sum_{s=0}^{p-1} f(s) \psi_{-a}(s) \psi_{a}(t)\\
-&=p^{-1} \sum_{s=0}^{p-1}f(s)  \sum_{a=0}^{p-1} f(s) \psi_{-a}(s) \psi_{a}(t)\\
-&=p^{-1} \sum_{s=0}^{p-1}f(s)  \sum_{a=0}^{p-1} f(s) \psi_{a}(t-s) \\
+&=p^{-1} \sum_{s=0}^{p-1}f(s)  \sum_{a=0}^{p-1}  \psi_{-a}(s) \psi_{a}(t)\\
+&=p^{-1} \sum_{s=0}^{p-1}f(s)  \sum_{a=0}^{p-1}  \psi_{a}(t-s) \\
 &= \sum_{s=0}^{p-1} f(s) \delta(s,t)\\
 &=f(t)
 \end{align*}
@@ -2342,7 +2344,7 @@ The inequality holds for the sum over any range.
 {\bf Lemma.} If $0\leq x \leq \frac{\pi}{2}, \sin x \geq \frac{2}{\pi} x$.
 \begin{proof}
 As $-\sin$ is a convex function on $[0,\pi/2]$, the graph of $\sin$ is above any chord, and the chord between the points $(0,0)$ and $(\pi/2,1)$ has equation $y = (2/\pi) x$, we conclude that
- $\sin x \geq \frac{2}{\pi}$ for $0\leq x \leq \pi/2$. 
+ $\sin x \geq \frac{2}{\pi} x$ for $0\leq x \leq \pi/2$. 
 \end{proof}
 \begin{proof}
 Let $S = \sum\limits_{t = n}^m \legendre{t}{p} g$ with $n\leq m$. Then $\vert S \vert = \sqrt{p} \left|\sum\limits_{t = n}^m \legendre{t}{p}\right|$. As $(t/p)g = g_t$,
@@ -2353,7 +2355,7 @@ S&= \sum _{t=m}^n g_t\\
 &=\sum_{s=0}^{p-1} \legendre{s}{p} \zeta^{ms} \sum _{u=0}^{n-m} \zeta^{us} \qquad( u=t-m)\\
 &=\sum_{s=1}^{p-1} \legendre{s}{p} \zeta^{ms} \frac{\zeta^{(n-m+1)s}-1}{\zeta^s-1}\\
 \end{align*}
-(since for $s=0$, the sum $\sum _{u=0}^{n-m} \zeta^{us} = n-m+1$ and $\sum_{s=0}^{p-1} \legendre{s}{p} = 0$). So
+(since for $s=0$, the sum $\sum _{u=0}^{n-m} \zeta^{us} = n-m+1$ and $\legendre{s}{p} = 0$). So
 \begin{align*}
 S &= \sum_{s=1}^{p-1} \legendre{s}{p} \frac{\zeta^{(n+1)s}-\zeta^{ms}}{\zeta^s-1}\\
 &=\sum_{s=1}^{p-1} \legendre{s}{p} \frac{\zeta^{\frac{n+m+1}{2} s}}{\zeta^{\frac{s}{2}}} \  \frac{\zeta^{\frac{n-m+1}{2} s}-\zeta^{\frac{-n+m-1}{2} s}}{\zeta^{\frac{s}{2}}-\zeta^{\frac{-s}{2}}}\\
@@ -2381,7 +2383,7 @@ If we prove that $\frac{1}{n} + \log(2n-1) \leq \log(2n+1)$, the induction is do
 
 Let $u(x) = \log(2x+1) - \log(2x-1) - \frac{1}{x}, x > \frac{1}{2}$.
 \begin{align*}
-u'(x) &= \frac{2}{2x+1} - \frac{2}{2x-1} -\frac{1}{x^2}\\
+u'(x) &= \frac{2}{2x+1} - \frac{2}{2x-1} +\frac{1}{x^2}\\
 &=\frac{-4}{4x^2-1} + \frac{1}{x^2}\\
 &= \frac{-1}{(4x^2-1)x^2} <0
 \end{align*}
@@ -2451,8 +2453,8 @@ So $\alpha, \beta$ are the two roots of $x^2+x-1$ :
 
 $\alpha^2 + \alpha-1$ = 0, so $ 4(\alpha/2)^2 + 2 (\alpha/2) - 1=0$ : $\gamma = \alpha/2$ is a root of
 $$f(x) = 4x^2+2x-1.$$
-As $\Delta = 4 \times 5$ ,the two roots of $f$ are irrational. $\deg(f) = 2$ and $f$ has no root in $\Q$, so $f(x)$ is irreducible in $\Q[x]$. So the minimal polynomial of $\gamma = \cos(2 \pi/5)$ is $f(x) = 4x^2+2x -1.$
-The other root of $f$ is $\beta/2 = (\zeta^2+\zeta^3)/2 = \cos(4pi/5)$.
+As $\Delta = 4 \times 5$, the two roots of $f$ are irrational. $\deg(f) = 2$ and $f$ has no root in $\Q$, so $f(x)$ is irreducible in $\Q[x]$. Therefore the minimal polynomial of $\gamma = \cos(2 \pi/5)$ is $f(x) = 4x^2+2x -1.$
+The other root of $f$ is $\beta/2 = (\zeta^2+\zeta^3)/2 = \cos(4\pi/5)$.
 
 Conclusion : the conjugates of $\gamma = \cos(2 \pi/5)$ are $\gamma = \cos(2 \pi/5)$ and $\cos(4 \pi/5)$.
 \end{proof}
@@ -2496,7 +2498,8 @@ $c_k = p(A/B) , p \wedge B = 1$.
 6.4.4 can also be achieved by replacing $x$ by $1+t$ instead of $e^z$.
 }
 
-\begin{proof}
+\begin{proof}(solution given by agrounds)
+
 We know from the remark after Prop 6.4.3 that
 $$g(\chi) = \varepsilon \prod_{k=1}^{(p-1)/2}(\zeta^{2k-1} - \zeta^{-(2k-1)}),$$
 where $\varepsilon = \pm 1$.
