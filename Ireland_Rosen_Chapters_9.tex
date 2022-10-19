@@ -1394,6 +1394,72 @@ So $\chi_\pi(2) = 1$, and the previously proved equivalence $2\mid B \iff \chi_\
 Conclusion : $$\binom{(p-1)/2}{(p-1)/6} \equiv -1 \pmod p \iff 2 \mid B.$$
 \end{proof}
 
+\paragraph{Ex. 9.42}
+
+{\it The notation being as in Section 12 show that the minimal polynomial of $g(\chi_\pi)$ is $x^3 - 3px-Ap$.
+}
+
+Note : we must read ``the minimal polynomial of $G = g(\chi_\pi) + \overline{g(\chi_\pi)}$ is $x^3 - 3px-Ap$''.
+
+\begin{proof}
+Write $f(x) = \sum_{i=0}^3 a_i x^i = x^3 - 3px - Ap$.
+
+Then $a_3 = 1$, $p \mid a_0 = Ap, p \mid a_1 = -3p, p\mid a_2 = 0$.
+
+Moreover, since $4p = A^2 + 27 B^2$, $p\nmid A$, therefore $p^2 \nmid a_0$.
+
+The Eisenstein's Irreducibility Criterion (Ex. 6.23) shows that $f(x)$ is irreducible over $\Q$. By section 12, $G$ is a root of $f$, so $f$ is the minimal polynomial of $G$.
+\end{proof}
+
+
+\paragraph{Ex. 9.43}
+
+{\it Find the local maxima and minima of $x^3 - 3px -Ap$ and show that each of the intervals $(-2\sqrt{p}, - \sqrt{p}), (-\sqrt{p},\sqrt{p}), (\sqrt{p},2 \sqrt{p})$ contains exactly one of the values $2 \mathrm{Re}(\omega^k g(\chi_\pi)),\ k=0,1,2$.
+}
+
+\begin{proof}
+Write $\chi = \chi_\pi$, and for $k \in \{0,1,2\}$, 
+$$G_k = 2 \mathrm{Re}(\omega^k g(\chi)) = \omega^k g(\chi) + \overline{\omega}^k \overline{g(\chi)},$$
+so $G = G_0$.
+As in section 12, since $g(\chi)^3 = p \pi$, and $|g(\chi)|^2 = p$,
+\begin{align*}
+G_k^3 &= g(\chi)^3 + \overline{g(\chi)}^3 + 3 \omega^{2k} g(\chi)^2 \overline{g(\chi)} + 3 \omega^k g(\chi) \overline{\omega}^{2k} \overline{g(\chi)}^2\\
+&= p \pi + p \overline{\pi} + 3 g(\chi) \overline{g(\chi)} (\omega^k g(\chi) + \overline{\omega}^k \overline{g(\chi)}\\
+&= 3 p G_k + p(2a -b)\\
+&= 3p G_k + pA
+\end{align*}
+So $G_0, G_1,G_2$ are the three roots of $f(x) = x^3 - 3p x - Ap$.
+
+$f'(x) = 3(x^2-p)<0$ iff $-\sqrt{p} < x < \sqrt{p}$. $f$ is decreasing on $[-\sqrt{p},\sqrt{p}]$, and increasing on $]-\infty, -\sqrt{p}[$, and on $[\sqrt{p}, + \infty[$.
+
+Since $4 p = A^2 + 27 B^2$, $|A| < 2 \sqrt{p}$, therefore
+\begin{align*}
+f(\sqrt{p}) &= p \sqrt{p} - 3 p \sqrt{p} - Ap\\
+&=-p(2\sqrt{p} + A)<0,
+\end{align*}
+and
+\begin{align*}
+f(-\sqrt{p}) &= - p \sqrt{p} + 3 p \sqrt{p} - Ap\\
+&= p(2\sqrt{p} - A)>0.
+\end{align*}
+\end{proof}
+
+Since $\lim\limits_{x \to - \infty} f(x)= -\infty$ and $\lim\limits_{x \to  +\infty} f(x)= +\infty$, the intermediate value theorem shows that $f$ has a unique root in each of the intervals $]-\infty, -\sqrt{p}[,]-\sqrt{p},\sqrt{p}[, [\sqrt{p}, + \infty[$.
+
+Moreover
+\begin{align*}
+f(2\sqrt{p}) &= 8p\sqrt{p} - 6p\sqrt{p} - Ap = p(2\sqrt{p} - A) >0,\\
+f(-2\sqrt{p}) &= -8p\sqrt{p} + 6 p \sqrt{p} - Ap = p(-2\sqrt{p} - A) <0,
+\end{align*}
+therefore $f$ has a unique root in each of the intervals  $]-2 \sqrt{p}, -\sqrt{p}[,]-\sqrt{p},\sqrt{p}[, [\sqrt{p}, 2 \sqrt{p}[$.
+
+
+
+
+
+
+
+
 \paragraph{Ex. 9.44}
 
 {\it Let $n \in \Z$, $n = s_1\cdots s_t, n\equiv 1 \pmod 4, i = 1,\ldots,t$. Show $(n-1)/4\equiv \sum_{i=1}^t (s_i-1)/4 \pmod 4$.
