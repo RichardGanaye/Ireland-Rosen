@@ -753,34 +753,45 @@ $$(p\equiv 1 \ [3]\ \mathrm{and}\ \exists x \in \mathbb{Z},\ x^3 \equiv 3 \ [p] 
 \end{enumerate}
 }
 
-\begin{proof}
-By hypothesis, $\pi$ is a primary prime, so $\pi = 3m-1 + 3n \pi,\ m,n\in \Z$.
-\begin{enumerate}
-\item[(a)]$p-1 = (3m-1)^2+(3n)^2-3n(3m-1) - 1 \equiv -6m + 3n \pmod 9$, thus $$\frac{p-1}{3} \equiv -2m + n \pmod 3.$$
-\item[(b)]$a^2 - 1 = (3m-1)^2-1 \equiv -6m \pmod 9$, thus
-$$\frac{a^2-1}{3} \equiv m \pmod 3.$$
-\item[(c)]  As $\pi,a$ are primary, by Exercise 9.20, $\chi_\pi(a) = \chi_a(\pi)$.
-
-Since $\pi \equiv b\omega \pmod a$, $\chi_a(\pi) = \chi_a(b) \chi_a(\omega)$.
-
-By Exercise 9.18,  as $a = 3m-1$, $\chi_a(\omega) = \omega^{M+N}$, where $M = m, N = 0$, so $$\chi_a(\omega) = \omega^m.$$
-
+{\bf Lemma.} Let $a \in \Z$, $a \equiv -1 \pmod 3$, and $b\in \Z$ such that $a \wedge b = 1$. Then $\chi_a(b)= 1$.
+\begin{proof}(of Lemma)
 If $q$ is a rational prime, $q \equiv 2 \pmod 3$, and $q \wedge b = 1$, then $\chi_q(b) = 1$ (Prop. 9.3.4, Corollary).
 
 If $p$ is a rational prime, $p \equiv 1 \pmod 3$ and $p \wedge b = 1$, then $p = \pi \overline{\pi}$, with $\pi$ primary prime in $D$ (and also $\overline{\pi}$), and by definition of $\chi_p$, $\chi_p(b) = \chi_\pi(b) \chi_{\overline{\pi}}(b)$.
 
 As $\chi_{\overline{\pi}}(b) = \chi_{\overline{\pi}}(\overline{b}) = \overline{\chi_\pi(b)}$ (Prop. 9.3.4(b)), so $\chi_p(b) = 1$.
+
 $a$ has a decomposition in prime  factors of the form :
 $$a = \pm q_1q_2\cdots q_k p_1p_2\cdots p_l = \pm q_1q_2\cdots q_k \pi_1 \overline{\pi_1} \pi_2 \overline{\pi_2}\cdots \pi_l \overline{\pi_l},$$
 where $q_i \equiv -1 , p_j \equiv 1 \pmod 3$, and  the $\pi_k$ are primary primes (since all these elements are primary, the symbol $\pm$ is $(-1)^{k-1}$).
 Thus, by Ex. 9.21,
 $$\chi_a(b) = \chi_{q_1}(b)\cdots \chi_{q_k(b)} \chi_{\pi_1}(b)\chi_{\overline{\pi_1}}(b)\cdots \chi_{\pi_l}(b)\chi_{\overline{\pi_l}}(b) = 1.$$
-($a$ is relatively prime to $b$ in $\Z$ : if a rational prime $r$ divides $a,b$, then $r \mid \pi$ in $D$, thus $r \mid \overline{\pi}$, so $r^2 \mid \pi \overline{\pi} = p$ in $D$, thus $r^2 \mid p$ in $\Z$, which implies $r = p$.
- But then $p \mid \pi, N(p) \mid N(\pi), p^2 \mid p$ : this is absurd.
- As $a$ is relatively prime to $b$ in $\Z$, $ua + vb = 1,\ u,v \in \Z$, so $a,b$ are relatively prime in $D$, each prime factor $q_i,\pi_i,\overline{\pi_i}$ of $b$ is relatively prime to $a$.)
+
  
+
+\end{proof}
+\begin{proof}(of Ex 9.24)
+By hypothesis, $\pi$ is a primary element, so $\pi = 3m-1 + 3n \pi,\ m,n\in \Z$.
+We don't suppose in this proof that $\pi$ is a prime element, so $p = N(\pi)$ is not necessarily prime. Here ``primary element " means that $\pi \equiv -1 \pmod 3$, and that $\pi$ is not a unit.
+\begin{enumerate}
+\item[(a)]$p-1 = (3m-1)^2+(3n)^2-3n(3m-1) - 1 \equiv -6m + 3n \pmod 9$, thus $$\frac{p-1}{3} \equiv -2m + n \pmod 3.$$
+\item[(b)]$a^2 - 1 = (3m-1)^2-1 \equiv -6m \pmod 9$, thus
+$$\frac{a^2-1}{3} \equiv m \pmod 3.$$
+\item[(c)]  
+Suppose first that $a$ is not a unit, which permits to consider $\chi_a$. As $\pi,a$ are primary, by Exercise 9.20, $\chi_\pi(a) = \chi_a(\pi)$.
+
+Since $\pi \equiv b\omega \pmod a$, $\chi_a(\pi) = \chi_a(b) \chi_a(\omega)$.
+
+By Exercise 9.18,  as $a = 3m-1$, $\chi_a(\omega) = \omega^{M+N}$, where $M = m, N = 0$, so $$\chi_a(\omega) = \omega^m.$$
+
+Here $a$ is relatively prime to $b$ in $\Z$ : if a rational prime $r$ divides $a,b$, then $r \mid \pi$ in $D$, thus $r \mid \overline{\pi}$, so $r^2 \mid \pi \overline{\pi} = p$ in $D$, thus $r^2 \mid p$ in $\Z$, which is absurd. The Lemma gives then $\chi_a(b) = 1$.
+
  We conclude that $\chi_a(b) = 1,\chi_a(\omega) = \omega^m$, so $\chi_\pi(a) = \chi_a(\pi) = \chi_a(b) \chi_a(\omega) = \omega^m$.
  $$\chi_\pi(a) = \omega^m.$$
+ 
+ If $a$ is a unit, since $a \in \Z, a \equiv -1 \pmod 3$, then $a = -1$ and $m=0$, so $$\chi_\pi(a) = 1 = \omega^m.$$
+ 
+ In all cases, $\chi_\pi(a) = \omega^m$.
  \item[(d)] 
  $$a+b = [(a+b) \omega] \omega^{-1},$$
 and 
@@ -803,6 +814,7 @@ $$\chi_\pi(a+b) = \omega^{2n} \chi_\pi(1-\omega).$$
 }
 
 \begin{proof}
+We suppose in this exercise that $a+b$ is not a unit. The other case will be examined in the conclusion (Exercise 26).
 \begin{enumerate}
 \item[(a)] $\pi = a + b \omega$ and $a \equiv -b \pmod {a+b}$, thus $\pi \equiv -b(1-\omega) \pmod {a+b}$. So
 $$\chi_{a+b}(\pi) = \chi_{a+b}(b) \chi_{a+b}(1-\omega).$$
@@ -829,7 +841,7 @@ Conclusion : $$\chi_{a+b}(1-\omega) = \omega^{2(m+n)}.$$
 }
 
 \begin{proof}
-$\pi$ and $a+b$ are primary elements of $D$, so
+If $a +b $ is not a unit, then $\pi$ and $a+b$ are primary elements of $D$, so
 $$\chi_\pi(a+b) = \chi_{a+b}(\pi).$$
 By Exercises 9.24 and 9.25,
 \begin{align*}
@@ -837,9 +849,15 @@ By Exercises 9.24 and 9.25,
 \chi_{a+b}(\pi) &= \omega^{2(m+n)}
 \end{align*}
 Thus $\omega^{2n} \chi_\pi(1-\omega) = \omega^{2(m+n)}$.
-
-In conclusion,
+Consequently
 $$\chi_\pi(1-\omega) = \omega^{2m}.$$
+
+If $a+b$ is a unit, since $a+b \equiv -1 \pmod 3$, then $a+b = -1$, so $3m-1 + 3n = -1$, therefore $m = -n$.
+
+By Exercise 9.25, 
+$$1 = \chi_\pi(-1) = \chi_\pi(a+b) = \omega^{2n} \chi_\pi(\lambda),$$ therefore
+$$\chi_\pi(\lambda) = \omega^{-2n} = \omega^{2m}.$$
+In each case, $\chi_\pi(\lambda) = \omega^{2m}$.
 \end{proof}
 
 \paragraph{Ex. 9.27}
