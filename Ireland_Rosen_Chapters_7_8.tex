@@ -801,7 +801,7 @@ $$g(\chi)^2 = \chi(2)^{-2}  J(\chi,\rho) g(\chi^2).$$
 }
 
 \begin{proof}
-As $\chi^2 \ne \rho$, Theorem 1 Chapter 8 gives $J(\chi,\chi) = g(\chi)^2/g(\chi^2)$, and Exercise 8.5 gives $g(\chi)^2/g(\chi^2) = \chi(2)^{-2} J(\chi,\rho)$, so
+As $\chi^2 \ne \varepsilon$, Theorem 1 Chapter 8 gives $J(\chi,\chi) = g(\chi)^2/g(\chi^2)$, and Exercise 8.5 gives $g(\chi)^2/g(\chi^2) = \chi(2)^{-2} J(\chi,\rho)$, so
 $$J(\chi,\chi) =  \chi(2)^{-2} J(\chi,\rho).$$
 \end{proof}
 
@@ -847,8 +847,10 @@ Moreover, $N(x^m=y) = \sum\limits_{\lambda^m = \varepsilon} \lambda(y)$ (Prop. 8
 \end{align*}
 Conclusion : $$\sum\limits_{t\in \mathbb{F}_p} \chi(1-t^m) = \sum\limits_{\lambda^m = \varepsilon} J(\chi,\lambda).$$
 
-We know that there exist $m$ characters whose order divides $m$. As $\chi \ne \varepsilon$, $J(\chi,\varepsilon)=0$, and  $\vert J(\chi,\lambda) \vert = \sqrt{p}$ for every $\lambda \ne \varepsilon$,
-$$\left \vert \sum_{t\in \mathbb{F}_p} \chi(1-t^m)\right  \vert \leq \sum_{\lambda^m = \varepsilon, \lambda \neq \varepsilon} \vert J(\chi,\lambda) \vert = (m-1)\sqrt{p}.$$
+We know that there exist $m$ characters whose order divides $m$. We know that $\chi \ne \varepsilon$, $J(\chi,\varepsilon)=0$, and  $\vert J(\chi,\lambda) \vert = \sqrt{p}$ for every $\lambda \ne \varepsilon,\lambda\ne \chi^{-1}$ (Theorem 1 and Corollary).
+
+Moreover, by Theorem 1(c), $|J(\chi,\chi^{-1})|  = 1 \leq \sqrt{p}$, so
+$$\left \vert \sum_{t\in \mathbb{F}_p} \chi(1-t^m)\right  \vert \leq \sum_{\lambda^m = \varepsilon, \lambda \neq \varepsilon} \vert J(\chi,\lambda) \vert \leq  (m-1)\sqrt{p}.$$
 \end{proof}
 
 \paragraph{Ex. 8.9}
@@ -970,7 +972,7 @@ So we can write $p = ((A+3B)/2 + 3\omega B)((A-3B)/2 - 3\omega B)$ :
 $$p = \pi \overline{\pi},\ \mathrm{where}\ \pi = \frac{A+3B}{2} + 3\omega B \in \Z[\omega].$$
 $\pi$ is a prime in $\Z[\omega]$ : indeed $\pi = uv,\ u,v \in \Z[\omega]$ implies $p = N(\pi) = N(u)N(v)$, then $N(u) = 1$ or $N(v) = 1$, $u$ or $v$ is an unit, so $\pi$ is irreducible in the principal ideal domain $\Z[\omega]$, thus $\pi$ is a prime in $\Z[\omega]$.
 $$\pi \overline{\pi} = \left(\frac{A+3B}{2} + 3\omega B\right)\left(\frac{A-3B}{2} - 3\omega B\right)=\left(\frac{C+3D}{2} + 3\omega D\right)\left(\frac{C-3D}{2} - 3\omega D\right).$$
-As $\pi$ is a prime, it divides $\frac{C+3D}{2} + 3\omega D$ or its conjugate. Since they have the same norm $p$, they are associated. The units of $\Z[\omega]$ are $\pm1,\pm j,\pm j^2$, so there exists $12$ cases :
+As $\pi$ is a prime, it divides $\frac{C+3D}{2} + 3\omega D$ or its conjugate. Since they have the same norm $p$, they are associated. The units of $\Z[\omega]$ are $\pm1,\pm \omega,\pm \omega^2$, so there exists $12$ cases :
 \begin{align*}
 \frac{A+3B}{2} + 3\omega B &= \pm \left(\frac{C+3D}{2} + 3\omega D\right),\\
 \frac{A+3B}{2} + 3\omega B &= \pm \omega \left(\frac{C+3D}{2} + 3\omega D\right),\\
@@ -1067,7 +1069,7 @@ if $p=31$, $N(y^2 = x^3+1) = 35$.
 }
 
 \begin{proof}
-Let $\chi$ a character of order 4 : such a character exists since $p\equiv 1 \pmod 4$. Then
+Let $\chi$ be a character of order 4 : such a character exists since $p\equiv 1 \pmod 4$. Then
 
 \begin{align*}
 N(x^4+y^4=1) &=\sum\limits_{a+b=1} N(x^4=a)N(y^4=b)\\

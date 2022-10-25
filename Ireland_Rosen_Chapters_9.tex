@@ -56,15 +56,15 @@
 }
 
 \begin{proof}
-Let $\lambda = 1 - \omega$, and $z = a+b\omega \in D = \Z[\omega], a,b \in \Z$.
+Let $\lambda = 1 - \omega$, and $\alpha = a+b\omega \in D = \Z[\omega], a,b \in \Z$.
 
-$\omega \equiv 1 \pmod \lambda$, so $z \equiv a+b \pmod \lambda$, with $c = a+b \in \Z$.
+$\omega \equiv 1 \pmod \lambda$, so $\alpha \equiv a+b \pmod \lambda$, $\alpha \equiv c$ with $c = a+b \in \Z$.
 
 $c\equiv 0,1,-1 \pmod 3$, and since $\lambda \mid 3$, $z \equiv 0,1,-1 \pmod \lambda$.
 
-Conclusion : every $z \in D$ is congruent to either $0,1$, or $-1$ modulo $\lambda = 1 -\omega$.
+ Every $\alpha \in D$ is congruent to either $0,1$, or $-1$ modulo $\lambda = 1 -\omega$.
 
-Note :  $1\not \equiv -1 \pmod \lambda$, if not $\lambda \mid 2$, so $2 = \lambda \lambda'$, $N(2) = N(\lambda) N(\lambda')$, thus $4 = 3 N(\lambda')$, so $3 \mid 4$, which is nonsense.
+The classes of $0,1,-1$ in $D/\lambda D$ are distinct. Indeed, $1\not \equiv -1 \pmod \lambda$, if not $\lambda \mid 2$, so $2 = \lambda \lambda'$, $N(2) = N(\lambda) N(\lambda')$, thus $4 = 3 N(\lambda')$, so $3 \mid 4$, which is nonsense.
 
 $\pm1 \equiv 0 \pmod \lambda$ implies $\lambda \mid 1$, so $\lambda$ would be a unit, in contradiction with $\lambda$ prime.
 
@@ -167,7 +167,7 @@ $(q-8)^2 = N(\mu) 3^3, 3^3 \mid (q-8)^2$, thus $3^2 \mid q-8$ and so $q \equiv 8
 
 Note that $(1-\omega)^2 = -3 \omega$, thus $\chi_\gamma((1-\omega)^2) = \chi_\gamma(-1)\chi_\gamma(3)\chi_\gamma(\omega)$.
 
-Using Eisenstein's result,
+Using Eisenstein's result (see a proof in Ex.24-26),
 $$\chi_\gamma((1-\omega)^2)= \chi_\gamma(\lambda^2) =\chi_\gamma(\lambda)^2 =\omega^{4m} = \omega^m.$$
 
 As $-1 = (-1)^3, \chi_\gamma(-1) = 1$. Finally  $\chi_\gamma(\omega) = \omega^{m+n}$ by Exercise 9.3. Thus
@@ -247,7 +247,7 @@ $143 = 11\times 13 = 11(-4-3\omega)(-4-3\omega^2) = 11  (-4-3\omega)(-1+3\omega)
 \bigskip
 Solution 1 : 
 \begin{proof}
-Let $\pi$ a prime in $D$, $N\pi \ne 3$, and $\alpha \in D,\pi \nmid \alpha$.
+Let $\pi$ be a prime in $D$, $N\pi \ne 3$, and $\alpha \in D,\pi \nmid \alpha$.
 
 $\overline{\alpha}$ is a cube in $(D/\pi D)^*$
 
@@ -268,7 +268,7 @@ Conclusion  : there are exactly $\frac{N\pi-1}{3}$ cubes in $(D/\pi D)^*$.
 
 Solution 2 :
 \begin{proof}
-Let $\varphi : (D/\pi D)^* \to (D/\pi D)^*$ the group homomorphism defined by $\varphi(x) = x^3$.
+Let $\varphi : (D/\pi D)^* \to (D/\pi D)^*$ be the group homomorphism defined by $\varphi(x) = x^3$.
 
 Then $\mathrm{im}(\varphi)$ is the set of cubes in $(D/\pi D)^*$.
 
@@ -305,7 +305,7 @@ By Exercise 9.9, there exist $(N(5) - 1)/3 = 8$ cubes in $(D/5D)^*$ (and $0 = 0^
 }
 
 \begin{proof} If $\alpha = (\omega \lambda)^2$, then
-$$\alpha = (\omega \lambda)^2 = \omega^2 (1-\omega)^2 = \omega^2(1 + \omega^2-2 \omega) = \-3\omega^3= -3.$$
+$$\alpha = (\omega \lambda)^2 = \omega^2 (1-\omega)^2 = \omega^2(1 + \omega^2-2 \omega) = -3\omega^3= -3.$$
 
 So $\alpha^2 =9 \equiv -1\pmod 5, \alpha^4 \equiv 1 \pmod 5$ and $\alpha^2 \not \equiv 1 \pmod 5$, thus the class of $\alpha= (\omega \lambda)^2$ has order 4 in $(D/5D)^*$, and this implies that $\omega \lambda$ has order 8.
 
@@ -327,10 +327,10 @@ Conclusion : $\omega \lambda$ has order 8, $\omega \lambda^2$ has order 24 in $(
 }
 
 \begin{proof}
-Let $\pi \in D, \overline{\pi} \neq 0$. Then $\overline{\pi} $ is a cube in $D/5D$ iff $\overline{\pi}^{(q^2-1)/3} = 1$, with $q = 5$, namely $\overline{\pi}^8 = 1$ (Prop. 7.1.2, where $3 \mid q^2-1 = 24 = |(D/5D)^*| $).
+Let $\pi \in D, [\pi] \neq 0$. Then $[\pi] $ is a cube in $D/5D$ iff $[\pi]^{(q^2-1)/3} = 1$, with $q = 5$, namely $[\pi]^8 = 1$ (Prop. 7.1.2, where $3 \mid q^2-1 = 24 = |(D/5D)^*| $).
 
-By Exercise 9.12, the class of $\gamma = \omega \lambda$ has order 8, thus the 8 elements $\overline{\gamma}^k, 0 \leq k \leq 7$ are distinct roots of the polynomial $x^8-1$, which has at most 8 roots. Therefore  the subgroup of cubes in $(D/5D)^*$ is
-$$\{1 ,\overline{\gamma}, \overline{\gamma}^2,\ldots, \overline{\gamma}^7\}.$$
+By Exercise 9.12, the class of $\gamma = \omega \lambda$ has order 8, thus the 8 elements $[\gamma]^k, 0 \leq k \leq 7$ are distinct roots of the polynomial $x^8-1$, which has at most 8 roots. Therefore  the subgroup of cubes in $(D/5D)^*$ is
+$$\{1 ,[\gamma], [\gamma]^2,\ldots, [\gamma]^7\}.$$
 $\gamma=\omega(1-\omega) = \omega+1+\omega = 1 + 2\omega$, so
 \begin{align*}
 \gamma^0 &= 1\\
@@ -353,7 +353,9 @@ $$\pi \equiv 1,2,3,4,1+2\omega,2+4\omega,3+\omega,4+3\omega\ [5].$$
 }
 
 \begin{proof}
-If $\pi$ is a primary prime, and not an associate of 5, the Law of Cubic Reciprocity gives
+If $\pi$ is associate to 5, then $5^3 \equiv 0 \equiv 5 \pmod \pi$, so $x^3 \equiv 5 \pmod \pi$ is solvable.
+
+If $\pi$ is a primary prime not associate to 5, the Law of Cubic Reciprocity gives
 \begin{align*}
 5\equiv x^3 \ [\pi], x \in D &\iff \chi_\pi(5)=1\\
 &\iff \chi_5(\pi)=1\\
@@ -404,14 +406,14 @@ In other words, $x^3 \equiv a \pmod \pi$ is solvable in $D$ iff it is solvable i
 Warning : false sentence, since 
 $$N(2 - 3 \omega) = (2-3\omega)(2 - 3 \omega^2) = 4 + 9 -6(\omega+\omega^2) = 4 + 9 + 6 = 19 \ (\mathrm{and}\ \mathrm{not}\ 7!).$$
 \begin{proof}
-Since $19$ is a rational prime, and since $\pi= 2 - 3\omega$ and $11$  are primary primes, by the Law of Cubic Reciprocity, and by Exercise 9.15,
+Since $19$ is a rational prime, and since $\pi= 2 - 3\omega$ and $11$  are primary primes, by the Law of Cubic Reciprocity, and by Exercise 9.15 (with $p=11 \equiv 1 \pmod 3$),
 \begin{align*}
 \exists x \in D,\ 2-3\omega \equiv x^3\ [11]&\iff \chi_{11}(2-3\omega) = 1\\
 &\iff \chi_{2-3\omega}(11)=1\\
 &\iff \exists x \in D,\  x^3 \equiv 11\  [2 - 3 \omega]\\
 &\iff \exists x \in \mathbb{Z},\  x^3 \equiv 11\  [19]
 \end{align*}
-Moreover, by Proposition 7.1.2,
+Moreover, by Proposition 7.1.2 (with $p = 19$, $d = (p-1) \wedge 3 = 3, (p-1)/d = 6$),
 $$\exists x \in \mathbb{Z},\  x^3 \equiv 11\  [19] \iff 11^6 \equiv 1 \pmod {19},$$
 which is true : $11^6 = 121^3 = (19 \times 6 + 7)^3 \equiv 49 \times 7 \equiv 11 \times 7 \equiv 77 \equiv 1 \ [19]$.
 
@@ -420,6 +422,19 @@ Conclusion : there exists $x \in D$ such that $2-3\omega  \equiv x^3 \pmod {11}$
 With some computer code, we find a solution $x = 1 + 8\omega$ (and its associates $\omega^2 x =  7 - \omega, \omega x = -8- 7\omega \equiv 3 + 4 \omega \pmod{11} $) :
 $$x^3 = (1+8\omega)^3 = 321 - 168 \omega \equiv 2 - 3 \omega \pmod {11}.$$
 \end{proof}
+
+Note : The sentence becomes true if we replace $2 - 3\omega$ by the primary prime $2+3\omega$. Since $N(2+3\omega) = 7$, with the same reasoning,
+\begin{align*}
+\exists x \in D,\ 2+3\omega \equiv x^3\ [11]
+&\iff \chi_{2+3\omega}(11)=1\\
+&\iff \exists x \in D,\  x^3 \equiv 11\  [2 + 3 \omega]\\
+&\iff \exists x \in \mathbb{Z},\  x^3 \equiv 11 \equiv 4\  [7]\\
+&\iff 4^2 \equiv 1 \pmod 7
+\end{align*}
+but $4^2 \equiv 2 \not \equiv 1 \pmod 7$, so the equation $x^3 \equiv 2 + 3\omega \pmod {11}$ is not solvable.
+
+($x^3 \equiv a \pmod {11}$ is solvable in $\Z$ iff $a^\frac{7-1}{3} = a^2 \equiv 1 \pmod 7$ iff $a \equiv \pm 1 \pmod 7$.)
+
 
 
 \paragraph{Ex. 9.17}
@@ -449,6 +464,7 @@ Finally, $\gamma = (-1)^a \pi_1^{a_1}\cdots \pi_t^{a_t}$.
 Conclusion : every primary $\gamma \in D$ is under the form
 $$\gamma = \pm \gamma_1\gamma_2\cdots \gamma_t,$$
 where the $\gamma_i$ are primary primes.
+
 \end{proof}
 
 \paragraph{Ex. 9.18}
@@ -469,6 +485,9 @@ Finally, if $\rho = \pm \rho_1\rho_2\cdots\rho_l$ is primary, then $-\rho \gamma
 
 $$\chi_{-\rho \gamma}(\alpha) = (\chi_{\rho_1} \chi_{\rho_2}\cdots \chi_{\rho_l}\chi_{\gamma_1} \chi_{\gamma_2}\cdots \chi_{\gamma_t} )(\alpha)= \chi_\rho(\alpha)\chi_\gamma(\alpha).$$
 \end{proof}
+
+Note : The unit $-1$ is primary by définition, and $-1$ is the opposite of the empty product, so for all $\alpha$ in $D$, $\chi_{-1}(\alpha) = 1$ by definition. The result of the exercises remain true if we accept the unit $-1$ as a primary element.
+
 
 \paragraph{Ex. 9.19}
 
@@ -540,6 +559,8 @@ By the law of Cubic Reciprocity, we obtain
 &=\chi_{\rho}( \gamma).
 \end{align*}
 \end{proof}
+(if $\gamma = -1$, or $\rho = -1$, some products are empty, but the result remains true : $\chi_{-1}(\rho) = 1 = \chi_{\rho}(-1)$.)
+
 
 \paragraph{Ex. 9.21}
 
@@ -753,32 +774,40 @@ $$(p\equiv 1 \ [3]\ \mathrm{and}\ \exists x \in \mathbb{Z},\ x^3 \equiv 3 \ [p] 
 \end{enumerate}
 }
 
-{\bf Lemma.} Let $a \in \Z$, $a \equiv -1 \pmod 3$, and $b\in \Z$ such that $a \wedge b = 1$. Then $\chi_a(b)= 1$.
-\begin{proof}(of Lemma)
+\bigskip
+
+{\bf Lemma.} {\it Let $a \in \Z$, $a \equiv -1 \pmod 3$, and $b\in \Z$ such that $a \wedge b = 1$. Then $\chi_a(b)= 1$.}
+
+\bigskip
+
+\begin{proof}(of Lemma.)
+
 If $q$ is a rational prime, $q \equiv 2 \pmod 3$, and $q \wedge b = 1$, then $\chi_q(b) = 1$ (Prop. 9.3.4, Corollary).
 
 If $p$ is a rational prime, $p \equiv 1 \pmod 3$ and $p \wedge b = 1$, then $p = \pi \overline{\pi}$, with $\pi$ primary prime in $D$ (and also $\overline{\pi}$), and by definition of $\chi_p$, $\chi_p(b) = \chi_\pi(b) \chi_{\overline{\pi}}(b)$.
 
-As $\chi_{\overline{\pi}}(b) = \chi_{\overline{\pi}}(\overline{b}) = \overline{\chi_\pi(b)}$ (Prop. 9.3.4(b)), so $\chi_p(b) = 1$.
+As $\chi_{\overline{\pi}}(b) = \chi_{\overline{\pi}}(\overline{b}) = \overline{\chi_\pi(b)}$ (Prop. 9.3.4(b)), so $\chi_p(b)  = \chi_\pi(b) \chi_{\overline{\pi}}(b) = \chi_\pi(b)\overline{\chi_\pi(b)}= 1$.
 
 $a$ has a decomposition in prime  factors of the form :
 $$a = \pm q_1q_2\cdots q_k p_1p_2\cdots p_l = \pm q_1q_2\cdots q_k \pi_1 \overline{\pi_1} \pi_2 \overline{\pi_2}\cdots \pi_l \overline{\pi_l},$$
 where $q_i \equiv -1 , p_j \equiv 1 \pmod 3$, and  the $\pi_k$ are primary primes (since all these elements are primary, the symbol $\pm$ is $(-1)^{k-1}$).
-Thus, by Ex. 9.21,
+Thus, by definition of $\chi_a$,
 $$\chi_a(b) = \chi_{q_1}(b)\cdots \chi_{q_k(b)} \chi_{\pi_1}(b)\chi_{\overline{\pi_1}}(b)\cdots \chi_{\pi_l}(b)\chi_{\overline{\pi_l}}(b) = 1.$$
-
- 
+The result remains true if $a = -1$ : then, by definition, $\chi_a(b) = 1$.
 
 \end{proof}
-\begin{proof}(of Ex 9.24)
+
+\bigskip
+
+\begin{proof}(of Ex 9.24.)
 By hypothesis, $\pi$ is a primary element, so $\pi = 3m-1 + 3n \pi,\ m,n\in \Z$.
-We don't suppose in this proof that $\pi$ is a prime element, so $p = N(\pi)$ is not necessarily prime. Here ``primary element " means that $\pi \equiv -1 \pmod 3$, and that $\pi$ is not a unit.
-\begin{enumerate}
+We don't suppose in this proof that $\pi$ is a prime element, so $p = N(\pi)$ is not necessarily prime. 
+ \begin{enumerate}
 \item[(a)]$p-1 = (3m-1)^2+(3n)^2-3n(3m-1) - 1 \equiv -6m + 3n \pmod 9$, thus $$\frac{p-1}{3} \equiv -2m + n \pmod 3.$$
 \item[(b)]$a^2 - 1 = (3m-1)^2-1 \equiv -6m \pmod 9$, thus
 $$\frac{a^2-1}{3} \equiv m \pmod 3.$$
 \item[(c)]  
-Suppose first that $a$ is not a unit, which permits to consider $\chi_a$. As $\pi,a$ are primary, by Exercise 9.20, $\chi_\pi(a) = \chi_a(\pi)$.
+ As $\pi,a$ are primary, by Exercise 9.20, $\chi_\pi(a) = \chi_a(\pi)$.
 
 Since $\pi \equiv b\omega \pmod a$, $\chi_a(\pi) = \chi_a(b) \chi_a(\omega)$.
 
@@ -789,9 +818,6 @@ Here $a$ is relatively prime to $b$ in $\Z$ : if a rational prime $r$ divides $a
  We conclude that $\chi_a(b) = 1,\chi_a(\omega) = \omega^m$, so $\chi_\pi(a) = \chi_a(\pi) = \chi_a(b) \chi_a(\omega) = \omega^m$.
  $$\chi_\pi(a) = \omega^m.$$
  
- If $a$ is a unit, since $a \in \Z, a \equiv -1 \pmod 3$, then $a = -1$ and $m=0$, so $$\chi_\pi(a) = 1 = \omega^m.$$
- 
- In all cases, $\chi_\pi(a) = \omega^m$.
  \item[(d)] 
  $$a+b = [(a+b) \omega] \omega^{-1},$$
 and 
@@ -801,6 +827,7 @@ $$\chi_\pi (a+b) = \chi_\pi(1-\omega) \chi_\pi(a) \chi_\pi(\omega)^{-1},$$
 $\chi_\pi(a) = \omega^m$ by (c), and $\chi_\pi(\omega) = \omega^{m+n}$(Ex. 9.3), thus
 
 $$\chi_\pi(a+b) = \omega^{2n} \chi_\pi(1-\omega).$$
+
 \end{enumerate}
 \end{proof}
 
@@ -814,7 +841,6 @@ $$\chi_\pi(a+b) = \omega^{2n} \chi_\pi(1-\omega).$$
 }
 
 \begin{proof}
-We suppose in this exercise that $a+b$ is not a unit. The other case will be examined in the conclusion (Exercise 26).
 \begin{enumerate}
 \item[(a)] $\pi = a + b \omega$ and $a \equiv -b \pmod {a+b}$, thus $\pi \equiv -b(1-\omega) \pmod {a+b}$. So
 $$\chi_{a+b}(\pi) = \chi_{a+b}(b) \chi_{a+b}(1-\omega).$$
@@ -841,7 +867,7 @@ Conclusion : $$\chi_{a+b}(1-\omega) = \omega^{2(m+n)}.$$
 }
 
 \begin{proof}
-If $a +b $ is not a unit, then $\pi$ and $a+b$ are primary elements of $D$, so
+Since $\pi$ and $a+b$ are primary elements of $D$, by Exercise 9.20,
 $$\chi_\pi(a+b) = \chi_{a+b}(\pi).$$
 By Exercises 9.24 and 9.25,
 \begin{align*}
@@ -851,13 +877,6 @@ By Exercises 9.24 and 9.25,
 Thus $\omega^{2n} \chi_\pi(1-\omega) = \omega^{2(m+n)}$.
 Consequently
 $$\chi_\pi(1-\omega) = \omega^{2m}.$$
-
-If $a+b$ is a unit, since $a+b \equiv -1 \pmod 3$, then $a+b = -1$, so $3m-1 + 3n = -1$, therefore $m = -n$.
-
-By Exercise 9.25, 
-$$1 = \chi_\pi(-1) = \chi_\pi(a+b) = \omega^{2n} \chi_\pi(\lambda),$$ therefore
-$$\chi_\pi(\lambda) = \omega^{-2n} = \omega^{2m}.$$
-In each case, $\chi_\pi(\lambda) = \omega^{2m}$.
 \end{proof}
 
 \paragraph{Ex. 9.27}
