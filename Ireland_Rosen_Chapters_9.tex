@@ -857,7 +857,7 @@ $\chi_{a+b}(3) = 1$ car $(a+b) \wedge 3 = (3(m+n)-1) \wedge 3 = 1$.
 
 $\chi_{a+b}(\omega) = \omega^{m+n}$ (Ex. 9.19).
 
-Conclusion : $$\chi_{a+b}(1-\omega) = \omega^{2(m+n)}.$$
+Conclusion : $$\chi_{a+b}(1-\omega) = \omega^{2(m+n)}.$$ 
 \end{enumerate}
 \end{proof}
 
@@ -1385,32 +1385,40 @@ $$\chi_{\pi}(-1)=(-1)^{(a-1)/2}.$$
 }
 
 \begin{proof}
-Let $p$ a rational prime, $p\equiv 1 \pmod 6$. As $p\equiv 1 \pmod 3$, $p = N(\pi)$, where $\pi = a + b\omega$ is a primary prime. $p = N(\pi) =a^2 -ab+b^2, 4p = (2a-b)^2 + 3b^2$. As $\pi$ is primary, $a\equiv 2 \pmod 3, b \equiv 0 \pmod 3$, so $4p = A^2 + 27 B^2$, with $A = 2a-b \equiv 1 \pmod 3, b = B/3$.
+Let $p$ a rational prime, $p\equiv 1 \pmod 6$. As $p\equiv 1 \pmod 3$, we know from Theorem 2, Chapter 8, that there are integers $A$ and $B$ such that $4p = A^2 + 27B^2, A\equiv 1 \pmod 3$, and that $A$ is uniquely determined by these conditions.
+
+Then $A,B$ are of opposite parity. If we take $a =\frac{A+3B}{2}, b = 3B$, then $A = 2a -b, B = \frac{b}{3}$, and $4p = (2a-b)^2 + 3 b^2$, so $p = a^2 -ab + b^2$. If $\pi = a + b \omega$, then $N(\pi)= p$. Since $A = 2a-b \equiv 1 \ [3]$, and $b = 3B \equiv 0 \ [3]$, then $a \equiv -1 \pmod 3$, so $\pi$ is a primary prime.
 
 \bigskip
 
-Suppose that $2\mid B$.
-Since $p =a^2 -ab +b^2$ is odd,
+$\bullet$ Suppose that $2\mid B$.
+Since $p =a^2 -ab +b^2$ is odd, and $b = 3B$,
 $$2 \mid B \iff 2 \mid b \iff (b \equiv 0 \  [2], a\equiv 1\ [2]) \iff \pi \equiv 1 \ [2].$$
-By Proposition 9.6.1,  $2 \mid B$ iff $\pi \equiv 1 \ [2]$, iff $x^3-2$ is solvable in $D$, iff $\chi_\pi(2) = 1$.
-
-By Exercise 8.6,
+By Proposition 9.6.1, 
+ $$\pi \equiv 1 \ [2] \iff x^3-2 \text{ is solvable in } D \iff  \chi_\pi(2) = 1.$$
+ Therefore
+ $$2 \mid B \iff \chi_\pi(2) = 1.$$
+ Here $\chi_\pi$ is of order 3, so $\chi_\pi^2 \ne \varepsilon$. By Exercise 8.6,
 $$J(\chi_\pi,\chi_\pi) = \chi_\pi(2)^{-2} J(\chi_\pi,\rho),$$
 where $\rho $ is the Legendre's character.
 
-Here $\chi_\pi(2) = 1$, so $J(\chi_\pi,\chi_\pi) =  J(\chi_\pi,\rho)$, and by Lemma 1 section 4, $$\pi = a + b \omega = J(\chi_\pi,\chi_\pi) = J(\chi_\pi,\rho).$$
+In this case, $2 \mid B$, $\chi_\pi(2) = 1$, so $J(\chi_\pi,\chi_\pi) =  J(\chi_\pi,\rho)$, and by Lemma 1 section 4, where $p\equiv 1 \ [3]$ and $p = N(\pi)$, $$\pi = a + b \omega = J(\chi_\pi,\chi_\pi) = J(\chi_\pi,\rho).$$
 
 By Exercise 8.15, $$N(y^2 = x^3+1) = p+A,$$ and the Exercise 8.27(b) gives
-$$N(y^2 = x^3 + 1) = N(y^2 +x^3 = 1) = p+ 2 \re J(\chi_\pi,\rho),$$
-and by Exercise 8.27(c),
-$$-A \equiv \binom{(p-1)/2}{(p-1)/3} =\binom{(p-1)/2}{(p-1)/2 - (p-1)/3}  =  \binom{(p-1)/2}{(p-1)/6}=\binom{3m}{m} \pmod p,$$
-where $m=(p-1)/6.$
+$$N(y^2 = x^3 + 1) = N(y^2 +x^3 = 1) = p+ 2 \re J(\chi_\pi,\rho).$$
+thus
+$$A = 2 \re J(\chi_\pi,\rho) = 2 \re \pi = 2a -b.$$
+Moreover, since $J(\chi_\pi,\rho) = \pi = a + b \omega$, by Exercise 8.27(c),
+$$2a-b \equiv -\binom{(p-1)/2}{(p-1)/3}.$$
 Therefore
+$$-A \equiv \binom{(p-1)/2}{(p-1)/3} =\binom{(p-1)/2}{(p-1)/2 - (p-1)/6}  =  \binom{(p-1)/2}{(p-1)/6}=\binom{3m}{m} \pmod p,$$
+where $m=(p-1)/6.$
+Since $A\equiv 1 \pmod 3$,
 $$\binom{3m}{m} \equiv -1 \pmod p.$$
 
 \bigskip
 
-Conversely, suppose that $\binom{3m}{m} \equiv -1 \pmod p$. Then $A = 2a -b \equiv  -\binom{3m}{m} \pmod p$.
+$\bullet$ Conversely, suppose that $\binom{3m}{m} \equiv -1 \pmod p$. Then $A = 2a -b \equiv  -\binom{3m}{m} \pmod p$.
 Write $J(\chi_\pi,\rho) = c + d\omega$. By Exercise 8.27(c), $2c - d \equiv -\binom{3m}{m} \pmod p$. thus
 $$2a -b \equiv 2c - d \pmod p.$$
 
@@ -1420,16 +1428,105 @@ thus $d \equiv \pm b \pmod p$.
 
 By Exercise 8.6,
 $$\pi = J(\chi_\pi,\chi_\pi) = \chi_\pi(2)^{-2} J (\chi_\pi,\rho),$$
-where $\chi_\pi(2)^{-2} = \chi_\pi(2) \in \{1,\omega,\omega^2\}$.
+Here $\chi_\pi$ is of order 3, therefore $\chi_\pi(2)^{-2} = \chi_\pi(2) \in \{1,\omega,\omega^2\}$, so
+$$\pi = J(\chi_\pi,\chi_\pi) = \chi_\pi(2) J (\chi_\pi,\rho).$$
 
-If $\chi_\pi(2) = \omega$, then $a+b\omega = \omega(c+d\omega) = -d + \omega(c-d)$. Then $a = -d \equiv \pm b \pmod p$. As $a \equiv -b\omega \pmod \pi$, we would have $-b\omega \equiv \pm b \pmod \pi$. As $\pi \nmid b$, $\pi \mid \omega \pm 1$, with $\pi$ primary : it's impossible ($\omega + 1$ is a unit and $\omega - 1$ is prime).
+If $\chi_\pi(2) = \omega$, then $a+b\omega = \omega(c+d\omega) = -d + \omega(c-d)$. Then $a = -d \equiv \pm b \pmod p$. As $a \equiv -b\omega \pmod \pi$, we would have $-b\omega \equiv \pm b \pmod \pi$. Here $\pi \nmid b$,  otherwise $p = N(\pi) \mid N(b) = b^2$, so $p \mid b$, and $p =a^2 -ab +b^2$, so $p \mid a$, and $p^2 \mid p$, which is a nonsense. Therefore $\pi \mid \omega \pm 1$, where $\pi$ is a primary prime : it's impossible  : $\omega + 1$ is a unit and $\omega - 1$ is prime, so $\pi \mid \omega - 1 = - \lambda$ implies that $\pi$ and $\lambda$ are associate, in contradiction with $N(\pi) = p \ne 3 = N(\pi)$.
 
-If $\chi_\pi(2) = \omega^2$, then $a+b\omega = \omega^2(c+d\omega), a + b\omega^2 = \omega(c+d\omega^2)$ : same contradiction.
+If $\chi_\pi(2) = \omega^2$, then $a+b\omega = \omega^2(c+d\omega) = (d-c) - \omega c$, so $a = d-c, b = -c$. 
+
+Reasoning modulo $\overline{\pi} = a + b \omega^2 = (a-b) + b \omega$, where $\overline{\pi} \mid \pi \overline{\pi} =p$, we obtain
+$$d = a-b \equiv -b \omega \pmod{\overline{\pi}},$$
+where $d \equiv \pm b \pmod{\overline{\pi}}$, so $-b\omega \equiv \pm b\pmod{\overline{\pi}}$. Since $N(\overline{\pi}) = p$, we obtain the same contradiction as above.
+
 
 So $\chi_\pi(2) = 1$, and the previously proved equivalence $2\mid B \iff \chi_\pi(2) = 1$ show that $2 \mid B$.
 
 Conclusion : $$\binom{(p-1)/2}{(p-1)/6} \equiv -1 \pmod p \iff 2 \mid B.$$
 \end{proof}
+
+\paragraph{Ex. 9.40}
+Here $p = 6m + 1, m \in \Z$, and $p = \pi \overline{\pi}$, where $\pi = a + b\omega$ is a primary prime.
+
+We have proved in Exercise 39 that
+\begin{align}
+\pi = J(\chi_\pi,\chi_\pi) = \chi_\pi(2) J(\chi_\pi,\rho).
+\end{align}
+Write $J(\chi_\pi,\rho) = c + d \omega$. The Exercise 8.27(c) shows that
+\begin{align}
+2c -d \equiv -\binom{3m}{m} \pmod p.
+\end{align}
+
+\begin{enumerate}
+\item[(a)] If $\chi_\pi(2) = \omega$, then (1) gives
+\begin{align*}
+a + b \omega &= \omega (c+ d\omega) =-d+ \omega(c-d),
+\end{align*}
+so $a = -d, b = c-d$, therefore the equality (2) gives
+$$2b-a = 2(c-d)+ d = 2c -d \equiv -\binom{3m}{m} \pmod p.$$
+
+
+\item[(b)] If $\chi_\pi(2) = \omega^2$, then
+$$a + b \omega = \omega^2 (c+ d\omega) = d-c -c\omega,$$
+so $a = d-c, b = -c$, and
+$$a + b =d-2c\equiv \binom{3m}{m} \pmod p.$$
+
+\item[(c)] Suppose that $\chi_\pi(2) = \omega$, and put $A = 2a-b, B = b/3$, so $$4p = A^2 + 27 B^2,\quad A\equiv 1 \ [3],$$
+which shows that $A,B$ have opposite parities. Then, by part (a),
+\begin{align*}
+\frac{A-9B}{2} &= \frac{2a-b - 3b}{2}\\
+&=a-2b\\
+&\equiv \binom{3m}{m} \pmod p
+\end{align*}
+
+\item[(d)] Suppose that $\chi_\pi(2) = \omega^2$, and put $A = 2a-b, B = -b/3$, so we have again
+ $$4p = A^2 + 27 B^2,\quad A\equiv 1 \ [3].$$
+In this case, by part (b)
+\begin{align*}
+ \frac{A-9B}{2} &= \frac{2a-b +3b}{2}\\
+ &=a+b\\
+&\equiv \binom{3m}{m} \pmod p
+ \end{align*}
+ 
+ \item[(e)] The conditions $4p = A^2 + 27 B^2,\ A\equiv 1 \ [3],$ determine $A,B$, except the sign of $B$. So $4p = A^2 + 27 B^2 = (2a-b)^2 + 3b^2$, implies $A = 2a-b$ and $B = \pm \frac{b}{3}$.
+ 
+ By Exercise 39, since $A,B$ have same parity, the condition $A,B$ odd is equivalent to $\chi_\pi(2) \in \{\omega, \omega^2\}$. We choose this sign of $B$ so that
+ $$ \frac{A-9B}{2} \equiv \binom{3m}{m} \pmod p.$$
+ 
+ By parts (d) and (e), where $A,B$ are odd, this choice is given by $B = b/3$ if $\chi_\pi(2) = \omega$, and $B = -b/3$ if $\chi_\pi(2) = \omega^2$. We show that these conditions are equivalent to $A\equiv B \pmod 4$.
+ 
+ $\bullet$ If $\chi_\pi(2) = \omega$, then $A = 2a-b, B = b/3$.
+ 
+ By cubic reciprocity, $\chi_\pi(2) \equiv \pi \pmod 2$ (see section 6). Here $\chi_\pi(2) = \omega$, so $\omega \equiv a + b \omega \pmod 2$, therefore $a \equiv 0 \pmod 2, b\equiv 1 \pmod 2$, 
+$$A = 2a - b \equiv -b \equiv \frac{b}{3}  = B \pmod 4,$$
+
+so $A \equiv B \pmod 4$.
+
+
+ 
+ $\bullet$ If $\chi_\pi(2) = \omega^2$, then $A = 2a-b, B = -b/3$. In this case,
+ $$\omega^2 = - 1 - \omega \equiv a + b \omega \pmod 2,$$
+ therefore $a \equiv 1 \equiv b \pmod 2$, and
+ $$A  = 2a - b \equiv 2 - b \equiv b \equiv -\frac{b}{3} = B \pmod 4.$$
+ In both cases, the choice of the sign of $B$ implies that $A \equiv B \pmod 4$.
+ 
+ \bigskip
+ 
+Conversely, suppose that $A \equiv B \pmod 4$.  Write $B = \varepsilon \frac{b}{3}$, where $\varepsilon = \pm 1$. Then $A \equiv B \pmod 4$ gives
+$$2a-b \equiv \varepsilon \frac{b}{3} \equiv -\varepsilon b \pmod 4,$$
+thus $a \equiv \frac{1-\varepsilon}{2} b \pmod 2$. Then
+\begin{align*}
+\chi_\pi(2) &\equiv \pi = a + b \omega\\
+&\equiv b\left( \frac{1-\varepsilon}{2} + \omega\right) \pmod 2
+\end{align*}
+
+ If $\chi_\pi(2) = \omega$, since $b = 3B$ is odd, $ \frac{1-\varepsilon}{2}  \equiv 0 \pmod 2$, therefore $\varepsilon = 1$, and $B = \frac{b}{3}$.
+ 
+ If $\chi_\pi(2) = \omega = - 1 - \omega$, $ \frac{1-\varepsilon}{2}  \equiv 1 \pmod 2$, therefore $\varepsilon = -1$, and $B = -\frac{b}{3}$.
+ 
+ The normalisation given in parts (c) and (d) for the choice of the sign of $B$ is equivalent to $A \equiv B \pmod 4$ (where $A,B$ are odd).
+\end{enumerate}
+
 
 \paragraph{Ex. 9.42}
 
