@@ -6,3 +6,5 @@ See also the Adam Michalik's solutions :
 https://github.com/xyzzyz/ireland-rosen/blob/master/rosen.pdf
 
 Some errors fixed in 2022.
+
+Complete up to Chapter 9.
