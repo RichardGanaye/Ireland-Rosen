@@ -1387,7 +1387,7 @@ $$\chi_{\pi}(-1)=(-1)^{(a-1)/2}.$$
 \begin{proof}
 Let $p$ a rational prime, $p\equiv 1 \pmod 6$. As $p\equiv 1 \pmod 3$, we know from Theorem 2, Chapter 8, that there are integers $A$ and $B$ such that $4p = A^2 + 27B^2, A\equiv 1 \pmod 3$, and that $A$ is uniquely determined by these conditions.
 
-Then $A,B$ are of opposite parity. If we take $a =\frac{A+3B}{2}, b = 3B$, then $A = 2a -b, B = \frac{b}{3}$, and $4p = (2a-b)^2 + 3 b^2$, so $p = a^2 -ab + b^2$. If $\pi = a + b \omega$, then $N(\pi)= p$. Since $A = 2a-b \equiv 1 \ [3]$, and $b = 3B \equiv 0 \ [3]$, then $a \equiv -1 \pmod 3$, so $\pi$ is a primary prime.
+Then $A,B$ are of opposite parity. If we take $a =\frac{A+3B}{2}, b = 3B$, then $A = 2a -b, B = \frac{b}{3}$, and $4p = (2a-b)^2 + 3 b^2$, so $p = a^2 -ab + b^2$. If $\pi = a + b \omega$, then $N(\pi)= p$. Since $A = 2a-b \equiv 1 \ [3]$, and $b = 3B \equiv 0 \ [3]$, then $a \equiv -1 \ [3]$, so $\pi$ is a primary prime.
 
 \bigskip
 
@@ -1446,6 +1446,18 @@ Conclusion : $$\binom{(p-1)/2}{(p-1)/6} \equiv -1 \pmod p \iff 2 \mid B.$$
 \end{proof}
 
 \paragraph{Ex. 9.40}
+{\it Let $p\equiv 1 \pmod 6$, and put $p = \pi \overline{\pi}$ where $\pi$ is primary. Write $\pi = a + b\omega$ and show
+\begin{enumerate}
+\item[(a)] If $\chi_\pi(2) = \omega$ then $2b-a \equiv -\binom{3m}{m} \pmod p$.
+\item[(b)] If $\chi_\pi(2) = \omega^2$ then $a+b \equiv \binom{3m}{m} \pmod p$.
+\item[(c)] If $\chi_\pi(2) = \omega$ put $A=2a-b,B = b/3$. Show $(A-9B)/2 \equiv \binom{3m}{m} \pmod p$.
+\item[(d)] If $\chi_\pi(2) = \omega^2$ put $2a-b = A$ and $B = -b/3$. Show $(A-9B)/2 \equiv \binom{3m}{m} \pmod p$.
+\item[(e)] Show that the ``normalization"" of $B$ in (c) and (d) is equivalent to $A \equiv B \pmod 4$.
+[Recall $\chi_\pi(2) \equiv \pi \pmod 2$ by cubic reciprocity.]
+\end{enumerate}
+}
+
+\begin{proof}
 Here $p = 6m + 1, m \in \Z$, and $p = \pi \overline{\pi}$, where $\pi = a + b\omega$ is a primary prime.
 
 We have proved in Exercise 39 that
@@ -1522,10 +1534,104 @@ thus $a \equiv \frac{1-\varepsilon}{2} b \pmod 2$. Then
 
  If $\chi_\pi(2) = \omega$, since $b = 3B$ is odd, $ \frac{1-\varepsilon}{2}  \equiv 0 \pmod 2$, therefore $\varepsilon = 1$, and $B = \frac{b}{3}$.
  
- If $\chi_\pi(2) = \omega = - 1 - \omega$, $ \frac{1-\varepsilon}{2}  \equiv 1 \pmod 2$, therefore $\varepsilon = -1$, and $B = -\frac{b}{3}$.
+ If $\chi_\pi(2) = \omega^2 = - 1 - \omega$, $ \frac{1-\varepsilon}{2}  \equiv 1 \pmod 2$, therefore $\varepsilon = -1$, and $B = -\frac{b}{3}$.
  
  The normalisation given in parts (c) and (d) for the choice of the sign of $B$ is equivalent to $A \equiv B \pmod 4$ (where $A,B$ are odd).
 \end{enumerate}
+
+\end{proof}
+
+\paragraph{Ex. 9.41}
+{\it Let $p\equiv 1 \pmod 6, 4p = A^2 + 27 B^2, A \equiv 1 \pmod 3$, $A$ and $B$ odd. Put $\pi = a+b\omega, 2a-b =A, b = 3B$. Let $\chi_\pi$ be the cubic residue character.
+\begin{enumerate}
+\item[(a)] If $\chi_\pi(2) = \omega$ show $N(x^3+2y^3 = 1) = p+1 + 2b-a \equiv 0 \pmod 2$.
+\item[(b)] If $\chi_\pi(2) = \omega^2$ show $N(x^3 + 2y^3 = 1) = p+1 -a-b \equiv 0 \pmod 2$.
+\item[(c)] Show that if $A \equiv B \pmod 4$, then assuming $\chi_\pi(2) \ne 1$, one has $\chi_\pi(2) = \omega$.
+\item[(d)] If $\chi_\pi(2) \ne 1, A \equiv B \pmod 4$ then $$2^{(p-1)/3} \equiv (-A-3B)/6B \equiv (A+9B)/(A-9B) \pmod \pi.$$
+
+(This generalization of Euler's criterion is due to E.Lehmer [174]. See also K.Williams [243].)
+\end{enumerate}
+}
+
+\begin{proof}
+With the help of Theorem 1, Chapter 8, we obtain, writing $\chi_\pi(2) = \omega^k$,
+\begin{align*}
+N(x^3 + 2 y^3 = 1)&= \sum_{a+2b = 1} N(x^3 =a) N(y^3 = b)\\
+&=\sum_{a+2b = 1} \left(\sum_{i=0}^2 \chi_\pi^i(a)\right)\left( \sum_{j=0}^2 \chi_\pi^j(b)\right)\\
+&=\sum_{i=0}^2\sum_{j=0}^2 \sum_{a+2b=1} \chi_\pi^i(a)\chi_\pi^j(b)\\
+&=\sum_{i=0}^2\sum_{j=0}^2  \sum_{a+b' = 1} \chi_\pi^i(a) \chi_\pi^j(2^{-1} b')\\
+&=\sum_{i=0}^2\sum_{j=0}^2 \chi_\pi(2)^{-j} J(\chi_\pi^i, \chi_\pi^j)\\
+&=\sum_{i=0}^2\sum_{j=0}^2 \omega^{-kj} J(\chi_\pi^i, \chi_\pi^j)\\
+&= p + \omega^{-k} J(\chi_\pi^2,\chi_\pi) + \omega^{-2k} J(\chi_\pi,\chi_\pi^2)\\
+&\phantom{= p .} + \omega^{-k} J(\chi_\pi, \chi_\pi) + \omega^{-2k} J(\chi_\pi^2, \chi_\pi^2)\\
+&=p - \omega^{-k} \chi_\pi(-1) - \omega^{-2k} \chi_\pi(-1)^2 + 2 \re(\omega^{-k} J(\chi_\pi,\chi_\pi)\\
+&= p - \omega^{-k} -  \omega^{-2k} +  2 \re(\omega^{-k} J(\chi_\pi,\chi_\pi)).
+\end{align*}
+
+\begin{enumerate}
+
+\item[(a)] If $\chi_\pi(2) = \omega$, then $k=1$. Using $\chi_\pi^2 = \chi_\pi^{-1} =\overline{\chi_\pi}$, we obtain
+\begin{align*}
+N(x^3 + 2 y^3 = 1)&= p+1+ 2 \re(\omega^{2} J(\chi_\pi,\chi_\pi))\\
+&=p+1 + 2 \re(\omega^2 \pi),
+\end{align*}
+since $J(\chi_\pi,\chi_\pi) = \pi$ (Lemma 1, section 4).
+\begin{align*}
+\omega^2\pi &= \omega^2(a + b \omega) = b - a -\omega a,\\
+2 \re(\omega^2\pi) &= (b-a -\omega a) + (b - a - \omega^2 a) = 2b-2a + a = 2b-a,
+\end{align*}
+therefore
+$$N(x^3 + 2 y^3 = 1) = p+1 + 2b -a\qquad (\text{if }\chi_\pi(2) = \omega).$$
+Since in then case $\chi_\pi(2) = \omega$, then $a \equiv 0 \pmod 2$ (see Ex. 39, part (e)), so $p + 1 + 2b -a \equiv 0 \pmod 2$.
+
+(b) If $\chi_\pi(2) = \omega^2 = \omega^{-1}$, then $k=-1$, and
+\begin{align*}
+N(x^3 + 2 y^3 = 1)&= p+1+ 2 \re(\omega \pi),\\
+\end{align*}
+with 
+\begin{align*}
+\omega \pi &= \omega (a + b \omega) = -b + (a-b)\omega,\\
+2 \re(\omega \pi) &= (-b + (a-b) \omega) +( -b + (a-b)\omega^2) = -2b - (a-b) = -a -b,
+\end{align*}
+therefore
+$$N(x^3 + 2y^3 = 1) = p+1 -a-b \qquad (\text {if }\chi_\pi(2) = \omega^2).$$
+
+
+\item[(c)] Suppose that $A\equiv B \pmod 4$, and $\chi_\pi(2)\ne 1$. By hypothesis, $b = 3B$, and this implies by Exercise 40 (e) that $\chi_\pi(2) = \omega$ (if not, $\chi_\pi(2) = \omega_2$, and $A\equiv B \pmod 4$ gives $B = -b/3$).
+
+\item[(d)] Suppose that $\chi_\pi(2) \ne 1, A\equiv B \pmod 4$. By part (c), $\chi_\pi(2) = \omega$.
+
+Since $2a-b = A, B = b/3$, then $a = \frac{A+3B}{2}, b = 3B$.
+
+Starting from $a + b \omega \equiv 0 \pmod \pi$, we obtain
+$$ 3B \omega \equiv -\frac{A+3B}{2} \pmod \pi.$$
+Since $pa = a^2 - ab + b^2$, $a$ is relatively prime with $p$, therefore $\pi \wedge b = 1$, so $\pi \wedge B = 1$, and $\pi \wedge 6 = 1$, since $p \equiv 1 \pmod 6$, thus
+$$\chi_\pi(2)  = \omega \equiv \frac{-A-3B}{6B} \pmod \pi,$$
+where we must read in this fraction the product of $A + 3B$ by the inverse modulo $p$ of $6B$.
+By definition, using $N(\pi) = p$, 
+$$\chi_\pi(2) \equiv 2^\frac{p-1}{3} \pmod \pi,$$
+so
+$$2^{\frac{p-1}{3}} \equiv \frac{-A-3B}{6B}  \pmod \pi.$$
+
+Moreover, since  $4p = A^2 + 27 B^2$, $A^2 + 27 B^2 \equiv 0 \pmod p$, therefore
+$$ 6B(A+9B) + (A+3B)(A-9B) \equiv 0 \pmod p.$$
+If $p \mid A-9B$, since $p \nmid 6B$, this equality implies that $p\mid A+9B$, therefore $p \mid (A-9B) + (A+9B) = 2A$, which is false. Therefore $A-9B \not \equiv 0 \pmod p$, and
+$$2^{\frac{p-1}{3}} \equiv \frac{-A-3B}{6B}  \equiv \frac{A+9B}{A-9B} \pmod \pi.$$
+\end{enumerate}
+
+\end{proof}
+
+Note : By a usual argument, if $h \in \Z$, $2^{\frac{p-1}{3}} \equiv h \pmod \pi \iff 2^{\frac{p-1}{3}} \equiv h \pmod p$. Note that the hypothesis $\chi_\pi(2) \ne 1$ means that $2$ is not a cubic residue modulo $p$, which is equivalent to $A,B$ odd by Exercise 39. We can conclude
+
+{\it
+If $p \equiv 1 \pmod 6$, and $4p = A^2 + 27 B^2, A \equiv 1 \pmod 3$, $A$ odd, and $A \equiv B \pmod 4$, then
+$$\chi_\pi(2) = \omega \iff 2^{\frac{p-1}{3}} \equiv \frac{-A-3B}{6B}  \equiv \frac{A+9B}{A-9B} \pmod p.$$
+}
+
+So we can obtain the value of $\chi_\pi(2)$ by a calculation in $\Z$, not in $\Z[\omega]$.
+
+
+
 
 
 \paragraph{Ex. 9.42}
