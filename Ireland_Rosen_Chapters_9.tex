@@ -1640,11 +1640,47 @@ $$2^{\frac{p-1}{3}}  \equiv \frac{A+9B}{A-9B} \pmod p.$$
 
 The three roots of $x^3 - 1$ in $\F_p$ are $1, \frac{A+9B}{A-9B}, \frac{A-9B}{A+9B}$. Here $2$ is not a cubic residue modulo $p$, and $2^{\frac{p-1}{3}}$ is also a cubic root of unity modulo $p$, so $2^{\frac{p-1}{3}} \equiv  \frac{A\pm 9B}{A\mp9B} \pmod p$. The proposition  explicits the choice of the sign of $B$ which gives $2^{\frac{p-1}{3}}  \equiv \frac{A+9B}{A-9B} \pmod p$.
 
+\bigskip
+
+Numerical example : Let $p$ be the prime $967$. If we decompose $p$ on the form $p = \pi \overline{\pi}$, we obtain $\pi =  a + b \omega = -34 -27 \omega$. To obtain these result without tries, I find $k = 682$ such that $p \mid k^2 + 3$ with the Tonelli-Shanks algorithm, and I compute $\gcd(p, k+1 + 2\omega) = a + b \omega$, where $a + b \omega$ is primary, with a small Python program using the class of elements in $\Z[\omega]$ and the Euclid algorithm in $\Z[\omega]$. This gives the decompositions 
+$$967 = p = a^2 -ab + b^2 = 34^2 - 34\times 27 + 27^2,$$
+ and 
+ $$3868 = 4p = (2a -b)^2 + 3b^2 = A^2 + 27 B^2 = 41^2 + 27 \times 9^2,$$
+ where $A \equiv 1 \pmod 3$, and I choose the sign of $B$ such that $B \equiv A \pmod 4$. We obtain $A = -41, B = -9$, and $a,b$ must verify $A = 2a-b, B = b/3$.
+ 
+  Then $\chi_\pi(2) = \omega$, where $\pi = -41 - 9 \omega$. In $\F_{967}$, the cubic roots of unity modulo $p$ are $1, 142, 824$: $142^3 \equiv 824^3 \equiv 1 \pmod {967}$. 
+  
+  Here $(A + 9B) (A - 9B)^{-1} = 142$, and we verify with a fast exponentiation that $2^\frac{p-1}{3} = 2^{322} \equiv 142 \pmod {967}.$
 
 
+I give here an extract of a table obtained with this program, which for each $p$ gives $A,B$ such that $4p = A^2 + 27 B^2, A \equiv 1 \pmod 3$ and such that $B \equiv A \pmod 4$ if $A,B$ odd, and $\pi =a +b \omega$ satisfies $\chi_\pi(2) = \omega$ (or $\chi_\pi(2) = 1$ if $A,B$ even, which corresponds to the case $a\equiv 1, b \equiv 0 \pmod 2$).
+$$
+\begin{array}{l|l|l|l|l|l|l|l|l}
+p    &  A   & B  & \pi = a + b \omega   & a \text{\%} 2 & b \% 2 & 2^\frac{p-1}{3}\ \% \ p & \frac{A-9B}{A+9B} & \chi_\pi(2)\\
+\hline
+787 & 31 & -9 & 2  -27\omega & 0 & 1 & 379 & 379 &\omega \\
+811 & -56 & -2 & -31  -6 \omega & 1 & 0 & 1 & 130 & 1 \\
+823 & -5 & 11 & 14 + 33\omega & 0 & 1 & 648 & 648 & \omega \\
+829 & 7 & 11 & 20 + 33\omega & 0 & 1 & 125 & 125 & \omega  \\
+853 & -35 & 9 & -4 + 27\omega & 0 & 1 & 632 & 632 & \omega \\
+859 & 13 & -11 & -10  -33\omega & 0 & 1 & 260 & 260 & \omega \\
+877 & -59 & 1 & -28 + 3 \omega& 0 & 1 & 594 & 594 & \omega  \\
+883 & -47 & -7 & -34  -21\omega & 0 & 1 & 545 & 545 & \omega \\
+907 & 19 & 11 & 26 + 33\omega & 0 & 1 & 384 & 384 & \omega  \\
+919 & 52 & -6 & 17  -18\omega & 1 & 0 & 1 & 52 & 1 \\
+937 & 61 & 1 & 32 + 3\omega & 0 & 1 & 614 & 614 & \omega \\
+967 & -41 & -9 & -34  -27\omega & 0 & 1 & 142 & 142 & \omega  \\
+991 & 61 & -3 & 26  -9\omega & 0 & 1 & 113 & 113 & \omega  \\
+997 & 10 & -12 & -13  -36\omega & 1 & 0 & 1 & 692 & 1 \\
+\end{array}
+$$
+As a verification I compute $\chi_\pi(2)$ with a fast exponentiation in $\Z[\omega]$ : $\chi_\pi(2) = 2^\frac{p-1}{3} \pmod \pi$.
+
+We obtain the primary prime $\mu$ such that $N(\mu) = p, \chi_\mu(2) = \omega^2$ by taking the conjugate of $\pi$. For instance, with $p = 787$,  $\pi =2 - 27\omega$ satisfies $\chi_\pi(2) = \omega$, therefore $\chi_{\overline{\pi}}(2) = \chi_{29 + 27\omega} = \omega^2$.
 
 
-
+The lines where $\chi_\pi(2) = 1$, corresponding to the case where $A,B$ are even (or equivalently $a$ odd, $b$ even), give the decomposition ${p = x^2 + 27 y^2}$, ${(x = A/2,y = B/2)}$. For instance $997 = 5^2 + 27\times 6^2$. If $p$ is prime,
+$$\exists x\in \Z, \exists y \in \Z,\  p = x^2 + 27y^2 \iff p\equiv 1 \pmod 3 \text{ and } \exists a \in \Z,\ 2 \equiv a^3 \pmod p.$$
 \paragraph{Ex. 9.42}
 
 {\it The notation being as in Section 12 show that the minimal polynomial of $g(\chi_\pi)$ is $x^3 - 3px-Ap$.
