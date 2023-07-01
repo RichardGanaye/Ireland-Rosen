@@ -628,7 +628,7 @@ If $a,b$ are odd, then $a^2 \equiv b^2 \equiv 1 \pmod 4$, so $c^2 \equiv 2 \pmod
 $a^2 =c^2 - b^2 = (c-b)(c+b)$, so $$\left(\frac{a}{2}\right)^2 = \left(\frac{c-b}{2}\right) \left(\frac{c+b}{2}\right).$$
 where $a/2,(c-b)/2,(c+b)/2$ are integers.
 
-If $d \mid (c-b)/2$ and $d \mid (c+b)/2$, then $d \mid c = (c+b)/2+ (c-b)/2$, and $d \mid b = (c-b)/2 - (c-b)/2$, so $d \mid a\wedge b = 1$. This proves 
+If $d \mid (c-b)/2$ and $d \mid (c+b)/2$, then $d \mid c = (c+b)/2+ (c-b)/2$, and $d \mid b = (c-b)/2 - (c-b)/2$, so $d \mid c\wedge b = 1$. This proves 
 $$\left(\frac{c+b}{2}\right) \wedge \left(\frac{c-b}{2}\right) = 1.$$
 Using Ex. 1.16, we see that $(c+b)/2$ and $(c-b)/2$ are squares : there exist $u,v$ such that
 $$c-b = 2u^2, c+b = 2 v^2,\qquad u\wedge v = 1.$$
@@ -670,20 +670,20 @@ $$
 \begin{proof}
 Let $R$ any commutative ring, and $x,y \in R$.
 
-a) Let $$S = \sum_{i=0}^n x^{n-1-i} y^i.$$ Then
+a) Let $$S = \sum_{i=0}^{n-1} x^{n-1-i} y^i.$$ Then
 \begin{align*}
-xS &= \sum_{i=0}^n x^{n-i} y^i = x^n + \sum_{i=0}^{n-1} x^{n-i} y^i\\
+xS &= \sum_{i=0}^{n-1} x^{n-i} y^i = x^n + \sum_{i=1}^{n-1} x^{n-i} y^i\\
 yS &= \sum_{i=0}^{n-1} x^{n-1-i} y^{i+1} = \sum_{j=1}^{n} x^{n-j} y^j \qquad(j = i+1)\\
 &=y^n + \sum_{i=1}^{n-1} x^{n-i} y^i.
 \end{align*}
 So $xS - y S = x^n-y^n$,
-$$x^n - y^n = (x-y) \sum_{i=0}^n x^{n-1-i} y^i = (x-y)(x^{n-1}+x^{n-2} y + \cdots +x^{n-1-i}y^i+ \cdots + y^{n-1}).$$
+$$x^n - y^n = (x-y) \sum_{i=0}^{n-1} x^{n-1-i} y^i = (x-y)(x^{n-1}+x^{n-2} y + \cdots +x^{n-1-i}y^i+ \cdots + y^{n-1}).$$
 
 b) If we substitute $-y$ by $y$, we obtain
-$$x^n - (-1)^n y^n = (x+ y) \sum_{i=0}^n(-1)^i x^{n-1-i} y^i .$$
+$$x^n - (-1)^n y^n = (x+ y) \sum_{i=0}^{n-1}(-1)^i x^{n-1-i} y^i .$$
 
 If $n$ is odd,
-$$x^n  + y^n = (x+ y) \sum_{i=0}^n(-1)^i x^{n-1-i} y^i  = (x+y)(x^{n-1}-x^{n-2} y + \cdots +(-1)^i x^{n-1-i}y^i+ \cdots + y^{n-1}).$$
+$$x^n  + y^n = (x+ y) \sum_{i=0}^{n-1}(-1)^i x^{n-1-i} y^i  = (x+y)(x^{n-1}-x^{n-2} y + \cdots +(-1)^i x^{n-1-i}y^i+ \cdots + y^{n-1}).$$
 \end{proof}
 
 \paragraph{Ex. 1.25}
