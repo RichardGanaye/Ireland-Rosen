@@ -1270,7 +1270,7 @@ Conclusion : if $n = p_1^{\alpha_1}\cdots p_t^{\alpha_t}$ is the decomposition o
 We show first that the Dirichlet product $f \circ g$ of two multiplicative functions $f,g$ is multiplicative.
 Suppose that $n\wedge m = 1$. If $d\mid n, d'\mid m$, so $\delta = dd' \mid nm$, and conversely, if $\delta \mid nm$, as $n\wedge m = 1$, there exist $d,d'$ such that $d\mid n,d'\mid m$, and $\delta = dd'$. Thus
 \begin{align*}
-(f\circ g)(nm)&= \sum_{\delta \mid nm} f(\delta) g\left(\frac{m}{\delta}\right)\\
+(f\circ g)(nm)&= \sum_{\delta \mid nm} f(\delta) g\left(\frac{nm}{\delta}\right)\\
 &=\sum_{d\mid n,d'\mid m} f(dd')g\left(\frac{nm}{dd'}\right)\\
 &=\sum_{d\mid n} \sum_{d'\mid m} f(d)f(d') g\left(\frac{n}{d}\right)g\left(\frac{m}{d'}\right)\\
 &=\sum_{d\mid n} f(d)g\left(\frac{n}{d}\right)\sum_{d'\mid m} f(d') g\left(\frac{m}{d'}\right)\\
