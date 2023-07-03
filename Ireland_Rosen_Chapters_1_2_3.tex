@@ -1591,7 +1591,7 @@ Let $s \in \C$ and $f(n) = \frac{1}{n^s},\ n\in \N^*$.
 
 $f$ is completely multiplicative : $f(mn) = f(m) f(n)$ for $m,n \in \N^*$. 
 
-Moreover  $\sum_{n=1}^\infty f(n)$ is absolutely convergent for $\mathrm{Re}(s) > 1$. Indeed, if $s = u+iv, u,v \in \R$, $\vert f(n) \vert = \vert n^{-s}\vert = \vert e^{-s \log(n)} \vert = \vert e^{-u \log(n)} e^{-iv \log(n)} \vert = e^{-u \log(n)} = \frac{1}{n^u}$, so $\sum\limits_{n=1}^\infty \vert f(n) \vert= 1/n^u$ converges if $u=\mathrm{Re}(s) >1$.
+Moreover  $\sum_{n=1}^\infty f(n)$ is absolutely convergent for $\mathrm{Re}(s) > 1$. Indeed, if $s = u+iv, u,v \in \R$, $\vert f(n) \vert = \vert n^{-s}\vert = \vert e^{-s \log(n)} \vert = \vert e^{-u \log(n)} e^{-iv \log(n)} \vert = e^{-u \log(n)} = \frac{1}{n^u}$, so $\sum\limits_{n=1}^\infty \vert f(n) \vert=\sum\limits_{n=1}^\infty 1/n^u$ converges if $u=\mathrm{Re}(s) >1$.
 
 With these properties of $f$ ($f$ multiplicative and $\sum_{n=1}^\infty f(n)$  absolutely convergent), we will show that 
 $$\sum_{n=1}^\infty f(n) = \prod_p (1 +f(p)+f(p^2)+\cdots).$$
@@ -1599,7 +1599,7 @@ Let $S^* = \sum\limits_{n = 1}^\infty \vert f(n) \vert < \infty$, and $S = \sum\
 $$P(x) = \prod_{p\leq x }\sum_{k=0}^\infty f(p^k), \qquad P^*(x) =  \prod_{p\leq x} \sum_{k=0}^\infty \vert f(p^k) \vert$$
 are well defined.
 
-If $p, q$ are two prime numbers, as $\sum_{i=0}^\infty f(p^i), \sum_{j=0}^\infty f(q^j)$ are absolutely convergent, $(f(p^i) f(q^j))_{(i,j) \in \N^2}$ is sommable, so the sum of these elements can be arranged in any order :
+If $p, q$ are two prime numbers, as $\sum_{i=0}^\infty f(p^i), \sum_{j=0}^\infty f(q^j)$ are absolutely convergent, $(f(p^i) f(q^j))_{(i,j) \in \N^2}$ is summable, so the sum of these elements can be arranged in any order :
 $$ \sum_{i=0}^\infty f(p^i)  \sum_{k=0}^\infty f(q^k) = \sum_{(i,j) \in \N^2} f(p^i) f(q^j) =  \sum_{(i,j) \in \N^2} f(p^iq^j).$$
  If $p_1,\cdots,p_t$ are all the prime $p\leq x$, repeating $t$ times these products, we obtain
 \begin{align*}
