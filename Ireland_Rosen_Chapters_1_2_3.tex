@@ -1865,18 +1865,18 @@ Let $abc$ be the decimal representation for an integer between $1$ and $1000$. S
 \begin{proof}
 Let $n = \overline{abc}$ the decimal representation of $n$. 
 
-As $10 \equiv 1 \pmod 3$, $10^3 \equiv 10^2 \equiv 10 \equiv 1 \pmod 3$, so
+As $10 \equiv 1 \pmod 3$, $10^2 \equiv 10 \equiv 1 \pmod 3$, so
 \begin{align*}
-3 \mid n &\iff 10^3 a + 10^2 b + c \equiv 0 \pmod 3\\ 
+3 \mid n &\iff 10^2 a + 10 b + c \equiv 0 \pmod 3\\ 
 &\iff a+b+c \equiv 0 \pmod 3
 & 3 \mid a+b+ c
 \end{align*}
 As $10 \equiv 1 \pmod 9$ the same demonstration is true for the result
 $$9 \mid n \iff 9 \mid a+b+c.$$
-Similarly, $10 \equiv -1 \pmod {11}$, and $10^2 \equiv 1, 10^3 \equiv -1$, so
+Similarly, $10 \equiv -1 \pmod {11}$, and $10^2 \equiv 1 \pmod {11}$, so
 \begin{align*}
-11 \mid n &\iff 10^3 a + 10^2 b + c \equiv 0 \pmod 11\\ 
-&\iff a-b+c \equiv 0 \pmod 3
+11 \mid n &\iff 10^2 a + 10 b + c \equiv 0 \pmod {11}\\ 
+&\iff a-b+c \equiv 0 \pmod {11}
 \end{align*}
 More generally, let $n = \overline{a_la_{l-1}\cdots a_0}$ is the decimal representation of $n$. 
 
