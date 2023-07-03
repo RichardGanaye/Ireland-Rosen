@@ -2177,7 +2177,7 @@ f(x_1)&\equiv 0 \pmod{p_1^{a_1}}\\
 &\cdots\\
 f(x_t)&\equiv 0 \pmod{p_t^{a_t}}
 \end{align*}
-As $p_i^{a_i} \wedge p_j^{a_j}=1$ if $i\ne j$, the Chinese Remainder Theorem gives an integer $x$ such that $x\equiv x_i \pmod {p_i^{a_i}},\ i=1,2,\ldots,t$. As $f(x)\in \Z[x]$, $f(x) \equiv f(x_i) \equiv 0 \pmod {p_i^{a_i}}$. So $p_i^{a_i} \mid f(x),\ i=1,2,\ldots,t$, where $p_i^{a_i} \wedge p_j^{a_j}=1$ if $i\ne j$, then $n = p_1^{a_1} \cdots p_t^{a_t} \mid f(x)$ : $x$ is a somution of $f(x) \equiv 0 \pmod n$.
+As $p_i^{a_i} \wedge p_j^{a_j}=1$ if $i\ne j$, the Chinese Remainder Theorem gives an integer $x$ such that $x\equiv x_i \pmod {p_i^{a_i}},\ i=1,2,\ldots,t$. As $f(x)\in \Z[x]$, $f(x) \equiv f(x_i) \equiv 0 \pmod {p_i^{a_i}}$. So $p_i^{a_i} \mid f(x),\ i=1,2,\ldots,t$, where $p_i^{a_i} \wedge p_j^{a_j}=1$ if $i\ne j$, then $n = p_1^{a_1} \cdots p_t^{a_t} \mid f(x)$ : $x$ is a solution of $f(x) \equiv 0 \pmod n$.
 
 Conclusion : $f(x) \equiv 0 \pmod n$ has a solution iff $f(x) \equiv 0 \pmod {p_i^{a_i}}$ has a solution for $i = 1, \ldots, t$.
 \end{proof}
