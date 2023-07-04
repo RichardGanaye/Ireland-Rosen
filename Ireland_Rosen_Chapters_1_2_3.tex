@@ -628,7 +628,7 @@ If $a,b$ are odd, then $a^2 \equiv b^2 \equiv 1 \pmod 4$, so $c^2 \equiv 2 \pmod
 $a^2 =c^2 - b^2 = (c-b)(c+b)$, so $$\left(\frac{a}{2}\right)^2 = \left(\frac{c-b}{2}\right) \left(\frac{c+b}{2}\right).$$
 where $a/2,(c-b)/2,(c+b)/2$ are integers.
 
-If $d \mid (c-b)/2$ and $d \mid (c+b)/2$, then $d \mid c = (c+b)/2+ (c-b)/2$, and $d \mid b = (c-b)/2 - (c-b)/2$, so $d \mid a\wedge b = 1$. This proves 
+If $d \mid (c-b)/2$ and $d \mid (c+b)/2$, then $d \mid c = (c+b)/2+ (c-b)/2$, and $d \mid b = (c-b)/2 - (c-b)/2$, so $d \mid c\wedge b = 1$. This proves 
 $$\left(\frac{c+b}{2}\right) \wedge \left(\frac{c-b}{2}\right) = 1.$$
 Using Ex. 1.16, we see that $(c+b)/2$ and $(c-b)/2$ are squares : there exist $u,v$ such that
 $$c-b = 2u^2, c+b = 2 v^2,\qquad u\wedge v = 1.$$
@@ -670,20 +670,20 @@ $$
 \begin{proof}
 Let $R$ any commutative ring, and $x,y \in R$.
 
-a) Let $$S = \sum_{i=0}^n x^{n-1-i} y^i.$$ Then
+a) Let $$S = \sum_{i=0}^{n-1} x^{n-1-i} y^i.$$ Then
 \begin{align*}
-xS &= \sum_{i=0}^n x^{n-i} y^i = x^n + \sum_{i=0}^{n-1} x^{n-i} y^i\\
+xS &= \sum_{i=0}^{n-1} x^{n-i} y^i = x^n + \sum_{i=1}^{n-1} x^{n-i} y^i\\
 yS &= \sum_{i=0}^{n-1} x^{n-1-i} y^{i+1} = \sum_{j=1}^{n} x^{n-j} y^j \qquad(j = i+1)\\
 &=y^n + \sum_{i=1}^{n-1} x^{n-i} y^i.
 \end{align*}
 So $xS - y S = x^n-y^n$,
-$$x^n - y^n = (x-y) \sum_{i=0}^n x^{n-1-i} y^i = (x-y)(x^{n-1}+x^{n-2} y + \cdots +x^{n-1-i}y^i+ \cdots + y^{n-1}).$$
+$$x^n - y^n = (x-y) \sum_{i=0}^{n-1} x^{n-1-i} y^i = (x-y)(x^{n-1}+x^{n-2} y + \cdots +x^{n-1-i}y^i+ \cdots + y^{n-1}).$$
 
 b) If we substitute $-y$ by $y$, we obtain
-$$x^n - (-1)^n y^n = (x+ y) \sum_{i=0}^n(-1)^i x^{n-1-i} y^i .$$
+$$x^n - (-1)^n y^n = (x+ y) \sum_{i=0}^{n-1}(-1)^i x^{n-1-i} y^i .$$
 
 If $n$ is odd,
-$$x^n  + y^n = (x+ y) \sum_{i=0}^n(-1)^i x^{n-1-i} y^i  = (x+y)(x^{n-1}-x^{n-2} y + \cdots +(-1)^i x^{n-1-i}y^i+ \cdots + y^{n-1}).$$
+$$x^n  + y^n = (x+ y) \sum_{i=0}^{n-1}(-1)^i x^{n-1-i} y^i  = (x+y)(x^{n-1}-x^{n-2} y + \cdots +(-1)^i x^{n-1-i}y^i+ \cdots + y^{n-1}).$$
 \end{proof}
 
 \paragraph{Ex. 1.25}
@@ -937,7 +937,7 @@ $\bullet$  $\alpha \beta= (a + b \sqrt{-2}) (c + d\sqrt{-2}) = (ac -2 bd) + (ad+
 
 So $A$ is a subring of $(\mathbb{C},+,\times)$ : $\Z[\sqrt{-2]}$ is a ring.
 
-Let $z = a + ib\sqrt{-2}$ any complex number. Let $a_0, b_0 \in \Z$ such that $\vert a-a_0 \vert \leq 1/2, \vert b-b_0 \vert \leq 1/2$ (it suffice to take for $a_0$ the nearest integer of $a$ : $a_0 =\left \lfloor a + \frac{1}{2}\right \rfloor$). Let $z_0 = a_0 + i b_0 \sqrt{-2}$.
+Let $z = a + b\sqrt{-2}$ any complex number. Let $a_0, b_0 \in \Z$ such that $\vert a-a_0 \vert \leq 1/2, \vert b-b_0 \vert \leq 1/2$ (it suffice to take for $a_0$ the nearest integer of $a$ : $a_0 =\left \lfloor a + \frac{1}{2}\right \rfloor$). Let $z_0 = a_0 + b_0 \sqrt{-2}$.
 
 As $\lambda(z) = z \overline{z} = a^2 + 2 b^2$, then 
 $$\lambda(z-z_0) = (a-a_0)^2 + 2(b-b_0)^2 \leq \frac{1}{4} + 2 \times \frac{1}{4} = \frac{3}{4}<1.$$
@@ -1031,7 +1031,7 @@ Conclusion: the primes in $R$ are the associates of $p_1,\ldots,p_t$.
 }
 
 \begin{proof}
-Let $\{p_1,\cdots,p_t\}$ the finite set of primes,with $p_1<p_2<\cdots<p_t$, and $n=p_1\cdots p_t$. By d?finition, $\phi(n)$ is the number of integers $k, 1\leq k \leq n$, such that $k\wedge n =1$. From the existence of decomposition in primes, if $k\geq 1$,  $k = p_1^{k_1}\cdots p_t^{k_t}$, where $k_i\geq 0, i=1,\ldots, t$. So $k\wedge n = 1$ if and only if $k=1$. Thus $\phi(n)=1$ The formula for $\phi(n)$ gives
+Let $\{p_1,\cdots,p_t\}$ the finite set of primes,with $p_1<p_2<\cdots<p_t$, and $n=p_1\cdots p_t$. By definition, $\phi(n)$ is the number of integers $k, 1\leq k \leq n$, such that $k\wedge n =1$. From the existence of decomposition in primes, if $k\geq 1$,  $k = p_1^{k_1}\cdots p_t^{k_t}$, where $k_i\geq 0, i=1,\ldots, t$. So $k\wedge n = 1$ if and only if $k=1$. Thus $\phi(n)=1$ The formula for $\phi(n)$ gives
 $\phi(n) = (p_1-1)\cdots(p_t-1)=1$. As $p_i\geq 2$, this equation implies that  $p_1 = p_2 = \cdots = p_t=2$, so $t=1$, and the only prime number is 2. But 3 is also a prime number : this is a contradiction. 
 
 Conclusion : there are infinitely many prime numbers.
@@ -1270,7 +1270,7 @@ Conclusion : if $n = p_1^{\alpha_1}\cdots p_t^{\alpha_t}$ is the decomposition o
 We show first that the Dirichlet product $f \circ g$ of two multiplicative functions $f,g$ is multiplicative.
 Suppose that $n\wedge m = 1$. If $d\mid n, d'\mid m$, so $\delta = dd' \mid nm$, and conversely, if $\delta \mid nm$, as $n\wedge m = 1$, there exist $d,d'$ such that $d\mid n,d'\mid m$, and $\delta = dd'$. Thus
 \begin{align*}
-(f\circ g)(nm)&= \sum_{\delta \mid nm} f(\delta) g\left(\frac{m}{\delta}\right)\\
+(f\circ g)(nm)&= \sum_{\delta \mid nm} f(\delta) g\left(\frac{nm}{\delta}\right)\\
 &=\sum_{d\mid n,d'\mid m} f(dd')g\left(\frac{nm}{dd'}\right)\\
 &=\sum_{d\mid n} \sum_{d'\mid m} f(d)f(d') g\left(\frac{n}{d}\right)g\left(\frac{m}{d'}\right)\\
 &=\sum_{d\mid n} f(d)g\left(\frac{n}{d}\right)\sum_{d'\mid m} f(d') g\left(\frac{m}{d'}\right)\\
@@ -1292,7 +1292,7 @@ Show that
 \begin{proof}
 Here $\nu = \sigma_0, \sigma = \sigma_1$.
 \begin{enumerate}
-\item[(a)] From the M?bius Inversion Theorem, as $\nu(n) = \sum_{d\mid n }1 =\sum_{d\mid n } I(d)$, where $I(n) = 1$ for all $n\geq 1$,
+\item[(a)] From the M\"{o}bius Inversion Theorem, as $\nu(n) = \sum_{d\mid n }1 =\sum_{d\mid n } I(d)$, where $I(n) = 1$ for all $n\geq 1$,
 $$1 = I(n) =  \sum_{d\mid n} \mu(n/d) \nu(d).$$
 \item[(b)]  From the same theorem, as $\sigma(n) = \sum_{d\mid n }d = \sum_{d\mid n } \mathrm{Id}(d)$, where  $\mathrm{Id}(n) = n$ for all $n\geq 1$,
 $$ n= \mathrm{Id}(n) =  \sum_{d\mid n} \mu(n/d) \sigma(d).$$ 
@@ -1307,7 +1307,7 @@ $$ n= \mathrm{Id}(n) =  \sum_{d\mid n} \mu(n/d) \sigma(d).$$
 \begin{proof}
 $\bullet$ If $n=a^2$ is a square, where $a = p_1^{k_1}\cdots p_t^{k_t}$, then $\nu(n) = (2k_1+1)\cdots(2k_t+1)$ is odd.
 
-$\bullet$ Conversely, if $n = q_1^{l_1}\cdots q_r^{l_r}$ is odd, then $(l_1 +1)\cdots(l_r+1)$ is odd. So each $l_i+1$ is odd, and then $l_i$ is even, for $i=1,2,\ldots,r$ : $n$ is a square.
+$\bullet$ Conversely, if $\nu(n) = \nu(q_1^{l_1}\cdots q_r^{l_r})$ is odd, then $(l_1 +1)\cdots(l_r+1)$ is odd. So each $l_i+1$ is odd, and then $l_i$ is even, for $i=1,2,\ldots,r$ : $n$ is a square.
 \end{proof}
 
 \paragraph{Ex. 2.17}
@@ -1400,7 +1400,7 @@ $$\prod_{d \mid n} d = n^{\frac{\nu(n)}{2}}.$$
 
 \paragraph{Ex. 2.21}
 
-{\it Define $\land(n) = \log p$ if $n$ is a power of $p$ and zero otherwise. Prove that $\sum_{d \mid n} \mu(n/d)\log d = \land (n)$. [Hint: First calculate $\sum_{d \mid n} \land(d)$ and then apply the M?bius inversion formula.]
+{\it Define $\land(n) = \log p$ if $n$ is a power of $p$ and zero otherwise. Prove that $\sum_{d \mid n} \mu(n/d)\log d = \land (n)$. [Hint: First calculate $\sum_{d \mid n} \land(d)$ and then apply the M\"{o}bius inversion formula.]
 }
 
 \begin{proof}
@@ -1418,7 +1418,7 @@ Let $n = p_1^{\alpha_1}\cdots p_t^{\alpha_t}$ the decomposition of $n$ in prime 
 &= \alpha_1 \log p_1+\cdots + \alpha_t \log p_t\\
 &= \log n
 \end{align*}
-By M?bius Inversion Theorem,
+By M\"{o}bius Inversion Theorem,
 $$\land(n) = \sum_{d \mid n} \mu\left (\frac{n}{d}\right ) \log d.$$
 \end{proof}
 
@@ -1489,7 +1489,7 @@ $\bullet$ $\varphi$ is well defined : $[j]_{nm} = [k]_{nm} \Rightarrow j\equiv k
 
 $\bullet$ $\varphi$ is injective : if $\varphi([j]_{nm}) = \varphi([k]_{nm})$, then $[j]_n = [k]_n, [j]_m=[k]_m$, so $n\mid j-k, m\mid j-k$. As $n\wedge m = 1, nm \mid j-k$ so $[j]_{nm} = [k]_{nm}$.
 
-$\bullet$ $\varphi$ is surjective : if $ (a,b) \in B_n\times B_m$, there exist $ j,k \in \Z, 1\leq j \leq n, 1 \leq j \leq m$, such that $a = [j]_n, b = [k]_n$. From the Chinese Remainder Theorem, there exists $i \in \Z, 1\leq i \leq n$, such that $i \equiv j \pmod n, i \equiv k \pmod m$. Then $\varphi([i]_{nm}) = ([i]_n,[i]_m) = ( [j]_n, [k]_m) = (a,b)$.
+$\bullet$ $\varphi$ is surjective : if $ (a,b) \in B_n\times B_m$, there exist $ j,k \in \Z, 1\leq j \leq n, 1 \leq j \leq m$, such that $a = [j]_n, b = [k]_m$. From the Chinese Remainder Theorem, there exists $i \in \Z, 1\leq i \leq n$, such that $i \equiv j \pmod n, i \equiv k \pmod m$. Then $\varphi([i]_{nm}) = ([i]_n,[i]_m) = ( [j]_n, [k]_m) = (a,b)$.
 
 Finally, $\psi(nm) = \vert B_{nm} \vert = \vert B_n \vert\,  \vert B_m \vert = \psi(n) \psi(m)$, if $n \wedge m =1$ : $\psi$ is a multiplicative function.
 
@@ -1525,7 +1525,7 @@ ${\cal P}_n$ :  set of all monic polynomials $p$ in $k[x]$ with $\deg(p) \leq n$
 
 ${\cal M}$ : set of all monic irreducible polynomials $p$ in $k[x]$.
 
-${\cal M}$ : set of all monic irreducible polynomials $p$ in $k[x]$ with $\deg(p) \leq n$.
+${\cal M}_n$ : set of all monic irreducible polynomials $p$ in $k[x]$ with $\deg(p) \leq n$.
 
 We must prove that $\sum\limits_{p \in {\cal M}} q^{-\deg p(x)}$ diverges.
 
@@ -1591,7 +1591,7 @@ Let $s \in \C$ and $f(n) = \frac{1}{n^s},\ n\in \N^*$.
 
 $f$ is completely multiplicative : $f(mn) = f(m) f(n)$ for $m,n \in \N^*$. 
 
-Moreover  $\sum_{n=1}^\infty f(n)$ is absolutely convergent for $\mathrm{Re}(s) > 1$. Indeed, if $s = u+iv, u,v \in \R$, $\vert f(n) \vert = \vert n^{-s}\vert = \vert e^{-s \log(n)} \vert = \vert e^{-u \log(n)} e^{-iv \log(n)} \vert = e^{-u \log(n)} = \frac{1}{n^u}$, so $\sum\limits_{n=1}^\infty \vert f(n) \vert= 1/n^u$ converges if $u=\mathrm{Re}(s) >1$.
+Moreover  $\sum_{n=1}^\infty f(n)$ is absolutely convergent for $\mathrm{Re}(s) > 1$. Indeed, if $s = u+iv, u,v \in \R$, $\vert f(n) \vert = \vert n^{-s}\vert = \vert e^{-s \log(n)} \vert = \vert e^{-u \log(n)} e^{-iv \log(n)} \vert = e^{-u \log(n)} = \frac{1}{n^u}$, so $\sum\limits_{n=1}^\infty \vert f(n) \vert=\sum\limits_{n=1}^\infty 1/n^u$ converges if $u=\mathrm{Re}(s) >1$.
 
 With these properties of $f$ ($f$ multiplicative and $\sum_{n=1}^\infty f(n)$  absolutely convergent), we will show that 
 $$\sum_{n=1}^\infty f(n) = \prod_p (1 +f(p)+f(p^2)+\cdots).$$
@@ -1599,7 +1599,7 @@ Let $S^* = \sum\limits_{n = 1}^\infty \vert f(n) \vert < \infty$, and $S = \sum\
 $$P(x) = \prod_{p\leq x }\sum_{k=0}^\infty f(p^k), \qquad P^*(x) =  \prod_{p\leq x} \sum_{k=0}^\infty \vert f(p^k) \vert$$
 are well defined.
 
-If $p, q$ are two prime numbers, as $\sum_{i=0}^\infty f(p^i), \sum_{j=0}^\infty f(q^j)$ are absolutely convergent, $(f(p^i) f(q^j))_{(i,j) \in \N^2}$ is sommable, so the sum of these elements can be arranged in any order :
+If $p, q$ are two prime numbers, as $\sum_{i=0}^\infty f(p^i), \sum_{j=0}^\infty f(q^j)$ are absolutely convergent, $(f(p^i) f(q^j))_{(i,j) \in \N^2}$ is summable, so the sum of these elements can be arranged in any order :
 $$ \sum_{i=0}^\infty f(p^i)  \sum_{k=0}^\infty f(q^k) = \sum_{(i,j) \in \N^2} f(p^i) f(q^j) =  \sum_{(i,j) \in \N^2} f(p^iq^j).$$
  If $p_1,\cdots,p_t$ are all the prime $p\leq x$, repeating $t$ times these products, we obtain
 \begin{align*}
@@ -1865,26 +1865,33 @@ Let $abc$ be the decimal representation for an integer between $1$ and $1000$. S
 \begin{proof}
 Let $n = \overline{abc}$ the decimal representation of $n$. 
 
-As $10 \equiv 1 \pmod 3$, $10^3 \equiv 10^2 \equiv 10 \equiv 1 \pmod 3$, so
+As $10 \equiv 1 \pmod 3$, $10^2 \equiv 10 \equiv 1 \pmod 3$, so
 \begin{align*}
-3 \mid n &\iff 10^3 a + 10^2 b + c \equiv 0 \pmod 3\\ 
+3 \mid n &\iff 10^2 a + 10 b + c \equiv 0 \pmod 3\\ 
 &\iff a+b+c \equiv 0 \pmod 3
 & 3 \mid a+b+ c
 \end{align*}
 As $10 \equiv 1 \pmod 9$ the same demonstration is true for the result
 $$9 \mid n \iff 9 \mid a+b+c.$$
-Similarly, $10 \equiv -1 \pmod {11}$, and $10^2 \equiv 1, 10^3 \equiv -1$, so
+Similarly, $10 \equiv -1 \pmod {11}$, and $10^2 \equiv 1 \pmod {11}$, so
 \begin{align*}
-11 \mid n &\iff 10^3 a + 10^2 b + c \equiv 0 \pmod 11\\ 
-&\iff a-b+c \equiv 0 \pmod 3
+11 \mid n &\iff 10^2 a + 10 b + c \equiv 0 \pmod {11}\\ 
+&\iff a-b+c \equiv 0 \pmod {11}
 \end{align*}
 More generally, let $n = \overline{a_la_{l-1}\cdots a_0}$ is the decimal representation of $n$. 
 
-$10^n \equiv 1 \pmod 9$, so
+$10^n \equiv 1 \pmod {3 or 9}$, so
 \begin{align*}
-9 \mid n &\iff \sum_{k=0}^l a_k 10^k \equiv 0 \pmod 9\\
-&\iff \sum_{k=0}^l a_k \equiv 0 \pmod 9\\
-&\iff 9 \mid a_0+a_1+\cdots +a_n
+3 or 9 \mid n &\iff \sum_{k=0}^l a_k 10^k \equiv 0 \pmod {3 or 9}\\
+&\iff \sum_{k=0}^l a_k \equiv 0 \pmod {3 or 9}\\
+&\iff 3 or 9 \mid a_0+a_1+\cdots +a_n
+\end{align*}
+
+$10^n \equiv (-1)^n \pmod {11}$, so
+\begin{align*}
+11 \mid n &\iff \sum_{k=0}^l a_k 10^k \equiv 0 \pmod {11}\\
+&\iff \sum_{k=0}^l (-1)^{k} a_k \equiv 0 \pmod {11}\\
+&\iff 11 \mid a_0-a_1+\cdots +(-1)^n a_n
 \end{align*}
 \end{proof}
 
@@ -1924,7 +1931,7 @@ Let  $a_1, \ldots, a_{\phi(n)}$ a reduced residue system modulo $n$.
 $\bullet$ As $a\wedge n = 1$ and $a_i \wedge n=1, \ i=1,2,\ldots,\phi(n)$, then $aa_i \wedge n=1$.
 
 $\bullet$ As $a\wedge n = 1$, there exists $a' \in \Z$ such that $aa'\equiv 1 \pmod n$. then
-$$a a_i \equiv a a_j \Rightarrow a'aa_i \equiv a'au_j \pmod n \Rightarrow a_i \equiv a_j \pmod n.$$
+$$a a_i \equiv a a_j \Rightarrow a'aa_i \equiv a'aa_j \pmod n \Rightarrow a_i \equiv a_j \pmod n.$$
 So $i\neq j \Rightarrow a_i \not \equiv a_j \Rightarrow a a_i \not \equiv a a_j$ :
 
 $aa_1, \ldots, aa_{\phi(n)}$ a reduced residue system modulo $n$.
@@ -1957,7 +1964,7 @@ $$
 \right.
 $$
 
-$\bullet$ $\psi(x) = \psi(x') \Rightarrow bx = bx' \Rightarrow b^{-1} b x = b^{-1} a x' \Rightarrow x = x'$ so $\psi$ is injective.
+$\bullet$ $\psi(x) = \psi(x') \Rightarrow bx = bx' \Rightarrow b^{-1} b x = b^{-1} b x' \Rightarrow x = x'$ so $\psi$ is injective.
 
 $\bullet$ Let $y \in U(\Z/n\Z)$. If $x = b^{-1}y$, then $\psi(x) = b b^{-1} y = y$, so $\psi$ is surjective.
 
@@ -2170,7 +2177,7 @@ f(x_1)&\equiv 0 \pmod{p_1^{a_1}}\\
 &\cdots\\
 f(x_t)&\equiv 0 \pmod{p_t^{a_t}}
 \end{align*}
-As $p_i^{a_i} \wedge p_j^{a_j}=1$ if $i\ne j$, the Chinese Remainder Theorem gives an integer $x$ such that $x\equiv x_i \pmod {p_i^{a_i}},\ i=1,2,\ldots,t$. As $f(x)\in \Z[x]$, $f(x) \equiv f(x_i) \equiv 0 \pmod {p_i^{a_i}}$. So $p_i^{a_i} \mid f(x),\ i=1,2,\ldots,t$, where $p_i^{a_i} \wedge p_j^{a_j}=1$ if $i\ne j$, then $n = p_1^{a_1} \cdots p_t^{a_t} \mid f(x)$ : $x$ is a somution of $f(x) \equiv 0 \pmod n$.
+As $p_i^{a_i} \wedge p_j^{a_j}=1$ if $i\ne j$, the Chinese Remainder Theorem gives an integer $x$ such that $x\equiv x_i \pmod {p_i^{a_i}},\ i=1,2,\ldots,t$. As $f(x)\in \Z[x]$, $f(x) \equiv f(x_i) \equiv 0 \pmod {p_i^{a_i}}$. So $p_i^{a_i} \mid f(x),\ i=1,2,\ldots,t$, where $p_i^{a_i} \wedge p_j^{a_j}=1$ if $i\ne j$, then $n = p_1^{a_1} \cdots p_t^{a_t} \mid f(x)$ : $x$ is a solution of $f(x) \equiv 0 \pmod n$.
 
 Conclusion : $f(x) \equiv 0 \pmod n$ has a solution iff $f(x) \equiv 0 \pmod {p_i^{a_i}}$ has a solution for $i = 1, \ldots, t$.
 \end{proof}
@@ -2255,7 +2262,7 @@ If $d=2$, then $x$ is odd, and $2^b \mid 4\frac{x-1}{2}\frac{x+1}{2}$,  so $2^{b
 
 (Alternatively, we can prove this implication by induction.)
 
-Hence every solution of $x^2 \equiv 1\pmod{2^b}, b\geq 3$ is such that $x = \pm1+k2^{b-1}, k \in \Z$ : there exit only four such value in the interval $[0,2^b[$, namely $1,-1+2^{b-1},1+2^{b-1},-1+2^b$.
+Hence every solution of $x^2 \equiv 1\pmod{2^b}, b\geq 3$ is such that $x = \pm1+k2^{b-1}, k \in \Z$ : there exist only four such value in the interval $[0,2^b[$, namely $1,-1+2^{b-1},1+2^{b-1},-1+2^b$.
 
 Conclusion : if $b\geq 3$, the roots of $x^2-1$ in $\Z/2^b\Z$ are $ \overline{1}, -\overline{1}, \overline{1} + \overline{2}^{b-1},-\overline{1} + \overline{2}^{b-1}$.
 \end{proof}
@@ -2267,7 +2274,7 @@ Use Ex. 18-20 to find the number of solutions to $x^2 \equiv 1 \pmod n$.
 }
 
 \begin{proof}
-Let $n = 2^{a_0}p_1^{a_1}\cdots p_k^{a_k}$ the decomposition in prime factors of $n>1$ ($p_0=2<p_1<\cdots<p_k, a_0\geq 0, a_i>0, 1\leq i \leq k$). Let $N$ the number of solutions of $x^2 \equiv 1 \pmod n$, and $N_i$ the number of solutions of $x^2 \equiv 1 \pmod {p^i}, i = 0,1,\ldots k$. From Ex.3.18, we know that $N = N_0N_1\cdots N_k$, where (Ex. 3.19), $N_i = 2, i=1,2,\ldots,k$, and (Ex.3.20), $N_0=1$ if $a_0=1$ (or $a_0 = 0$), $N_0 = 2$ if $a_0 = 2$, $N_0=4$ if $a_0\geq 3$.
+Let $n = 2^{a_0}p_1^{a_1}\cdots p_k^{a_k}$ the decomposition in prime factors of $n>1$ ($p_0=2<p_1<\cdots<p_k, a_0\geq 0, a_i>0, 1\leq i \leq k$). Let $N$ the number of solutions of $x^2 \equiv 1 \pmod n$, and $N_i$ the number of solutions of $x^2 \equiv 1 \pmod {p_i^{a_i}}, i = 0,1,\ldots k$. From Ex.3.18, we know that $N = N_0N_1\cdots N_k$, where (Ex. 3.19), $N_i = 2, i=1,2,\ldots,k$, and (Ex.3.20), $N_0=1$ if $a_0=1$ (or $a_0 = 0$), $N_0 = 2$ if $a_0 = 2$, $N_0=4$ if $a_0\geq 3$.
 
 Conclusion : the number of solutions of $x^2 \equiv 1 \pmod n$,  where $n = 2^{a_0}p_1^{a_1}\cdots p_k^{a_k}$, is
 \begin{align*}
@@ -2330,7 +2337,7 @@ Conclusion : for all $z \in \Z[i]$, $z\equiv0,1 \pmod{1+i}$.
 \begin{proof}
 Same definition of congrence in $\Z[\omega]$ as in Ex. 3.23.
 
-$\omega \equiv 1 \pmod{1-\omega}$, so $a+b\omega \equiv a+b \pmod{-\omega}$.
+$\omega \equiv 1 \pmod{1-\omega}$, so $a+b\omega \equiv a+b \pmod{1-\omega}$.
 
 $0 = 1-\omega^3 = (1- \omega)(1+\omega+\omega^2)$, with $1-\omega \neq 0$, so  $1+\omega+\omega^2 = 0$. Hence $3 \equiv 0 \pmod{1-\omega}$.
 
@@ -2365,7 +2372,7 @@ since $\beta \equiv 0,1,-1 \pmod \lambda$ (see Ex. 3.24).
 
 So $\lambda^4 \mid \alpha^3 - 1$.
 
-As $\lambda \overline{\lambda} = (1-\omega)(1-\omega^2) = 1 - \omega - \omega^2+ \omega^3 = 3$, then $\lambda \overline{\lambda} = -\omega^2 \lambda^2 = 3$, so $\lambda^2$ and $3$ are associate : $\lambda^2 = -\omega \lambda^2$. So $9 =(-\omega^2 \lambda^2)^2 =  \omega \lambda^4$, so $9 \mid \omega^2 9 = \lambda^4 \mid \alpha^3-1$.
+As $\lambda \overline{\lambda} = (1-\omega)(1-\omega^2) = 1 - \omega - \omega^2+ \omega^3 = 3$, then $\lambda \overline{\lambda} = -\omega^2 \lambda^2 = 3$, so $\lambda^2$ and $3$ are associate : $\lambda^2 = -\omega 3$. So $9 =(-\omega^2 \lambda^2)^2 =  \omega \lambda^4$, so $9 \mid \omega^2 9 = \lambda^4 \mid \alpha^3-1$.
 
 For all $\alpha \in \Z[\omega]$, 
 $$\alpha \equiv 1 \pmod \lambda \Rightarrow \alpha^3 \equiv 1 \pmod 9.$$
@@ -2389,7 +2396,7 @@ As $\pm1\pm1\pm1 \not \equiv 0 \pmod 9$, this is a contradiction.
 
 Conclusion : if $\xi, \eta, \zeta$ are not zero and $\xi^3 + \eta^3 + \zeta^3 = 0$, then $\lambda$ divides at least one of the elements $\xi, \eta, \zeta$.
 
-(consequence : if $x^3+y^3+z^3 = 0,\ x,y,z \in \Z$, then $3\mid xyz$ : this is the first case of Fermat's theorem for the exponant 3.)
+(consequence : if $x^3+y^3+z^3 = 0,\ x,y,z \in \Z$, then $3\mid xyz$ : this is the first case of Fermat's theorem for the exponent 3.)
 \end{proof}
 
 
