@@ -81,7 +81,7 @@ $\bullet$ If  $G$ is a finite subgroup of $\C^*$, then $G \subset \mathbb{U}_n =
 
 We give  here a direct proof.
 
-Let $g$ a generator of $F^*$.  Write $x = g^y, \alpha = g^a$. Then
+Let $g$ be a generator of $F^*$.  Write $x = g^y, \alpha = g^a$. Then
 $$x^n = \alpha \iff g^{ny} = g^a\iff q-1 \mid ny -a.$$
 
 Suppose that there exists $x\in F$ such that $x^n = \alpha$. Then there exists $y\in \Z$ such that $q-1 \mid ny -a$. Since $n \mid q-1$, then  $n \mid a$.
@@ -98,13 +98,13 @@ g^{\frac{a}{n} + k \frac{q-1}{n}} = g^{\frac{a}{n} + l \frac{q-1}{n}} & \Rightar
 &\Rightarrow k\equiv l \ [n] \Rightarrow k=l.
 \end{align*}
 
-Conclusion : if  $F$ is a field with $q$ elements and $n \mid q-1$, the equation $x^n = \alpha$ has either no solutions or $n$ solutions in $F$.
+Conclusion: if  $F$ is a field with $q$ elements and $n \mid q-1$, the equation $x^n = \alpha$ has either no solutions or $n$ solutions in $F$.
 
-Note : $$\exists x \in F^*, x^n = \alpha \iff n \mid a \iff \alpha^{(q-1)/n} = 1.$$
+Note: $$\exists x \in F^*, x^n = \alpha \iff n \mid a \iff \alpha^{(q-1)/n} = 1.$$
 
 Indeed, if $x^n = \alpha$ has a solution, we have proved that $n\mid a$, thus $\alpha^{(q-1)/n} = (g^{a/n})^{q-1} = 1$.
 
-Conversely, if $\alpha^{(q-1)/n} = 1$, $g^{a.(q-1)/ n }=1$, thus $q-1 \mid a(q-1)/n$, so $ n \mid a$ :  $\alpha = x^n$, with $x = g^{n/a}$.
+Conversely, if $\alpha^{(q-1)/n} = 1$, $g^{a(q-1)/ n }=1$, thus $q-1 \mid a(q-1)/n$, so $ n \mid a$ :  $\alpha = x^n$, with $x = g^{n/a}$.
 \end{proof}
 
 \paragraph{Ex. 7.4}
@@ -115,12 +115,12 @@ Conversely, if $\alpha^{(q-1)/n} = 1$, $g^{a.(q-1)/ n }=1$, thus $q-1 \mid a(q-1
 \begin{proof}
 Here $n \mid q-1$.
 
-Let $\varphi = F^* \to F^*$ the application defined by $\varphi(x) = x^n$. $\varphi$ is a morphism of groups, and $\ker \varphi$ is the set of solutions of $x^n = 1$.
+Let $\varphi = F^* \to F^*$ be the application defined by $\varphi(x) = x^n$. Then $\varphi$ is a homomorphism of groups, and $\ker \varphi$ is the set of solutions of $x^n = 1$.
 As $n \mid q-1$, $x^n = 1$ has exactly $n$ solutions (Prop 7.1.1, Corollary2, or Ex 7.3 with $\alpha = 1$). So $\vert \ker \varphi \vert = n$.
 
 Thus $\mathrm{Im}\ \varphi \simeq F^*/\ker \varphi$ is a subgroup with cardinality $\vert F^* \vert / \vert \ker \varphi \vert = (q-1)/n$, and $\mathrm{Im} \ \varphi$ is the set of $\alpha$ such that $x^n = \alpha$ is solvable.
 
-Conclusion : the set of $\alpha \in F^*$ such that $x^n = \alpha$ is solvable is a subgroup with $(q-1)/n$ elements.
+Conclusion: the set of $\alpha \in F^*$ such that $x^n = \alpha$ is solvable is a subgroup with $(q-1)/n$ elements.
 
 \end{proof}
 
@@ -134,11 +134,11 @@ Conclusion : the set of $\alpha \in F^*$ such that $x^n = \alpha$ is solvable is
 As $q\equiv 1 \ [n], \frac{q^n-1}{q-1} = 1+q+\cdots+q^{n-1} \equiv 0 \ [n]$, then $n \mid \frac{q^n-1}{q-1} : $
 $$q^n-1 = k n (q-1), k \in \mathbb{N}.$$
 
-Since $\alpha \in F^*$, $\alpha^{q-1} = 1$, so $$\alpha^{(q^n-1)/n} = (\alpha^{q-1})^k = 1.$$
+Since $\alpha \in F^*$, $\alpha^{q-1} = 1$, thus $$\alpha^{(q^n-1)/n} = (\alpha^{q-1})^k = 1.$$
 
 As $\vert K \vert = q^n$, Prop. 7.1.2 (or the final remark in Ex.7.3) show that there exists $x \in K^*$ such that $x^n = \alpha$. Then, from Ex.7.3, we know that there exist $n$ solutions in $K$.
 
-Conclusion : if $[K:F] = n$, the equation $x^n = \alpha$ has $n$ solutions in $K$.
+Conclusion: if $[K:F] = n$, for all $\alpha \in F^*$, the equation $x^n = \alpha$ has $n$ solutions in $K$.
 
 \end{proof}
 
@@ -151,8 +151,8 @@ Conclusion : if $[K:F] = n$, the equation $x^n = \alpha$ has $n$ solutions in $K
 \begin{proof}
 Let $q = \vert F \vert$. Then $\vert K \vert = q^3.$
 
-If the characteristic of $F$ is 2, $q = 2^k$ for some integer $k\geq 1$, and for all $x \in F$, $x = x^q = \left (x^{2^{k-1}}\right)^2$. So all elements in $F$ or $K$ are squares.
-We can now suppose that the characteristic of $F$ is not 2, and consequently $1 \neq -1$ in $F$.
+If the characteristic of $F$ is 2, then $q = 2^k$ for some integer $k\geq 1$, and for all $x \in F$, $x = x^q = \left (x^{2^{k-1}}\right)^2$. Therefore all elements in $F$ (or $K$) are squares.
+We can now suppose that the characteristic of $F$ is not 2, so that $1 \neq -1$ in $F$.
 
 As $\alpha$ is not a square in $F$, $\alpha^{(q-1)/2} \ne 1$ (Prop. 7.1.2). From  $0 = \alpha^{q-1} - 1 = (\alpha^{(q-1)/2}-1)(\alpha^{(q-1)/2}+1)$, we deduce that $\alpha^{(q-1)/2} = -1$. Then 
 $$\alpha^{(q^3-1)/2} = (\alpha^{(q-1)/2})^{q^2+q+1} = (-1)^{q^2+q+1} = -1,$$
@@ -185,7 +185,7 @@ $\bullet$ If $n$ is even, as $q$ is odd ($\mathrm{char}(F) \ne 2$), $1 + q +\cdo
 
 \bigskip
 
-Let $F$ a field with $q = 2^n$ elements. 
+Let $F$ be a field with $q = 2^n$ elements. 
 
 \bigskip
 
@@ -198,7 +198,7 @@ The subgroup of squares is $F^*$.
 
 {\bf Proof 2}
 \begin{proof}
-For all $x \in F$, $x = x^q = \left (x^{2^{n-1}}\right)^2$. So all elements in $F$ or $K$ are squares. 
+For all $x \in F$, $x = x^q = \left (x^{2^{n-1}}\right)^2$. So all elements in $F$ are squares. 
 \end{proof}
 
 \paragraph{Ex. 7.9}
@@ -209,7 +209,7 @@ For all $x \in F$, $x = x^q = \left (x^{2^{n-1}}\right)^2$. So all elements in $
 \begin{proof}
 Let $k = [K:F]$. From hypothesis, $k\wedge n = 1$, so there exist integers $u,v$ such that $uk+vn = 1$.
 
-As $n \mid q-1$, $n \wedge (q-1) = n$, so the hypothesis "$x^n = \alpha$ is not solvable in $F$" implies that $\alpha^{(q-1)/n} \neq 1$ (Prop. 7.1.2).
+As $n \mid q-1$, $n \wedge (q-1) = n$, the hypothesis "$x^n = \alpha$ is not solvable in $F$" implies that $\alpha^{(q-1)/n} \neq 1$ (Prop. 7.1.2).
 
 Write $\omega =\alpha^{(q-1)/n}$, so $\omega \ne 1$ and $\omega^n = 1$.
 
@@ -219,7 +219,7 @@ Moreover $1+q+\cdots+q^{k-1} \equiv k \pmod n$, and $\omega^n = 1$, so $\alpha^{
 
 If $\omega^k = 1$, then $\omega = \omega^{uk+vn} = (\omega^k)^u (\omega^n)^v = 1$, which is in contradiction with $\omega = \alpha^{(q-1)/n} \ne 1$.
 
-So $\alpha^{(q^k-1)/n} = \omega^k \ne 1$, and consequently the equation $x^n = \alpha$ has no solution in $K$.
+Thus $\alpha^{(q^k-1)/n} = \omega^k \ne 1$. This proves that the equation $x^n = \alpha$ has no solution in $K$.
 \end{proof}
 
 \paragraph{Ex. 7.10}
@@ -230,14 +230,14 @@ So $\alpha^{(q^k-1)/n} = \omega^k \ne 1$, and consequently the equation $x^n = \
 \begin{proof}
 If $\beta = 0$, $\beta^{1+q} = 0 \in F$, and if $\beta \in K^*$, $\beta^{q^2-1} = 1$, so $\left(\beta ^{1+q}\right)^{q-1} = 1$, thus $ \beta^{1+q} \in F$ (Prop. 7.1.1, Corollary 1).
 
-Let  $g$ a generator of $K^*$ : $K^* = \{1,g,g^2,\cdots,g^{q^2-2}\}$.
+Let  $g$ be a generator of $K^*$. Then $K^* = \{1,g,g^2,\cdots,g^{q^2-2}\}$.
 
 For every integer $k \in \Z$, 
 $$g^k  \in F^* \iff (g^k)^{q-1} = 1 \iff g^{k(q-1)}=1 \iff q^2-1 \mid k(q-1) \iff q+1 \mid k.$$
 Thus $F^* = \{1,g^{q+1}, g^{2(q+1)},\cdots, g^{(q-2)(q+1)}\}$. If $\alpha \in F^*$, there exists $i, 0 \leq i \leq q-1,$ such that $\alpha = g^{i(q+1)}$.
 If we write $\beta = g^i$, then $\alpha = \beta^{1+q}$ (and for $\alpha = 0$, we take $\beta = 0$).
 
-Conclusion : if $K$ is a quadratic extension of $F$ ($F,K$ finite fields), every element in $F$ is of the form $\beta^{1+q}$ for some $\beta \in K$.
+Conclusion: if $K$ is a quadratic extension of $F$ ($F,K$ finite fields), every element in $F$ is of the form $\beta^{1+q}$ for some $\beta \in K$.
 \end{proof}
 
 \paragraph{Ex. 7.11}
@@ -269,7 +269,7 @@ We will show that we can choose $s$ such that $j = i +s(q-1)$ is relatively prim
 
 $i$ is odd : if not, $\alpha$ is an element of the subgroup of squares in $F^*$, so its order divides $(q-1)/2$, in contradiction with $|\alpha| = q-1$.
 
- $(q-1)\wedge (q+1) \mid 2$. Since $i-1$ is even, there exist integers $s,t$ verifying the BŽzout's equation
+ $(q-1)\wedge (q+1) \mid 2$. Since $i-1$ is even, there exist integers $s,t$ verifying the B?zout's equation
 $$i-1 = t(q+1)-s(q-1).$$
 Then $j = i+s(q-1) = 1 + t(q+1)$ is relatively prime with $q+1$ : $j \wedge (q+1) = 1$.
 
@@ -278,9 +278,9 @@ $$q-1 = |\alpha| = \frac{q-1}{(q-1)\wedge j},$$
 so $(q-1) \wedge j = 1$.
 As $(q+1) \wedge j = 1$ and $(q-1) \wedge j = 1$, then $(q^2-1) \wedge j = 1$.
 
-Let $\beta = g^j$ : then $\alpha = \beta^{1+q}$, and using the lemma :
+Let $\beta = g^j$. Then $\alpha = \beta^{1+q}$, and using the lemma,
 $$|\beta| = |g^j| = \frac{q^2-1}{(q^2-1)\wedge j} = q^2-1.$$
-Conclusion :  there exists a $\beta \in K^*$ with order $q^2-1$ such that $\beta^{1+q} = \alpha$.
+Conclusion:  there exists a $\beta \in K^*$ with order $q^2-1$ such that $\beta^{1+q} = \alpha$.
 \end{proof}
 
 \paragraph{Ex. 7.12}
@@ -297,7 +297,7 @@ Suppose that the property is true for all polynomials of degree less than $n$ on
 
 Let $f(x) \in k[x], \deg(f) = n$. From proposition 7.2.1. applied to an irreducible factor of $f$, there exists a field $L, [L:K]<\infty$ and $\alpha \in L$ such that $f(\alpha_1) = 0$. Then $f(x) = (x-\alpha_1) g(x), g(x) \in L[x]$. 
 
-Applying the induction hypothesis in the field $L$ on the polynomial $g \in L[x]$ with $\deg(g) = n-1$, we obtain a field $K, [K:L]<\infty$ such that $g(x) = a(x-\alpha_2)\cdots(x-\alpha_n)$ with $\alpha_i \in K$. So  $f(x) = a(x-\alpha_1)(x-\alpha_2)\cdots(x-\alpha_n)$ splits in linear factors in $K$. The induction is achieved.
+Applying the induction hypothesis in the field $L$ on the polynomial $g \in L[x]$ with $\deg(g) = n-1$, we obtain a field $K, [K:L]<\infty$ such that $g(x) = a(x-\alpha_2)\cdots(x-\alpha_n)$ with $\alpha_i \in K$. So  $f(x) = a(x-\alpha_1)(x-\alpha_2)\cdots(x-\alpha_n)$ splits in linear factors in $K$. The induction is done.
 \end{proof}
 
 \paragraph{Ex. 7.13}
@@ -308,23 +308,25 @@ Applying the induction hypothesis in the field $L$ on the polynomial $g \in L[x]
 \begin{proof}
 Let $f(x) =  x^{p^n} -x$. We know from Ex. 7.12 that there exists a finite extension $K$ of $\F_p$ such that $f$ splits in linear factors on $K$ :
 $$f(x) = \prod_{k=1}^{p^n} (x-\alpha_k), \qquad \alpha_1,\ldots, \alpha_{p^n} \in K.$$
-The set $k =\{\alpha_1,\cdots,\alpha_{p_n}\} \subset K$ of the roots of $x^{p^n} -x$ is a subfield of $K$ : indeed, if $\alpha, \beta \in k$,
+The set $k =\{\alpha_1,\cdots,\alpha_{p_n}\} \subset K$ of the roots of $x^{p^n} -x$ is a subfield of $K$. Indeed, if $\alpha, \beta \in k$,
 \begin{enumerate}
 \item[(a)] $f(1) = 0$, so $1 \in k$
 \item[(b)]$(\alpha- \beta)^{p^n} = \alpha^{p^n} - \beta^{p^n} = \alpha - \beta$, so $\alpha - \beta \in k$.
 \item[(c)] $(\alpha\beta)^{p^n} = \alpha^{p^n} \beta^{p^n} = \alpha  \beta$, so $\alpha \beta \in k$.
 \item[(d)] $(\alpha^{-1})^{p^n} = (\alpha^{p^n})^{-1} = \alpha^{-1}$, so $\alpha^{-1} \in k$ if $\alpha \ne 0$.
 \end{enumerate}
-As $f'(x) = -1$, $f(x) \wedge f'(x) = 1$, so $f$ has no multiple root, so the cardinality of $k$ is $p^n$.
+As $f'(x) = -1$, $f(x) \wedge f'(x) = 1$. Thus $f$ has no multiple root, and the cardinality of $k$ is $p^n$.
 
-Let $g(x) \in \F_p[x]$ a factor of $f(x)$, irreducible in $\F_p[x]$, with $d =\deg(g)$. As $g \mid f$, $g$ splits in linear factors in $k[x]$. Let $\alpha$ a root of $g(x)$ in $k$. As $g$ is irreducible on $\F_p$, 
+Let $g(x) \in \F_p[x]$ a factor of $f(x)$, irreducible in $\F_p[x]$, with $d =\deg(g)$. As $g \mid f$, $g$ splits in linear factors in $k[x]$. Let $\alpha$ be a root of $g(x)$ in $k$. As $g$ is irreducible on $\F_p$, 
 $d = \deg(g) = [\F_p[\alpha] : \F_p]$. Moreover $ n = [k : \F_p] = [k : \F_p[\alpha]]\,[\F_p[\alpha] : \F_p]$, so $d \mid n$.
 
 Conversely, suppose that $g$ is any irreducible polynomial in $\F_p[x]$, with $d = \deg(g) \mid n$. Then $K_0 = \F_p[x]/ \langle g\rangle$  contains a root $\alpha$ of $g$, and $[K_0:\F_p] = \deg(g) = d$, so $\alpha^{p^d} = \alpha$.
 
-As $d\mid n$ , then $p^d-1 \mid p^n-1$ and $x^{p^d}-1 \mid x^{p^n}-1$ (Lemma 2,3 in section 1), so
+As $d\mid n$ , then $p^d-1 \mid p^n-1$ and $x^{p^d -1}-1 \mid x^{p^n-1}-1$ (Lemma 2,3 in section 1), thus 
 $$x^{p^d} - x \mid x^{p^n}-x.$$
 $f(\alpha) = \alpha^{p^n} - \alpha = 0$ and $g$ is the minimal polynomial of $\alpha$, so $g \mid f$.
+
+Since $f$ has no multiple roots in $K$, $g^2 \nmid f$.
 
 Conclusion : 
 $$ x^{p^n}-x = \prod_{d\mid n} F_d(x),$$
@@ -339,7 +341,7 @@ where $F_d(x)$ is the product of the monic irreducible polynomial of degree $d$.
 \begin{proof}
 Let $F = \F_q$ a field with $q = p^m$ elements, and $n$ a positive integer.
 
-From Theorem 2 Corollary 3, there exists an irreducible polynomial $f(x) \in \F_p[x]$ of degree $nm$. Let $g$ an irreducible factor of $f$ in $\mathbb{F}_q[x]$, and $\alpha$ a root of $g$ in an extension of $\F_q$.
+By Theorem 2 Corollary 3, there exists an irreducible polynomial $f(x) \in \F_p[x]$ of degree $nm$. Let $g$ be an irreducible factor of $f$ in $\mathbb{F}_q[x]$, and let $\alpha$ be a root of $g$ in an extension of $\F_q$.
 
 \bigskip
 
@@ -356,14 +358,15 @@ We show that $\F_q[\alpha] =  \F_p[\alpha]$.
 
 As $\F_p \subset \F_q$, $\F_p[\alpha] \subset \F_q[\alpha]$.
 
-Let $\beta \in \F_q[\alpha]$ : $\beta = \sum\limits_{i=1}^k a_i\alpha^i$, where $a_i \in \F[q] \subset \F_p[\alpha]$, so $a_i = p_i(\alpha), p_i \in \F_p[\alpha]$. Consequently
-$$\beta = \sum\limits_{i=1}^k p_i(\alpha) \alpha^i \in \F_p[\alpha],$$
-so $\F_q[\alpha] =  \F_p[\alpha]$.
+Let $\beta \in \F_q[\alpha]$. Then $\beta = \sum\limits_{i=1}^k a_i\alpha^i$, where $a_i \in \F_q \subset \F_p[\alpha]$, thus $a_i = p_i(\alpha),\ p_i \in \F_p[x]$. Therefore
+$$\beta = \sum\limits_{i=1}^k p_i(\alpha) \alpha^i \in \F_p[\alpha].$$
+We have proved $\F_q[\alpha] =  \F_p[\alpha]$.
 
+Since  $|\F_p[\alpha]| = p^{nm} $,
 $$nm = [\mathbb{F}_p[\alpha] : \mathbb{F}_p] = [\mathbb{F}_q[\alpha]:\mathbb{F}_p] = [\mathbb{F}_q[\alpha] : \mathbb{F}_q]\times [\mathbb{F}_q:\mathbb{F}_p] =  [\mathbb{F}_q[\alpha] : \mathbb{F}_q]\times m .$$
-Thus  $[\mathbb{F}_q[\alpha] : \mathbb{F}_q] = n$, and $g$ is the minimal polynomial of $\alpha$ on $\F_q$, so $\deg(g) = n$.
+Thus  $[\mathbb{F}_q[\alpha] : \mathbb{F}_q] = n$. Moreover $g$ is the minimal polynomial of $\alpha$ on $\F_q$, thus $\deg(g) = n$.
 
-Conclusion : if $F$ is a field with $q = p^m$ elements, there exist irreducible polynomials in $F[x]$ of degree $n$ for all positive integers $n$.
+Conclusion: if $F$ is a field with $q = p^m$ elements, there exist irreducible polynomials in $F[x]$ of degree $n$ for all positive integers $n$.
 \end{proof}
 
 \paragraph{Ex. 7.15}
@@ -375,27 +378,27 @@ Conclusion : if $F$ is a field with $q = p^m$ elements, there exist irreducible 
 \begin{proof}
 From exercise 7.12, we know that $x^n-1$ splits into linear factors in some extension field $K$, with $[K:F]<\infty$ :
 $$u(x)= x^n-1 = (x-\zeta_0)(x-\zeta_1)\cdots(x-\zeta_{n-1}), \qquad \zeta_i \in K.$$
-$u'(x)\wedge u(x) = nx^{n-1} \wedge (x^n-1) = 1$, since $x(nx^{n-1}) - n(x^n-1) = n$, and $n\neq 0$ in the field $F$, since we know from the hypothesis $q \wedge n=1$ that the characteristic $p$ doesn't divide $n$. So the $n$ roots of $x^n-1$ are distinct.
+Then $u'(x)\wedge u(x) = nx^{n-1} \wedge (x^n-1) = 1$, since $x(nx^{n-1}) - n(x^n-1) = n$, and $n\neq 0$ in the field $F$, because we know from the hypothesis $q \wedge n=1$ that the characteristic $p$ doesn't divide $n$. So the $n$ roots of $x^n-1$ are distinct.
 
 The set $G = \{x \in K \ \vert \ x^n=1\}$ is a subgroup of $K^*$, thus $G$ is cyclic of order $n$. Let $\zeta$ a generator of $G$. Then
 $$x^n-1 = (x-1)(x-\zeta)(x-\zeta^2)\cdots(x-\zeta^{n-1}).$$
 
-Let $p(x)$ the minimal polynomial of $\zeta$ on $F$, and $f$ the degree of $p$ :
+Let $p(x)$ be the minimal polynomial of $\zeta$ on $F$, and $f$ the degree of $p$ :
 $$f = \deg(p) = [F[\zeta] : F].$$
-So $\mathrm{Card}\, F[\zeta] = q^f$, and since $\zeta \in F[\zeta]^*$, $\zeta^{q^f - 1} -1 = 0$.
+Thus $\mathrm{Card}\, F[\zeta] = q^f$, and since $\zeta \in F[\zeta]^*$, $\zeta^{q^f - 1} -1 = 0$.
 As the order of $\zeta$ in the group $G$ is $n$, $n \mid q^f - 1$, namely $q^f \equiv 1 \pmod n$.
 
 \bigskip
 
-Let $k$ any positive integer such that $q^k \equiv 1 \pmod n$.
+Let $k$ be any positive integer such that $q^k \equiv 1 \pmod n$.
 
-Then $n \mid q^k - 1$, so $\zeta^{q^k-1} - 1 = 0$, $\zeta^{q^k} - \zeta = 0$. Let $L$ an extension of $K$ such that $x^{q^k} - x$ splits in linear factors in $L$. As $\zeta^{q^k} - \zeta = 0$, $\zeta $ belongs to the subfield $M$ of $L$ with cardinality $q^k$, such that $[M:F]= k$. Thus $\F[\zeta] \subset M$, so $f = [F[\zeta] : F] \leq k = [M:F]$.
+Then $n \mid q^k - 1$, thus $\zeta^{q^k-1} - 1 = 0$, and  $\zeta^{q^k} - \zeta = 0$. Let $L$ be any extension of $K$ such that $x^{q^k} - x$ splits in linear factors in $L$, and let $M=\{\alpha \in L \mid \alpha^{q^k} = \alpha\}$. We know that $M$ is a subfield of $L$ (see Ex. 13), with cardinality $q^k$, so that $[M:F]= k$. As $\zeta^{q^k} - \zeta = 0$, $\zeta $ belongs to $M$. Therefore $F[\zeta] \subset M$, thus $f = [F[\zeta] : F] \leq k = [M:F]$.
 
-$f = [F[\zeta] : F]$ is the smallest $k \in \N^*$ such that $q^k\equiv 1 \pmod n$.
+So $f = [F[\zeta] : F]$ is the smallest $k \in \N^*$ such that $q^k\equiv 1 \pmod n$.
 
 If $K$ is any extension of $F$ containing the roots of $x^n-1$, then $K \supset F[\zeta]$, where $\zeta$ is a primitive root of unity, so $[K : F] \geq [F[\zeta]:F] = f$.
 
-Conclusion : the minimal degree of a extension $K \supset F$ containing the roots of $x^n - 1$, with $n\wedge q = 1$, is the smallest positive integer $f$ such that $q^f \equiv 1 \pmod n$, the order of $q$ modulo $n$.
+Conclusion: the minimal degree of a extension $K \supset F$ containing the roots of $x^n - 1$, with $n\wedge q = 1$, is the smallest positive integer $f$ such that $q^f \equiv 1 \pmod n$, the order of $q$ modulo $n$.
 \end{proof}
 
 \paragraph{Ex. 7.16}
@@ -478,7 +481,7 @@ Indeed, $p$ is irreducibel : if $p = uv,\ u,v \in \Z[i]$, where $u = c+di,v$ are
 }
 
 \begin{proof}
-Let $U$ the set of monic polynomials in $\mathbb{F}_q[x]$, and $U_t$ the set of monic polynomials of degree $t$, and $s\in \C$. Then $U = \coprod_{t \in \N} U_t$, so
+Let $U$ be the set of monic polynomials in $\mathbb{F}_q[x]$, and $U_t$ the set of monic polynomials of degree $t$, and $s\in \C$. Then $U = \coprod_{t \in \N} U_t$, so
 \begin{align*}
 \sum_{f \in U} \vert f \vert^{-s }&= \sum_{t=0}^\infty \sum_{f \in U_t} \vert f \vert^{-s}\\
 &=\sum_{t=0}^\infty \frac{1}{q^{ts}} \sum_{f\in U_t} 1.
@@ -494,7 +497,7 @@ As $\left | \frac{1}{q^{t(s-1)}} \right | = \frac{1}{q^{t(\mathrm{Re}(s)-1)}}$, 
 
 \bigskip
 
-Conclusion :  if $\mathrm{Re}(s)>1$, 
+Conclusion:  if $\mathrm{Re}(s)>1$, 
 $$\sum_{f \in U} \vert f \vert^{-s } =(1-q^{1-s})^{-1},$$
 where $U$ is the set of monic polynomials in  $\mathbb{F}_q[x]$.
 \end{proof}
@@ -573,11 +576,11 @@ For every automorphism $H$ in $\F_q$, and every polynomial $p(x) =\sum a_ix^i \i
 
 With this notation,
 $$f(x) =(x-\alpha)(x-F\alpha)(x- F^2\alpha)\cdots (x-F^{n-1}\alpha),$$
-$$(H\cdot f)(x) =(x-F\alpha)(x-F^2\alpha)(x- F^3\alpha)\cdots (x-F^{n}\alpha).$$
+$$(F\cdot f)(x) =(x-F\alpha)(x-F^2\alpha)(x- F^3\alpha)\cdots (x-F^{n}\alpha).$$
 
 Since $\alpha \in \mathbb{F}_{p^n}$, $F^n\alpha = \alpha^{p^n} = \alpha$ , thus
-$$H\cdot f = f.$$
-In other words, if $f(x) =\sum_i a_i x^i$, then for all $i$, $H(a_i) = a_i$, so $a_i^p = a_i$, thus $a_i \in \F_p$, and $f \in \F_p[x]$.
+$$F\cdot f = f.$$
+In other words, if $f(x) =\sum_i a_i x^i$, then for all $i$, $F(a_i) = a_i$, so $a_i^p = a_i$, thus $a_i \in \F_p$, and $f \in \F_p[x]$.
 In particular, the coefficients $a_{n-1}= \alpha + \alpha^p+\cdots+\alpha^{p^{n-1}}, a_0=\alpha\alpha^p\alpha^{p^2}\cdots\alpha^{p^{n-1}}$ are in $\F_p$.
 \end{proof}
 
@@ -596,7 +599,7 @@ Let $F$ the Frobenius automorphism of $\F_q$ introduced in Ex.7.21.
 
 (a),(b) : If $x,y \in \F_q$, and $a \in \F_p$, then $a^p = a$, so $F(x+y) =(x+y)^p = x^p+y^p = F(x)+F(y)$, and $F(ax) = a^p x^p = a x^p =a F(x)$, so $F$ is $\F_p$-linear, and also $tr = I + F + F^2+\cdots+F^{n-1}$. 
 
-(c) The polynomial $p(x) = x+x^p+x^{p^2}+\cdots+x^{p^{n-1}}$ has degree $p^{n-1}$, so $p(x)$ has at most $p^{n-1}$ roots in $\F_q$, and $|\F_q| =p^n >\deg(p) = p^{n-1}$. Therefore there exist in $\F_q$ some element $\alpha$ which is not a root of $p(x)$, and so  $\mathrm{tr}(\alpha) = p(\alpha) \ne 0$.
+(c) The polynomial $p(x) = x+x^p+x^{p^2}+\cdots+x^{p^{n-1}}$ has degree $p^{n-1}$, so $p(x)$ has at most $p^{n-1}$ roots in $\F_q$, and $|\F_q| =p^n >\deg(p) = p^{n-1}$. Therefore there exists in $\F_q$ some element $\alpha$ which is not a root of $p(x)$, and so  $\mathrm{tr}(\alpha) = p(\alpha) \ne 0$.
 \end{proof}
 
 \paragraph{Ex. 7.23}
@@ -631,7 +634,7 @@ We conclude that $x^p-x-\alpha \in F[x]$ is irreducible iff $\gamma \not \in F$.
 
 \bigskip
 
-Let $F$ the Frobenius automorphism of $K$ (cf. Ex. 7.21).
+Let $F$ be the Frobenius automorphism of $K$ (cf. Ex. 7.21).
 
 $$\alpha = F(\gamma) - \gamma, F(\alpha) = F^2(\gamma) - F(\gamma), \ldots, F^{n-1}(\alpha) = F^n(\gamma) - F^{n-1}(\gamma).$$
 The sum of these equalities gives
@@ -655,22 +658,22 @@ Let $ u(x) = (x+1)^n -x^n - 1 \in \F_p[x]$. Then $u(x) = \sum\limits_{k=1}^{n-1}
 
 Write $n = p^a q$, with $p\wedge q = 1$. We must show that $q=1$. Suppose at the contrary that $q>1$. Then 
 $$u(x)= 0 = (x+1)^{p^\alpha q} - x^{p^\alpha q} - 1=(x^{p^\alpha} + 1)^q -x^{p^\alpha q} - 1=\sum\limits_{k=1}^{q-1} \binom{q}{k} x^{kp^a}.$$
-Consequently, the coefficient $\binom{q}{1} = q$ of $x^{p^a}$ is null, so $p \mid q$ : this is absurd. Therefore $q=1$ and $n = p^a$.
+Therefore the coefficient $\binom{q}{1} = q$ of $x^{p^a}$ is null in $\F_p$, thus $p \mid q$ : this is absurd. Therefore $q=1$ and $n = p^a$.
 \end{proof}
 
 
 \begin{proof}(Ex. 7.24)
 
-Suppose that $f\in \F_p[x]$ verify in $\F_p[x,y]$ the equality $f(x+y) = f(x)+f(y)$.
+Suppose that $f\in \F_p[x]$ verifies the equality $f(x+y) = f(x)+f(y)$ in $\F_p[x,y]$.
 
 Write $f(x) = \sum\limits_{k=1}^d c_i x^i$.
 \begin{align*}
 0 = f(x+y) - f(x) -f(y)&= \sum_{n=0}^d c_n[(x+y)^n-x ^n - y^n]\\
 &=\sum_{n=0}^d \sum_{k=1}^{n-1} c_n\binom{n}{k} x^ky ^{n-k}\\
 \end{align*}
-So  for all $n$, for all $k$, $1\leq k \leq n-1$, $c_n \binom{n}{k} = 0$ in $\F_p$.
+Therefore,  for all $n$, for all $k$, $1\leq k \leq n-1$, $c_n \binom{n}{k} = 0$ in $\F_p$.
 
-From the lemma, if $n$ is not a power of $p$, there exists a $k$, $1\leq k \leq n-1$ such that $\binom{n}{k} \not \equiv 0 \pmod p$, so $c_n = 0$.
+From the lemma, if $n$ is not a power of $p$, there exists a $k$, $1\leq k \leq n-1$ such that $\binom{n}{k} \not \equiv 0 \pmod p$, thus $c_n = 0$.
 If we write $a_k = c_{p^k}$, then $f(x)$ is of the form
 $$f(x) = a_0 x+a_1x^p +a_2 x^{p^2}+\cdots+a_m x^{p^m}.$$
 \end{proof}
@@ -687,12 +690,12 @@ Let $d = m\wedge (p-1)$. We prove that $N(x^m =a) = N(x^d = a)$ for all $d \in \
 
 $\bullet$ If $a = 0$, $0$ is the only root of $x^m -a$ or $x^d -a$, so  $N(x^m = a) = N(x^d = a) = 1$.
 
-$\bullet$ If $a \in \F_p^*$ and $x^n = a$ has a solution, then we know from the demonstration of Proposition 4.2.1 that $N(x^n-a) = d = N(x^d-a)$.
+$\bullet$ If $a \in \F_p^*$ and $x^m = a$ has a solution, then we know from the demonstration of Proposition 4.2.1 that $N(x^m = a) = d$, and $N(x^d = a) = d \wedge (p-1) = d$, thus $N(x^m = a) = N(x^d =a)$.
 
-$\bullet$ If If $a \in \F_p^*$ and $x^n = a$ has no solution, then (Prop. 4.2.1) $a^{(p-1)/d} \ne 1$, so $x^d = a$ has no solution : $N(x^n-a) = 0 = N(x^d-a)$.
+$\bullet$ If $a \in \F_p^*$ and $x^m = a$ has no solution, then (Prop. 4.2.1) $a^{(p-1)/d} \ne 1$, thus $x^d = a$ has no solution : $N(x^m = a) = 0 = N(x^d =a)$.
 
-Using Prop. 8.1.5, as $d \mid n$, we obtain
-$$N(x^n =a) = N(x^d = a) = \sum_{\chi^d = \varepsilon} \chi(a).$$
+Using Prop. 8.1.5, as $d \mid p-1$, we obtain
+$$N(x^m =a) = N(x^d = a) = \sum_{\chi^d = \varepsilon} \chi(a).$$
 \end{proof}
 
 \paragraph{Ex. 8.2, false sentence.}
@@ -767,7 +770,7 @@ J(\chi,\rho) &= \sum_{t \in \F_p}\chi(1-t)\chi(1+t)\\
 &=\chi(2^2/k^2) \sum_{t \in \F_p} \chi(t) \chi(k-t)\qquad(t=kv).
 \end{align*}
 
-Conclusion : if $k \in \mathbb{F}^*$, and $\chi$ is a non trivial character, $\rho$ the character of order 2,
+Conclusion: if $k \in \mathbb{F}^*$, and $\chi$ is a non trivial character, $\rho$ the character of order 2,
 $$ \sum_{t\in \F_p}\chi(t(k-t)) = \chi(k^2/2^2) J(\chi,\rho).$$
 \end{proof}
 
@@ -837,7 +840,17 @@ $$ J(\chi,\chi) = \chi(-1) J(\chi,\rho).$$
 \begin{proof}
 For all $y \in \F_p$, write  $A_y =\{x \in \mathbb{F}_p\ \vert \ x^m = y\}$. Then $\vert A_y\vert = N(x^m = y)$.
 
-$\mathbb{F}_p = \coprod\limits_{y \in \mathbb{F}_p} A_y$ is the disjoint union of the $A_y$, so
+$\mathbb{F}_p = \coprod\limits_{y \in \mathbb{F}_p} A_y$ is the disjoint union of the $A_y$:
+
+\begin{enumerate}
+\item[$\bullet$] if $x \in A_y \cap A_{y'}$, then $x^m = y = y'$. This proves
+$$y \ne y' \Rightarrow A_y \cap A_{y'} = \varnothing.$$
+\item[$\bullet$] Every $x \in \F_p$ satisfies $x \in A_{x^m}$, thus
+$$\bigcup_{y \in \F_p} A_y = \F_p.$$
+\end{enumerate}
+(Note that some $A_y$ may be empty.)
+
+Therefore
 $$\sum_{t\in \mathbb{F}_p} \chi(1-t^m) = \sum_{y\in \mathbb{F}_p} \sum\limits_{t \in A_y} \chi(1-t^m) = \sum_{y\in \mathbb{F}_p} \vert A_y \vert \chi(1-y) =\sum_{y\in \mathbb{F}_p} N(x^m = y) \chi(1-y).$$
 Moreover, $N(x^m=y) = \sum\limits_{\lambda^m = \varepsilon} \lambda(y)$ (Prop. 8.1.5), so
 \begin{align*}
@@ -863,7 +876,7 @@ As $\chi$ is a character of order 3, $\chi^2\neq \varepsilon$. From Exercise 5, 
 $$g(\chi)^2 = \chi(2)^{-2} J(\chi,\rho) g(\chi^2).$$
 So
 $$g(\chi)^3 = \chi(2)^{-2} J(\chi,\rho) g(\chi^2)g(\chi).$$
-Recall  (¤8.2) that
+Recall  (?8.2) that
 $$\overline{g(\chi)} = \sum_t \overline{\chi(t)} \zeta^{-t} = \chi(-1) \sum_t \overline{\chi(-t)} \zeta(-t) = \chi(-1) g(\overline{\chi}),$$
 Here $\chi(-1) = 1$, because $\chi(-1) = \chi((-1)^3) = \chi^3(-1) = \varepsilon(-1) = 1$.
 Hence
@@ -1028,7 +1041,7 @@ Therefore $J(\chi,\chi^k) = \sum\limits_{x+y=1} \chi(x) \chi^k(y) \in \Z[\zeta]$
 \begin{proof}
 $x \mapsto -x$ is a bijection between the set of roots of $x^3 = b$ and the set of roots of $(-x)^3 = b$, so $N(x^3 = b) = N((-x)^3 = b) = N(x^3 = -b)$. 
 
-As $\chi$ is a character of order 3, the characters whose order divides 3 are $\varepsilon,\chi,\chi^2$. Using Prop. 8.1.5, we obtain
+As $\chi$ is a character of order 3, the characters whose order divides 3 are $\varepsilon,\chi,\chi^2$. Using Prop. 8.1.5, we obtain, if $D\ne 0$,
 \begin{align*}
 N(y^2=x^3+D)  &= \sum\limits_{a+b=D} N(y^2=a) N((-x)^3 = b)\\
 &= \sum\limits_{a+b=D} N(y^2=a) N(x^3=b)\\
@@ -1169,29 +1182,29 @@ Let's verify that $\chi(t) - 1 \equiv 0 \pmod{1+i}$. $\chi(t) \in \{1,-1,i,-i\}$
 $$\forall t \in \F_p^*, \ 1+i \mid \chi(t) - 1.$$
 Thus
 $$\forall s \in \F_p^*, \forall t \in \F_p^*, \ (\rho(s)-1)(\chi(t) - 1) \equiv 0 \pmod {2+2i}.$$
-Moreover, if $s = 0, t= 1$, then $\chi(t) = 1$, and if $s=1,t=0$, then $\rho(s) = 1$, so
+Moreover, if $s = 0, t= 1$, then $\chi(t) = 1$, and if $s=1,t=0$, then $\rho(s) = 1$, therefore
 $$\sum_{s+t=1} (\rho(s)-1)(\chi(t)-1) \equiv 0 \pmod {2+2i}.$$
 This gives, when developing this expression, :
 $$-\pi - \sum_{t \in \F_p} \chi(t) - \sum_{s\in \F_p} \rho(s) + p \equiv 0 \pmod {2+2i}.$$
 As $\sum_t \chi(t) = \sum_s \rho(s) = 0$, we obtain
 $$\pi \equiv p \pmod {2+2i}.$$
-Finally, $p \equiv 1 \pmod 4$, and $2+2i \mid 4$, since $4 = (1-i)(2+2i)$, so $p \equiv 1 \pmod {2+2i}$, so
+Finally, $p \equiv 1 \pmod 4$, and $2+2i \mid 4$, since $4 = (1-i)(2+2i)$, thus $p \equiv 1 \pmod {2+2i}$, and
 $$\pi \equiv 1 \pmod {2+2i}.$$
 
 \item[2)] By Corollary of Theorem 1, $\mathrm{N}(\pi) = \mathrm{N}(J(\chi,\rho)) = p = a^2+b^2$.
 
 We know that $p\equiv 1 \pmod 4$, $p = a^2 + b^2$ and $a+ib \equiv 1 \pmod {2+2i}$. Then  we prove that $a$ is odd, $b$ is even, and $a\equiv 1 \pmod 4$ if $4\mid b$ and $a\equiv -1 \pmod 4$ if $4\nmid b$. 
 
-$a + bi \equiv 1 \pmod {2+2i}$, so $a+bi \equiv 1 \pmod 2$, so $a$ is odd, and $b$ is even.
+$a + bi \equiv 1 \pmod {2+2i}$, thus $a+bi \equiv 1 \pmod 2$, so that $a$ is odd, and $b$ is even.
 
 $\bullet$ If $4 \mid b$, then $2+2i \mid b$.
 
-$a \equiv 1 \pmod {2+2i}$, and by complex conjugation, $a\equiv 1 \pmod{2-2i}$, so $(2+2i)(2-2i) = 8 \mid (a-1)^2$, thus $4 \mid a-1$.
+Therefore $a \equiv 1 \pmod {2+2i}$, and by complex conjugation, $a\equiv 1 \pmod{2-2i}$, so $(2+2i)(2-2i) = 8 \mid (a-1)^2$, thus $4 \mid a-1$.
 
 $\bullet$ If $4 \nmid b$, then $b = 4k+2, k\in \Z$.
 
 Therefore, $1 \equiv a+bi \equiv a +2i \pmod{2+2i}$. As $2i \equiv -2 \pmod{2+2i}$, $a\equiv 3 \equiv -1 \pmod {2+2i}$.
-By conjugation, $a \equiv -1 \pmod{2-2i}$. Multiplying these congruences, we obtain $8 \mid (a+1)^2$, so $a \equiv -1 \pmod 4$.
+By conjugation, $a \equiv -1 \pmod{2-2i}$. Multiplying these congruences, we obtain $8 \mid (a+1)^2$, thus $a \equiv -1 \pmod 4$.
 
 \item[3)] $\pi = -J(\chi,\rho) = a + bi$ is such that  $a^2+b^2 = p$, $a$ odd, $b$ even and also
 $$(4 \mid b \ \mathrm{and} \ a\equiv 1\ [4]) \ \mathrm{or}\ (4\nmid b\ \mathrm{and}\ a\equiv -1 \ [4]).$$
@@ -1367,7 +1380,7 @@ $$N = p^{n-1}+p^{-1} \sum\limits_{a\in \mathbb{F}_p^*} \sum\limits_{(x_1,x_2,\cd
 
 By Exercise 8.22, since $p \nmid a, p\nmid a_i$,
 \begin{align*}
-\sum\limits_{(x_1,x_2,\cdots,x_n) \in \mathbb{F}_p^n} \zeta^{a(a_1 x_1^{d_1}+\cdots a_n x_n^{d_n} )} &=\left( \sum\limits_{x_1 \in \mathbb{F}_p} \zeta^{aa_1 x_1^{d_1}}\right)\cdots\left(\sum\limits_{x_1 \in \mathbb{F}_p} \zeta^{aa_n x_n^{d_n}}\right)\\
+\sum\limits_{(x_1,x_2,\cdots,x_n) \in \mathbb{F}_p^n} \zeta^{a(a_1 x_1^{d_1}+\cdots a_n x_n^{d_n} )} &=\left( \sum\limits_{x_1 \in \mathbb{F}_p} \zeta^{aa_1 x_1^{d_1}}\right)\cdots\left(\sum\limits_{x_n \in \mathbb{F}_p} \zeta^{aa_n x_n^{d_n}}\right)\\
 &=\left(\sum\limits_{\chi_1^{d_1} = \varepsilon,\, \chi_1\neq \varepsilon} g_{aa_1}(\chi_1)\right)\cdots\left(\sum\limits_{\chi_n^{d_n}= \varepsilon,\,\chi_n \neq \varepsilon} g_{aa_n}(\chi_n)\right)\\
 &=\prod\limits_{i=1}^n \sum\limits_{\chi_i^{d_i}= \varepsilon,\, \chi_i \neq \varepsilon} g_{aa_i}(\chi_i)
 \end{align*}
