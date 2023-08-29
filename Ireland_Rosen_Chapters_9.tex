@@ -82,7 +82,7 @@ So there exist exactly three classes modulo $\lambda$ in $D$ : $ | D/\lambda D |
 
 Let $S$ the set containing $\lambda = 1 - \omega$ and all primary primes. 
 
-We show that,
+We show that
 \begin{enumerate}
 \item[(a)] every prime in $D$ is associate to a prime in $S$,
 \item[(b)] no two primes in $S$ are associate.
@@ -91,15 +91,15 @@ We show that,
  Let $\pi$ be a prime in $D$. There are three cases.
 
   \begin{enumerate}
-  \item[$\bullet$] If $\n(\pi) = 3$, then $\pi$ is associate to $\lambda \in S$, and no associate of $\lambda$ is primary.
-  \item[$\bullet$] If $\n(\pi) = q^2$, where $q \equiv -1 \pmod 3$ is a rational prime, then $\pi$ is associate to $q$ (Proposition 9.1.2), and $q$ is a primary prime.
+  \item[$\bullet$] If $\n(\pi) = 3$, then $\pi$ is associate to $\lambda \in S$, thus $\pi \in \{1-\omega, -1\omega, -2 - \omega, 2 + \omega, 1 + 2\omega, -1-2\omega\}$, and no associate of $\lambda$ is primary.
+  \item[$\bullet$] If $\n(\pi) = q^2$, where $q \equiv -1 \pmod 3, q>0,$ is a rational prime, then $\pi$ is associate to $q$ (Proposition 9.1.2), and $q$ is a primary prime.
   	The primes associate to $q$ are $q, -q, \omega q, -\omega q, -q - \omega q, q + \omega q$, so only $q$ is primary.
-  \item[$\bullet$] If $\n(\pi) = p$, where $p \equiv 1 \pmod 4$, then the proposition 9.1.4. shows among the associates of $\pi$ exactly one is primary.
+  \item[$\bullet$] If $\n(\pi) = p$, where $p \equiv 1 \pmod 4$, then the proposition 9.1.4. shows that among the associates to $\pi$ exactly one is primary.
   \end{enumerate}
    Moreover, the norm of two primes belonging to two different cases are distinct, so two such primes are not associate.
 
 By Theorem 3, Chapter 1, as $D = \Z[\omega]$ is a principal ideal domain,  every $\mu \in D$ is of the form
-$$\mu = u \prod_{\pi \in S} \lambda^{e(\pi)},$$
+$$\mu = u \prod_{\pi \in S} \pi^{e(\pi)},$$
 where $u$ is a unit, so $u = (-1)^a\omega^b$. Thus
 $$\mu = (-1)^a \omega^b \lambda^c\pi_1^{a_1}\pi_2^{a_2}\cdots\pi_t^{a_t},$$ where the $\pi$ are primary primes, and $a,b,c$ and the $a_i$ are nonnegative integers.
 \end{proof}
@@ -174,7 +174,7 @@ As $-1 = (-1)^3, \chi_\gamma(-1) = 1$. Finally  $\chi_\gamma(\omega) = \omega^{m
 
 $$\omega^m = \chi_\gamma(3) \omega^{m+n},\qquad  \chi_\gamma(3) = \omega^{-n} = \omega^{2n}.$$
 
-Conclusion : 
+In conclusion,
 $$\chi_\gamma(3) = \omega^{2n}.$$
 \end{proof}
 
@@ -245,7 +245,7 @@ $143 = 11\times 13 = 11(-4-3\omega)(-4-3\omega^2) = 11  (-4-3\omega)(-1+3\omega)
 }
 
 \bigskip
-Solution 1 : 
+Solution 1:
 \begin{proof}
 Let $\pi$ be a prime in $D$, $N\pi \ne 3$, and $\alpha \in D,\pi \nmid \alpha$.
 
@@ -261,12 +261,12 @@ $\iff \overline{\alpha}^{\frac{N\pi-1}{3}}  = \overline{1}$.
 
 The cubes in $(D/\pi D)^*$ are then the roots of the polynomial $f(x) = x^{\frac{N\pi-1}{3}} - \overline{1}$ in $D/\pi D$. 
 
-Let $q$ be the cardinal of the field $D/\pi D$. Since $q = |D/\pi D| = N\pi$, $\frac{N\pi - 1}{3} \mid q-1$, $f(x) \mid x^{q-1}-1 \mid x^q-x$. By Corollary 2 of Proposition 8.1.1, $f$ has $\deg(f) = \frac{N\pi-1}{3}$ roots.
+Let $q$ be the cardinal of the field $D/\pi D$. Since $q = |D/\pi D| = N\pi$, $\frac{N\pi - 1}{3} \mid q-1$, $f(x) \mid x^{q-1}-1 \mid x^q-x$. By Corollary 2 of Proposition 7.1.1, $f$ has $\deg(f) = \frac{N\pi-1}{3}$ roots.
 
-Conclusion  : there are exactly $\frac{N\pi-1}{3}$ cubes in $(D/\pi D)^*$.
+Conclusion: there are exactly $\frac{N\pi-1}{3}$ cubes in $(D/\pi D)^*$.
 \end{proof}
 
-Solution 2 :
+Solution 2:
 \begin{proof}
 Let $\varphi : (D/\pi D)^* \to (D/\pi D)^*$ be the group homomorphism defined by $\varphi(x) = x^3$.
 
@@ -274,10 +274,10 @@ Then $\mathrm{im}(\varphi)$ is the set of cubes in $(D/\pi D)^*$.
 
 The equation $x^3 = \overline{1}$ has three distinct solutions $\overline{1}, \overline{\omega}, \overline{\omega}^2$  in $D/ \pi D$ if $N\pi \ne 3$ (see the demonstration of Proposition 9.3.1).
 
-So $\ker(\varphi)= \{\overline{1}, \overline{\omega}, \overline{\omega}^2\}$ and $| \ker(\varphi)| = 3$. Thus $| \mathrm{im} (\varphi) | = | (D/\pi D)^* \ / |\ker(\varphi) | = (N\pi - 1)/3$. There exist exactly $\frac{N\pi-1}{3}$ cubes in $(D/\pi D)^*$.
+Thus $\ker(\varphi)= \{\overline{1}, \overline{\omega}, \overline{\omega}^2\}$ and $| \ker(\varphi)| = 3$. Therefore $| \mathrm{im} (\varphi) | = | (D/\pi D)^* | / |\ker(\varphi) | = (N\pi - 1)/3$. There exist exactly $\frac{N\pi-1}{3}$ cubes in $(D/\pi D)^*$.
 \end{proof}
 
-Note : if $N\pi = 3$, that is to say, if $\pi$ is associate to $1-\omega$, $D/\pi D = \{\overline{0},\overline{1}, \overline{2}\}$. As $\overline{1}^3 = \overline{1}, \overline{2}^3 = \overline{2}$, all the elements of $(D/\pi D)^*$ are cubes.
+Note: if $N\pi = 3$, that is to say, if $\pi$ is associate to $1-\omega$, $D/\pi D = \{\overline{0},\overline{1}, \overline{2}\}$. As $\overline{1}^3 = \overline{1}, \overline{2}^3 = \overline{2}$, all the elements of $(D/\pi D)^*$ are cubes.
 
 \paragraph{Ex. 9.10}
 
@@ -311,14 +311,14 @@ So $\alpha^2 =9 \equiv -1\pmod 5, \alpha^4 \equiv 1 \pmod 5$ and $\alpha^2 \not 
 
 Let $\beta = \omega^2 \lambda$. $\vert (D/5 D)^* \vert = 24$, thus  $[\beta]^{24} = 1$ (where $[\beta]$ is the class of $\beta$ in $D/5D$.)
 
-To verify that $[\beta]$ has order 24, it is sufficient to verify that $[\beta]^{8}\neq 1,[\beta]^{12}\neq 1$ :
+To verify that $[\beta]$ has order 24, it is sufficient to show that $[\beta]^{8}\neq 1,[\beta]^{12}\neq 1$.
 
 $\beta^8 = \omega ^{16} \lambda^8 = \omega \lambda^8 = (\omega \lambda)^8 \omega^2 \equiv  \omega^2 \not \equiv 1 \pmod 5$.
 
 $\beta^{12} = (\omega^2 \lambda)^{12} = \lambda^{12} = (\omega \lambda)^{12} \equiv  (\omega \lambda)^{4}  \equiv -1 \pmod 5$ (since $(\omega \lambda)$ has order 8 in $D/5D$).
 
 
-Conclusion : $\omega \lambda$ has order 8, $\omega \lambda^2$ has order 24 in $(D/5D)^*$.
+Conclusion: $\omega \lambda$ has order 8, $\omega \lambda^2$ has order 24 in $(D/5D)^*$.
 \end{proof}
 
 \paragraph{Ex. 9.13}
@@ -342,7 +342,7 @@ $\gamma=\omega(1-\omega) = \omega+1+\omega = 1 + 2\omega$, so
 \gamma^6 &\equiv 3 \ [5]\\
 \gamma^7 &\equiv 3+6\omega \equiv 3 + \omega \ [5]
 \end{align*}
-Conclusion : If $\pi \not \equiv 0 \pmod 5$, $\pi \equiv \alpha^3 \pmod 5,\alpha \in D$ iff 
+Conclusion: If $\pi \not \equiv 0 \pmod 5$, $\pi \equiv \alpha^3 \pmod 5,\alpha \in D$ iff 
 
 $$\pi \equiv 1,2,3,4,1+2\omega,2+4\omega,3+\omega,4+3\omega\ [5].$$ 
 \end{proof}
@@ -360,26 +360,26 @@ If $\pi$ is a primary prime not associate to 5, the Law of Cubic Reciprocity giv
 5\equiv x^3 \ [\pi], x \in D &\iff \chi_\pi(5)=1\\
 &\iff \chi_5(\pi)=1\\
 &\iff  \pi \ \mathrm{ is\ a\ cube\ in\  } D/5D\\
-&\iff \pi \equiv1,2,3,4,1+\omega,2+4\omega,3+\omega,4+3\omega \ [5]
+&\iff \pi \equiv1,2,3,4,1+2\omega,2+4\omega,3+\omega,4+3\omega \ [5]
 \end{align*}
 (see Ex. 9.13)
 
 \bigskip
 
-Conclusion : the equation $5\equiv x^3 \ [\pi], x \in D $ is solvable iff the primary prime associate to $\pi$ is congruent modulo 5 to $1,2,3,4,1+2\omega,2+4\omega,3+\omega,4+3\omega$.
+Conclusion: the equation $5\equiv x^3 \ [\pi], x \in D $ is solvable iff the primary prime associate to $\pi$ is congruent modulo 5 to $1,2,3,4,1+2\omega,2+4\omega,3+\omega,4+3\omega$ (or 0).
 
-Examples : 
+Examples: 
 
 $\bullet$ $q=23$ is a primary prime congruent to 3 modulo 5, thus the equation $x^3 \equiv 5\pmod{23}$ has a solution $x  \in D$ ($x = 19)$.
 
 $\bullet$ $-4 - 3 \omega$ is the primary prime associate to the prime $3- \omega$, and $-4 - 3 \omega \equiv 1 + 2 \omega \pmod 5$, thus the equation $x^3 \equiv 5 \pmod {3-\omega}$ has a solution $a + b \omega \in \Z[\omega]$.
 
-Indeed , $7^3 \equiv 5^3 \equiv 11^3 \equiv 5 \pmod {13}$, and $3 - \omega \mid 13$, so $7^3 \equiv 5^3 \equiv 11^3 \equiv 5 \pmod{ 3 - \omega}$.
+Indeed, $7^3 \equiv 8^3 \equiv 11^3 \equiv 5 \pmod {13}$, and $3 - \omega \mid 13$, so $7^3 \equiv 8^3 \equiv 11^3 \equiv 5 \pmod{ 3 - \omega}$.
 \end{proof}
 
 \paragraph{Ex. 9.15}
 
-{\it Suppose that $p \equiv 1 \pmod 3$ and that $p = \pi \overline{\pi}$, where $\pi$ is a primary prime in $D$. Show that $x^3 \equiv a \pmod p$ is solvable in $\Z$ iff $\chi_{\pi}(a) = 1$ . We assume that $a \in \Z$.
+{\it Suppose that $p \equiv 1 \pmod 3$ and that $p = \pi \overline{\pi}$, where $\pi$ is a primary prime in $D$. Show that $x^3 \equiv a \pmod p$ is solvable in $\Z$ iff $\chi_{\pi}(a) = 1$. We assume that $a \in \Z$.
 }
 
 \begin{proof}
@@ -392,7 +392,7 @@ So $x^3 \equiv a \pmod \pi$ has a solution $x \in \Z$.
 
 Thus $\pi \mid x^3 - a, N(\pi) = p \mid (x^3 -a)^2$, therefore $p \mid x^3 -a$ in $\Z$, and so $x^3 \equiv a \pmod p$.
 
-Conclusion ; if $p\equiv 1 \pmod 3$ , $p = \pi \overline{\pi}$, where $\pi$ is is a primary prime  and $a \in \Z$,
+Conclusion: if $p\equiv 1 \pmod 3$, $p = \pi \overline{\pi}$, where $\pi$ is is a primary prime,  and $a \in \Z$,
 $$\exists x \in \Z, \ x^3 \equiv a \pmod p \iff \chi_{\pi}(a) = 1.$$
 In other words, $x^3 \equiv a \pmod \pi$ is solvable in $D$ iff it is solvable in $\Z$.
 \end{proof}
@@ -403,7 +403,7 @@ In other words, $x^3 \equiv a \pmod \pi$ is solvable in $D$ iff it is solvable i
 }
 
 \bigskip
-Warning : false sentence, since 
+Warning: false sentence, since 
 $$N(2 - 3 \omega) = (2-3\omega)(2 - 3 \omega^2) = 4 + 9 -6(\omega+\omega^2) = 4 + 9 + 6 = 19 \ (\mathrm{and}\ \mathrm{not}\ 7!).$$
 \begin{proof}
 Since $19$ is a rational prime, and since $\pi= 2 - 3\omega$ and $11$  are primary primes, by the Law of Cubic Reciprocity, and by Exercise 9.15 (with $p=11 \equiv 1 \pmod 3$),
@@ -417,13 +417,13 @@ Moreover, by Proposition 7.1.2 (with $p = 19$, $d = (p-1) \wedge 3 = 3, (p-1)/d 
 $$\exists x \in \mathbb{Z},\  x^3 \equiv 11\  [19] \iff 11^6 \equiv 1 \pmod {19},$$
 which is true : $11^6 = 121^3 = (19 \times 6 + 7)^3 \equiv 49 \times 7 \equiv 11 \times 7 \equiv 77 \equiv 1 \ [19]$.
 
-Conclusion : there exists $x \in D$ such that $2-3\omega  \equiv x^3 \pmod {11}$.
+Conclusion: there exists $x \in D$ such that $2-3\omega  \equiv x^3 \pmod {11}$.
 
 With some computer code, we find a solution $x = 1 + 8\omega$ (and its associates $\omega^2 x =  7 - \omega, \omega x = -8- 7\omega \equiv 3 + 4 \omega \pmod{11} $) :
 $$x^3 = (1+8\omega)^3 = 321 - 168 \omega \equiv 2 - 3 \omega \pmod {11}.$$
 \end{proof}
 
-Note : The sentence becomes true if we replace $2 - 3\omega$ by the primary prime $2+3\omega$. Since $N(2+3\omega) = 7$, with the same reasoning,
+Note: The sentence becomes true if we replace $2 - 3\omega$ by the primary prime $2+3\omega$. Since $N(2+3\omega) = 7$, with the same reasoning,
 \begin{align*}
 \exists x \in D,\ 2+3\omega \equiv x^3\ [11]
 &\iff \chi_{2+3\omega}(11)=1\\
@@ -461,7 +461,7 @@ Then $\omega^b \equiv \pm 1 \pmod 3$, where $\omega^b \in \{1,\omega, -1-\omega\
 
 Finally, $\gamma = (-1)^a \pi_1^{a_1}\cdots \pi_t^{a_t}$.
 
-Conclusion : every primary $\gamma \in D$ is under the form
+Conclusion: Every primary $\gamma \in D$ is under the form
 $$\gamma = \pm \gamma_1\gamma_2\cdots \gamma_t,$$
 where the $\gamma_i$ are primary primes.
 
@@ -486,7 +486,7 @@ Finally, if $\rho = \pm \rho_1\rho_2\cdots\rho_l$ is primary, then $-\rho \gamma
 $$\chi_{-\rho \gamma}(\alpha) = (\chi_{\rho_1} \chi_{\rho_2}\cdots \chi_{\rho_l}\chi_{\gamma_1} \chi_{\gamma_2}\cdots \chi_{\gamma_t} )(\alpha)= \chi_\rho(\alpha)\chi_\gamma(\alpha).$$
 \end{proof}
 
-Note : The unit $-1$ is primary by définition, and $-1$ is the opposite of the empty product, so for all $\alpha$ in $D$, $\chi_{-1}(\alpha) = 1$ by definition. The result of the exercises remain true if we accept the unit $-1$ as a primary element.
+Note: The unit $-1$ is primary by definition, and $-1$ is the opposite of the empty product, so for all $\alpha$ in $D$, $\chi_{-1}(\alpha) = 1$ by definition. The result of the exercises remain true if we accept the unit $-1$ as a primary element.
 
 
 \paragraph{Ex. 9.19}
@@ -530,7 +530,7 @@ and by Eisenstein's result,
 &=\omega^{2M}.
 \end{align*}
 
-Conclusion : if $\gamma = 3M-1+3N\omega$, then
+Conclusion: if $\gamma = 3M-1+3N\omega$, then
 
 $$\chi_\gamma(\omega) = \omega^{M+N}, \chi_\gamma(\lambda)=\omega^{2M}.$$
 \end{proof}
@@ -540,6 +540,71 @@ $$\chi_\gamma(\omega) = \omega^{M+N}, \chi_\gamma(\lambda)=\omega^{2M}.$$
 {\it If $\gamma$ and $\rho$ are primary, show that $\chi_\gamma(\rho) = \chi_\rho(\gamma)$.
 }
 
+\bigskip
+
+
+Important note: The following solution assumes that $\chi_{\pi_2}(\pi_1) = \chi_{\pi_1}(\pi_2)$ for any pair $\pi_1,\pi_2$ of primary primes. But Theorem 1 uses the hypothesis $N(\pi_1) \ne N(\pi_2)$ to prove Cubic Reciprocity.
+
+We can complete the proof in the case where $N(\pi_1) = N(\pi_2)$. Since $\pi_1,\pi_2$ are primary primes, then $\pi_1 = \pi_2$ or $\pi_1 = \overline{\pi_2}$.
+
+In the case $\pi_1 = \pi_2$, then $\chi_{\pi_2}(\pi_1) = 0 =  \chi_{\pi_1}(\pi_2)$.
+
+To prove that $\legendre{\overline{\pi}}{\pi} = \legendre{\pi}{\overline{\pi}}$, we begin with a particular case of the proposition:
+
+\medskip
+{\bf Lemma.} {\it Let $n\in \Z$ be a primary element in $A$, and let $\pi$ be a primary prime such that $N(\pi) = p \equiv 1 \pmod 3$. Then
+$$\legendre{n}{\pi}_3 = \legendre{\pi}{n}_3.$$
+}
+
+
+
+\begin{proof}
+If $p \mid n$, then $\legendre{n}{\pi}_3 =0 =  \legendre{\pi}{n}_3.$ Now we assume that $p \wedge n = 1$.
+
+The decomposition of $n$ is of the form
+\begin{align*} n &= \pm p_1 \cdots p_s q_1 \cdots q_r\ (p_i \equiv 1 \ [3], q_j \equiv -1 \ [3])\\
+&= \pm \pi_1\overline{\pi_1} \cdots \pi_s \overline{\pi}_s q_1 \cdots q_r,
+\end{align*}
+where $\pi_i, \overline{\pi_i} (1\leq i \leq s)$ and $q_j (1 \leq j \leq r)$ are primary prime.
+
+Since $N(\pi_i) = p \ne p_i$ and $N(\pi) = p \ne N(q_j) =q_j^2$, Theorem 1 shows that
+\begin{align*}
+\legendre{n}{\pi}_3 &=\legendre{\pi_1}{\pi}_3\legendre{\overline{\pi_1}}{\pi}_3\cdots \legendre{\pi_s}{\pi}_3\legendre{\overline{\pi_s}}{\pi}_3 \legendre{q_1}{\pi}_3  \cdots \legendre{q_r}{\pi}_3 \\
+&=\legendre{\pi}{\pi_1}_3\legendre{\pi}{\overline{\pi_1}}_3\cdots \legendre{\pi}{\pi_s}_3\legendre{\pi}{\overline{\pi_s}}_3 \legendre{\pi}{q_1}_3  \cdots \legendre{\pi}{q_r}_3 \\
+&= \legendre{\pi}{n}_3.
+\end{align*}
+\end{proof}
+
+We can now remove the useless hypothesis $N(\pi_1) \ne N(\pi_2)$ in Theorem 1.
+
+\medskip
+
+{\bf Proposition.}
+Let $\pi_1,\pi_2$ be primary primes. Then
+$$\legendre{\pi_2}{\pi_1}_3 = \legendre{\pi_1}{\pi_2}_3.$$
+
+
+\begin{proof}
+By theorem 1, it remains only the case where $N(\pi_1) = N(\pi_2)$.
+
+If $\pi_1 = \pi_2$, then $\legendre{\pi_2}{\pi_1}_3 = \legendre{\pi_1}{\pi_2}_3 =0$.
+
+If $\pi_1 \ne \pi_2$, since $\pi_1$ et $\pi_2$ are primary, then $\pi_1, \pi_2$ are primes such that $N(\pi_1) = N(\pi_2) = p \equiv 1 \pmod 3$, and $\pi_2 = \overline{\pi_1}$. Writing $\pi = \pi_1$, it is sufficient to prove
+$$\legendre{\overline{\pi}}{\pi}_3 =  \legendre{\pi}{\overline{\pi}}_3.$$
+We use the ``Evans' trick'' (see [Lemmermayer, Reciprocity Laws p. 215]). The element $n =-( \pi + \overline{\pi})$ is a  rationnal integer, which is primary. The Lemma gives then
+\begin{align*}
+\legendre{\overline{\pi}}{\pi}_3 &= \legendre{\pi + \overline{\pi}}{\pi}_3\\
+&= \legendre{-\pi - \overline{\pi}}{\pi}_3\\
+&= \legendre{\pi}{-\pi - \overline{\pi}}_3\\
+&= \legendre{-\overline{\pi}}{-\pi - \overline{\pi}}_3\\
+&=\legendre{\overline{\pi}}{-\pi - \overline{\pi}}_3\\
+&=\legendre{-\pi  -\overline{\pi}}{\overline{\pi}}_3\\
+&=\legendre{-\pi}{\overline{\pi}}_3\\
+&=\legendre{\pi}{\overline{\pi}}_3
+\end{align*}
+\end{proof}
+
+We can now give the solution of Exercise 9.20.
 \begin{proof}
 
 
@@ -558,12 +623,17 @@ By the law of Cubic Reciprocity, we obtain
 &=\prod_{i=1}^l \chi_{\rho_i}(\gamma)\\
 &=\chi_{\rho}( \gamma).
 \end{align*}
+
+(if $\gamma = -1$, or $\rho = -1$, some products are empty, but the result remains true: $\chi_{-1}(\rho) = 1 = \chi_{\rho}(-1)$.)
+
+
+
 \end{proof}
-(if $\gamma = -1$, or $\rho = -1$, some products are empty, but the result remains true : $\chi_{-1}(\rho) = 1 = \chi_{\rho}(-1)$.)
+
+
 
 
 \paragraph{Ex. 9.21}
-
 {\it If $\gamma$ is primary, show that there are infinitely many primary primes $\pi$ such that $x^3 \equiv \gamma \pmod \pi$ is not solvable. Show also that there are infinitely many primary primes $\pi$ such that $x^3 \equiv \omega \pmod \pi$ is not solvable and the same for $x^3 \equiv \lambda \pmod \pi$. (Hint: Imitate the proof of Theorem 3 of Chapter 5.)
 }
 
@@ -586,10 +656,10 @@ We will show that we can find a primary prime $\lambda_{k+1}$ distinct of the $\
 
 Using the initial note, let $\sigma \in D$ such that $\chi_{\gamma_l}(\sigma) = \omega$. As $D$ is a principal ideal domain, the Chinese Remainder Theorem is valid. Since $3 = \lambda \overline{\lambda} = -\omega^2 \lambda^2$ is relatively prime to $\gamma_i, \lambda_i$, there exists $\beta \in D$ such that
 \begin{align*}
-\beta &\equiv 2 \ [3]\\
-\beta &\equiv 1 \ [\lambda_i] \hspace{1cm} (1\leq i\leq k)\\
-\beta &\equiv 1 \ [\gamma_i] \hspace{1cm} (1 \leq i \leq l-1)\\
-\beta &\equiv  \sigma \ [\gamma_l]\\
+\beta &\equiv 2 \ [3],\\
+\beta &\equiv 1 \ [\lambda_i] \hspace{1cm} (1\leq i\leq k),\\
+\beta &\equiv 1 \ [\gamma_i] \hspace{1cm} (1 \leq i \leq l-1),\\
+\beta &\equiv  \sigma \ [\gamma_l].\\
 \end{align*}
 The first equation show that $\beta$ is primary, so $\beta= (-1)^{m-1} \beta_1\ldots \beta_m$, where the $\beta_i$ are primary primes.
 
@@ -621,9 +691,9 @@ $\beta = 3(3m-1 + 3n\omega) - 1 = 3(3m-1) - 1 + 9n\omega = 3M-1 + 3 N \omega$, w
 $$\chi_\beta(\omega) = \omega^{M+N} = \omega^{3m-1+3n} = \omega^2 \neq 1.$$
 As $\beta = \pm \beta_1\cdots\beta_m$, where the $\beta_i$ are primary primes, $\chi_\beta(\omega) = \chi_{\beta_1}(\omega) \cdots \chi_{\beta_m}(\omega) \neq 1$, so there exists a subscript $i$ such that $\chi_{\beta_i}(\omega) \ne 1$. 
 
-Since $\beta = 3(-1)^{l-1} \lambda_1\cdots\lambda_l - 1$, $\beta_i$ is associate neither to $\lambda_i$ nor to $\lambda$. Moreover $\chi_{\beta_i}(\omega)\ne 1$, thus the equation $x^3 \equiv \omega\ [\beta_i]$ is not solvable : $\lambda_{l+1} = \beta_i$ is convenient.
+Since $\beta = 3(-1)^{l-1} \lambda_1\cdots\lambda_l - 1$, $\beta_i$ is associate neither to $\lambda_i$ nor to $\lambda$. Moreover $\chi_{\beta_i}(\omega)\ne 1$, thus the equation $x^3 \equiv \omega\ [\beta_i]$ is not solvable: $\lambda_{l+1} = \beta_i$ is convenient.
 
-Conclusion : the equation $x^3 \equiv \omega \ [\pi]$ is not solvable for infinitely many primes $\pi$.
+Conclusion: the equation $x^3 \equiv \omega \ [\pi]$ is not solvable for infinitely many primes $\pi$.
 
 \item[c)] We show that $x^3 \equiv \lambda \ [\pi]$ has no solution for infinitely many primes $\pi$.
 
@@ -786,7 +856,7 @@ If $q$ is a rational prime, $q \equiv 2 \pmod 3$, and $q \wedge b = 1$, then $\c
 
 If $p$ is a rational prime, $p \equiv 1 \pmod 3$ and $p \wedge b = 1$, then $p = \pi \overline{\pi}$, with $\pi$ primary prime in $D$ (and also $\overline{\pi}$), and by definition of $\chi_p$, $\chi_p(b) = \chi_\pi(b) \chi_{\overline{\pi}}(b)$.
 
-As $\chi_{\overline{\pi}}(b) = \chi_{\overline{\pi}}(\overline{b}) = \overline{\chi_\pi(b)}$ (Prop. 9.3.4(b)), so $\chi_p(b)  = \chi_\pi(b) \chi_{\overline{\pi}}(b) = \chi_\pi(b)\overline{\chi_\pi(b)}= 1$.
+As $\chi_{\overline{\pi}}(b) = \chi_{\overline{\pi}}(\overline{b}) = \overline{\chi_\pi(b)}$ (Prop. 9.3.4(b)), then $\chi_p(b)  = \chi_\pi(b) \chi_{\overline{\pi}}(b) = \chi_\pi(b)\overline{\chi_\pi(b)}= 1$.
 
 $a$ has a decomposition in prime  factors of the form :
 $$a = \pm q_1q_2\cdots q_k p_1p_2\cdots p_l = \pm q_1q_2\cdots q_k \pi_1 \overline{\pi_1} \pi_2 \overline{\pi_2}\cdots \pi_l \overline{\pi_l},$$
@@ -824,7 +894,7 @@ and
 $$(a+b) \omega = (a+b\omega) +a\omega -a \equiv a(\omega-1)\pmod \pi,$$ thus
 $$a+b \equiv -a(1-\omega) \omega^{-1} \ [\pi],$$
 $$\chi_\pi (a+b) = \chi_\pi(1-\omega) \chi_\pi(a) \chi_\pi(\omega)^{-1},$$
-$\chi_\pi(a) = \omega^m$ by (c), and $\chi_\pi(\omega) = \omega^{m+n}$(Ex. 9.3), thus
+$\chi_\pi(a) = \omega^m$ by (c), and $\chi_\pi(\omega) = \omega^{m+n}$(as in Ex. 9.3), thus
 
 $$\chi_\pi(a+b) = \omega^{2n} \chi_\pi(1-\omega).$$
 
@@ -853,7 +923,7 @@ $$\chi_{a+b}(\pi) =  \chi_{a+b}(1-\omega).$$
 &=[\chi_{a+b}(3) \chi_{a+b}(\omega)]^2
 \end{align*}
 
-$\chi_{a+b}(3) = 1$ car $(a+b) \wedge 3 = (3(m+n)-1) \wedge 3 = 1$.
+$\chi_{a+b}(3) = 1$ because $(a+b) \wedge 3 = (3(m+n)-1) \wedge 3 = 1$.
 
 $\chi_{a+b}(\omega) = \omega^{m+n}$ (Ex. 9.19).
 
