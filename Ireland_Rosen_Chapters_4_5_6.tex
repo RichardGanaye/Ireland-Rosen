@@ -58,7 +58,7 @@ Note that
 
 $2^4 = 16 \not \equiv1\pmod {29},$
 
-$2^{14} =  4 ^7 =4 \times 16^3 = 64\times 256 \equiv 6 \times (-34)=-204\equiv 86=3\times 29 -1 \equiv -1\pmod{29}$.
+$2^{14} =  4 ^7 =4 \times 16^2 = 64\times 256 \equiv 6 \times (-34)=-204\equiv 86=3\times 29 -1 \equiv -1\pmod{29}$.
 
 $2^{28} \equiv 1\pmod {29}$ and $2^d \not \equiv 1$ if $d \mid 28, d < 28$, hence 2 is a primitive element modulo 29.
 \end{proof}
@@ -263,7 +263,7 @@ $\bullet$ If $a$ is a primitive root, then $a^k \not \equiv 1$ for all $k, 1\leq
 
 $\bullet$ In the other direction, suppose $a^{(p-1)/q} \not \equiv 1 \pmod p$ for all prime divisors $q$ of $p - 1$.
 
-Let $\delta$ the order of $a$, and $p-1 = q_1^{a_1}q_2^{a_2}\cdots q_k^{a_k}$ the decomposition of $p-1$ in prime factors. As $\delta \mid p-1, \delta = q_1^{b_1}p_2^{b_2}\cdots q_k^{b_k}$, with $b_i \leq a_i, i=1,2,\ldots,k$. If $b_i < a_i$ for some index $i$, then $\delta \mid (p-1)/q_i$, so $a^{(p-1)/q_i} \equiv 1 \pmod p$, which is in contradiction with the hypothesis. Thus $b_i = a_i$ for all $i$, and $\delta = q-1$: $a$ is a primitive root modulo $p$.
+Let $\delta$ the order of $a$, and $p-1 = q_1^{a_1}q_2^{a_2}\cdots q_k^{a_k}$ the decomposition of $p-1$ in prime factors. As $\delta \mid p-1, \delta = q_1^{b_1}q_2^{b_2}\cdots q_k^{b_k}$, with $b_i \leq a_i, i=1,2,\ldots,k$. If $b_i < a_i$ for some index $i$, then $\delta \mid (p-1)/q_i$, so $a^{(p-1)/q_i} \equiv 1 \pmod p$, which is in contradiction with the hypothesis. Thus $b_i = a_i$ for all $i$, and $\delta = q-1$: $a$ is a primitive root modulo $p$.
 \end{proof}
 
 \paragraph{Ex. 4.9}
@@ -869,7 +869,7 @@ From the Proposition 4.2.2., with the hypothesis $e\geq 3$,  we know that the nu
 If $n$ is even, $l\geq 1$, $e \geq 2l+1 \geq 3$.
 Since $e\geq 2l+1$, and $n = 2^l n'$ for an odd $n'$, $l\leq \frac{e-1}{2} \leq e-2$, so $n \wedge 2^{e-2} = n'2^{l} \wedge 2^{e-2}= 2^l$, and the number of solutions is $2^{l+1}$, independent of $e\geq 2l+1$.
 
-Conclusion : under the hypothesis $x^n \equiv a \pmod {2^{2l+1}}$, where $l = \mathrm{ord}_2(n)$, then $x^n \equiv a \pmod {2^e}$ is solvable for all $e\geq 1$, and all these congruences have the same number of solutions for $e\geq 2l+1, e\geq 3$.
+Conclusion: Under the hypothesis $x^n \equiv a \pmod {2^{2l+1}}$, where $l = \mathrm{ord}_2(n)$, then $x^n \equiv a \pmod {2^e}$ is solvable for all $e\geq 1$, and all these congruences have the same number of solutions for $e\geq 2l+1, e\geq 3$.
 \end{proof}
 
 \newpage
@@ -1450,7 +1450,7 @@ Conclusion : if $p \equiv 1\pmod 4$, $p$ is not a prime in  $\mathbb{Z}[i]$.
 }
 
 \begin{proof}
-$\Z[i]$ is a principal ideal domain, thus a $p$  prime is in $ \Z[i]$  iff $p$ is irreducible in $ \Z[i]$.
+$\Z[i]$ is a principal ideal domain, thus  $p$ is prime in $ \Z[i]$  iff $p$ is irreducible in $ \Z[i]$.
  
 If $p \equiv 1\pmod 4$, $p$ is not a prime by Ex.5.23, so it is not irreducible. Therefore
 $p = \alpha \beta, \ \alpha,\beta \in \mathbb{Z}[i]$, where $\alpha, \beta$ are not units, so that $N(\alpha)>1, N(\beta)>1$ (where $N(a+bi) = a^2 + b^2$ is the complex norm).
