@@ -953,25 +953,25 @@ $$\chi_\pi(1-\omega) = \omega^{2m}.$$
 
 {\it Let $\pi = a+bi$ be a primary irreducible in $\Z[i], b\ne 0$. Show
 \begin{enumerate}
-\item[(a)] $a \equiv (-1)^{(p-1)/4} \pmod 4, p = N(\pi)$.
+\item[(a)] $a \equiv (-1)^{(p-1)/4} \pmod 4,\ p = N(\pi)$.
 \item[(b)] $b \equiv (-1)^{(p-1)/4} - 1 \pmod 4$.
 \end{enumerate}
-(Wrong sentence for (b) in an older edition.)
+(Wrong sentence for (b) in the edition 1990.)
 }
 
 \begin{proof}
-Let $\pi=a+bi$ a primary prime in $\mathbb{Z}[i]$, $b\neq 0$, such that $p = N(\pi)$ : 
+Let $\pi=a+bi$ be a primary prime in $\mathbb{Z}[i]$, $b\neq 0$, such that $p = N(\pi)$. Then
 $$p = \pi \bar{\pi}=a^2+b^2\equiv 1 \ [4].$$
 By Lemma 6, Section 7, $a$ is odd, $b$ even, and 
  $$(a\equiv 1\ [4], b\equiv 0 \ [4])\ \mathrm{or}\  (a\equiv 3\  [4], b\equiv 2 \ [4]) .$$
 \begin{enumerate}
 \item[(a)]
 	\begin{enumerate}
-	\item[$\bullet$] Case 1 : $a \equiv 1 \ [4], b \equiv 0 [4]$. Then
+	\item[$\bullet$] Case 1: $a \equiv 1 \ [4], b \equiv 0 [4]$. Then
 	$a=4A+1,b=4B,\ A,B \in \Z$, so  $(a^2+b^2-1)/4= 4A^2+4B^2+2A$ is even : 
 
 	$(-1)^{(p-1)/4} = (-1)^{(a^2+b^2-1)/4} = 1$, and $a\equiv 1 [4]$, thus $a \equiv (-1)^{(p-1)/4} \ [4]$.
-	\item[$\bullet$] Case 2 : $ a\equiv 3 \ [4], b \equiv 2 \pmod 4$.
+	\item[$\bullet$] Case 2: $ a\equiv 3 \ [4], b \equiv 2 \pmod 4$.
 	
 	$a=4A+3,b=4B+2, a^2+b^2-1 = 16 A^2+24A+9+16B^2+16B+4-1 \equiv 4 \ [8]$, so $(a^2+b^2-1)/4 \equiv 1 \ [2], (-1)^{(p-1)/4} = (-1)^{(a^2+b^2-1)/4} = -1$, and $a \equiv -1\ [4]$, thus  $a \equiv (-1)^{(p-1)/4} \ [4]$.
 	\end{enumerate}
@@ -1020,7 +1020,7 @@ As $a  (-1)^{(p-1)/4} \equiv 1 \pmod 4$, the Law of Biquadratic Reciprocity (Pro
 As $a \wedge b=1$ (since $p = a^2+b^2$), $\chi_a(b) = 1$ (Prop. 9.8.5, with $a\neq 1$), so
 $$\chi_\pi(a(-1)^{(p-1)/4}) =  \chi_a(i).$$
  
- If $a\equiv 1 \ [4]$, Proposition 8.9.6 gives $\chi_a(i) = (-1)^{(a-1)/4}$. Write $a = 4A + 1,\ A\in \Z$. Then 
+ If $a\equiv 1 \ [4]$, Proposition 9.8.6 gives $\chi_a(i) = (-1)^{(a-1)/4}$. Write $a = 4A + 1,\ A\in \Z$. Then 
  $$(-1)^{(a^2-1)/8} = (-1)^{2A^2+A} = (-1)^A = (-1)^{(a-1)/4} = \chi_a(i).$$
  
  If $a \equiv -1 \ [4]$, then $\chi_a(i) = \chi_{-a}(i) = (-1)^{(-a-1)/4}$ by the same proposition. Write $a = 4A-1,\ A \in \Z$. Then
@@ -1064,8 +1064,10 @@ Recall the following lemma :
 
 {\bf Lemma :} 
 
-Let $p$ be a prime, $p \equiv 1 \ [4]$, then  $\left [ \left ( \frac{p-1}{2} \right)!\right ]^2 \equiv -1 \ [p]$.
+{\it Let $p$ be  prime, $p \equiv 1 \ [4]$, then  $\left [ \left ( \frac{p-1}{2} \right)!\right ]^2 \equiv -1 \ [p]$.}
 
+\medskip
+ 
 By Wilson's theorem (Prop. 4.1.1, Corollary), $(p-1)! \equiv -1 \ [p]$.
 
 \begin{align*}
@@ -1171,7 +1173,7 @@ $$\chi_q(1+i) =(-i)^{(q+1)/4} = i^{(-q-1)/4}.$$
 }
 
 \begin{proof}
-Let $\pi = a+bi$ be a primary irreducible, with $a\wedge b=1$, so $b \neq 0$ : we can apply the result of Exercise 9.29 :
+Let $\pi = a+bi$ be a primary irreducible, with $a\wedge b=1$, so $b \neq 0$. We can apply the result of Exercise 9.29:
 $$\chi_\pi(a(-1)^{(p-1)/4}) = (-1)^{(a^2-1)/8}.$$
 \begin{enumerate}
 \item[(a)] Suppose that  $\pi \equiv 1 \ [4]$. 
@@ -1184,7 +1186,7 @@ where
 $$ p = N \pi = a^2+b^2, (-1)^{(p-1)/4} = (-1)^{\frac{a^2-1}{4}+\frac{b^2}{4}} = (-1)^{4A^2+2A+4B^2}=1,$$
 thus $(-1)^{\frac{a-1}{2} \frac{p-1}{4}}=1$.
 $$\chi_\pi(a) = (-1)^{(a^2-1)/8} = (-1)^{2A^2+A} = (-1)^A = (-1)^{(a-1)/4} = i^{(a-1)/2}.$$
-Conclusion : if $\pi \equiv 1 \ [4]$, $\chi_\pi(a) =  i^{(a-1)/2}$.
+Conclusion: if $\pi \equiv 1 \ [4]$, $\chi_\pi(a) =  i^{(a-1)/2}$.
 \item[(b)] Suppose that $\pi \equiv 3 + 2i\ [4]$.
 
 Then $a\equiv 3 \ [4], b \equiv 2\ [4],a = 4A+3,b=4B+2,\ A,B\in\mathbb{Z}$. As in (a),
@@ -1393,7 +1395,7 @@ Since $2 = i^3(1+i)^2$, the first part of the exercise, and the Lemma, give
 &=i^\frac{3(-a+1)}{2} i ^\frac{a-b-b^2-1}{2}\\
 &=i^{1-a -(b+1)\frac{b}{2}}
 \end{align*}
-Since $\pi$ is primry, $a\equiv b+1 \equiv -b+1\pmod 4$, therefore
+Since $\pi$ is primary, $a\equiv b+1 \equiv -b+1\pmod 4$, therefore
 \begin{align*}
 1-a -(b+1)\frac{b}{2} &\equiv - b -(b+1)\frac{b}{2}\\
 &\equiv \frac{b}{2}(-b-3)\\
@@ -1445,7 +1447,7 @@ By Lemma 6, section 7, $a\equiv 1\ [4], b\equiv 0\ [4]$, or $a \equiv 3 [4], b\e
 
 \end{enumerate}
 
-Conclusion : if $\pi$ is a primary irreducible in $\Z[i]$, then
+Conclusion: if $\pi$ is a primary irreducible in $\Z[i]$, then
 $$\chi_{\pi}(-1)=(-1)^{(a-1)/2}.$$
 \end{proof} 
 
@@ -1455,9 +1457,9 @@ $$\chi_{\pi}(-1)=(-1)^{(a-1)/2}.$$
 }
 
 \begin{proof}
-Let $p$ a rational prime, $p\equiv 1 \pmod 6$. As $p\equiv 1 \pmod 3$, we know from Theorem 2, Chapter 8, that there are integers $A$ and $B$ such that $4p = A^2 + 27B^2, A\equiv 1 \pmod 3$, and that $A$ is uniquely determined by these conditions.
+Let $p$ be a rational prime, $p\equiv 1 \pmod 6$. As $p\equiv 1 \pmod 3$, we know from Theorem 2, Chapter 8, that there are integers $A$ and $B$ such that $4p = A^2 + 27B^2, A\equiv 1 \pmod 3$, and that $A$ is uniquely determined by these conditions.
 
-Then $A,B$ are of opposite parity. If we take $a =\frac{A+3B}{2}, b = 3B$, then $A = 2a -b, B = \frac{b}{3}$, and $4p = (2a-b)^2 + 3 b^2$, so $p = a^2 -ab + b^2$. If $\pi = a + b \omega$, then $N(\pi)= p$. Since $A = 2a-b \equiv 1 \ [3]$, and $b = 3B \equiv 0 \ [3]$, then $a \equiv -1 \ [3]$, so $\pi$ is a primary prime.
+Then $A,B$ have same parities. If we take $a =\frac{A+3B}{2}, b = 3B$, then $A = 2a -b, B = \frac{b}{3}$, and $4p = (2a-b)^2 + 3 b^2$, so $p = a^2 -ab + b^2$. If $\pi = a + b \omega$, then $N(\pi)= p$. Since $A = 2a-b \equiv 1 \ [3]$, and $b = 3B \equiv 0 \ [3]$, then $a \equiv -1 \ [3]$, so $\pi$ is a primary prime.
 
 \bigskip
 
@@ -1501,7 +1503,7 @@ $$\pi = J(\chi_\pi,\chi_\pi) = \chi_\pi(2)^{-2} J (\chi_\pi,\rho),$$
 Here $\chi_\pi$ is of order 3, therefore $\chi_\pi(2)^{-2} = \chi_\pi(2) \in \{1,\omega,\omega^2\}$, so
 $$\pi = J(\chi_\pi,\chi_\pi) = \chi_\pi(2) J (\chi_\pi,\rho).$$
 
-If $\chi_\pi(2) = \omega$, then $a+b\omega = \omega(c+d\omega) = -d + \omega(c-d)$. Then $a = -d \equiv \pm b \pmod p$. As $a \equiv -b\omega \pmod \pi$, we would have $-b\omega \equiv \pm b \pmod \pi$. Here $\pi \nmid b$,  otherwise $p = N(\pi) \mid N(b) = b^2$, so $p \mid b$, and $p =a^2 -ab +b^2$, so $p \mid a$, and $p^2 \mid p$, which is a nonsense. Therefore $\pi \mid \omega \pm 1$, where $\pi$ is a primary prime : it's impossible  : $\omega + 1$ is a unit and $\omega - 1$ is prime, so $\pi \mid \omega - 1 = - \lambda$ implies that $\pi$ and $\lambda$ are associate, in contradiction with $N(\pi) = p \ne 3 = N(\pi)$.
+If $\chi_\pi(2) = \omega$, then $a+b\omega = \omega(c+d\omega) = -d + \omega(c-d)$. Then $a = -d \equiv \pm b \pmod p$. As $a \equiv -b\omega \pmod \pi$, we would have $-b\omega \equiv \pm b \pmod \pi$. Here $\pi \nmid b$,  otherwise $p = N(\pi) \mid N(b) = b^2$, so $p \mid b$, and $p =a^2 -ab +b^2$, so $p \mid a$, and $p^2 \mid p$, which is a nonsense. Therefore $\pi \mid \omega \pm 1$, where $\pi$ is a primary prime: it's impossible. Indeed $\omega + 1$ is a unit and $\omega - 1$ is prime, so $\pi \mid \omega - 1 = - \lambda$ implies that $\pi$ and $\lambda$ are associate, in contradiction with $N(\pi) = p \ne 3 = N(\lambda)$.
 
 If $\chi_\pi(2) = \omega^2$, then $a+b\omega = \omega^2(c+d\omega) = (d-c) - \omega c$, so $a = d-c, b = -c$. 
 
@@ -1512,7 +1514,7 @@ where $d \equiv \pm b \pmod{\overline{\pi}}$, so $-b\omega \equiv \pm b\pmod{\ov
 
 So $\chi_\pi(2) = 1$, and the previously proved equivalence $2\mid B \iff \chi_\pi(2) = 1$ show that $2 \mid B$.
 
-Conclusion : $$\binom{(p-1)/2}{(p-1)/6} \equiv -1 \pmod p \iff 2 \mid B.$$
+Conclusion: $$\binom{(p-1)/2}{(p-1)/6} \equiv -1 \pmod p \iff 2 \mid B.$$
 \end{proof}
 
 \paragraph{Ex. 9.40}
@@ -1554,7 +1556,7 @@ so $a = d-c, b = -c$, and
 $$a + b =d-2c\equiv \binom{3m}{m} \pmod p.$$
 
 \item[(c)] Suppose that $\chi_\pi(2) = \omega$, and put $A = 2a-b, B = b/3$, so $$4p = A^2 + 27 B^2,\quad A\equiv 1 \ [3],$$
-which shows that $A,B$ have opposite parities. Then, by part (a),
+which shows that $A,B$ have same parities. Then, by part (a),
 \begin{align*}
 \frac{A-9B}{2} &= \frac{2a-b - 3b}{2}\\
 &=a-2b\\
@@ -1667,7 +1669,7 @@ therefore
 $$N(x^3 + 2y^3 = 1) = p+1 -a-b \qquad (\text {if }\chi_\pi(2) = \omega^2).$$
 
 
-\item[(c)] Suppose that $A\equiv B \pmod 4$, and $\chi_\pi(2)\ne 1$. By hypothesis, $b = 3B$, and this implies by Exercise 40 (e) that $\chi_\pi(2) = \omega$ (if not, $\chi_\pi(2) = \omega_2$, and $A\equiv B \pmod 4$ gives $B = -b/3$).
+\item[(c)] Suppose that $A\equiv B \pmod 4$, and $\chi_\pi(2)\ne 1$. By hypothesis, $b = 3B$, and this implies by Exercise 40 (e) that $\chi_\pi(2) = \omega$ (if not, $\chi_\pi(2) = \omega^2$, and $A\equiv B \pmod 4$ gives $B = -b/3$).
 
 \item[(d)] Suppose that $\chi_\pi(2) \ne 1, A\equiv B \pmod 4$. By part (c), $\chi_\pi(2) = \omega$.
 
