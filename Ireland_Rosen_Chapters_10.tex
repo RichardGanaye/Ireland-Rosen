@@ -518,7 +518,48 @@ The Chevalley's Theorem shows that with 4 (or more) variables $x_0,x_1,x_2, x_3$
 }
 
 \begin{proof}
+Let $\omega_1,\omega_2,\ldots,\omega_m$ be a basis for $F_{q^m}$ over $F_q$.
 
+Consider $$f(x_1,\ldots,x_m) = \prod_{i=0}^{m-1} (\omega_1^{q^i} x_1 + \cdots + \omega_m^{q^i} x_m).$$
+Then $f$ is a form of degree $m$ in $m$ variables.
+
+By definition, $f \in \F_{q^m}(x_1,\ldots,x_m)$. We show first that $f \in \F_q[x_1,\ldots,x_m]$.
+
+Let $f$ be the Frobenius automorphism on $\F_{q^m}$, defined by
+$$F
+\left\{
+\begin{array}{ccl}
+\F_{q^m} & \to &\F_{q^m}\\
+\alpha & \mapsto & \alpha^q.
+\end{array}
+\right.
+$$
+
+By Corollary 1 of Proposition 7.1.1, for every $\alpha \in \F_{q^m}$, $\alpha \in \F_q$ if and only if $F(\alpha) = \alpha$. If $p = \sum_{i=0}^d a_{i_1,\ldots,i_m}  x_1^{i_1} \cdots x_m^{i_m} \in \F_{q^m}[x_1,\ldots,x_m]$, define $F\cdot p =\sum_{i=0}^d F(a_{i_1,\ldots,i_m})  x_1^{i_1} \cdots x_m^{i_m} $. Then $F \cdot p \in \F_{q^m}[x] \iff F \cdot p = p$ and $F\cdot (pq) = (F\cdot p)(F \cdot q)$ for all $p,q \in  \F_{q^m}[x_1,\ldots,x_m]$.
+
+Then, using this last property, 
+\begin{align*}
+F \cdot f &= \prod_{i=0}^{m-1} F \cdot (\omega_1^{q^i} x_1 + \cdots + \omega_m^{q^i} x_m)\\
+&=\prod_{i=0}^{m-1} (\omega_1^{q^{i+1}} x_1 + \cdots + \omega_m^{q^{i+1}} x_m)\\
+&=\prod_{j=1}^{m} (\omega_1^{q^j} x_1 + \cdots + \omega_m^{q^j} x_m) \qquad (j=i+1)\\
+&=\prod_{j=0}^{m-1} (\omega_1^{q^j} x_1 + \cdots + \omega_m^{q^j} x_m) \qquad (\text{since } \omega_k^{q^m} = \omega_k = \omega_k^{q^0},\ k=1,\ldots,m)\\
+&= f.
+\end{align*}
+Therefore $f \in \F_q[x_1,\ldots,x_m]$.
+
+Now we prove that $f$ has no non trivial zero $\overline{a} = (\alpha_1,\ldots,\alpha_m) \in \F_q^m \setminus \{(0,\ldots,0)\}$. If $f$ had such a zero $(\alpha_1,\ldots,\alpha_m) \in \F_q^m$, then 
+$$\prod_{i=0}^{m-1} (\omega_1^{q^i} \alpha_1 + \cdots + \omega_m^{q^i} \alpha_m) = 0,\qquad \alpha_1,\ldots,\alpha_m \in \F_q.$$
+Then for some $i \in \gcro 0,m-1 \dcro$,
+$$\omega_1^{q^i} \alpha_1 + \cdots + \omega_m^{q^i} \alpha_m = 0.$$
+Applying $F^{m-i}$ to this equality, and using $F(\alpha_i) = \alpha_i$, we obtain
+$$\omega_1^{q^m} \alpha_1 + \cdots + \omega_m^{q^m} \alpha_m.$$
+Since $\omega_i^{q^m} = \omega_i,\ i = 1,\ldots,m$, this gives
+$$\omega_1 \alpha_1 + \cdots + \omega_m \alpha_m = 0.$$
+Since $\omega_1,\omega_2,\ldots,\omega_m$ is a basis for $F_{q^m}$ over $F_q$, this proves
+$$(\alpha_1,\ldots,\alpha_m) = (0,\ldots,0).$$
+So $f$ has no non trivial zero.
+
+Note : this proves that we cannot extend the Chevalley's Theorem to the forms of degree $m$ in $m$ varibles.
 \end{proof}
 
 \end{document}
