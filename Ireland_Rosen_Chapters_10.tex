@@ -365,7 +365,7 @@ then $\frac{\partial \overline{f}}{\partial t} (0,0,1) = 1$, thus the point at i
 
 For some other points $a = (u,v)$ on $\overline{C}$ not at infinity, it is sufficient by Exercise 10 to verify $(\partial f/\partial x (u,v), \partial f/\partial y (u,v)) \ne (0,0)$. Since
 $$\frac{\partial f}{\partial x}(u,v) = -3u^2 -a,\qquad \frac{\partial f}{\partial y}(u,v) = 2v,$$
-$a$ is singular if
+if $a$ is singular, then
 $$
 \left \{
 \begin{array}{ll}
@@ -393,4 +393,132 @@ thus
 $u = -\frac{3b}{2a}$, and $u^2 = \frac{9b^2}{4a^2} = -\frac{a}{3}$, which gives $4a^3 + 27b^2 = 0$.
 To conclude, if $4a^4 + 27b^2 \ne 0$, then the curve defined by $y^2 = x^3 + ax +b$ has no singular points, finite or infinite.
 \end{proof}
+
+
+\paragraph{Ex. 10.15} {\it Let $\Q$ be the field of rational numbers and $p$ a prime. Show that the form $x_0^{n+1} + p x_1^{n+1} + p^2 x_2^{n+1} + \cdots + p^n x_n^{n+1}$ has no zeros in $P^n(\Q)$. (Hint: If $\overline{a}$ is a zero, one can assume that the components of $a$ are integers and that they are not all divisible by $p$.)
+}
+\begin{proof}
+Write $f(x_0,\ldots,x_n) = x_0^{n+1} + p x_1^{n+1} + p^2 x_2^{n+1} + \cdots + p^n x_n^{n+1}$.
+
+Reasoning by contradiction, suppose that $\overline{a} = [\alpha_0,\ldots,\alpha_n]$ is a zero of $f$, where $\alpha_i \in \Q$ for $i=0,\ldots,n$. Using a common denominator $c$ for these rational numbers, we can write
+\begin{align*}
+\overline{a} &= [\alpha_0,\ldots,\alpha_n]\\
+&= \left[\frac{b_0}{c},\ldots, \frac{b_n}{c}\right] \qquad (b_i \in \Z)\\
+&= \left[d \frac{a_0}{c},\ldots,d \frac{a_n}{c}\right]\\
+ &=  [a_0,\ldots,a_n],
+\end{align*}
+where $d =b_0\wedge \cdots \wedge b_n$ is the gcd of the $b_i$, so that the $a_i \in \Z$ satisfy $a_0 \wedge \cdots \wedge a_n = 1$.
+
+Then 
+$$a_0^{n+1} + p a_1^{n+1} + p^2 a_2 ^{n+1} + \cdots + p^n a_n^{n+1} = 0,$$
+where the integers $a_i$ are not all divisible by $p$.
+
+To obtain a contradiction, we will show that all the $a_i$ are divisible by $p$.
+
+$p \mid - p a_1^{n+1} - p^2 a_2 ^{n+1} + \cdots - p^n a_n^{n+1} = a_0^{n+1}$, thus $p \mid a_0$.
+
+Reasoning by induction, suppose that $p$ divides $a_0,\ldots,a_k$, where $k<n$. Then $p^{n+1} \mid a_0^{n+1} + p a_1^{n+1} + p^2 a_2 ^{n+1} + \cdots + p^k a_k^{n+1}$, therefore
+$$p^{n+1} \mid  p^{k+1} a_{k+1} ^{n+1} + p^{k+2} a_{k+2}^{n+1} +\cdots + p^n a_n^{n+1} = p^{k+1}(a_{k+1}^{n+1} + p a_{k+2}^{n+1} + \cdots + p^{n-k-1}a_n^{n+1}).$$
+Since $n>k$, $ p \mid a_{k+1}^{n+1} + p a_{k+2}^{n+1} + \cdots + p^{n-k-1}a_n^{n+1}$, therefore $p \mid a_{k+1}^{n+1}$, thus $p \mid a_{k+1}$.
+
+The induction is done. This proves that $p\mid a_0, \ldots, p \mid a_n$. This is a contradiction, since the $a_i$ are not all divisible by $p$. So the form $x_0^{n+1} + p x_1^{n+1} + p^2 x_2^{n+1} + \cdots + p^n x_n^{n+1}$ has no zeros in $P_n(\Q)$.
+\end{proof}
+
+
+\paragraph{Ex. 10.16} {\it Show by explicit calculation that every cubic form in two variables over $\Z/2\Z$ has a non trivial zero.
+}
+\medskip
+
+Note : this assertion seems false  (or I don't understood the sentence).
+
+\begin{proof} 
+
+We can write a cubic form on $P_1(\F_2)$ under the form
+$$f(x_0,x_1) = a x_0^3 + b x_0^2 x_1 + c x_0 x_1^2 + d x_1^3,\qquad a,b,c,d \in \F_2.$$
+Thus there are $15$ such cubic forms. 
+
+This small Sage program computes the set of non trivial solutions for each of these forms
+
+\begin{verbatim}
+F2 = GF(2)
+R.<x0,x1>= F2[]
+l = [a*x0^3 + b * x0^2 * x1 + c * x0 * x1^2 + d * x1^3 
+      for a in F2 for b in F2 for c in F2 for d in F2 
+      if not [a,b,c,d] == [0,0,0,0]]
+l
+\end{verbatim}
+
+$[x_{1}^{3}, x_{0} x_{1}^{2}, x_{0} x_{1}^{2} + x_{1}^{3}, x_{0}^{2} x_{1}, x_{0}^{2} x_{1} + x_{1}^{3}, x_{0}^{2} x_{1} + x_{0} x_{1}^{2},x_{0}^{2} x_{1} + x_{0} x_{1}^{2} + x_{1}^{3}, x_{0}^{3}, x_{0}^{3} +x_{1}^{3},\\
+ x_{0}^{3} + x_{0} x_{1}^{2}, x_{0}^{3} + x_{0} x_{1}^{2} +x_{1}^{3}, x_{0}^{3} + x_{0}^{2} x_{1}, x_{0}^{3} + x_{0}^{2} x_{1} +x_{1}^{3}, x_{0}^{3} + x_{0}^{2} x_{1} + x_{0} x_{1}^{2}, x_{0}^{3} +x_{0}^{2} x_{1} + x_{0} x_{1}^{2} + x_{1}^{3}]$
+
+
+\begin{verbatim}
+for f in l:
+    S = []
+    for x in F2:
+        for y in F2:
+            if [x,y] != [0,0] and f.subs(x0=x,x1=y) == 0:
+                S.append([x,y])
+    print f,  ' : ', S
+    
+x1^3 			 :  [[1, 0]]
+x0*x1^2 			 :  [[0, 1], [1, 0]]
+x0*x1^2 + x1^3 			 :  [[1, 0], [1, 1]]
+x0^2*x1 			 :  [[0, 1], [1, 0]]
+x0^2*x1 + x1^3 			 :  [[1, 0], [1, 1]]
+x0^2*x1 + x0*x1^2 			 :  [[0, 1], [1, 0], [1, 1]]
+x0^2*x1 + x0*x1^2 + x1^3 			 :  [[1, 0]]
+x0^3 			 :  [[0, 1]]
+x0^3 + x1^3 			 :  [[1, 1]]
+x0^3 + x0*x1^2 			 :  [[0, 1], [1, 1]]
+x0^3 + x0*x1^2 + x1^3 			 :  []
+x0^3 + x0^2*x1 			 :  [[0, 1], [1, 1]]
+x0^3 + x0^2*x1 + x1^3 			 :  []
+x0^3 + x0^2*x1 + x0*x1^2 			 :  [[0, 1]]
+x0^3 + x0^2*x1 + x0*x1^2 + x1^3 			 :  [[1, 1]]
+
+\end{verbatim}
+
+This shows that two cubics forms have no non trivial solutions. We verify this for the form $x_0^3 + x_0x_1^2 + x_1^3$ :
+$$
+\begin{array}{|c|c|c|}
+\hline
+x_0 & x_1 & x_0^3 + x_0x_1^2 + x_1^3\\
+\hline
+0 & 1 & 1\\
+1 & 0 & 1\\
+1 & 1 & 1\\
+\hline
+\end{array}
+$$
+So the sentence is false.
+
+With three variables $x_0,x_1,x_2$, there are $1023$ cubics forms. A similar program gives among them the form
+$$f(x_0,x_1,x_2) = x_0^3 + x_0x_1^2 + x_1^3 + x_0x_1x_2 + x_0x_2^2 + x_1x_2^2 + x_2^2,$$
+which has no non trivial zero:
+$$
+\begin{array}{|c|c|c|c|}
+\hline
+x_0 & x_1 & x_2 &f(x_0,x_1,x_2)\\
+\hline
+0 & 0 & 1& 1\\
+0 & 1 &0 &1\\
+0 & 1 & 1& 1\\
+1 & 0 & 0 & 1\\
+1 & 0 & 1 & 1\\
+1 & 1 & 0 & 1\\
+1 & 1 & 1 & 1\\
+\hline
+\end{array}
+$$
+The Chevalley's Theorem shows that with 4 (or more) variables $x_0,x_1,x_2, x_3$, every cubic form has non trivial solutions.
+\end{proof}
+
+\paragraph{Ex. 10.17} {\it Show that for each $m>0$ and finite field $F_q$ there is a form of degree $m$ in $m$ variables with no nontrivial zero. [Hint: Let $\omega_1,\omega_2,\ldots,\omega_m$ be a basis for $F_{q^m}$ over $F_q$ and show that $f(x_1,x_2,\ldots,x_m) = \prod_{i=0}^{m-1} (\omega_1^{q^i} x_1 + \cdots + \omega_m^{q^i} x_m)$ has the required properties.]
+}
+
+\begin{proof}
+
+\end{proof}
+
 \end{document}
