@@ -514,6 +514,7 @@ $$
 The Chevalley's Theorem shows that with 4 (or more) variables $x_0,x_1,x_2, x_3$, every cubic form has non trivial solutions.
 \end{proof}
 
+
 \paragraph{Ex. 10.17} {\it Show that for each $m>0$ and finite field $F_q$ there is a form of degree $m$ in $m$ variables with no nontrivial zero. [Hint: Let $\omega_1,\omega_2,\ldots,\omega_m$ be a basis for $F_{q^m}$ over $F_q$ and show that $f(x_1,x_2,\ldots,x_m) = \prod_{i=0}^{m-1} (\omega_1^{q^i} x_1 + \cdots + \omega_m^{q^i} x_m)$ has the required properties.]
 }
 
@@ -562,4 +563,138 @@ So $f$ has no non trivial zero.
 Note : this proves that we cannot extend the Chevalley's Theorem to the forms of degree $m$ in $m$ varibles.
 \end{proof}
 
+
+\paragraph{Ex. 10.18} {\it Let $g_1,g_2,\ldots,g_m\in \F_q[x_1,x_2,\ldots,x_n]$ be homogeneous polynomials of degree $d$ and assume that $n>md$. Prove that there is nontrivial common zero. [Hint: Let $f$ be as in Exercise 17 and consider the polynomial $f(g_1(x_1,\ldots,x_n),\ldots,g_m(x_1,\ldots,x_m))$.]
+}
+\begin{proof}
+Consider the polynomial $h = f(g_1(x_1,\ldots,x_n),\ldots,g_m(x_1,\ldots,x_m) \in \F_q[x_1,\ldots,x_m]$. Then $h$ is homogeneous of degree $md$. Since $n > md$, the Chevalley's Theorem (Corollary of Theorem 1) shows that there is a non trivial zero $\overline{a} = (\alpha_1,\ldots,\alpha_m) \in \F_q^m\setminus\{(0,\ldots,0)\}$ of $h$, so that
+$$f(g_1(\alpha_1,\ldots,\alpha_n),\ldots,g_m(\alpha_1,\ldots,\alpha_m)) = 0,\qquad (\alpha_1,\ldots,\alpha_m) \in \F_q^m \setminus\{(0,\ldots,0)\}.$$
+Then
+$$f(\beta_1,\ldots,\beta_m) = 0,\qquad \text{where } \beta_i = g_1(\alpha_1,\ldots,\alpha_n) \in \F_q.$$
+Since $f$ has no trivial zero by Exercise 17, we obtain $\beta_1 =\cdots = \beta_m = 0$, that is
+$$g_1(\alpha_1,\ldots,\alpha_n)=\ldots =g_m(\alpha_1,\ldots,\alpha_m)=0,\qquad (\alpha_1,\ldots,\alpha_m) \in \F_q^m\setminus\{(0,\ldots,0)\}.$$
+This proves that here is nontrivial common zero for $g_1, \ldots g_m$, if $n>md$.
+\end{proof}
+
+\paragraph{Ex. 10.19} {\it Characterize those extensions $\F_{p^n}$ of $\F_p$ that are such that the trace is identically zero on $\F_p$.
+}
+\begin{proof}
+If $\alpha \in \F^p$, then $\alpha^p = \alpha$, thus $\alpha^{p^k} = \alpha$ for all exponents $k\geq 0$.
+
+In the extension $\F_{p^n}$ of $\F_p$, for all $\alpha \in \F_p$,
+\begin{align*}
+\mathrm{tr}(\alpha) &= \alpha + \alpha^p + \alpha^{p^2}+ \cdots + \alpha^{p^{m-1}}\\
+&= n \alpha.
+\end{align*}
+If the characteristic $p$ divides $n$, then $n = 0$ in $\F_{p^n}$, thus $\mathrm{tr}(\alpha) = 0$ for all $\alpha \in \F_p$.
+
+Conversely, if $\mathrm{tr}(\alpha) = 0$ for all $\alpha \in \F_p$, then $\mathrm{tr}(1) = n\cdot 1 = 0$, thus the characteristic $p$ divides $n$.
+
+The extensions $\F_{p^n}$ of $\F_p$ that are such that the trace is identically zero on $\F_p$ are those which satisfy $p \mid n$.
+
+
+\end{proof}
+
+\paragraph{Ex. 10.20} {\it Show that if $\alpha \in \F_q$ has trace zero, then $\alpha = \beta - \beta^p$ for some $\beta \in \F_q$.
+}
+\begin{proof}
+Here $q = p^n$. Consider first the map
+$$\mathrm{tr}
+\left\{
+\begin{array}{ccl}
+\F_{p^n} & \to & \F_p\\
+\alpha & \mapsto & \mathrm{tr}(\alpha) = \alpha + \alpha^p + \alpha^{p^2} + \cdots + \alpha^{p^{n-1}}
+\end{array}
+\right.
+$$
+
+This makes sense, since by Proposition 10.3.1(a), $\mathrm{tr}(\alpha) \in \F_p$ for all $\alpha \in \F_{p^n}$. Moreover, parts (b),(c) of this proposition show that $\mathrm{tr}$ is $\F_p$-linear, and by part (d) that $\mathrm{tr}$ is surjective (onto): $\mathrm{Im}(\mathrm{tr}) = \F_p$.
+
+The rank theorem gives
+$$\mathrm{dim}_{\F_p} \mathrm{Im}(\mathrm{tr}) = \mathrm{dim}_{\F_p} \F_{p^n} - \mathrm{dim}_{\F_p} \ker(\mathrm{tr}),$$
+thus 
+$$\mathrm{dim}_{\F_p} \ker(\mathrm{tr}) = n-1.$$
+
+Consider now
+$$
+T 
+\left\{
+\begin{array}{ccl}
+\F_{p^n} & \to& \F_{p^n}\\
+\beta & \mapsto & \beta - \beta^p
+\end{array}
+\right.
+$$
+$T$ is a $\F_p$-linear map: for $a,b \in \F^p$, and $\alpha, \beta \in \F_{p^n}$, using $a^p = a, b^p = b$,
+$$T(a \alpha + b \gamma) = a \alpha + b \gamma - (a^p \alpha^p +b^p \beta^p) = a (\alpha -\alpha^p) + b (\beta - \beta^p) = a T(\alpha) + b T(\beta).$$
+
+If $\gamma = T(\beta) = \beta - \beta^p$ is in $\mathrm{Im}(T)$, then
+\begin{align*}
+\mathrm{tr}(\gamma) &= \mathrm{tr}\beta) - \mathrm{tr}(\beta^p)\\
+&=\left(\beta + \beta^p + \beta^{p^2} + \cdots + \beta^{p^{n-1}}\right) - \left(\beta^p + \beta^{p^2} + \beta^{p^3} + \cdots + \beta^{p^{n}}\right)\\
+&=\beta - \beta^{p^n}\\
+&=0.
+\end{align*}
+
+This proves that $$\mathrm{Im}(T) \subset \ker(\mathrm{tr}).$$
+
+Moreover, 
+$$\beta \in \ker(T) \iff \beta = \beta^p \iff \beta \in \F_p,$$
+so that $\ker(T) = \F_p$.
+
+Using anew the rank theorem on $T$, we obtain
+\begin{align*}
+\mathrm{dim}_{\F_p} \mathrm{Im}(T) &= \mathrm{dim}_{\F_p} \F_{p^n} - \mathrm{dim}_{\F_p} \ker(T)\\
+&=n-1.
+\end{align*}
+
+From $\mathrm{Im}(T) \subset \ker(\mathrm{tr})$, where $\mathrm{dim}_{\F_p} \mathrm{Im}(T) = \mathrm{dim}_{\F_p} \ker(\mathrm{tr}) = n-1$, we deduce 
+$$\mathrm{Im}(T) = \ker(\mathrm{tr}).$$
+To conclude, if $\alpha \in \F_q$ has trace zero, then $\alpha \in \mathrm{Im}(T)$, i.e. $\alpha = \beta - \beta^p$ for some $\beta \in \F_q$.
+\end{proof}
+
+
+
+\paragraph{Ex. 10.21} {\it Let $\psi$ be a map from $\F_q$ to $\C^*$ such that $\psi(\alpha + \beta) = \psi(\alpha)\psi(\beta)$ for all $\alpha, \beta \in \F_q$. Show that there is a $\gamma \in \F_q$ such that $\psi(x) = \zeta^{\mathrm{tr}(\gamma x)}$ for all $x \in \F_q$, where $\zeta = {2i\pi/p}$.
+}
+
+\begin{proof} Here $q = p^n$. 
+
+The map $\psi$ is a group homomorphism, from $(\F_q,+)$ to $(\C^*,\times)$, thus $\psi(0) = 1$, and $\psi(a \alpha) = \psi(\alpha)^a$, where $\alpha \in \F_q$ and $a \in \Z$.
+
+Let $(\omega_1,\ldots,\omega_n)$ be a basis for $\F_{p^n}$ over $\F_p$. For each $k \in \gcro 1,n\dcro$, since the characteristic of $\F_{q}$ is $p$,
+$$\psi(\omega_k)^p = \psi( p \omega_i) = \psi(0) = 1.$$
+Thus $\psi(\omega_k)$ is a $p$-th root of unity, of the form
+$$\psi(\omega_k) = \zeta^{c_k}, \quad c_k \in \{0, \ldots, p-1\}.$$
+Since $\zeta^{c_k} = \zeta^{c_k + lp} \ (l\in \Z)$, we can give a sense to $\psi(\omega_k) = \zeta^{c_k} = \zeta^{[c_k]}$, where $[c_k] \in \F_p$ is the class of $c_k$ modulo $p$.
+
+Consider the map
+$$
+\varphi
+\left\{
+\begin{array}{ccl}
+\F_q & \to & (\F_p)^n\\
+\gamma & \mapsto & (\mathrm{tr}(\gamma \omega_1),\ldots, \mathrm{tr}(\gamma \omega_n)).
+\end{array}
+\right.
+$$
+We will show that the linear map $\varphi$ is bijective.
+
+If $\gamma \in \ker(\varphi)$, then $\mathrm{tr}(\gamma \omega_1) = \ldots, \mathrm{tr}(\gamma \omega_n) = 0$. If $y$ is any element in $\F_q$, then $y = b_1 \omega_1+\cdots + b_n \omega_n$, where $b_1,\ldots, b_n \in \F_p$. Then  $\mathrm{tr} i(\gamma y) = b_1 \mathrm{tr}(\gamma \omega_1) + b_n \mathrm{tr}(\omega_n) = 0$, which gives
+$$\forall y \in \F_q,\ \mathrm{tr}(\gamma y ) = 0.$$ 
+Reasoning by contradiction suppose that $\gamma \ne 0$. Since $\mathrm{tr}$ maps $\F_q$ onto $\F_p$( Proposition 10.3.1.(d)), there is some $\delta \in \F_q$ such that $\mathrm{tr}(\delta) = 1$. If $y = \delta \gamma^{-1}$, then $0 = \mathrm{tr}(\gamma y) = \mathrm{tr}(\delta) = 1$. This is a contradiction, so $y = 0$, and this proves $\ker(\varphi) = \{0\}$.
+
+Moreover $\mathrm{dim}_{\F_p} (\F_q) = \mathrm{dim}_{\F_p}(\F_p)^n = n$, thus $\varphi$ is a bijection.
+
+Thus there exists $\gamma \in \F_q$ such that $$\mathrm{tr}(\gamma \omega_k) = [c_k],\qquad k=1,\ldots,n.$$
+
+Then, if $x$ is any element in $\F_q$, we can write $x = a_1 \omega_1 + \cdots + a_n \omega_n$, where $a_1,\ldots,a_k \in \F_p$. Since $\psi(\omega_k)$ is a $p$-th root of unity,
+\begin{align*}
+\psi(x) &= \psi( a_1 \omega_1 + \cdots + a_n \omega_n)\\
+&=\psi(\omega_1)^{a_1} \cdots \psi(\omega_n)^{a_n}\\
+&=\zeta^{a_1 \mathrm{tr}(\gamma \omega_1) + \cdots + a_n \mathrm{tr}(\gamma\omega_n)}\\
+&=\zeta^{\mathrm{tr}(\gamma x)}.
+\end{align*}
+\end{proof}
+If $\psi$ is a group homomorphism from $\F_q$ to $\C^*$, then there is a $\gamma \in \F_q$ such that $\psi(x) = \zeta^{\mathrm{tr}(\gamma x)}$ for all $x \in \F_q$.
 \end{document}
