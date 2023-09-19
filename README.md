@@ -7,4 +7,4 @@ https://github.com/xyzzyz/ireland-rosen/blob/master/rosen.pdf
 
 Some errors fixed in 2023.
 
-Complete up to Chapter 9.
+Complete up to Chapter 10.
