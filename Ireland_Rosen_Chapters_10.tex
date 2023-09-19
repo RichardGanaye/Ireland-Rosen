@@ -780,4 +780,28 @@ g(\chi) g(\chi^{-1}) &= \chi(-1) g(\chi) \overline{g(\chi)}\\
 \end{align*}
 \end{enumerate}
 \end{proof}
+
+\paragraph{Ex. 10.23} {\it Suppose that $f$ is a function mapping $F$ to $\C$. Define $\hat{f}(s) = (1/q) \sum_t f(t) \overline{\psi(st)}$ and prove that $f(t) = \sum_s \hat{f}(s) \psi(st)$. The last sum is called the finite Fourier series expansion of $f$.
+}
+\begin{proof} Using the proposition 10.3.3, we obtain, for all $t \in \F_q$,
+\begin{align*}
+ \sum_{s \in \F_q} \hat{f}(s) \psi(st) &=  \frac{1}{q} \sum_{s \in \F_q} \left(\sum_{u \in \F_q} f(u) \overline{\psi(su)} \right ) \psi(st)\\
+ &= \frac{1}{q}  \sum_{u \in \F_q} f(u)  \sum_{s \in \F_q} \psi(s(t-u))\\
+ &= \frac{1}{q}  \sum_{u \in \F_q} f(u)  q \delta(t,u)\\
+ &= f(t).
+\end{align*}
+
+\end{proof}
+
+\paragraph{Ex. 10.24} {\it In Exercise 23 take $f$ to be a non trivial character $\chi$ and show that $\hat{\chi}(s) = (1/q) g_{-s}(\chi)$.
+}
+\begin{proof} By definition,
+\begin{align*}
+\hat{\chi}(s) &= \frac{1}{q} \sum_{t\in \F_q} \chi(t) \overline{\psi(st)}\\
+&= \frac{1}{q} \sum_{t\in \F_q} \chi(t) \zeta_p(-\mathrm{tr}(st)\\
+&= \frac{1}{q} \sum_{t\in \F_q} \chi(t) \zeta_p(\mathrm{tr}((-s)t)\\
+&=  \frac{1}{q} \,  g_{-s}(\chi).
+\end{align*}
+
+\end{proof}
 \end{document}
