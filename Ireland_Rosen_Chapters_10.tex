@@ -680,7 +680,7 @@ $$
 $$
 We will show that the linear map $\varphi$ is bijective.
 
-If $\gamma \in \ker(\varphi)$, then $\mathrm{tr}(\gamma \omega_1) = \ldots, \mathrm{tr}(\gamma \omega_n) = 0$. If $y$ is any element in $\F_q$, then $y = b_1 \omega_1+\cdots + b_n \omega_n$, where $b_1,\ldots, b_n \in \F_p$. Then  $\mathrm{tr} i(\gamma y) = b_1 \mathrm{tr}(\gamma \omega_1) + b_n \mathrm{tr}(\omega_n) = 0$, which gives
+If $\gamma \in \ker(\varphi)$, then $\mathrm{tr}(\gamma \omega_1) = \ldots, \mathrm{tr}(\gamma \omega_n) = 0$. If $y$ is any element in $\F_q$, then $y = b_1 \omega_1+\cdots + b_n \omega_n$, where $b_1,\ldots, b_n \in \F_p$. Then  $\mathrm{tr}(\gamma y) = b_1 \mathrm{tr}(\gamma \omega_1) + b_n \mathrm{tr}(\omega_n) = 0$, which gives
 $$\forall y \in \F_q,\ \mathrm{tr}(\gamma y ) = 0.$$ 
 Reasoning by contradiction suppose that $\gamma \ne 0$. Since $\mathrm{tr}$ maps $\F_q$ onto $\F_p$( Proposition 10.3.1.(d)), there is some $\delta \in \F_q$ such that $\mathrm{tr}(\delta) = 1$. If $y = \delta \gamma^{-1}$, then $0 = \mathrm{tr}(\gamma y) = \mathrm{tr}(\delta) = 1$. This is a contradiction, so $y = 0$, and this proves $\ker(\varphi) = \{0\}$.
 
@@ -697,4 +697,87 @@ Then, if $x$ is any element in $\F_q$, we can write $x = a_1 \omega_1 + \cdots +
 \end{align*}
 \end{proof}
 If $\psi$ is a group homomorphism from $\F_q$ to $\C^*$, then there is a $\gamma \in \F_q$ such that $\psi(x) = \zeta^{\mathrm{tr}(\gamma x)}$ for all $x \in \F_q$.
+
+
+\paragraph{Ex. 10.22} {\it If $g_\alpha(\chi)$ is a Gauss sum on $F$, defined in section 3, show that
+\begin{enumerate}
+\item[(a)] $g_\alpha(\chi) = \overline{\chi(\alpha)} g(\chi)$.
+\item[(b)] $g(\chi^{-1}) = g(\overline{\chi}) = \chi(-1) \overline{g(\chi)}.$
+\item[(c)] $|g_\alpha(\chi) | = q^{1/2}$.
+\item[(d)] $g(\chi) g(\chi^{-1}) = \chi(-1) q$.
+\end{enumerate}
+}
+\begin{proof}
+Here $\psi : \F_q \to \C$ is defined by $\psi(\alpha) = \zeta_p^{\mathrm{tr}(\alpha)}$, and the Gauss sum for a character $\chi$ of $\F_q$ by
+$$g_\alpha(\chi) = \sum_{t \in \F_q} \chi(t) \psi(\alpha t) = \sum_{t \in \F_q} \chi(t) \zeta_p^{\mathrm{tr}(\alpha t)}.$$
+
+First we generalize Proposition 8.1.2, with the same proof.
+If $\chi \ne \varepsilon$, there an $a \in \F_q^*$ such that $\chi(a) \ne 1$. Then, if $T = \sum_{t\in \F_q} \chi(t)$, then
+$$\chi(a) T = \sum_{t\in \F_q} \chi(a) \chi(t) = \sum_{t\in \F_q} \chi(at) = \sum_{s \in \F_q} \chi(s) = T.$$
+Since $\chi(a) T = T$ and $\chi(a) \ne 1$, it follows that $T=0$. This proves, for a non trivial character $\chi$,
+$$g_0(\chi) =\sum_{t\in \F_q} \chi(t) = 0.$$
+\begin{enumerate}
+\item[(a)] 
+If $\alpha \in \F_q^*$,
+\begin{align*}
+\chi(\alpha) g_\alpha(\chi) &=\sum_{t \in \F_q} \chi(\alpha)\chi(t) \psi(\alpha t)\\
+&=\sum_{t \in \F_q} \chi(\alpha t) \psi(\alpha t)\\
+&= \sum_{s \in \F_q} \chi(s) \psi( s)\qquad (s =\alpha t)\\
+&= g(\chi).
+\end{align*}
+Since $|\chi(\alpha)| = 1$, $\chi(\alpha)^{-1} = \overline{\chi(\alpha)}$, thus
+$$g_\alpha(\chi) = \overline{\chi(\alpha)} g(\chi).$$
+
+\item[(b)] Since $(-1)^2 = 1$, $(\chi(-1))^2 = 1$, thus $\chi(-1) \pm 1$ is real, therefore $\overline{\chi(-1)} = \chi(-1)$. This gives
+\begin{align*}
+\overline{g(\chi)} &= \sum_{t \in \F_q} \overline{\chi(t)} \zeta_p^{-\mathrm{tr}( t)}\\
+&=\sum_{t \in \F_q} \overline{\chi(-1) \chi(-t)}  \zeta_p^{-\mathrm{tr}( t)}\\
+&=\chi(-1) \sum_{t \in \F_q} \overline{ \chi(-t)}  \zeta_p^{\mathrm{tr}( -t)}\\
+&=\chi(-1) \sum_{s \in \F_q} \overline{ \chi(s)}  \zeta_p^{\mathrm{tr}( s)}\qquad (s = -t)\\
+&=\chi(-1) g(\overline{\chi})\\
+\end{align*}
+We have seen in part (a) that $\chi^{-1} = \overline{\chi}$. This gives
+$$g(\chi^{-1}) = g(\overline{\chi}) = \chi(-1) \overline{g(\chi)}.$$
+
+\item[(c)]Here we assume that $\chi \ne \varepsilon$.  By part (a), $|g_\alpha(\chi)| = |g(\chi)|$, so it it sufficient to verify $|g(\chi) | = q^{1/2}$.
+
+We evaluate the sum $S = \sum_{\alpha \in \F_q} g_a(\chi) \overline{g_a(\chi)}$ in two ways.
+
+\begin{enumerate}
+\item[$\bullet$]  We have proved in the introduction that $g_0(\chi) = 0$. If $a \in \F_q^*$, then $g_a(\chi) = \chi(a^{-1}) g(\chi)$, and $\overline{g_a(\chi)} = \overline{\chi(a^{-1})} \overline{g(\chi)} = \chi(a) \overline{g(\chi)}$. It follows that
+\begin{align*}
+S&= \sum_{a \in \F_q^*} \chi(a^{-1}) g(\chi)  \chi(a) \overline{g(\chi)}\\
+&= \sum_{a \in \F_q^*} |g(\chi)|^2\\
+&= (q-1) |g(\chi)|^2
+\end{align*}
+\item[$\bullet$] Furthermore $$g_a(\chi) \overline{g_a(\chi)} = \sum_{x \in \F_q} \sum_{y \in \F_q} \chi(x) \overline{\chi(y)} \psi(a(x-y)).$$
+Therefore,
+\begin{align*}
+S &= \sum_{a\in \F_q}  \sum_{x \in \F_q} \sum_{y \in \F_q} \chi(x) \overline{\chi(y)} \psi(a(x-y))\\
+&=  \sum_{x \in \F_q} \sum_{y \in \F_q}\chi(x) \overline{\chi(y)} \left(  \sum_{a\in \F_q}\psi(a(x-y))\right)
+\end{align*}
+By Proposition 10.3.3,
+\begin{align*}
+ \sum_{a\in \F_q} \psi(a(x-y)) &= q \delta(x,y)
+  \end{align*}
+Therefore,
+ \begin{align*}
+ S &=  q \sum_{x \in \F_q} \sum_{y \in \F_q}\chi(x) \overline{\chi(y)}  \delta(x,y) \\
+ &= q \sum_{x \in \F_q} \chi(x) \overline{\chi(x)}\\
+ \end{align*}
+Since $\chi(x) \overline{\chi(x)} = 1$ if $x \ne 0$, et $\chi(x) \overline{\chi(x)} = 0$ if $x = 0$, we obtain
+ $$S = q(q-1).$$
+\end{enumerate}
+The comparison of these two results gives
+$$(q-1) |g(\chi)|^2 = (q-1)q,$$
+thus $$ |g_\alpha(\chi)| = |g(\chi)| = \sqrt{q}.$$
+
+\item[(d)] Here $\chi \ne \varepsilon$. Then, by parts (b) and (c),
+\begin{align*}
+g(\chi) g(\chi^{-1}) &= \chi(-1) g(\chi) \overline{g(\chi)}\\
+&=\chi(-1) |g(\chi)|^2\\
+&= \chi(-1) q.
+\end{align*}
+\end{enumerate}
+\end{proof}
 \end{document}
