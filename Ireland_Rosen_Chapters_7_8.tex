@@ -295,7 +295,7 @@ If $n = 1$, $f(x) = ax+b = a(x-\alpha_0)$, where $\alpha_0 = -b/a$ : $K = k$ is 
 
 Suppose that the property is true for all polynomials of degree less than $n$ on an arbitrary field $k$.
 
-Let $f(x) \in k[x], \deg(f) = n$. From proposition 7.2.1. applied to an irreducible factor of $f$, there exists a field $L, [L:K]<\infty$ and $\alpha \in L$ such that $f(\alpha_1) = 0$. Then $f(x) = (x-\alpha_1) g(x), g(x) \in L[x]$. 
+Let $f(x) \in k[x], \deg(f) = n$. From proposition 7.2.1. applied to an irreducible factor of $f$, there exists a field $L, [L:k]<\infty$ and $\alpha_1 \in L$ such that $f(\alpha_1) = 0$. Then $f(x) = (x-\alpha_1) g(x), g(x) \in L[x]$. 
 
 Applying the induction hypothesis in the field $L$ on the polynomial $g \in L[x]$ with $\deg(g) = n-1$, we obtain a field $K, [K:L]<\infty$ such that $g(x) = a(x-\alpha_2)\cdots(x-\alpha_n)$ with $\alpha_i \in K$. So  $f(x) = a(x-\alpha_1)(x-\alpha_2)\cdots(x-\alpha_n)$ splits in linear factors in $K$. The induction is done.
 \end{proof}
@@ -876,7 +876,7 @@ As $\chi$ is a character of order 3, $\chi^2\neq \varepsilon$. From Exercise 5, 
 $$g(\chi)^2 = \chi(2)^{-2} J(\chi,\rho) g(\chi^2).$$
 So
 $$g(\chi)^3 = \chi(2)^{-2} J(\chi,\rho) g(\chi^2)g(\chi).$$
-Recall  (¤8.2) that
+Recall  (Â¤8.2) that
 $$\overline{g(\chi)} = \sum_t \overline{\chi(t)} \zeta^{-t} = \chi(-1) \sum_t \overline{\chi(-t)} \zeta(-t) = \chi(-1) g(\overline{\chi}),$$
 Here $\chi(-1) = 1$, because $\chi(-1) = \chi((-1)^3) = \chi^3(-1) = \varepsilon(-1) = 1$.
 Hence
