@@ -481,7 +481,7 @@ Indeed, $p$ is irreducible : if $p = uv,\ u,v \in \Z[i]$, where $u = c+di,v$ are
 }
 
 \begin{proof}
-Let $U$ be the set of monic polynomials in $\mathbb{F}_q[x]$, and $U_t$ the set of monic polynomials of degree $t$, and $s\in \C$. Then $U = \coprod_{t \in \N} U_t$, so
+Let $U$ be the set of monic polynomials in $\mathbb{F}_q[x]$, and $U_t$ the set of monic polynomials of degree $t$, and $s\in \C$. Then $U = \bigcup_{t \in \N} U_t$, so
 \begin{align*}
 \sum_{f \in U} \vert f \vert^{-s }&= \sum_{t=0}^\infty \sum_{f \in U_t} \vert f \vert^{-s}\\
 &=\sum_{t=0}^\infty \frac{1}{q^{ts}} \sum_{f\in U_t} 1.
