@@ -417,7 +417,7 @@ $$x^{4}-x=x^{2^2}-x = \prod\limits_{d\mid 2} F_d(x) = F_1(x) F_2(x)$$
 
 so $F_4(x) = \frac{x^{16}-x}{x^4-x} = \frac{x^{15}-1}{x^3-1} = x^{12}+x^9+x^6+x^3+1$,
 
-$F_4(x) = (x^4+x^3+x^2+x+1)(x^4+x+1)(x^4+x^3+1)$.t
+$F_4(x) = (x^4+x^3+x^2+x+1)(x^4+x+1)(x^4+x^3+1)$.
 
 Among the 16 monic polynomials of degree 4 in $\mathbb{F}_2[x]$, 3 are irreducible :
 \begin{align*}
@@ -456,13 +456,13 @@ $$N_q = \frac{p^q -p}{q}.$$
 \begin{proof}
 If $p$ is a prime rational integer, with $p\equiv 3 \pmod 4$, then $p$ is a prime in $\Z[i]$.
 
-Indeed, $p$ is irreducibel : if $p = uv,\ u,v \in \Z[i]$, where $u = c+di,v$ are not units, then $p^2 = N(u)N(v),\ N(u)>1,N(v)>1$, so $p = N(u) = u \overline{u} = c^2+d^2$.
+Indeed, $p$ is irreducible : if $p = uv,\ u,v \in \Z[i]$, where $u = c+di,v$ are not units, then $p^2 = N(u)N(v),\ N(u)>1,N(v)>1$, so $p = N(u) = u \overline{u} = c^2+d^2$.
 
- As $c^2\equiv 0,1 \pmod 4, d^2 \equiv 0,1 \pmod 4$, so $p \equiv1 \pmod 4$, which is in contradiction with the hypothesis.
+ As $c^2\equiv 0,1 \pmod 4, d^2 \equiv 0,1 \pmod 4$, so $p \equiv 0,1,2 \pmod 4$, which is in contradiction with the hypothesis.
  
  So $p$ is irreducible in $\Z[i]$, and since $\Z[i]$ is a principal ideal domain, $p$ is prime in $\Z[i]$, thus $\Z[i]/( p )$ is a field.
  
- Let $z = a+bi \in \Z[i]$. The Euclidean division of $a,b$ by $q$ gives 
+ Let $z = a+bi \in \Z[i]$. The Euclidean division of $a,b$ by $p$ gives 
  $$a = qp+r,\ 0\leq r < p, \qquad b = q'p+s, \ 0\leq s < p,$$
  so $$z \equiv r+is \pmod p,\ 0\leq r <p, 0 \leq s < p.$$
  Let's verify that these $p^2$ elements are in different classes of congruences modulo $p$.
