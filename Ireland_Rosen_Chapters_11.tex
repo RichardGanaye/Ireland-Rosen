@@ -223,4 +223,136 @@ print N(p,s), p^(2*s) + 2*p^s +1
 \end{center}
 There is a misprint in the ``Selected Hints for the Exercises'' in Ireland-Rosen p.371.
 \end{proof}
+
+\paragraph{Ex. 11.5}{\it Calculate as explicitly as possible the zeta function of $a_0x_0^2+a_1x_1^2+\cdots+a_nx_n^2$ over $\F_q$, where $q$ is odd. The answer will depend on wether $n$ is odd or even and whether $q\equiv 1 \pmod 4$ or $q \equiv 3 \pmod 4$.
+}
+
+\begin{proof}
+Since $q$ is odd, there is a unique character $\chi$ of order 2 over $F = \F_q$, and a unique character of order 2 over $F_s = \F_{q^s}$ . We first compute the number in $\F_q^{n+1}$ of solutions of the equation $f(x_0,\ldots,x_n) = 0$, where $f(x_0,\ldots,x_n) = a_0x_0^2+\cdots+a_n x_n^2\in F[x_0,\ldots,x_n]$.
+\begin{align*}
+N(a_0x_0^2+\cdots+a_n x_n^2=0)&=\sum\limits_{a_0u_0+\cdots+a_n u_n=0}N(x_0^2=u_0)\cdots N(x_n^2=u_n)\\
+&=\sum\limits_{a_0u_0+\cdots+a_n u_n=0}(1+\chi(u_0))\cdots(1+\chi(u_n)) \\
+&=\sum\limits_{v_0+\cdots+v_n=0}(1+\chi(a_0)^{-1}\chi(v_0))\cdots(1+\chi(a_n^{-1})\chi(v_n)) \hspace{0.5cm}(v_i = a_i u_i)\\
+&=q^{n} + \chi(a_0^{-1})\cdots\chi(a_n^{-1})J_0(\chi,\chi,\cdots,\chi),
+\end{align*}
+Indeed $J_0(\varepsilon,\ldots,\varepsilon) = q^{l-1}$, and $J_0(\chi_0,\ldots,\chi_n)= 0$ if some but not all of the $\chi_i$ are trivial (generalization of Proposition 8.5.1).
+
+We estimate $J_0(\chi,\ldots,\chi)$, where there are $n+1$ entries of $\chi$.
+
+\begin{enumerate}
+\item[$\bullet$] If $n$ is even, then $\chi^{n+1} = \chi \ne \varepsilon$, thus $J_0(\chi,\ldots,\chi) = 0$ (Proposition 8.5.1(d)), and so
+$$N(a_0x_0^2+\cdots+a_n x_n^2=0) = q^{n},$$
+and the number of projective points on the hypersurface is given by 
+$$N_1 = \frac{q^n -1}{q-1} = q^{n-1} + \cdots + q + 1.$$
+\item[$\bullet$] If $n$ is odd, then $\chi^{n+1} = \varepsilon$, thus $J_0(\chi,\ldots,\chi) = \chi(-1)(q-1) J(\chi,\ldots,\chi)$, with $n$ entries of $\chi$ (same Proposition).
+
+By Theorem 3 of chapter 8,
+$$J(\chi,\ldots,\chi) = \frac{g(\chi)^n}{g(\chi)} = g(\chi)^{n-1}.$$
+Since $g(\chi)^2 = g(\chi) g(\chi)^{-1}= \chi(-1)q$ (Exercise 10.22), 
+\begin{align*}
+\frac{1}{q-1} \, J_0(\chi,\ldots,\chi) &= \chi(-1)g(\chi)^{n-1}\\
+&= \chi(-1) g(\chi)^{n-1}\\
+&=\frac{\chi(-1) g(\chi)^{n+1}}{g(\chi)^2}\\
+&= \frac{1}{q}\,  g(\chi)^{n+1}.
+ \end{align*}
+ Therefore
+ $$N(a_0x_0^2+\cdots+a_n x_n^2=0)  = q^n + \chi(a_0)^{-1}\cdots \chi(a_n)^{-1} \frac{q-1}{q} g(\chi)^{n_1},$$
+ and 
+ $$N_1 = q^{n-1} + \cdots + q + 1 + \frac{1}{q} \chi(a_0)^{-1}\cdots \chi(a_n)^{-1}g(\chi)^{n+1}.$$
+\end{enumerate}
+To conclude this first part,
+$$
+\begin{array}{ll}
+N_1 = q^{n-1} + \cdots + q + 1 &\text{if  $n$ is even},\\
+N_1 = q^{n-1} + \cdots + q + 1 + \frac{1}{q} \chi(a_0)^{-1}\cdots \chi(a_n)^{-1}g(\chi)^{n+1}& \text{if $n$ is odd}.
+\end{array}
+$$
+To compute $N_s$, we must replace $q$ by $q^s$ and $\chi$ by $\chi_s$, the character of order $2$ on $F_s$. Then
+$$
+\begin{array}{ll}
+N_s = q^{s(n-1)} + \cdots + q^s + 1 &\text{if  $n$ is even},\\
+N_s = q^{s(n-1)} + \cdots + q^s + 1 + \frac{1}{q^s} \chi_s(a_0)^{-1}\cdots \chi_s(a_n)^{-1}g(\chi_s)^{n+1}& \text{if $n$ is odd}.
+\end{array}
+$$
+(These two results can also be obtained by using the equations (1) and (2) in Theorem 2 of Chapter 10.)
+\bigskip
+
+It remains to study $\chi_s$ in the odd case. 
+
+Since $\chi_s^2 = \varepsilon$, for all $\alpha \in F_s$, $\chi_s(\alpha)^{-1} = \chi_s(\alpha)$, and $\chi_s(\alpha) = -1 \in \C$ if $\alpha^\frac{q^s - 1}{2} = -1 \in F_s, \chi_s(\alpha) = 1$ otherwise.
+
+If $a \in F$, $a^\frac{q-1}{2} = \pm 1 = \varepsilon$. Since $q$ is odd, $1+q+\cdots+q^{s-1} \equiv s \pmod 2$, thus
+$$a^{\frac{q^s-1}{2}} = a^{\frac{q-1}{2} (1+q+\cdots + q^{s-1})} =\varepsilon^{1+q+\cdots + q^{s-1}} = \varepsilon^{s},$$
+so
+$$\chi_s(a) = \chi(a)^s \qquad (a \in F).$$
+We know that $g(\chi_s)^2 = \chi_s(-1) q^s$ (Ex. 10.22), thus, as $n$ is odd,
+\begin{align*}
+g(\chi_s)^{n+1} &= \left[g(\chi_s)^2 \right]^{\frac{n+1}{2}}\\
+&=\chi_s(-1)^\frac{n+1}{2} q^{s \frac{n+1}{2}}.
+\end{align*}
+
+If $q\equiv 1 \pmod 4$, then $(-1)^{\frac{q-1}{2}} = 1$, so $-1$ is a square in $\F_q$. In this case, $-1$ is a square in $\F_{q^s}$, and $\chi_s(-1) = 1$ for all $s\geq 1$.
+In this case, using $a_i \in F$,
+\begin{align*}
+N_s &= q^{s(n-1)} + \cdots + q^s + 1 + \chi_s(a_0)\cdots \chi_s(a_n)q^{s\frac{n-1}{2}}\\
+&= q^{s(n-1)} + \cdots + q^s + 1 + [\chi(a_0)\cdots \chi(a_n)]^s q^{s\frac{n-1}{2}}
+\end{align*}
+
+If $q\equiv -1 \pmod 4$, then $\chi(-1) = (-1)^{\frac{q-1}{2}} = -1$, and
+\begin{align*}
+\chi_s(-1) &=\chi(-1)^s = (-1)^s,
+\end{align*}
+thus 
+$$\frac{1}{q^s} g(\chi_s)^{n+1} = (-1)^{s \frac{n+1}{2}}q^{s \frac{n-1}{2}}.$$
+This gives for odd integers $n$, and $q \equiv -1 \pmod 4$,
+\begin{align*}
+N_s &= q^{s(n-1)} + \cdots + q^s + 1 +  (-1)^{s \frac{n+1}{2}} \chi_s(a_0)\cdots \chi_s(a_n) q^{s \frac{n-1}{2}}\\
+&=  q^{s(n-1)} + \cdots + q^s + 1 +  [(-1)^{ \frac{n+1}{2}} \chi(a_0)\cdots \chi(a_n)]^s q^{s \frac{n-1}{2}}.
+\end{align*}
+
+
+To collect all these cases, we have proved
+$$
+\begin{array}{ll}
+N_s = q^{s(n-1)} + \cdots + q^s + 1 &\text{if  } n\equiv 0 \pod 2,\\
+N_s = q^{s(n-1)} + \cdots + q^s + 1 + \phantom{(-1)^{ \frac{n+1}{2}}}[\chi(a_0)\cdots \chi(a_n)]^s\, q^{s\frac{n-1}{2}} &\text{if } n \equiv 1 \pod 2, q \equiv +1 \pod 4,\\
+N_s = q^{s(n-1)} + \cdots + q^s + 1 +[(-1)^{ \frac{n+1}{2}} \chi(a_0)\cdots \chi(a_n)]^s\, q^{s \frac{n-1}{2}}& \text{if }n \equiv 1 \pod 2, q \equiv -1 \pod 4.
+\end{array}
+$$
+If $n$ is even this gives, as in paragraph 1, 
+$$Z_f(u)  = (1-q^{n-1}u)^{-1}\cdots (1-qu)^{-1}(1-u)^{-1}.$$
+
+
+In the case $n \equiv 1 \pod 2, q \equiv +1 \pod 4$, we write for simplicity $\varepsilon = \chi(a_0)\cdots \chi(a_n) =\pm 1$.
+Then 
+\begin{align*}
+\sum_{s=1}^\infty \frac{N_su^s}{s} &= \sum_{m=0}^{n-1}\left( \sum_{s=1}^\infty \frac{(q^m u)^s}{s} \right) + \sum_{s=1}^\infty \frac{ (\varepsilon q^\frac{n-1}{2} u)^s}{s}\\
+&=  - \sum_{m=0}^{n-1} \ln(1-q^m u) -  \ln(1- \varepsilon q^\frac{n-1}{2}u).
+\end{align*}
+Therefore
+$$Z_f(u) = \left[\prod_{m=0}^{n-1} (1 -q^mu)^{-1}\right] (1 - \chi(a_0)\cdots \chi(a_n) q^\frac{n-1}{2}u)^{-1}.$$
+(Same calculation in the last case, with $\varepsilon = (-1)^{ \frac{n+1}{2}} \chi(a_0)\cdots \chi(a_n)$.)
+
+We obtain
+$$
+\begin{array}{ll}
+Z_f(u) = P(u)&\text{if  } n\equiv 0 \pod 2,\\
+Z_f(u) = P(u)(1 - \phantom{ (-1)^\frac{n+1}{2}}\chi(a_0)\cdots \chi(a_n) q^\frac{n-1}{2}u)^{-1}&\text{if } n \equiv 1 \pod 2, q \equiv +1 \pod 4,\\
+Z_f(u) = P(u)(1 - (-1)^\frac{n+1}{2}\chi(a_0)\cdots \chi(a_n) q^\frac{n-1}{2}u)^{-1}& \text{if }n \equiv 1 \pod 2, q \equiv -1 \pod 4,
+\end{array}
+$$
+where $P(u) =  (1-q^{n-1}u)^{-1}\cdots (1-qu)^{-1}(1-u)^{-1}.$
+
+(These results are consistent with the example $N_s = q^{2s} + q^s + 1 +\chi_s(-1) q^s$ given in paragraph 1 for the surface defined by $-y_0^2 + y_1^2 + y_2^2 + y_3^2 =0$, where $n=3$ is odd.
+\begin{align*}
+Z_f(u) &= (1-q^2u)^{-1}(1-qu)^{-1}(1-u)^{-1} (1 - \chi(-1) qu)^{-1}\\
+&=
+\left\{
+\begin{array}{ll}
+(1-q^2u)^{-1}(1-qu)^{-2}(1-u)^{-1}  & \text{if } q \equiv 1 \pmod 4,\\
+(1-q^2u)^{-1}(1-qu)^{-1}(1-u)^{-1}(1+qu)^{-1} & \text{if } q \equiv -1 \pmod 4.)\\
+\end{array}
+\right.
+\end{align*}
+\end{proof}
 \end{document}
