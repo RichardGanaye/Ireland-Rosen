@@ -355,4 +355,79 @@ Z_f(u) &= (1-q^2u)^{-1}(1-qu)^{-1}(1-u)^{-1} (1 - \chi(-1) qu)^{-1}\\
 \right.
 \end{align*}
 \end{proof}
+
+
+\paragraph{Ex. 11.6}{\it Consider $x_0^3 + x_1^3 + x_2^3 = 0$ as an equation over $F_4$, the field with four elements. Show that there are nine points on the curve in $P^2(F_4)$. Calculate the zeta function. [Answer: $(1+2u)^2/((1-u)(1-4u))$.]
+}
+
+\begin{proof}
+Since $q=4 \equiv 1 \pmod 3$, we can apply Theorem 2 of Chapter 10. Let $\chi$ be a character of order 3 over $F=\F_4$. The only other character of order $3$ is then $\chi^2$. Thus
+
+\begin{align*}
+N_1 &= q+1 + \frac{1}{q-1}  \sum_{i,j,k} J_0(\chi^i,\chi^j,\chi^k),
+\end{align*}
+where the sum is over all $(i,j,k) \in \{1,2\}^3$ such that $i+j+k \equiv 0 \pmod 3$, that is $(1,1,1)$ and $(2,2,2)$. Thus
+\begin{align*}
+N_1& = q +1 + \frac{1}{q-1} \left(J_0(\chi,\chi,\chi) + J_0(\chi^2,\chi^2,\chi^2)\right).
+\end{align*}
+Using $\frac{1}{q-1}\,  J_0(\chi^k,\chi^k,\chi^k) = \frac{1}{q}\, g(\chi^k)^3$ for $k=1,2$, we obtain
+\begin{align*}
+N_1&=q +1 + \frac{1}{q}\left ( g(\chi)^3 + g(\chi^2)^3\right).
+\end{align*}
+Consider $\F_4 = \F_2[x]/(x^2+x+1)$, where $a = \overline{x} = x + (x^2+x+1)$ is a generator of $\F_4^*$. Then  $\F_4 = \{0,1,a,a^2 = a+1\}$.
+We compute $g(\chi)$ for the character $\chi$ of order $3$ defined by
+$$
+\begin{array}{c|cccc|}
+t & 0 & 1 & a & a^2\\
+\hline
+\chi(t) & 0 & 1 & \omega & \omega^2
+\end{array}
+$$
+where $\omega = e^\frac{2i\pi}{3}$. 
+
+for each $t\in \F_4$, $\mathrm{tr}(a) = a+ a^2 \in \F_2$, so the traces are $\mathrm{tr}(1) = 1 + 1 = 0, \mathrm{tr}(a) = a+a^2 = 1, \mathrm{tr}(a^2) = a^2 + a^4 = a^2 + a = 1$. Therefore
+\begin{align*}
+g(\chi) &= \sum_{t \in \F_4} \chi(t) \zeta_2^{\mathrm{tr}(t)}\\
+&= \sum_{t \in \F_4} \chi(t) (-1)^{\mathrm{tr}(t)}\\
+&= 1 - \omega - \omega^2\\
+&= 2.
+\end{align*}
+(This is in accordance with $|g(\chi)| = q^{1/2} = 2$.)
+Then $g(\chi^2) = g(\chi^{-1}) = \chi(-1) \overline{g(\chi)} = g(\chi) = 2$. Therefore
+\begin{align*}
+N_1 &= q +1 + \frac{1}{q} g(\chi)^3 + \frac{1}{q} g(\chi^2)^3\\
+&= 5 + \frac{1}{4}( 8 + 8)\\
+&= 9.
+\end{align*} 
+There are nine points on the curve with equation $x_0^3 + x_1^3 + x_2^3 = 0$ in $P^2(F_4)$ (this is verified with a naive program in Sage).
+
+Now we compute $N_s$. We must replace $q =4$ by $q^s = 4^s$, and $\chi$ by $\chi_s$, a character with order 3 on $F_s = \F_{4^s}$.
+
+We obtain
+$$N_s = q^s + 1 + \frac{1}{q^s} \left (g(\chi_s)^3 + g(\chi_s^2)^3 \right).$$
+
+Now we compute $g(\chi_s)^3$. By the generalization of Corollary of Proposition 8.3.3., 
+$$g(\chi_s)^3 = q^s J(\chi_s,\chi_s),$$
+thus
+$$N_s = q^s + 1 +  J(\chi_s,\chi_s) + J(\chi_s^2,\chi_s^2) .
+$$
+We know that $|J(\chi_s,\chi_s)|^2 = q^s = 4^s$ (generalization of Corollary of Theorem 1). Writing $J(\chi_s,\chi_s) = a+ b \omega,\ a,b\in \Z$, we search the solutions of
+$$|a+ b \omega|^2 = a^2 - ab + b^2 = 4^s.$$
+Since $\Z[\omega]$ is a PID, the factorization in primes is unique. Here $2$ is a prime element of $\Z[\omega]$, and $(a+b \omega)(a+b \omega^2) = 2^{2s}$, therefore $a+b \omega =\varepsilon 2^k, a+b \omega^2 = \zeta 2^l$, where $l,k \in \N$ and $\varepsilon, \zeta$ are units. Moreover $2^k = |a+ b \omega| = |a+b \omega^2| = 2^l$, so $k = l = s$. This shows that every solution $a+ b \omega$ of $|a+ b \omega|^2  =4^s$ is associated to $2^s$:
+$$|a+ b \omega|^2  =4^s \iff a+b \omega \in \{-2^s, -1 - 2^s \omega, -2^s \omega, 2^s, 1 + 2^s \omega, 2^s \omega\}.$$
+
+Moreover, we know that $a \equiv -1 \pmod 3,\ b \equiv 0 \pmod 3$ (generalization of Proposition 8.3.4.). Therefore $$J(\chi_s,\chi_s) = a + b \omega = -(-2)^s,$$
+and similarly $J(\chi_s^2,\chi_s^2) = -(-2)^s$.  This gives
+$$N_s = 4^s + 1 -2 (-2)^{s}.$$
+For $s = 1$, we find anew $N_1 = 9$.
+
+Then 
+\begin{align*}
+\sum_{s=1}^\infty \frac{N_s u^s}{s} &= \sum_{s=1}^\infty \frac{(4u)^s}{s}  + \sum_{s=1}^\infty \frac{u^s}{s} - 2 \sum_{s=1}^\infty \frac{(-2u)^s}{s}\\
+&= - \ln(1-4u) - \ln(1-u) - 2 \ln(1+2u).\\
+\end{align*}
+This gives
+$$Z_f(u) = \frac{(1+2u)^2}{(1-4u)(1-u)}.$$
+This is the first example where $Z_f$ has a zero, which satisfies the Riemann hypothesis for curves.
+\end{proof}
 \end{document}
