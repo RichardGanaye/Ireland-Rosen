@@ -460,11 +460,6 @@ N_s &= \frac{q^{2m+2}-1}{q^2-1} \cdot \frac{q^{2m+1}-1}{q-1}\\
 \end{align*}
 where $a_r$ is the cardinality of the set
 $$A_r = \{(k,l) \in \gcro 0, m \dcro \times \gcro 0, 2m \dcro \mid 2k+l = r\}.$$
-%Therefore
-%\begin{align*}
-%\sum_{s=1}^\infty \frac{N_s u^s}{s} &= \sum_{k = 0}^m \sum_{l=0}^{2m} \frac{(p^{2k+l} u)^s}{s}\\
-%&= -  \sum_{k = 0}^m \sum_{l=0}^{2m}  \ln(1-p^{2k+l} u).
-%\end{align*}
 We note that $0 \leq l = r-2k \leq 2m$ gives 
 $$
 \left\{
@@ -550,4 +545,63 @@ def N(n,p,s):
 \begin{center}
 (3845707062626, 3845707062626)
 \end{center}
+
+
+\paragraph{Ex. 11.8}{\it If $f$ is a nonhomogeneous polynomial, we can consider the zeta function of the projective closure of the hypersurface defined by $f$ (see Chapter 10). One way to calculate this is to count the number of points on $H_f(F_q)$ and then add to it the number of points at infinity. For example, consider $y^2 = x^3$ over $F_{p^s}$. Show that there is one point at infinity. The origin $(0,0)$ is clearly on this curve. If $x \ne 0$, write $(y/x)^2 = x$ and show that there are $p^s$ more points on this curve. Altogether we have $p^s$ points and the zeta function over $F_p$ is $(1-pu)^{-1}$.
+}
+\begin{proof}
+Consider the polynomial $f(x,y) = y^2 - x^3$ and $g(x,z) = y^2 - x$, and
+\begin{align*}
+\Gamma =H_f(F_q) &= \{(x,y) \in F_p^2 \mid y^2 = x^3\},\\
+\Gamma_1 = H_g(F_q) &= \{(x,y)\in F_q^2 \mid y^2 = x\}.
+\end{align*}
+Then 
+$$
+\varphi
+\left\{
+\begin{array}{ccl}
+\Gamma \setminus \{(0,0)\}  & \to &\Gamma_1\setminus \{(0,0)\} \\
+(x,y) & \mapsto & \left(x,\frac{y}{x} \right)
+\end{array}
+\right.
+$$
+is defined, since $\left(\frac{y}{x} \right) ^2 = x$ for $(x,y) \in \Gamma \setminus \{(0,0)\}$, thus $ \left(x,\frac{y}{x} \right) \in \Gamma_1$.
+Moreover
+$$
+\psi
+\left\{
+\begin{array}{ccl}
+ \Gamma_1\setminus \{(0,0)\} & \to & \Gamma \setminus \{(0,0)\} \\
+(x,y) & \mapsto & \left(x,xy \right)
+\end{array}
+\right.
+$$
+is correctly defined, since for each $(x,y) \in \Gamma_1\setminus \{(0,0)\}, y^2 = x$, then $x \ne 0$, thus $(xy)^2 =x^3$, and $(x,xy) \in \Gamma$, where $(x,xy) \ne (0,0)$.
+
+Moreover $\psi$ satisfies $\psi \circ \varphi = \mathrm{id}, \varphi \circ \psi = \mathrm{id}$:
+\begin{align*}
+(\psi \circ \varphi)(x,y) &= \psi\left(x,\frac{y}{x} \right) =\left (x, x \frac{y}{x}\right) = (x,y) \qquad ((x,y) \in \Gamma \setminus \{(0,0)\}),\\
+(\varphi \circ \psi)(x,y) &= \varphi(x,xy) = \left( x, \frac{xy}{x} \right) = (x,y) \qquad ((x,y) \in \Gamma_1 \setminus \{(0,0)\}).
+\end{align*}
+So $\varphi$ is a bijection. This shows that $| \Gamma \setminus \{(0,0)\} | =  |\Gamma_1\setminus \{(0,0)\}|$, where $(0,0) \in \Gamma$ and $(0,0) \in \Gamma_1$, thus
+$$|\Gamma_1| = |\Gamma|.$$ 
+To count the points on $\Gamma_1$, we consider
+$$\lambda
+\left\{
+\begin{array}{ccl}
+F_q & \to & \Gamma_1\\
+y & \mapsto & (y^2,y).
+\end{array}
+\right.
+$$
+Then $\lambda$ is bijective, with inverse $\mu : (x,y) \mapsto y$. This show that $$|\Gamma| = |\Gamma_1| = q = p^s.$$
+
+Therefore the zeta function of the affine curve $y^2 = x^3$ over $F_p$ is 
+$$Z_f(u) = (1-pu)^{-1}.$$
+
+But the projective completion $H_{\overline{f}}(F_q)$ of this curve has $p^s + 1$ points, with only one point at infinity, since $ty^2 = x^3$ has only one point $[t,x,y]$ satisfying $t= 0$, the point $[0,0,1]$.
+
+The zeta function of the curve with homogeneous equation $\overline{f}(t,x,y) = ty^2 - x^3$ over $F_p$ is 
+$$Z_{\overline{f}}(u) = (1-u)^{-1} (1-pu)^{-1}.$$
+\end{proof}
 \end{document}
