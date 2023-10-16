@@ -604,4 +604,86 @@ But the projective completion $H_{\overline{f}}(F_q)$ of this curve has $p^s + 1
 The zeta function of the curve with homogeneous equation $\overline{f}(t,x,y) = ty^2 - x^3$ over $F_p$ is 
 $$Z_{\overline{f}}(u) = (1-u)^{-1} (1-pu)^{-1}.$$
 \end{proof}
+
+
+\paragraph{Ex. 11.9}{\it Calculate the zeta function of $y^2 = x^3 + x^2$ over $F_p$.
+}
+\begin{proof}
+The curve $\Gamma$ defined by the  equation $y^2 = x^3 + x^2$ has a singularity at the origine, as in the previous exercise. The same method applies here: if we use $z= y/x$, then $z^2 = x+1$.
+
+Watch out! Here there are two points $(x,z) \in \Gamma_1$ such that $x= 0$, the points $(0,1)$ and $(0,-1)$ (here we assume that $p\ne 2$).
+The curve $\Gamma_1$ defined by the equation $z^2 = x+ 1$ is such that 
+$$
+\varphi
+\left\{
+\begin{array}{ccl}
+\Gamma \setminus \{(0,0)\}  & \to &\Gamma_1\setminus \{(0,1),(0,-1)\} \\
+(x,y) & \mapsto & \left(x,\frac{y}{x} \right)
+\end{array}
+\right.
+$$
+is bijective, thus $|\Gamma| = |\Gamma_1| - 1$. Since each point of $\Gamma_1$ is determined by its coordinate $z$, $|\Gamma_1| = q = p^s$, and $|\Gamma| = p^s - 1$.
+
+Therefore the zeta function of the affine curve $y^2 = x^3 + x^2$ over $F_p$ is 
+$$Z_f(u) = (1-u)(1-pu)^{-1},$$
+There is only one point $p$ at infinity, given by $y^2 t = x^3 + x^2 t, t=0$, i.e. $p = [0,0,1]$. Thus $N_s = p^s$, and the zeta function of the projective completion of $\Gamma$ is
+$$Z_{\overline{f}}(u) = (1-pu)^{-1}.$$
+\end{proof}
+The results of Ex.8 and Ex. 9 concern only singular cubics.
+
+
+\paragraph{Ex. 11.10}{\it  If $A \ne 0$ in $F_q$ and $q \equiv 1 \pmod 3$, show that the zeta function of $y^2 = x^3 + A$ over $F_q$ has the form $Z(u) =(1+au+qu^2)/((1-u)(1-qu))$, where $a \in \Z$ and $|a| \leq 2q^{1/2}$.
+}
+\begin{proof} 
+
+Here we compute the zeta function of the projective completion $\overline{H}_f(F_q)$, with equation $f(x,y,t) =y^2 t = x^3 + At^3$. If $t= 0$, then $x=0$, thus there is only one point $[0,1,0]$ at infinity (over $F_q$ or over $F_{q^s}$).
+
+We assume that the characteristic is not 2. Then $q$ is odd, and so $q\equiv 1 \pmod 6$. Therefore, there are characters of order $2$ and $3$ on $F_q$. Write $\rho$ the unique character of order $2$, and write $\chi$ a character of order $3$. As $\chi$ is a character of order 3, the characters whose order divides 3 are $\varepsilon,\chi,\chi^2$.
+
+We compute first $N_1$. We write $N(y^2=x^3+A)$ for the number of points of the affine cubic over $F_q$, and $N_1$ for the number of points of the projective cubic, so that $N_1 = N(y^2=x^3+A) + 1$. We recall the results obtained in Ex. 8.15.
+
+The map $x \mapsto -x$ is a bijection between the set of roots of $x^3 = b$ and the set of roots of $(-x)^3 = b$, so $N(x^3 = b) = N((-x)^3 = b) = N(x^3 = -b)$.
+
+ Using Prop. 8.1.5, we obtain, since $A\ne 0$,
+\begin{align*}
+N(y^2=x^3+A)  &= \sum\limits_{a+b=A} N(y^2=a) N(x^3 =-b)\\
+&= \sum\limits_{a+b=A} N(y^2=a) N(x^3=b)\\
+&= \sum\limits_{a+b=A}(1+\rho(a))(1+\chi(b)+\chi^2(b))\\
+&=\sum\limits_{i=0}^1\sum\limits_{j=0}^2\sum\limits_{a+b=A} \rho^i(a) \chi^j(b)\\
+&=\sum\limits_{i=0}^1\sum\limits_{j=0}^2\rho(A)^i \chi(A)^j\sum\limits_{a'+b'=1} \rho^i(a') \chi^j(b')\qquad (a = Aa', b = A b')\\
+&=\sum\limits_{i=0}^1\sum\limits_{j=0}^2\rho(A)^i \chi(A)^j J(\chi^j,\rho^i).\\
+\end{align*}
+We know (generalization of Theorem 1, Chapter 8) that  $J(\chi,\varepsilon)=J(\chi^2,\varepsilon)=J(\varepsilon,\rho)=0,$ and $J(\varepsilon,\varepsilon)=q$, so
+$$N(y^2=x^3+A) = q+ \rho(A)\chi(A) J(\chi,\rho) + \rho(A) \chi^2(A) J(\chi^2,\rho).$$
+As $\chi^2(A) = \chi^{-1}(A) = \overline{\chi(A)}$, and as $\overline{\rho(A)} = \rho(A)$, then $J(\chi^2,\rho) =  J(\overline{\chi},\overline{\rho}) = \overline{J(\chi,\rho)}$, and
+$$N(y^2 = x^3+A) = q +\pi + \bar{\pi},\ \mathrm{where}\ \pi = \rho(A) \chi(A) J(\chi,\rho),$$
+therefore
+$$N_1 = q + 1 + \pi + \bar{\pi},\ \mathrm{where}\ \pi = \rho(A) \chi(A) J(\chi,\rho).$$
+Since the orders of $\chi, \rho$, and $\chi \rho$ are $3,2$ and $6$, $\chi \ne \varepsilon, \rho \ne \varepsilon, \chi \rho \ne \varepsilon$, thus Theorem 1 of Chapter 6 gives
+$$J(\chi,\rho) = \frac{g(\chi) g(\rho)}{g(\chi \rho)}, \qquad \pi = \rho(A) \chi(A) \frac{g(\chi) g(\rho)}{g(\chi \rho)}.$$
+Write $\chi' = \chi \circ \mathrm{N}_{F_{q^s}/F_q}, \rho' = \rho \circ \mathrm{N}_{F_{q^s}/F_q}$. Then $\chi', \rho'$ are characters on $F_{q^s}$, and the orders of $\chi', \rho'$ are $3$ and $2$ (by properties (a), (b) of ¤3). The same reasoning in $F_{q^s}$ gives
+$$N_s = q^s + 1 + \pi' + \overline{\pi'}, \qquad \pi' = \rho'(A) \chi'(A) \frac{g(\chi') g(\rho')}{g(\chi' \rho')}.$$
+Since $A \in F_q$, the property (c) of ¤3 gives $\chi'(A) = \chi(A)^s, \rho'(A) = \rho(A)^s$. Using the Hasse-Davenport  Relation, and $(\chi \rho)' = \chi' \rho'$, we obtain
+\begin{align*}
+\pi' &= \rho'(A) \chi'(A) \frac{g(\chi') g(\rho')}{g(\chi' \rho')}\\
+&=-\rho(A)^s \chi(A)^s \frac{(-g(\chi))^s (-g(\rho))^s}{(-g(\chi \rho))^s}\\
+&=(-1)^{s+1} \rho(A)^s \chi(A)^s \left[ \frac{g(\chi) g(\rho)}{g(\chi \rho)} \right]^s\\
+&= - \left[ - \rho(A) \chi(A) \frac{g(\chi) g(\rho)}{g(\chi \rho)}\right]^s\\
+&=-(-\pi)^s.
+\end{align*}
+This gives $N_s$ in the appropriate form:
+$$N_s = q^s + 1- (-\pi)^s - (-\overline{\pi})^s, \qquad \pi = \rho(A) \chi(A) J(\chi,\rho) = \rho(A) \chi(A) \frac{g(\chi) g(\rho)}{g(\chi \rho)}.$$
+Using the converse to Proposition 11.1.1 given in Exercise 2, we obtain
+$$Z_f(u) =  \frac{(1 + \pi u)(1 + \overline{\pi} u)}{(1 -u)(1-qu)}.$$
+Note that $\pi \overline{\pi}= |\pi|^2 = q$ (by Exercise 10.22). Expanding the numerator, this gives
+$$Z_f(u) =  \frac{1 + au + qu^2}{(1 -u)(1-qu)},$$
+where $a = \pi +\overline{\pi}$.
+
+ For all $t \in F_q^*$,  $\chi^3(t) = 1$, thus $\chi(t) \in \{1,\omega, \omega^2\} \subset \Z[\omega]$, and $\rho(t) = \pm 1$, therefore $\pi = \rho(A) \chi(A) \sum_{t\in F_q} \chi(t) \rho(t) \in \Z[\omega]$. Writing $\pi = u + v \omega,\ u,v \in Z$, we obtain $a = \pi + \overline{\pi} = 2u -v \in \Z$.
+ 
+ Moreover,
+ $$|a|  \leq |\pi| + |\overline{\pi}| = 2 |\pi|  = 2 q^{1/2}.$$
+ To conclude,
+ $$Z_f(u) =  \frac{1 + au + qu^2}{(1 -u)(1-qu)}, \qquad a \in \Z,\  |a| \leq  2 q^{1/2}.$$
+\end{proof}
 \end{document}
