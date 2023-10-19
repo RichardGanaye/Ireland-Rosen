@@ -35,8 +35,7 @@
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\re}{\,\mathrm{Re}\,}
-\newcommand{\ord}{\mathrm{ord}}
-\newcommand{\n}{\mathrm{N}}
+\newcommand{\ord}{\mathrm{ord}}                                                                              \newcommand{\n}{\mathrm{N}}
 \newcommand{\legendre}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
 
 
@@ -679,11 +678,193 @@ Note that $\pi \overline{\pi}= |\pi|^2 = q$ (by Exercise 10.22). Expanding the n
 $$Z_f(u) =  \frac{1 + au + qu^2}{(1 -u)(1-qu)},$$
 where $a = \pi +\overline{\pi}$.
 
- For all $t \in F_q^*$,  $\chi^3(t) = 1$, thus $\chi(t) \in \{1,\omega, \omega^2\} \subset \Z[\omega]$, and $\rho(t) = \pm 1$, therefore $\pi = \rho(A) \chi(A) \sum_{t\in F_q} \chi(t) \rho(t) \in \Z[\omega]$. Writing $\pi = u + v \omega,\ u,v \in Z$, we obtain $a = \pi + \overline{\pi} = 2u -v \in \Z$.
+ For all $t \in F_q^*$,  $\chi^3(t) = 1$, thus $\chi(t) \in \{1,\omega, \omega^2\} \subset \Z[\omega]$, and $\rho(t) = \pm 1$, therefore $\pi = \rho(A) \chi(A) \sum_{t\in F_q} \chi(t) \rho(t) \in \Z[\omega]$. Writing $\pi = u + v \omega,\ u,v \in \Z$, we obtain $a = \pi + \overline{\pi} = 2u -v \in \Z$.
  
  Moreover,
  $$|a|  \leq |\pi| + |\overline{\pi}| = 2 |\pi|  = 2 q^{1/2}.$$
  To conclude,
  $$Z_f(u) =  \frac{1 + au + qu^2}{(1 -u)(1-qu)}, \qquad a \in \Z,\  |a| \leq  2 q^{1/2}.$$
 \end{proof}
+
+
+\paragraph{Ex. 11.11}{\it Consider the curve $y^2 = x^3 -Dx$ over $F_p$, where $D \ne 0$. Call this curve $C_1$. Show that the substitution $x = \frac{1}{2}(u+v^2)$ and $y = \frac{1}{2} v(u + v^2)$ transforms $C_1$ into the curve $C_2$ given by $u^2 - v^4 = 4D$. Show that in any given finite field the number of finite points on $C_1$ is one more than the number of finite points on $C_2$.
+}
+
+\begin{proof} Let $F$ be a finite field such that the characteristic of $F$ is not $2$. Here
+\begin{align*}
+C_1 &= \{(x,y) \in F^2 \mid y^2 = x^3 -Dx\},\\
+C_2 &=\{(u,v) \in F^2 \mid u^2 - v^4 = 4D\}.
+\end{align*}
+Consider the maps
+$$
+\varphi
+\left\{
+\begin{array}{ccl}
+C_1 \setminus \{(0,0)\} & \to & C_2\\
+(x,y) & \mapsto &\left(2x - \left(\frac{y}{x} \right)^2, \frac{y}{x}\right),\\
+\end{array}
+\right.
+\qquad
+\psi
+\left\{
+\begin{array}{ccl}
+C_2  & \to & C_1 \setminus \{(0,0)\}\\
+(u,v) & \mapsto & \left(\frac{1}{2}(u+v^2), \frac{1}{2} v (u+v^2)\right).\\
+\end{array}
+\right.
+$$
+
+$\bullet$ The map $\varphi$ is  well defined: If $(x,y) \in C_1 \setminus \{(0,0)\}$, then 
+$y^2 = x^3 - Dx$, and $x \ne 0$, otherwise $y^2 = x^3 - Dx = 0$, and then $(x,y) = (0,0)$. 
+
+Write $(u,v) = \left(2x - \left(\frac{y}{x} \right)^2, \frac{y}{x}\right)$, then
+ $x = \frac{1}{2}(u+v^2)$ and $y = \frac{1}{2} v(u+v^2)$. The equality $y^2 = x^3 - Dx$ gives 
+\begin{align*}
+\frac{1}{2} v^2(u+v^2) &= \frac{1}{4} (u + v^2)^2 - D,\\
+4D &= (u+v^2)^2 - 2 v^2(u+v^2),\\
+4D &= u^2 - v^4, 
+\end{align*}
+so that $(u,v) = \left(2x - \left(\frac{y}{x} \right), \frac{y}{x}\right) \in C_2$.
+
+$\bullet$ The map $\psi$ is well defined: if $(u,v) \in C_2$, then $u^2 - v^4 = 4D$. Then $u + v^2 \ne 0$, otherwise $4D = u^2 - v^4 = (u-v^2)(u+v^2) =0$, where $4D \ne 0$ ($D \ne 0$ , and the characteristic is not $2$ by hypothesis).
+
+ Write $(x,y) = \left(\frac{1}{2}(u+v^2), \frac{1}{2} v (u+v^2)\right)$. Then $x =\frac{1}{2}(u+v^2) \ne 0$, and $(u,v) = \left(2x - \left(\frac{y}{x} \right)^2, \frac{y}{x}\right)$.
+The equality $u^2 - v^4 = 4D$ gives
+\begin{align*}
+\left(2x - \left(\frac{y}{x} \right)^2\right)^2 -  \left(\frac{y}{x}\right)^4&= 4D,\\
+ 4x^2 - 4 \frac{y^2}{x}&= 4D,\\
+x^3 - Dx &= y^2,
+\end{align*}
+so that $(x,y) = \left(\frac{1}{2}(u+v^2), \frac{1}{2} v (u+v^2)\right) \in C_1$, and $(x,y) \ne (0,0)$.
+
+Take any point $(x,y) \in C_1 \setminus \{(0,0)\} $, then $x \ne 0$. Write $(u,v) = \varphi(x,y) = \left(2x - \left(\frac{y}{x} \right), \frac{y}{x}\right)$. Then $(x,y) = \left(\frac{1}{2}(u+v^2), \frac{1}{2} v (u+v^2)\right)= \psi(u,v) = (\psi \circ \varphi)(x,y)$. Thus $\psi \circ \varphi = 1_{C_1 \setminus \{(0,0)\}}$.
+Similarly, take any point $(u,v) \in C_2$. Write $(x,y) = \psi(u,v) = \left(\frac{1}{2}(u+v^2), \frac{1}{2} v (u+v^2)\right)$. Then $(u,v) = \left(2x - \left(\frac{y}{x} \right)^2, \frac{y}{x}\right) = \varphi(x,y) = (\varphi \circ \psi)(u,v)$. Thus $\varphi \circ \psi = 1_{C_2}$.
+
+This proves that $\varphi$ and $\psi$ are bijections.
+
+Therefore $|C_2| = |C_1 \setminus \{(0,0)\}| = |C_1| - 1$, and $|C_1| = |C_2| +1$. 
+
+To conclude, in any given finite field whose characteristic is not $2$, the number of finite points on $C_1$ is one more than the number of finite points on $C_2$.
+\end{proof}
+
+\paragraph{Ex. 11.12}{\it (continuation) 
+
+ If $p\equiv 3 \pmod 4$, show that the number of projective points on $C_1$ is just $p+1$.
+
+ If $p\equiv 1 \pmod 4$, show that the answer is $p+1 + \overline{\chi(D)} J(\chi,\chi^2) + \chi(D) J(\chi,\chi^2)$, where $\chi$ is a character of order $4$ on $F_p$.
+}
+
+\medskip
+
+Note: There is an obvious misprint. We must read $p+1 + \overline{\chi(D)} J(\chi,\chi^2) + \chi(D) \overline{J(\chi,\chi^2)}$
+\begin{proof} 
+
+$\bullet$ Assume first that $p\equiv 3 \pmod 4$. First, we count the number of affine points on $C_2$. 
+
+In this case, there is no character of order $4$, and the only characters whose order divides $4$ are $\varepsilon$ and $\rho$, where $\rho$ is the Legendre's character. Then Exercises 8.1, 8.2,  with $d = 4 \wedge (p-1) = 2$, and Proposition 8.1.5 show that $N(x^4 = a) = N(y^2 =a) = 1 + \rho(a).$ Therefore
+
+
+\begin{align*}
+N(u^2 - v^4 = 4D) &= \sum_{a-b = 4D} N(u^2=a)N(v^4=b)\\
+&=\sum_{a-b = 4D} (1+\rho(a))(1+\rho(b))\\
+&=\sum_{a \in F} (1+ \rho(a))(1+ \rho(a-4D))\\
+&= \sum_{a \in F} 1 + \sum_{a \in F} \rho(a) + \sum_{a \in F} \rho(a-4D) + \sum_{a\in F}\rho(a) \rho(a-4D)\\
+&= p + \sum_{a\in F}\rho(a) \rho(a-4D).
+\end{align*}
+We compute this last sum.
+\begin{align*}
+\sum_{a\in F}\rho(a) \rho(a-4D) &= \rho(-1) \sum_{a \in F} \rho(a) \rho(c)\\
+&= \rho(-1) \sum_{a+ c = 4D} \rho(a) \rho(c)\\
+&= \rho(-1) \sum_{a'+c' = 1} \rho(4D)^2 \rho(a') \rho(b')\qquad (a = 4Da', c = 4Db')\\
+&= \rho(-1) J(\rho,\rho).
+\end{align*}
+Moreover, by Theorem 1(c), Chapter 8, since $\rho^2 = \varepsilon$,
+$$J(\rho,\rho) = J(\rho, \rho^{-1}) = -\rho(-1).$$
+Putting all together, we obtain
+$$N(u^2 - v^4 = 4D) = p-1.$$
+Then Exercise 11 gives
+$$N(y^2 = x^3 -Dx) = p.$$
+The projective completion of $C_1$ has equation $y^2 t =x^3 - Dxt^2$. For $t=0$, $x=0$, thus $[0,1,0]$ is the only point at infinity. The number of projective points on $C_1$ is
+$$N_1 = p+1.$$
+
+\bigskip
+
+$\bullet$ Now we assume that $p\equiv 1 \pmod 4$. Then there is a character $\chi$ of order $4$ on $F_p$.
+\begin{align*}
+N(u^2 - v^4 = 4D) &= \sum_{a-b = 4D} N(u^2=a)N(v^4=b)\\
+&=\sum_{a-b = 4D} (1+\rho(a))(1+\chi(b) + \chi^2(b) + \chi^3(b))\\
+&=\sum_{i=0}^1 \sum_{j=0}^3 \sum_{a-b = 4D} \rho^i(a) \chi^j(b).\\
+\end{align*}
+The inner sum for each fixed pair $(i,j)$ is
+\begin{align*}
+\sum_{a-b = 4D} \rho^i(a) \chi^j(b) &= \sum_{a \in F_p} \rho^i(a) \chi^j(a - 4D)\\
+&=\chi^j(-1)\sum_{a \in F_p} \rho^i(a) \chi^j(4D-a)\\
+&= \chi^j(-1)\sum_{a + c = 4D}\rho^i(a) \chi^j(c)\\
+&= \chi^j(-1)\sum_{a' + c' = 1}\rho^i(a') \chi^j(c') \qquad (a = 4Da', c = 4Db')\\
+&=\chi^j(-1) \rho^i(4D) \chi^j(4D) J(\rho^i, \chi^j).
+\end{align*}
+Since $\chi^2$ is of order 2, $\rho = \chi^2$, thus
+$$\sum_{a-b = 4D} \rho^i(a) \chi^j(b)  = \chi^j(-1)  \chi^{2i+j}(4D) J(\chi^{2i},\chi^j),$$
+and, using $J(\varepsilon,\varepsilon) = p , J(\varepsilon,\chi^j) =0$ if $j\ne 0$,
+\begin{align*}
+N(u^2 - v^4 = 4D)  &= \sum_{i=0}^1 \sum_{j=0}^3 \chi^j(-1)  \chi^{2i+j}(4D) J(\chi^{2i},\chi^j)\\
+&=p + \chi(-1) \chi^3(4D) J(\chi^2,\chi) \\
+&\phantom{=p\, } + \chi^2(-1) \chi^4(4D) J(\chi^2,\chi^2) \\
+&\phantom{=p\, }+ \chi^3(-1) \chi^5(4D) J(\chi^2,\chi^3).
+\end{align*}
+Since $J(\chi^2,\chi^2) = J(\chi^2,\chi^{-2}) = -\chi^2(-1) = -1$, and $\chi^3 = \overline{\chi}$, we obtain
+$$N(u^2 - v^4 = 4D) = p-1 + \chi(-1) [\overline{\chi(4D)} J(\chi,\chi^2) +\chi(4D) \overline{J(\chi,\chi^2)}].$$
+Comme $\chi(4)^2 = \chi(2^4) = \chi^4(2) = 1$,  $\chi(4) = \pm 1$ is real. Therefore
+$$N(u^2 - v^4 = 4D) = p-1 + \chi(-4) \left [\overline{\chi(D)} J(\chi,\chi^2) +\chi(D) \overline{J(\chi,\chi^2)}\right].$$
+We must add one to obtain the number of affine points of $C_1$, and one more to the point at infinity. Thus the number of projective points on $C_1$ is
+$$N_1 = p+1 + \chi(-4)[\overline{\chi(D)} J(\chi,\chi^2) +\chi(D) \overline{J(\chi,\chi^2)}].$$
+But $\chi(-1) = (-1)^{\frac{p-1}{4}}$. To prove this equality, take $g$ a generator of $F_p^*$ such that $\chi(g) = i$ (such a generator exists, since $\chi(g) = \pm i$: if $\chi(g) = -i$, replace $g$ by $g^{-1}$). Since $g^{p-1} = 1$, and $g^{(p-1)/2} \ne 1$, we obtain $g^{(p-1)/2} = -1$, thus $\chi(-1) = \chi(g)^{(p-1)/2} = i ^{(p-1)/2} = (-1)^{(p-1)/4}$.
+Moreover $\chi(4) = \chi^2(2) = \rho(2) = (-1)^{(p^2-1)/8}$. Thus, for $p = 4k +1$,
+$$\chi(-4) = \chi(-1) \chi(4) = (-1)^\frac{p-1}{4} (-1)^\frac{p^2 - 1}{8} = (-1)^k (-1)^{2k^2 + k} = 1.$$
+Alleluia! We conclude
+$$N_1 = p+1 + \overline{\chi(D)} J(\chi,\chi^2) +\chi(D) \overline{J(\chi,\chi^2)}.$$
+\end{proof}
+
+\paragraph{Ex. 11.13}{\it (continuation) If $p\equiv 1 \pmod 4$, calculate the zeta function of $y^2 = x^3 - Dx$ over $F$ in terms of $\pi$ and $\chi(D)$, where $\pi = -J(\chi,\chi^2)$. This calculation in somewhat sharpened form is contained in [23]. The result has played a key role in recent empirical work of B.J.Birch and H.P.F. Swinnerton-Dyer on elliptic curves.
+}
+
+\begin{proof}
+Here $p\equiv1 pmod 4$, thus $p^s \equiv 1 \pmod 4$. We consider here the two fields $F = \F_p$ and $F_s = \F_{p^s}$, where $|F| = p$ and $F_s = p^s$.
+
+Let $\rho' = \rho \circ \mathrm{N_{F_s/F}}$, and $\chi' = \chi \circ  \mathrm{N_{F_s/F}}$. The results of ¤3 show that the map $\xi \mapsto \xi' = \xi \circ\mathrm{N_{F_s/F}}$ induces a group isomorphism between the group cyclic $C_n$ of characters on $F$ whose order divides $n$ on the group cyclic $C'_n$ of characters  on $F_s$ whose order divides $n$. Thus the order of $\rho'$ is $2$ and the order of $\chi'$ is $4$, and $\chi'^2 = \rho'$.
+
+Replacing $\chi, rho$ by $\chi',\rho'$, and $p$ by $p^s$, we obtain by the same reasoning that the number of projective point of $C_1$ in $\overline{H}_f(F_s)$ is
+$$N_s = p^s+1 + \chi'(-4)\left[\overline{\chi'(D)} J(\chi',\chi'^2) +\chi'(D) \overline{J(\chi',\chi'^2)}\right].$$
+To compute $\chi'(-4)$ and $\chi'(D)$ we use the property (c) of ¤3. Since $-4$ and $D$ are in $F$,
+$$\chi'(-4) = \chi(-4) ^s = 1,\qquad \chi'(D) = \chi(D)^s.$$
+Therefore
+$$N_s = p^s+1 + \overline{\chi(D)}^s J(\chi',\chi'^2) +\chi(D)^s \overline{J(\chi',\chi'^2)}.$$
+It remains to compute $J(\chi',\chi'^2)$. Since $\chi' \ne \varepsilon, \chi'^2 \ne \varepsilon, \chi'^3 \ne \varepsilon$,
+$$J(\chi',\chi'^2) = \frac{g(\chi') g(\chi'^2)}{g(\chi'^3)}.$$
+The Hasse-Davenport relation gives $g(\chi'^k) = - (- g(\chi^k))^s$, thus
+\begin{align*}
+J(\chi',\chi'^2) &= - \left[- \frac{ g(\chi) g(\chi^2)}{g(\chi^3)}\right]^s\\
+&= - (-J(\chi,\chi^2)^s\\
+&= -\pi^s,
+\end{align*}
+where $\pi =-J(\chi,\chi^2) \in \Z[i]$. To conclude,
+$$N_s = p^s + 1 - \overline{\chi(D)}^s \pi^s - \chi(D)^s \overline{\pi}^s,\qquad \pi = -J(\chi,\chi^2).$$
+Then Exercise 2 gives
+$$Z_f(u) = \frac{(1- \overline{\chi(D)} \pi u)(1 - \chi(D) \overline{\pi}u)}{(1-u)(1-pu)},\qquad \pi = -J(\chi,\chi^2).$$
+Since $|\pi|^2 = |J(\chi,\chi^2)|^2 = p$ (corollary of Theorem 1, chapter 8), expanding the numerator, we obtain
+$$Z_f(u) = \frac{1  + a u + pu^2}{(1-u)(1-pu)},\qquad a = -\mathrm{tr}\left(\overline{\chi(D)} \, \pi \right) \in \Z, \quad \pi = - J(\chi,\chi^2) \in \Z[i].$$
+\bigskip
+Note: Since $Z_f(u) =\exp(N_1u+ \cdots) = 1 + N_1 u + \cdots$, and
+\begin{align*}
+Z_f(u) &= (1 +au + pu^2)(1 + u + u^2+\cdots)(1+pu+p^2 u^2 + \cdots)\\
+&= 1 + (a+p+1) u + \cdots,
+\end{align*}
+the comparison of the coefficient of $u$ in the two power series gives
+$$a = N_1 - p - 1, \qquad \text{where } N_1 = p+1 - \overline{\chi(D)} \pi - \chi(D) \overline{\pi}, \quad \pi = - J(\chi,\chi^2).$$
+This gives anew $a=  -\mathrm{tr}\left(\overline{\chi(D)}\right)$.
+\end{proof}
+
 \end{document}
+
+
+
