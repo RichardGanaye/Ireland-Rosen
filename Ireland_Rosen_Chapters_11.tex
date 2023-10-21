@@ -598,7 +598,7 @@ Then $\lambda$ is bijective, with inverse $\mu : (x,y) \mapsto y$. This show tha
 Therefore the zeta function of the affine curve $y^2 = x^3$ over $F_p$ is 
 $$Z_f(u) = (1-pu)^{-1}.$$
 
-But the projective completion $H_{\overline{f}}(F_q)$ of this curve has $p^s + 1$ points, with only one point at infinity, since $ty^2 = x^3$ has only one point $[t,x,y]$ satisfying $t= 0$, the point $[0,0,1]$.
+But the projective closure $H_{\overline{f}}(F_q)$ of this curve has $p^s + 1$ points, with only one point at infinity, since $ty^2 = x^3$ has only one point $[t,x,y]$ satisfying $t= 0$, the point $[0,0,1]$.
 
 The zeta function of the curve with homogeneous equation $\overline{f}(t,x,y) = ty^2 - x^3$ over $F_p$ is 
 $$Z_{\overline{f}}(u) = (1-u)^{-1} (1-pu)^{-1}.$$
@@ -625,7 +625,7 @@ is bijective, thus $|\Gamma| = |\Gamma_1| - 1$. Since each point of $\Gamma_1$ i
 
 Therefore the zeta function of the affine curve $y^2 = x^3 + x^2$ over $F_p$ is 
 $$Z_f(u) = (1-u)(1-pu)^{-1},$$
-There is only one point $p$ at infinity, given by $y^2 t = x^3 + x^2 t, t=0$, i.e. $p = [0,0,1]$. Thus $N_s = p^s$, and the zeta function of the projective completion of $\Gamma$ is
+There is only one point $p$ at infinity, given by $y^2 t = x^3 + x^2 t, t=0$, i.e. $p = [0,0,1]$. Thus $N_s = p^s$, and the zeta function of the projective closure of $\Gamma$ is
 $$Z_{\overline{f}}(u) = (1-pu)^{-1}.$$
 \end{proof}
 The results of Ex.8 and Ex. 9 concern only singular cubics.
@@ -635,7 +635,7 @@ The results of Ex.8 and Ex. 9 concern only singular cubics.
 }
 \begin{proof} 
 
-Here we compute the zeta function of the projective completion $\overline{H}_f(F_q)$, with equation $f(x,y,t) =y^2 t = x^3 + At^3$. If $t= 0$, then $x=0$, thus there is only one point $[0,1,0]$ at infinity (over $F_q$ or over $F_{q^s}$).
+Here we compute the zeta function of the projective closure $\overline{H}_f(F_q)$, with equation $f(x,y,t) =y^2 t = x^3 + At^3$. If $t= 0$, then $x=0$, thus there is only one point $[0,1,0]$ at infinity (over $F_q$ or over $F_{q^s}$).
 
 We assume that the characteristic is not 2. Then $q$ is odd, and so $q\equiv 1 \pmod 6$. Therefore, there are characters of order $2$ and $3$ on $F_q$. Write $\rho$ the unique character of order $2$, and write $\chi$ a character of order $3$. As $\chi$ is a character of order 3, the characters whose order divides 3 are $\varepsilon,\chi,\chi^2$.
 
@@ -784,7 +784,7 @@ Putting all together, we obtain
 $$N(u^2 - v^4 = 4D) = p-1.$$
 Then Exercise 11 gives
 $$N(y^2 = x^3 -Dx) = p.$$
-The projective completion of $C_1$ has equation $y^2 t =x^3 - Dxt^2$. For $t=0$, $x=0$, thus $[0,1,0]$ is the only point at infinity. The number of projective points on $C_1$ is
+The projective closure of $C_1$ has equation $y^2 t =x^3 - Dxt^2$. For $t=0$, $x=0$, thus $[0,1,0]$ is the only point at infinity. The number of projective points on $C_1$ is
 $$N_1 = p+1.$$
 
 \bigskip
@@ -829,9 +829,9 @@ $$N_1 = p+1 + \overline{\chi(D)} J(\chi,\chi^2) +\chi(D) \overline{J(\chi,\chi^2
 }
 
 \begin{proof}
-Here $p\equiv1 pmod 4$, thus $p^s \equiv 1 \pmod 4$. We consider here the two fields $F = \F_p$ and $F_s = \F_{p^s}$, where $|F| = p$ and $F_s = p^s$.
+Here $p\equiv1 \pmod 4$, thus $p^s \equiv 1 \pmod 4$. We consider here the two fields $F = \F_p$ and $F_s = \F_{p^s}$, where $|F| = p$ and $F_s = p^s$.
 
-Let $\rho' = \rho \circ \mathrm{N_{F_s/F}}$, and $\chi' = \chi \circ  \mathrm{N_{F_s/F}}$. The results of ¤3 show that the map $\xi \mapsto \xi' = \xi \circ\mathrm{N_{F_s/F}}$ induces a group isomorphism between the group cyclic $C_n$ of characters on $F$ whose order divides $n$ on the group cyclic $C'_n$ of characters  on $F_s$ whose order divides $n$. Thus the order of $\rho'$ is $2$ and the order of $\chi'$ is $4$, and $\chi'^2 = \rho'$.
+Let $\rho' = \rho \circ \mathrm{N_{F_s/F}}$, and $\chi' = \chi \circ  \mathrm{N_{F_s/F}}$. The results of ¤3 show that the map $\xi \mapsto \xi' = \xi \circ\mathrm{N_{F_s/F}}$ induces a group isomorphism between the group cyclic $C_n$ of characters on $F$ whose order divides $n$ on the group cyclic $C'_n$ of characters  on $F_s$ whose order divides $n$ (see Exercise 16). Thus the order of $\rho'$ is $2$ and the order of $\chi'$ is $4$, and $\chi'^2 = \rho'$.
 
 Replacing $\chi, rho$ by $\chi',\rho'$, and $p$ by $p^s$, we obtain by the same reasoning that the number of projective point of $C_1$ in $\overline{H}_f(F_s)$ is
 $$N_s = p^s+1 + \chi'(-4)\left[\overline{\chi'(D)} J(\chi',\chi'^2) +\chi'(D) \overline{J(\chi',\chi'^2)}\right].$$
@@ -844,7 +844,7 @@ $$J(\chi',\chi'^2) = \frac{g(\chi') g(\chi'^2)}{g(\chi'^3)}.$$
 The Hasse-Davenport relation gives $g(\chi'^k) = - (- g(\chi^k))^s$, thus
 \begin{align*}
 J(\chi',\chi'^2) &= - \left[- \frac{ g(\chi) g(\chi^2)}{g(\chi^3)}\right]^s\\
-&= - (-J(\chi,\chi^2)^s\\
+&= - (-J(\chi,\chi^2))^s\\
 &= -\pi^s,
 \end{align*}
 where $\pi =-J(\chi,\chi^2) \in \Z[i]$. To conclude,
@@ -861,9 +861,96 @@ Z_f(u) &= (1 +au + pu^2)(1 + u + u^2+\cdots)(1+pu+p^2 u^2 + \cdots)\\
 \end{align*}
 the comparison of the coefficient of $u$ in the two power series gives
 $$a = N_1 - p - 1, \qquad \text{where } N_1 = p+1 - \overline{\chi(D)} \pi - \chi(D) \overline{\pi}, \quad \pi = - J(\chi,\chi^2).$$
-This gives anew $a=  -\mathrm{tr}\left(\overline{\chi(D)}\right)$.
+This gives anew $a=  -\mathrm{tr}\left(\overline{\chi(D)}\pi\right)$.
+
+
 \end{proof}
 
+\paragraph{Ex. 11.14}{\it Suppose that $p\equiv 1 \pmod 4$ and consider the curve $x^4 + y^4 = 1$ over $F_p$. Let $\chi$ be a character of order $4$ and $\pi = -J(\chi,\chi^2)$. Give a formula for the number of projective points over $F_p$ and calculate the zeta function. Both answers should depend only on $\pi$. (Hint: See Exercises 7 and 16 of Chapter 8, but be careful since there were counting only finite points.)
+}
+
+\begin{proof}
+We count the number of points at infinity of the curve $C : x^4 + y^4 = 1$ over a finite field $F$. The projective closure of $C$ has equation $x^4 + y^4 = t^4$. The projective points $[t,x,y]$ such that $t= 0$ satisfy the equation  $x^4 + y^4 = 0$. Note that $y = 0$ is impossible since $[0,0,0]$ is not a projective point. Thus the points at infinity of the curve $C$ are the points $[0,x,y]$ such that $(0,x,y) = y (0,a,1)$, where $a^4 = -1$, so that the points at infinity are
+$$[0,a,1], \qquad \text{where } a^4 = -1.$$
+Since $(0,a,1) = \lambda (0,b,1)$ for some $\lambda \in F$ implies $a= b$, their number is $N(a^4 = -1)$.
+
+Write, as in Chapter 8 and Exercise 8.16, for $a \in F$,
+$$
+\left\{\begin{array}{rl}
+\delta_4(a) &= 1 \text{ if $a$ is a fourth power in $F$,}\\
+&= 0 \text{ if not}.
+\end{array}
+\right.
+$$
+If $\delta_4(-1) = 0$, then $N(a^4 = -1) = 0$, and if  $\delta_4(-1) = 1$, then $N(a^4 = -1) = 4 \wedge (p-1) = 4$ because $p \equiv 1 \pmod 4$. In both cases $N(a^4 = -1) = 4 \delta_4(-1)$.
+
+ To conclude, the number of points at infinity of the curve $C : x^4 + y^4 = 1$ over a finite field $F$ is $4 \delta_4(-1)$.
+ 
+ \bigskip
+ 
+ In Exercise 8.16, we show that the number of affine points of $C$ is
+ $$N(x^4 + y^4 = 1) = p+1 -4\delta_4(-1) + 2 \mathrm{Re}(J(\chi,\chi)) + 4 \mathrm{Re}(J(\chi,\chi^2)).$$
+ Therefore the number of  points of the projective closure of $C$ in $\overline{H}_f(F_p)$ is
+ $$N_1 = p+1 +  2 \mathrm{Re}(J(\chi,\chi)) + 4 \mathrm{Re}(J(\chi,\chi^2)).$$
+With the same calculation as in Exercise 16 and above, we obtain similarly in the field $F_{p^s}$,
+$$N_s = p^s + 1 +  2 \mathrm{Re}(J(\chi',\chi')) + 4 \mathrm{Re}(J(\chi',\chi'^2)),$$
+where $\chi' =\chi \circ \mathrm{N}_{F_{p^s}/F_p}$ is a character of order $4$ on $F_{p^s}$.
+
+The generalization of Exercise 8.7 gives
+$$J(\chi',\chi') = \chi'(-1) J(\chi',\chi'^2),$$
+where $\chi'(-1) = \chi(-1)^s =((-1)^{\frac{p-1}{4}})^s$.
+
+As in exercise 13, the Hasse-Davenport relation shows that
+\begin{align*}
+J(\chi',\chi'^2) &= \frac{g(\chi') g(\chi'^2)}{g(\chi'^3)}\\
+&= - \left[- \frac{ g(\chi) g(\chi^2)}{g(\chi^3)}\right]^s\\
+&= - (-J(\chi,\chi^2))^s\\
+&= -\pi^s.
+\end{align*}
+Putting all together, we obtain
+$$N_s = p^s +1 - (((-1)^{\frac{p-1}{4}})^s+ 2) (\pi^s + \overline{\pi}^s),\qquad \pi = -J(\chi,\chi^2),$$
+that is
+$$N_s = p^s + 1  - ((-1)^{\frac{p-1}{4}} \pi)^s -((-1)^{\frac{p-1}{4}} \overline{\pi})^s -2 \pi^s - 2 \overline{\pi}^s.$$
+Then Exercise 2 gives
+$$Z_f(u) = \frac{(1 - (-1)^\frac{p-1}{4} \pi u)(1 - (-1)^\frac{p-1}{4} \overline{\pi} u)(1 - \pi u)^2(1- \overline{\pi}u)^2}{(1-u)(1-pu)}.$$
+Using $|\pi|^2 = p$, we conclude
+$$Z_f(u) = \frac{(1 - 2(-1)^\frac{p-1}{4} a u + p u^2)(1 -2au + pu^2)^2}{(1-u)(1-pu)}, \qquad a = \mathrm{Re}(\pi) \in \Z,\ \pi = -J(\chi,\chi^2) \in \Z[i].$$
+
+Note: By ¤5  (or Ex. 8.18), we know that $a$ is the unique integer such that $p=a^2+b^2$ where $a+bi \equiv 1 \pmod{2+2i}$. With a simpler formulation $p = a^2 + b^2$, and $a \equiv 1 \pmod 4$ if $4 \mid b$, $a \equiv -1 \pmod 4$ if $4 \nmid b$. So we can verify these results for small primes $p$.
+\end{proof}
+
+
+\paragraph{Ex. 11.14}{\it Find the number of points on $x^2 + y^2 + x^2y^2 = 1$ for $p=13$ and $p=17$. Do it both by means of the formula in section 5 and by direct calculation.
+}
+\begin{proof}
+$\bullet$ If $p=13$, the only finite points on the curve are the $4$ points $(0,1)(0,-1),(1,0),(-1,0)$. We must add the $2$ points  at infinity to obtain the $6$ points $[t,x,y]$ 
+$$[0,1,0],[0,0,1], [1,0,1],[1,0,-1],[1,1,0],[1,-1,0].$$
+
+Since $p = 13 = 3^2 + 2^2$, where $4 \nmid 2$ and $3 \equiv -1 \pmod 4$, here $a = 3$, thus the formula of ¤5 gives
+$$N_1 = p-1 - 2a = 6.$$
+
+$\bullet$ If $p = 17$, the finite points on the curve, given by the following naive program, are the 12 points
+       	$$(0, 1), (0, 16), (1, 0), (2, 8), (2, 9), (8, 2), (8, 15), (9, 2), (9,15), (15, 8), (15, 9), (16, 0).$$
+With the two points at infinity, we obtain $14$ projective points.
+
+Here $p = 1^2 + 4^2$, and $p \mid b=4$, $a = 1 \equiv 1 \pmod 4$, thus $a = 1$, and the formula of ¤5 gives
+$$N_1 = p-1-2a =14.$$
+The formula is verified in both cases.
+
+\bigskip
+
+Program Sage to obtain the finite points on the curve $x^2 + y^2 + x^2y^2 =1$:
+\begin{verbatim}
+def N(p):
+    Fp = GF(p)
+    l = []
+    for x in Fp:
+        for y in Fp:
+            if x^2 + y^2 + x^2*y^2 == 1:
+                l.append((x,y))
+    return l
+\end{verbatim}
+\end{proof}
 \end{document}
 
 
