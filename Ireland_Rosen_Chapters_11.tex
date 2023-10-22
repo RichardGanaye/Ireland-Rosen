@@ -920,7 +920,7 @@ Note: By §5  (or Ex. 8.18), we know that $a$ is the unique integer such that $p=
 \end{proof}
 
 
-\paragraph{Ex. 11.14}{\it Find the number of points on $x^2 + y^2 + x^2y^2 = 1$ for $p=13$ and $p=17$. Do it both by means of the formula in section 5 and by direct calculation.
+\paragraph{Ex. 11.15}{\it Find the number of points on $x^2 + y^2 + x^2y^2 = 1$ for $p=13$ and $p=17$. Do it both by means of the formula in section 5 and by direct calculation.
 }
 \begin{proof}
 $\bullet$ If $p=13$, the only finite points on the curve are the $4$ points $(0,1)(0,-1),(1,0),(-1,0)$. We must add the $2$ points  at infinity to obtain the $6$ points $[t,x,y]$ 
@@ -951,7 +951,94 @@ def N(p):
     return l
 \end{verbatim}
 \end{proof}
+
+\paragraph{Ex. 11.16}{\it Let $F$ be a field with $q$ elements and $F_s$ an extension of degree $s$. If $\chi$ is a character of $F$, let $\chi' = \chi \circ \mathrm{N}_{F_s/F}$. Show that
+\begin{enumerate}
+\item[(a)] $\chi'$ is a character of $F_s$.
+\item[(b)] $\chi \ne \rho$ implies that $\chi' \ne \rho'$.
+\item[(c)] $\chi^m = \varepsilon$ implies that $\chi'^m = \varepsilon$.
+\item[(d)] $\chi'(a) = \chi(a)^s$ for $a \in F$.
+\item[(e)] As $\chi$ varies over all characters of $F$ with order dividing $m$, $\chi'$ varies over all characters of $F_s$ with order dividing $m$. Here we are assuming that $q \equiv 1 \pmod m$.
+\end{enumerate}
+}
+\begin{proof}
+\item[(a)] If $\alpha,\beta \ F_s$, we know that $\mathrm{N}_{F_s/F}(\alpha \beta) = \mathrm{N}_{F_s/F}(\alpha) \mathrm{N}_{F_s/F}(\beta)$ (Proposition 11.2.2). Therefore
+$$\chi'(\alpha \beta) =\chi(\mathrm{N}_{F_s/F}(\alpha \beta)) =  \chi(\mathrm{N}_{F_s/F}(\alpha) \mathrm{N}_{F_s/F}(\beta)) = \chi(\mathrm{N}_{F_s/F}(\alpha))\chi(\mathrm{N}_{F_s/F}(\beta)) = \chi'(\alpha) \chi'(\beta).$$
+This shows that $\chi'$ is a character.
+
+\item[(b)] Assume that $\chi' = \rho'$. Then for all $\alpha \in K^*$, $\chi(\mathrm{N}_{F_s/F}(\alpha)) =\rho(\mathrm{N}_{F_s/F}(\alpha))$.
+By Proposition 11.2.2 (d), the map
+$$\varphi
+\left\{
+\begin{array}{ccl}
+K^* & \to & F^*\\
+\alpha & \mapsto & \mathrm{N}_{K/F}(\alpha)
+\end{array}
+\right.
+$$
+is surjective. Let $a$ be any element of $F^*$. Since $\varphi$ is surjective, there is some $\alpha \in F_s^*$ such that $\mathrm{\alpha} = a$.
+Then $\chi(a) = \chi(\mathrm{N}_{F_s/F}(\alpha)) =\rho(\mathrm{N}_{F_s/F}(\alpha)) = \rho(a)$. Since this is true for every $a \in F^*$, and $\chi(0) = 0 = \rho(0)$, this shows that $\chi = \rho$. 
+
+To conclude, $\chi' = \rho'$ implies $\chi = \rho$, thus $\chi \ne \rho$ implies $\chi' \ne \rho'$.
+
+\item[(c)] If $\chi^m = \varepsilon$, then for all $\alpha \in K$, 
+$(\chi')^m(\alpha) = \chi^m(\mathrm{N}_{F_s/F}(\alpha)) = 1,$
+thus $\chi'^m = \varepsilon$.
+
+\item[(d)] Si $a \in F$, by Proposition 11.2.2(c), $\mathrm{N}_{F_s/F}(a) = a^s$, therefore
+$$
+\chi'(a) = \chi(N_{K/F}(a))= \chi(a^s)= \chi(a)^s.
+$$
+
+\item[(e)] Assume that $q \equiv 1 \pmod m$. Write $C$ the group of character on $F$, $C'$ the group of characters on $F_s$, $C_m$ the group of character on $F$ with order dividing $m$, and $C'_m$ the group of character on $F_s$ with order dividing $m$. By the generalization of Proposition 8.1.3, $C$ is a cyclic group of order $q-1$, and $C'$ a cyclic group of order $q^s -1$. 
+
+We know that if $m \mid q-1 = |C|$, the subgroup $C_ m = \{\chi \in C \mid \chi^m = \varepsilon\}$ of the cyclic group $C$ is cyclic of order $m$. Since $m \mid q- 1 \mid q^s - 1$, it is the same for $C'_m$:
+$$|C_m |= |C'_m| = m.$$
+Let $\psi$ be the map
+$$
+\psi
+\left\{
+\begin{array}{ccl}
+C_m & \to & C'_m\\
+\chi & \mapsto & \chi' =  \chi \circ \mathrm{N}_{F_s/F}.
+\end{array}
+\right.
+$$
+Part (b) shows that $\psi$ is injective, and $|C_m| = |C'_m| = m$, therefore $\psi$ is bijective. In other words, as $\chi$ varies over all characters of $F$ with order dividing $m$, $\chi'$ varies over all characters of $F_s$ with order dividing $m$. 
+\end{proof}
 \end{document}
+
+
+
+
+
+
+
+\item[(i)] Si $\chi' = \rho'$, alors pour tout $\alpha \in K^*$, $\chi(\mathrm{N}_{K/F}(\alpha)) =\rho(\mathrm{N}_{K/F}(\alpha))$.
+
+La proposition 7 du chapitre ``Traces et normes dans les corps finis'' montre que
+$$\varphi
+\left\{
+\begin{array}{ccl}
+K^* & \to & F^*\\
+\alpha & \mapsto & \mathrm{N}_{K/F}(\alpha)
+\end{array}
+\right.
+$$
+est surjective. Par conséquent, pour tout $\beta \in F^*$, $\chi(\beta) = \rho(\beta)$ (et $\chi(0) = 0 = \rho(0)$), donc $\chi = \rho$.
+\item[(ii)] Si $\chi^m = \varepsilon$, alors pour tout $\alpha \in K$, 
+$(\chi')^m(\alpha) = \chi^m(\mathrm{N}_{K/F}(\alpha)) = 1,$
+donc $\chi'^m = \varepsilon$.
+\item[(iii)] Si $a \in F$,
+$$
+\chi'(a) = \chi(N_{K/F}(a))= \chi(a^s)= \chi(a)^s.
+$$
+\item[(iv)] Pour tout $\alpha \in K$,
+$$
+(\chi \rho)'(\alpha) = (\chi \rho)(\mathrm{N}_{K/F}(\alpha)) = \chi(\mathrm{N}_{K/F}(\alpha)) \rho(\mathrm{N}_{K/F}(\alpha)) = \chi'(\alpha) \rho'(\alpha),
+$$
+donc  $(\chi \rho)' = \chi' \rho'$.
+
 
 
 
