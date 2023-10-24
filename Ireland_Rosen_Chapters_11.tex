@@ -70,7 +70,7 @@ If $N_s = \sum_{j=1}^e \beta_j^s - \sum_{i=1}^d \alpha_i^s,$ where $\alpha_i,\be
 \sum_{s=1}^\infty \frac{N_s u^s}{s} &=  \sum_{j=1}^e \left( \sum_{s=1}^\infty \frac{(\beta_j u)^s}{s} \right) - \sum_{i=1}^d \left( \sum_{s=1}^\infty \frac{(\alpha_i u)^s}{s} \right)\\
 &=-\sum_{j=1}^e \ln(1 - \beta_ju) + \sum_{i=1}^d \ln(1 - \alpha_i u).
 \end{align*}
-Here $u$ is a variable, and both members are formal polynomials in $\C[[u]]$, so we don't study convergence. Nevertheless, the left member has a radius of convergence at least $q^{-n}$, and the right member $\min_{i,j}(1/\beta_j|,1/|\alpha_i|)$.
+Here $u$ is a variable, and both members are formal polynomials in $\C[[u]]$, so we don't study convergence. Nevertheless, the left member has a radius of convergence at least $q^{-n}$, and the right member $\min_{i,j}(1/|\beta_j|,1/|\alpha_i|)$.
 
 Therefore,
 $$Z_f(u) = \exp\left(\sum_{s=1}^\infty \frac{N_s u^s}{s} \right) = \prod_{j=1}^e(1 - \beta_j u)^{-1} \prod_{i=1}^d (1-\alpha_i u) = \frac{\prod_{i=1}^d (1 - \alpha_i u)}{\prod_{j=1}^e (1 - \beta_j u)}$$
@@ -1006,38 +1006,66 @@ C_m & \to & C'_m\\
 $$
 Part (b) shows that $\psi$ is injective, and $|C_m| = |C'_m| = m$, therefore $\psi$ is bijective. In other words, as $\chi$ varies over all characters of $F$ with order dividing $m$, $\chi'$ varies over all characters of $F_s$ with order dividing $m$. 
 \end{proof}
+
+
+\paragraph{Ex. 11.17}{\it In Theorem 2 show that the order of the numerator of the zeta function, $P(u)$ has degree $m^{-1}((m-1)^{n+1} + (-1)^{n+1}(m-1))$.
+}
+
+\begin{proof}
+In Theorem 2,
+$$P(u) = \prod_{(\chi_0,\ldots,\chi_n) \in A } \left( 1 - (-1)^{n+1} \frac{1}{q}\, \chi_0(a_0)^{-1} \cdots \chi_n(a_n^{-1}) g(\chi_0)\cdots g(\chi_n)u \right),
+$$
+where $A$ is the set of $(n+ 1)$-tuples  $(\chi_0,\ldots,\chi_n)$ of characters on $F$ such that $\chi_i^m = \varepsilon, \chi_i \ne \varepsilon \ (i = 0,\ldots,n)$ and $\chi_0 \cdots \chi_n = \varepsilon$. In each factor, the coefficient of $u$ is not zero, thus each factor has degree $1$. Therefore the degree $d$ of $P$ is $d = \deg(P) = |A|$. Write $C_m$ the subgroup of characters on F such that $\chi^m = \varepsilon$. 
+
+Since $q \equiv 1 \pmod m$ is an hypothesis of Theorem 2, $C_m$ is a subgroup of order $m$:  $|C_m| = m$ and $|C_m - \{\varepsilon\} |= m-1$. We count the number $d$ of $(n+1)$-tuples $(\chi_0,\ldots,\chi_n) \in (C_m - \{\varepsilon\})^{n+1}$ such that $\chi_0 \cdots \chi_n = \varepsilon$, that is $\chi_n = \chi_0^{-1}\cdots\chi_{n-1}^{-1}$, and $\chi_n \ne \varepsilon$. Let $\chi$ be a character of order $m$ (such a character exists because $C_m$ is cyclic). Write $\chi_i = \chi^{k_i}$, where $1 \leq k_i \leq m-1$. Then $d$ is the number of $n$-tuples $(k_0,\ldots,k_{n-1}) \in \gcro 1, m-1 \dcro^n$ such that $$k_0 + k_1 + \cdots +k_{n-1} \not \equiv 0 \pmod m.$$
+
+In other words, $d$ is the number of $n$-tuples $(a_0,\ldots,a_{n-1}) \in ((\Z/m\Z)^*)^n$ such that $$a_0 + a_1 + \cdots +a_{n-1}\ne 0.$$
+
+To begin an induction, fix the integer $m \in \N^*$, and write
+$$d_n = \mathrm{Card} \{(a_0,\ldots,a_{n-1}) \in ((\Z/m\Z)^*)^n \mid a_0 + a_1 + \cdots +a_{n-1}\ne 0\}.$$
+For $n \geq 2$, if $(a_0,\ldots,a_{n-2}) \in ((\Z/m\Z)^*)^{n-1}$ is given,  we count the number of $a_{n-1} \in (\Z/m\Z)^*$ such that  $a_{n-1} \ne -a_0-a_1 - \cdots -a_{n-2}$.
+
+There are two cases.
+
+If $a_0+ \cdots + a_{n-2} \ne 0$, there are $m-2$ choices for $a_{n-1} \in \Z/m\Z \setminus \{0, -a_0-\cdots -a_{n-2}\}$, and if $a_0+ \cdots + a_{n-2} = 0$, there are $m-1$ choices for $a_{n-1} \in \Z/m\Z \setminus \{0\}$. This gives the relation
+\begin{align*}
+d_n &= (m-2) d_{n-1} + (m-1) ((m-1)^{n-1} -d_{n-1}), \\
+&=  (m-1)^n -d_{n-1}.
+\end{align*}
+Since $d_1 = \mathrm{Card}\{a \in (\Z/m\Z)^* \mid a \ne 0\} = m-1$, we obtain by immediate induction
+$$d_n = (m-1)^n - (m-1)^{n-1} + \cdots + (-1)^{n-1}(m-1)\qquad (n\geq 1).$$
+Then 
+\begin{align*}
+d_n &= (m-1)^n - (m-1)^{n-1} + \cdots + (-1)^{n-1}(m-1)\\
+&=(-1)^{n-1} (m-1)\left\{ [-(m-1)]^{n-1} + [-(m-1)]^{n-2} + \cdots + 1\right\}\\
+&=(-1)^{n-1} (m-1) \frac{[-(m-1)]^{n} - 1}{-(m-1) - 1}\\
+&=\frac{(-1)^n (m-1) \left\{[-(m-1)]^{n} - 1\right\}}{m}\\
+&=\frac{(m-1)^{n+1} + (-1)^{n+1}(m-1)}{m}.
+\end{align*}
+This is the waited answer,
+$$\deg(P(u)) = \frac{(m-1)^{n+1} + (-1)^{n+1}(m-1)}{m}.$$
+\end{proof}
+
+
+\paragraph{Ex. 11.17}{\it Let the notation be as in Exercise 16. Use the Hasse-Davenport relation to show that $J(\chi'_1,\chi'_2,\ldots,\chi'_n) = (-1)^{(s-1)(n-1)} J(\chi_1,\chi_2,\ldots,\chi_n)^s$, where the $\chi_i$ are non trivial characters of $F$ and $\chi_1\chi_2\cdots \chi_n \ne \varepsilon$.
+}
+
+\begin{proof} Note that $(\chi \rho)' = \chi' \rho'$, thus $(\chi_1 \ldots \chi_n)'= \chi'_1 \chi'_2\cdots \chi'_n$.
+
+The conditions on the characters, and Exercise 16,  show that $\chi'_i \ne \varepsilon$ and $\chi'_1\chi'_2\cdots \chi'_n \ne \varepsilon$. By Theorem 3 of Chapter 8,
+$$J(\chi'_1,\ldots,\chi'_n) = \frac{g(\chi'_1)g(\chi'_2) \cdots g(\chi'_n)}{g(\chi'_1 \chi'_2\cdots \chi'_n)}.$$
+Then the Hasse-Davenport relation gives
+\begin{align*}
+J(\chi'_1,\ldots,\chi'_n) &= \frac{[-(-g(\chi_1))^s] [-(-g(\chi_2))^s] \cdots[- (-g(\chi_n))]^s]}{-(-g(\chi_1 \chi_2 \cdots \chi_n))^s}\\
+&=(-1)^{n-1}(-1)^{s(n-1)} \left(\frac{g(\chi_1)g(\chi_2) \cdots g(\chi_n)}{g(\chi_1 \chi_2\cdots \chi_n)}\right)^s\\
+&=(-1)^{(s+1)(n-1)}  J(\chi_1,\ldots,\chi_n)^s\\
+&=(-1)^{(s-1)(n-1)}  J(\chi_1,\ldots,\chi_n)^s.\\
+\end{align*}
+\end{proof}
 \end{document}
 
 
 
-
-
-
-
-\item[(i)] Si $\chi' = \rho'$, alors pour tout $\alpha \in K^*$, $\chi(\mathrm{N}_{K/F}(\alpha)) =\rho(\mathrm{N}_{K/F}(\alpha))$.
-
-La proposition 7 du chapitre ``Traces et normes dans les corps finis'' montre que
-$$\varphi
-\left\{
-\begin{array}{ccl}
-K^* & \to & F^*\\
-\alpha & \mapsto & \mathrm{N}_{K/F}(\alpha)
-\end{array}
-\right.
-$$
-est surjective. Par conséquent, pour tout $\beta \in F^*$, $\chi(\beta) = \rho(\beta)$ (et $\chi(0) = 0 = \rho(0)$), donc $\chi = \rho$.
-\item[(ii)] Si $\chi^m = \varepsilon$, alors pour tout $\alpha \in K$, 
-$(\chi')^m(\alpha) = \chi^m(\mathrm{N}_{K/F}(\alpha)) = 1,$
-donc $\chi'^m = \varepsilon$.
-\item[(iii)] Si $a \in F$,
-$$
-\chi'(a) = \chi(N_{K/F}(a))= \chi(a^s)= \chi(a)^s.
-$$
-\item[(iv)] Pour tout $\alpha \in K$,
-$$
-(\chi \rho)'(\alpha) = (\chi \rho)(\mathrm{N}_{K/F}(\alpha)) = \chi(\mathrm{N}_{K/F}(\alpha)) \rho(\mathrm{N}_{K/F}(\alpha)) = \chi'(\alpha) \rho'(\alpha),
-$$
-donc  $(\chi \rho)' = \chi' \rho'$.
 
 
 
