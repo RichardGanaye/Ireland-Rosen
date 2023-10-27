@@ -47,10 +47,9 @@
 
 { \Large \bf Chapter 11} 
 
-\paragraph{Ex. 11.1} Suppose that we may write the power series $1+a_1u +a_2u^2+\cdots$ as the quotient of two polynomials $P(u)/Q(u)$. Show that we may assume that $P(0) = Q(0) = 1$.
-{\it 
-
+\paragraph{Ex. 11.1}{\it  Suppose that we may write the power series $1+a_1u +a_2u^2+\cdots$ as the quotient of two polynomials $P(u)/Q(u)$. Show that we may assume that $P(0) = Q(0) = 1$.
 }
+
 \begin{proof}
 Here $f(u) = 1+a_1u +a_2u^2+\cdots \in \C[[u]]$ is a formal series in the variable $u$.
 
@@ -78,7 +77,7 @@ is a rational fraction.
 \end{proof}
 
 
-\paragraph{Ex. 11.3}{\it Give the details of the proof that $N_s$ is independant of the field $F_s$ (see the concluding paragraph to section 1).
+\paragraph{Ex. 11.3}{\it Give the details of the proof that $N_s$ is independent of the field $F_s$ (see the concluding paragraph to section 1).
 }
 \begin{proof}
 Suppose that $E$ and $E'$ are two fields containing $F$ both with $q^s$ elements. We first show that there is a isomorphism $\sigma : E \to E'$ which fixes the elements of $F$, by showing that that both $E$ and $E'$ are isomorphic over $F$ to $F[x]/(f(x))$ for some irreducible polynomial $f(x) \in F(x)$.
@@ -1047,7 +1046,7 @@ $$\deg(P(u)) = \frac{(m-1)^{n+1} + (-1)^{n+1}(m-1)}{m}.$$
 \end{proof}
 
 
-\paragraph{Ex. 11.17}{\it Let the notation be as in Exercise 16. Use the Hasse-Davenport relation to show that $J(\chi'_1,\chi'_2,\ldots,\chi'_n) = (-1)^{(s-1)(n-1)} J(\chi_1,\chi_2,\ldots,\chi_n)^s$, where the $\chi_i$ are non trivial characters of $F$ and $\chi_1\chi_2\cdots \chi_n \ne \varepsilon$.
+\paragraph{Ex. 11.18}{\it Let the notation be as in Exercise 16. Use the Hasse-Davenport relation to show that $J(\chi'_1,\chi'_2,\ldots,\chi'_n) = (-1)^{(s-1)(n-1)} J(\chi_1,\chi_2,\ldots,\chi_n)^s$, where the $\chi_i$ are non trivial characters of $F$ and $\chi_1\chi_2\cdots \chi_n \ne \varepsilon$.
 }
 
 \begin{proof} Note that $(\chi \rho)' = \chi' \rho'$, thus $(\chi_1 \ldots \chi_n)'= \chi'_1 \chi'_2\cdots \chi'_n$.
@@ -1062,9 +1061,113 @@ J(\chi'_1,\ldots,\chi'_n) &= \frac{[-(-g(\chi_1))^s] [-(-g(\chi_2))^s] \cdots[- 
 &=(-1)^{(s-1)(n-1)}  J(\chi_1,\ldots,\chi_n)^s.\\
 \end{align*}
 \end{proof}
+
+
+\paragraph{Ex. 11.19}{\it Prove the identity $\sum \lambda(f) t^{\deg(f)} = \prod (1 - \lambda(f) t^{\deg(f)})^{-1}$, where the sum is over all monic polynomials in $F[t]$ and the product is over all monic irreducible in $F[t]$. $\lambda$ is defined in Section 4.
+}
+
+\bigskip
+
+(The solution of this exercise requires external knowledge on formal power series. To learn more about formal power series, see [Niven, Formal power series],  [Bourbaki, Algebra IV, ¤4], and [Wikipedia, Formal power series]. About summable families, see [Bourbaki, General Topology, III ¤5]. )
+
+\bigskip
+
+\begin{proof}
+
+For each monic polynomial $f(x) = x^n - c_1x^{n-1} + \cdots + (-1)^n c_n \in F[x]$, $\lambda(f)$ is defined by
+$$\lambda(f) = \psi(c_1) \chi(c_n).$$
+To complete this definition, we define $\lambda(1) = 1$. By Lemma 1, $\lambda(fg) = \lambda(f) \lambda(g)$ for all monic polynomials $f,g \in F[x]$.
+
+We must prove the following equality in the ring of formal power series $\C[[t]]$:
+\begin{align}
+\sum_{f \in M} \lambda(f) t^{\deg(f)} = \prod_{f \in I} \left(1 - \lambda(f) t^{\deg(f)}\right)^{-1},
+\end{align}
+where $M$ is the set of monic polynomials of $F[x]$, and $I$ is the set of monic polynomials of  $F[x]$ which are irreducible over $F$. 
+
+Since $I$ and $M$ are infinite sets, we must give a sense at this formula. This implies to introduce a topology on the algebra $\C[[t]]$, which is given by the distance $d$ defined by
+$$d(\alpha, \beta) = 2^{-\nu(\alpha - \beta)}, \qquad \alpha, \beta \in \C[[t]],$$
+where $\nu : \C[[t]] \to \N \cup \{\infty\}$ is the valuation on $\C[[t]]$: if $\alpha = \sum_{k=0}^\infty a_k t^k$, then $\nu(0) = \infty$, and $\nu(\alpha) = \min \{k \in \N \mid a_k \ne 0\}$.
+This distance is associated to the norm $|| \cdot ||$, given by $||\gamma|| = 2^{-\nu(\gamma)}, \gamma \in \C[[t]]$, so that $E = \C[[t]]]$ is a normed vector space. %Moreover the metric space $\C[[t]]$ is complete.
+
+
+As in Bourbaki, a family $(u_i)_{i \in I}$ of vectors of a normed vector space is summable, if there is some $S \in E$ such that
+$$\forall \varepsilon,\ \exists J_\varepsilon \in {\cal F}(I), \ \forall J \in {\cal F}(I),\  J \supset J_\varepsilon \Rightarrow \left |\left | \sum_{i \in J} u_i - S \right |\right | < \varepsilon,$$
+ where ${\cal F}(I)$ is the set of finite subsets of $I$. Then we write $S = \sum\limits_{i \in J} u_i$. There is a similar definition for multipliable families.
+ 
+In the algebra $\C[[t]]$, this is equivalent to $\lim_k u_k = 0$ under the filter of the complementaries of finite sets: ${\{A \in {\cal P}(I) \mid I \setminus A \in {\cal F}(I)\}}$ (Bourbaki, IV, 4, Lemma 1), which means, for $(u_i)_{i\in I} \in \C[[t]]^I$,
+$$\forall \varepsilon,\ \exists J_\varepsilon \in {\cal F}(I), \ \forall i \in I \setminus J,\  \left |\left | u_i \right |\right | < \varepsilon.$$
+
+Moreover, if the family $(u_i)_{i \in I}$ is summable, then $(1 + u_i)_{i \in I}$ is multipliable (Bourbaki, Algebra IV, 4, Proposition 2).
+
+A summable family $(u_i)_{i \in I}$, where $I$ is a countable set, can be summed in any order (Bourbaki, General Topology, III,7 Proposition 9). If $\varphi: \N \to I$ is a bijection, then
+\begin{align}
+\sum_{i \in I} u_i = \sum_{j = 0}^\infty u_{\varphi(j)}.
+\end{align}
+\bigskip
+
+After these preliminaries, we can show that the family $\left(\lambda(f) t^{\deg(f)} \right)_{f \in M}$ is summable.% and similarly the family $\left(1 - \lambda(f) t^{\deg(f)}\right)_{f \in I}$ is multipliable.
+
+If $\varepsilon >0$, let $N$ be an integer such that $2^{-N} < \varepsilon$, and consider the set $J_\varepsilon$ of monic polynomials $f$ such that $\deg(f) \leq N$. Then $J_\varepsilon$ is a finite set, and for all $f \in I \setminus J$, $\deg(f) >N$,  so that $ ||\lambda(f) t^{\deg(f)}|| = 2^{-\deg(f)} \leq 2^{-N} < \varepsilon$.
+
+This proves that the family $\left(\lambda(f) t^{\deg(f)} \right)_{f \in M}$ is summable, and $\sum_{f \in M} \lambda(f) t^{\deg(f)}$ makes sense.
+
+Then the sub-family $\left(\lambda(f) t^{\deg(f)} \right)_{f \in I}$ is also summable. This proves that $  (1 - \lambda(f) t^{\deg(f)})_{f\in I}$ is multiplicable, and $\prod\limits_{f \in I}(1 - \lambda(f) t^{\deg(f)})^{-1}$ makes sense.
+
+
+
+To prove (3), we use first geometric power series. For all $f \in I$, 
+$$(1 - \lambda(f) t^{\deg(f)})^{-1} = \sum_{k=0}^\infty \lambda(f)^k t^{k \deg(f)}.$$
+
+The set $I$ is a countable set (countable union of finite sets). We use an arbitrary numbering of $I$, $I = \{f_1,f_2,\ldots,f_n,\ldots\}$, obtained by a bijection $\varphi : \N^* \to I, \varphi(n) =f_n$. Write $I_m$ the finite set $I_m = \{f_1,\ldots,f_m\}$, et $M_m$ the set of monic polynomials whose irreducible factors are in $I_m$, so that every $f \in M$  uniquely decomposes under the form
+$$f = f_1^{a_1}\cdots f_m^{a_m}, \qquad a_1,\ldots,a_m \in \N.$$
+Write $d_i = \deg(f_i)$. Then (see Bourbaki, Algebra IV, 4, Proposition 2)
+\begin{align*}
+\sum_{f \in M_m} \lambda(f) t^{\deg(f)} &= \sum_{(a_1,\ldots,a_m) \in \N^m} \lambda(f_1)^{a_1} \cdots \lambda(f_m)^{a_m} t^{a_1d_1+ \cdots+a_md_m}\\
+&= \left(\sum_{a_1 = 0}^\infty \lambda(f_1)^{a_1} t^{a_1d_1} \right) \cdots \left(\sum_{a_m = 0}^\infty \lambda(f_m)^{a_m} t^{a_md_m} \right)\\
+&= \left(1 - \lambda(f_1)t^{a_1} \right)^{-1} \cdots  \left(1 - \lambda(f_m)t^{a_m} \right)^{-1}\\
+&=\prod_{i=1}^m \left( 1 - \lambda(f_i) t^{\deg(f_i)} \right)^{-1}.
+\end{align*}
+Then, using (4),
+\begin{align*}
+\lim_{m \to \infty} \prod_{i=1}^m \left( 1 - \lambda(f_i) t^{\deg(f_i)} \right)^{-1} &=\prod_{i=1}^\infty \left( 1 - \lambda(f_i) t^{\deg(f_i)} \right)^{-1} \\
+&=\prod_{f \in I} (1 - \lambda(f) t^{\deg(f)})^{-1},
+\end{align*}
+the limit being in the metric space $\C[[t]]$ with the distance $d$.
+
+Since $M$ is the increasing union of the $M_m$, 
+\begin{align*}
+\lim_{m\to \infty} \sum_{f \in M_m} \lambda(f) t^{\deg(f)}  &=  \sum_{f \in M} \lambda(f) t^{\deg(f)}.
+\end{align*}
+We justify this statement.
+
+ If $\varepsilon >0$, let $N$ be an integer such that $2^{-N} < \varepsilon$. The set of monic irreducible polynomials $f_i \in I$ such that $\deg(f) \leq N$ is finite, thus there is some integer $M$ such that, for all integers $i$, $i \geq M$ implies $\deg(f_i) > N$.
+ 
+ For every $m\geq M$, if $f \in M \setminus M_m$, there is some irreducible monic factor $f_i$ of $f$ such that  $i \geq m$, therefore $\deg(f) \geq \deg(f_i) > N$. Then
+ $$\nu  \left(\sum_{f \in M\setminus M_m} \lambda(f) t^{\deg(f)} \right) \geq N,$$
+so
+ \begin{align*}
+ \left | \left |  \sum_{f \in M} \lambda(f) t^{\deg(f)} - \sum_{f \in M_m} \lambda(f) t^{\deg(f)} \right | \right |  &=  \left | \left |  \sum_{f \in M\setminus M_m} \lambda(f) t^{\deg(f)}  \right | \right | \leq 2^{-N} < \varepsilon.
+ \end{align*}
+ This shows the statement.
+ 
+ Since
+ $$
+ \left\{
+ \begin{array}{lcl}
+\lim\limits_{m\to \infty} \sum\limits_{f \in M_m} \lambda(f) t^{\deg(f)}  &= & \sum\limits_{f \in M} \lambda(f) t^{\deg(f)},\\
+\lim\limits_{m \to \infty} \prod\limits_{i=1}^m \left( 1 - \lambda(f_i) t^{\deg(f_i)} \right)^{-1} &=& \prod\limits_{f \in I} (1 - \lambda(f) t^{\deg(f)})^{-1},
+\end{array}
+\right.
+$$
+where 
+$$\sum_{f \in M_m} \lambda(f) t^{\deg(f)} = \prod_{i=1}^m \left( 1 - \lambda(f_i) t^{\deg(f_i)} \right)^{-1},$$
+ the unicity of the limit shows that
+\begin{align*}
+\sum_{f \in M} \lambda(f) t^{\deg(f)} = \prod_{f \in I} (1 - \lambda(f) t^{\deg(f)})^{-1}.\\
+\end{align*}
+
+\end{proof}
 \end{document}
-
-
 
 
 
