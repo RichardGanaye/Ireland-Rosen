@@ -295,7 +295,7 @@ If $n = 1$, $f(x) = ax+b = a(x-\alpha_0)$, where $\alpha_0 = -b/a$ : $K = k$ is 
 
 Suppose that the property is true for all polynomials of degree less than $n$ on an arbitrary field $k$.
 
-Let $f(x) \in k[x], \deg(f) = n$. From proposition 7.2.1. applied to an irreducible factor of $f$, there exists a field $L, [L:K]<\infty$ and $\alpha \in L$ such that $f(\alpha_1) = 0$. Then $f(x) = (x-\alpha_1) g(x), g(x) \in L[x]$. 
+Let $f(x) \in k[x], \deg(f) = n$. From proposition 7.2.1. applied to an irreducible factor of $f$, there exists a field $L, [L:k]<\infty$ and $\alpha_1 \in L$ such that $f(\alpha_1) = 0$. Then $f(x) = (x-\alpha_1) g(x), g(x) \in L[x]$. 
 
 Applying the induction hypothesis in the field $L$ on the polynomial $g \in L[x]$ with $\deg(g) = n-1$, we obtain a field $K, [K:L]<\infty$ such that $g(x) = a(x-\alpha_2)\cdots(x-\alpha_n)$ with $\alpha_i \in K$. So  $f(x) = a(x-\alpha_1)(x-\alpha_2)\cdots(x-\alpha_n)$ splits in linear factors in $K$. The induction is done.
 \end{proof}
@@ -308,7 +308,7 @@ Applying the induction hypothesis in the field $L$ on the polynomial $g \in L[x]
 \begin{proof}
 Let $f(x) =  x^{p^n} -x$. We know from Ex. 7.12 that there exists a finite extension $K$ of $\F_p$ such that $f$ splits in linear factors on $K$ :
 $$f(x) = \prod_{k=1}^{p^n} (x-\alpha_k), \qquad \alpha_1,\ldots, \alpha_{p^n} \in K.$$
-The set $k =\{\alpha_1,\cdots,\alpha_{p_n}\} \subset K$ of the roots of $x^{p^n} -x$ is a subfield of $K$. Indeed, if $\alpha, \beta \in k$,
+The set $k =\{\alpha_1,\cdots,\alpha_{p^n}\} \subset K$ of the roots of $x^{p^n} -x$ is a subfield of $K$. Indeed, if $\alpha, \beta \in k$,
 \begin{enumerate}
 \item[(a)] $f(1) = 0$, so $1 \in k$
 \item[(b)]$(\alpha- \beta)^{p^n} = \alpha^{p^n} - \beta^{p^n} = \alpha - \beta$, so $\alpha - \beta \in k$.
@@ -417,7 +417,7 @@ $$x^{4}-x=x^{2^2}-x = \prod\limits_{d\mid 2} F_d(x) = F_1(x) F_2(x)$$
 
 so $F_4(x) = \frac{x^{16}-x}{x^4-x} = \frac{x^{15}-1}{x^3-1} = x^{12}+x^9+x^6+x^3+1$,
 
-$F_4(x) = (x^4+x^3+x^2+x+1)(x^4+x+1)(x^4+x^3+1)$.t
+$F_4(x) = (x^4+x^3+x^2+x+1)(x^4+x+1)(x^4+x^3+1)$.
 
 Among the 16 monic polynomials of degree 4 in $\mathbb{F}_2[x]$, 3 are irreducible :
 \begin{align*}
@@ -456,13 +456,13 @@ $$N_q = \frac{p^q -p}{q}.$$
 \begin{proof}
 If $p$ is a prime rational integer, with $p\equiv 3 \pmod 4$, then $p$ is a prime in $\Z[i]$.
 
-Indeed, $p$ is irreducibel : if $p = uv,\ u,v \in \Z[i]$, where $u = c+di,v$ are not units, then $p^2 = N(u)N(v),\ N(u)>1,N(v)>1$, so $p = N(u) = u \overline{u} = c^2+d^2$.
+Indeed, $p$ is irreducible : if $p = uv,\ u,v \in \Z[i]$, where $u = c+di,v$ are not units, then $p^2 = N(u)N(v),\ N(u)>1,N(v)>1$, so $p = N(u) = u \overline{u} = c^2+d^2$.
 
- As $c^2\equiv 0,1 \pmod 4, d^2 \equiv 0,1 \pmod 4$, so $p \equiv1 \pmod 4$, which is in contradiction with the hypothesis.
+ As $c^2\equiv 0,1 \pmod 4, d^2 \equiv 0,1 \pmod 4$, so $p \equiv 0,1,2 \pmod 4$, which is in contradiction with the hypothesis.
  
  So $p$ is irreducible in $\Z[i]$, and since $\Z[i]$ is a principal ideal domain, $p$ is prime in $\Z[i]$, thus $\Z[i]/( p )$ is a field.
  
- Let $z = a+bi \in \Z[i]$. The Euclidean division of $a,b$ by $q$ gives 
+ Let $z = a+bi \in \Z[i]$. The Euclidean division of $a,b$ by $p$ gives 
  $$a = qp+r,\ 0\leq r < p, \qquad b = q'p+s, \ 0\leq s < p,$$
  so $$z \equiv r+is \pmod p,\ 0\leq r <p, 0 \leq s < p.$$
  Let's verify that these $p^2$ elements are in different classes of congruences modulo $p$.
@@ -481,7 +481,7 @@ Indeed, $p$ is irreducibel : if $p = uv,\ u,v \in \Z[i]$, where $u = c+di,v$ are
 }
 
 \begin{proof}
-Let $U$ be the set of monic polynomials in $\mathbb{F}_q[x]$, and $U_t$ the set of monic polynomials of degree $t$, and $s\in \C$. Then $U = \coprod_{t \in \N} U_t$, so
+Let $U$ be the set of monic polynomials in $\mathbb{F}_q[x]$, and $U_t$ the set of monic polynomials of degree $t$, and $s\in \C$. Then $U = \bigcup_{t \in \N} U_t$, so
 \begin{align*}
 \sum_{f \in U} \vert f \vert^{-s }&= \sum_{t=0}^\infty \sum_{f \in U_t} \vert f \vert^{-s}\\
 &=\sum_{t=0}^\infty \frac{1}{q^{ts}} \sum_{f\in U_t} 1.
@@ -766,7 +766,7 @@ J(\chi,\rho) &= \sum_{t \in \F_p}\chi(1-t)\chi(1+t)\\
 &=\sum_{u \in \F_p} \chi(u) \chi(2-u)\qquad(u = 1-t)\\
 &=\chi(2^2) \sum_{u \in \F_p} \chi\left(\frac{u}{2}\right) \chi\left(1-\frac{u}{2}\right)\\
 &= \chi(2^2) \sum_{v \in \F_p} \chi(v) \chi(1-v)\qquad(u = 2v)\\
-&= \chi(2^2) \chi(k^{-2}) \sum_{w \in \F_p} \chi(kv) \chi(k-kv)\\
+&= \chi(2^2) \chi(k^{-2}) \sum_{v \in \F_p} \chi(kv) \chi(k-kv)\\
 &=\chi(2^2/k^2) \sum_{t \in \F_p} \chi(t) \chi(k-t)\qquad(t=kv).
 \end{align*}
 
@@ -840,7 +840,7 @@ $$ J(\chi,\chi) = \chi(-1) J(\chi,\rho).$$
 \begin{proof}
 For all $y \in \F_p$, write  $A_y =\{x \in \mathbb{F}_p\ \vert \ x^m = y\}$. Then $\vert A_y\vert = N(x^m = y)$.
 
-$\mathbb{F}_p = \coprod\limits_{y \in \mathbb{F}_p} A_y$ is the disjoint union of the $A_y$:
+$\mathbb{F}_p = \bigcup_{y \in \mathbb{F}_p} A_y$ is the disjoint union of the $A_y$:
 
 \begin{enumerate}
 \item[$\bullet$] if $x \in A_y \cap A_{y'}$, then $x^m = y = y'$. This proves
@@ -876,8 +876,8 @@ As $\chi$ is a character of order 3, $\chi^2\neq \varepsilon$. From Exercise 5, 
 $$g(\chi)^2 = \chi(2)^{-2} J(\chi,\rho) g(\chi^2).$$
 So
 $$g(\chi)^3 = \chi(2)^{-2} J(\chi,\rho) g(\chi^2)g(\chi).$$
-Recall  (¤8.2) that
-$$\overline{g(\chi)} = \sum_t \overline{\chi(t)} \zeta^{-t} = \chi(-1) \sum_t \overline{\chi(-t)} \zeta(-t) = \chi(-1) g(\overline{\chi}),$$
+Recall  (Â¤8.2) that
+$$\overline{g(\chi)} = \sum_t \overline{\chi(t)} \zeta^{-t} = \chi(-1) \sum_t \overline{\chi(-t)} \zeta^{-t} = \chi(-1) g(\overline{\chi}),$$
 Here $\chi(-1) = 1$, because $\chi(-1) = \chi((-1)^3) = \chi^3(-1) = \varepsilon(-1) = 1$.
 Hence
 $$g(\chi^2) g(\chi) = g(\bar{\chi}) g(\chi) =\overline{g(\chi)} g(\chi) = \vert g(\chi) \vert^2 =p.$$
@@ -975,7 +975,7 @@ As $a,c$ are odds, and $b,d$ even, $a=c, b=d$ : the unicity of the decomposition
 Suppose that $4p = A^2 + 27 B^2 = C^2 + 27 D^2$, where $A \equiv C \equiv 1 \pmod 3$. We will show that $A = C$.
 
 Let $\omega = e^{2i\pi/3} = -1/2 + i \sqrt{3}/2$. Then $i\sqrt{3} = 2 \omega +1$, and for all $x,y$,
-$x^3 + 3 y^2 = (x+i\sqrt{3}y)(x-i\sqrt{3}y) = (x + (2\omega+1)y)(x - (2\omega+1)y),$
+$x^2 + 3 y^2 = (x+i\sqrt{3}y)(x-i\sqrt{3}y) = (x + (2\omega+1)y)(x - (2\omega+1)y),$
 $$x^2+3y^2 = (x+y+2\omega y)(x-y-2\omega y).$$
 With $x =A, y = 3B$, we obtain
 $$4p = A^2+27B^2 = (A+3B+6\omega B)(A-3B-6\omega B).$$
@@ -1154,7 +1154,7 @@ N &= p+1 - \delta_4(-1) 4 + 2 \re J(\chi,\chi)  + 4 \re J(\chi,\rho)\\
 \end{align*}
 $\bullet$ If $p\equiv 5 [8],$
 
-$\chi(-1) = -1$, donc $J(\chi,\chi) = -J(\chi,\rho)$, et $\delta_4(-1) = 0$
+$\chi(-1) = -1$, so $J(\chi,\chi) = -J(\chi,\rho)$, and $\delta_4(-1) = 0$.
 \begin{align*}
 N &= p+1 - \delta_4(-1) 4 + 2 \re J(\chi,\chi)  + 4 \re J(\chi,\rho)\\
 &= p+1 + 2 \re J(\chi,\rho)\\
@@ -1248,7 +1248,7 @@ $$N(x^4+y^4=1) = p+1 \ \mathrm{if} \ p\equiv -1 \pmod 4.$$
 Let $\chi$ be the Legendre character. Then
 \begin{align*}
 N(x_1^2+x_2^2+\cdots+x_r^2=0) &= \sum\limits_{a_1+a_2+\cdots+a_r=0} N(x_1^2=a_1)N(x_2^2=a_2)\cdots N(x_r^2 = a_r)\\
-&=\sum\limits_{a_1+a_2+\cdots+a_r=0} (1+\chi(a_1))(1+\chi(a_2)\cdots(1+\chi(a_r))\\
+&=\sum\limits_{a_1+a_2+\cdots+a_r=0} (1+\chi(a_1))(1+\chi(a_2))\cdots(1+\chi(a_r))\\
 &=p^{r-1} + J_0(\chi,\chi,\cdots,\chi)
 \end{align*}
 (We used Proposition 8.5.1).
@@ -1261,7 +1261,7 @@ $\bullet$ If $r$ is even, $\chi^r = \varepsilon$, so $J_0(\chi,\chi,\cdots,\chi)
 
 By Theorem 3, $J(\chi,\chi,\cdots,\chi) g(\chi^{r-1}) = g(\chi)^{r-1}$, and  $g(\chi^{r-1}) = g(\chi)$, so
 $$J(\chi,\chi,\cdots,\chi)=g(\chi)^{r-2}.$$
-$g(\chi)^2 = \chi(-1) p$, therefore $\chi^{r-2} = \chi(-1)^{(r/2)-1} p^{(r/2)-1} = (-1)^{((p-1)/2) (r/2-1)}p^{(r/2)-1)}$. So
+$g(\chi)^2 = \chi(-1) p$, therefore $g(\chi)^{r-2} = \chi(-1)^{r/2-1} p^{r/2-1} = (-1)^{((p-1)/2) (r/2-1)}p^{(r/2-1)}$. So
 $$N(x_1^2+x_2^2+\cdots+x_r^2=0)  = p^{r-1}+(-1)^{\frac{p-1}{2} \frac{r}{2}} (p-1)p^{\frac{r}{2}-1}.$$
 (Verified in C++ with small values of $p$ and $r$.)
 
@@ -1285,14 +1285,14 @@ $$
 Write $\chi$ the Legendre character.
 \begin{align*}
 N(a_1x_1^2+\cdots+a_r x_r^2=1)&=\sum\limits_{a_1u_1+\cdots+a_r u_r=1}N(x_1^2=u_1)\cdots N(x_r^2=u_r)\\
-&=\sum\limits_{a_1u_1+\cdots+a_r u_r=1}(1+\chi(u_1)\cdots(1+\chi(u_r))  \hspace{0.5cm}(v_i = a_i u_i)\\
+&=\sum\limits_{a_1u_1+\cdots+a_r u_r=1}(1+\chi(u_1))\cdots(1+\chi(u_r))  \hspace{0.5cm}(v_i = a_i u_i)\\
 &=\sum\limits_{v_1+\cdots+v_r=1}(1+\chi(a_1)^{-1}\chi(v_1))\cdots(1+\chi(a_r^{-1})\chi(v_r))\\
 &=p^{r-1} + \chi(a_1^{-1})\cdots\chi(a_r^{-1})J(\chi,\chi,\cdots,\chi).
 \end{align*}
 
 $\chi(a_i^{-1}) = \overline{\chi(a_i)} = \chi(a_i) = \legendre{a_i}{p}.$
 
-$J(\chi,\chi,\cdots,\chi)$ is computed in Chapter 5 Section 6. We obtain
+$J(\chi,\chi,\cdots,\chi)$ is computed in Chapter 8 Section 6. We obtain
 $$
 \left\{
 \begin{array}{ccll}
@@ -1311,7 +1311,7 @@ $$
 \begin{proof}
 Let $A_r = \{x \in \mathbb{F}_p \ \vert \ x^d=r\}$
 
-Then  $\mathbb{F}_p = \coprod_r A_r$, thus
+Then  $\mathbb{F}_p = \bigcup_r A_r$, thus
 
 $$\sum\limits_{x\in \mathbb{F}_p} \zeta^{ax^d} = \sum\limits_{r \in \mathbb{F}_p} \sum\limits_{x \in A_r} \zeta^{a x^d} = \sum\limits_{r \in \mathbb{F}_p} \vert A_r\vert \zeta^{ar}= \sum\limits_{r \in \mathbb{F}_p} m(r)\zeta^{ar},$$
 
@@ -1345,7 +1345,7 @@ $$\sum_{x\in \mathbb{F}_p} \zeta^{a x^d} = \sum_{\chi^d=\varepsilon,\, \chi\neq 
 }
 
 \begin{proof}
-Let $A_r= \{(x_1,x_2,\cdots,x_n)\in\mathbb{F}_p^n \ \vert \ f(x_1,x_2,\cdots,x_n)=r\}$. Then $\mathbb{F}_p^n = \coprod\limits_{r\in\mathbb{F}_p} A_r$, so, for all $a \in \mathbb{F}_p$,
+Let $A_r= \{(x_1,x_2,\cdots,x_n)\in\mathbb{F}_p^n \ \vert \ f(x_1,x_2,\cdots,x_n)=r\}$. Then $\mathbb{F}_p^n = \bigcup_{r\in\mathbb{F}_p} A_r$, so, for all $a \in \mathbb{F}_p$,
 \begin{align*}
 \sum\limits_{(x_1,x_2,\cdots,x_n) \in \mathbb{F}_p^n} \zeta^{af(x_1,x_2,\cdots,x_n)} 
 &=\sum\limits_{r\in \mathbb{F}_p} \sum\limits_{(x_1,x_2,\cdots,x_n) \in A_r}  \zeta^{ar}\\
@@ -1491,7 +1491,7 @@ Then $J(\chi,\rho) = -3+2i, a = -3$.
 
 $$N=p-1+2a=6.$$
 
-$2a=-6, -(-1)^{\frac{13-1}{4}} \binom{6}{3} = 20$ et $-6\equiv20\pmod {13}$.
+$2a=-6, -(-1)^{\frac{13-1}{4}} \binom{6}{3} = 20$ and $-6\equiv20\pmod {13}$.
 
 $\bullet$ If $p=17$, $g = 3$,  $\chi(g) = i$, $J(\chi,\rho) = -1+4i, a=-1$.
 
@@ -1499,7 +1499,7 @@ $$N = p-1+2a = 14.$$
 
 $2a=-2, -(-1)^{\frac{17-1}{4}} \binom{8}{4} =-70 \equiv -2\pmod{17}$.
 
-$\bullet$ Si $p=29$, $g = 3$,  $\chi(g) = i$, $J(\chi,\rho) = 5+2i, a=5$.
+$\bullet$ If $p=29$, $g = 3$,  $\chi(g) = i$, $J(\chi,\rho) = 5+2i, a=5$.
 
 $$N = p-1+2a = 38.$$
 
