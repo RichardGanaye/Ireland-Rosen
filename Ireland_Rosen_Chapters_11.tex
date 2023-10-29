@@ -1105,7 +1105,7 @@ A summable family $(u_i)_{i \in I}$, where $I$ is a countable set, can be summed
 \end{align}
 \bigskip
 
-After these preliminaries, we can show that the family $\left(\lambda(f) t^{\deg(f)} \right)_{f \in M}$ is summable.% and similarly the family $\left(1 - \lambda(f) t^{\deg(f)}\right)_{f \in I}$ is multipliable.
+After these preliminaries, we can show that the family $\left(\lambda(f) t^{\deg(f)} \right)_{f \in M}$ is summable.
 
 If $\varepsilon >0$, let $N$ be an integer such that $2^{-N} < \varepsilon$, and consider the set $J_\varepsilon$ of monic polynomials $f$ such that $\deg(f) \leq N$. Then $J_\varepsilon$ is a finite set, and for all $f \in I \setminus J$, $\deg(f) >N$,  so that $ ||\lambda(f) t^{\deg(f)}|| = 2^{-\deg(f)} \leq 2^{-N} < \varepsilon$.
 
@@ -1166,6 +1166,44 @@ $$\sum_{f \in M_m} \lambda(f) t^{\deg(f)} = \prod_{i=1}^m \left( 1 - \lambda(f_i
 \sum_{f \in M} \lambda(f) t^{\deg(f)} = \prod_{f \in I} (1 - \lambda(f) t^{\deg(f)})^{-1}.\\
 \end{align*}
 
+\end{proof}
+
+
+\paragraph{Ex. 11.20}{\it If in Theorem 2 we consider the base field to be $F_s$ instead of $F$, we get a different zeta function, $Z_f^{(s)}(u)$. Show that $Z_f^{(s)}(u)$ and $Z_f(u)$ are related by the equation $Z_f^{(s)}(u^s) = Z_f(u)Z_f(\rho u)\cdots Z_f(\rho^{s-1} u)$, where $\rho = e^{2i\pi/s}$.
+}
+
+\begin{proof}
+Let $\Omega$ be an algebraic closure of $\F_p$ and write $\F_q$ for the unique subfield of $\Omega$ with cardinality $q$, if $q$ is a power of $p$. Here $F = \F_q$, and $F_s = \F_{q^s}$. Recall that the function zeta only depends on the cardinality of the finite field, not on the choice of this field (see Exercise 3).
+
+Then 
+$$Z_f^{(s)}(u) = \exp \left( \sum_{t=1}^\infty \frac{N_t^{(s)} u^t}{t} \right),$$
+where $N_t^{(s)}$ is the number of points of $\overline{H}_f(\F_{q^{st}})$, because the degree of $\F_{q^{st}}$ over $\F_{q^s}$ is
+$$[\F_{q^{st}} : \F_{q^s}] = \frac{[\F_{q^{st}} : \F_q]}{[\F_{q^s} : \F_q]} = \frac{st}{s} = t.$$
+ Therefore $N_t^{(s)} = N_{st}$,  where as usual $N_s$ is the number of points of $\overline{H}_f(\F_q)$. This gives
+$$Z_f^{(s)}(u) = \exp \left( \sum_{t=1}^\infty \frac{N_{st} u^t}{t} \right).$$
+
+Now, since $\ln(Z_f(u)) = \sum\limits_{k=0}^\infty N_k \frac{u^k}{k}$, we obtain
+$$\ln(Z_f(\rho^j u)) = \sum_{k=0}^\infty N_k\, \rho^j \, \frac{u^k}{k},\qquad j = 0,1,\ldots,s-1.$$
+The sum of these $s$ equalities gives
+$$\sum_{j=0}^{s-1} \ln(Z_f(\rho^j u)) = \sum_{k=0}^\infty N_k \left( \sum_{j=0}^{s-1} \rho^{kj} \right) \frac{u^k}{k}.$$
+Moreover,
+$$
+ \sum_{j=0}^{s-1} \rho^{kj} =
+\left\{
+\begin{array}{ll}
+\frac{1 - \rho^{ks}}{1-\rho^k} = 0 & \text{if } s \nmid k,\\
+ s & \text{otherwise.}
+\end{array}
+\right.
+$$
+Therefore
+\begin{align*}
+\sum_{j=0}^{s-1} \ln(Z_f(\rho^j u)) &= \sum_{s \mid k} N_k \, s \frac{u^k}{k}\\
+&= \sum_{t = 1}^\infty  N_{st} \frac{u^{st}}{t}\qquad (k = st)\\
+&=\ln(Z_f^{(s)}(u^s)).
+\end{align*}
+To conclude,
+$$Z_f(u^s) = Z_f(u) Z_f(\rho u) \cdots Z_f(\rho^{s-1} u),\qquad (\rho = e^{2i\pi/s}).$$
 \end{proof}
 \end{document}
 
