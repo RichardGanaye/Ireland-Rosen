@@ -415,7 +415,7 @@ Since $\Z[\omega]$ is a PID, the factorization in primes is unique. Here $2$ is 
 $$|a+ b \omega|^2  =4^s \iff a+b \omega \in \{-2^s, -1 - 2^s \omega, -2^s \omega, 2^s, 1 + 2^s \omega, 2^s \omega\}.$$
 
 Moreover, we know that $a \equiv -1 \pmod 3,\ b \equiv 0 \pmod 3$ (generalization of Proposition 8.3.4.). Therefore $$J(\chi_s,\chi_s) = a + b \omega = -(-2)^s,$$
-and similarly $J(\chi_s^2,\chi_s^2) = -(-2)^s$.  This gives
+and similarly $J(\chi_s^2,\chi_s^2) = -(-2)^s$ (this proves particular cases of the Hasse-Davenport relation, which we have not used here).  This gives
 $$N_s = 4^s + 1 -2 (-2)^{s}.$$
 For $s = 1$, we find anew $N_1 = 9$.
 
@@ -1205,6 +1205,101 @@ Therefore
 To conclude,
 $$Z_f(u^s) = Z_f(u) Z_f(\rho u) \cdots Z_f(\rho^{s-1} u),\qquad (\rho = e^{2i\pi/s}).$$
 \end{proof}
+
+
+\paragraph{Ex. 11.21}{\it In Exercise 6 we considered the equation $x_0^3 + x_1^3 + x_2^3 = 0$ over the field with four elements. Consider the same equation over the field with two elements. The trouble here is that $2 \not \equiv 1 \pmod 3$ and so our usual calculations do not work. Prove that in every extension of $\Z/2\Z$ of odd degree every element is a cube and that every extension of even degree, $3$ divides the order of the multiplicative group. Use this information to calculate the zeta function over $\Z/2\Z$. [Answer: $(1+ 2u^2)/(1-u)(1-2u)$.]
+}
+
+\begin{proof} Consider the extension $\F_{2^s}$ of degree $s$ over $\F_2$.
+\item[$\bullet$] If $s = 2k+1$ is odd, then $2^s - 1 = 2^{2k+1} - 1 \equiv 1 \pmod 3$, thus $d = (2^s-1) \wedge 3 = 1$. An element $a \in \F_{2^s}^*$ is a cube if and only if $a^{(2^s-1)/d} = 1$, that is $a^{2^s-1} = 1$, which is true for all elements $a \in \F_{2^s}^*$ (and $0 = 0^3$). So every element is a cube. The number of solutions of $a^3 = 1$ is $N(a^3 = 1) =d = 1$, thus every element of $\F_{2^s}$ is the cube of a unique element.
+
+\item[$\bullet$] If $s = 2k$ is even, then $2^s - 1 = 2^{2k}- 1 \equiv 0 \pmod 3$, thus $d = (2^s-1) \wedge 3 = 3$. So $3 \mid 2^s-1 = |\F_{2^s}^*|$. Therefore there exists a character $\chi_s$ of order $3$ in $\F_{2^s}$.
+
+\bigskip
+
+We can now compute $N_s$.
+
+\item[$\bullet$] If $s = 2k+1$ is odd, in the field $\F_{2^s}$,
+\begin{align*}
+N(x_0^3 + x_1^3 + x_2^3 = 0) &= \sum_{a+b+c = 0} N(x_0^3 = a) N(x_1^3 = b) N(x_2^3 = c)\\
+&= \sum_{a+b+c = 0} \\
+&= 2^{2s}.
+\end{align*}
+Thus the number of projective points of $\overline{H}_f(\F_{2^s})$ is
+$$N_s = \frac{2^{2s}- 1}{2^s -1} = 2^s + 1\qquad (s \text{ odd}).$$
+(Alternatively, we can compute the number of affine points, which is $N(y_0^3 +y_1^3 = -1) = N(a+b = -1) = 2^s$, and add a unique point $[0,-1,1]$ at infinity, since $a^3 = -1$ has exactly one solution $-1$. We obtain anew $N_s = 2^s +1$.)
+
+\item[$\bullet$]  If $s = 2k$ is even, in the field $\F_{2^s}$,
+\begin{align*}
+N(x_0^3 + x_1^3 + x_2^3 = 0) &= \sum_{a+b+c = 0} N(x_0^3 = a) N(x_1^3 = b) N(x_2^3 = c)\\
+&= \sum_{a+b+c = 0} \sum_{i=0}^2 \chi_s^i (a) \sum_{j=0}^2 \chi_s^j (b) \sum_{k=0}^2 \chi_s^k(c)\\
+&=\sum_{(i,j,k) \in \gcro 0, 2 \dcro^3} \ \sum_{a+b+c = 0} \chi_s^i (a) \chi_s^j (b)\chi_s^k(c)\\
+&=\sum_{(i,j,k) \in \gcro 0, 2 \dcro^3} J_0(\chi_s^i, \chi_s^j, \chi_s^k).
+\end{align*}
+Using the generalization of Proposition 8.5.1, with $J_0(\varepsilon,\varepsilon,\varepsilon) = 2^{2s}$, we obtain
+\begin{align*}
+N(x_0^3 + x_1^3 + x_2^3 = 0) &= 2^{2s} + \sum_{(i,j,k) \in A} J_0(\chi_s^i, \chi_s^j, \chi_s^k),
+\end{align*}
+where $A$ is the set of $(i,j,k) \in  \{1,2\}^3$ such that $i+j+k  \equiv 0 \pmod 3$, that is $(1,1,1)$ and $(2,2,2)$. Thus
+$$N = N(x_0^3 + x_1^3 + x_2^3 = 0) = 2^{2s} + J_0(\chi_s,\chi_s,\chi_s) + J_0(\chi_s^2,\chi_s^2,\chi_s^2).$$
+Thus the number of projective points is
+$$N_s = \frac{N-1}{2^s - 1} = 2^s + 1 +\frac{1}{2^s - 1}(J_0(\chi_s,\chi_s,\chi_s) + J_0(\chi_s^2,\chi_s^2,\chi_s^2)).$$
+Moreover, the same Proposition 8.5.2 gives, using $\chi_s(-1) = \chi_s(1) = 1$,
+\begin{align*}
+J_0(\chi_s,\chi_s,\chi_s)  &= (2^s-1) J(\chi_s,\chi_s)\\
+&= (2^s -1) \frac{g(\chi_s)^2}{g(\chi_s^2)}\\
+&= (2^s -1) \frac{g(\chi_s)^3}{g(\chi_s) g(\chi_s^{-1})}\\
+&= (2^s - 1) \frac{g(\chi_s)^3}{2^s}.\\
+\end{align*}
+This gives
+$$\frac{1}{2^s - 1} J_0(\chi_s,\chi_s,\chi_s)  = \frac{1}{2^s} g(\chi_s)^3.$$
+(This is also formula (2) in Theorem 2 of Chapter 10). This is the same for $\chi_s^2$, thus
+$$N_s = 2^s +1 + \frac{1}{2^s} ( g(\chi_s)^3 + g(\chi_s^2)^3).$$
+We choose a character $\chi$ of order $3$ on $\F_4 = \F_{2^2}$, given by
+$$
+\begin{array}{c|cccc|}
+t & 0 & 1 & a & a^2\\
+\hline
+\chi(t) & 0 & 1 & \omega & \omega^2
+\end{array}
+$$
+where $a$ is a generator of $\F_4$.
+We can take $\chi_s = \chi \circ \mathrm{N}_{\F_{2^s}/ \F_{2^2}}$ (this makes sense since $2 \mid s$, so that $\F_{2^2}$ is a subfield of $\F_{2^s} = \F_{2^{2k}}$).
+
+Since $\F_{2^s}$ is an extension of degree $s/2$ of $\F_4$, the Hasse-Davenport relation shows that 
+$$g(\chi_s) = -(-g(\chi))^{s/2}.$$
+The computations of $g(\chi)$ and $g(\chi^2)$ are given in Exercise 6. We obtained 
+$$g(\chi) = g(\chi^2) = 2.$$
+Then
+$$N_s = 2^s +1  - 2(-2)^{\frac{s}{2}}.$$
+
+These two results can be written under the form
+$$
+\left\{
+\begin{array}{lll}
+N_{2k+1} &= 2^{2k+1} +1& (k \geq 0),\\
+N_{2k} &= 2^{2k}+1 - 2 (-2)^k& (k \geq 1).
+\end{array}
+\right.
+$$
+We can compute $Z_f(u)$.
+\begin{align*}
+\ln(Z_f(u)) &= \sum_{k=1}^\infty N_{2k} \frac{u^{2k}}{2k} + \sum_{k=0}^\infty N_{2k+1} \frac{u^{2k+1}}{2k+1}\\
+&= \sum_{k=1}^\infty \left(2^{2k} + 1 - 2(-2)^k \right) \frac{u^{2k}}{2k} + \sum_{k=0}^\infty \left( 2^{2k+1} + 1\right) \frac{u^{2k+1}}{2k+1}\\
+&= \left(  \sum_{k=1}^\infty 2^{2k}  \frac{u^{2k}}{2k}  +  \sum_{k=0}^\infty 2^{2k+1} \frac{u^{2k+1}}{2k+1} \right) +  \left(  \sum_{k=1}^\infty \frac{u^{2k}}{2k}  +  \sum_{k=0}^\infty\frac{u^{2k+1}}{2k+1} \right)  -2  \sum_{k=1}^\infty(-2)^k \frac{u^{2k}}{2k} \\
+&=  \sum_{l=1}^\infty 2^l \frac{u^l}{l} +  \sum_{l=1}^\infty  \frac{u^l}{l} - \sum_{k=1}^\infty \frac{(-2u^2)^k}{k}\\
+&= - \ln(1-2u) - \ln(1-u) + \ln( 1 + 2u^2).
+\end{align*}
+Therefore
+$$Z_f(u) = \frac{1 + 2u^2}{(1-u)(1-2u)}.$$
+\end{proof}
+Note: Using Exercise 20, we obtain anew the result of Exercise 6. Here $s = 2$, and $\rho = e^{2\pi i/s} = e^{i \pi} = -1$. This gives
+\begin{align*}
+Z_f^{(2)}(u^2) &= Z_f(u) Z_f(-u)\\
+&= \frac{1+2u^2}{(1-u)(1-4u)} \frac{1+2u^2}{(1+u)(1+4u)}\\
+&= \frac{(1 + 2u^2)^2}{(1 - u^2)(1 - 4u^2)}.
+\end{align*}
+Therefore the function zeta of $f (x_0,x_1,x_2) = x_0^3+x_1^3+x_2^3$ with base field $\F_4$ is $$Z_f^{(2)}(u) = \frac{(1 + 2u)^2}{(1-u)(1-4u)}.$$
 \end{document}
 
 
