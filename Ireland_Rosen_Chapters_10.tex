@@ -680,9 +680,9 @@ $$
 $$
 We will show that the linear map $\varphi$ is bijective.
 
-If $\gamma \in \ker(\varphi)$, then $\mathrm{tr}(\gamma \omega_1) = \ldots, \mathrm{tr}(\gamma \omega_n) = 0$. If $y$ is any element in $\F_q$, then $y = b_1 \omega_1+\cdots + b_n \omega_n$, where $b_1,\ldots, b_n \in \F_p$. Then  $\mathrm{tr}(\gamma y) = b_1 \mathrm{tr}(\gamma \omega_1) + b_n \mathrm{tr}(\omega_n) = 0$, which gives
+If $\gamma \in \ker(\varphi)$, then $\mathrm{tr}(\gamma \omega_1) = \ldots, \mathrm{tr}(\gamma \omega_n) = 0$. If $y$ is any element in $\F_q$, then $y = b_1 \omega_1+\cdots + b_n \omega_n$, where $b_1,\ldots, b_n \in \F_p$. Then  $\mathrm{tr}(\gamma y) = b_1 \mathrm{tr}(\gamma \omega_1) + b_n \mathrm{tr}(\gamma \omega_n) = 0$, which gives
 $$\forall y \in \F_q,\ \mathrm{tr}(\gamma y ) = 0.$$ 
-Reasoning by contradiction suppose that $\gamma \ne 0$. Since $\mathrm{tr}$ maps $\F_q$ onto $\F_p$( Proposition 10.3.1.(d)), there is some $\delta \in \F_q$ such that $\mathrm{tr}(\delta) = 1$. If $y = \delta \gamma^{-1}$, then $0 = \mathrm{tr}(\gamma y) = \mathrm{tr}(\delta) = 1$. This is a contradiction, so $y = 0$, and this proves $\ker(\varphi) = \{0\}$.
+Reasoning by contradiction suppose that $\gamma \ne 0$. Since $\mathrm{tr}$ maps $\F_q$ onto $\F_p$( Proposition 10.3.1.(d)), there is some $\delta \in \F_q$ such that $\mathrm{tr}(\delta) = 1$. If $y = \delta \gamma^{-1}$, then $0 = \mathrm{tr}(\gamma y) = \mathrm{tr}(\delta) = 1$. This is a contradiction, so $\gamma = 0$, and this proves $\ker(\varphi) = \{0\}$.
 
 Moreover $\mathrm{dim}_{\F_p} (\F_q) = \mathrm{dim}_{\F_p}(\F_p)^n = n$, thus $\varphi$ is a bijection.
 
