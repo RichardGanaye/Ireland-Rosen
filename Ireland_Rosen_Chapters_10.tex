@@ -214,8 +214,8 @@ To conclude, if $l \not \subset \mathscr {C}$, then $|l \cap \mathscr{C}| \leq n
 
 \begin{proof}
 If $M = (a_{i,j})_{1\leq i \leq n, 1\leq j \leq n} \in M_n(F)$, 
-$$M \in \mathrm{SL}_n(F) \iff \sum_{\sigma \in S_n} \mathrm{sgn}(\sigma) a_{\sigma(1)1}\cdots a_{\sigma(n)n}.$$
-if $f(x_{1,1},\ldots,x_{n,n}) = \sum\limits_{\sigma \in S_n} \mathrm{sgn}(\sigma) x_{\sigma(1)1}\cdots x_{\sigma(n)n}$, then  $M \in \mathrm{SL}_n(F)$ if and only if ${f(a_{1,1}, \ldots,a_{n,n}) = 0}$, where $f$ is a non zero polynomial, since it contains the non zero term $x_{1,1}\cdots x_{n,n}$. Therefore $\mathrm{SL}_n(F)$ is an hypersurface of $M_n(F)$.
+$$M \in \mathrm{SL}_n(F) \iff \sum_{\sigma \in S_n} \mathrm{sgn}(\sigma) a_{\sigma(1)1}\cdots a_{\sigma(n)n}-1=0.$$
+if $f(x_{1,1},\ldots,x_{n,n}) = \sum\limits_{\sigma \in S_n} \mathrm{sgn}(\sigma) x_{\sigma(1)1}\cdots x_{\sigma(n)n}-1$, then  $M \in \mathrm{SL}_n(F)$ if and only if ${f(a_{1,1}, \ldots,a_{n,n}) = 0}$, where $f$ is a non zero polynomial, since it contains the non zero term $x_{1,1}\cdots x_{n,n}$. Therefore $\mathrm{SL}_n(F)$ is an hypersurface of $M_n(F)$.
 
 Since a matrix $M \in M_n(F)$ is inversible if and only if its columns $(C1,\ldots,C_n)$ is a basis of $F^n$, the number of matrices in $\mathrm{GL}_n(F)$ is $$(q^n-1)(q^n-q)\cdots(q^n-q^{n-1}).$$Indeed we choose $C_1$ between $(q^n-1)$ non zero scalars, then we choose $C_2$ between the $q^n-q$ vectors $v  \not \in \langle C_1 \rangle$. If $C_1,\ldots,C_k$ are chosen, we take $C_{k+1}$ between the $q^n -q^k$ vectors $v \not \in \langle C_1,\ldots,C_k \rangle$. At last, we choose $C_n \not \in \langle C_1,\ldots C_{n-1}\rangle$. This gives
 $$|\mathrm{GL}_n(F)| = (q^n-1)(q^n-q)\cdots(q^n-q^{n-1}).$$
