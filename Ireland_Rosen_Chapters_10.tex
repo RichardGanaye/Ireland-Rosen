@@ -712,7 +712,7 @@ Here $\psi : \F_q \to \C$ is defined by $\psi(\alpha) = \zeta_p^{\mathrm{tr}(\al
 $$g_\alpha(\chi) = \sum_{t \in \F_q} \chi(t) \psi(\alpha t) = \sum_{t \in \F_q} \chi(t) \zeta_p^{\mathrm{tr}(\alpha t)}.$$
 
 First we generalize Proposition 8.1.2, with the same proof.
-If $\chi \ne \varepsilon$, there an $a \in \F_q^*$ such that $\chi(a) \ne 1$. Then, if $T = \sum_{t\in \F_q} \chi(t)$, then
+If $\chi \ne \varepsilon$, there is an $a \in \F_q^*$ such that $\chi(a) \ne 1$. Then, if $T = \sum_{t\in \F_q} \chi(t)$, then
 $$\chi(a) T = \sum_{t\in \F_q} \chi(a) \chi(t) = \sum_{t\in \F_q} \chi(at) = \sum_{s \in \F_q} \chi(s) = T.$$
 Since $\chi(a) T = T$ and $\chi(a) \ne 1$, it follows that $T=0$. This proves, for a non trivial character $\chi$,
 $$g_0(\chi) =\sum_{t\in \F_q} \chi(t) = 0.$$
@@ -728,7 +728,7 @@ If $\alpha \in \F_q^*$,
 Since $|\chi(\alpha)| = 1$, $\chi(\alpha)^{-1} = \overline{\chi(\alpha)}$, thus
 $$g_\alpha(\chi) = \overline{\chi(\alpha)} g(\chi).$$
 
-\item[(b)] Since $(-1)^2 = 1$, $(\chi(-1))^2 = 1$, thus $\chi(-1) \pm 1$ is real, therefore $\overline{\chi(-1)} = \chi(-1)$. This gives
+\item[(b)] Since $(-1)^2 = 1$, $(\chi(-1))^2 = 1$, thus $\chi(-1) = \pm 1$ is real, therefore $\overline{\chi(-1)} = \chi(-1)$. This gives
 \begin{align*}
 \overline{g(\chi)} &= \sum_{t \in \F_q} \overline{\chi(t)} \zeta_p^{-\mathrm{tr}( t)}\\
 &=\sum_{t \in \F_q} \overline{\chi(-1) \chi(-t)}  \zeta_p^{-\mathrm{tr}( t)}\\
@@ -765,7 +765,7 @@ Therefore,
  S &=  q \sum_{x \in \F_q} \sum_{y \in \F_q}\chi(x) \overline{\chi(y)}  \delta(x,y) \\
  &= q \sum_{x \in \F_q} \chi(x) \overline{\chi(x)}\\
  \end{align*}
-Since $\chi(x) \overline{\chi(x)} = 1$ if $x \ne 0$, et $\chi(x) \overline{\chi(x)} = 0$ if $x = 0$, we obtain
+Since $\chi(x) \overline{\chi(x)} = 1$ if $x \ne 0$, and $\chi(x) \overline{\chi(x)} = 0$ if $x = 0$, we obtain
  $$S = q(q-1).$$
 \end{enumerate}
 The comparison of these two results gives
@@ -798,8 +798,8 @@ g(\chi) g(\chi^{-1}) &= \chi(-1) g(\chi) \overline{g(\chi)}\\
 \begin{proof} By definition,
 \begin{align*}
 \hat{\chi}(s) &= \frac{1}{q} \sum_{t\in \F_q} \chi(t) \overline{\psi(st)}\\
-&= \frac{1}{q} \sum_{t\in \F_q} \chi(t) \zeta_p(-\mathrm{tr}(st)\\
-&= \frac{1}{q} \sum_{t\in \F_q} \chi(t) \zeta_p(\mathrm{tr}((-s)t)\\
+&= \frac{1}{q} \sum_{t\in \F_q} \chi(t) \zeta_p(-\mathrm{tr}(st))\\
+&= \frac{1}{q} \sum_{t\in \F_q} \chi(t) \zeta_p(\mathrm{tr}((-s)t))\\
 &=  \frac{1}{q} \,  g_{-s}(\chi).
 \end{align*}
 
