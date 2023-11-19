@@ -147,7 +147,7 @@ Here $F = \F_p$, and $F_s = \F_{p^s}$.
 
 To calculate $N_s$, we calculate the number of points at infinity (such that $x_0 = 0$), and the numbers of affine points of the curve $\overline{H}_f(\F_{p^s})$ associate to $$f(x_0,x_1,x_2,x_3) = x_0 x_1 - x_2 x_3.$$
 \begin{enumerate}
-\item[$\bullet$] To estimate le number of points at infinity, we calculate first the cardinality of the set
+\item[$\bullet$] To estimate the number of points at infinity, we calculate first the cardinality of the set
 $$U = \{(\alpha_0,\alpha_1,\alpha_2,\alpha_3) \in F_s^4 \mid \alpha_0 \alpha_1 - \alpha_2  \alpha_3 =0,\ \alpha_0 = 0\}.$$ 
 
 Then $\alpha_1$ takes an arbitrary value $a \in F_s$. Write
@@ -157,7 +157,7 @@ Then $U_a =\{(\alpha_0,\alpha_1,\alpha_2,\alpha_3) \in  F_s^4\mid  \alpha_0 = 0,
 A &= \{(\alpha_0,\alpha_1,\alpha_2,\alpha_3) \in U_a \mid \alpha_2 = 0\},\\
 B &= \{(\alpha_0,\alpha_1,\alpha_2,\alpha_3) \in U_a \mid \alpha_3 = 0\}.
 \end{align*}
-Since $\alpha_0,\alpha_1,\alpha_3$ are fixed in $A$, the map $A \to F_s$ defined by $(\alpha_0,\alpha_1,\alpha_2,\alpha_3) \mapsto \alpha_3$ is a bijection, therefore $|A| = p^s$, and similarly $|B| = p^s$. But $A\cap B = \{(0,0,0,0)\}$, thus 
+Since $\alpha_0,\alpha_1,\alpha_2$ are fixed in $A$, the map $A \to F_s$ defined by $(\alpha_0,\alpha_1,\alpha_2,\alpha_3) \mapsto \alpha_3$ is a bijection, therefore $|A| = p^s$, and similarly $|B| = p^s$. But $A\cap B = \{(0,0,0,0)\}$, thus 
 $$|U_a| = |A| + |B| - |A\cap B| = 2p^s - 1.$$
 Since $U$ is the disjoint union of the $U_a$, thus
 $$|U| = \sum_{a\in F_s} |U_a| = \sum_{a\in F_s} (2p^s - 1) = 2p^{2s} - p^s .$$
