@@ -86,13 +86,13 @@ There is a primitive element $\alpha' \in E'$, i.e. such that $E' = F(\alpha')$.
 
 Let $f(x) \in F[x]$ be the minimal polynomial of $\alpha'$ over $F$. Then
 $$E' = F(\alpha') \simeq F(x)/(f(x)),$$
-where the isomorphism $\sigma_1 : F(\alpha') \to F(x)/(f(x))$ maps $\alpha'$ to $\overline{x} = x + (f(x))$, and maps $a \in F$ on $\overline{a} = a + (f(x))$.
+where the isomorphism $\sigma_1 : F(\alpha') \to F(x)/(f(x))$ maps $x \in F(\alpha')$ to $\overline{x} = x + (f(x))$, and maps $a \in F$ on $\overline{a} = a + (f(x))$.
 Since $\alpha'$ is a root of $x^{q^s} -x$, $f(x) \mid x^{q^s} - x$. 
 
  $E$ is a field with $q^s$ elements, so we have $x^{q^s} - x = \prod_{\alpha \in E} (x-\alpha)$. Thus $f(x) \mid \prod_{\alpha \in E} (x-\alpha)$, where $\deg(f(x)) = s \geq 1$, so $f(\alpha) = 0$ for some $\alpha \in E$. The polynomial $f$ being irreducible over $F$, $f$ is the minimal polynomial of $\alpha$ over $F$, thus $F(\alpha) \simeq F[x]/(f(x))$ is a field with $q^s$ elements. 
  Since $F(\alpha) \subset E$, and $|F(\alpha)| = |E|$, we conclude $E = F(\alpha)$, therefore
 $$E = F(\alpha) \simeq F(x)/(f(x)),$$
-where the isomorphism $\sigma_2 : F(\alpha) \to F(x)/(f(x))$ maps $\alpha$ to $\overline{x} = x + (f(x))$, and maps $a \in F$ on $\overline{a} = a + (f(x))$.
+where the isomorphism $\sigma_2 : F(\alpha) \to F(x)/(f(x))$ maps $x \in F(\alpha)$ to $\overline{x} = x + (f(x))$, and maps $a \in F$ on $\overline{a} = a + (f(x))$.
 
 Then  $\sigma = \sigma_1^{-1} \circ \sigma_2 : E \to E'$ is an isomorphism, and $\sigma(a) = a$ for all $a \in F$.
  
@@ -107,7 +107,7 @@ Then  $\sigma = \sigma_1^{-1} \circ \sigma_2 : E \to E'$ is an isomorphism, and 
  \end{array}
  \right.
  $$
- Then $\overline{\sigma}$ is injective: if $[\sigma(\alpha_0),\ldots,\sigma(\alpha_n)] = [\sigma(\beta_0),\ldots,\sigma(\beta_n)]$, then there is $\lambda \in F^*$ such that $\beta_i = \lambda \sigma(\alpha_i) = \sigma(\lambda)\sigma(\alpha_i) = \sigma(\lambda \alpha_i,\ i = 0,\ldots,n$, thus $\beta_i = \lambda \alpha_i$, which proves $[\alpha_0,\ldots,\alpha_n] = [\beta_0,\ldots,\beta_n]$.
+ Then $\overline{\sigma}$ is injective: if $[\sigma(\alpha_0),\ldots,\sigma(\alpha_n)] = [\sigma(\beta_0),\ldots,\sigma(\beta_n)]$, then there is $\lambda \in F^*$ such that $\sigma(\beta_i) = \lambda \sigma(\alpha_i) = \sigma(\lambda)\sigma(\alpha_i) = \sigma(\lambda \alpha_i),\ i = 0,\ldots,n$, thus $\beta_i = \lambda \alpha_i$, which proves $[\alpha_0,\ldots,\alpha_n] = [\beta_0,\ldots,\beta_n]$.
  
  If $[\gamma_0,\ldots,\gamma_n] $ is any projective point of $P^n(E')$, then 
  $$[\gamma_0,\ldots,\gamma_n] = \overline{\sigma}([\sigma^{-1}(\gamma_0),\ldots,\sigma^{-1}(\gamma_n)]).$$ This proves that $\overline{\sigma}$ is surjective. So $\overline{\sigma}$ is a bijection.
@@ -135,7 +135,7 @@ Conversely,
 If we define $\alpha_i = \sigma^{-1}(\beta_i),\ i=0,\ldots,n$, then $[\alpha_0,\ldots,\alpha_n] \in \overline{H}_f(E)$, and $[\beta_0,\ldots,\beta_n] = \overline{\sigma}([\alpha_0,\ldots,\alpha_n]) \in \overline{\sigma}(\overline{H}_f(E))$. This shows $ \overline{H}_f(E') \subset \overline{\sigma}(\overline{H}_f(E))$, and so
 $$\overline{\sigma}(\overline{H}_f(E)) = \overline{H}_f(E').$$
 Since $\overline{\sigma}$ is a bijection,
-$$N_s = |\overline{H}_f(E)| = |\overline{H}_f(E') = N'_s.$$
+$$N_s = |\overline{H}_f(E)| = |\overline{H}_f(E')| = N'_s.$$
 So $N_s$ is independent of the choice of the extension $F_s = \F_{q^s}$ of $F = \F_q$.
 \end{proof}
 
