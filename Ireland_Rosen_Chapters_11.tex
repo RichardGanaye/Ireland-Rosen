@@ -86,13 +86,13 @@ There is a primitive element $\alpha' \in E'$, i.e. such that $E' = F(\alpha')$.
 
 Let $f(x) \in F[x]$ be the minimal polynomial of $\alpha'$ over $F$. Then
 $$E' = F(\alpha') \simeq F(x)/(f(x)),$$
-where the isomorphism $\sigma_1 : F(\alpha') \to F(x)/(f(x))$ maps $x \in F(\alpha')$ to $\overline{x} = x + (f(x))$, and maps $a \in F$ on $\overline{a} = a + (f(x))$.
+where the isomorphism $\sigma_1 : F(\alpha') \to F(x)/(f(x))$ maps $x \in F(\alpha')$ to $\overline{x} = x + (f(x))$, and maps $a \in F$ on $\overline{a} = a + (f(a))$.
 Since $\alpha'$ is a root of $x^{q^s} -x$, $f(x) \mid x^{q^s} - x$. 
 
  $E$ is a field with $q^s$ elements, so we have $x^{q^s} - x = \prod_{\alpha \in E} (x-\alpha)$. Thus $f(x) \mid \prod_{\alpha \in E} (x-\alpha)$, where $\deg(f(x)) = s \geq 1$, so $f(\alpha) = 0$ for some $\alpha \in E$. The polynomial $f$ being irreducible over $F$, $f$ is the minimal polynomial of $\alpha$ over $F$, thus $F(\alpha) \simeq F[x]/(f(x))$ is a field with $q^s$ elements. 
  Since $F(\alpha) \subset E$, and $|F(\alpha)| = |E|$, we conclude $E = F(\alpha)$, therefore
 $$E = F(\alpha) \simeq F(x)/(f(x)),$$
-where the isomorphism $\sigma_2 : F(\alpha) \to F(x)/(f(x))$ maps $x \in F(\alpha)$ to $\overline{x} = x + (f(x))$, and maps $a \in F$ on $\overline{a} = a + (f(x))$.
+where the isomorphism $\sigma_2 : F(\alpha) \to F(x)/(f(x))$ maps $x \in F(\alpha)$ to $\overline{x} = x + (f(x))$, and maps $a \in F$ on $\overline{a} = a + (f(a))$.
 
 Then  $\sigma = \sigma_1^{-1} \circ \sigma_2 : E \to E'$ is an isomorphism, and $\sigma(a) = a$ for all $a \in F$.
  
