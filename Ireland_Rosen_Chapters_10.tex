@@ -64,7 +64,7 @@ where the $x_i$ are variables, and $g_i$ are polynomials in $x_1,\ldots,x_{n-1}$
 
 For all $(a_1,\ldots,a_n) \in K^n$, 
 $$0 = f(a_1,\ldots,a_n) = \sum_{i=0}^{s-1} g_i(a_1,\ldots,a_{n-1}) a_n^i.$$
-From the result for $n=1$, we obtain that the polynomial $ \sum_{i=0}^{s-1} g_i(a_1,\ldots,x_{a-1}) x_n^i$ is null, thus for all $(a_1,\ldots,a_{n-1}) \in K^{n-1}$,
+From the result for $n=1$, we obtain that the polynomial $ \sum_{i=0}^{s-1} g_i(a_1,\ldots,a_{n-1}) x_n^i$ is null, thus for all $(a_1,\ldots,a_{n-1}) \in K^{n-1}$,
 $$ g_i(x_1,\ldots,x_{n-1}) = 0.$$
 The induction hypothesis shows that $ g_i(x_1,\ldots,x_{n-1}) = 0$, thus $f(x_1,\ldots,x_n) = 0$.
 \end{proof}
@@ -89,7 +89,7 @@ $$
 $$
 Then $\psi$ is well-defined. Indeed, if $(0,x_1,\ldots,x_n) \sim (0,y_1,\ldots,y_n)$, then there is some $\lambda \in F^*$ such that $(0,y_1,\ldots,y_n) = \lambda (0,x_1,\ldots,x_n)$, thus $(y_1,\ldots,y_n) = \lambda (x_1,\ldots,x_n)$, and $ {[}x_1,\ldots,x_n{]} =  {[}y_1,\ldots,y_n{]}$.
 
-If $ \psi({[}0,x_1,\ldots,x_n{]}) =  \psi({[}0,y_1,\ldots,y_n{]})$, then ${[}(x_1,\ldots,x_n){]} = {[}(y_1,\ldots,y_n){]}$, so ther is some $\lambda \in F^*$ such that $y_i = \lambda x_i, \ i=1,\ldots,n$. Since $0 = \lambda 0$, $(0,y_1,\ldots,y_n) \sim (0,x_1,\ldots,x_n)$, therefore ${[}0,x_1,\ldots,x_n{]} = {[}0,y_1,\ldots,y_n{]}$, so $\psi$ is injective.
+If $ \psi({[}0,x_1,\ldots,x_n{]}) =  \psi({[}0,y_1,\ldots,y_n{]})$, then ${[}(x_1,\ldots,x_n){]} = {[}(y_1,\ldots,y_n){]}$, so there is some $\lambda \in F^*$ such that $y_i = \lambda x_i, \ i=1,\ldots,n$. Since $0 = \lambda 0$, $(0,y_1,\ldots,y_n) \sim (0,x_1,\ldots,x_n)$, therefore ${[}0,x_1,\ldots,x_n{]} = {[}0,y_1,\ldots,y_n{]}$, so $\psi$ is injective.
 
 Moreover if ${[}x_1,\ldots,x_n{]} $ is any projective point of $P_{n-1}(F)$, then ${[}x_1,\ldots,x_n{]}  =  \psi({[}0,x_1,\ldots,x_n{]})$ so $\psi$ is surjective. 
 
@@ -112,7 +112,7 @@ This gives another proof of the formula for the number of points in $P_n(F)$.
 \begin{proof}
 Define the hyperplane $\overline{K}$ by
 $$\overline{K} = \{[x_0,\ldots,x_n] \in P_n(F) \mid a_0 x_0 + \cdots +a_n x_n = 0\},$$
-where $(a_0,\ldots,a_n) \ne (0,\ldots,0)$ (if $(a_0,\ldots,a_n) \ne (0,\ldots,0)$, then $\overline{K} = P_n(F)$ is not a hyperplane). Note that, if $(x_0,\ldots,x_n) \sim (y_0,\ldots,y_n)$, there is $\lambda \in F^*$ such that $y_i = \lambda x_i,\ i=0,\ldots,n$, thus $a_0 x_0 + \cdots +a_n x_n \iff 0 = a_0 y_0 + \cdots +a_n y_n = 0$, so that the condition does'nt depends of the choice of the representative of the projective point.
+where $(a_0,\ldots,a_n) \ne (0,\ldots,0)$ (if $(a_0,\ldots,a_n) = (0,\ldots,0)$, then $\overline{K} = P_n(F)$ is not a hyperplane). Note that, if $(x_0,\ldots,x_n) \sim (y_0,\ldots,y_n)$, there is $\lambda \in F^*$ such that $y_i = \lambda x_i,\ i=0,\ldots,n$, thus $a_0 x_0 + \cdots +a_n x_n \iff 0 = a_0 y_0 + \cdots +a_n y_n = 0$, so that the condition doesn't depend on the choice of the projective point representative.
 
 Since $(a_0,\ldots,a_n) \ne (0,\ldots,0)$, suppose, without loss of generality, that $a_0 \ne 0$. Consider
 $$
@@ -188,14 +188,14 @@ $$0 =  f\left(\alpha + \beta \frac{u_2}{u_1},1,\frac{u_2}{u_1}\right).$$
 \end{proof}
 Consider the formal polynomial $P(x) = f\left(\alpha + \beta x,1,x\right) \in F[x].$
 
-Then $\deg(P) \leq n$. If $P \ne 0$, then $P$ has at most $n$ roots $\lambda_1,\ldots,\lambda_k$, where $k\leq n$. In this case, $u_2 = \lambda_i u_1$ and $u_0  =\alpha u_1 + \beta u_2 = u_1\left(1 +\alpha \lambda_i\right)$, therefore
-$$[u_0,u_1,u_2]  =\left [1 +\alpha \lambda_i, 1 , \lambda_i \right],\ 1\leq i \leq k,$$ 
+Then $\deg(P) \leq n$. If $P \ne 0$, then $P$ has at most $n$ roots $\lambda_1,\ldots,\lambda_k$, where $k\leq n$. In this case, $u_2 = \lambda_i u_1$ and $u_0  =\alpha u_1 + \beta u_2 = u_1\left(\alpha + \beta \lambda_i\right)$, therefore
+$$[u_0,u_1,u_2]  =\left [\alpha + \beta \lambda_i, 1 , \lambda_i \right],\ 1\leq i \leq k,$$ 
 so that $\mathscr{C}$ and $l$ have at most $n$ points in common.
 
 Therefore, if $|\mathscr {C} \cap l| >n$, then $P =  f\left(\alpha + \beta x,1,x\right) = 0$.
 
 Similarly, by exchanging the roles of $u_1,u_2$, if $|\mathscr {C} \cap l| >n$, then $u_2 \ne 0$, and
-$$0 = f\left (\alpha \frac{u_1}{u_2} + \beta, u\frac{u_1}{u_2}, 1\right ),$$
+$$0 = f\left (\alpha \frac{u_1}{u_2} + \beta, \frac{u_1}{u_2}, 1\right ),$$
 so that the same reasoning gives $Q(x) = f(\alpha x + \beta, x ,1) = 0$.
 
  Let $[v_0,v_1,v_2]$ be any point on $l$. 
@@ -214,8 +214,8 @@ To conclude, if $l \not \subset \mathscr {C}$, then $|l \cap \mathscr{C}| \leq n
 
 \begin{proof}
 If $M = (a_{i,j})_{1\leq i \leq n, 1\leq j \leq n} \in M_n(F)$, 
-$$M \in \mathrm{SL}_n(F) \iff \sum_{\sigma \in S_n} \mathrm{sgn}(\sigma) a_{\sigma(1)1}\cdots a_{\sigma(n)n}.$$
-if $f(x_{1,1},\ldots,x_{n,n}) = \sum\limits_{\sigma \in S_n} \mathrm{sgn}(\sigma) x_{\sigma(1)1}\cdots x_{\sigma(n)n}$, then  $M \in \mathrm{SL}_n(F)$ if and only if ${f(a_{1,1}, \ldots,a_{n,n}) = 0}$, where $f$ is a non zero polynomial, since it contains the non zero term $x_{1,1}\cdots x_{n,n}$. Therefore $\mathrm{SL}_n(F)$ is an hypersurface of $M_n(F)$.
+$$M \in \mathrm{SL}_n(F) \iff \sum_{\sigma \in S_n} \mathrm{sgn}(\sigma) a_{\sigma(1)1}\cdots a_{\sigma(n)n}-1=0.$$
+if $f(x_{1,1},\ldots,x_{n,n}) = \sum\limits_{\sigma \in S_n} \mathrm{sgn}(\sigma) x_{\sigma(1)1}\cdots x_{\sigma(n)n}-1$, then  $M \in \mathrm{SL}_n(F)$ if and only if ${f(a_{1,1}, \ldots,a_{n,n}) = 0}$, where $f$ is a non zero polynomial, since it contains the non zero term $x_{1,1}\cdots x_{n,n}$. Therefore $\mathrm{SL}_n(F)$ is an hypersurface of $M_n(F)$.
 
 Since a matrix $M \in M_n(F)$ is inversible if and only if its columns $(C1,\ldots,C_n)$ is a basis of $F^n$, the number of matrices in $\mathrm{GL}_n(F)$ is $$(q^n-1)(q^n-q)\cdots(q^n-q^{n-1}).$$Indeed we choose $C_1$ between $(q^n-1)$ non zero scalars, then we choose $C_2$ between the $q^n-q$ vectors $v  \not \in \langle C_1 \rangle$. If $C_1,\ldots,C_k$ are chosen, we take $C_{k+1}$ between the $q^n -q^k$ vectors $v \not \in \langle C_1,\ldots,C_k \rangle$. At last, we choose $C_n \not \in \langle C_1,\ldots C_{n-1}\rangle$. This gives
 $$|\mathrm{GL}_n(F)| = (q^n-1)(q^n-q)\cdots(q^n-q^{n-1}).$$
@@ -292,7 +292,7 @@ which proves that $\overline{a}$ is singular.
 }
 \begin{proof}
 If $f(x,y) = y^2 - x^3$, then
-$$\frac{\partial f}{\partial x}  = 3x^2,\qquad \frac{\partial f}{\partial y} = 2y,$$
+$$\frac{\partial f}{\partial x}  = -3x^2,\qquad \frac{\partial f}{\partial y} = 2y,$$
 thus $\partial f/\partial x (0,0) = \partial f/\partial y (0,0) = 0$. This proves that the origin is a singular point for the curve defined by $f$.
 \end{proof}
 
@@ -553,7 +553,7 @@ $$\prod_{i=0}^{m-1} (\omega_1^{q^i} \alpha_1 + \cdots + \omega_m^{q^i} \alpha_m)
 Then for some $i \in \gcro 0,m-1 \dcro$,
 $$\omega_1^{q^i} \alpha_1 + \cdots + \omega_m^{q^i} \alpha_m = 0.$$
 Applying $F^{m-i}$ to this equality, and using $F(\alpha_i) = \alpha_i$, we obtain
-$$\omega_1^{q^m} \alpha_1 + \cdots + \omega_m^{q^m} \alpha_m.$$
+$$\omega_1^{q^m} \alpha_1 + \cdots + \omega_m^{q^m} \alpha_m = 0.$$
 Since $\omega_i^{q^m} = \omega_i,\ i = 1,\ldots,m$, this gives
 $$\omega_1 \alpha_1 + \cdots + \omega_m \alpha_m = 0.$$
 Since $\omega_1,\omega_2,\ldots,\omega_m$ is a basis for $F_{q^m}$ over $F_q$, this proves
@@ -567,7 +567,7 @@ Note : this proves that we cannot extend the Chevalley's Theorem to the forms of
 \paragraph{Ex. 10.18} {\it Let $g_1,g_2,\ldots,g_m\in \F_q[x_1,x_2,\ldots,x_n]$ be homogeneous polynomials of degree $d$ and assume that $n>md$. Prove that there is nontrivial common zero. [Hint: Let $f$ be as in Exercise 17 and consider the polynomial $f(g_1(x_1,\ldots,x_n),\ldots,g_m(x_1,\ldots,x_m))$.]
 }
 \begin{proof}
-Consider the polynomial $h = f(g_1(x_1,\ldots,x_n),\ldots,g_m(x_1,\ldots,x_m) \in \F_q[x_1,\ldots,x_m]$. Then $h$ is homogeneous of degree $md$. Since $n > md$, the Chevalley's Theorem (Corollary of Theorem 1) shows that there is a non trivial zero $\overline{a} = (\alpha_1,\ldots,\alpha_m) \in \F_q^m\setminus\{(0,\ldots,0)\}$ of $h$, so that
+Consider the polynomial $h = f(g_1(x_1,\ldots,x_n),\ldots,g_m(x_1,\ldots,x_m)) \in \F_q[x_1,\ldots,x_m]$. Then $h$ is homogeneous of degree $md$. Since $n > md$, the Chevalley's Theorem (Corollary of Theorem 1) shows that there is a non trivial zero $\overline{a} = (\alpha_1,\ldots,\alpha_m) \in \F_q^m\setminus\{(0,\ldots,0)\}$ of $h$, so that
 $$f(g_1(\alpha_1,\ldots,\alpha_n),\ldots,g_m(\alpha_1,\ldots,\alpha_m)) = 0,\qquad (\alpha_1,\ldots,\alpha_m) \in \F_q^m \setminus\{(0,\ldots,0)\}.$$
 Then
 $$f(\beta_1,\ldots,\beta_m) = 0,\qquad \text{where } \beta_i = g_1(\alpha_1,\ldots,\alpha_n) \in \F_q.$$
@@ -583,7 +583,7 @@ If $\alpha \in \F^p$, then $\alpha^p = \alpha$, thus $\alpha^{p^k} = \alpha$ for
 
 In the extension $\F_{p^n}$ of $\F_p$, for all $\alpha \in \F_p$,
 \begin{align*}
-\mathrm{tr}(\alpha) &= \alpha + \alpha^p + \alpha^{p^2}+ \cdots + \alpha^{p^{m-1}}\\
+\mathrm{tr}(\alpha) &= \alpha + \alpha^p + \alpha^{p^2}+ \cdots + \alpha^{p^{n-1}}\\
 &= n \alpha.
 \end{align*}
 If the characteristic $p$ divides $n$, then $n = 0$ in $\F_{p^n}$, thus $\mathrm{tr}(\alpha) = 0$ for all $\alpha \in \F_p$.
@@ -630,7 +630,7 @@ $$T(a \alpha + b \gamma) = a \alpha + b \gamma - (a^p \alpha^p +b^p \beta^p) = a
 
 If $\gamma = T(\beta) = \beta - \beta^p$ is in $\mathrm{Im}(T)$, then
 \begin{align*}
-\mathrm{tr}(\gamma) &= \mathrm{tr}\beta) - \mathrm{tr}(\beta^p)\\
+\mathrm{tr}(\gamma) &= \mathrm{tr}(\beta) - \mathrm{tr}(\beta^p)\\
 &=\left(\beta + \beta^p + \beta^{p^2} + \cdots + \beta^{p^{n-1}}\right) - \left(\beta^p + \beta^{p^2} + \beta^{p^3} + \cdots + \beta^{p^{n}}\right)\\
 &=\beta - \beta^{p^n}\\
 &=0.
@@ -642,7 +642,7 @@ Moreover,
 $$\beta \in \ker(T) \iff \beta = \beta^p \iff \beta \in \F_p,$$
 so that $\ker(T) = \F_p$.
 
-Using anew the rank theorem on $T$, we obtain
+Using newly the rank theorem on $T$, we obtain
 \begin{align*}
 \mathrm{dim}_{\F_p} \mathrm{Im}(T) &= \mathrm{dim}_{\F_p} \F_{p^n} - \mathrm{dim}_{\F_p} \ker(T)\\
 &=n-1.
@@ -680,9 +680,9 @@ $$
 $$
 We will show that the linear map $\varphi$ is bijective.
 
-If $\gamma \in \ker(\varphi)$, then $\mathrm{tr}(\gamma \omega_1) = \ldots, \mathrm{tr}(\gamma \omega_n) = 0$. If $y$ is any element in $\F_q$, then $y = b_1 \omega_1+\cdots + b_n \omega_n$, where $b_1,\ldots, b_n \in \F_p$. Then  $\mathrm{tr}(\gamma y) = b_1 \mathrm{tr}(\gamma \omega_1) + b_n \mathrm{tr}(\omega_n) = 0$, which gives
+If $\gamma \in \ker(\varphi)$, then $\mathrm{tr}(\gamma \omega_1) = \ldots, \mathrm{tr}(\gamma \omega_n) = 0$. If $y$ is any element in $\F_q$, then $y = b_1 \omega_1+\cdots + b_n \omega_n$, where $b_1,\ldots, b_n \in \F_p$. Then  $\mathrm{tr}(\gamma y) = b_1 \mathrm{tr}(\gamma \omega_1) + b_n \mathrm{tr}(\gamma \omega_n) = 0$, which gives
 $$\forall y \in \F_q,\ \mathrm{tr}(\gamma y ) = 0.$$ 
-Reasoning by contradiction suppose that $\gamma \ne 0$. Since $\mathrm{tr}$ maps $\F_q$ onto $\F_p$( Proposition 10.3.1.(d)), there is some $\delta \in \F_q$ such that $\mathrm{tr}(\delta) = 1$. If $y = \delta \gamma^{-1}$, then $0 = \mathrm{tr}(\gamma y) = \mathrm{tr}(\delta) = 1$. This is a contradiction, so $y = 0$, and this proves $\ker(\varphi) = \{0\}$.
+Reasoning by contradiction suppose that $\gamma \ne 0$. Since $\mathrm{tr}$ maps $\F_q$ onto $\F_p$( Proposition 10.3.1.(d)), there is some $\delta \in \F_q$ such that $\mathrm{tr}(\delta) = 1$. If $y = \delta \gamma^{-1}$, then $0 = \mathrm{tr}(\gamma y) = \mathrm{tr}(\delta) = 1$. This is a contradiction, so $\gamma = 0$, and this proves $\ker(\varphi) = \{0\}$.
 
 Moreover $\mathrm{dim}_{\F_p} (\F_q) = \mathrm{dim}_{\F_p}(\F_p)^n = n$, thus $\varphi$ is a bijection.
 
@@ -695,9 +695,9 @@ Then, if $x$ is any element in $\F_q$, we can write $x = a_1 \omega_1 + \cdots +
 &=\zeta^{a_1 \mathrm{tr}(\gamma \omega_1) + \cdots + a_n \mathrm{tr}(\gamma\omega_n)}\\
 &=\zeta^{\mathrm{tr}(\gamma x)}.
 \end{align*}
-\end{proof}
-If $\psi$ is a group homomorphism from $\F_q$ to $\C^*$, then there is a $\gamma \in \F_q$ such that $\psi(x) = \zeta^{\mathrm{tr}(\gamma x)}$ for all $x \in \F_q$.
 
+If $\psi$ is a group homomorphism from $\F_q$ to $\C^*$, then there is a $\gamma \in \F_q$ such that $\psi(x) = \zeta^{\mathrm{tr}(\gamma x)}$ for all $x \in \F_q$.
+\end{proof}
 
 \paragraph{Ex. 10.22} {\it If $g_\alpha(\chi)$ is a Gauss sum on $F$, defined in section 3, show that
 \begin{enumerate}
@@ -712,7 +712,7 @@ Here $\psi : \F_q \to \C$ is defined by $\psi(\alpha) = \zeta_p^{\mathrm{tr}(\al
 $$g_\alpha(\chi) = \sum_{t \in \F_q} \chi(t) \psi(\alpha t) = \sum_{t \in \F_q} \chi(t) \zeta_p^{\mathrm{tr}(\alpha t)}.$$
 
 First we generalize Proposition 8.1.2, with the same proof.
-If $\chi \ne \varepsilon$, there an $a \in \F_q^*$ such that $\chi(a) \ne 1$. Then, if $T = \sum_{t\in \F_q} \chi(t)$, then
+If $\chi \ne \varepsilon$, there is an $a \in \F_q^*$ such that $\chi(a) \ne 1$. Then, if $T = \sum_{t\in \F_q} \chi(t)$, then
 $$\chi(a) T = \sum_{t\in \F_q} \chi(a) \chi(t) = \sum_{t\in \F_q} \chi(at) = \sum_{s \in \F_q} \chi(s) = T.$$
 Since $\chi(a) T = T$ and $\chi(a) \ne 1$, it follows that $T=0$. This proves, for a non trivial character $\chi$,
 $$g_0(\chi) =\sum_{t\in \F_q} \chi(t) = 0.$$
@@ -728,7 +728,7 @@ If $\alpha \in \F_q^*$,
 Since $|\chi(\alpha)| = 1$, $\chi(\alpha)^{-1} = \overline{\chi(\alpha)}$, thus
 $$g_\alpha(\chi) = \overline{\chi(\alpha)} g(\chi).$$
 
-\item[(b)] Since $(-1)^2 = 1$, $(\chi(-1))^2 = 1$, thus $\chi(-1) \pm 1$ is real, therefore $\overline{\chi(-1)} = \chi(-1)$. This gives
+\item[(b)] Since $(-1)^2 = 1$, $(\chi(-1))^2 = 1$, thus $\chi(-1) = \pm 1$ is real, therefore $\overline{\chi(-1)} = \chi(-1)$. This gives
 \begin{align*}
 \overline{g(\chi)} &= \sum_{t \in \F_q} \overline{\chi(t)} \zeta_p^{-\mathrm{tr}( t)}\\
 &=\sum_{t \in \F_q} \overline{\chi(-1) \chi(-t)}  \zeta_p^{-\mathrm{tr}( t)}\\
@@ -765,7 +765,7 @@ Therefore,
  S &=  q \sum_{x \in \F_q} \sum_{y \in \F_q}\chi(x) \overline{\chi(y)}  \delta(x,y) \\
  &= q \sum_{x \in \F_q} \chi(x) \overline{\chi(x)}\\
  \end{align*}
-Since $\chi(x) \overline{\chi(x)} = 1$ if $x \ne 0$, et $\chi(x) \overline{\chi(x)} = 0$ if $x = 0$, we obtain
+Since $\chi(x) \overline{\chi(x)} = 1$ if $x \ne 0$, and $\chi(x) \overline{\chi(x)} = 0$ if $x = 0$, we obtain
  $$S = q(q-1).$$
 \end{enumerate}
 The comparison of these two results gives
@@ -798,8 +798,8 @@ g(\chi) g(\chi^{-1}) &= \chi(-1) g(\chi) \overline{g(\chi)}\\
 \begin{proof} By definition,
 \begin{align*}
 \hat{\chi}(s) &= \frac{1}{q} \sum_{t\in \F_q} \chi(t) \overline{\psi(st)}\\
-&= \frac{1}{q} \sum_{t\in \F_q} \chi(t) \zeta_p(-\mathrm{tr}(st)\\
-&= \frac{1}{q} \sum_{t\in \F_q} \chi(t) \zeta_p(\mathrm{tr}((-s)t)\\
+&= \frac{1}{q} \sum_{t\in \F_q} \chi(t) \zeta_p(-\mathrm{tr}(st))\\
+&= \frac{1}{q} \sum_{t\in \F_q} \chi(t) \zeta_p(\mathrm{tr}((-s)t))\\
 &=  \frac{1}{q} \,  g_{-s}(\chi).
 \end{align*}
 

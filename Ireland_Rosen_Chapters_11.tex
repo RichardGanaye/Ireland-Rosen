@@ -53,7 +53,7 @@
 \begin{proof}
 Here $f(u) = 1+a_1u +a_2u^2+\cdots \in \C[[u]]$ is a formal series in the variable $u$.
 
-We suppose that $f(u) = P(u)/Q(u)$, where we may assume, after simplification, that the two polynomials are relatively prime. Then $P(1)/Q(1) =1$. Write $c = P(1) = Q(1) \in F$.
+We suppose that $f(u) = P(u)/Q(u)$, where we may assume, after simplification, that the two polynomials are relatively prime. Then $P(0)/Q(0) =1$. Write $c = P(0) = Q(0) \in F$.
 
 If $c = 0$, then $u\mid P(u)$ and $u \mid Q(u)$. This is impossible since $P \wedge Q = 1$. So $c \ne 0$.
 
@@ -86,13 +86,13 @@ There is a primitive element $\alpha' \in E'$, i.e. such that $E' = F(\alpha')$.
 
 Let $f(x) \in F[x]$ be the minimal polynomial of $\alpha'$ over $F$. Then
 $$E' = F(\alpha') \simeq F(x)/(f(x)),$$
-where the isomorphism $\sigma_1 : F(\alpha') \to F(x)/(f(x))$ maps $\alpha'$ to $\overline{x} = x + (f(x))$, and maps $a \in F$ on $\overline{a} = a + (f(x))$.
+where the isomorphism $\sigma_1 : F(\alpha') \to F(x)/(f(x))$ maps $x \in F(\alpha')$ to $\overline{x} = x + (f(x))$, and maps $a \in F$ on $\overline{a} = a + (f(a))$.
 Since $\alpha'$ is a root of $x^{q^s} -x$, $f(x) \mid x^{q^s} - x$. 
 
  $E$ is a field with $q^s$ elements, so we have $x^{q^s} - x = \prod_{\alpha \in E} (x-\alpha)$. Thus $f(x) \mid \prod_{\alpha \in E} (x-\alpha)$, where $\deg(f(x)) = s \geq 1$, so $f(\alpha) = 0$ for some $\alpha \in E$. The polynomial $f$ being irreducible over $F$, $f$ is the minimal polynomial of $\alpha$ over $F$, thus $F(\alpha) \simeq F[x]/(f(x))$ is a field with $q^s$ elements. 
  Since $F(\alpha) \subset E$, and $|F(\alpha)| = |E|$, we conclude $E = F(\alpha)$, therefore
 $$E = F(\alpha) \simeq F(x)/(f(x)),$$
-where the isomorphism $\sigma_2 : F(\alpha) \to F(x)/(f(x))$ maps $\alpha$ to $\overline{x} = x + (f(x))$, and maps $a \in F$ on $\overline{a} = a + (f(x))$.
+where the isomorphism $\sigma_2 : F(\alpha) \to F(x)/(f(x))$ maps $x \in F(\alpha)$ to $\overline{x} = x + (f(x))$, and maps $a \in F$ on $\overline{a} = a + (f(a))$.
 
 Then  $\sigma = \sigma_1^{-1} \circ \sigma_2 : E \to E'$ is an isomorphism, and $\sigma(a) = a$ for all $a \in F$.
  
@@ -107,7 +107,7 @@ Then  $\sigma = \sigma_1^{-1} \circ \sigma_2 : E \to E'$ is an isomorphism, and 
  \end{array}
  \right.
  $$
- Then $\overline{\sigma}$ is injective: if $[\sigma(\alpha_0),\ldots,\sigma(\alpha_n)] = [\sigma(\beta_0),\ldots,\sigma(\beta_n)]$, then there is $\lambda \in F^*$ such that $\beta_i = \lambda \sigma(\alpha_i) = \sigma(\lambda)\sigma(\alpha_i) = \sigma(\lambda \alpha_i,\ i = 0,\ldots,n$, thus $\beta_i = \lambda \alpha_i$, which proves $[\alpha_0,\ldots,\alpha_n] = [\beta_0,\ldots,\beta_n]$.
+ Then $\overline{\sigma}$ is injective: if $[\sigma(\alpha_0),\ldots,\sigma(\alpha_n)] = [\sigma(\beta_0),\ldots,\sigma(\beta_n)]$, then there is $\lambda \in F^*$ such that $\sigma(\beta_i) = \lambda \sigma(\alpha_i) = \sigma(\lambda)\sigma(\alpha_i) = \sigma(\lambda \alpha_i),\ i = 0,\ldots,n$, thus $\beta_i = \lambda \alpha_i$, which proves $[\alpha_0,\ldots,\alpha_n] = [\beta_0,\ldots,\beta_n]$.
  
  If $[\gamma_0,\ldots,\gamma_n] $ is any projective point of $P^n(E')$, then 
  $$[\gamma_0,\ldots,\gamma_n] = \overline{\sigma}([\sigma^{-1}(\gamma_0),\ldots,\sigma^{-1}(\gamma_n)]).$$ This proves that $\overline{\sigma}$ is surjective. So $\overline{\sigma}$ is a bijection.
@@ -135,7 +135,7 @@ Conversely,
 If we define $\alpha_i = \sigma^{-1}(\beta_i),\ i=0,\ldots,n$, then $[\alpha_0,\ldots,\alpha_n] \in \overline{H}_f(E)$, and $[\beta_0,\ldots,\beta_n] = \overline{\sigma}([\alpha_0,\ldots,\alpha_n]) \in \overline{\sigma}(\overline{H}_f(E))$. This shows $ \overline{H}_f(E') \subset \overline{\sigma}(\overline{H}_f(E))$, and so
 $$\overline{\sigma}(\overline{H}_f(E)) = \overline{H}_f(E').$$
 Since $\overline{\sigma}$ is a bijection,
-$$N_s = |\overline{H}_f(E)| = |\overline{H}_f(E') = N'_s.$$
+$$N_s = |\overline{H}_f(E)| = |\overline{H}_f(E')| = N'_s.$$
 So $N_s$ is independent of the choice of the extension $F_s = \F_{q^s}$ of $F = \F_q$.
 \end{proof}
 
@@ -147,7 +147,7 @@ Here $F = \F_p$, and $F_s = \F_{p^s}$.
 
 To calculate $N_s$, we calculate the number of points at infinity (such that $x_0 = 0$), and the numbers of affine points of the curve $\overline{H}_f(\F_{p^s})$ associate to $$f(x_0,x_1,x_2,x_3) = x_0 x_1 - x_2 x_3.$$
 \begin{enumerate}
-\item[$\bullet$] To estimate le number of points at infinity, we calculate first the cardinality of the set
+\item[$\bullet$] To estimate the number of points at infinity, we calculate first the cardinality of the set
 $$U = \{(\alpha_0,\alpha_1,\alpha_2,\alpha_3) \in F_s^4 \mid \alpha_0 \alpha_1 - \alpha_2  \alpha_3 =0,\ \alpha_0 = 0\}.$$ 
 
 Then $\alpha_1$ takes an arbitrary value $a \in F_s$. Write
@@ -157,7 +157,7 @@ Then $U_a =\{(\alpha_0,\alpha_1,\alpha_2,\alpha_3) \in  F_s^4\mid  \alpha_0 = 0,
 A &= \{(\alpha_0,\alpha_1,\alpha_2,\alpha_3) \in U_a \mid \alpha_2 = 0\},\\
 B &= \{(\alpha_0,\alpha_1,\alpha_2,\alpha_3) \in U_a \mid \alpha_3 = 0\}.
 \end{align*}
-Since $\alpha_0,\alpha_1,\alpha_3$ are fixed in $A$, the map $A \to F_s$ defined by $(\alpha_0,\alpha_1,\alpha_2,\alpha_3) \mapsto \alpha_3$ is a bijection, therefore $|A| = p^s$, and similarly $|B| = p^s$. But $A\cap B = \{(0,0,0,0)\}$, thus 
+Since $\alpha_0,\alpha_1,\alpha_2$ are fixed in $A$, the map $A \to F_s$ defined by $(\alpha_0,\alpha_1,\alpha_2,\alpha_3) \mapsto \alpha_3$ is a bijection, therefore $|A| = p^s$, and similarly $|B| = p^s$. But $A\cap B = \{(0,0,0,0)\}$, thus 
 $$|U_a| = |A| + |B| - |A\cap B| = 2p^s - 1.$$
 Since $U$ is the disjoint union of the $U_a$, thus
 $$|U| = \sum_{a\in F_s} |U_a| = \sum_{a\in F_s} (2p^s - 1) = 2p^{2s} - p^s .$$
@@ -176,6 +176,7 @@ F_s^2 & \to & H_f(F_s)\\
 \end{array}
 \right.
 \qquad
+v
 \left\{
 \begin{array}{ccl}
 H_f(F_s) & \to & F_s^2\\
@@ -659,9 +660,9 @@ therefore
 $$N_1 = q + 1 + \pi + \bar{\pi},\ \mathrm{where}\ \pi = \rho(A) \chi(A) J(\chi,\rho).$$
 Since the orders of $\chi, \rho$, and $\chi \rho$ are $3,2$ and $6$, $\chi \ne \varepsilon, \rho \ne \varepsilon, \chi \rho \ne \varepsilon$, thus Theorem 1 of Chapter 6 gives
 $$J(\chi,\rho) = \frac{g(\chi) g(\rho)}{g(\chi \rho)}, \qquad \pi = \rho(A) \chi(A) \frac{g(\chi) g(\rho)}{g(\chi \rho)}.$$
-Write $\chi' = \chi \circ \mathrm{N}_{F_{q^s}/F_q}, \rho' = \rho \circ \mathrm{N}_{F_{q^s}/F_q}$. Then $\chi', \rho'$ are characters on $F_{q^s}$, and the orders of $\chi', \rho'$ are $3$ and $2$ (by properties (a), (b) of §3). The same reasoning in $F_{q^s}$ gives
+Write $\chi' = \chi \circ \mathrm{N}_{F_{q^s}/F_q}, \rho' = \rho \circ \mathrm{N}_{F_{q^s}/F_q}$. Then $\chi', \rho'$ are characters on $F_{q^s}$, and the orders of $\chi', \rho'$ are $3$ and $2$ (by properties (a), (b) of ¬§3). The same reasoning in $F_{q^s}$ gives
 $$N_s = q^s + 1 + \pi' + \overline{\pi'}, \qquad \pi' = \rho'(A) \chi'(A) \frac{g(\chi') g(\rho')}{g(\chi' \rho')}.$$
-Since $A \in F_q$, the property (c) of §3 gives $\chi'(A) = \chi(A)^s, \rho'(A) = \rho(A)^s$. Using the Hasse-Davenport  Relation, and $(\chi \rho)' = \chi' \rho'$, we obtain
+Since $A \in F_q$, the property (c) of ¬§3 gives $\chi'(A) = \chi(A)^s, \rho'(A) = \rho(A)^s$. Using the Hasse-Davenport  Relation, and $(\chi \rho)' = \chi' \rho'$, we obtain
 \begin{align*}
 \pi' &= \rho'(A) \chi'(A) \frac{g(\chi') g(\rho')}{g(\chi' \rho')}\\
 &=-\rho(A)^s \chi(A)^s \frac{(-g(\chi))^s (-g(\rho))^s}{(-g(\chi \rho))^s}\\
@@ -830,11 +831,11 @@ $$N_1 = p+1 + \overline{\chi(D)} J(\chi,\chi^2) +\chi(D) \overline{J(\chi,\chi^2
 \begin{proof}
 Here $p\equiv1 \pmod 4$, thus $p^s \equiv 1 \pmod 4$. We consider here the two fields $F = \F_p$ and $F_s = \F_{p^s}$, where $|F| = p$ and $F_s = p^s$.
 
-Let $\rho' = \rho \circ \mathrm{N_{F_s/F}}$, and $\chi' = \chi \circ  \mathrm{N_{F_s/F}}$. The results of §3 show that the map $\xi \mapsto \xi' = \xi \circ\mathrm{N_{F_s/F}}$ induces a group isomorphism between the group cyclic $C_n$ of characters on $F$ whose order divides $n$ on the group cyclic $C'_n$ of characters  on $F_s$ whose order divides $n$ (see Exercise 16). Thus the order of $\rho'$ is $2$ and the order of $\chi'$ is $4$, and $\chi'^2 = \rho'$.
+Let $\rho' = \rho \circ \mathrm{N_{F_s/F}}$, and $\chi' = \chi \circ  \mathrm{N_{F_s/F}}$. The results of ¬§3 show that the map $\xi \mapsto \xi' = \xi \circ\mathrm{N_{F_s/F}}$ induces a group isomorphism between the group cyclic $C_n$ of characters on $F$ whose order divides $n$ on the group cyclic $C'_n$ of characters  on $F_s$ whose order divides $n$ (see Exercise 16). Thus the order of $\rho'$ is $2$ and the order of $\chi'$ is $4$, and $\chi'^2 = \rho'$.
 
 Replacing $\chi, rho$ by $\chi',\rho'$, and $p$ by $p^s$, we obtain by the same reasoning that the number of projective point of $C_1$ in $\overline{H}_f(F_s)$ is
 $$N_s = p^s+1 + \chi'(-4)\left[\overline{\chi'(D)} J(\chi',\chi'^2) +\chi'(D) \overline{J(\chi',\chi'^2)}\right].$$
-To compute $\chi'(-4)$ and $\chi'(D)$ we use the property (c) of §3. Since $-4$ and $D$ are in $F$,
+To compute $\chi'(-4)$ and $\chi'(D)$ we use the property (c) of ¬§3. Since $-4$ and $D$ are in $F$,
 $$\chi'(-4) = \chi(-4) ^s = 1,\qquad \chi'(D) = \chi(D)^s.$$
 Therefore
 $$N_s = p^s+1 + \overline{\chi(D)}^s J(\chi',\chi'^2) +\chi(D)^s \overline{J(\chi',\chi'^2)}.$$
@@ -915,7 +916,7 @@ $$Z_f(u) = \frac{(1 - (-1)^\frac{p-1}{4} \pi u)(1 - (-1)^\frac{p-1}{4} \overline
 Using $|\pi|^2 = p$, we conclude
 $$Z_f(u) = \frac{(1 - 2(-1)^\frac{p-1}{4} a u + p u^2)(1 -2au + pu^2)^2}{(1-u)(1-pu)}, \qquad a = \mathrm{Re}(\pi) \in \Z,\ \pi = -J(\chi,\chi^2) \in \Z[i].$$
 
-Note: By §5  (or Ex. 8.18), we know that $a$ is the unique integer such that $p=a^2+b^2$ where $a+bi \equiv 1 \pmod{2+2i}$. With a simpler formulation $p = a^2 + b^2$, and $a \equiv 1 \pmod 4$ if $4 \mid b$, $a \equiv -1 \pmod 4$ if $4 \nmid b$. So we can verify these results for small primes $p$.
+Note: By ¬§5  (or Ex. 8.18), we know that $a$ is the unique integer such that $p=a^2+b^2$ where $a+bi \equiv 1 \pmod{2+2i}$. With a simpler formulation $p = a^2 + b^2$, and $a \equiv 1 \pmod 4$ if $4 \mid b$, $a \equiv -1 \pmod 4$ if $4 \nmid b$. So we can verify these results for small primes $p$.
 \end{proof}
 
 
@@ -925,14 +926,14 @@ Note: By §5  (or Ex. 8.18), we know that $a$ is the unique integer such that $p=
 $\bullet$ If $p=13$, the only finite points on the curve are the $4$ points $(0,1)(0,-1),(1,0),(-1,0)$. We must add the $2$ points  at infinity to obtain the $6$ points $[t,x,y]$ 
 $$[0,1,0],[0,0,1], [1,0,1],[1,0,-1],[1,1,0],[1,-1,0].$$
 
-Since $p = 13 = 3^2 + 2^2$, where $4 \nmid 2$ and $3 \equiv -1 \pmod 4$, here $a = 3$, thus the formula of §5 gives
+Since $p = 13 = 3^2 + 2^2$, where $4 \nmid 2$ and $3 \equiv -1 \pmod 4$, here $a = 3$, thus the formula of ¬§5 gives
 $$N_1 = p-1 - 2a = 6.$$
 
 $\bullet$ If $p = 17$, the finite points on the curve, given by the following naive program, are the 12 points
        	$$(0, 1), (0, 16), (1, 0), (2, 8), (2, 9), (8, 2), (8, 15), (9, 2), (9,15), (15, 8), (15, 9), (16, 0).$$
 With the two points at infinity, we obtain $14$ projective points.
 
-Here $p = 1^2 + 4^2$, and $p \mid b=4$, $a = 1 \equiv 1 \pmod 4$, thus $a = 1$, and the formula of §5 gives
+Here $p = 1^2 + 4^2$, and $p \mid b=4$, $a = 1 \equiv 1 \pmod 4$, thus $a = 1$, and the formula of ¬§5 gives
 $$N_1 = p-1-2a =14.$$
 The formula is verified in both cases.
 
@@ -1068,7 +1069,7 @@ J(\chi'_1,\ldots,\chi'_n) &= \frac{[-(-g(\chi_1))^s] [-(-g(\chi_2))^s] \cdots[- 
 
 \bigskip
 
-(The solution of this exercise requires external knowledge on formal power series. To learn more about formal power series, see [Niven, Formal power series],  [Bourbaki, Algebra IV, §4], and [Wikipedia, Formal power series]. About summable families, see [Bourbaki, General Topology, III §5]. )
+(The solution of this exercise requires external knowledge on formal power series. To learn more about formal power series, see [Niven, Formal power series],  [Bourbaki, Algebra IV, ¬§4], and [Wikipedia, Formal power series]. About summable families, see [Bourbaki, General Topology, III ¬§5]. )
 
 \bigskip
 
@@ -1397,7 +1398,7 @@ Next, we show that $E$ is algebraically closed. Let $p(x) = \sum_{k=0}^l a_k x^k
 
 %The generalization of Theorem 2, Chapter 7, shows that
 %$$x^{q^{dN_m}} - x = \prod_{\delta \mid d N_m} F_\delta(x),$$
-%où $F_\delta(x)$ is the product of the monic irreducible polynomials in $E_m[x]$ of degree $\delta$. 
+%o¬ù $F_\delta(x)$ is the product of the monic irreducible polynomials in $E_m[x]$ of degree $\delta$. 
 Then $f(x)$ has a root $\gamma$ in the field $K = E_m[x]/(f(x))$, where $|K| = q^{dN_m}$, so $\gamma$ is a root of $x^{q^{dN_m}} - x$. Since $f(x)$ is the minimal polynomial of $\gamma$ over $E_m$, this proves that $f(x) \mid x^{q^{dN_m}} - x$. If $n = dN_m$, we have seen that if $F_n$ is the subfield of $E$ with $q^n$ elements, then  $x^{q^n} - x =\prod_{\alpha \in F_n} (x - \alpha)$, so that $f(x)$ splits completely over $F_n = F_{dN_m} \subset E$. Therefore $f(x)$ has a root in $E$, and also $p(x)$.
 
 We have proved that $E$ is an algebraic closure of $F$ (with a concrete construction, without the axiom of choice, used in the general proof of the existence of algebraic closure).
