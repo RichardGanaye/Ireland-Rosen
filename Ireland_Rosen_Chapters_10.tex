@@ -163,49 +163,117 @@ Therefore
   f\left(\alpha u_1+ \beta u_2,u_1,u_2\right) &= 0.
 \end{array}
 \right.
-\end{align*}\\
-Let $[u_0,u_1,u_2] \in  \mathscr{C} \cap l $. 
+\end{align*}
 
-We show that $u_1 \ne 0$. If $u_1 = 0$, then $u_0 = \beta u_2$, therefore $[u_0,u_1,u_2] = [\beta u_2, 0, u_2] = [\beta, 0 ,1]$, and $f\left (\beta u_2, 0,u_2\right) = 0$. Therefore $p = [\beta,0,1] \in \mathscr{C} \cap l$.
-
-Since $[1,0,0]$ and $[\beta,0,1]$ are two distinct points of $l$, an equation of $l$ is
-$$
-\begin{vmatrix}
-1 & 0 & 0\\
-\beta & 0 & 1\\
-x_0 & x_1 & x_2
-\end{vmatrix}
-= -x_1,
-$$
-thus an equation of $l$ is given by $x_1$, therefore no equation $a_0 x_0 + a_1 x_1 + a_2 x_2$ of $l$ satisfies $a_0 \ne 0$, and this is in contradiction with $a_0 \ne 0$. We have proved $u_1 \ne 0$.
-
-
+$\bullet$ Suppose first that every point $[u_0,u_1,u_2]$ of $\mathscr {C} \cap l$ is such that $u_1 \ne 0$.
 
 Since $f$ is homogeneous of degree $n$,
 $$0 = u_1^n f\left(\alpha + \beta \frac{u_2}{u_1},1,\frac{u_2}{u_1}\right),$$
 and using $u_1 \ne 0$,
 $$0 =  f\left(\alpha + \beta \frac{u_2}{u_1},1,\frac{u_2}{u_1}\right).$$
-\end{proof}
+
 Consider the formal polynomial $P(x) = f\left(\alpha + \beta x,1,x\right) \in F[x].$
 
-Then $\deg(P) \leq n$. If $P \ne 0$, then $P$ has at most $n$ roots $\lambda_1,\ldots,\lambda_k$, where $k\leq n$. In this case, $u_2 = \lambda_i u_1$ and $u_0  =\alpha u_1 + \beta u_2 = u_1\left(\alpha + \beta \lambda_i\right)$, therefore
-$$[u_0,u_1,u_2]  =\left [\alpha + \beta \lambda_i, 1 , \lambda_i \right],\ 1\leq i \leq k,$$ 
+Then $\deg(P) \leq n$. If $P \ne 0$, then $P$ has at most $n$ roots $\lambda_1,\ldots,\lambda_k$, where $k\leq n$. In this case, $u_2 = \lambda_i u_1$ and $u_0  =\alpha u_1 + \beta u_2 = u_1\left(\alpha +\beta \lambda_i\right)$, therefore
+$$[u_0,u_1,u_2]  =\left [\alpha +\beta \lambda_i, 1 , \lambda_i \right],\ 1\leq i \leq k,$$ 
 so that $\mathscr{C}$ and $l$ have at most $n$ points in common.
 
-Therefore, if $|\mathscr {C} \cap l| >n$, then $P =  f\left(\alpha + \beta x,1,x\right) = 0$.
+Therefore, if $|\mathscr {C} \cap l| >n$, then $P(x) =  f\left(\alpha + \beta x,1,x\right) = 0$.
 
-Similarly, by exchanging the roles of $u_1,u_2$, if $|\mathscr {C} \cap l| >n$, then $u_2 \ne 0$, and
-$$0 = f\left (\alpha \frac{u_1}{u_2} + \beta, \frac{u_1}{u_2}, 1\right ),$$
-so that the same reasoning gives $Q(x) = f(\alpha x + \beta, x ,1) = 0$.
+
+\bigskip
+$\bullet$ Now suppose that some point $[u_0,u_1,u_2] \in \mathscr {C} \cap l$ satisfies $u_1 = 0$. Then $[u_0,u_1,u_2] = [\beta u_2, 0, u_2] = [\beta, 0, 1]$. There is exactly one point on $\mathscr {C} \cap l$ with $u_1 = 0$.
+
+By the previous computation, the other points $[u_0,u_1,u_2] \in \mathscr {C} \cap l$, such that $u_1 \ne 0$, satisfy $$0 =  f\left(\alpha + \beta \frac{u_2}{u_1},1,\frac{u_2}{u_1}\right) = P\left(\frac{u_2}{u_1}\right),$$
+Where $P(x) = f(\alpha + \beta x, 1 ,x)$
+
+In this case, we prove that  $\deg(P) \leq n-1$.
+
+Since $f$ is an homogeneous polynomial, with $\deg(f) = n$, we can write
+$$f(x,y,z) = \sum_{(i,j) \in \gcro 0, n\dcro^2, i + j \leq n} a_{i,j}\,  x^iy^j z^{n-i-j}.$$
+
+
+In the present case, $[\beta, 0,1]$ is on the curve $\mathscr{C}$, thus
+$$\sum_{i=0}^n a_{i,0} \beta^i = 0.$$
+Moreover,
+\begin{align*}
+P(x) &= f(\alpha + \beta x, 1, x)\\
+&=  \sum_{(i,j) \in \gcro 0, n\dcro^2, i + j \leq n} a_{i,j}\, (\alpha + \beta x)^i x^{n-i-j}\\
+&= \sum_{(i,k) \in \gcro 0, n\dcro^2} a_{i, k-i} (\alpha + \beta x)^i x^{n-k}\qquad \qquad (k = i+j).
+\end{align*}
+If $j>0$, then $\deg((\alpha + \beta x)^i x^{n-i-j}) < n$. Therefore the coefficient of $x^n$ in $P(x)$ is $\sum\limits_{i=0}^n a_{i,0} \beta^i = 0$, thus $\deg(P) \leq n-1$.
+If $P\ne 0$, then $P$ has at most $n-1$ roots, and so $\mathscr{C}$ has at most $n-1$ points $[u_0,u_2,u_2]$ such that $u_1 \ne 0$ on $l$. With the unique point $[\beta, 0 ,1]$ such that $u_1= 0$, we obtain at most $n$ points in $ \mathscr {C} \cap l$.
+
+\bigskip
+In both cases, if $| \mathscr {C} \cap l| > n$, then $P(x)  =  f(\alpha + \beta x, 1 ,x) = 0$. We show that this implies that $l \subset \mathscr{C}$.
 
  Let $[v_0,v_1,v_2]$ be any point on $l$. 
  
  If $v_1 \ne 0$,
 $$f(v_0,v_1,v_2) = f(\alpha v_1 + \beta v_2, v_1,v_2) = v_1^n f\left(\alpha + \beta \frac{v_2}{v_1}, 1 ,\frac{v_2}{v_1}\right) = v_1^n P\left (\frac{v_2}{v_1} \right) = 0.$$
 
-If $v_1 = 0$, then $[v_0,v_1,v_2] = [\beta, 0,1] = p$, thus
-$$f(\beta,0,1) = Q(0) =0.$$
+If $v_1 = 0$, then $[v_0,v_1,v_2] = [\beta, 0,1]$. Consider the reciprocal polynomial $Q(x) = x^n P\left(\frac{1}{x}\right)$ of $P(x)$. Then
+\begin{align*}
+Q(x) &= x^n  \sum_{(i,k) \in \gcro 0, n\dcro^2}a_{i, k-i} \left(\alpha + \beta \frac{1}{x}\right)^i \frac{1}{x^{n-k}}\\
+&=\sum_{(i,k) \in \gcro 0, n\dcro^2}a_{i, k-i} \left(\alpha x+ \beta \right)^i x^{n-k}.
+\end{align*}
+If $P = 0$ ,then $Q = 0$, and
+$$f(\beta,0,1) = \sum_{i=0}^n a_{i,0} \beta^i = Q(0) =0.$$
+
 This proves that $l \subset \mathscr{C}$.
+
+To conclude, if $l \not \subset \mathscr {C}$, then $|l \cap \mathscr{C}| \leq n$ : a curve of degree $n$ and a line have at most $n$ points in common unless the line is contained in the curve.
+
+\end{proof}
+
+{\bf Second proof} (with same beginning.)
+
+Let $\mathscr{C}$ be the curve with equation $f(x_0,x_1,x_2) = 0$.
+
+Since $a_0 x_0+a_1x_1+a_2x_2 =0$ is the equation of a line $l$, $(a_0,a_1,a_2) \ne 0$, so that we can suppose without loss of generality that $a_0 \ne 0$. Then 
+\begin{align*}
+[u_0,u_1,u_2] \in &l \iff a_0 u_0+a_1u_1+a_2u_2 =0\\
+& \iff u_0 = -\frac{a_1}{a_0} u_1 - \frac{a_2}{a_0} u_2\\
+&\iff u_0 = \alpha u_1 + \beta u_2,
+\end{align*}
+where $\alpha = -\frac{a_1}{a_0},\ \beta = - \frac{a_2}{a_0}.$
+Therefore
+\begin{align*}
+[u_0,u_1,u_2] \in \mathscr{C} \cap l &\iff 
+\left\{
+\begin{array}{ll}
+  a_0 u_0+a_1u_1+a_2u_2 &=0,\\
+  f(u_0,u_1,u_2) &= 0,
+\end{array}
+\right.\\
+&\iff 
+\left\{
+\begin{array}{ll}
+  u_0 = \alpha u_1+\beta u_2,\\
+  f\left(\alpha u_1+ \beta u_2,u_1,u_2\right) &= 0.
+\end{array}
+\right.
+\end{align*}
+
+Consider the polynomial $g(x,y) = f(\alpha x + \beta y,x, y)$. For all $\lambda \in F$,   $g(\lambda x, \lambda y) = f(\lambda (\alpha x + \beta y), \lambda x , \lambda y) = \lambda^n g(x,y)$, thus $g$ is homogeneous of degree $n$. A point $[u_0,u_1,u_2]$ of $l$ is on $\mathscr{C}$ if and only if  $g(u_1,u_2) = 0$.
+
+Suppose that $|\mathscr{C} \cap l | = m$, and write $[u_0^{(1)},u_1^{(1)},u_2^{(1)}],\ldots, [u_0^{(m)},u_1^{(m)},u_2^{(m)}]$ the $m$ distinct points of $\mathscr{C} \cap l$. Then $1\leq i < j \leq m \Rightarrow (u_1^{(i)},u_2^{(i)}) \not \sim (u_1^{(j)},u_2^{(j)})$ : the $m$ pairs $[u_1^{(i)},u_2^{i}]$ are distinct, since $u_0^{(i)} = \alpha u_1^{(i)} + \beta u_2^{(i)}$.
+
+Then  $g(u_1^{(1)}, u_2^{(1)}) = 0$, where $u_1, u_2$ cannot be $0$ simultaneously . We show first that $g(x,y) = (u_2^{(1)}x - u_1^{(1)}y) h_1(x,y)$, where $h_1\in F[x,y]$ is a homogeneous polynomial.
+
+If $ u_2^{(1)} \ne 0$, then $g\left(\frac{u_1^{(1)}}{ u_2^{(1)}},1\right) = 0$. Therefore $\frac{u_1^{(1)}}{ u_2^{(1)}}$ is a root of the polynomial  $g(t,1) \in F[t]$, thus $g(t,1) = \left(t - \frac{u_1^{(1)}}{ u_2^{(1)}}\right) h(t)$, where $h(t) \in F[t]$.
+
+Then 
+\begin{align*}
+g(x,y) &= y^n g\left(\frac{x}{y},1\right) =y^n  \left(\frac{x}{y} - \frac{u_1^{(1)}}{ u_2^{(1)}}\right) h \left(\frac{x}{y} \right)\\
+&= (u_2^{(1)}x - u_1^{(1)}y) h_1(x,y),
+\end{align*}
+where $h_1(x,y) = \frac{1}{u_1^{(1)}} y^{n-1} h\left(\frac{x}{y}\right)$ is homogeneous of degree $n-1$. Same proof if $u_1^{(1)} \ne 0$.
+Since $u_2^{(1)}u_1^{(2)} - u_1^{(1)} u_2^{(2)} \ne 0$, then $h_1(u_1^{(2}, u_2^{(2)}) = 0$, and we can continue we $h_1$ in place of $g$. By induction
+$$g(x,y) = (u_2^{(1)}x - u_1^{(1)}y)(u_2^{(2)}x - u_1^{(2)}y)\cdots (u_2^{(m)}x - u_1^{(m)}y) h_m(x,y),\qquad h_m(x,y) \in F[x,y].$$
+
+This equality shows that either $g(x,y) = 0$, or $n = \deg(g) \geq m$. This proves that if $m = |\mathscr C \cap l |>n$, then $g(x,y) = 0$. In this case, every point $[u_0,u_1,u_2] \in l$ satisfies
+$f(\alpha u_1 + \beta u_2, u_1,u_2) = g(u_1,u_2)=0$, thus $l \subset \mathscr{C}$.
 
 To conclude, if $l \not \subset \mathscr {C}$, then $|l \cap \mathscr{C}| \leq n$ : a curve of degree $n$ and a line have at most $n$ points in common unless the line is contained in the curve.
 
