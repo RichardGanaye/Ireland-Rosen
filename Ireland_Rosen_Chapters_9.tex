@@ -60,7 +60,7 @@ Let $\lambda = 1 - \omega$, and $\alpha = a+b\omega \in D = \Z[\omega], a,b \in 
 
 $\omega \equiv 1 \pmod \lambda$, so $\alpha \equiv a+b \pmod \lambda$, $\alpha \equiv c$ with $c = a+b \in \Z$.
 
-$c\equiv 0,1,-1 \pmod 3$, and since $\lambda \mid 3$, $z \equiv 0,1,-1 \pmod \lambda$.
+$c\equiv 0,1,-1 \pmod 3$, and since $\lambda \mid 3$, $c \equiv 0,1,-1 \pmod \lambda$.
 
  Every $\alpha \in D$ is congruent to either $0,1$, or $-1$ modulo $\lambda = 1 -\omega$.
 
@@ -91,10 +91,10 @@ We show that
  Let $\pi$ be a prime in $D$. There are three cases.
 
   \begin{enumerate}
-  \item[$\bullet$] If $\n(\pi) = 3$, then $\pi$ is associate to $\lambda \in S$, thus $\pi \in \{1-\omega, -1\omega, -2 - \omega, 2 + \omega, 1 + 2\omega, -1-2\omega\}$, and no associate of $\lambda$ is primary.
+  \item[$\bullet$] If $\n(\pi) = 3$, then $\pi$ is associate to $\lambda \in S$, thus $\pi \in \{1-\omega, -1+\omega, -2 - \omega, 2 + \omega, 1 + 2\omega, -1-2\omega\}$, and no associate of $\lambda$ is primary.
   \item[$\bullet$] If $\n(\pi) = q^2$, where $q \equiv -1 \pmod 3, q>0,$ is a rational prime, then $\pi$ is associate to $q$ (Proposition 9.1.2), and $q$ is a primary prime.
   	The primes associate to $q$ are $q, -q, \omega q, -\omega q, -q - \omega q, q + \omega q$, so only $q$ is primary.
-  \item[$\bullet$] If $\n(\pi) = p$, where $p \equiv 1 \pmod 4$, then the proposition 9.1.4. shows that among the associates to $\pi$ exactly one is primary.
+  \item[$\bullet$] If $\n(\pi) = p$, where $p \equiv 1 \pmod 3$, then the proposition 9.1.4. shows that among the associates to $\pi$ exactly one is primary.
   \end{enumerate}
    Moreover, the norm of two primes belonging to two different cases are distinct, so two such primes are not associate.
 
@@ -392,7 +392,7 @@ So $x^3 \equiv a \pmod \pi$ has a solution $x \in \Z$.
 
 Thus $\pi \mid x^3 - a, N(\pi) = p \mid (x^3 -a)^2$, therefore $p \mid x^3 -a$ in $\Z$, and so $x^3 \equiv a \pmod p$.
 
-Conclusion: if $p\equiv 1 \pmod 3$, $p = \pi \overline{\pi}$, where $\pi$ is is a primary prime,  and $a \in \Z$,
+Conclusion: if $p\equiv 1 \pmod 3$, $p = \pi \overline{\pi}$, where $\pi$ is a primary prime,  and $a \in \Z$,
 $$\exists x \in \Z, \ x^3 \equiv a \pmod p \iff \chi_{\pi}(a) = 1.$$
 In other words, $x^3 \equiv a \pmod \pi$ is solvable in $D$ iff it is solvable in $\Z$.
 \end{proof}
@@ -406,7 +406,7 @@ In other words, $x^3 \equiv a \pmod \pi$ is solvable in $D$ iff it is solvable i
 Warning: false sentence, since 
 $$N(2 - 3 \omega) = (2-3\omega)(2 - 3 \omega^2) = 4 + 9 -6(\omega+\omega^2) = 4 + 9 + 6 = 19 \ (\mathrm{and}\ \mathrm{not}\ 7!).$$
 \begin{proof}
-Since $19$ is a rational prime, and since $\pi= 2 - 3\omega$ and $11$  are primary primes, by the Law of Cubic Reciprocity, and by Exercise 9.15 (with $p=11 \equiv 1 \pmod 3$),
+Since $19$ is a rational prime, and since $\pi= 2 - 3\omega$ and $11$  are primary primes, by the Law of Cubic Reciprocity, and by Exercise 9.15 (with $p=19 \equiv 1 \pmod 3$),
 \begin{align*}
 \exists x \in D,\ 2-3\omega \equiv x^3\ [11]&\iff \chi_{11}(2-3\omega) = 1\\
 &\iff \chi_{2-3\omega}(11)=1\\
@@ -567,7 +567,7 @@ The decomposition of $n$ is of the form
 \end{align*}
 where $\pi_i, \overline{\pi_i} (1\leq i \leq s)$ and $q_j (1 \leq j \leq r)$ are primary prime.
 
-Since $N(\pi_i) = p \ne p_i$ and $N(\pi) = p \ne N(q_j) =q_j^2$, Theorem 1 shows that
+Since $N(\pi_i) = p_i \ne p$ and $N(\pi) = p \ne N(q_j) =q_j^2$, Theorem 1 shows that
 \begin{align*}
 \legendre{n}{\pi}_3 &=\legendre{\pi_1}{\pi}_3\legendre{\overline{\pi_1}}{\pi}_3\cdots \legendre{\pi_s}{\pi}_3\legendre{\overline{\pi_s}}{\pi}_3 \legendre{q_1}{\pi}_3  \cdots \legendre{q_r}{\pi}_3 \\
 &=\legendre{\pi}{\pi_1}_3\legendre{\pi}{\overline{\pi_1}}_3\cdots \legendre{\pi}{\pi_s}_3\legendre{\pi}{\overline{\pi_s}}_3 \legendre{\pi}{q_1}_3  \cdots \legendre{\pi}{q_r}_3 \\
@@ -646,7 +646,7 @@ Note first that for all primes $\pi$ in $D$, there exists $\sigma \in D$ such th
 \bigskip
 
 Let $\gamma \in D$, where $\gamma$ is primary. Then $\gamma = \pm \gamma_1^{n_1}\gamma_2^{n_2}\cdots\gamma_p^{n_p}$, where the $\gamma_i$ are distinct primary primes. 
-Write $n_i = 3q_i + r_i, \ r_i \in \{0,1,2\}$. Then grouping in $\gamma'$ the $\gamma^{r_i}$ such that $r_i \ne 0$, we can write $\gamma = \delta^3 \gamma', \gamma' = \gamma_1^{r_1} \gamma_2^{r_2}\cdots \gamma_l^{r_l}, r_i \in \{1,2\}, \delta = \pm \gamma_1^{q_1}\cdots\gamma_p^{n_p} \in D$ ($-1$ is a cube). Since by hypothesis $\gamma$ is not a cube, $l\geq 1$. Moreover the equation $x^3 \equiv \gamma \pmod \pi$ is solvable iff $x^3 \equiv \gamma' \pmod \pi$ is solvable. We may then suppose that $$\gamma = \gamma_1^{r_1} \gamma_2^{r_2}\cdots \gamma_l^{r_l}, 1\leq r_i \leq 2,$$ without cubic factors.
+Write $n_i = 3q_i + r_i, \ r_i \in \{0,1,2\}$. Then grouping in $\gamma'$ the $\gamma^{r_i}$ such that $r_i \ne 0$, we can write $\gamma = \delta^3 \gamma', \gamma' = \gamma_1^{r_1} \gamma_2^{r_2}\cdots \gamma_l^{r_l}, r_i \in \{1,2\}, \delta = \pm \gamma_1^{q_1}\cdots\gamma_p^{q_p} \in D$ ($-1$ is a cube). Since by hypothesis $\gamma$ is not a cube, $l\geq 1$. Moreover the equation $x^3 \equiv \gamma \pmod \pi$ is solvable iff $x^3 \equiv \gamma' \pmod \pi$ is solvable. We may then suppose that $$\gamma = \gamma_1^{r_1} \gamma_2^{r_2}\cdots \gamma_l^{r_l}, 1\leq r_i \leq 2,$$ without cubic factors.
 
 Note that the $\gamma_i$ are not associate to $\lambda = 1-\omega$ (see Ex. 9.17).
 
@@ -717,7 +717,7 @@ Conclusion : the equation $x^3 \equiv \lambda \ [\pi]$ is not solvable for infin
 
 \paragraph{Ex. 9.22}
 
-{\it (continuation) Show in general that if $\gamma \in D$ and $x^3 \equiv \gamma \pmod \pi$ is solvable for all but finitely finitely many primary primes $\pi$, then $\gamma$ is a cube in $D$.
+{\it (continuation) Show in general that if $\gamma \in D$ and $x^3 \equiv \gamma \pmod \pi$ is solvable for all but finitely many primary primes $\pi$, then $\gamma$ is a cube in $D$.
 }
 
 \begin{proof}
@@ -862,7 +862,7 @@ $a$ has a decomposition in prime  factors of the form :
 $$a = \pm q_1q_2\cdots q_k p_1p_2\cdots p_l = \pm q_1q_2\cdots q_k \pi_1 \overline{\pi_1} \pi_2 \overline{\pi_2}\cdots \pi_l \overline{\pi_l},$$
 where $q_i \equiv -1 , p_j \equiv 1 \pmod 3$, and  the $\pi_k$ are primary primes (since all these elements are primary, the symbol $\pm$ is $(-1)^{k-1}$).
 Thus, by definition of $\chi_a$,
-$$\chi_a(b) = \chi_{q_1}(b)\cdots \chi_{q_k(b)} \chi_{\pi_1}(b)\chi_{\overline{\pi_1}}(b)\cdots \chi_{\pi_l}(b)\chi_{\overline{\pi_l}}(b) = 1.$$
+$$\chi_a(b) = \chi_{q_1}(b)\cdots \chi_{q_k}(b) \chi_{\pi_1}(b)\chi_{\overline{\pi_1}}(b)\cdots \chi_{\pi_l}(b)\chi_{\overline{\pi_l}}(b) = 1.$$
 The result remains true if $a = -1$ : then, by definition, $\chi_a(b) = 1$.
 
 \end{proof}
@@ -892,7 +892,7 @@ Here $a$ is relatively prime to $b$ in $\Z$ : if a rational prime $r$ divides $a
  $$a+b = [(a+b) \omega] \omega^{-1},$$
 and 
 $$(a+b) \omega = (a+b\omega) +a\omega -a \equiv a(\omega-1)\pmod \pi,$$ thus
-$$a+b \equiv -a(1-\omega) \omega^{-1} \ [\pi],$$
+$$a+b \equiv a(1-\omega) \omega^{-1} \ [\pi],$$
 $$\chi_\pi (a+b) = \chi_\pi(1-\omega) \chi_\pi(a) \chi_\pi(\omega)^{-1},$$
 $\chi_\pi(a) = \omega^m$ by (c), and $\chi_\pi(\omega) = \omega^{m+n}$(as in Ex. 9.3), thus
 
@@ -1105,7 +1105,7 @@ As $a,c$ are odd, and $b,d$ even, it remains only the possibilities $\lambda =\p
 
 $p=a^2+b^2 = a^2 + d^2$, so $d = \pm b$, and $d \equiv b \ [p]$.
 
-If $d = -b$, then $p\mid 2b$, thus $p \mid b$, and also $p \mid a$, so $p^2 \mid a^2+b^2 = p$: this is impossible. So $a=b,c=d$. Unicity is proved.
+If $d = -b$, then $p\mid 2b$, thus $p \mid b$, and also $p \mid a$, so $p^2 \mid a^2+b^2 = p$: this is impossible. So $a=c,b=d$. Unicity is proved.
 
 Conclusion : if $p\equiv 1 \ [4]$, there exists an unique pair $a,b$ such that
 $$p=a^2+b^2, a \equiv 1 \pmod 4, b \equiv -((p-1)/2)! a \pmod p.$$
@@ -1152,7 +1152,7 @@ Write $q = 4k + 3, k \in \N$.
 
 As $(1+i)^2 = 2i$, $(1+i)^{q-1} =  (2i)^{(q-1)/2}$.
 
-$2^{(q-1)/2} \equiv \legendre{2}{q} \ [q]$ et $ \legendre{2}{q} = (-1)^{(q^2-1)/8} = (-1)^{2k^2+3k+1} = (-1)^{k+1}$
+$2^{(q-1)/2} \equiv \legendre{2}{q} \ [q]$ and $ \legendre{2}{q} = (-1)^{(q^2-1)/8} = (-1)^{2k^2+3k+1} = (-1)^{k+1}$
 
 $i^{(q-1)/2} = i^{2k+1} = (-1)^k i$. 
 
@@ -1220,7 +1220,7 @@ and if $q \equiv 3 \ [4]$, in other words $-q \equiv 1 \ [4]$, where $q$ is a ra
 $$\chi_{-q}(1+i) =  \chi_{q}(1+i) = i^{(-q-1)/4}.$$
 Let  $n \in \mathbb{Z}, n\equiv 1 \ [4],n\neq 1$.
 
-If $n>0$, $n = q_1q_2\cdots q_kp_1p_2\cdots p_l$, where $q_i \equiv -1 \ [4], p_i \equiv 1 \ [4]$, thus $k$ is odd.
+If $n>0$, $n = q_1q_2\cdots q_kp_1p_2\cdots p_l$, where $q_i \equiv -1 \ [4], p_i \equiv 1 \ [4]$, thus $k$ is even.
 
 If $n<0$, $n = -q_1q_2\cdots q_kp_1p_2\cdots p_l$, with $k$ odd.
 In both cases, 
@@ -1406,9 +1406,9 @@ so $\chi_\pi(2) = i^\frac{ab}{2} $.
  
    \bigskip
    
- Now we show that $p$ is of the form $p=A^2+64b^2$ if and only if $p\equiv 1 \pmod 4$ and if $x^4 \equiv 2$ has a solution $x \in \Z$.
+ Now we show that $p$ is of the form $p=A^2+64B^2$ if and only if $p\equiv 1 \pmod 4$ and if $x^4 \equiv 2$ has a solution $x \in \Z$.
  
- If $p=A^2+64B^2 = A^2 + (8B)^2$, then the prime number $p$ is a sum of two squares, and $p\ne 2$, therefore $p\equiv 1 \pmod 4$. Since $p=A^2 + 64b^2$, $A$ is odd. Put $b = 8B$, and $a = A$ if $A\equiv 1 \pmod 4$, $a = -A$ if $A\equiv -1 \pmod 4$. Then $\pi =a +bi$ is such that $N(\pi) = a^2 +b^2 = p$, and $a\equiv 1, b\equiv 0 \pmod 4$, therefore $\pi$ is a primary prime. Then
+ If $p=A^2+64B^2 = A^2 + (8B)^2$, then the prime number $p$ is a sum of two squares, and $p\ne 2$, therefore $p\equiv 1 \pmod 4$. Since $p=A^2 + 64B^2$, $A$ is odd. Put $b = 8B$, and $a = A$ if $A\equiv 1 \pmod 4$, $a = -A$ if $A\equiv -1 \pmod 4$. Then $\pi =a +bi$ is such that $N(\pi) = a^2 +b^2 = p$, and $a\equiv 1, b\equiv 0 \pmod 4$, therefore $\pi$ is a primary prime. Then
  $$\chi_\pi(2) = i^\frac{ab}{2} = i^{4aB} = 1.$$
   Therefore there exists $\alpha \in D$ such that $2\equiv \alpha^4 \pmod \pi$. As $D/\pi D$ is the set of classes of $0,1,\cdots,p-1$, there exists $x\in \Z$ such that $x\equiv \alpha \pmod \pi$, so $2 \equiv x^4 \pmod \pi$.
  
@@ -1416,7 +1416,7 @@ so $\chi_\pi(2) = i^\frac{ab}{2} $.
    
 Conversely, suppose that $p\equiv 1 \pmod 4$ and that $2$ is a biquadratic residue modulo $p$. As $p\equiv 1 \pmod 4$, $p = \pi \overline{\pi}$, where $\pi =a + bi$ is a primary prime. Since $2\equiv x^4 \pmod p$ for some $x \in \Z$, then $2 \equiv x^4 \pmod \pi$, so $\chi_\pi(2)=1$. Moreover
 $$1 = \chi_\pi(2) = i^\frac{ab}{2}.$$
-Since $a$ is odd, $8 \mid b$, therefore $p=A^2 + 64b^2$, where $A=a, B =b/8$.
+Since $a$ is odd, $8 \mid b$, therefore $p=A^2 + 64B^2$, where $A=a, B =b/8$.
   
  Conclusion :
  $$\exists (A,B) \in \Z^2,\ p = A^2+64B^2 \iff (p\equiv 1 \ [4] \ \mathrm{and}\ \exists x \in \Z, \ x^4 \equiv 2 \ [p]).$$
@@ -1524,7 +1524,7 @@ Conclusion: $$\binom{(p-1)/2}{(p-1)/6} \equiv -1 \pmod p \iff 2 \mid B.$$
 \item[(b)] If $\chi_\pi(2) = \omega^2$ then $a+b \equiv \binom{3m}{m} \pmod p$.
 \item[(c)] If $\chi_\pi(2) = \omega$ put $A=2a-b,B = b/3$. Show $(A-9B)/2 \equiv \binom{3m}{m} \pmod p$.
 \item[(d)] If $\chi_\pi(2) = \omega^2$ put $2a-b = A$ and $B = -b/3$. Show $(A-9B)/2 \equiv \binom{3m}{m} \pmod p$.
-\item[(e)] Show that the ``normalization"" of $B$ in (c) and (d) is equivalent to $A \equiv B \pmod 4$.
+\item[(e)] Show that the ``normalization" of $B$ in (c) and (d) is equivalent to $A \equiv B \pmod 4$.
 [Recall $\chi_\pi(2) \equiv \pi \pmod 2$ by cubic reciprocity.]
 \end{enumerate}
 }
@@ -1636,7 +1636,7 @@ N(x^3 + 2 y^3 = 1)&= \sum_{a+2b = 1} N(x^3 =a) N(y^3 = b)\\
 &=\sum_{i=0}^2\sum_{j=0}^2 \omega^{-kj} J(\chi_\pi^i, \chi_\pi^j)\\
 &= p + \omega^{-k} J(\chi_\pi^2,\chi_\pi) + \omega^{-2k} J(\chi_\pi,\chi_\pi^2)\\
 &\phantom{= p .} + \omega^{-k} J(\chi_\pi, \chi_\pi) + \omega^{-2k} J(\chi_\pi^2, \chi_\pi^2)\\
-&=p - \omega^{-k} \chi_\pi(-1) - \omega^{-2k} \chi_\pi(-1)^2 + 2 \re(\omega^{-k} J(\chi_\pi,\chi_\pi)\\
+&=p - \omega^{-k} \chi_\pi(-1) - \omega^{-2k} \chi_\pi^2(-1) + 2 \re(\omega^{-k} J(\chi_\pi,\chi_\pi)\\
 &= p - \omega^{-k} -  \omega^{-2k} +  2 \re(\omega^{-k} J(\chi_\pi,\chi_\pi)).
 \end{align*}
 
@@ -1654,7 +1654,7 @@ since $J(\chi_\pi,\chi_\pi) = \pi$ (Lemma 1, section 4).
 \end{align*}
 therefore
 $$N(x^3 + 2 y^3 = 1) = p+1 + 2b -a\qquad (\text{if }\chi_\pi(2) = \omega).$$
-Since in then case $\chi_\pi(2) = \omega$, then $a \equiv 0 \pmod 2$ (see Ex. 39, part (e)), so $p + 1 + 2b -a \equiv 0 \pmod 2$.
+Since case is $\chi_\pi(2) = \omega$, then $a \equiv 0 \pmod 2$ (see Ex. 40, part (e)), so $p + 1 + 2b -a \equiv 0 \pmod 2$.
 
 (b) If $\chi_\pi(2) = \omega^2 = \omega^{-1}$, then $k=-1$, and
 \begin{align*}
@@ -1667,7 +1667,7 @@ with
 \end{align*}
 therefore
 $$N(x^3 + 2y^3 = 1) = p+1 -a-b \qquad (\text {if }\chi_\pi(2) = \omega^2).$$
-
+Since case is $\chi_\pi(2) = \omega^2$, then $a \equiv 1 \equiv b \pmod 2$ (see Ex. 40, part (e)), so $p + 1 -a -b\equiv 0 \pmod 2$.
 
 \item[(c)] Suppose that $A\equiv B \pmod 4$, and $\chi_\pi(2)\ne 1$. By hypothesis, $b = 3B$, and this implies by Exercise 40 (e) that $\chi_\pi(2) = \omega$ (if not, $\chi_\pi(2) = \omega^2$, and $A\equiv B \pmod 4$ gives $B = -b/3$).
 
@@ -1677,7 +1677,7 @@ Since $2a-b = A, B = b/3$, then $a = \frac{A+3B}{2}, b = 3B$.
 
 Starting from $a + b \omega \equiv 0 \pmod \pi$, we obtain
 $$ 3B \omega \equiv -\frac{A+3B}{2} \pmod \pi.$$
-Since $pa = a^2 - ab + b^2$, $a$ is relatively prime with $p$, therefore $\pi \wedge b = 1$, so $\pi \wedge B = 1$, and $\pi \wedge 6 = 1$, since $p \equiv 1 \pmod 6$, thus
+Since $p = a^2 - ab + b^2$, $a$ is relatively prime with $p$, therefore $\pi \wedge b = 1$, so $\pi \wedge B = 1$, and $\pi \wedge 6 = 1$, since $p \equiv 1 \pmod 6$, thus
 $$\chi_\pi(2)  = \omega \equiv \frac{-A-3B}{6B} \pmod \pi,$$
 where we must read in this fraction the product of $A + 3B$ by the inverse modulo $p$ of $6B$.
 By definition, using $N(\pi) = p$, 
@@ -1782,8 +1782,8 @@ $$G_k = 2 \mathrm{Re}(\omega^k g(\chi)) = \omega^k g(\chi) + \overline{\omega}^k
 so $G = G_0$.
 As in section 12, since $g(\chi)^3 = p \pi$, and $|g(\chi)|^2 = p$,
 \begin{align*}
-G_k^3 &= g(\chi)^3 + \overline{g(\chi)}^3 + 3 \omega^{2k} g(\chi)^2 \overline{g(\chi)} + 3 \omega^k g(\chi) \overline{\omega}^{2k} \overline{g(\chi)}^2\\
-&= p \pi + p \overline{\pi} + 3 g(\chi) \overline{g(\chi)} (\omega^k g(\chi) + \overline{\omega}^k \overline{g(\chi)}\\
+G_k^3 &= g(\chi)^3 + \overline{g(\chi)}^3 + 3 \omega^{2k} g(\chi)^2 \overline{\omega}^k \overline{g(\chi)} + 3 \omega^k g(\chi) \overline{\omega}^{2k} \overline{g(\chi)}^2\\
+&= p \pi + p \overline{\pi} + 3 g(\chi) \overline{g(\chi)} (\omega^k g(\chi) + \overline{\omega}^k \overline{g(\chi)})\\
 &= 3 p G_k + p(2a -b)\\
 &= 3p G_k + pA
 \end{align*}
@@ -1831,12 +1831,12 @@ Reasoning by induction on $t$, suppose that  every product of $t$ factors $ n = 
 $$\frac{n-1}{4} \equiv \sum\limits_{i=1}^t \frac{s_i-1}{4} [4].$$
 If $n' = s_1 s_2 \cdots s_t s_{t+1} = n s_{t+1}, s_i \equiv 1[4]$, then $n\equiv1,s_{t+1} \equiv 1 \ [4]$, so
 $$\frac{n'-1}{4} \equiv \frac{n-1}{4} + \frac{s_{t+1}-1}{4} \equiv \sum\limits_{i=1}^t \frac{s_i-1}{4} + \frac{s_{t+1}-1}{4} \equiv \sum\limits_{i=1}^{t+1} \frac{s_i-1}{4} \ [4].$$
-Conclusion :  if  $n = s_1 s_2 \cdots s_t, s_i \equiv 1 [4]$, alors $\frac{n-1}{4} \equiv \sum\limits_{i=1}^t \frac{s_i-1}{4} [4]$.
+Conclusion :  if  $n = s_1 s_2 \cdots s_t, s_i \equiv 1 [4]$, then $\frac{n-1}{4} \equiv \sum\limits_{i=1}^t \frac{s_i-1}{4} [4]$.
 \end{proof}
 
 \paragraph{Ex. 9.45}
 
-{\it Let $\pi = a + bi \in \Z[i]$ and $q\equiv 3 \ [4]$ a rational prime. Show $\pi^q \equiv \overline{\pi} \ [4]$.
+{\it Let $\pi = a + bi \in \Z[i]$ and $q\equiv 3 \ [4]$ a rational prime. Show $\pi^q \equiv \overline{\pi} \ [q]$.
 }
 
 \begin{proof}
