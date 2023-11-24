@@ -255,7 +255,7 @@ Therefore
 \right.
 \end{align*}
 
-Consider the polynomial $g(x,y) = f(\alpha x + \beta y,x, y)$. For all $\lambda \in F$,   $g(\lambda x, \lambda y) = f(\lambda (\alpha x + \beta y), \lambda x , \lambda y) = \lambda^n g(x,y)$, thus $g$ is homogeneous of degree $n$. A point $[u_0,u_1,u_2]$ of $l$ is on $\mathscr{C}$ if and only if  $g(u_1,u_2) = 0$.
+Consider the polynomial $g(x,y) = f(\alpha x + \beta y,x, y)$. Then $g$ is homogeneous of degree $n$. A point $[u_0,u_1,u_2]$ of $l$ is on $\mathscr{C}$ if and only if  $g(u_1,u_2) = 0$.
 
 Suppose that $|\mathscr{C} \cap l | = m$, and write $[u_0^{(1)},u_1^{(1)},u_2^{(1)}],\ldots, [u_0^{(m)},u_1^{(m)},u_2^{(m)}]$ the $m$ distinct points of $\mathscr{C} \cap l$. Then $1\leq i < j \leq m \Rightarrow (u_1^{(i)},u_2^{(i)}) \not \sim (u_1^{(j)},u_2^{(j)})$ : the $m$ pairs $[u_1^{(i)},u_2^{i}]$ are distinct, since $u_0^{(i)} = \alpha u_1^{(i)} + \beta u_2^{(i)}$.
 
@@ -269,7 +269,7 @@ g(x,y) &= y^n g\left(\frac{x}{y},1\right) =y^n  \left(\frac{x}{y} - \frac{u_1^{(
 &= (u_2^{(1)}x - u_1^{(1)}y) h_1(x,y),
 \end{align*}
 where $h_1(x,y) = \frac{1}{u_1^{(1)}} y^{n-1} h\left(\frac{x}{y}\right)$ is homogeneous of degree $n-1$. Same proof if $u_1^{(1)} \ne 0$.
-Since $u_2^{(1)}u_1^{(2)} - u_1^{(1)} u_2^{(2)} \ne 0$, then $h_1(u_1^{(2}, u_2^{(2)}) = 0$, and we can continue we $h_1$ in place of $g$. By induction
+Since $u_2^{(1)}u_1^{(2)} - u_1^{(1)} u_2^{(2)} \ne 0$, then $h_1(u_1^{(2}, u_2^{(2)}) = 0$, and we can continue with $h_1$ in place of $g$. By induction
 $$g(x,y) = (u_2^{(1)}x - u_1^{(1)}y)(u_2^{(2)}x - u_1^{(2)}y)\cdots (u_2^{(m)}x - u_1^{(m)}y) h_m(x,y),\qquad h_m(x,y) \in F[x,y].$$
 
 This equality shows that either $g(x,y) = 0$, or $n = \deg(g) \geq m$. This proves that if $m = |\mathscr C \cap l |>n$, then $g(x,y) = 0$. In this case, every point $[u_0,u_1,u_2] \in l$ satisfies
