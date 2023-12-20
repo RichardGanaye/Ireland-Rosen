@@ -215,7 +215,7 @@ $$f(v_0,v_1,v_2) = f(\alpha v_1 + \beta v_2, v_1,v_2) = v_1^n f\left(\alpha + \b
 If $v_1 = 0$, then $[v_0,v_1,v_2] = [\beta, 0,1]$. Consider the reciprocal polynomial $Q(x) = x^n P\left(\frac{1}{x}\right)$ of $P(x)$. Then
 \begin{align*}
 Q(x) &= x^n  \sum_{(i,k) \in \gcro 0, n\dcro^2}a_{i, k-i} \left(\alpha + \beta \frac{1}{x}\right)^i \frac{1}{x^{n-k}}\\
-&=\sum_{(i,k) \in \gcro 0, n\dcro^2}a_{i, k-i} \left(\alpha x+ \beta \right)^i x^{n-k}.
+&=\sum_{(i,k) \in \gcro 0, n\dcro^2}a_{i, k-i} \left(\alpha x+ \beta \right)^i x^{k-i}.
 \end{align*}
 If $P = 0$ ,then $Q = 0$, and
 $$f(\beta,0,1) = \sum_{i=0}^n a_{i,0} \beta^i = Q(0) =0.$$
@@ -269,7 +269,7 @@ g(x,y) &= y^n g\left(\frac{x}{y},1\right) =y^n  \left(\frac{x}{y} - \frac{u_1^{(
 &= (u_2^{(1)}x - u_1^{(1)}y) h_1(x,y),
 \end{align*}
 where $h_1(x,y) = \frac{1}{u_1^{(1)}} y^{n-1} h\left(\frac{x}{y}\right)$ is homogeneous of degree $n-1$. Same proof if $u_1^{(1)} \ne 0$.
-Since $u_2^{(1)}u_1^{(2)} - u_1^{(1)} u_2^{(2)} \ne 0$, then $h_1(u_1^{(2}, u_2^{(2)}) = 0$, and we can continue with $h_1$ in place of $g$. By induction
+Since $u_2^{(1)}u_1^{(2)} - u_1^{(1)} u_2^{(2)} \ne 0$, then $h_1(u_1^{(2)}, u_2^{(2)}) = 0$, and we can continue with $h_1$ in place of $g$. By induction
 $$g(x,y) = (u_2^{(1)}x - u_1^{(1)}y)(u_2^{(2)}x - u_1^{(2)}y)\cdots (u_2^{(m)}x - u_1^{(m)}y) h_m(x,y),\qquad h_m(x,y) \in F[x,y].$$
 
 This equality shows that either $g(x,y) = 0$, or $n = \deg(g) \geq m$. This proves that if $m = |\mathscr C \cap l |>n$, then $g(x,y) = 0$. In this case, every point $[u_0,u_1,u_2] \in l$ satisfies
